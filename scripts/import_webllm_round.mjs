@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
+import childProcess from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { validateGenerationContract } from "./validate_generation_contract.mjs";
 
@@ -45,6 +46,62 @@ function safeRows(payload) {
   return payload.results;
 }
 
+function gitCommit() {
+  try {
+    return childProcess.execFileSync("git", ["rev-parse", "HEAD"], { cwd: repoRoot, encoding: "utf8" }).trim();
+  } catch {
+    return "unknown";
+  }
+}
+
+function provenance(inputPath, payload) {
+  return {
+    step: "webllm_round_import",
+    timestamp: new Date().toISOString(),
+    commit: gitCommit(),
+    input_path: path.basename(inputPath),
+    packet_variant: payload.meta?.variant_id || "unknown",
+    model_id: payload.meta?.model_id || "unknown",
+    runtime: "WebLLM/MLC custom model",
+    webgpu_status: payload.meta?.webgpu?.status || "unknown",
+    user_agent: payload.meta?.user_agent || "unknown"
+  };
+}
+
+function metricIssues(results) {
+  const issues = [];
+  const requiredCompletedMetrics = [
+    "model_load_ms",
+    "ttft_ms",
+    "total_latency_ms",
+    "output_tokens",
+    "tokens_per_second"
+  ];
+  results.forEach((row, index) => {
+    if (!row.query_id) {
+      issues.push({ row: index, query_id: "unknown", type: "missing_query_id", key: "query_id" });
+    }
+    if (row.generation_status === "completed") {
+      for (const key of requiredCompletedMetrics) {
+        const value = row[key];
+        if (value === undefined || value === null || value === "") {
+          issues.push({ row: index, query_id: row.query_id, type: "missing_metric", key });
+        } else if (typeof value !== "number" || !Number.isFinite(value)) {
+          issues.push({ row: index, query_id: row.query_id, type: "non_numeric_metric", key, value });
+        } else if (value < 0) {
+          issues.push({ row: index, query_id: row.query_id, type: "negative_metric", key, value });
+        }
+      }
+      if (!("device_error" in row)) {
+        issues.push({ row: index, query_id: row.query_id, type: "missing_metric", key: "device_error" });
+      }
+    } else if (!row.error && !row.device_error) {
+      issues.push({ row: index, query_id: row.query_id, type: "missing_error_detail", key: "error" });
+    }
+  });
+  return issues;
+}
+
 function answerRows(results) {
   return results.map((row) => ({
     query_id: row.query_id,
@@ -76,7 +133,7 @@ function byStatus(rows) {
   }, {});
 }
 
-function markdownReport({ payload, results, contract, outputJsonPath, answersPath }) {
+function markdownReport({ payload, results, contract, metrics, outputJsonPath, answersPath }) {
   const completed = results.filter((row) => row.generation_status === "completed");
   const errors = results.filter((row) => row.generation_status !== "completed");
   const statusRows = Object.entries(byStatus(results))
@@ -89,6 +146,9 @@ function markdownReport({ payload, results, contract, outputJsonPath, answersPat
   const violationRows = contract.violations.length === 0
     ? "| none | none | none | none | none |"
     : contract.violations.map((item) => `| ${item.severity} | ${item.query_id} | ${item.code} | ${item.field} | ${item.detail} |`).join("\n");
+  const metricRows = metrics.length === 0
+    ? "| none | none | none | none | none |"
+    : metrics.map((item) => `| ${item.query_id || "unknown"} | ${item.row} | ${item.type} | ${item.key || "n/a"} | ${String(item.value ?? "").replaceAll("\n", " ")} |`).join("\n");
 
   return `# WebLLM Round 01
 
@@ -121,6 +181,13 @@ experiment outputs only and are not archive evidence.
 - Average total latency: ${formatNumber(average(completed, "total_latency_ms"))} ms
 - Average tokens/s: ${formatNumber(average(completed, "tokens_per_second"), 2)}
 - Average prompt tokens estimate: ${formatNumber(average(completed, "prompt_tokens_est"))}
+- Metric validity issues: ${metrics.length}
+
+## Metric Validity Gate
+
+| Query | Row | Type | Key | Value |
+|---|---:|---|---|---|
+${metricRows}
 
 ## Status Counts
 
@@ -163,16 +230,20 @@ export function importWebllmRound(inputPath, {
   if (!inputPath) throw new Error("inputPath is required");
   const payload = readJson(inputPath);
   const results = safeRows(payload);
+  const metrics = metricIssues(results);
+  const importProvenance = provenance(inputPath, payload);
 
   fs.writeFileSync(outputJsonPath, JSON.stringify({
+    _provenance: importProvenance,
     imported_at: new Date().toISOString(),
     source_export_path: path.basename(inputPath),
+    metric_issues: metrics,
     ...payload
   }, null, 2) + "\n");
 
   writeJsonl(answersPath, answerRows(results));
   const contract = validateGenerationContract({ answersPath });
-  fs.writeFileSync(reportMdPath, markdownReport({ payload, results, contract, outputJsonPath, answersPath }));
+  fs.writeFileSync(reportMdPath, markdownReport({ payload, results, contract, metrics, outputJsonPath, answersPath }));
 
   return {
     report: relative(reportMdPath),
@@ -181,6 +252,7 @@ export function importWebllmRound(inputPath, {
     result_count: results.length,
     completed_count: results.filter((row) => row.generation_status === "completed").length,
     error_count: results.filter((row) => row.generation_status !== "completed").length,
+    metric_issue_count: metrics.length,
     contract_fail_count: contract.fail_count,
     contract_warn_count: contract.warn_count
   };
