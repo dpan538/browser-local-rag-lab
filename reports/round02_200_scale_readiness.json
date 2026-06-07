@@ -1,24 +1,22 @@
 {
   "_provenance": {
     "step": "round02_200_scale_readiness",
-    "timestamp": "2026-06-07T07:19:55.492Z",
-    "commit": "705fef3bd64859a9d1091650f72a58c3aff2e308",
+    "timestamp": "2026-06-07T07:55:36.791Z",
+    "commit": "a73f9e9cca04e9f229076c3c5999a5b815a79971",
     "labels_path": "fixtures/gold/labels.jsonl",
     "audit_path": "reports/gold_label_audit_v0.json",
     "round02_path": "reports/webllm_round_02.json",
-    "review_path": "reports/quality_review_sheet_round_02.json"
+    "review_path": "reports/quality_review_sheet_round_02.json",
+    "review_fixture_path": "reports/review_fixture_round_02.jsonl"
   },
   "target_count": 200,
   "current_label_count": 30,
   "additional_labels_needed": 170,
   "recommended_batch_size": 50,
   "recommended_batches_needed": 4,
-  "scale_decision": "blocked",
+  "scale_decision": "conditional",
   "ready_for_200_expansion": false,
-  "blockers": [
-    "gold_labels_not_review_closed",
-    "round02_answers_not_reviewed"
-  ],
+  "blockers": [],
   "soft_blockers": [
     {
       "code": "evidence_overuse_soft_block",
@@ -116,8 +114,8 @@
     "fail_count": 0,
     "warn_count": 8
   },
-  "unreviewed_label_count": 30,
-  "open_review_row_count": 30,
+  "unreviewed_label_count": 0,
+  "open_review_row_count": 0,
   "intent_distribution": {
     "archive_orientation": {
       "count": 3,

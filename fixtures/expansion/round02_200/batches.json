@@ -1,0 +1,1435 @@
+{
+  "generated_at": "2026-06-07T07:54:50.815Z",
+  "batches": [
+    {
+      "batch_id": "batch_01",
+      "size": 51,
+      "intent_counts": {
+        "archive_orientation": 4,
+        "casual_archive_help": 4,
+        "comparison": 7,
+        "current_object_explanation": 7,
+        "first_earliest_claim": 4,
+        "method_process_question": 4,
+        "more_context": 5,
+        "no_evidence_refusal": 4,
+        "region_period_recommendation": 6,
+        "source_rights_question": 6
+      },
+      "queries": [
+        {
+          "query_id": "BQ031",
+          "query_text": "How should I orient myself between Global / release gate expansion and Global / release gate expansion records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ032",
+          "query_text": "How should I orient myself between France and Global / release gate expansion records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ033",
+          "query_text": "How should I orient myself between France and Global / release gate expansion records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ034",
+          "query_text": "How should I orient myself between France and Global / release gate expansion records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ044",
+          "query_text": "I found SURF-CRG2026R0001; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CRG2026R0001",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ045",
+          "query_text": "I found SURF-GAX1970R002; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-GAX1970R002",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ046",
+          "query_text": "I found SURF-GA1970R001; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-GA1970R001",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ047",
+          "query_text": "I found SURF-GAX1970R003; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-GAX1970R003",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ058",
+          "query_text": "Explain SURF-CRG2026R0274 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CRG2026R0274",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ059",
+          "query_text": "Explain SURF-CGS2026R0681 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CGS2026R0681",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ060",
+          "query_text": "Explain SURF-CGS2026R0328 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CGS2026R0328",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ061",
+          "query_text": "Explain SURF-CGS2026R0030 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CGS2026R0030",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ062",
+          "query_text": "Explain SURF-CGS2026R0908 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CGS2026R0908",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ063",
+          "query_text": "Explain SURF-CGS2026R0904 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CGS2026R0904",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ064",
+          "query_text": "Explain SURF-CGS2026R0031 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CGS2026R0031",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ083",
+          "query_text": "What source and rights information is attached to SURF-ER1830R019?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-ER1830R019",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ084",
+          "query_text": "What source and rights information is attached to SURF-ER1830R001-GROUP?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-ER1830R001-GROUP",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ085",
+          "query_text": "What source and rights information is attached to SURF-CHW2026R001?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CHW2026R001",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ086",
+          "query_text": "What source and rights information is attached to SURF-ER1830R002?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-ER1830R002",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ087",
+          "query_text": "What source and rights information is attached to SURF-SI1970R001?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-SI1970R001",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ088",
+          "query_text": "What source and rights information is attached to SURF-CRG2026R0002?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CRG2026R0002",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ102",
+          "query_text": "Compare SURF-CRG2026R0246 and SURF-CGS2026R0031 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ103",
+          "query_text": "Compare SURF-CRG2026R0274 and SURF-CGS2026R0909 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ104",
+          "query_text": "Compare SURF-CGS2026R0681 and SURF-CGS2026R0910 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ105",
+          "query_text": "Compare SURF-CGS2026R0328 and SURF-CRG2026R0020 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ106",
+          "query_text": "Compare SURF-CGS2026R0030 and SURF-CRG2026R0027 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ107",
+          "query_text": "Compare SURF-CGS2026R0908 and SURF-CRG2026R0031 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ108",
+          "query_text": "Compare SURF-CGS2026R0904 and SURF-CRG2026R0032 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ128",
+          "query_text": "Recommend a research route through Unresolved region and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ129",
+          "query_text": "Recommend a research route through London and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ130",
+          "query_text": "Recommend a research route through Austria Vienna Europe / Austria / Vienna / Europe and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ131",
+          "query_text": "Recommend a research route through Ghent and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ132",
+          "query_text": "Recommend a research route through USA; USA and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ133",
+          "query_text": "Recommend a research route through Global / release gate expansion and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ147",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ148",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ149",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ150",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ161",
+          "query_text": "What related context should I inspect around SURF-CRG2026R0006?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CRG2026R0006",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ162",
+          "query_text": "What related context should I inspect around SURF-CRG2026R0050?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CRG2026R0050",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ163",
+          "query_text": "What related context should I inspect around SURF-CRG2026R0051?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CRG2026R0051",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ164",
+          "query_text": "What related context should I inspect around SURF-CRG2026R0052?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CRG2026R0052",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ165",
+          "query_text": "What related context should I inspect around SURF-CRG2026R0071?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CRG2026R0071",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ177",
+          "query_text": "Which item is the first or earliest example for invented claim 1?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ178",
+          "query_text": "Which item is the first or earliest example for invented claim 2?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ179",
+          "query_text": "Which item is the first or earliest example for invented claim 3?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ180",
+          "query_text": "Which item is the first or earliest example for invented claim 4?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ189",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-1?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ190",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-2?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ191",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-3?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ192",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-4?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        }
+      ]
+    },
+    {
+      "batch_id": "batch_02",
+      "size": 51,
+      "intent_counts": {
+        "archive_orientation": 4,
+        "casual_archive_help": 4,
+        "comparison": 7,
+        "current_object_explanation": 7,
+        "first_earliest_claim": 4,
+        "method_process_question": 4,
+        "more_context": 5,
+        "no_evidence_refusal": 4,
+        "region_period_recommendation": 6,
+        "source_rights_question": 6
+      },
+      "queries": [
+        {
+          "query_id": "BQ035",
+          "query_text": "How should I orient myself between France and Russia records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ036",
+          "query_text": "How should I orient myself between France and Global / release gate expansion records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ037",
+          "query_text": "How should I orient myself between Eastern Europe / Romania and Global / release gate expansion records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ038",
+          "query_text": "How should I orient myself between Global / release gate expansion and Global / release gate expansion records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ048",
+          "query_text": "I found SURF-GAX1970R004; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-GAX1970R004",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ049",
+          "query_text": "I found SURF-GAX1970R005; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-GAX1970R005",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ050",
+          "query_text": "I found SURF-CRG2026R0006; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CRG2026R0006",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ051",
+          "query_text": "I found SURF-CRG2026R0050; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CRG2026R0050",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ065",
+          "query_text": "Explain SURF-CGS2026R0909 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CGS2026R0909",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ066",
+          "query_text": "Explain SURF-CGS2026R0910 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CGS2026R0910",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ067",
+          "query_text": "Explain SURF-CRG2026R0020 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CRG2026R0020",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ068",
+          "query_text": "Explain SURF-CRG2026R0027 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CRG2026R0027",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ069",
+          "query_text": "Explain SURF-CRG2026R0031 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CRG2026R0031",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ070",
+          "query_text": "Explain SURF-CRG2026R0032 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CRG2026R0032",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ071",
+          "query_text": "Explain SURF-ER1830R015 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R015",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ089",
+          "query_text": "What source and rights information is attached to SURF-CRG2026R0003?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CRG2026R0003",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ090",
+          "query_text": "What source and rights information is attached to SURF-ER1830R004?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-ER1830R004",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ091",
+          "query_text": "What source and rights information is attached to SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ092",
+          "query_text": "What source and rights information is attached to SURF-ER1830R008?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-ER1830R008",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ093",
+          "query_text": "What source and rights information is attached to SURF-ER1830R018?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-ER1830R018",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ094",
+          "query_text": "What source and rights information is attached to SURF-CRG2026R0004?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CRG2026R0004",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ109",
+          "query_text": "Compare SURF-CGS2026R0031 and SURF-ER1830R015 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ110",
+          "query_text": "Compare SURF-CGS2026R0909 and SURF-CRG2026R0100 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ111",
+          "query_text": "Compare SURF-CGS2026R0910 and SURF-ER1830R046 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ112",
+          "query_text": "Compare SURF-CRG2026R0020 and SURF-CRG2026R0153 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ113",
+          "query_text": "Compare SURF-CRG2026R0027 and SURF-ER1830R059 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ114",
+          "query_text": "Compare SURF-CRG2026R0031 and SURF-CRG2026R0175 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ115",
+          "query_text": "Compare SURF-CRG2026R0032 and SURF-ER1830R052 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ134",
+          "query_text": "Recommend a research route through Global / release gate expansion and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ135",
+          "query_text": "Recommend a research route through Unresolved region and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ136",
+          "query_text": "Recommend a research route through great britain; berlin; Berlin and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ137",
+          "query_text": "Recommend a research route through Unresolved region and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ138",
+          "query_text": "Recommend a research route through Unresolved region and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ139",
+          "query_text": "Recommend a research route through Global / release gate expansion and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ151",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ152",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ153",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ154",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ166",
+          "query_text": "What related context should I inspect around SURF-COM1970R007?",
+          "intent": "more_context",
+          "active_object_id": "SURF-COM1970R007",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ167",
+          "query_text": "What related context should I inspect around SURF-CRG2026R0235?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CRG2026R0235",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ168",
+          "query_text": "What related context should I inspect around SURF-CRG2026R0246?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CRG2026R0246",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ169",
+          "query_text": "What related context should I inspect around SURF-CRG2026R0274?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CRG2026R0274",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ170",
+          "query_text": "What related context should I inspect around SURF-CGS2026R0681?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CGS2026R0681",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ181",
+          "query_text": "Which item is the first or earliest example for invented claim 5?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ182",
+          "query_text": "Which item is the first or earliest example for invented claim 6?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ183",
+          "query_text": "Which item is the first or earliest example for invented claim 7?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ184",
+          "query_text": "Which item is the first or earliest example for invented claim 8?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ193",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-5?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ194",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-6?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ195",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-7?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ196",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-8?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        }
+      ]
+    },
+    {
+      "batch_id": "batch_03",
+      "size": 51,
+      "intent_counts": {
+        "archive_orientation": 4,
+        "casual_archive_help": 4,
+        "comparison": 7,
+        "current_object_explanation": 7,
+        "first_earliest_claim": 4,
+        "method_process_question": 4,
+        "more_context": 5,
+        "no_evidence_refusal": 4,
+        "region_period_recommendation": 6,
+        "source_rights_question": 6
+      },
+      "queries": [
+        {
+          "query_id": "BQ039",
+          "query_text": "How should I orient myself between Global / release gate expansion and Latin America / Chile records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ040",
+          "query_text": "How should I orient myself between Global / release gate expansion and Latin America / Argentina records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ041",
+          "query_text": "How should I orient myself between Global / release gate expansion and Latin America / Argentina records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ042",
+          "query_text": "How should I orient myself between Russia and Latin America / Mexico records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ052",
+          "query_text": "I found SURF-CRG2026R0051; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CRG2026R0051",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ053",
+          "query_text": "I found SURF-CRG2026R0052; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CRG2026R0052",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ054",
+          "query_text": "I found SURF-CRG2026R0071; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CRG2026R0071",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ055",
+          "query_text": "I found SURF-COM1970R007; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-COM1970R007",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ072",
+          "query_text": "Explain SURF-CRG2026R0100 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CRG2026R0100",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ073",
+          "query_text": "Explain SURF-ER1830R046 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R046",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ074",
+          "query_text": "Explain SURF-CRG2026R0153 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CRG2026R0153",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ075",
+          "query_text": "Explain SURF-ER1830R059 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R059",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ076",
+          "query_text": "Explain SURF-CRG2026R0175 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CRG2026R0175",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ077",
+          "query_text": "Explain SURF-ER1830R052 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R052",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ078",
+          "query_text": "Explain SURF-ER1830R064 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R064",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ095",
+          "query_text": "What source and rights information is attached to SURF-CRG2026R0005?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CRG2026R0005",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ096",
+          "query_text": "What source and rights information is attached to SURF-CRG2026R0001?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CRG2026R0001",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ097",
+          "query_text": "What source and rights information is attached to SURF-GAX1970R002?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-GAX1970R002",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ098",
+          "query_text": "What source and rights information is attached to SURF-GA1970R001?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-GA1970R001",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ099",
+          "query_text": "What source and rights information is attached to SURF-GAX1970R003?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-GAX1970R003",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ100",
+          "query_text": "What source and rights information is attached to SURF-GAX1970R004?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-GAX1970R004",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ116",
+          "query_text": "Compare SURF-ER1830R015 and SURF-ER1830R064 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ117",
+          "query_text": "Compare SURF-CRG2026R0100 and SURF-ER1830R065 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ118",
+          "query_text": "Compare SURF-ER1830R046 and SURF-ER1830R066 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ119",
+          "query_text": "Compare SURF-CRG2026R0153 and SURF-ER1830R011 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ120",
+          "query_text": "Compare SURF-ER1830R059 and SURF-ER1830R017 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ121",
+          "query_text": "Compare SURF-CRG2026R0175 and SURF-ER1830R019 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ122",
+          "query_text": "Compare SURF-ER1830R052 and SURF-ER1830R001-GROUP as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ140",
+          "query_text": "Recommend a research route through Global / release gate expansion and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ141",
+          "query_text": "Recommend a research route through Global / release gate expansion and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ142",
+          "query_text": "Recommend a research route through France and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ143",
+          "query_text": "Recommend a research route through France and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ144",
+          "query_text": "Recommend a research route through France and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ145",
+          "query_text": "Recommend a research route through France and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ155",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ156",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ157",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ158",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ171",
+          "query_text": "What related context should I inspect around SURF-CGS2026R0328?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CGS2026R0328",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ172",
+          "query_text": "What related context should I inspect around SURF-CGS2026R0030?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CGS2026R0030",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ173",
+          "query_text": "What related context should I inspect around SURF-CGS2026R0908?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CGS2026R0908",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ174",
+          "query_text": "What related context should I inspect around SURF-CGS2026R0904?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CGS2026R0904",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ175",
+          "query_text": "What related context should I inspect around SURF-CGS2026R0031?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CGS2026R0031",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ185",
+          "query_text": "Which item is the first or earliest example for invented claim 9?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ186",
+          "query_text": "Which item is the first or earliest example for invented claim 10?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ187",
+          "query_text": "Which item is the first or earliest example for invented claim 11?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ188",
+          "query_text": "Which item is the first or earliest example for invented claim 12?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ197",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-9?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ198",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-10?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ199",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-11?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ200",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object EXP-ABSENT-12?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        }
+      ]
+    },
+    {
+      "batch_id": "batch_04",
+      "size": 17,
+      "intent_counts": {
+        "archive_orientation": 1,
+        "casual_archive_help": 2,
+        "comparison": 5,
+        "current_object_explanation": 4,
+        "method_process_question": 2,
+        "more_context": 1,
+        "region_period_recommendation": 1,
+        "source_rights_question": 1
+      },
+      "queries": [
+        {
+          "query_id": "BQ043",
+          "query_text": "How should I orient myself between Global / release gate expansion and Latin America / Colombia records in this archive?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ056",
+          "query_text": "I found SURF-CRG2026R0235; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CRG2026R0235",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ057",
+          "query_text": "I found SURF-CRG2026R0246; what is a simple next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CRG2026R0246",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ079",
+          "query_text": "Explain SURF-ER1830R065 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R065",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ080",
+          "query_text": "Explain SURF-ER1830R066 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R066",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ081",
+          "query_text": "Explain SURF-ER1830R011 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R011",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ082",
+          "query_text": "Explain SURF-ER1830R017 using only source-linked evidence.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R017",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ101",
+          "query_text": "What source and rights information is attached to SURF-GAX1970R005?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-GAX1970R005",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ123",
+          "query_text": "Compare SURF-ER1830R064 and SURF-CHW2026R001 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ124",
+          "query_text": "Compare SURF-ER1830R065 and SURF-ER1830R002 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ125",
+          "query_text": "Compare SURF-ER1830R066 and SURF-SI1970R001 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ126",
+          "query_text": "Compare SURF-ER1830R011 and SURF-CRG2026R0002 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ127",
+          "query_text": "Compare SURF-ER1830R017 and SURF-CRG2026R0003 as graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ146",
+          "query_text": "Recommend a research route through France and nearby period evidence.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ159",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ160",
+          "query_text": "How should the browser-local RAG lab decide whether to answer or refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ176",
+          "query_text": "What related context should I inspect around SURF-CGS2026R0909?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CGS2026R0909",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "_provenance": {
     "step": "promote_stable_labels",
-    "timestamp": "2026-06-07T07:19:49.407Z",
+    "timestamp": "2026-06-07T07:51:58.626Z",
     "labels_path": "fixtures/gold/labels.jsonl",
     "audit_path": "reports/gold_label_audit_v0.json",
-    "execute": false,
+    "execute": true,
     "target_state": "stable_rule_reviewed"
   },
   "total": 30,

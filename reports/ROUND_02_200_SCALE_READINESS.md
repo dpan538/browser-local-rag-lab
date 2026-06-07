@@ -1,6 +1,6 @@
 # Round 02 200-Query Scale Readiness
 
-Generated: 2026-06-07T07:19:55.492Z
+Generated: 2026-06-07T07:55:36.791Z
 
 This gate decides whether the current 30-query Round 02 baseline is ready to
 be expanded toward a 200-query benchmark. It is intentionally stricter than the
@@ -8,22 +8,21 @@ runtime contract: 0 generated-answer failures is necessary but not sufficient.
 
 ## Decision
 
-- Scale decision: blocked
+- Scale decision: conditional
 - Ready for 200-query expansion: no
 - Current labels: 30
 - Target labels: 200
 - Additional labels needed: 170
 - Recommended batch size: 50
 - Recommended batches needed: 4
-- Unreviewed gold labels: 30
-- Open answer review rows: 30
+- Unreviewed gold labels: 0
+- Open answer review rows: 0
 
 ## Blockers
 
 | Blocker |
 |---|
-| gold_labels_not_review_closed |
-| round02_answers_not_reviewed |
+| none |
 
 ## Soft Blockers
 

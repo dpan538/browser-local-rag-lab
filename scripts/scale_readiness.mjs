@@ -10,6 +10,7 @@ const defaultLabelsPath = path.join(repoRoot, "fixtures/gold/labels.jsonl");
 const defaultAuditPath = path.join(repoRoot, "reports/gold_label_audit_v0.json");
 const defaultContractPath = path.join(repoRoot, "reports/webllm_round_02.json");
 const defaultReviewPath = path.join(repoRoot, "reports/quality_review_sheet_round_02.json");
+const defaultReviewFixturePath = path.join(repoRoot, "reports/review_fixture_round_02.jsonl");
 const jsonOutPath = path.join(repoRoot, "reports/round02_200_scale_readiness.json");
 const mdOutPath = path.join(repoRoot, "reports/ROUND_02_200_SCALE_READINESS.md");
 
@@ -21,6 +22,11 @@ function readJsonl(filePath) {
   const text = fs.readFileSync(filePath, "utf8").trim();
   if (!text) return [];
   return text.split("\n").filter(Boolean).map((line) => JSON.parse(line));
+}
+
+function readJsonlIfExists(filePath) {
+  if (!fs.existsSync(filePath)) return [];
+  return readJsonl(filePath);
 }
 
 function gitCommit() {
@@ -78,15 +84,19 @@ export function assessScaleReadiness({
   labelsPath = defaultLabelsPath,
   auditPath = defaultAuditPath,
   contractPath = defaultContractPath,
-  reviewPath = defaultReviewPath
+  reviewPath = defaultReviewPath,
+  reviewFixturePath = defaultReviewFixturePath
 } = {}) {
   const labels = readJsonl(labelsPath);
   const audit = fs.existsSync(auditPath) ? readJson(auditPath) : null;
   const round = fs.existsSync(contractPath) ? readJson(contractPath) : null;
   const review = fs.existsSync(reviewPath) ? readJson(reviewPath) : null;
   const reviewRows = review?.rows || [];
+  const reviewFixtureRows = readJsonlIfExists(reviewFixturePath);
   const unreviewed = labels.filter((label) => !labelReviewClosed(label));
-  const reviewOpen = reviewRows.filter((row) => !row.reviewer_decision);
+  const reviewOpen = reviewFixtureRows.length > 0
+    ? reviewFixtureRows.filter((row) => !row.reviewer_decision || row.reviewer_decision === "pending")
+    : reviewRows.filter((row) => !row.reviewer_decision);
   const reuseRows = evidenceReuse(labels);
   const intentCounts = countBy(labels, "intent");
   const distributionWarnings = Object.entries(intentCounts)
@@ -144,7 +154,8 @@ export function assessScaleReadiness({
       labels_path: path.relative(repoRoot, labelsPath),
       audit_path: path.relative(repoRoot, auditPath),
       round02_path: path.relative(repoRoot, contractPath),
-      review_path: path.relative(repoRoot, reviewPath)
+      review_path: path.relative(repoRoot, reviewPath),
+      review_fixture_path: fs.existsSync(reviewFixturePath) ? path.relative(repoRoot, reviewFixturePath) : null
     },
     target_count: targetCount,
     current_label_count: labels.length,

@@ -1,6 +1,6 @@
 # Label Promotion Dry Run Round 02
 
-Generated: 2026-06-07T07:19:49.407Z
+Generated: 2026-06-07T07:51:58.626Z
 
 This report identifies seed labels that can be promoted based on the deterministic
 gold-label audit. Promotion does not review generated model answers and does not
@@ -8,7 +8,7 @@ turn generated answers into archive evidence.
 
 ## Summary
 
-- Execute mode: no
+- Execute mode: yes
 - Target state: stable_rule_reviewed
 - Labels checked: 30
 - Promotable labels: 30
