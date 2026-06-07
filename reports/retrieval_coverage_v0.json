@@ -1,0 +1,250 @@
+{
+  "generated_at": "2026-06-07T04:56:16.644Z",
+  "variant_count": 6,
+  "summary": [
+    {
+      "variant_id": "top3_compressed_no_topology_source_rights",
+      "query_count": 30,
+      "total_gold_ids": 36,
+      "covered_gold_ids": 32,
+      "missing": [
+        {
+          "query_id": "BQ01",
+          "intent": "archive_orientation",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R004",
+            "SURF-ER1830R015"
+          ]
+        },
+        {
+          "query_id": "BQ04",
+          "intent": "casual_archive_help",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R015",
+            "SURF-CRG2026R0051"
+          ]
+        }
+      ],
+      "coverage_rate": 0.889,
+      "missing_query_count": 2
+    },
+    {
+      "variant_id": "top3_compressed_topology_no_source_rights",
+      "query_count": 30,
+      "total_gold_ids": 36,
+      "covered_gold_ids": 32,
+      "missing": [
+        {
+          "query_id": "BQ01",
+          "intent": "archive_orientation",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R004",
+            "SURF-ER1830R015"
+          ]
+        },
+        {
+          "query_id": "BQ04",
+          "intent": "casual_archive_help",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R015",
+            "SURF-CRG2026R0051"
+          ]
+        }
+      ],
+      "coverage_rate": 0.889,
+      "missing_query_count": 2
+    },
+    {
+      "variant_id": "top3_compressed_topology_source_rights",
+      "query_count": 30,
+      "total_gold_ids": 36,
+      "covered_gold_ids": 32,
+      "missing": [
+        {
+          "query_id": "BQ01",
+          "intent": "archive_orientation",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R004",
+            "SURF-ER1830R015"
+          ]
+        },
+        {
+          "query_id": "BQ04",
+          "intent": "casual_archive_help",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R015",
+            "SURF-CRG2026R0051"
+          ]
+        }
+      ],
+      "coverage_rate": 0.889,
+      "missing_query_count": 2
+    },
+    {
+      "variant_id": "top3_raw_topology_source_rights",
+      "query_count": 30,
+      "total_gold_ids": 36,
+      "covered_gold_ids": 32,
+      "missing": [
+        {
+          "query_id": "BQ01",
+          "intent": "archive_orientation",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R004",
+            "SURF-ER1830R015"
+          ]
+        },
+        {
+          "query_id": "BQ04",
+          "intent": "casual_archive_help",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R015",
+            "SURF-CRG2026R0051"
+          ]
+        }
+      ],
+      "coverage_rate": 0.889,
+      "missing_query_count": 2
+    },
+    {
+      "variant_id": "top8_compressed_topology_source_rights",
+      "query_count": 30,
+      "total_gold_ids": 36,
+      "covered_gold_ids": 32,
+      "missing": [
+        {
+          "query_id": "BQ01",
+          "intent": "archive_orientation",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R004",
+            "SURF-ER1830R015"
+          ]
+        },
+        {
+          "query_id": "BQ04",
+          "intent": "casual_archive_help",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R015",
+            "SURF-CRG2026R0051"
+          ]
+        }
+      ],
+      "coverage_rate": 0.889,
+      "missing_query_count": 2
+    },
+    {
+      "variant_id": "top1_compressed_topology_source_rights",
+      "query_count": 30,
+      "total_gold_ids": 36,
+      "covered_gold_ids": 19,
+      "missing": [
+        {
+          "query_id": "BQ01",
+          "intent": "archive_orientation",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R004",
+            "SURF-ER1830R015"
+          ]
+        },
+        {
+          "query_id": "BQ02",
+          "intent": "archive_orientation",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-CGS2026R0910"
+          ]
+        },
+        {
+          "query_id": "BQ03",
+          "intent": "archive_orientation",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-CRG2026R0005"
+          ]
+        },
+        {
+          "query_id": "BQ04",
+          "intent": "casual_archive_help",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-ER1830R015",
+            "SURF-CRG2026R0051"
+          ]
+        },
+        {
+          "query_id": "BQ12",
+          "intent": "comparison",
+          "gold_lane": "research_answer",
+          "missing_ids": [
+            "SURF-CRG2026R0235"
+          ]
+        },
+        {
+          "query_id": "BQ13",
+          "intent": "comparison",
+          "gold_lane": "research_answer",
+          "missing_ids": [
+            "SURF-CRG2026R0235"
+          ]
+        },
+        {
+          "query_id": "BQ14",
+          "intent": "region_period_recommendation",
+          "gold_lane": "research_answer",
+          "missing_ids": [
+            "SURF-GAX1970R002",
+            "SURF-GA1970R001"
+          ]
+        },
+        {
+          "query_id": "BQ16",
+          "intent": "region_period_recommendation",
+          "gold_lane": "research_answer",
+          "missing_ids": [
+            "SURF-CGS2026R0328",
+            "SURF-CGS2026R0030"
+          ]
+        },
+        {
+          "query_id": "BQ25",
+          "intent": "more_context",
+          "gold_lane": "research_answer",
+          "missing_ids": [
+            "SURF-CRG2026R0274",
+            "SURF-CRG2026R0071"
+          ]
+        },
+        {
+          "query_id": "BQ26",
+          "intent": "more_context",
+          "gold_lane": "research_answer",
+          "missing_ids": [
+            "SURF-CRG2026R0274",
+            "SURF-CRG2026R0071"
+          ]
+        },
+        {
+          "query_id": "BQ30",
+          "intent": "casual_archive_help",
+          "gold_lane": "help",
+          "missing_ids": [
+            "SURF-CRG2026R0032"
+          ]
+        }
+      ],
+      "coverage_rate": 0.528,
+      "missing_query_count": 11
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import path from "node:path";
 const repoRoot = path.resolve(import.meta.dirname, "..");
 const auditPath = path.join(repoRoot, "reports/gold_label_audit_v0.json");
 const sufficiencyPath = path.join(repoRoot, "reports/retrieval_sufficiency_v0.json");
+const coveragePath = path.join(repoRoot, "reports/retrieval_coverage_v0.json");
 const labelsPath = path.join(repoRoot, "fixtures/gold/labels.jsonl");
 const jsonOutPath = path.join(repoRoot, "reports/QUALITY_METRICS_v0.json");
 const mdOutPath = path.join(repoRoot, "reports/QUALITY_METRICS_v0.md");
@@ -57,6 +58,7 @@ function difficulty(label) {
 
 const audit = readJson(auditPath);
 const sufficiency = readJson(sufficiencyPath);
+const coverage = fs.existsSync(coveragePath) ? readJson(coveragePath) : null;
 const labels = readJsonl(labelsPath);
 const labelCount = labels.length || 1;
 const evidenceCounts = labels.map((label) => label.gold_evidence_ids.length);
@@ -113,6 +115,8 @@ const metrics = {
   rule_config_fail_count: audit.summary.rule_config_fail_count || 0,
   empty_retrieval_integrity: emptyRetrievalIntegrity,
   empty_retrieval_failure_count: emptyRetrievalFailures.length,
+  best_gold_id_coverage_variant: coverage?.summary?.[0]?.variant_id || null,
+  best_gold_id_coverage_rate: coverage?.summary?.[0]?.coverage_rate ?? null,
   average_evidence_count: Number((evidenceCounts.reduce((sum, count) => sum + count, 0) / labelCount).toFixed(2)),
   median_evidence_count: median(evidenceCounts),
   required_field_missing_by_intent: requiredFieldMissingByIntent,
@@ -142,6 +146,8 @@ It does not evaluate generated model answers.
 - Rule config fail findings: ${metrics.rule_config_fail_count}
 - Empty retrieval integrity: ${metrics.empty_retrieval_integrity === null ? "N/A" : `${metrics.empty_retrieval_integrity}%`}
 - Empty retrieval failures: ${metrics.empty_retrieval_failure_count}
+- Best gold-id coverage variant: ${metrics.best_gold_id_coverage_variant || "N/A"}
+- Best gold-id coverage rate: ${metrics.best_gold_id_coverage_rate === null ? "N/A" : metrics.best_gold_id_coverage_rate}
 - Average evidence ids per label: ${metrics.average_evidence_count}
 - Median evidence ids per label: ${metrics.median_evidence_count}
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T04:21:37.423Z",
+  "generated_at": "2026-06-07T04:56:16.774Z",
   "label_count": 30,
   "stable_by_rule_rate": 100,
   "fail_rate": 0,
@@ -10,6 +10,8 @@
   "rule_config_fail_count": 0,
   "empty_retrieval_integrity": 100,
   "empty_retrieval_failure_count": 0,
+  "best_gold_id_coverage_variant": "top3_compressed_no_topology_source_rights",
+  "best_gold_id_coverage_rate": 0.889,
   "average_evidence_count": 1.2,
   "median_evidence_count": 1,
   "required_field_missing_by_intent": {

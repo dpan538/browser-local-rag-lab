@@ -5,15 +5,16 @@ This lab now follows a measurement-first method:
 1. Build a seed gold fixture from safe archive-derived records.
 2. Label each query for intent, lane, evidence sufficiency, refusal expectation,
    required fields, non-invention fields, and gold evidence ids.
-3. Scan cited evidence health and method-context boundaries before trusting the
-   label set.
+3. Scan cited evidence health, evidence value validity, label-group
+   consistency, and method-context boundaries before trusting the label set.
 4. Run retrieval-only evidence-packet ablations before any model generation.
-5. Select the smallest packet that preserves answerability, source fields,
+5. Compare both required-field sufficiency and exact gold-evidence-id coverage.
+6. Select the smallest packet that preserves answerability, source fields,
    rights fields, topology where needed, and refusal behavior.
-6. Add Qwen generation only after retrieval sufficiency is understood.
-7. Validate generated answers against the same label contract before any
+7. Add Qwen generation only after retrieval sufficiency is understood.
+8. Validate generated answers against the same label contract before any
    qualitative reading.
-8. Decompose browser runtime metrics into cache, load, tokenization, prefill,
+9. Decompose browser runtime metrics into cache, load, tokenization, prefill,
    TTFT, decode, total latency, and WebGPU failure classes.
 
 ## Current Seed Findings
@@ -52,6 +53,12 @@ The first label audit reports:
   the seed labels.
 - 0 rule-config fail findings.
 - 100% empty-retrieval integrity for true no-evidence refusal rows.
+- 0 evidence value fail findings.
+- 0 label consistency warnings.
+- 0 method-context boundary findings.
+- Exact gold-id retrieval coverage is 0.889 for top-3/top-8 variants. This is
+  lower than sufficiency because some orientation/help seed gold ids are not
+  retrieved exactly even though required context fields are present.
 
 Stable-by-rule labels cover orientation, current-object explanation,
 source/rights questions, no-evidence refusals, casual archive help,
@@ -65,13 +72,20 @@ This means the next evaluation step is not personal blind judging. The label
 contract is ready for controlled generation and runtime experiments:
 
 1. Keep strict label audit as a preflight gate.
-2. Run evidence health and method-context scans before every generation
+2. Run evidence health, evidence value, label consistency, and method-context
+   scans before every generation benchmark.
+3. Run retrieval sufficiency and exact gold-id coverage before every generation
    benchmark.
-3. Run retrieval sufficiency before every generation benchmark.
 4. Generate Qwen fast/research answers only from packets that pass the contract.
-5. Validate generated answers with `validate_generation_contract.mjs`.
+5. Validate generated answers with `validate_generation_contract.mjs` or the
+   compatible `generation:contract:v2` entrypoint.
 6. Judge generated answers against faithfulness, non-invention, refusal
    correctness, and useful research guidance.
+
+The method is now ready for the first controlled execution round. The first run
+should use top-3 compressed packets with topology and source/rights fields,
+while keeping exact gold-id misses visible as a retrieval alignment issue rather
+than hiding them behind required-field sufficiency.
 
 ## Post-Generation Contract
 

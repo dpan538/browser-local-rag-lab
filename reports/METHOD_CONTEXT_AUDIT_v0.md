@@ -1,6 +1,6 @@
 # Method Context Audit v0
 
-Generated: 2026-06-07T04:21:36.366Z
+Generated: 2026-06-07T04:56:16.068Z
 
 This scan ensures research-only method context is not mistaken for archive
 object evidence. Method records may carry record ids, titles, source, and

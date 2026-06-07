@@ -1,6 +1,6 @@
 # Quality Metrics v0
 
-Generated: 2026-06-07T04:21:37.423Z
+Generated: 2026-06-07T04:56:16.774Z
 
 This report summarizes label-contract health and retrieval-sufficiency behavior.
 It does not evaluate generated model answers.
@@ -17,6 +17,8 @@ It does not evaluate generated model answers.
 - Rule config fail findings: 0
 - Empty retrieval integrity: 100%
 - Empty retrieval failures: 0
+- Best gold-id coverage variant: top3_compressed_no_topology_source_rights
+- Best gold-id coverage rate: 0.889
 - Average evidence ids per label: 1.2
 - Median evidence ids per label: 1
 

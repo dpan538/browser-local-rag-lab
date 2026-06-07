@@ -1,6 +1,6 @@
 # Evidence Health v0
 
-Generated: 2026-06-07T04:21:36.065Z
+Generated: 2026-06-07T04:56:15.832Z
 
 This scan checks cited gold evidence records for structural health. It cannot
 prove source metadata is historically correct; it catches missing, placeholder,

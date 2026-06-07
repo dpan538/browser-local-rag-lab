@@ -29,13 +29,19 @@ The current implementation uses Node scripts rather than Python:
 - Rule configuration: `scripts/audit_rules.mjs`.
 - Structural and logical audit: `scripts/audit_gold_labels.mjs`.
 - Cited evidence health scan: `scripts/evidence_health_check.mjs`.
+- Evidence value scan: `scripts/evidence_value_check.mjs`.
 - Method-context boundary scan: `scripts/validate_method_context.mjs`.
+- Label group consistency scan: `scripts/label_consistency_check.mjs`.
 - Retrieval sufficiency measurement: `scripts/evaluate_retrieval_sufficiency.mjs`.
+- Exact gold-id retrieval coverage: `scripts/retrieval_coverage.mjs`.
 - Quality dashboard: `scripts/quality_metrics.mjs`.
 - Post-generation contract validation:
   `scripts/validate_generation_contract.mjs`.
+  `scripts/validate_generation_contract_v2.mjs` is a compatible entrypoint
+  for the same structured evidence-value matching validator.
 - Audit regression comparison: `scripts/regression_test.mjs`.
 - Label change CSV: `scripts/label_change_log.mjs`.
+- New-intent scaffold generator: `scripts/scaffold_intent.mjs`.
 - Fixture generation: `scripts/build_gold_fixture.mjs`.
 
 The adjudication pipeline has three layers.
@@ -58,7 +64,10 @@ The adjudication pipeline has three layers.
    - review-queue size;
    - evidence overuse anomalies;
    - cited evidence health findings;
+   - cited evidence value validity;
    - method-context boundary findings;
+   - label field-set consistency within intent/refusal/lane groups;
+   - exact gold evidence id coverage;
    - retrieval sufficiency, field coverage, and negative-control degradation.
 
 Generated answers add a fourth layer:
@@ -232,6 +241,9 @@ Warning:
 - route evidence appears outside the requested region or period;
 - cited evidence has unknown creator, unresolved region, or rights-review
   state;
+- cited evidence has unusual but parseable value shapes that should remain
+  visible in reports;
+- label field sets drift within the same intent/refusal/lane group;
 - generated answer does not visibly include an evidence value for a required
   field;
 - non-typical but legal configuration that may deserve later inspection.
@@ -253,6 +265,8 @@ The audit report should be read as a small quality dashboard:
 - `rule_config_fail_count`: rule-table inconsistencies that block strict mode.
 - `empty_retrieval_integrity`: percentage of no-evidence refusal retrieval
   rows that returned no records.
+- `best_gold_id_coverage_rate`: exact match rate between retrieved ids and
+  label `gold_evidence_ids`.
 
 The retrieval sufficiency report adds:
 
@@ -284,6 +298,9 @@ As of the current seed fixture:
 - anomaly fail findings: 0;
 - rule config fail findings: 0;
 - empty retrieval integrity: 100%;
+- evidence value fail findings: 0;
+- label consistency warning findings: 0;
+- best exact gold-id coverage: 0.889;
 - best first candidate packet: top-3 compressed with topology and source/rights;
 - current top-3 sufficiency: 0.933.
 
@@ -297,9 +314,12 @@ After changing fixture generation, labels, rules, or retrieval logic, run:
 ```bash
 npm run gold:build
 npm run evidence:health:strict
+npm run evidence:value:strict
 npm run method:context:strict
+npm run labels:consistency:strict
 npm run audit:labels:strict
 npm run gold:sufficiency
+npm run retrieval:coverage
 npm run audit:quality
 git diff --check
 ```
@@ -331,6 +351,7 @@ After Qwen answers are generated into a JSONL file with `query_id` and
 
 ```bash
 npm run generation:contract -- path/to/answers.jsonl --strict
+npm run generation:contract:v2 -- path/to/answers.jsonl --strict
 ```
 
 When changing rule tables, compare the previous audit JSON with the new audit
@@ -355,3 +376,9 @@ rules.
    intent-specific evidence checks together.
 5. Re-run the full gate until strict audit has no fail findings and no
    rule-config failures.
+
+Use the scaffold helper for a review artifact, not an automatic edit:
+
+```bash
+npm run scaffold:intent -- --intent=new_intent --lanes=research_answer,refusal_more_context --required=record_id,title,source
+```

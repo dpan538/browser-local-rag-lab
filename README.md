@@ -61,8 +61,11 @@ From the repository root:
 ```bash
 npm run gold:build
 npm run evidence:health:strict
+npm run evidence:value:strict
 npm run method:context:strict
+npm run labels:consistency:strict
 npm run gold:sufficiency
+npm run retrieval:coverage
 npm run audit:labels
 npm run audit:labels:strict
 npm run audit:quality
@@ -76,6 +79,7 @@ label contract:
 
 ```bash
 npm run generation:contract -- path/to/answers.jsonl --strict
+npm run generation:contract:v2 -- path/to/answers.jsonl --strict
 ```
 
 When changing rules or labels, optional guardrails are available:
@@ -83,6 +87,7 @@ When changing rules or labels, optional guardrails are available:
 ```bash
 npm run audit:regression -- reports/baseline_audit.json reports/gold_label_audit_v0.json
 npm run labels:change-log -- old_labels.jsonl fixtures/gold/labels.jsonl
+npm run scaffold:intent -- --intent=new_intent --lanes=research_answer,refusal_more_context --required=record_id,title,source
 ```
 
 For a local browser view:
@@ -114,6 +119,7 @@ The benchmark records:
 - estimated prompt tokens;
 - source/rights preservation;
 - no-evidence refusal correctness;
+- exact gold evidence id coverage;
 - generation status;
 - placeholders for model load, tokenization, TTFT, total latency, output
   tokens, tokens/s, and WebGPU device errors.
