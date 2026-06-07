@@ -19,6 +19,7 @@ repo, not to the archive product process.
 
 - `BENCHMARK_REPORT_v0.md`
 - `METHOD_V0.md`
+- `GOLD_LABEL_AUDIT_v0.md`
 - `RETRIEVAL_SUFFICIENCY_v0.md`
 - `benchmark_baseline_v0.json`
 - `benchmark_baseline_v0.csv`

@@ -1,0 +1,396 @@
+{
+  "generated_at": "2026-06-07T02:37:57.651Z",
+  "summary": {
+    "label_count": 30,
+    "stable_by_rule": 16,
+    "needs_human_review": 14,
+    "fail_count": 0,
+    "warn_count": 2,
+    "by_intent": {
+      "archive_orientation": {
+        "total": 3,
+        "stable_by_rule": 3,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "casual_archive_help": {
+        "total": 2,
+        "stable_by_rule": 2,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "comparison": {
+        "total": 2,
+        "stable_by_rule": 0,
+        "needs_human_review": 2,
+        "fails": 0,
+        "warnings": 0
+      },
+      "current_object_explanation": {
+        "total": 3,
+        "stable_by_rule": 3,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "first_earliest_claim": {
+        "total": 3,
+        "stable_by_rule": 0,
+        "needs_human_review": 3,
+        "fails": 0,
+        "warnings": 0
+      },
+      "method_process_question": {
+        "total": 2,
+        "stable_by_rule": 0,
+        "needs_human_review": 2,
+        "fails": 0,
+        "warnings": 2
+      },
+      "more_context": {
+        "total": 2,
+        "stable_by_rule": 0,
+        "needs_human_review": 2,
+        "fails": 0,
+        "warnings": 0
+      },
+      "no_evidence_refusal": {
+        "total": 3,
+        "stable_by_rule": 3,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "region_period_recommendation": {
+        "total": 5,
+        "stable_by_rule": 0,
+        "needs_human_review": 5,
+        "fails": 0,
+        "warnings": 0
+      },
+      "source_rights_question": {
+        "total": 5,
+        "stable_by_rule": 5,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      }
+    }
+  },
+  "audits": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "gold_lane": "help",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ02",
+      "intent": "archive_orientation",
+      "gold_lane": "help",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ03",
+      "intent": "archive_orientation",
+      "gold_lane": "help",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ04",
+      "intent": "casual_archive_help",
+      "gold_lane": "help",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "gold_lane": "fast_answer",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ06",
+      "intent": "current_object_explanation",
+      "gold_lane": "fast_answer",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "gold_lane": "fast_answer",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ08",
+      "intent": "source_rights_question",
+      "gold_lane": "source_rights",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ09",
+      "intent": "first_earliest_claim",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ10",
+      "intent": "first_earliest_claim",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ11",
+      "intent": "first_earliest_claim",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ15",
+      "intent": "region_period_recommendation",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ17",
+      "intent": "region_period_recommendation",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ18",
+      "intent": "region_period_recommendation",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ19",
+      "intent": "source_rights_question",
+      "gold_lane": "source_rights",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ20",
+      "intent": "source_rights_question",
+      "gold_lane": "source_rights",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ21",
+      "intent": "source_rights_question",
+      "gold_lane": "source_rights",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ22",
+      "intent": "source_rights_question",
+      "gold_lane": "source_rights",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "code": "insufficient_without_refusal",
+          "detail": "should usually ask for context or refuse"
+        }
+      ]
+    },
+    {
+      "query_id": "BQ24",
+      "intent": "method_process_question",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 1,
+      "findings": [
+        {
+          "severity": "warn",
+          "code": "insufficient_without_refusal",
+          "detail": "should usually ask for context or refuse"
+        }
+      ]
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "gold_lane": "research_answer",
+      "stable_by_rule": false,
+      "needs_human_review": true,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ27",
+      "intent": "no_evidence_refusal",
+      "gold_lane": "refusal_more_context",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ28",
+      "intent": "no_evidence_refusal",
+      "gold_lane": "refusal_more_context",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ29",
+      "intent": "no_evidence_refusal",
+      "gold_lane": "refusal_more_context",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    },
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "gold_lane": "help",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
+      "warn_count": 0,
+      "findings": []
+    }
+  ]
+}

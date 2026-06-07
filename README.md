@@ -61,6 +61,7 @@ From the repository root:
 ```bash
 npm run gold:build
 npm run gold:sufficiency
+npm run audit:labels
 npm run benchmark
 npm run analyze
 ```
