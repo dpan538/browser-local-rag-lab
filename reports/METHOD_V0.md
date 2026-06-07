@@ -16,6 +16,8 @@ This lab now follows a measurement-first method:
    qualitative reading.
 9. Decompose browser runtime metrics into cache, load, tokenization, prefill,
    TTFT, decode, total latency, and WebGPU failure classes.
+10. Import browser-exported WebLLM results into the report directory instead of
+    committing model artifacts, browser cache, or device-local runtime state.
 
 ## Current Seed Findings
 
@@ -86,6 +88,36 @@ The method is now ready for the first controlled execution round. The first run
 should use top-3 compressed packets with topology and source/rights fields,
 while keeping exact gold-id misses visible as a retrieval alignment issue rather
 than hiding them behind required-field sufficiency.
+
+## WebLLM Runtime Round
+
+The first real Qwen runtime experiment uses `browser_lab/webllm_round.html`.
+This page loads a research-only WebLLM/MLC custom model configuration for
+`Qwen3.5-0.8B-q4f16_1-MLC`, runs the approved
+`top3_compressed_topology_source_rights` evidence packet, streams answers, and
+exports a JSON record with model load, TTFT, total latency, approximate output
+tokens, tokens/s, prompt size, WebGPU probe status, and device/runtime errors.
+
+The browser page is intentionally manual-triggered: opening the page does not
+download a model. The user must click `Load WebLLM`, and any model artifacts or
+browser cache remain local to that browser session. They are never part of the
+research fixture package.
+
+After download, the exported JSON is imported with:
+
+```bash
+npm run webllm:import -- path/to/webllm_round_01_export.json --strict
+```
+
+The importer writes:
+
+- `reports/webllm_round_01.json`
+- `reports/webllm_round_01_answers.jsonl`
+- `reports/WEBLLM_ROUND_01.md`
+
+The imported answer JSONL is immediately checked by the existing generation
+contract. Contract failures block answer-quality claims even if runtime metrics
+look successful.
 
 ## Post-Generation Contract
 

@@ -103,9 +103,30 @@ http://127.0.0.1:4177/browser_lab/index.html
 ```
 
 The browser lab is a static research UI. It performs local retrieval and
-evidence-packet construction from the fixture. Qwen generation is represented
-as a measured slot to be filled by a later explicit runtime experiment; this
-avoids downloading weights or writing browser cache in the scaffold.
+evidence-packet construction from the fixture.
+
+For the first real WebLLM/Qwen runtime round, open:
+
+```text
+http://127.0.0.1:4177/browser_lab/webllm_round.html
+```
+
+Then:
+
+1. Click `Probe WebGPU`.
+2. Click `Load WebLLM`.
+3. Run the selected query or `Run all 30`.
+4. Click `Download results`.
+5. Import the browser-exported JSON:
+
+```bash
+npm run webllm:import -- path/to/webllm_round_01_export.json --strict
+```
+
+The WebLLM page uses a research-only custom MLC/WebLLM model configuration for
+`Qwen3.5-0.8B-q4f16_1-MLC`. This is not a product runtime path. The browser may
+download and cache model artifacts locally during the run; those artifacts are
+not committed and are outside the fixture package.
 
 ## Metrics
 
@@ -149,6 +170,11 @@ evidence-packet size and field retention can be tested without changing product
 Assistant code. Top-3 compressed packets with topology plus source/rights fields
 are the best first Assistant baseline. Top-8 packets belong in Research mode
 until browser tokenization, TTFT, and WebGPU stability are measured.
+
+The next active milestone is a real browser-local WebLLM round using the
+approved top-3 compressed evidence packet. Its output must be imported through
+`scripts/import_webllm_round.mjs` and pass the generation contract before it can
+support answer-quality claims.
 
 ## Limitations
 

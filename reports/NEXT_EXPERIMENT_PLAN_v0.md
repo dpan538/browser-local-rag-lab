@@ -10,6 +10,22 @@ WebGPU errors.
 Success condition: at least one complete cold run and one complete warm run for
 top-3 compressed packets without device failure.
 
+Current implementation path:
+
+```bash
+npm run serve
+```
+
+Open `http://127.0.0.1:4177/browser_lab/webllm_round.html`, run the browser
+experiment, download the exported JSON, then import it with:
+
+```bash
+npm run webllm:import -- path/to/webllm_round_01_export.json --strict
+```
+
+The import must write `WEBLLM_ROUND_01.md` and pass the generation contract
+before the generated answers can be used for quality claims.
+
 ## Priority 2: Top-K And Field Ablation
 
 Compare top 1, top 3, and top 8 packets under Assistant and Research lanes.

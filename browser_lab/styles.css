@@ -89,12 +89,14 @@ label {
 }
 
 select,
-button {
+button,
+input {
   min-height: 36px;
   border: 1px solid var(--line);
   background: var(--panel);
   color: var(--ink);
   padding: 0 10px;
+  min-width: 0;
 }
 
 button {
@@ -102,6 +104,15 @@ button {
   color: #fff;
   border-color: var(--accent);
   cursor: pointer;
+  white-space: nowrap;
+}
+
+.runtime-controls {
+  grid-template-columns: minmax(170px, 1fr) minmax(260px, 1.4fr) minmax(320px, 1.6fr) auto auto;
+}
+
+.runtime-controls input {
+  width: 100%;
 }
 
 .checkline {

@@ -19,6 +19,7 @@ repo, not to the archive product process.
 
 - `BENCHMARK_REPORT_v0.md`
 - `EXECUTION_ROUND_01.md`
+- `WEBLLM_ROUND_01.md` when a browser-exported WebLLM run is imported
 - `METHOD_V0.md`
 - `GOLD_LABEL_AUDIT_v0.md`
 - `EVIDENCE_HEALTH_v0.md`
@@ -33,6 +34,8 @@ repo, not to the archive product process.
 - `benchmark_baseline_v0.csv`
 - `execution_round_01.json`
 - `execution_round_01_answers.jsonl`
+- `webllm_round_01.json` when a browser-exported WebLLM run is imported
+- `webllm_round_01_answers.jsonl` when a browser-exported WebLLM run is imported
 - `retrieval_sufficiency_v0.json`
 - `retrieval_sufficiency_v0.csv`
 - `evidence_health_v0.json`
@@ -52,3 +55,16 @@ Do not copy these reports back into the archive product process unless a later
 project decision explicitly asks for a short decision summary. The archive may
 remain the fixture source, but research reports and runtime experiments should
 live here.
+
+## WebLLM Runtime Imports
+
+The WebLLM runtime page writes a browser-exported JSON file from
+`browser_lab/webllm_round.html`. Import it with:
+
+```bash
+npm run webllm:import -- path/to/webllm_round_01_export.json --strict
+```
+
+The import step writes the normalized runtime report and the answer JSONL used
+by the generation contract. Browser model cache, downloaded artifacts, and
+device-specific local state must not be copied into this folder.

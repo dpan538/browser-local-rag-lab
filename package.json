@@ -22,6 +22,7 @@
     "retrieval:coverage": "node scripts/retrieval_coverage.mjs",
     "generation:contract": "node scripts/validate_generation_contract.mjs",
     "generation:contract:v2": "node scripts/validate_generation_contract_v2.mjs",
+    "webllm:import": "node scripts/import_webllm_round.mjs",
     "audit:regression": "node scripts/regression_test.mjs",
     "labels:change-log": "node scripts/label_change_log.mjs",
     "scaffold:intent": "node scripts/scaffold_intent.mjs",

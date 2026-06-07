@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebLLM Qwen Runtime Round</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="lab-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">research-only webgpu runtime</p>
+          <h1>WebLLM Qwen execution round</h1>
+        </div>
+        <div class="runtime-pill" id="runtimeStatus">not loaded</div>
+      </header>
+
+      <section class="controls runtime-controls" aria-label="WebLLM runtime controls">
+        <label>
+          Model id
+          <input id="modelId" value="Qwen3.5-0.8B-q4f16_1-MLC" />
+        </label>
+        <label>
+          Model URL
+          <input id="modelUrl" value="https://huggingface.co/mlc-ai/Qwen3.5-0.8B-q4f16_1-MLC" />
+        </label>
+        <label>
+          Model lib URL
+          <input id="modelLibUrl" value="https://raw.githubusercontent.com/akaashrp/mlc-binaries/main/Qwen3.5-0.8B-q4f16_1-webgpu-mlc.wasm" />
+        </label>
+        <button id="probeButton" type="button">Probe WebGPU</button>
+        <button id="loadButton" type="button">Load WebLLM</button>
+      </section>
+
+      <section class="controls" aria-label="Generation controls">
+        <label>
+          Query
+          <select id="querySelect"></select>
+        </label>
+        <label>
+          Max tokens
+          <input id="maxTokens" type="number" min="16" max="512" value="160" />
+        </label>
+        <label>
+          Temperature
+          <input id="temperature" type="number" min="0" max="2" step="0.1" value="0.2" />
+        </label>
+        <button id="runOneButton" type="button">Run selected</button>
+        <button id="runAllButton" type="button">Run all 30</button>
+        <button id="downloadButton" type="button">Download results</button>
+      </section>
+
+      <section class="metrics" aria-label="Measured metrics">
+        <div><span>model load</span><strong id="metricLoad">-</strong></div>
+        <div><span>TTFT</span><strong id="metricTtft">-</strong></div>
+        <div><span>total</span><strong id="metricTotal">-</strong></div>
+        <div><span>tokens/s</span><strong id="metricTps">-</strong></div>
+        <div><span>WebGPU</span><strong id="metricWebgpu">not probed</strong></div>
+      </section>
+
+      <section class="workspace">
+        <article class="panel">
+          <h2>Prompt / answer</h2>
+          <pre id="answerOutput"></pre>
+        </article>
+        <article class="panel">
+          <h2>Run log</h2>
+          <pre id="runLog"></pre>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="./webllm_round.js"></script>
+  </body>
+</html>
