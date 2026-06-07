@@ -1,0 +1,25 @@
+{
+  "name": "browser-local-rag-lab",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Reproducible research lab for browser-local small-model RAG with WebGPU/WebLLM runtimes, evidence-packet compression, latency benchmarks, and rights-aware archive fixtures.",
+  "scripts": {
+    "benchmark": "node scripts/run_benchmark.mjs",
+    "analyze": "node scripts/analyze_results.mjs",
+    "serve": "python3 -m http.server 4177 --bind 127.0.0.1"
+  },
+  "keywords": [
+    "browser-local-rag",
+    "webgpu",
+    "webllm",
+    "small-language-models",
+    "qwen",
+    "onnx-runtime",
+    "transformers-js",
+    "latency-benchmark",
+    "evidence-compression",
+    "digital-archives"
+  ],
+  "license": "MIT"
+}
