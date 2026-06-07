@@ -1,147 +1,263 @@
-# Gold Label Adjudication Guide v0
+# Gold Label Adjudication Guide v1
 
-This guide defines how to review `fixtures/gold/labels.jsonl` without turning
-the process into a subjective blind test. The goal is to produce reproducible
-labels for retrieval sufficiency, refusal behavior, and answer-lane selection.
+This guide defines the executable adjudication protocol for
+`fixtures/gold/*.jsonl`. It is a label-quality system, not a blind answer
+preference test. The purpose is to decide whether each benchmark query has a
+deterministic evidence/refusal contract before any Qwen generation or runtime
+measurement is trusted.
+
+Generated model text is never archive evidence. It is an experimental output
+judged against the evidence packet.
 
 ## Review Unit
 
-Each review unit is:
+Each adjudication unit contains:
 
 - one query from `fixtures/gold/queries.jsonl`;
-- its seed label from `fixtures/gold/labels.jsonl`;
-- the candidate evidence records named in `gold_evidence_ids`;
-- the required fields and `must_not_invent_fields`.
+- one label from `fixtures/gold/labels.jsonl`;
+- zero or more evidence records from `fixtures/gold/records.jsonl`;
+- the label's `required_fields`, `must_not_invent_fields`, `gold_lane`,
+  `sufficient_context`, `refusal_expected`, and `gold_evidence_ids`.
 
-Review the label, not the model answer. Generation is evaluated later.
+The reviewer or script evaluates the contract among those fields. It does not
+judge a generated answer.
 
-## Decision Questions
+## Automation Layers
 
-1. **Intent correctness**
-   - Does `intent` match what the user is asking?
-   - If not, update the intent before judging evidence.
+The current implementation uses Node scripts rather than Python:
 
-2. **Lane correctness**
-   - `help`: orientation or navigation help.
-   - `fast_answer`: bounded object-level factual answer.
-   - `source_rights`: source, rights, image-state, reuse caveat.
-   - `research_answer`: comparison, route, chronology, method, broader context.
-   - `refusal_more_context`: no evidence, unsupported claim, rights upgrade,
-     or question too broad without required evidence.
-   - Lane must be legal for the labeled intent. The audit script treats illegal
-     intent-lane pairs as hard failures.
+- Rule configuration: `scripts/audit_rules.mjs`.
+- Structural and logical audit: `scripts/audit_gold_labels.mjs`.
+- Retrieval sufficiency measurement: `scripts/evaluate_retrieval_sufficiency.mjs`.
+- Fixture generation: `scripts/build_gold_fixture.mjs`.
 
-3. **Evidence sufficiency**
-   - `sufficient_context=true` only if the listed evidence can support the
-     expected answer slots without inventing metadata.
-   - Related evidence is not necessarily sufficient evidence.
-   - Chronology and first/earliest claims require explicit date comparison
-     evidence, not just dated records.
+The adjudication pipeline has three layers.
 
-4. **Refusal expectation**
-   - `refusal_expected=true` when the correct behavior is to refuse or ask for
-     narrower context before generation.
-   - This does not require empty retrieval. A query may retrieve related records
-     and still require refusal.
-   - Hard rule: `sufficient_context=false` requires `refusal_expected=true`.
-   - First/earliest claims and no-evidence refusals are mandatory-refusal
-     intents unless a separate chronology-proof fixture is added.
-   - `more_context` can be answerable when an active object and related context
-     records are available; otherwise it uses `refusal_more_context`.
+1. Structural validation:
+   - query and label records must contain required keys with expected types;
+   - intents and lanes must be known;
+   - gold evidence ids must resolve to fixture records.
 
-5. **Gold evidence ids**
-   - Include only records needed to support the answer.
-   - Do not include many records just because they are top-ranked.
-   - For help/orientation, evidence can be topology/context records.
+2. Logical contract audit:
+   - intent and lane must form a legal pair;
+   - `sufficient_context=false` requires `refusal_expected=true`;
+   - required fields must exist in the label and in the cited evidence packet;
+   - stable rules must be checked against evidence fields, not intent names
+     alone.
 
-6. **Required fields**
-   - These are fields that must be present in the packet for the query to be
-     answerable.
-   - Source/rights questions must require `source`, `rights`, and `image_state`.
-   - Current-object factual questions usually require `record_id`, `title`,
-     `date_text`, `region`, and `source`.
-   - Intent-specific protected fields may also become required answer slots.
-     For example, rights questions must explicitly account for
-     `reuse_permission` and `public_domain_status` if the answer intends to
-     make those claims.
-   - Source/rights labels satisfy those slots through the conservative
-     `rights_interpretation` fields derived from source rights metadata and
-     image-state, not through generated inference.
+3. Quality metrics and anomaly detection:
+   - stable-by-rule rate;
+   - fail and warning counts;
+   - review-queue size;
+   - evidence overuse anomalies;
+   - retrieval sufficiency, field coverage, and negative-control degradation.
 
-7. **Must-not-invent fields**
-   - Always include fields where hallucination would break archive trust:
-     title, creator, date, source, rights.
-   - Add `first_or_earliest_claim` for chronology questions.
-   - Add `reuse_permission` and `public_domain_status` for rights questions.
-   - Global must-not-invent fields protect against unsupported claims when a
-     field is mentioned. They are not automatically required output slots for
-     every query.
-   - Intent-specific must-not-invent fields are stricter and are checked against
-     the required-field contract unless the label is an explicit refusal.
+## State Model
 
-## Review States
+Each label is classified into one of three states:
 
-- `seed_auto_needs_human_review`: generated by script; not paper evidence.
-- `human_reviewed`: reviewed under this guide.
-- Future optional state: `double_reviewed` if two reviewers independently agree.
+- `STABLE_BY_RULE`: the contract passes structural checks, logical checks, and
+  the intent-specific stable rule.
+- `FAIL`: the label has a hard contradiction or missing evidence/field needed
+  for its own contract.
+- `NEEDS_HUMAN_REVIEW`: no hard failure, but the rule table does not yet define
+  a deterministic evidence/refusal contract for that case.
 
-## Stable Rule Decisions
+The target for this seed lab is `FAIL=0`. A zero review queue means the current
+fixture is ready for retrieval and controlled generation experiments; it does
+not mean the benchmark is final paper evidence.
 
-Some labels can be approved by rule with minimal interpretation:
+## Intent And Lane Rules
 
-- Active-object factual query with one active object and source fields present.
-- Source/rights query with source URL, rights label, and image-state present.
-- Comparison query with two named evidence records and source fields present.
-- Region-period route with multiple records matching the requested region and
-  period, or refusal when no such route exists.
-- Method/process query with the research-only method context fixture record.
-- Active-object more-context query with current and related context records.
-- First/earliest claim without chronology proof: refusal expected.
-- Explicit rights upgrade request: refusal expected.
-- No-evidence fictional entity request: refusal expected.
+Legal lanes are:
 
-Stable-by-rule is not assigned from intent alone. The audit must verify:
+- `help`: orientation or navigation guidance.
+- `fast_answer`: bounded object-level factual answer.
+- `source_rights`: source, rights, image-state, and reuse caveat.
+- `research_answer`: comparison, route, method, or broader context answer.
+- `refusal_more_context`: unsupported claim, insufficient evidence, rights
+  upgrade, or request that needs narrower context.
 
-- known intent and known lane;
-- legal intent-lane pair;
-- no hard conflict between sufficiency and refusal;
-- all required gold evidence ids exist;
-- the gold evidence records contain the fields required by the stable rule.
+Current legal intent-lane pairs are encoded in `INTENT_LANE_MAP`:
 
-## Audit Severity
+| Intent | Legal lanes |
+|---|---|
+| `archive_orientation` | `help` |
+| `casual_archive_help` | `help` |
+| `current_object_explanation` | `fast_answer`, `refusal_more_context` |
+| `source_rights_question` | `source_rights`, `refusal_more_context` |
+| `comparison` | `research_answer`, `refusal_more_context` |
+| `region_period_recommendation` | `research_answer`, `refusal_more_context` |
+| `method_process_question` | `research_answer`, `refusal_more_context` |
+| `more_context` | `research_answer`, `refusal_more_context` |
+| `first_earliest_claim` | `research_answer`, `refusal_more_context` |
+| `no_evidence_refusal` | `refusal_more_context` |
 
-- Fail: structural error, unknown intent/lane, intent-lane contradiction,
-  evidence-insufficient-but-not-refusal, mandatory-refusal violation, missing
-  gold evidence, or missing required evidence fields.
-- Warning: heuristic intent mismatch, non-typical query/lane alignment, unusual
-  evidence count, or distribution anomaly.
-- Needs human review: no hard failure, but the rule table does not yet define a
-  deterministic evidence/refusal contract for the query.
+Illegal intent-lane pairs are hard failures.
 
-## Requires Human Judgment
+## Evidence And Refusal Locks
 
-These should not be auto-approved unless the fixture has an explicit rule and
-field-level evidence contract:
+These rules are non-negotiable:
 
-- chronology claims that assert "first" or "earliest";
-- region-period routes outside current fixture coverage;
-- comparison questions where fewer than two named records are present;
-- method/process questions without the method context fixture;
-- any query where gold evidence is topically related but not sufficient.
+- `sufficient_context=false` implies `refusal_expected=true`.
+- A refusal label may still retrieve related records; refusal is a generation
+  gate, not necessarily an empty-search requirement.
+- `no_evidence_refusal` must use `refusal_more_context`.
+- `first_earliest_claim` is a stable refusal unless a separate chronology-proof
+  fixture is introduced.
+- If a route, comparison, or context request lacks enough evidence to satisfy
+  its required fields, it must become `refusal_more_context`.
 
-## Output
+## Required Fields
 
-After review, update `fixtures/gold/labels.jsonl` and regenerate:
+Required fields are answer slots that must be present in the evidence packet.
+They are checked by `REQUIRED_FIELDS_BY_INTENT`.
+
+| Intent | Required fields when answerable |
+|---|---|
+| `archive_orientation` | `topology` |
+| `casual_archive_help` | `topology` |
+| `current_object_explanation` | `record_id`, `title`, `date_text`, `region`, `source` |
+| `source_rights_question` | `record_id`, `title`, `source`, `rights`, `image_state`, `reuse_permission`, `public_domain_status` |
+| `comparison` | `record_id`, `title`, `source` |
+| `region_period_recommendation` | `record_id`, `title`, `date_text`, `region`, `source` |
+| `method_process_question` | `method_context` |
+| `more_context` | `record_id`, `title`, `date_text`, `region`, `source`, `topology` |
+| `first_earliest_claim` | none when refusal; chronology proof required if answerable |
+| `no_evidence_refusal` | none |
+
+Source/rights labels satisfy `reuse_permission` and `public_domain_status`
+through conservative `rights_interpretation` fields derived from source rights
+metadata and image-state. They must not be inferred by the model.
+
+## Must-Not-Invent Fields
+
+Every label protects fields where hallucination would break archive trust:
+
+- `title`;
+- `creator`;
+- `date`;
+- `source`;
+- `rights`.
+
+Intent-specific additions:
+
+- `first_earliest_claim`: `first_or_earliest_claim`;
+- `source_rights_question`: `reuse_permission`, `public_domain_status`.
+
+Global must-not-invent fields are protection rules: if an answer mentions them,
+it must be grounded. They are not automatically required output slots for every
+intent. Intent-specific protected fields are stricter and are checked against
+the required-field contract unless the label is an explicit refusal.
+
+## Stable Rules
+
+Stable-by-rule requires both a valid label contract and field-level evidence.
+It is never assigned from the intent string alone.
+
+| Intent | Stable condition |
+|---|---|
+| `archive_orientation` | topology/context evidence exists |
+| `casual_archive_help` | topology/context evidence exists |
+| `current_object_explanation` | active object evidence has object id, title, date, region, and source |
+| `source_rights_question` | source, rights, image-state, and conservative rights interpretation are present |
+| `comparison` | at least two named records are cited and each has title/source support |
+| `region_period_recommendation` | multiple records match the requested region/period, or the label is a stable refusal because coverage is absent |
+| `method_process_question` | the research-only method context fixture record is cited |
+| `more_context` | active object plus related context records are cited, or the label is a stable refusal |
+| `first_earliest_claim` | stable refusal unless chronology proof is explicitly added |
+| `no_evidence_refusal` | stable refusal |
+
+The current seed fixture includes `LAB-METHOD-CONTEXT-V0` as a research-only
+method record. It is not archive object evidence.
+
+## Severity Rules
+
+Fail:
+
+- unknown intent or lane;
+- illegal intent-lane pair;
+- `sufficient_context=false` without `refusal_expected=true`;
+- missing gold evidence id;
+- missing required field in label or evidence;
+- comparison with fewer than two evidence records;
+- answerable route with fewer than two route records.
+
+Warning:
+
+- query-text heuristic does not match the labeled intent;
+- evidence id is unusually overused;
+- non-typical but legal configuration that may deserve later inspection.
+
+Needs human review:
+
+- no hard failure, but no deterministic rule exists yet.
+
+## Quality Metrics
+
+The audit report should be read as a small quality dashboard:
+
+- `stable_by_rule / label_count`: automatic pass rate.
+- `fail_count`: hard label-contract defects.
+- `warn_count`: non-blocking risk signals.
+- `needs_human_review`: uncovered rule surface.
+- `anomaly_count`: dataset-shape warnings.
+
+The retrieval sufficiency report adds:
+
+- sufficiency rate;
+- evidence coverage rate;
+- required-field coverage rate;
+- refusal-gate correctness;
+- empty-retrieval correctness for true no-evidence refusals;
+- prompt-token estimate.
+
+The expected negative controls are:
+
+- removing topology should degrade route/context questions;
+- removing source/rights should degrade source/rights questions;
+- top-8 should be justified only if it improves sufficiency enough to offset
+  prompt-token cost.
+
+## Current Baseline
+
+As of the current seed fixture:
+
+- labels: 30;
+- stable by rule: 30;
+- needs human review: 0;
+- fail findings: 0;
+- warning findings: 0;
+- anomaly: `SURF-GAX1970R001` is heavily reused in seed labels;
+- best first candidate packet: top-3 compressed with topology and source/rights;
+- current top-3 sufficiency: 0.933.
+
+These numbers describe the label contract and retrieval packet behavior. They
+do not validate generated Qwen answers.
+
+## Required Commands
+
+After changing fixture generation, labels, rules, or retrieval logic, run:
 
 ```bash
-npm run gold:sufficiency
-npm run audit:labels
-```
-
-Use strict mode as a quality gate:
-
-```bash
+npm run gold:build
 npm run audit:labels:strict
+npm run gold:sufficiency
+git diff --check
 ```
 
-Do not use generated model answers as evidence when reviewing labels.
+Also run the repository safety scan before commit. Keep the scan pattern outside
+this document so the guide does not trigger the scanner by quoting sensitive
+terms.
+
+## Promotion Rule
+
+A label set may be used for controlled generation experiments only when:
+
+- strict audit exits successfully;
+- `FAIL=0`;
+- any remaining review queue is explicitly accepted or resolved;
+- retrieval sufficiency has been regenerated after the latest label changes.
+
+Generated model answers must then be evaluated separately for faithfulness,
+non-invention, refusal correctness, and useful research guidance.
