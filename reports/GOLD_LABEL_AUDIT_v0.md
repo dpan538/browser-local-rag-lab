@@ -1,6 +1,6 @@
 # Gold Label Audit v0
 
-Generated: 2026-06-07T03:23:43.338Z
+Generated: 2026-06-07T04:07:30.526Z
 
 This audit checks label consistency against the adjudication guide. It does not
 judge generated model answers.
@@ -13,6 +13,8 @@ judge generated model answers.
 - Fail findings: 0
 - Warning findings: 0
 - Anomalies: 1
+- Anomaly fail findings: 0
+- Rule config fail findings: 0
 
 ## By Intent
 
@@ -39,7 +41,13 @@ judge generated model answers.
 
 | Severity | Code | Detail |
 |---|---|---|
-| warn | A002_evidence_overused | SURF-GAX1970R001 used 9 times |
+| warn | A002_evidence_overused_warn | SURF-GAX1970R001 used 9/30 labels (0.300) |
+
+## Rule Config Scan
+
+| Severity | Code | Detail |
+|---|---|---|
+| none | none | none |
 
 ## Interpretation
 

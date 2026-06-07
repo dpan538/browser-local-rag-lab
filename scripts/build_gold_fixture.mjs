@@ -46,7 +46,7 @@ function requiredFieldsFor(query, refusalExpected = false) {
     casual_archive_help: ["topology"],
     current_object_explanation: [...shared, "date_text", "region", "source"],
     source_rights_question: [...shared, "source", "rights", "image_state", "reuse_permission", "public_domain_status"],
-    first_earliest_claim: [...shared, "date_text", "source"],
+    first_earliest_claim: [...shared, "date_text", "source", "first_or_earliest_claim"],
     comparison: [...shared, "source"],
     region_period_recommendation: [...shared, "date_text", "region", "source"],
     method_process_question: ["method_context"],

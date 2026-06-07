@@ -29,6 +29,7 @@ The current implementation uses Node scripts rather than Python:
 - Rule configuration: `scripts/audit_rules.mjs`.
 - Structural and logical audit: `scripts/audit_gold_labels.mjs`.
 - Retrieval sufficiency measurement: `scripts/evaluate_retrieval_sufficiency.mjs`.
+- Quality dashboard: `scripts/quality_metrics.mjs`.
 - Fixture generation: `scripts/build_gold_fixture.mjs`.
 
 The adjudication pipeline has three layers.
@@ -103,10 +104,13 @@ These rules are non-negotiable:
 - A refusal label may still retrieve related records; refusal is a generation
   gate, not necessarily an empty-search requirement.
 - `no_evidence_refusal` must use `refusal_more_context`.
-- `first_earliest_claim` is a stable refusal unless a separate chronology-proof
-  fixture is introduced.
+- `first_earliest_claim` is a stable refusal unless the cited evidence includes
+  an explicit chronology proof and `first_or_earliest_claim`.
 - If a route, comparison, or context request lacks enough evidence to satisfy
   its required fields, it must become `refusal_more_context`.
+- If an answerable label has intent-specific `must_not_invent_fields`, those
+  fields must exist in the cited gold evidence. Otherwise the label must refuse
+  or the fixture must be repaired.
 
 ## Required Fields
 
@@ -123,7 +127,7 @@ They are checked by `REQUIRED_FIELDS_BY_INTENT`.
 | `region_period_recommendation` | `record_id`, `title`, `date_text`, `region`, `source` |
 | `method_process_question` | `method_context` |
 | `more_context` | `record_id`, `title`, `date_text`, `region`, `source`, `topology` |
-| `first_earliest_claim` | none when refusal; chronology proof required if answerable |
+| `first_earliest_claim` | none when refusal; `record_id`, `title`, `date_text`, `source`, `first_or_earliest_claim` when answerable |
 | `no_evidence_refusal` | none |
 
 Source/rights labels satisfy `reuse_permission` and `public_domain_status`
@@ -155,17 +159,22 @@ the required-field contract unless the label is an explicit refusal.
 Stable-by-rule requires both a valid label contract and field-level evidence.
 It is never assigned from the intent string alone.
 
+The stable-rule field set must cover every answerable required field for that
+intent. `scripts/audit_gold_labels.mjs --strict` runs a rule-config scan and
+fails if `STABLE_RULE_REQUIRED_FIELDS` leaves a gap against
+`REQUIRED_FIELDS_BY_INTENT`.
+
 | Intent | Stable condition |
 |---|---|
 | `archive_orientation` | topology/context evidence exists |
 | `casual_archive_help` | topology/context evidence exists |
-| `current_object_explanation` | active object evidence has object id, title, date, region, and source |
-| `source_rights_question` | source, rights, image-state, and conservative rights interpretation are present |
-| `comparison` | at least two named records are cited and each has title/source support |
-| `region_period_recommendation` | multiple records match the requested region/period, or the label is a stable refusal because coverage is absent |
+| `current_object_explanation` | answerable: active object evidence has object id, title, date, region, and source; refusal: those fields are not jointly available |
+| `source_rights_question` | answerable: object id, title, source, rights, image-state, reuse permission, and public-domain status are present; refusal: source/rights/image-state support is missing or cannot be conservatively interpreted |
+| `comparison` | answerable: at least two named records are cited and each has object id, title, and source support; refusal: fewer than two complete records are available |
+| `region_period_recommendation` | answerable: multiple records match the requested region/period and each has object id, title, date, region, and source; refusal: coverage is absent |
 | `method_process_question` | the research-only method context fixture record is cited |
 | `more_context` | active object plus related context records are cited, or the label is a stable refusal |
-| `first_earliest_claim` | stable refusal unless chronology proof is explicitly added |
+| `first_earliest_claim` | refusal: no chronology proof; answerable: chronology proof and `first_or_earliest_claim` are explicitly present |
 | `no_evidence_refusal` | stable refusal |
 
 The current seed fixture includes `LAB-METHOD-CONTEXT-V0` as a research-only
@@ -182,11 +191,16 @@ Fail:
 - missing required field in label or evidence;
 - comparison with fewer than two evidence records;
 - answerable route with fewer than two route records.
+- answerable first/earliest claim without chronology proof;
+- rule config gap between required fields and stable-rule fields;
+- evidence overuse above the fail threshold.
 
 Warning:
 
 - query-text heuristic does not match the labeled intent;
 - evidence id is unusually overused;
+- comparison evidence is not lightly named by the query text;
+- route evidence appears outside the requested region or period;
 - non-typical but legal configuration that may deserve later inspection.
 
 Needs human review:
@@ -202,6 +216,8 @@ The audit report should be read as a small quality dashboard:
 - `warn_count`: non-blocking risk signals.
 - `needs_human_review`: uncovered rule surface.
 - `anomaly_count`: dataset-shape warnings.
+- `anomaly_fail_count`: dataset-shape defects that block strict mode.
+- `rule_config_fail_count`: rule-table inconsistencies that block strict mode.
 
 The retrieval sufficiency report adds:
 
@@ -228,7 +244,10 @@ As of the current seed fixture:
 - needs human review: 0;
 - fail findings: 0;
 - warning findings: 0;
-- anomaly: `SURF-GAX1970R001` is heavily reused in seed labels;
+- anomaly: `SURF-GAX1970R001` is reused in 9/30 labels and remains a warning at
+  the 30% threshold;
+- anomaly fail findings: 0;
+- rule config fail findings: 0;
 - best first candidate packet: top-3 compressed with topology and source/rights;
 - current top-3 sufficiency: 0.933.
 
@@ -243,6 +262,7 @@ After changing fixture generation, labels, rules, or retrieval logic, run:
 npm run gold:build
 npm run audit:labels:strict
 npm run gold:sufficiency
+npm run audit:quality
 git diff --check
 ```
 
@@ -261,3 +281,25 @@ A label set may be used for controlled generation experiments only when:
 
 Generated model answers must then be evaluated separately for faithfulness,
 non-invention, refusal correctness, and useful research guidance.
+
+Use the full local gate when changing labels, rules, or retrieval logic:
+
+```bash
+npm run audit:full
+```
+
+## New Query Or Rule Evolution
+
+New query types should enter as explicit review cases before they become stable
+rules.
+
+1. Add the query and provisional label with conservative refusal if evidence is
+   incomplete.
+2. Run `npm run audit:full`.
+3. If the label becomes `NEEDS_HUMAN_REVIEW`, decide whether the case is a true
+   exception or a repeatable pattern.
+4. For repeatable patterns, update `INTENT_LANE_MAP`,
+   `REQUIRED_FIELDS_BY_INTENT`, `STABLE_RULE_REQUIRED_FIELDS`, and any
+   intent-specific evidence checks together.
+5. Re-run the full gate until strict audit has no fail findings and no
+   rule-config failures.

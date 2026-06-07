@@ -20,11 +20,13 @@ repo, not to the archive product process.
 - `BENCHMARK_REPORT_v0.md`
 - `METHOD_V0.md`
 - `GOLD_LABEL_AUDIT_v0.md`
+- `QUALITY_METRICS_v0.md`
 - `RETRIEVAL_SUFFICIENCY_v0.md`
 - `benchmark_baseline_v0.json`
 - `benchmark_baseline_v0.csv`
 - `retrieval_sufficiency_v0.json`
 - `retrieval_sufficiency_v0.csv`
+- `QUALITY_METRICS_v0.json`
 - `PAPER_FRAMING_MEMO_v0.md`
 - `NEXT_EXPERIMENT_PLAN_v0.md`
 - `QUALITY_REVIEW_TEMPLATE_v0.md`

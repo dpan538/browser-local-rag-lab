@@ -33,8 +33,11 @@ export const INTENT_LANE_MAP = {
 };
 
 export const MANDATORY_REFUSAL_INTENTS = [
-  "first_earliest_claim",
   "no_evidence_refusal"
+];
+
+export const CHRONOLOGY_PROOF_INTENTS = [
+  "first_earliest_claim"
 ];
 
 export const METHOD_REVIEW_INTENTS = [];
@@ -57,7 +60,7 @@ export const REQUIRED_FIELDS_BY_INTENT = {
   casual_archive_help: ["topology"],
   comparison: ["record_id", "title", "source"],
   current_object_explanation: ["record_id", "title", "date_text", "region", "source"],
-  first_earliest_claim: ["record_id", "title", "date_text", "source"],
+  first_earliest_claim: ["record_id", "title", "date_text", "source", "first_or_earliest_claim"],
   method_process_question: ["method_context"],
   more_context: ["record_id", "title", "date_text", "region", "source", "topology"],
   no_evidence_refusal: [],
@@ -70,13 +73,42 @@ export const STABLE_RULE_REQUIRED_FIELDS = {
   casual_archive_help: ["topology"],
   comparison: ["record_id", "title", "source"],
   current_object_explanation: ["record_id", "title", "date_text", "region", "source"],
-  first_earliest_claim: [],
+  first_earliest_claim: ["record_id", "title", "date_text", "source", "first_or_earliest_claim"],
   method_process_question: ["method_context"],
   more_context: ["record_id", "title", "date_text", "region", "source", "topology"],
   no_evidence_refusal: [],
   region_period_recommendation: ["record_id", "title", "date_text", "region", "source"],
   source_rights_question: ["record_id", "title", "source", "rights", "image_state", "reuse_permission", "public_domain_status"]
 };
+
+export const ANOMALY_THRESHOLDS = {
+  evidence_overuse_warn_ratio: 0.3,
+  evidence_overuse_fail_ratio: 0.5
+};
+
+export function stableRuleConfigFindings() {
+  const findings = [];
+  for (const [intent, requiredFields] of Object.entries(REQUIRED_FIELDS_BY_INTENT)) {
+    const stableFields = STABLE_RULE_REQUIRED_FIELDS[intent];
+    if (!stableFields) {
+      findings.push({
+        severity: "fail",
+        code: "R001_missing_stable_rule",
+        detail: intent
+      });
+      continue;
+    }
+    const missing = requiredFields.filter((field) => !stableFields.includes(field));
+    if (missing.length > 0) {
+      findings.push({
+        severity: "fail",
+        code: "R002_stable_rule_required_field_gap",
+        detail: `${intent}: ${missing.join("|")}`
+      });
+    }
+  }
+  return findings;
+}
 
 export const STRUCTURAL_SCHEMA = {
   query: {

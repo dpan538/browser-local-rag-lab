@@ -1,0 +1,141 @@
+{
+  "generated_at": "2026-06-07T04:07:30.873Z",
+  "label_count": 30,
+  "stable_by_rule_rate": 100,
+  "fail_rate": 0,
+  "review_queue_rate": 0,
+  "warning_rate": 0,
+  "anomaly_count": 1,
+  "anomaly_fail_count": 0,
+  "rule_config_fail_count": 0,
+  "average_evidence_count": 1.2,
+  "median_evidence_count": 1,
+  "required_field_missing_by_intent": {
+    "archive_orientation": 0,
+    "casual_archive_help": 0,
+    "current_object_explanation": 0,
+    "source_rights_question": 0,
+    "first_earliest_claim": 0,
+    "comparison": 0,
+    "region_period_recommendation": 0,
+    "method_process_question": 0,
+    "more_context": 0,
+    "no_evidence_refusal": 0
+  },
+  "top_sufficiency_variants": [
+    {
+      "variant_id": "top3_compressed_topology_source_rights",
+      "sufficiency_rate": 0.933,
+      "evidence_coverage_rate": 0.933,
+      "required_fields_rate": 1,
+      "avg_prompt_tokens_est": 844
+    },
+    {
+      "variant_id": "top3_raw_topology_source_rights",
+      "sufficiency_rate": 0.933,
+      "evidence_coverage_rate": 0.933,
+      "required_fields_rate": 1,
+      "avg_prompt_tokens_est": 962
+    },
+    {
+      "variant_id": "top8_compressed_topology_source_rights",
+      "sufficiency_rate": 0.933,
+      "evidence_coverage_rate": 0.933,
+      "required_fields_rate": 1,
+      "avg_prompt_tokens_est": 2079
+    },
+    {
+      "variant_id": "top3_compressed_no_topology_source_rights",
+      "sufficiency_rate": 0.767,
+      "evidence_coverage_rate": 0.933,
+      "required_fields_rate": 0.767,
+      "avg_prompt_tokens_est": 718
+    },
+    {
+      "variant_id": "top1_compressed_topology_source_rights",
+      "sufficiency_rate": 0.633,
+      "evidence_coverage_rate": 0.633,
+      "required_fields_rate": 1,
+      "avg_prompt_tokens_est": 303
+    },
+    {
+      "variant_id": "top3_compressed_topology_no_source_rights",
+      "sufficiency_rate": 0.467,
+      "evidence_coverage_rate": 0.933,
+      "required_fields_rate": 0.533,
+      "avg_prompt_tokens_est": 523
+    }
+  ],
+  "highest_difficulty_labels": [
+    {
+      "query_id": "BQ09",
+      "intent": "first_earliest_claim",
+      "difficulty": 6,
+      "evidence_count": 0,
+      "refusal_expected": true
+    },
+    {
+      "query_id": "BQ10",
+      "intent": "first_earliest_claim",
+      "difficulty": 6,
+      "evidence_count": 0,
+      "refusal_expected": true
+    },
+    {
+      "query_id": "BQ11",
+      "intent": "first_earliest_claim",
+      "difficulty": 6,
+      "evidence_count": 0,
+      "refusal_expected": true
+    },
+    {
+      "query_id": "BQ15",
+      "intent": "region_period_recommendation",
+      "difficulty": 5,
+      "evidence_count": 0,
+      "refusal_expected": true
+    },
+    {
+      "query_id": "BQ17",
+      "intent": "region_period_recommendation",
+      "difficulty": 5,
+      "evidence_count": 0,
+      "refusal_expected": true
+    },
+    {
+      "query_id": "BQ18",
+      "intent": "region_period_recommendation",
+      "difficulty": 5,
+      "evidence_count": 0,
+      "refusal_expected": true
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "difficulty": 4,
+      "evidence_count": 2,
+      "refusal_expected": false
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "difficulty": 4,
+      "evidence_count": 2,
+      "refusal_expected": false
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "difficulty": 4,
+      "evidence_count": 3,
+      "refusal_expected": false
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "difficulty": 4,
+      "evidence_count": 3,
+      "refusal_expected": false
+    }
+  ]
+}

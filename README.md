@@ -63,6 +63,8 @@ npm run gold:build
 npm run gold:sufficiency
 npm run audit:labels
 npm run audit:labels:strict
+npm run audit:quality
+npm run audit:full
 npm run benchmark
 npm run analyze
 ```

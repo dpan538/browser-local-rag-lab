@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T03:23:43.337Z",
+  "generated_at": "2026-06-07T04:07:30.525Z",
   "summary": {
     "label_count": 30,
     "stable_by_rule": 30,
@@ -7,6 +7,8 @@
     "fail_count": 0,
     "warn_count": 0,
     "anomaly_count": 1,
+    "anomaly_fail_count": 0,
+    "rule_config_fail_count": 0,
     "by_intent": {
       "archive_orientation": {
         "total": 3,
@@ -415,8 +417,9 @@
   "anomalies": [
     {
       "severity": "warn",
-      "code": "A002_evidence_overused",
-      "detail": "SURF-GAX1970R001 used 9 times"
+      "code": "A002_evidence_overused_warn",
+      "detail": "SURF-GAX1970R001 used 9/30 labels (0.300)"
     }
-  ]
+  ],
+  "rule_config_findings": []
 }
