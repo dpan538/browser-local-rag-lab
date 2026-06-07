@@ -1,6 +1,6 @@
 # Evidence Value Check v0
 
-Generated: 2026-06-07T04:56:15.951Z
+Generated: 2026-06-07T05:06:03.966Z
 
 This scan checks value-level validity for cited evidence fields. It complements
 the evidence health scan by checking parseable date text, URL shape, title

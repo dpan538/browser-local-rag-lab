@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-06-07T05:06:19.571Z",
+  "round_id": "execution_round_01",
+  "variant_id": "top3_compressed_topology_source_rights",
+  "producer": "deterministic_contract_probe_no_qwen",
+  "scope": "First controlled execution of the post-retrieval answer contract. This is not a Qwen/WebGPU runtime run.",
+  "answer_count": 30,
+  "by_intent": {
+    "archive_orientation": {
+      "total": 3,
+      "refusal_expected": 0
+    },
+    "casual_archive_help": {
+      "total": 2,
+      "refusal_expected": 0
+    },
+    "current_object_explanation": {
+      "total": 3,
+      "refusal_expected": 0
+    },
+    "source_rights_question": {
+      "total": 5,
+      "refusal_expected": 0
+    },
+    "first_earliest_claim": {
+      "total": 3,
+      "refusal_expected": 3
+    },
+    "comparison": {
+      "total": 2,
+      "refusal_expected": 0
+    },
+    "region_period_recommendation": {
+      "total": 5,
+      "refusal_expected": 3
+    },
+    "method_process_question": {
+      "total": 2,
+      "refusal_expected": 0
+    },
+    "more_context": {
+      "total": 2,
+      "refusal_expected": 0
+    },
+    "no_evidence_refusal": {
+      "total": 3,
+      "refusal_expected": 3
+    }
+  },
+  "contract": {
+    "fail_count": 0,
+    "warn_count": 0,
+    "violations": []
+  },
+  "runtime": {
+    "qwen_generation_run": false,
+    "model_load_ms": null,
+    "tokenization_ms": null,
+    "ttft_ms": null,
+    "total_latency_ms": null,
+    "tokens_per_second": null,
+    "webgpu_error": "not_run_no_model_download"
+  }
+}

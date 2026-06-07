@@ -1,6 +1,6 @@
 # Quality Metrics v0
 
-Generated: 2026-06-07T04:56:16.774Z
+Generated: 2026-06-07T05:06:04.733Z
 
 This report summarizes label-contract health and retrieval-sufficiency behavior.
 It does not evaluate generated model answers.

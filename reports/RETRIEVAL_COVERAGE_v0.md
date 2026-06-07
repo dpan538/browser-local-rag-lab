@@ -1,6 +1,6 @@
 # Retrieval Coverage v0
 
-Generated: 2026-06-07T04:56:16.645Z
+Generated: 2026-06-07T05:06:04.607Z
 
 This report checks whether retrieved packets include the exact
 `gold_evidence_ids`, not only equivalent required fields.

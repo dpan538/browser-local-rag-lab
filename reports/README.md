@@ -18,6 +18,7 @@ repo, not to the archive product process.
 ## Generated Benchmark Reports
 
 - `BENCHMARK_REPORT_v0.md`
+- `EXECUTION_ROUND_01.md`
 - `METHOD_V0.md`
 - `GOLD_LABEL_AUDIT_v0.md`
 - `EVIDENCE_HEALTH_v0.md`
@@ -30,6 +31,8 @@ repo, not to the archive product process.
 - `RETRIEVAL_COVERAGE_v0.md`
 - `benchmark_baseline_v0.json`
 - `benchmark_baseline_v0.csv`
+- `execution_round_01.json`
+- `execution_round_01_answers.jsonl`
 - `retrieval_sufficiency_v0.json`
 - `retrieval_sufficiency_v0.csv`
 - `evidence_health_v0.json`
