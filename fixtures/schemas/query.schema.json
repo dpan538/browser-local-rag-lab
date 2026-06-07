@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dpan538/browser-local-rag-lab/fixtures/schemas/query.schema.json",
+  "title": "Browser Local RAG Benchmark Query",
+  "type": "object",
+  "required": [
+    "query_id",
+    "query_text",
+    "intent",
+    "active_object_id",
+    "expected_lane",
+    "requires_evidence"
+  ],
+  "properties": {
+    "query_id": { "type": "string" },
+    "query_text": { "type": "string" },
+    "intent": { "type": "string" },
+    "active_object_id": { "type": ["string", "null"] },
+    "expected_lane": {
+      "type": "string",
+      "enum": ["help", "fast_answer", "research_answer", "source_rights", "refusal_more_context"]
+    },
+    "requires_evidence": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

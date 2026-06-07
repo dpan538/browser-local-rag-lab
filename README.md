@@ -59,6 +59,8 @@ sessions, browser cache paths, and model files.
 From the repository root:
 
 ```bash
+npm run gold:build
+npm run gold:sufficiency
 npm run benchmark
 npm run analyze
 ```
@@ -97,6 +99,22 @@ The benchmark records:
   tokens, tokens/s, and WebGPU device errors.
 
 The next runtime run should fill the model metrics in the same JSON/CSV shape.
+
+## Gold Fixture v0
+
+The first methodology artifact is a seed gold fixture:
+
+```text
+fixtures/gold/records.jsonl
+fixtures/gold/queries.jsonl
+fixtures/gold/labels.jsonl
+fixtures/schemas/
+```
+
+Labels are currently marked `seed_auto_needs_human_review`. They are suitable
+for retrieval-sufficiency scaffolding and method development, but not yet for
+paper claims. The next human review pass should confirm `sufficient_context`,
+`refusal_expected`, `gold_lane`, and `gold_evidence_ids`.
 
 ## Current Conclusion
 

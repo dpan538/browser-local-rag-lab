@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dpan538/browser-local-rag-lab/fixtures/schemas/record.schema.json",
+  "title": "Browser Local RAG Gold Record",
+  "type": "object",
+  "required": [
+    "record_id",
+    "object_id",
+    "title",
+    "date_text",
+    "region",
+    "source",
+    "rights",
+    "image_state",
+    "topology",
+    "notes"
+  ],
+  "properties": {
+    "record_id": { "type": "string" },
+    "object_id": { "type": "string" },
+    "title": { "type": "string" },
+    "creator": { "type": "string" },
+    "date_text": { "type": "string" },
+    "date_start": { "type": ["integer", "null"] },
+    "date_end": { "type": ["integer", "null"] },
+    "region": { "type": "string" },
+    "object_type": { "type": "string" },
+    "medium": { "type": "string" },
+    "source": {
+      "type": "object",
+      "required": ["name", "url"],
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": "string" },
+        "access_date": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "rights": {
+      "type": "object",
+      "required": ["state", "display_policy", "label"],
+      "properties": {
+        "state": { "type": "string" },
+        "display_policy": { "type": "string" },
+        "label": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "image_state": {
+      "type": "object",
+      "required": ["code", "display_mode", "model_image_eligible"],
+      "properties": {
+        "code": { "type": "string" },
+        "display_mode": { "type": "string" },
+        "has_image_frame": { "type": "boolean" },
+        "model_image_eligible": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "topology": {
+      "type": "object",
+      "properties": {
+        "surface_type": { "type": "string" },
+        "publication_role": { "type": "string" },
+        "folder_titles": { "type": "array", "items": { "type": "string" } },
+        "historical_node_ids": { "type": "array", "items": { "type": "string" } },
+        "movement_ids": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "object",
+      "required": ["raw", "compact", "raw_note_hash", "packet_version"],
+      "properties": {
+        "raw": { "type": "string" },
+        "compact": { "type": "string" },
+        "raw_note_hash": { "type": "string" },
+        "packet_version": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

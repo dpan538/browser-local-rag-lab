@@ -1,6 +1,6 @@
 # Benchmark Report v0
 
-Generated: 2026-06-07T01:59:06.569Z
+Generated: 2026-06-07T02:30:31.267Z
 
 ## Scope
 
@@ -17,12 +17,12 @@ This is the first research-lab baseline for browser-local Qwen RAG. It measures 
 
 | Variant | Runs | Avg prompt bytes | Avg prompt tokens est. | Avg retrieval ms | Source/rights preserved | Refusal correct |
 |---|---:|---:|---:|---:|---:|---:|
-| top1_compressed_topology_source_rights | 30 | 1462 | 365 | 0.671 | 1 | 1 |
-| top3_compressed_topology_source_rights | 30 | 3836 | 958 | 0.612 | 1 | 1 |
-| top8_compressed_topology_source_rights | 30 | 5486 | 1369 | 0.609 | 1 | 1 |
-| top3_raw_topology_source_rights | 30 | 4486 | 1119 | 0.653 | 1 | 1 |
-| top3_compressed_no_topology_source_rights | 30 | 3221 | 804 | 0.646 | 1 | 1 |
-| top3_compressed_topology_no_source_rights | 30 | 2839 | 708 | 0.646 | 0.1 | 1 |
+| top1_compressed_topology_source_rights | 30 | 1462 | 365 | 0.666 | 1 | 1 |
+| top3_compressed_topology_source_rights | 30 | 3836 | 958 | 0.663 | 1 | 1 |
+| top8_compressed_topology_source_rights | 30 | 5486 | 1369 | 0.617 | 1 | 1 |
+| top3_raw_topology_source_rights | 30 | 4486 | 1119 | 0.647 | 1 | 1 |
+| top3_compressed_no_topology_source_rights | 30 | 3221 | 804 | 0.622 | 1 | 1 |
+| top3_compressed_topology_no_source_rights | 30 | 2839 | 708 | 0.661 | 0.1 | 1 |
 
 ## Readable Findings
 
