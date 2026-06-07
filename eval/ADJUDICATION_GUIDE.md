@@ -28,8 +28,14 @@ The current implementation uses Node scripts rather than Python:
 
 - Rule configuration: `scripts/audit_rules.mjs`.
 - Structural and logical audit: `scripts/audit_gold_labels.mjs`.
+- Cited evidence health scan: `scripts/evidence_health_check.mjs`.
+- Method-context boundary scan: `scripts/validate_method_context.mjs`.
 - Retrieval sufficiency measurement: `scripts/evaluate_retrieval_sufficiency.mjs`.
 - Quality dashboard: `scripts/quality_metrics.mjs`.
+- Post-generation contract validation:
+  `scripts/validate_generation_contract.mjs`.
+- Audit regression comparison: `scripts/regression_test.mjs`.
+- Label change CSV: `scripts/label_change_log.mjs`.
 - Fixture generation: `scripts/build_gold_fixture.mjs`.
 
 The adjudication pipeline has three layers.
@@ -51,7 +57,17 @@ The adjudication pipeline has three layers.
    - fail and warning counts;
    - review-queue size;
    - evidence overuse anomalies;
+   - cited evidence health findings;
+   - method-context boundary findings;
    - retrieval sufficiency, field coverage, and negative-control degradation.
+
+Generated answers add a fourth layer:
+
+4. Post-generation contract validation:
+   - answerable labels must not produce refusals;
+   - refusal labels must refuse or request narrower context;
+   - protected field assertions must be supported by cited evidence;
+   - required fields that are not visibly grounded become review warnings.
 
 ## State Model
 
@@ -111,6 +127,9 @@ These rules are non-negotiable:
 - If an answerable label has intent-specific `must_not_invent_fields`, those
   fields must exist in the cited gold evidence. Otherwise the label must refuse
   or the fixture must be repaired.
+- `no_evidence_refusal` queries are expected to have empty retrieval in every
+  packet variant. This is reported as `empty_retrieval_integrity` in quality
+  metrics.
 
 ## Required Fields
 
@@ -180,6 +199,12 @@ fails if `STABLE_RULE_REQUIRED_FIELDS` leaves a gap against
 The current seed fixture includes `LAB-METHOD-CONTEXT-V0` as a research-only
 method record. It is not archive object evidence.
 
+Method records may carry `record_id`, `title`, `source`, and `rights` so the
+same packet code can cite them, but they must remain explicitly typed as
+`object_type=method_context`, `topology.publication_role=method_context`,
+`rights.state=research_fixture`, and `image_state.code=IMG00`. A method record
+used by a non-method label is a hard failure.
+
 ## Severity Rules
 
 Fail:
@@ -194,6 +219,10 @@ Fail:
 - answerable first/earliest claim without chronology proof;
 - rule config gap between required fields and stable-rule fields;
 - evidence overuse above the fail threshold.
+- method context used as archive object evidence;
+- cited evidence missing source, rights, image-state, title, or text/method
+  context;
+- generated answer asserts a protected field value not found in evidence.
 
 Warning:
 
@@ -201,6 +230,10 @@ Warning:
 - evidence id is unusually overused;
 - comparison evidence is not lightly named by the query text;
 - route evidence appears outside the requested region or period;
+- cited evidence has unknown creator, unresolved region, or rights-review
+  state;
+- generated answer does not visibly include an evidence value for a required
+  field;
 - non-typical but legal configuration that may deserve later inspection.
 
 Needs human review:
@@ -218,6 +251,8 @@ The audit report should be read as a small quality dashboard:
 - `anomaly_count`: dataset-shape warnings.
 - `anomaly_fail_count`: dataset-shape defects that block strict mode.
 - `rule_config_fail_count`: rule-table inconsistencies that block strict mode.
+- `empty_retrieval_integrity`: percentage of no-evidence refusal retrieval
+  rows that returned no records.
 
 The retrieval sufficiency report adds:
 
@@ -248,6 +283,7 @@ As of the current seed fixture:
   the 30% threshold;
 - anomaly fail findings: 0;
 - rule config fail findings: 0;
+- empty retrieval integrity: 100%;
 - best first candidate packet: top-3 compressed with topology and source/rights;
 - current top-3 sufficiency: 0.933.
 
@@ -260,6 +296,8 @@ After changing fixture generation, labels, rules, or retrieval logic, run:
 
 ```bash
 npm run gold:build
+npm run evidence:health:strict
+npm run method:context:strict
 npm run audit:labels:strict
 npm run gold:sufficiency
 npm run audit:quality
@@ -286,6 +324,20 @@ Use the full local gate when changing labels, rules, or retrieval logic:
 
 ```bash
 npm run audit:full
+```
+
+After Qwen answers are generated into a JSONL file with `query_id` and
+`answer_text` or `generated_text`, run:
+
+```bash
+npm run generation:contract -- path/to/answers.jsonl --strict
+```
+
+When changing rule tables, compare the previous audit JSON with the new audit
+JSON:
+
+```bash
+npm run audit:regression -- reports/baseline_audit.json reports/gold_label_audit_v0.json
 ```
 
 ## New Query Or Rule Evolution

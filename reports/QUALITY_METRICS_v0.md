@@ -1,6 +1,6 @@
 # Quality Metrics v0
 
-Generated: 2026-06-07T04:07:30.873Z
+Generated: 2026-06-07T04:21:37.423Z
 
 This report summarizes label-contract health and retrieval-sufficiency behavior.
 It does not evaluate generated model answers.
@@ -15,6 +15,8 @@ It does not evaluate generated model answers.
 - Anomalies: 1
 - Anomaly fail findings: 0
 - Rule config fail findings: 0
+- Empty retrieval integrity: 100%
+- Empty retrieval failures: 0
 - Average evidence ids per label: 1.2
 - Median evidence ids per label: 1
 

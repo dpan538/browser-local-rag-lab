@@ -60,6 +60,8 @@ From the repository root:
 
 ```bash
 npm run gold:build
+npm run evidence:health:strict
+npm run method:context:strict
 npm run gold:sufficiency
 npm run audit:labels
 npm run audit:labels:strict
@@ -67,6 +69,20 @@ npm run audit:quality
 npm run audit:full
 npm run benchmark
 npm run analyze
+```
+
+After a generation run writes answers as JSONL, validate them against the gold
+label contract:
+
+```bash
+npm run generation:contract -- path/to/answers.jsonl --strict
+```
+
+When changing rules or labels, optional guardrails are available:
+
+```bash
+npm run audit:regression -- reports/baseline_audit.json reports/gold_label_audit_v0.json
+npm run labels:change-log -- old_labels.jsonl fixtures/gold/labels.jsonl
 ```
 
 For a local browser view:
@@ -133,6 +149,6 @@ until browser tokenization, TTFT, and WebGPU stability are measured.
 - No Qwen generation was run in the initial scaffold benchmark.
 - Prompt tokens are estimated by character count, not by the Qwen tokenizer.
 - Quality scores are packet-level proxies only; generated-answer faithfulness
-  still requires manual review.
+  must pass the generation contract and still requires expert reading.
 - Runtime comparison claims must wait for local browser/WebGPU measurement on
   target hardware.

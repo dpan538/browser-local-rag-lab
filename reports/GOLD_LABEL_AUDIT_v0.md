@@ -1,6 +1,6 @@
 # Gold Label Audit v0
 
-Generated: 2026-06-07T04:07:30.526Z
+Generated: 2026-06-07T04:21:36.570Z
 
 This audit checks label consistency against the adjudication guide. It does not
 judge generated model answers.

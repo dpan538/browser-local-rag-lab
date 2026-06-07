@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T04:07:30.873Z",
+  "generated_at": "2026-06-07T04:21:37.423Z",
   "label_count": 30,
   "stable_by_rule_rate": 100,
   "fail_rate": 0,
@@ -8,6 +8,8 @@
   "anomaly_count": 1,
   "anomaly_fail_count": 0,
   "rule_config_fail_count": 0,
+  "empty_retrieval_integrity": 100,
+  "empty_retrieval_failure_count": 0,
   "average_evidence_count": 1.2,
   "median_evidence_count": 1,
   "required_field_missing_by_intent": {
@@ -137,5 +139,6 @@
       "evidence_count": 3,
       "refusal_expected": false
     }
-  ]
+  ],
+  "empty_retrieval_failures": []
 }

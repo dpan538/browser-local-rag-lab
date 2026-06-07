@@ -3,6 +3,8 @@ import { spawnSync } from "node:child_process";
 
 const steps = [
   ["gold:build", ["npm", "run", "gold:build"]],
+  ["evidence:health:strict", ["npm", "run", "evidence:health:strict"]],
+  ["method:context:strict", ["npm", "run", "method:context:strict"]],
   ["audit:labels:strict", ["npm", "run", "audit:labels:strict"]],
   ["gold:sufficiency", ["npm", "run", "gold:sufficiency"]],
   ["audit:quality", ["npm", "run", "audit:quality"]]

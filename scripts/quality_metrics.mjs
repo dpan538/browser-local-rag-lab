@@ -88,6 +88,19 @@ const difficultyRows = labels
   }))
   .sort((a, b) => b.difficulty - a.difficulty || a.query_id.localeCompare(b.query_id));
 
+const emptyRetrievalRows = sufficiency.rows.filter((row) => row.intent === "no_evidence_refusal");
+const emptyRetrievalIntegrity = emptyRetrievalRows.length === 0
+  ? null
+  : pct(emptyRetrievalRows.filter((row) => Number(row.candidate_count) === 0 && row.empty_retrieval_correct === true).length / emptyRetrievalRows.length);
+const emptyRetrievalFailures = emptyRetrievalRows
+  .filter((row) => Number(row.candidate_count) !== 0 || row.empty_retrieval_correct !== true)
+  .map((row) => ({
+    query_id: row.query_id,
+    variant_id: row.variant_id,
+    candidate_count: Number(row.candidate_count),
+    retrieved_ids: row.retrieved_ids
+  }));
+
 const metrics = {
   generated_at: new Date().toISOString(),
   label_count: labelCount,
@@ -98,11 +111,14 @@ const metrics = {
   anomaly_count: audit.summary.anomaly_count,
   anomaly_fail_count: audit.summary.anomaly_fail_count || 0,
   rule_config_fail_count: audit.summary.rule_config_fail_count || 0,
+  empty_retrieval_integrity: emptyRetrievalIntegrity,
+  empty_retrieval_failure_count: emptyRetrievalFailures.length,
   average_evidence_count: Number((evidenceCounts.reduce((sum, count) => sum + count, 0) / labelCount).toFixed(2)),
   median_evidence_count: median(evidenceCounts),
   required_field_missing_by_intent: requiredFieldMissingByIntent,
   top_sufficiency_variants: topSufficiency,
-  highest_difficulty_labels: difficultyRows.slice(0, 10)
+  highest_difficulty_labels: difficultyRows.slice(0, 10),
+  empty_retrieval_failures: emptyRetrievalFailures
 };
 
 fs.writeFileSync(jsonOutPath, JSON.stringify(metrics, null, 2) + "\n");
@@ -124,6 +140,8 @@ It does not evaluate generated model answers.
 - Anomalies: ${metrics.anomaly_count}
 - Anomaly fail findings: ${metrics.anomaly_fail_count}
 - Rule config fail findings: ${metrics.rule_config_fail_count}
+- Empty retrieval integrity: ${metrics.empty_retrieval_integrity === null ? "N/A" : `${metrics.empty_retrieval_integrity}%`}
+- Empty retrieval failures: ${metrics.empty_retrieval_failure_count}
 - Average evidence ids per label: ${metrics.average_evidence_count}
 - Median evidence ids per label: ${metrics.median_evidence_count}
 

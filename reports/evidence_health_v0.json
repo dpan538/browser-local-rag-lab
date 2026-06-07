@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-06-07T04:21:36.064Z",
+  "checked_record_count": 20,
+  "fail_count": 0,
+  "warn_count": 5,
+  "issues": [
+    {
+      "severity": "warn",
+      "code": "E102_rights_review_required",
+      "record_id": "SURF-ER1830R004",
+      "detail": "rights state requires conservative interpretation"
+    },
+    {
+      "severity": "warn",
+      "code": "E103_region_unresolved",
+      "record_id": "SURF-ER1830R004",
+      "detail": "region is unresolved; route answers should not overclaim geography"
+    },
+    {
+      "severity": "warn",
+      "code": "E101_creator_unknown",
+      "record_id": "SURF-ER1830R015",
+      "detail": "creator is unknown; answers must avoid inventing attribution"
+    },
+    {
+      "severity": "warn",
+      "code": "E101_creator_unknown",
+      "record_id": "SURF-GA1970R001",
+      "detail": "creator is unknown; answers must avoid inventing attribution"
+    },
+    {
+      "severity": "warn",
+      "code": "E101_creator_unknown",
+      "record_id": "SURF-GAX1970R001",
+      "detail": "creator is unknown; answers must avoid inventing attribution"
+    }
+  ]
+}
