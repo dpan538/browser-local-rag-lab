@@ -1,0 +1,207 @@
+{
+  "_provenance": {
+    "step": "round02_200_scale_readiness",
+    "timestamp": "2026-06-07T06:59:00.130Z",
+    "commit": "e7093ed939ccab38166438bbde47853610260be0",
+    "labels_path": "fixtures/gold/labels.jsonl",
+    "audit_path": "reports/gold_label_audit_v0.json",
+    "round02_path": "reports/webllm_round_02.json",
+    "review_path": "reports/quality_review_sheet_round_02.json"
+  },
+  "target_count": 200,
+  "current_label_count": 30,
+  "additional_labels_needed": 170,
+  "recommended_batch_size": 50,
+  "recommended_batches_needed": 4,
+  "ready_for_200_expansion": false,
+  "blockers": [
+    "gold_labels_not_human_reviewed",
+    "round02_answers_not_reviewed"
+  ],
+  "audit_summary": {
+    "label_count": 30,
+    "stable_by_rule": 30,
+    "needs_human_review": 0,
+    "fail_count": 0,
+    "warn_count": 0,
+    "anomaly_count": 1,
+    "anomaly_fail_count": 0,
+    "rule_config_fail_count": 0,
+    "by_intent": {
+      "archive_orientation": {
+        "total": 3,
+        "stable_by_rule": 3,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "casual_archive_help": {
+        "total": 2,
+        "stable_by_rule": 2,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "comparison": {
+        "total": 2,
+        "stable_by_rule": 2,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "current_object_explanation": {
+        "total": 3,
+        "stable_by_rule": 3,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "first_earliest_claim": {
+        "total": 3,
+        "stable_by_rule": 3,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "method_process_question": {
+        "total": 2,
+        "stable_by_rule": 2,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "more_context": {
+        "total": 2,
+        "stable_by_rule": 2,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "no_evidence_refusal": {
+        "total": 3,
+        "stable_by_rule": 3,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "region_period_recommendation": {
+        "total": 5,
+        "stable_by_rule": 5,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      },
+      "source_rights_question": {
+        "total": 5,
+        "stable_by_rule": 5,
+        "needs_human_review": 0,
+        "fails": 0,
+        "warnings": 0
+      }
+    }
+  },
+  "round02_contract_summary": {
+    "completed_count": 30,
+    "error_count": 0,
+    "fail_count": 0,
+    "warn_count": 8
+  },
+  "unreviewed_label_count": 30,
+  "open_review_row_count": 30,
+  "intent_distribution": {
+    "archive_orientation": {
+      "count": 3,
+      "percent": 10
+    },
+    "casual_archive_help": {
+      "count": 2,
+      "percent": 6.7
+    },
+    "current_object_explanation": {
+      "count": 3,
+      "percent": 10
+    },
+    "source_rights_question": {
+      "count": 5,
+      "percent": 16.7
+    },
+    "first_earliest_claim": {
+      "count": 3,
+      "percent": 10
+    },
+    "comparison": {
+      "count": 2,
+      "percent": 6.7
+    },
+    "region_period_recommendation": {
+      "count": 5,
+      "percent": 16.7
+    },
+    "method_process_question": {
+      "count": 2,
+      "percent": 6.7
+    },
+    "more_context": {
+      "count": 2,
+      "percent": 6.7
+    },
+    "no_evidence_refusal": {
+      "count": 3,
+      "percent": 10
+    }
+  },
+  "distribution_warnings": [],
+  "evidence_reuse_top10": [
+    {
+      "evidence_id": "SURF-GAX1970R001",
+      "count": 9,
+      "ratio": 0.3
+    },
+    {
+      "evidence_id": "SURF-COM1970R007",
+      "count": 4,
+      "ratio": 0.13333333333333333
+    },
+    {
+      "evidence_id": "LAB-METHOD-CONTEXT-V0",
+      "count": 2,
+      "ratio": 0.06666666666666667
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0071",
+      "count": 2,
+      "ratio": 0.06666666666666667
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0235",
+      "count": 2,
+      "ratio": 0.06666666666666667
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0274",
+      "count": 2,
+      "ratio": 0.06666666666666667
+    },
+    {
+      "evidence_id": "SURF-ER1830R015",
+      "count": 2,
+      "ratio": 0.06666666666666667
+    },
+    {
+      "evidence_id": "SURF-CGS2026R0030",
+      "count": 1,
+      "ratio": 0.03333333333333333
+    },
+    {
+      "evidence_id": "SURF-CGS2026R0328",
+      "count": 1,
+      "ratio": 0.03333333333333333
+    },
+    {
+      "evidence_id": "SURF-CGS2026R0681",
+      "count": 1,
+      "ratio": 0.03333333333333333
+    }
+  ],
+  "evidence_reuse_warnings": []
+}
