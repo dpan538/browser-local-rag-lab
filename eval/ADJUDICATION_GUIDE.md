@@ -28,6 +28,8 @@ Review the label, not the model answer. Generation is evaluated later.
    - `research_answer`: comparison, route, chronology, method, broader context.
    - `refusal_more_context`: no evidence, unsupported claim, rights upgrade,
      or question too broad without required evidence.
+   - Lane must be legal for the labeled intent. The audit script treats illegal
+     intent-lane pairs as hard failures.
 
 3. **Evidence sufficiency**
    - `sufficient_context=true` only if the listed evidence can support the
@@ -41,6 +43,10 @@ Review the label, not the model answer. Generation is evaluated later.
      narrower context before generation.
    - This does not require empty retrieval. A query may retrieve related records
      and still require refusal.
+   - Hard rule: `sufficient_context=false` requires `refusal_expected=true`.
+   - `more_context` and `no_evidence_refusal` are mandatory-refusal intents:
+     they require `gold_lane=refusal_more_context`,
+     `sufficient_context=false`, and `refusal_expected=true`.
 
 5. **Gold evidence ids**
    - Include only records needed to support the answer.
@@ -53,12 +59,21 @@ Review the label, not the model answer. Generation is evaluated later.
    - Source/rights questions must require `source`, `rights`, and `image_state`.
    - Current-object factual questions usually require `record_id`, `title`,
      `date_text`, `region`, and `source`.
+   - Intent-specific protected fields may also become required answer slots.
+     For example, rights questions must explicitly account for
+     `reuse_permission` and `public_domain_status` if the answer intends to
+     make those claims.
 
 7. **Must-not-invent fields**
    - Always include fields where hallucination would break archive trust:
      title, creator, date, source, rights.
    - Add `first_or_earliest_claim` for chronology questions.
    - Add `reuse_permission` and `public_domain_status` for rights questions.
+   - Global must-not-invent fields protect against unsupported claims when a
+     field is mentioned. They are not automatically required output slots for
+     every query.
+   - Intent-specific must-not-invent fields are stricter and are checked against
+     the required-field contract unless the label is an explicit refusal.
 
 ## Review States
 
@@ -74,6 +89,25 @@ Some labels can be approved by rule with minimal interpretation:
 - Source/rights query with source URL, rights label, and image-state present.
 - Explicit rights upgrade request: refusal expected.
 - No-evidence fictional entity request: refusal expected.
+
+Stable-by-rule is not assigned from intent alone. The audit must verify:
+
+- known intent and known lane;
+- legal intent-lane pair;
+- no hard conflict between sufficiency and refusal;
+- all required gold evidence ids exist;
+- the gold evidence records contain the fields required by the stable rule.
+
+## Audit Severity
+
+- Fail: structural error, unknown intent/lane, intent-lane contradiction,
+  evidence-insufficient-but-not-refusal, mandatory-refusal violation, missing
+  gold evidence, or missing required evidence fields.
+- Warning: heuristic intent mismatch, non-typical query/lane alignment, unusual
+  evidence count, or distribution anomaly.
+- Needs human review: no hard failure, but the question requires chronology,
+  comparison, regional recommendation, method judgment, or another
+  non-deterministic interpretation step.
 
 ## Requires Human Judgment
 
@@ -92,6 +126,12 @@ After review, update `fixtures/gold/labels.jsonl` and regenerate:
 ```bash
 npm run gold:sufficiency
 npm run audit:labels
+```
+
+Use strict mode as a quality gate:
+
+```bash
+npm run audit:labels:strict
 ```
 
 Do not use generated model answers as evidence when reviewing labels.

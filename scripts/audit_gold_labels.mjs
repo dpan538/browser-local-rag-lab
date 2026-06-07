@@ -1,130 +1,283 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
+import {
+  INTENT_LANE_MAP,
+  INTENT_SPECIFIC_MUST_NOT_INVENT_FIELDS,
+  KNOWN_INTENTS,
+  KNOWN_LANES,
+  MANDATORY_REFUSAL_INTENTS,
+  METHOD_REVIEW_INTENTS,
+  REQUIRED_FIELDS_BY_INTENT,
+  STABLE_RULE_REQUIRED_FIELDS,
+  STRUCTURAL_SCHEMA,
+  expectedMustNotInventFields,
+  intentHintFindings
+} from "./audit_rules.mjs";
 
 const repoRoot = path.resolve(import.meta.dirname, "..");
 const goldDir = path.join(repoRoot, "fixtures/gold");
 const reportPath = path.join(repoRoot, "reports/GOLD_LABEL_AUDIT_v0.md");
 const jsonPath = path.join(repoRoot, "reports/gold_label_audit_v0.json");
+const strictMode = process.argv.includes("--strict");
 
 function readJsonl(filePath) {
-  return fs.readFileSync(filePath, "utf8").trim().split("\n").filter(Boolean).map((line) => JSON.parse(line));
+  const text = fs.readFileSync(filePath, "utf8").trim();
+  if (!text) return [];
+  return text.split("\n").filter(Boolean).map((line, index) => {
+    try {
+      return JSON.parse(line);
+    } catch (error) {
+      throw new Error(`${filePath}:${index + 1}: invalid JSON: ${error.message}`);
+    }
+  });
 }
 
-function expectedLaneForIntent(intent) {
-  const map = {
-    archive_orientation: "help",
-    casual_archive_help: "help",
-    current_object_explanation: "fast_answer",
-    source_rights_question: "source_rights",
-    first_earliest_claim: "research_answer",
-    comparison: "research_answer",
-    region_period_recommendation: "research_answer",
-    method_process_question: "research_answer",
-    more_context: "research_answer",
-    no_evidence_refusal: "refusal_more_context"
-  };
-  return map[intent] || "research_answer";
+function addFinding(findings, severity, code, detail) {
+  findings.push({ severity, code, detail });
 }
 
-function requiredFieldsForIntent(intent) {
-  const map = {
-    archive_orientation: ["topology"],
-    casual_archive_help: ["topology"],
-    current_object_explanation: ["record_id", "title", "date_text", "region", "source"],
-    source_rights_question: ["record_id", "title", "source", "rights", "image_state"],
-    first_earliest_claim: ["record_id", "title", "date_text", "source"],
-    comparison: ["record_id", "title", "source"],
-    region_period_recommendation: ["record_id", "title", "date_text", "region", "source"],
-    method_process_question: ["method_context"],
-    more_context: ["record_id", "title", "topology"],
-    no_evidence_refusal: []
-  };
-  return map[intent] || ["record_id", "title"];
+function typeOf(value) {
+  return Array.isArray(value) ? "array" : typeof value;
 }
 
-function arrayIncludesAll(actual, expected) {
+function validateShape(record, schema, prefix, findings) {
+  for (const [field, expectedType] of Object.entries(schema)) {
+    if (!(field in record)) {
+      addFinding(findings, "fail", `C000_missing_${prefix}_field`, field);
+      continue;
+    }
+    const actualType = typeOf(record[field]);
+    if (actualType !== expectedType) {
+      addFinding(findings, "fail", `C000_invalid_${prefix}_field_type`, `${field}: expected ${expectedType}, got ${actualType}`);
+    }
+  }
+}
+
+function arrayIncludesAll(actual = [], expected = []) {
   const set = new Set(actual);
   return expected.every((item) => set.has(item));
 }
 
-function classify(label, query, recordsById) {
+function missingItems(actual = [], expected = []) {
+  const set = new Set(actual);
+  return expected.filter((item) => !set.has(item));
+}
+
+function hasValue(value) {
+  if (value === null || value === undefined) return false;
+  if (typeof value === "string") return value.trim().length > 0;
+  if (Array.isArray(value)) return value.length > 0;
+  if (typeof value === "object") return Object.keys(value).length > 0;
+  return true;
+}
+
+function recordHasField(record, field) {
+  const fieldReaders = {
+    date: (item) => hasValue(item.date_text) || hasValue(item.date_start) || hasValue(item.date_end),
+    date_text: (item) => hasValue(item.date_text),
+    image_state: (item) => hasValue(item.image_state) && hasValue(item.image_state.code),
+    method_context: (item) => hasValue(item.method_context),
+    rights: (item) => hasValue(item.rights) && (hasValue(item.rights.label) || hasValue(item.rights.state)),
+    source: (item) => hasValue(item.source) && (hasValue(item.source.url) || hasValue(item.source.name)),
+    topology: (item) => hasValue(item.topology)
+  };
+  const reader = fieldReaders[field] || ((item) => hasValue(item[field]));
+  return reader(record);
+}
+
+function evidenceHasFields(records, fields) {
+  if (fields.length === 0) return true;
+  if (records.length === 0) return false;
+  return records.some((record) => fields.every((field) => recordHasField(record, field)));
+}
+
+function evidenceMissingFields(records, fields) {
+  if (records.length === 0) return fields;
+  return fields.filter((field) => !records.some((record) => recordHasField(record, field)));
+}
+
+function isSimpleObjectQuery(label) {
+  return ["current_object_explanation", "source_rights_question"].includes(label.intent);
+}
+
+function classify(label, query, recordsById, recordsByRecordId) {
   const findings = [];
-  const expectedLane = expectedLaneForIntent(label.intent);
+  validateShape(label, STRUCTURAL_SCHEMA.label, "label", findings);
 
   if (!query) {
-    findings.push({ severity: "fail", code: "missing_query", detail: label.query_id });
-  } else if (query.intent !== label.intent) {
-    findings.push({ severity: "fail", code: "intent_mismatch", detail: `query=${query.intent} label=${label.intent}` });
+    addFinding(findings, "fail", "C000_missing_query", label.query_id);
+  } else {
+    validateShape(query, STRUCTURAL_SCHEMA.query, "query", findings);
   }
 
-  if (label.gold_lane !== expectedLane) {
-    findings.push({ severity: "warn", code: "lane_unexpected", detail: `expected ${expectedLane}` });
+  if (!KNOWN_INTENTS.includes(label.intent)) {
+    addFinding(findings, "fail", "C001_unknown_intent", label.intent);
   }
 
-  const expectedFields = requiredFieldsForIntent(label.intent);
-  if (!arrayIncludesAll(label.required_fields, expectedFields)) {
-    findings.push({ severity: "warn", code: "required_fields_incomplete", detail: `expected ${expectedFields.join(",")}` });
+  if (!KNOWN_LANES.includes(label.gold_lane)) {
+    addFinding(findings, "fail", "C001_unknown_lane", label.gold_lane);
   }
 
-  if (!arrayIncludesAll(label.must_not_invent_fields, ["title", "creator", "date", "source", "rights"])) {
-    findings.push({ severity: "fail", code: "must_not_invent_core_missing", detail: "title, creator, date, source, rights must be protected" });
+  if (query && query.intent !== label.intent) {
+    addFinding(findings, "fail", "C001_query_label_intent_mismatch", `query=${query.intent}; label=${label.intent}`);
   }
 
-  if (label.intent === "source_rights_question" && !arrayIncludesAll(label.must_not_invent_fields, ["reuse_permission", "public_domain_status"])) {
-    findings.push({ severity: "warn", code: "rights_noninvent_fields_missing", detail: "rights questions should protect reuse_permission and public_domain_status" });
+  if (query && query.expected_lane !== label.gold_lane) {
+    addFinding(findings, "warn", "C011_query_label_lane_differs", `query=${query.expected_lane}; label=${label.gold_lane}`);
   }
 
-  if (label.intent === "first_earliest_claim" && !label.refusal_expected) {
-    findings.push({ severity: "warn", code: "chronology_not_refusal_seed", detail: "first/earliest claims need human chronology review before answerable" });
+  if (query) {
+    findings.push(...intentHintFindings(query.query_text, label.intent));
   }
 
-  if (label.intent === "no_evidence_refusal" && !label.refusal_expected) {
-    findings.push({ severity: "fail", code: "no_evidence_not_refusal", detail: "no-evidence query should refuse" });
+  const allowedLanes = INTENT_LANE_MAP[label.intent] || [];
+  if (allowedLanes.length === 0) {
+    addFinding(findings, "fail", "C002_no_lane_rule_for_intent", label.intent);
+  } else if (!allowedLanes.includes(label.gold_lane)) {
+    addFinding(findings, "fail", "C002_invalid_intent_lane", `${label.intent} cannot use ${label.gold_lane}; allowed=${allowedLanes.join("|")}`);
   }
 
-  if (label.sufficient_context && label.refusal_expected) {
-    findings.push({ severity: "warn", code: "sufficient_but_refusal", detail: "possible only for policy refusal; review manually" });
-  }
-
-  if (!label.sufficient_context && !label.refusal_expected) {
-    findings.push({ severity: "warn", code: "insufficient_without_refusal", detail: "should usually ask for context or refuse" });
-  }
-
-  for (const id of label.gold_evidence_ids) {
-    if (!recordsById.has(id)) {
-      findings.push({ severity: "fail", code: "missing_gold_evidence_record", detail: id });
+  if (MANDATORY_REFUSAL_INTENTS.includes(label.intent)) {
+    if (label.refusal_expected !== true) {
+      addFinding(findings, "fail", "C003_mandatory_refusal_missing", `${label.intent} requires refusal_expected=true`);
+    }
+    if (label.sufficient_context !== false) {
+      addFinding(findings, "fail", "C004_mandatory_refusal_context_not_false", `${label.intent} requires sufficient_context=false`);
     }
   }
 
-  const needsHuman = [
-    "first_earliest_claim",
-    "comparison",
-    "region_period_recommendation",
-    "method_process_question",
-    "more_context"
-  ].includes(label.intent);
-  const stableByRule = findings.every((finding) => finding.severity !== "fail")
-    && !needsHuman
-    && label.review_state === "seed_auto_needs_human_review";
+  if (label.sufficient_context === false && label.refusal_expected !== true) {
+    addFinding(findings, "fail", "C005_insufficient_without_refusal", "sufficient_context=false requires refusal_expected=true");
+  }
+
+  if (label.sufficient_context === true && label.refusal_expected === true) {
+    addFinding(findings, "warn", "C005_sufficient_but_refusal", "possible for policy refusal only; review manually");
+  }
+
+  const expectedRequiredFields = REQUIRED_FIELDS_BY_INTENT[label.intent] || [];
+  const missingRequiredFields = missingItems(label.required_fields, expectedRequiredFields);
+  if (missingRequiredFields.length > 0 && !MANDATORY_REFUSAL_INTENTS.includes(label.intent)) {
+    addFinding(findings, "fail", "C006_required_fields_incomplete", `missing=${missingRequiredFields.join("|")}`);
+  }
+
+  const expectedProtectedFields = expectedMustNotInventFields(label.intent);
+  const missingMustNotInvent = missingItems(label.must_not_invent_fields, expectedProtectedFields);
+  if (missingMustNotInvent.length > 0) {
+    addFinding(findings, "fail", "C007_must_not_invent_incomplete", `missing=${missingMustNotInvent.join("|")}`);
+  }
+
+  const intentSpecificProtectedFields = INTENT_SPECIFIC_MUST_NOT_INVENT_FIELDS[label.intent] || [];
+  const protectedFieldsMissingFromRequired = missingItems(label.required_fields, intentSpecificProtectedFields);
+  if (protectedFieldsMissingFromRequired.length > 0 && !label.refusal_expected) {
+    addFinding(findings, "fail", "C007_intent_protected_fields_not_required", `missing=${protectedFieldsMissingFromRequired.join("|")}`);
+  }
+
+  const evidenceRecords = [];
+  for (const id of label.gold_evidence_ids || []) {
+    const record = recordsByRecordId.get(id);
+    if (!recordsById.has(id) || !record) {
+      addFinding(findings, "fail", "C014_missing_gold_evidence_record", id);
+    } else {
+      evidenceRecords.push(record);
+    }
+  }
+
+  if (label.sufficient_context && evidenceRecords.length === 0) {
+    addFinding(findings, "fail", "C014_sufficient_without_gold_evidence", "sufficient labels need at least one gold evidence record");
+  }
+
+  if (!label.refusal_expected && expectedRequiredFields.length > 0) {
+    const missingEvidenceFields = evidenceMissingFields(evidenceRecords, expectedRequiredFields);
+    if (missingEvidenceFields.length > 0) {
+      addFinding(findings, "fail", "C008_gold_evidence_missing_required_fields", `missing=${missingEvidenceFields.join("|")}`);
+    }
+  }
+
+  if (isSimpleObjectQuery(label) && !label.refusal_expected && label.gold_evidence_ids.length !== 1) {
+    addFinding(findings, "warn", "C009_simple_object_evidence_count_unusual", `count=${label.gold_evidence_ids.length}`);
+  }
+
+  if (!label.refusal_expected && query?.active_object_id && !label.gold_evidence_ids.includes(query.active_object_id)) {
+    addFinding(findings, "fail", "C009_active_object_not_in_gold_evidence", query.active_object_id);
+  }
+
+  const stableRequiredFields = STABLE_RULE_REQUIRED_FIELDS[label.intent];
+  const stableRulePossible = stableRequiredFields !== undefined
+    && !METHOD_REVIEW_INTENTS.includes(label.intent)
+    && findings.every((finding) => finding.severity !== "fail");
+  const stableRuleFieldsPresent = stableRulePossible
+    && (label.refusal_expected ? label.sufficient_context === false : evidenceHasFields(evidenceRecords, stableRequiredFields));
+
+  if (stableRulePossible && !stableRuleFieldsPresent) {
+    addFinding(findings, "warn", "C008_stable_rule_fields_missing", `stable fields missing=${stableRequiredFields.join("|")}`);
+  }
+
+  const failCount = findings.filter((finding) => finding.severity === "fail").length;
+  const warnCount = findings.filter((finding) => finding.severity === "warn").length;
+  const stableByRule = stableRulePossible && stableRuleFieldsPresent && failCount === 0;
+  const needsHumanReview = !stableByRule || warnCount > 0 || METHOD_REVIEW_INTENTS.includes(label.intent);
+  const finalState = failCount > 0 ? "FAIL" : stableByRule ? "STABLE_BY_RULE" : "NEEDS_HUMAN_REVIEW";
 
   return {
     query_id: label.query_id,
     intent: label.intent,
     gold_lane: label.gold_lane,
+    final_state: finalState,
     stable_by_rule: stableByRule,
-    needs_human_review: needsHuman || findings.length > 0,
-    fail_count: findings.filter((finding) => finding.severity === "fail").length,
-    warn_count: findings.filter((finding) => finding.severity === "warn").length,
+    needs_human_review: needsHumanReview,
+    fail_count: failCount,
+    warn_count: warnCount,
     findings
   };
+}
+
+function detectAnomalies(labels, recordsById) {
+  const anomalies = [];
+  const byIntent = new Map();
+  const evidenceUsage = new Map();
+
+  for (const label of labels) {
+    const stats = byIntent.get(label.intent) || { total: 0, missing_required: 0 };
+    stats.total += 1;
+    if (!label.required_fields || label.required_fields.length === 0) stats.missing_required += 1;
+    byIntent.set(label.intent, stats);
+
+    for (const id of label.gold_evidence_ids || []) {
+      evidenceUsage.set(id, (evidenceUsage.get(id) || 0) + 1);
+    }
+  }
+
+  for (const [intent, stats] of byIntent.entries()) {
+    const ratio = stats.missing_required / stats.total;
+    if (!MANDATORY_REFUSAL_INTENTS.includes(intent) && ratio === 1) {
+      anomalies.push({ severity: "warn", code: "A001_intent_all_labels_missing_required_fields", detail: intent });
+    }
+  }
+
+  for (const [id, count] of evidenceUsage.entries()) {
+    if (!recordsById.has(id)) continue;
+    if (count > 6) {
+      anomalies.push({ severity: "warn", code: "A002_evidence_overused", detail: `${id} used ${count} times` });
+    }
+  }
+
+  for (const intent of KNOWN_INTENTS) {
+    if (!byIntent.has(intent)) {
+      anomalies.push({ severity: "warn", code: "A003_intent_not_covered", detail: intent });
+    }
+  }
+
+  return anomalies;
 }
 
 const records = readJsonl(path.join(goldDir, "records.jsonl"));
 const queries = new Map(readJsonl(path.join(goldDir, "queries.jsonl")).map((query) => [query.query_id, query]));
 const labels = readJsonl(path.join(goldDir, "labels.jsonl"));
+const recordsByRecordId = new Map(records.map((record) => [record.record_id, record]));
 const recordsById = new Set(records.map((record) => record.record_id));
-const audits = labels.map((label) => classify(label, queries.get(label.query_id), recordsById));
+const audits = labels.map((label) => classify(label, queries.get(label.query_id), recordsById, recordsByRecordId));
+const anomalies = detectAnomalies(labels, recordsById);
 
 const byIntent = audits.reduce((acc, audit) => {
   acc[audit.intent] ||= { total: 0, stable_by_rule: 0, needs_human_review: 0, fails: 0, warnings: 0 };
@@ -142,14 +295,19 @@ const summary = {
   needs_human_review: audits.filter((audit) => audit.needs_human_review).length,
   fail_count: audits.reduce((sum, audit) => sum + audit.fail_count, 0),
   warn_count: audits.reduce((sum, audit) => sum + audit.warn_count, 0),
+  anomaly_count: anomalies.length,
   by_intent: Object.fromEntries(Object.entries(byIntent).sort(([a], [b]) => a.localeCompare(b)))
 };
 
-fs.writeFileSync(jsonPath, JSON.stringify({ generated_at: new Date().toISOString(), summary, audits }, null, 2) + "\n");
+fs.writeFileSync(jsonPath, JSON.stringify({ generated_at: new Date().toISOString(), summary, audits, anomalies }, null, 2) + "\n");
 
 const findingRows = audits
   .filter((audit) => audit.findings.length > 0 || audit.needs_human_review)
-  .map((audit) => `| ${audit.query_id} | ${audit.intent} | ${audit.gold_lane} | ${audit.stable_by_rule ? "yes" : "no"} | ${audit.needs_human_review ? "yes" : "no"} | ${audit.findings.map((finding) => `${finding.severity}:${finding.code}`).join("; ") || "method review"} |`);
+  .map((audit) => `| ${audit.query_id} | ${audit.intent} | ${audit.gold_lane} | ${audit.final_state} | ${audit.findings.map((finding) => `${finding.severity}:${finding.code}`).join("; ") || "method review"} |`);
+
+const anomalyRows = anomalies.length === 0
+  ? "| none | none | none |"
+  : anomalies.map((anomaly) => `| ${anomaly.severity} | ${anomaly.code} | ${anomaly.detail} |`).join("\n");
 
 fs.writeFileSync(reportPath, `# Gold Label Audit v0
 
@@ -165,6 +323,7 @@ judge generated model answers.
 - Needs human/method review: ${summary.needs_human_review}
 - Fail findings: ${summary.fail_count}
 - Warning findings: ${summary.warn_count}
+- Anomalies: ${summary.anomaly_count}
 
 ## By Intent
 
@@ -174,16 +333,28 @@ ${Object.entries(summary.by_intent).map(([intent, row]) => `| ${intent} | ${row.
 
 ## Review Queue
 
-| Query | Intent | Lane | Stable by rule | Needs review | Findings |
-|---|---|---|---|---|---|
+| Query | Intent | Lane | Final state | Findings |
+|---|---|---|---|---|
 ${findingRows.join("\n")}
+
+## Anomaly Scan
+
+| Severity | Code | Detail |
+|---|---|---|
+${anomalyRows}
 
 ## Interpretation
 
-- Stable-by-rule labels can be promoted after a quick spot check.
+- Stable-by-rule now requires intent-lane validity, no hard conflicts, and
+  field-level evidence checks against the gold evidence records.
+- Fail findings are label-contract errors that must be corrected before the
+  affected labels can be used as paper evidence.
 - Review-queue labels need method review, not blind preference testing.
-- First/earliest, comparison, region-period, method, and more-context questions
-  should remain non-final until their evidence sufficiency is manually checked.
+- Method-review intents remain non-final until their evidence sufficiency is
+  manually checked.
 `);
 
-console.log(JSON.stringify({ summary, report: path.relative(repoRoot, reportPath) }, null, 2));
+console.log(JSON.stringify({ summary, report: path.relative(repoRoot, reportPath), strict: strictMode }, null, 2));
+if (strictMode && summary.fail_count > 0) {
+  process.exitCode = 1;
+}

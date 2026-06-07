@@ -8,6 +8,7 @@
     "gold:build": "node scripts/build_gold_fixture.mjs",
     "gold:sufficiency": "node scripts/evaluate_retrieval_sufficiency.mjs",
     "audit:labels": "node scripts/audit_gold_labels.mjs",
+    "audit:labels:strict": "node scripts/audit_gold_labels.mjs --strict",
     "benchmark": "node scripts/run_benchmark.mjs",
     "analyze": "node scripts/analyze_results.mjs",
     "serve": "python3 -m http.server 4177 --bind 127.0.0.1"

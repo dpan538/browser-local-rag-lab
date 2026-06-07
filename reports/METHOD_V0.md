@@ -39,16 +39,19 @@ method-context evidence enter a method-review queue.
 The first label audit reports:
 
 - 30 total benchmark labels.
-- 16 stable by rule.
-- 14 requiring method review.
-- 0 fail findings.
-- 2 warnings, both on method/process questions that currently have insufficient
-  evidence without an explicit refusal lane.
+- 11 stable by rule after field-level evidence checks.
+- 19 requiring method review or correction.
+- 15 fail findings.
+- 0 warning findings in the current run.
+- 1 anomaly warning: `SURF-GAX1970R001` is intentionally but heavily reused in
+  the seed labels.
 
 Stable-by-rule labels cover orientation, current-object explanation,
-source/rights questions, no-evidence refusals, and casual archive help. Review
-queue labels cover first/earliest claims, comparisons, region-period
-recommendations, method/process questions, and more-context requests.
+no-evidence refusals, and casual archive help. Source/rights labels now fail
+the stricter protected-field gate until the label contract explicitly resolves
+reuse/public-domain answer slots. Review queue labels cover first/earliest
+claims, comparisons, region-period recommendations, method/process questions,
+more-context requests, and source/rights label-contract fixes.
 
 This means the next evaluation step is not personal blind judging. It is a
 protocol pass over the review queue:
@@ -67,4 +70,9 @@ as paper evidence. Priority labels to review first:
 - comparison and region-period recommendation questions;
 - method/process questions, which currently need method-context fixture records
   or explicit refusal expectations;
-- more-context questions that depend on active-object state.
+- more-context questions, which should be converted to
+  `refusal_more_context` unless a narrower active-object evidence packet is
+  defined;
+- source/rights labels, which should either add explicit reuse/public-domain
+  required fields backed by evidence or narrow the expected answer so those
+  claims remain protected rather than required.
