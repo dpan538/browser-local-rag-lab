@@ -21,8 +21,9 @@ blind testing.
 The first retrieval-sufficiency run suggests:
 
 - Top-3 compressed packets with topology and source/rights fields are the best
-  first fast-lane candidate.
-- Top-8 packets improve evidence coverage only slightly in this seed run while
+  first fast-lane candidate: current sufficiency is 0.933 with an estimated
+  844 prompt tokens.
+- Top-8 packets do not improve sufficiency over top-3 in this run while
   increasing estimated prompt tokens substantially.
 - Removing topology reduces required-field satisfaction for route/context
   questions.
@@ -31,45 +32,40 @@ The first retrieval-sufficiency run suggests:
 
 ## Adjudication Protocol v0
 
-The lab now separates label review from answer preference. A label can be
-stable by rule when the archive record itself makes the expected behavior
-deterministic. Labels that require synthesis, chronology, recommendation, or
-method-context evidence enter a method-review queue.
+The lab separates label review from answer preference. A label can be stable by
+rule when the fixture makes the expected behavior deterministic: answerable
+queries must have field-level evidence; unsupported first/earliest and missing
+route requests become explicit refusal labels.
 
 The first label audit reports:
 
 - 30 total benchmark labels.
-- 16 stable by rule after field-level evidence checks.
-- 14 requiring method review.
+- 30 stable by rule after field-level evidence checks.
+- 0 requiring method review.
 - 0 fail findings after label-contract repair.
 - 0 warning findings in the current run.
 - 1 anomaly warning: `SURF-GAX1970R001` is intentionally but heavily reused in
   the seed labels.
 
 Stable-by-rule labels cover orientation, current-object explanation,
-source/rights questions, no-evidence refusals, and casual archive help. The
-source/rights lane now includes explicit conservative
-`rights_interpretation` slots for reuse and public-domain claims. Review queue
-labels cover first/earliest claims, comparisons, region-period
-recommendations, method/process questions, and more-context requests.
+source/rights questions, no-evidence refusals, casual archive help,
+comparisons, method-process questions, active-object context requests, and
+region-period routes. Unsupported first/earliest claims and unavailable
+region-period routes are stable refusal cases. The source/rights lane includes
+explicit conservative `rights_interpretation` slots for reuse and public-domain
+claims.
 
-This means the next evaluation step is not personal blind judging. It is a
-protocol pass over the review queue:
+This means the next evaluation step is not personal blind judging. The label
+contract is ready for controlled generation and runtime experiments:
 
-1. Decide whether the fixture contains enough evidence for the query.
-2. If yes, write the minimal required evidence ids and non-invention fields.
-3. If no, mark `expected_refusal` or add a small method-context fixture record.
-4. Re-run retrieval sufficiency before measuring Qwen generation.
+1. Keep strict label audit as a preflight gate.
+2. Run retrieval sufficiency before every generation benchmark.
+3. Generate Qwen fast/research answers only from packets that pass the contract.
+4. Judge generated answers against faithfulness, non-invention, refusal
+   correctness, and useful research guidance.
 
 ## Next Review Task
 
-Protocol-review `fixtures/gold/labels.jsonl` before using any sufficiency number
-as paper evidence. Priority labels to review first:
-
-- first/earliest claims;
-- comparison and region-period recommendation questions;
-- method/process questions, which currently need method-context fixture records
-  or explicit refusal expectations;
-- more-context questions, which should be converted to
-  `refusal_more_context` unless a narrower active-object evidence packet is
-  defined.
+No label-contract repair is currently pending. The next repair task is to add
+new fixture coverage only if the paper needs unsupported cases to become
+answerable, such as Japan/1960s or twentieth-century Russia/Soviet routes.

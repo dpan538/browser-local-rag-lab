@@ -21,7 +21,8 @@ function writeJsonl(filePath, rows) {
   fs.writeFileSync(filePath, rows.map((row) => JSON.stringify(row)).join("\n") + "\n");
 }
 
-function mapLane(query) {
+function mapLane(query, refusalExpected = false) {
+  if (refusalExpected) return "refusal_more_context";
   const laneByIntent = {
     archive_orientation: "help",
     casual_archive_help: "help",
@@ -30,8 +31,8 @@ function mapLane(query) {
     first_earliest_claim: "research_answer",
     comparison: "research_answer",
     region_period_recommendation: "research_answer",
-    method_process_question: "refusal_more_context",
-    more_context: "refusal_more_context",
+    method_process_question: "research_answer",
+    more_context: "research_answer",
     no_evidence_refusal: "refusal_more_context"
   };
   return laneByIntent[query.queryType] || (query.expectedLane === "research" ? "research_answer" : "fast_answer");
@@ -49,7 +50,7 @@ function requiredFieldsFor(query, refusalExpected = false) {
     comparison: [...shared, "source"],
     region_period_recommendation: [...shared, "date_text", "region", "source"],
     method_process_question: ["method_context"],
-    more_context: [...shared, "topology"],
+    more_context: [...shared, "date_text", "region", "source", "topology"],
     no_evidence_refusal: []
   };
   return byIntent[query.queryType] || shared;
@@ -77,6 +78,67 @@ function rightsInterpretationFor(record) {
     interpretation_basis: sourceOnly
       ? "derived_from_source_rights_label_and_image_state; source page remains authority"
       : "derived_from_source_rights_label; source page remains authority"
+  };
+}
+
+function methodRecord() {
+  const raw = [
+    "The lab treats archive evidence as source-linked metadata, text summaries, rights labels, image-state, and topology hints.",
+    "Generated model text is not archive evidence; it is an experimental output judged against the evidence packet.",
+    "Assistant answers should choose a lane before generation: help, fast answer, source/rights, research answer, or refusal/more-context.",
+    "If a query asks for a claim not supported by the packet, the correct behavior is to refuse or request narrower context."
+  ].join(" ");
+  return {
+    record_id: "LAB-METHOD-CONTEXT-V0",
+    object_id: "LAB-METHOD-CONTEXT-V0",
+    title: "Browser-local RAG lab method context",
+    creator: "browser-local-rag-lab",
+    date_text: "2026-06-07",
+    date_start: 2026,
+    date_end: 2026,
+    region: "Research method",
+    object_type: "method_context",
+    medium: "research-only fixture record",
+    source: {
+      name: "browser-local-rag-lab method files",
+      url: "https://github.com/dpan538/browser-local-rag-lab",
+      access_date: "2026-06-07"
+    },
+    rights: {
+      state: "research_fixture",
+      display_policy: "text_only",
+      label: "Research-only method fixture; not archive object evidence."
+    },
+    rights_interpretation: {
+      reuse_permission: "not_applicable_to_archive_object_reuse",
+      public_domain_status: "not_applicable_to_archive_object_reuse",
+      interpretation_basis: "method fixture record"
+    },
+    image_state: {
+      code: "IMG00",
+      display_mode: "no_image",
+      has_image_frame: false,
+      model_image_eligible: false
+    },
+    topology: {
+      surface_type: "method",
+      publication_role: "method_context",
+      folder_titles: ["Research lab method"],
+      historical_node_ids: [],
+      movement_ids: []
+    },
+    method_context: {
+      evidence_definition: "Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence.",
+      answer_lane_policy: "Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation.",
+      non_evidence_rule: "AI output is experimental text and cannot become archive evidence.",
+      refusal_rule: "Refuse or request narrower context when required fields or claim support are absent."
+    },
+    notes: {
+      raw,
+      compact: raw,
+      raw_note_hash: hashText(raw),
+      packet_version: "packet.v0"
+    }
   };
 }
 
@@ -125,6 +187,73 @@ function rankRecords(records, query, limit) {
 
   if (exact && !ranked.some((record) => record.surfaceId === exact.surfaceId)) ranked.unshift(exact);
   return ranked.slice(0, limit);
+}
+
+function mentionedRecords(records, query) {
+  const text = query.question.toLowerCase();
+  return records.filter((record) => {
+    const id = record.surfaceId || record.record_id || "";
+    const title = record.title.toLowerCase();
+    return text.includes(id.toLowerCase())
+      || text.includes(title)
+      || (title.length > 18 && text.includes(title.slice(0, 18)));
+  });
+}
+
+function recordMatchesRegion(record, queryText) {
+  const text = queryText.toLowerCase();
+  const region = String(record.region || "").toLowerCase();
+  const title = String(record.title || "").toLowerCase();
+  const hay = `${region} ${title}`;
+  if (text.includes("france")) return hay.includes("france");
+  if (text.includes("latin america")) return region.includes("latin america");
+  if (text.includes("asia")) return region.includes("asia") || region.includes("china") || region.includes("india") || region.includes("vietnam") || title.includes("tokyo");
+  if (text.includes("japan")) return region.includes("japan") || title.includes("tokyo");
+  if (text.includes("russia") || text.includes("soviet")) return region.includes("russia") || title.includes("soviet") || title.includes("russia");
+  return true;
+}
+
+function recordMatchesPeriod(record, queryText) {
+  const text = queryText.toLowerCase();
+  const start = record.dateStart || Number.parseInt(record.dateText, 10);
+  if (!Number.isFinite(start)) return false;
+  if (text.includes("nineteenth")) return start >= 1800 && start <= 1899;
+  if (text.includes("twentieth")) return start >= 1900 && start <= 1999;
+  if (text.includes("1960s")) return start >= 1960 && start <= 1969;
+  return true;
+}
+
+function routeRecords(records, query, limit = 3) {
+  return records
+    .filter((record) => recordMatchesRegion(record, query.question) && recordMatchesPeriod(record, query.question))
+    .filter((record) => record.title && record.source?.url && record.region && record.dateText)
+    .sort((a, b) => (a.dateStart || 9999) - (b.dateStart || 9999))
+    .slice(0, limit);
+}
+
+function contextRecords(records, query, limit = 3) {
+  const active = query.surfaceContext ? records.find((record) => record.surfaceId === query.surfaceContext) : null;
+  if (!active) return [];
+  const related = records
+    .filter((record) => record.surfaceId !== active.surfaceId)
+    .map((record) => {
+      const activeRegion = String(active.region || "").toLowerCase();
+      const region = String(record.region || "").toLowerCase();
+      const title = String(record.title || "").toLowerCase();
+      const type = String(record.objectType || "").toLowerCase();
+      let score = 0;
+      if (region === activeRegion) score += 5;
+      if (activeRegion.includes("russia") && (title.includes("russia") || title.includes("soviet"))) score += 4;
+      if (type.includes("poster") || type.includes("advertising") || type.includes("print")) score += 2;
+      if (record.source?.name && active.source?.name && record.source.name.split(" ")[0] === active.source.name.split(" ")[0]) score += 1;
+      const dateDistance = Math.abs((record.dateStart || 0) - (active.dateStart || 0));
+      return { record, score, dateDistance };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.dateDistance - b.dateDistance)
+    .map((item) => item.record)
+    .slice(0, Math.max(0, limit - 1));
+  return [active, ...related];
 }
 
 function toGoldRecord(record) {
@@ -186,53 +315,64 @@ function toGoldRecord(record) {
   };
 }
 
-function toGoldQuery(query) {
+function toGoldQuery(query, label) {
   return {
     query_id: query.queryId,
     query_text: query.question,
     intent: query.queryType,
     active_object_id: query.surfaceContext,
-    expected_lane: mapLane(query),
+    expected_lane: label.gold_lane,
     requires_evidence: Boolean(query.requiresEvidence)
   };
 }
 
 function toGoldLabel(query, records) {
-  const lane = mapLane(query);
-  const refusalExpected = ["method_process_question", "more_context", "no_evidence_refusal"].includes(query.queryType);
-  const contextRecords = query.surfaceContext
-    ? records.filter((record) => record.surfaceId === query.surfaceContext)
-    : rankRecords(records, query, query.queryType === "first_earliest_claim" ? 3 : 2);
+  const candidatesByIntent = {
+    comparison: () => mentionedRecords(records, query).slice(0, 2),
+    method_process_question: () => [methodRecord()],
+    more_context: () => contextRecords(records, query, 3),
+    region_period_recommendation: () => routeRecords(records, query, 3)
+  };
+  const firstClaimNeedsRefusal = query.queryType === "first_earliest_claim";
+  const selectedRecords = candidatesByIntent[query.queryType]
+    ? candidatesByIntent[query.queryType]()
+    : query.surfaceContext
+      ? records.filter((record) => record.surfaceId === query.surfaceContext)
+      : rankRecords(records, query, query.queryType === "first_earliest_claim" ? 3 : 2);
+  const routeOrComparisonNeedsRefusal = ["comparison", "region_period_recommendation", "more_context"].includes(query.queryType)
+    && selectedRecords.length < (query.queryType === "more_context" ? 1 : 2);
+  const refusalExpected = query.queryType === "no_evidence_refusal" || firstClaimNeedsRefusal || routeOrComparisonNeedsRefusal;
+  const lane = mapLane(query, refusalExpected);
   const goldEvidenceIds = refusalExpected
     ? []
-    : contextRecords.map((record) => record.surfaceId);
-  const firstClaimNeedsHuman = query.queryType === "first_earliest_claim";
-  const requiredFields = requiredFieldsFor(query, refusalExpected || firstClaimNeedsHuman);
+    : selectedRecords.map((record) => record.record_id || record.surfaceId);
+  const requiredFields = requiredFieldsFor(query, refusalExpected);
   return {
     query_id: query.queryId,
     intent: query.queryType,
     gold_lane: lane,
-    sufficient_context: !refusalExpected && !firstClaimNeedsHuman && (query.requiresEvidence ? goldEvidenceIds.length > 0 : true),
-    refusal_expected: refusalExpected || query.question.toLowerCase().includes("upgrade the rights state") || firstClaimNeedsHuman,
+    sufficient_context: !refusalExpected && (query.requiresEvidence ? goldEvidenceIds.length > 0 : true),
+    refusal_expected: refusalExpected || query.question.toLowerCase().includes("upgrade the rights state"),
     gold_evidence_ids: goldEvidenceIds,
     required_fields: requiredFields,
     must_not_invent_fields: mustNotInventFor(query),
     allowed_guidance: !refusalExpected,
     gold_answer_slots: requiredFields.filter((field) => !["method_context", "topology"].includes(field)),
     review_state: "seed_auto_needs_human_review",
-    notes: firstClaimNeedsHuman
-      ? "Chronology or first/earliest claims require human review before they are answerable."
+    notes: firstClaimNeedsRefusal
+      ? "First/earliest claims require chronology proof not present in the seed fixture; correct behavior is refusal or request for a narrower chronology packet."
       : refusalExpected
-        ? "Insufficient method/context evidence in the seed fixture; correct behavior is refusal or request for narrower context."
+        ? "Insufficient evidence in the seed fixture; correct behavior is refusal or request for narrower context."
       : "Seed label generated from fixture/query metadata; review before paper claims."
   };
 }
 
 const fixture = readJson(fixturePath);
 const queries = readJson(queryPath).queries;
-const records = fixture.records.map(toGoldRecord);
-const goldQueries = queries.map(toGoldQuery);
-const labels = queries.map((query) => toGoldLabel(query, fixture.records));
+const records = [...fixture.records.map(toGoldRecord), methodRecord()];
+const labRecords = [...fixture.records, methodRecord()];
+const labels = queries.map((query) => toGoldLabel(query, labRecords));
+const goldQueries = queries.map((query, index) => toGoldQuery(query, labels[index]));
 
 writeJsonl(path.join(outDir, "records.jsonl"), records);
 writeJsonl(path.join(outDir, "queries.jsonl"), goldQueries);

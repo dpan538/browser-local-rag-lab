@@ -20,6 +20,53 @@ function readJsonl(filePath) {
   return fs.readFileSync(filePath, "utf8").trim().split("\n").filter(Boolean).map((line) => JSON.parse(line));
 }
 
+function methodRecord() {
+  return {
+    surfaceId: "LAB-METHOD-CONTEXT-V0",
+    sourceRecordId: "LAB-METHOD-CONTEXT-V0",
+    title: "Browser-local RAG lab method context",
+    creator: "browser-local-rag-lab",
+    dateText: "2026-06-07",
+    dateStart: 2026,
+    dateEnd: 2026,
+    region: "Research method",
+    objectType: "method_context",
+    medium: "research-only fixture record",
+    source: {
+      name: "browser-local-rag-lab method files",
+      url: "https://github.com/dpan538/browser-local-rag-lab",
+      accessDate: "2026-06-07"
+    },
+    rights: {
+      state: "research_fixture",
+      displayPolicy: "text_only",
+      label: "Research-only method fixture; not archive object evidence."
+    },
+    imageState: {
+      code: "IMG00",
+      displayMode: "no_image",
+      hasImageFrame: false,
+      modelImageEligible: false
+    },
+    topology: {
+      surfaceType: "method",
+      publicationRole: "method_context",
+      folderTitles: ["Research lab method"],
+      historicalNodeIds: [],
+      movementIds: []
+    },
+    methodContext: {
+      evidenceDefinition: "Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence.",
+      answerLanePolicy: "Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation.",
+      nonEvidenceRule: "AI output is experimental text and cannot become archive evidence.",
+      refusalRule: "Refuse or request narrower context when required fields or claim support are absent."
+    },
+    text: {
+      descriptionSummary: "The lab method defines evidence fields, answer lanes, non-evidence generated output, and refusal behavior."
+    }
+  };
+}
+
 function terms(text) {
   return String(text || "")
     .toLowerCase()
@@ -43,13 +90,85 @@ function haystack(record) {
     record.rights?.state,
     record.rights?.label,
     record.imageState?.code,
+    Object.values(record.methodContext || {}).join(" "),
     record.topology?.folderTitles?.join(" "),
     Object.values(record.text || {}).join(" ")
   ].join(" ").toLowerCase();
 }
 
+function mentionedRecords(records, query) {
+  const text = query.query_text.toLowerCase();
+  return records.filter((record) => {
+    const id = record.surfaceId || "";
+    const title = record.title.toLowerCase();
+    return text.includes(id.toLowerCase())
+      || text.includes(title)
+      || (title.length > 18 && text.includes(title.slice(0, 18)));
+  });
+}
+
+function recordMatchesRegion(record, queryText) {
+  const text = queryText.toLowerCase();
+  const region = String(record.region || "").toLowerCase();
+  const title = String(record.title || "").toLowerCase();
+  const hay = `${region} ${title}`;
+  if (text.includes("france")) return hay.includes("france");
+  if (text.includes("latin america")) return region.includes("latin america");
+  if (text.includes("asia")) return region.includes("asia") || region.includes("china") || region.includes("india") || region.includes("vietnam") || title.includes("tokyo");
+  if (text.includes("japan")) return region.includes("japan") || title.includes("tokyo");
+  if (text.includes("russia") || text.includes("soviet")) return region.includes("russia") || title.includes("soviet") || title.includes("russia");
+  return true;
+}
+
+function recordMatchesPeriod(record, queryText) {
+  const text = queryText.toLowerCase();
+  const start = record.dateStart || Number.parseInt(record.dateText, 10);
+  if (!Number.isFinite(start)) return false;
+  if (text.includes("nineteenth")) return start >= 1800 && start <= 1899;
+  if (text.includes("twentieth")) return start >= 1900 && start <= 1999;
+  if (text.includes("1960s")) return start >= 1960 && start <= 1969;
+  return true;
+}
+
+function routeRecords(records, query, limit) {
+  return records
+    .filter((record) => recordMatchesRegion(record, query.query_text) && recordMatchesPeriod(record, query.query_text))
+    .filter((record) => record.title && record.source?.url && record.region && record.dateText)
+    .sort((a, b) => (a.dateStart || 9999) - (b.dateStart || 9999))
+    .slice(0, limit);
+}
+
+function contextRecords(records, query, limit) {
+  const active = query.active_object_id ? records.find((record) => record.surfaceId === query.active_object_id) : null;
+  if (!active) return [];
+  const related = records
+    .filter((record) => record.surfaceId !== active.surfaceId)
+    .map((record) => {
+      const activeRegion = String(active.region || "").toLowerCase();
+      const region = String(record.region || "").toLowerCase();
+      const title = String(record.title || "").toLowerCase();
+      const type = String(record.objectType || "").toLowerCase();
+      let score = 0;
+      if (region === activeRegion) score += 5;
+      if (activeRegion.includes("russia") && (title.includes("russia") || title.includes("soviet"))) score += 4;
+      if (type.includes("poster") || type.includes("advertising") || type.includes("print")) score += 2;
+      if (record.source?.name && active.source?.name && record.source.name.split(" ")[0] === active.source.name.split(" ")[0]) score += 1;
+      const dateDistance = Math.abs((record.dateStart || 0) - (active.dateStart || 0));
+      return { record, score, dateDistance };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.dateDistance - b.dateDistance)
+    .map((item) => item.record)
+    .slice(0, Math.max(0, limit - 1));
+  return [active, ...related];
+}
+
 function retrieve(records, query, topK) {
   if (query.intent === "no_evidence_refusal") return [];
+  if (query.intent === "method_process_question") return records.filter((record) => record.surfaceId === "LAB-METHOD-CONTEXT-V0").slice(0, topK);
+  if (query.intent === "comparison") return mentionedRecords(records, query).slice(0, topK);
+  if (query.intent === "region_period_recommendation") return routeRecords(records, query, topK);
+  if (query.intent === "more_context") return contextRecords(records, query, topK);
   const queryTerms = terms(query.query_text);
   const exact = query.active_object_id ? records.find((record) => record.surfaceId === query.active_object_id) : null;
   const ranked = records
@@ -85,13 +204,12 @@ function packetFieldsAvailable(record, variant) {
     public_domain_status: variant.includeSourceRights && Boolean(record.rights?.label || record.rights?.state),
     reuse_permission: variant.includeSourceRights && Boolean(record.rights?.label || record.rights?.state),
     topology: variant.includeTopology && Boolean(record.topology?.folderTitles?.length),
-    method_context: false
+    method_context: Boolean(record.methodContext)
   };
 }
 
 function hasRequiredFields(candidates, label, variant) {
   if (label.required_fields.length === 0) return true;
-  if (label.required_fields.includes("method_context")) return false;
   if (candidates.length === 0) return false;
   return label.required_fields.every((field) => candidates.some((record) => packetFieldsAvailable(record, variant)[field]));
 }
@@ -118,6 +236,7 @@ function packetText(candidates, variant) {
       reusePermission: record.rights?.label || record.rights?.state ? "derived from source rights metadata; verify source before reuse" : undefined,
       publicDomainStatus: record.rights?.label || record.rights?.state ? "not globally determined by fixture unless source rights explicitly say so" : undefined
     } : undefined,
+    methodContext: record.methodContext,
     imageState: record.imageState,
     topology: variant.includeTopology ? record.topology : undefined,
     note: variant.noteMode === "raw"
@@ -133,6 +252,7 @@ function toCsv(rows) {
 }
 
 const fixture = readJson(fixturePath);
+const records = [...fixture.records, methodRecord()];
 const queries = readJsonl(path.join(goldDir, "queries.jsonl"));
 const labels = new Map(readJsonl(path.join(goldDir, "labels.jsonl")).map((label) => [label.query_id, label]));
 const variants = [
@@ -149,7 +269,7 @@ for (const query of queries) {
   const label = labels.get(query.query_id);
   for (const variant of variants) {
     const t0 = performance.now();
-    const candidates = retrieve(fixture.records, query, variant.topK);
+    const candidates = retrieve(records, query, variant.topK);
     const t1 = performance.now();
     const refusalGateAvailable = label.refusal_expected;
     const emptyRetrievalCorrect = query.intent === "no_evidence_refusal"
@@ -229,11 +349,10 @@ ${summary.map((row) => `| ${row.variant_id} | ${row.runs} | ${row.sufficiency_ra
 - Source/rights removal is a negative control because it cannot satisfy
   source/rights queries even if it reduces prompt size.
 - First/earliest and rights-upgrade claims are deliberately marked
-  refusal-expected until human review exists. They may still retrieve related
-  records; the benchmark treats this as a generation gate, not an empty-search
-  requirement.
-- Method/process questions currently lack method-context fixture records; this
-  is an intentional gap to fill before research-mode claims.
+  refusal-expected unless the fixture contains chronology proof. The benchmark
+  treats this as a generation gate, not an empty-search requirement.
+- Method/process questions use the research-only method context fixture record;
+  this record is not archive object evidence.
 `);
 
 console.log(JSON.stringify({

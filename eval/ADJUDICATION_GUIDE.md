@@ -44,9 +44,10 @@ Review the label, not the model answer. Generation is evaluated later.
    - This does not require empty retrieval. A query may retrieve related records
      and still require refusal.
    - Hard rule: `sufficient_context=false` requires `refusal_expected=true`.
-   - `more_context` and `no_evidence_refusal` are mandatory-refusal intents:
-     they require `gold_lane=refusal_more_context`,
-     `sufficient_context=false`, and `refusal_expected=true`.
+   - First/earliest claims and no-evidence refusals are mandatory-refusal
+     intents unless a separate chronology-proof fixture is added.
+   - `more_context` can be answerable when an active object and related context
+     records are available; otherwise it uses `refusal_more_context`.
 
 5. **Gold evidence ids**
    - Include only records needed to support the answer.
@@ -90,6 +91,12 @@ Some labels can be approved by rule with minimal interpretation:
 
 - Active-object factual query with one active object and source fields present.
 - Source/rights query with source URL, rights label, and image-state present.
+- Comparison query with two named evidence records and source fields present.
+- Region-period route with multiple records matching the requested region and
+  period, or refusal when no such route exists.
+- Method/process query with the research-only method context fixture record.
+- Active-object more-context query with current and related context records.
+- First/earliest claim without chronology proof: refusal expected.
 - Explicit rights upgrade request: refusal expected.
 - No-evidence fictional entity request: refusal expected.
 
@@ -108,19 +115,19 @@ Stable-by-rule is not assigned from intent alone. The audit must verify:
   gold evidence, or missing required evidence fields.
 - Warning: heuristic intent mismatch, non-typical query/lane alignment, unusual
   evidence count, or distribution anomaly.
-- Needs human review: no hard failure, but the question requires chronology,
-  comparison, regional recommendation, method judgment, or another
-  non-deterministic interpretation step.
+- Needs human review: no hard failure, but the rule table does not yet define a
+  deterministic evidence/refusal contract for the query.
 
 ## Requires Human Judgment
 
-These should not be auto-approved:
+These should not be auto-approved unless the fixture has an explicit rule and
+field-level evidence contract:
 
-- first/earliest claims;
-- regional recommendation routes;
-- comparison questions;
-- method/process questions;
-- any query where gold evidence is topically related but may not be sufficient.
+- chronology claims that assert "first" or "earliest";
+- region-period routes outside current fixture coverage;
+- comparison questions where fewer than two named records are present;
+- method/process questions without the method context fixture;
+- any query where gold evidence is topically related but not sufficient.
 
 ## Output
 

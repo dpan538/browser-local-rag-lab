@@ -189,6 +189,14 @@ function classify(label, query, recordsById, recordsByRecordId) {
     addFinding(findings, "fail", "C014_sufficient_without_gold_evidence", "sufficient labels need at least one gold evidence record");
   }
 
+  if (label.intent === "comparison" && !label.refusal_expected && evidenceRecords.length < 2) {
+    addFinding(findings, "fail", "C009_comparison_needs_two_evidence_records", `count=${evidenceRecords.length}`);
+  }
+
+  if (label.intent === "region_period_recommendation" && !label.refusal_expected && evidenceRecords.length < 2) {
+    addFinding(findings, "fail", "C009_route_needs_multiple_evidence_records", `count=${evidenceRecords.length}`);
+  }
+
   if (!label.refusal_expected && expectedRequiredFields.length > 0) {
     const missingEvidenceFields = evidenceMissingFields(evidenceRecords, expectedRequiredFields);
     if (missingEvidenceFields.length > 0) {
@@ -306,6 +314,7 @@ fs.writeFileSync(jsonPath, JSON.stringify({ generated_at: new Date().toISOString
 const findingRows = audits
   .filter((audit) => audit.findings.length > 0 || audit.needs_human_review)
   .map((audit) => `| ${audit.query_id} | ${audit.intent} | ${audit.gold_lane} | ${audit.final_state} | ${audit.findings.map((finding) => `${finding.severity}:${finding.code}`).join("; ") || "method review"} |`);
+const reviewQueueRows = findingRows.length === 0 ? "| none | none | none | none | none |" : findingRows.join("\n");
 
 const anomalyRows = anomalies.length === 0
   ? "| none | none | none |"
@@ -337,7 +346,7 @@ ${Object.entries(summary.by_intent).map(([intent, row]) => `| ${intent} | ${row.
 
 | Query | Intent | Lane | Final state | Findings |
 |---|---|---|---|---|
-${findingRows.join("\n")}
+${reviewQueueRows}
 
 ## Anomaly Scan
 
@@ -351,9 +360,9 @@ ${anomalyRows}
   field-level evidence checks against the gold evidence records.
 - Fail findings are label-contract errors that must be corrected before the
   affected labels can be used as paper evidence.
-- Review-queue labels need method review, not blind preference testing.
-- Method-review intents remain non-final until their evidence sufficiency is
-  manually checked.
+- When the review queue is empty, the label contract is ready for retrieval
+  sufficiency experiments. This does not make generated model answers archive
+  evidence.
 `);
 
 console.log(JSON.stringify({ summary, report: path.relative(repoRoot, reportPath), strict: strictMode }, null, 2));

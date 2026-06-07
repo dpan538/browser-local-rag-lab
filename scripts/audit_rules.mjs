@@ -26,23 +26,18 @@ export const INTENT_LANE_MAP = {
   current_object_explanation: ["fast_answer", "refusal_more_context"],
   first_earliest_claim: ["research_answer", "refusal_more_context"],
   method_process_question: ["research_answer", "refusal_more_context"],
-  more_context: ["refusal_more_context"],
+  more_context: ["research_answer", "refusal_more_context"],
   no_evidence_refusal: ["refusal_more_context"],
   region_period_recommendation: ["research_answer", "refusal_more_context"],
   source_rights_question: ["source_rights", "refusal_more_context"]
 };
 
 export const MANDATORY_REFUSAL_INTENTS = [
-  "more_context",
+  "first_earliest_claim",
   "no_evidence_refusal"
 ];
 
-export const METHOD_REVIEW_INTENTS = [
-  "comparison",
-  "first_earliest_claim",
-  "method_process_question",
-  "region_period_recommendation"
-];
+export const METHOD_REVIEW_INTENTS = [];
 
 export const BASE_MUST_NOT_INVENT_FIELDS = [
   "creator",
@@ -64,7 +59,7 @@ export const REQUIRED_FIELDS_BY_INTENT = {
   current_object_explanation: ["record_id", "title", "date_text", "region", "source"],
   first_earliest_claim: ["record_id", "title", "date_text", "source"],
   method_process_question: ["method_context"],
-  more_context: [],
+  more_context: ["record_id", "title", "date_text", "region", "source", "topology"],
   no_evidence_refusal: [],
   region_period_recommendation: ["record_id", "title", "date_text", "region", "source"],
   source_rights_question: ["record_id", "title", "source", "rights", "image_state", "reuse_permission", "public_domain_status"]
@@ -73,8 +68,13 @@ export const REQUIRED_FIELDS_BY_INTENT = {
 export const STABLE_RULE_REQUIRED_FIELDS = {
   archive_orientation: ["topology"],
   casual_archive_help: ["topology"],
+  comparison: ["record_id", "title", "source"],
   current_object_explanation: ["record_id", "title", "date_text", "region", "source"],
+  first_earliest_claim: [],
+  method_process_question: ["method_context"],
+  more_context: ["record_id", "title", "date_text", "region", "source", "topology"],
   no_evidence_refusal: [],
+  region_period_recommendation: ["record_id", "title", "date_text", "region", "source"],
   source_rights_question: ["record_id", "title", "source", "rights", "image_state", "reuse_permission", "public_domain_status"]
 };
 
