@@ -1,6 +1,6 @@
 # Retrieval Sufficiency v0
 
-Generated: 2026-06-07T02:30:31.010Z
+Generated: 2026-06-07T03:10:57.239Z
 
 This report evaluates whether deterministic retrieval plus evidence-packet
 variants preserve seeded gold evidence and required fields before any model
@@ -9,12 +9,12 @@ method scaffold, not as final paper evidence.
 
 | Variant | Runs | Sufficiency | Evidence coverage | Required fields | Refusal gate | Empty retrieval check | Avg tokens est. | Avg retrieval ms |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| top1_compressed_topology_source_rights | 30 | 0.633 | 0.633 | 0.933 | 1 | 0.933 | 289 | 0.759 |
-| top3_compressed_topology_source_rights | 30 | 0.767 | 0.767 | 0.933 | 1 | 0.933 | 900 | 0.691 |
-| top8_compressed_topology_source_rights | 30 | 0.767 | 0.8 | 0.933 | 1 | 0.933 | 2313 | 0.684 |
-| top3_raw_topology_source_rights | 30 | 0.767 | 0.767 | 0.933 | 1 | 0.933 | 1047 | 0.7 |
-| top3_compressed_no_topology_source_rights | 30 | 0.6 | 0.767 | 0.7 | 1 | 0.933 | 744 | 0.697 |
-| top3_compressed_topology_no_source_rights | 30 | 0.367 | 0.767 | 0.333 | 1 | 0.933 | 643 | 0.684 |
+| top1_compressed_topology_source_rights | 30 | 0.7 | 0.633 | 1 | 1 | 1 | 336 | 0.705 |
+| top3_compressed_topology_source_rights | 30 | 0.833 | 0.767 | 1 | 1 | 1 | 1037 | 0.68 |
+| top8_compressed_topology_source_rights | 30 | 0.833 | 0.8 | 1 | 1 | 1 | 2674 | 0.71 |
+| top3_raw_topology_source_rights | 30 | 0.833 | 0.767 | 1 | 1 | 1 | 1184 | 0.682 |
+| top3_compressed_no_topology_source_rights | 30 | 0.733 | 0.767 | 0.833 | 1 | 1 | 881 | 0.65 |
+| top3_compressed_topology_no_source_rights | 30 | 0.433 | 0.767 | 0.5 | 1 | 1 | 643 | 0.64 |
 
 ## Reading
 

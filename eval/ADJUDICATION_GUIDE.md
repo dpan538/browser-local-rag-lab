@@ -63,6 +63,9 @@ Review the label, not the model answer. Generation is evaluated later.
      For example, rights questions must explicitly account for
      `reuse_permission` and `public_domain_status` if the answer intends to
      make those claims.
+   - Source/rights labels satisfy those slots through the conservative
+     `rights_interpretation` fields derived from source rights metadata and
+     image-state, not through generated inference.
 
 7. **Must-not-invent fields**
    - Always include fields where hallucination would break archive trust:

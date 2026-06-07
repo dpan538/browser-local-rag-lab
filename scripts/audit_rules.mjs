@@ -67,7 +67,7 @@ export const REQUIRED_FIELDS_BY_INTENT = {
   more_context: [],
   no_evidence_refusal: [],
   region_period_recommendation: ["record_id", "title", "date_text", "region", "source"],
-  source_rights_question: ["record_id", "title", "source", "rights", "image_state"]
+  source_rights_question: ["record_id", "title", "source", "rights", "image_state", "reuse_permission", "public_domain_status"]
 };
 
 export const STABLE_RULE_REQUIRED_FIELDS = {
@@ -75,7 +75,7 @@ export const STABLE_RULE_REQUIRED_FIELDS = {
   casual_archive_help: ["topology"],
   current_object_explanation: ["record_id", "title", "date_text", "region", "source"],
   no_evidence_refusal: [],
-  source_rights_question: ["record_id", "title", "source", "rights", "image_state"]
+  source_rights_question: ["record_id", "title", "source", "rights", "image_state", "reuse_permission", "public_domain_status"]
 };
 
 export const STRUCTURAL_SCHEMA = {

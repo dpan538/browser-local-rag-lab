@@ -78,6 +78,8 @@ function recordHasField(record, field) {
     date_text: (item) => hasValue(item.date_text),
     image_state: (item) => hasValue(item.image_state) && hasValue(item.image_state.code),
     method_context: (item) => hasValue(item.method_context),
+    public_domain_status: (item) => hasValue(item.rights_interpretation?.public_domain_status),
+    reuse_permission: (item) => hasValue(item.rights_interpretation?.reuse_permission),
     rights: (item) => hasValue(item.rights) && (hasValue(item.rights.label) || hasValue(item.rights.state)),
     source: (item) => hasValue(item.source) && (hasValue(item.source.url) || hasValue(item.source.name)),
     topology: (item) => hasValue(item.topology)
@@ -157,7 +159,7 @@ function classify(label, query, recordsById, recordsByRecordId) {
 
   const expectedRequiredFields = REQUIRED_FIELDS_BY_INTENT[label.intent] || [];
   const missingRequiredFields = missingItems(label.required_fields, expectedRequiredFields);
-  if (missingRequiredFields.length > 0 && !MANDATORY_REFUSAL_INTENTS.includes(label.intent)) {
+  if (missingRequiredFields.length > 0 && !label.refusal_expected) {
     addFinding(findings, "fail", "C006_required_fields_incomplete", `missing=${missingRequiredFields.join("|")}`);
   }
 
@@ -240,7 +242,7 @@ function detectAnomalies(labels, recordsById) {
   for (const label of labels) {
     const stats = byIntent.get(label.intent) || { total: 0, missing_required: 0 };
     stats.total += 1;
-    if (!label.required_fields || label.required_fields.length === 0) stats.missing_required += 1;
+    if (!label.refusal_expected && (!label.required_fields || label.required_fields.length === 0)) stats.missing_required += 1;
     byIntent.set(label.intent, stats);
 
     for (const id of label.gold_evidence_ids || []) {

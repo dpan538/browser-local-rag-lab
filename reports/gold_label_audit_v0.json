@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-07T02:58:59.305Z",
+  "generated_at": "2026-06-07T03:11:29.637Z",
   "summary": {
     "label_count": 30,
-    "stable_by_rule": 11,
-    "needs_human_review": 19,
-    "fail_count": 15,
+    "stable_by_rule": 16,
+    "needs_human_review": 14,
+    "fail_count": 0,
     "warn_count": 0,
     "anomaly_count": 1,
     "by_intent": {
@@ -47,14 +47,14 @@
         "total": 2,
         "stable_by_rule": 0,
         "needs_human_review": 2,
-        "fails": 4,
+        "fails": 0,
         "warnings": 0
       },
       "more_context": {
         "total": 2,
         "stable_by_rule": 0,
         "needs_human_review": 2,
-        "fails": 6,
+        "fails": 0,
         "warnings": 0
       },
       "no_evidence_refusal": {
@@ -73,9 +73,9 @@
       },
       "source_rights_question": {
         "total": 5,
-        "stable_by_rule": 0,
-        "needs_human_review": 5,
-        "fails": 5,
+        "stable_by_rule": 5,
+        "needs_human_review": 0,
+        "fails": 0,
         "warnings": 0
       }
     }
@@ -162,18 +162,12 @@
       "query_id": "BQ08",
       "intent": "source_rights_question",
       "gold_lane": "source_rights",
-      "final_state": "FAIL",
-      "stable_by_rule": false,
-      "needs_human_review": true,
-      "fail_count": 1,
+      "final_state": "STABLE_BY_RULE",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
       "warn_count": 0,
-      "findings": [
-        {
-          "severity": "fail",
-          "code": "C007_intent_protected_fields_not_required",
-          "detail": "missing=public_domain_status|reuse_permission"
-        }
-      ]
+      "findings": []
     },
     {
       "query_id": "BQ09",
@@ -289,167 +283,89 @@
       "query_id": "BQ19",
       "intent": "source_rights_question",
       "gold_lane": "source_rights",
-      "final_state": "FAIL",
-      "stable_by_rule": false,
-      "needs_human_review": true,
-      "fail_count": 1,
+      "final_state": "STABLE_BY_RULE",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
       "warn_count": 0,
-      "findings": [
-        {
-          "severity": "fail",
-          "code": "C007_intent_protected_fields_not_required",
-          "detail": "missing=public_domain_status|reuse_permission"
-        }
-      ]
+      "findings": []
     },
     {
       "query_id": "BQ20",
       "intent": "source_rights_question",
       "gold_lane": "source_rights",
-      "final_state": "FAIL",
-      "stable_by_rule": false,
-      "needs_human_review": true,
-      "fail_count": 1,
+      "final_state": "STABLE_BY_RULE",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
       "warn_count": 0,
-      "findings": [
-        {
-          "severity": "fail",
-          "code": "C007_intent_protected_fields_not_required",
-          "detail": "missing=public_domain_status|reuse_permission"
-        }
-      ]
+      "findings": []
     },
     {
       "query_id": "BQ21",
       "intent": "source_rights_question",
       "gold_lane": "source_rights",
-      "final_state": "FAIL",
-      "stable_by_rule": false,
-      "needs_human_review": true,
-      "fail_count": 1,
+      "final_state": "STABLE_BY_RULE",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
       "warn_count": 0,
-      "findings": [
-        {
-          "severity": "fail",
-          "code": "C007_intent_protected_fields_not_required",
-          "detail": "missing=public_domain_status|reuse_permission"
-        }
-      ]
+      "findings": []
     },
     {
       "query_id": "BQ22",
       "intent": "source_rights_question",
       "gold_lane": "source_rights",
-      "final_state": "FAIL",
-      "stable_by_rule": false,
-      "needs_human_review": true,
-      "fail_count": 1,
+      "final_state": "STABLE_BY_RULE",
+      "stable_by_rule": true,
+      "needs_human_review": false,
+      "fail_count": 0,
       "warn_count": 0,
-      "findings": [
-        {
-          "severity": "fail",
-          "code": "C007_intent_protected_fields_not_required",
-          "detail": "missing=public_domain_status|reuse_permission"
-        }
-      ]
+      "findings": []
     },
     {
       "query_id": "BQ23",
       "intent": "method_process_question",
-      "gold_lane": "research_answer",
-      "final_state": "FAIL",
+      "gold_lane": "refusal_more_context",
+      "final_state": "NEEDS_HUMAN_REVIEW",
       "stable_by_rule": false,
       "needs_human_review": true,
-      "fail_count": 2,
+      "fail_count": 0,
       "warn_count": 0,
-      "findings": [
-        {
-          "severity": "fail",
-          "code": "C005_insufficient_without_refusal",
-          "detail": "sufficient_context=false requires refusal_expected=true"
-        },
-        {
-          "severity": "fail",
-          "code": "C008_gold_evidence_missing_required_fields",
-          "detail": "missing=method_context"
-        }
-      ]
+      "findings": []
     },
     {
       "query_id": "BQ24",
       "intent": "method_process_question",
-      "gold_lane": "research_answer",
-      "final_state": "FAIL",
+      "gold_lane": "refusal_more_context",
+      "final_state": "NEEDS_HUMAN_REVIEW",
       "stable_by_rule": false,
       "needs_human_review": true,
-      "fail_count": 2,
+      "fail_count": 0,
       "warn_count": 0,
-      "findings": [
-        {
-          "severity": "fail",
-          "code": "C005_insufficient_without_refusal",
-          "detail": "sufficient_context=false requires refusal_expected=true"
-        },
-        {
-          "severity": "fail",
-          "code": "C008_gold_evidence_missing_required_fields",
-          "detail": "missing=method_context"
-        }
-      ]
+      "findings": []
     },
     {
       "query_id": "BQ25",
       "intent": "more_context",
-      "gold_lane": "research_answer",
-      "final_state": "FAIL",
+      "gold_lane": "refusal_more_context",
+      "final_state": "NEEDS_HUMAN_REVIEW",
       "stable_by_rule": false,
       "needs_human_review": true,
-      "fail_count": 3,
+      "fail_count": 0,
       "warn_count": 0,
-      "findings": [
-        {
-          "severity": "fail",
-          "code": "C002_invalid_intent_lane",
-          "detail": "more_context cannot use research_answer; allowed=refusal_more_context"
-        },
-        {
-          "severity": "fail",
-          "code": "C003_mandatory_refusal_missing",
-          "detail": "more_context requires refusal_expected=true"
-        },
-        {
-          "severity": "fail",
-          "code": "C004_mandatory_refusal_context_not_false",
-          "detail": "more_context requires sufficient_context=false"
-        }
-      ]
+      "findings": []
     },
     {
       "query_id": "BQ26",
       "intent": "more_context",
-      "gold_lane": "research_answer",
-      "final_state": "FAIL",
+      "gold_lane": "refusal_more_context",
+      "final_state": "NEEDS_HUMAN_REVIEW",
       "stable_by_rule": false,
       "needs_human_review": true,
-      "fail_count": 3,
+      "fail_count": 0,
       "warn_count": 0,
-      "findings": [
-        {
-          "severity": "fail",
-          "code": "C002_invalid_intent_lane",
-          "detail": "more_context cannot use research_answer; allowed=refusal_more_context"
-        },
-        {
-          "severity": "fail",
-          "code": "C003_mandatory_refusal_missing",
-          "detail": "more_context requires refusal_expected=true"
-        },
-        {
-          "severity": "fail",
-          "code": "C004_mandatory_refusal_context_not_false",
-          "detail": "more_context requires sufficient_context=false"
-        }
-      ]
+      "findings": []
     },
     {
       "query_id": "BQ27",

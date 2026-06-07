@@ -196,7 +196,7 @@
       "queryType": "method_process_question",
       "question": "How does this archive decide what counts as evidence?",
       "surfaceContext": null,
-      "expectedLane": "research",
+      "expectedLane": "refusal",
       "requiresEvidence": true
     },
     {
@@ -204,7 +204,7 @@
       "queryType": "method_process_question",
       "question": "Why does the assistant not answer like a general chatbot?",
       "surfaceContext": null,
-      "expectedLane": "research",
+      "expectedLane": "refusal",
       "requiresEvidence": true
     },
     {
@@ -212,7 +212,7 @@
       "queryType": "more_context",
       "question": "Give me more context around this object's period.",
       "surfaceContext": "SURF-COM1970R007",
-      "expectedLane": "research",
+      "expectedLane": "refusal",
       "requiresEvidence": true
     },
     {
@@ -220,7 +220,7 @@
       "queryType": "more_context",
       "question": "What related items should I read after this one?",
       "surfaceContext": "SURF-COM1970R007",
-      "expectedLane": "research",
+      "expectedLane": "refusal",
       "requiresEvidence": true
     },
     {

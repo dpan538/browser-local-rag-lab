@@ -11,6 +11,7 @@
     "region",
     "source",
     "rights",
+    "rights_interpretation",
     "image_state",
     "topology",
     "notes"
@@ -43,6 +44,16 @@
         "state": { "type": "string" },
         "display_policy": { "type": "string" },
         "label": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "rights_interpretation": {
+      "type": "object",
+      "required": ["reuse_permission", "public_domain_status", "interpretation_basis"],
+      "properties": {
+        "reuse_permission": { "type": "string" },
+        "public_domain_status": { "type": "string" },
+        "interpretation_basis": { "type": "string" }
       },
       "additionalProperties": false
     },

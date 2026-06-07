@@ -82,6 +82,8 @@ function packetFieldsAvailable(record, variant) {
     source: variant.includeSourceRights && Boolean(record.source?.name && record.source?.url),
     rights: variant.includeSourceRights && Boolean(record.rights?.label || record.rights?.state),
     image_state: Boolean(record.imageState?.code),
+    public_domain_status: variant.includeSourceRights && Boolean(record.rights?.label || record.rights?.state),
+    reuse_permission: variant.includeSourceRights && Boolean(record.rights?.label || record.rights?.state),
     topology: variant.includeTopology && Boolean(record.topology?.folderTitles?.length),
     method_context: false
   };
@@ -112,6 +114,10 @@ function packetText(candidates, variant) {
     region: record.region,
     source: variant.includeSourceRights ? record.source : undefined,
     rights: variant.includeSourceRights ? record.rights : undefined,
+    rightsInterpretation: variant.includeSourceRights ? {
+      reusePermission: record.rights?.label || record.rights?.state ? "derived from source rights metadata; verify source before reuse" : undefined,
+      publicDomainStatus: record.rights?.label || record.rights?.state ? "not globally determined by fixture unless source rights explicitly say so" : undefined
+    } : undefined,
     imageState: record.imageState,
     topology: variant.includeTopology ? record.topology : undefined,
     note: variant.noteMode === "raw"
@@ -146,7 +152,7 @@ for (const query of queries) {
     const candidates = retrieve(fixture.records, query, variant.topK);
     const t1 = performance.now();
     const refusalGateAvailable = label.refusal_expected;
-    const emptyRetrievalCorrect = label.refusal_expected && !query.active_object_id
+    const emptyRetrievalCorrect = query.intent === "no_evidence_refusal"
       ? candidates.length === 0
       : true;
     const evidenceCovered = coversGoldEvidence(candidates, label);

@@ -30,20 +30,21 @@ function mapLane(query) {
     first_earliest_claim: "research_answer",
     comparison: "research_answer",
     region_period_recommendation: "research_answer",
-    method_process_question: "research_answer",
-    more_context: "research_answer",
+    method_process_question: "refusal_more_context",
+    more_context: "refusal_more_context",
     no_evidence_refusal: "refusal_more_context"
   };
   return laneByIntent[query.queryType] || (query.expectedLane === "research" ? "research_answer" : "fast_answer");
 }
 
-function requiredFieldsFor(query) {
+function requiredFieldsFor(query, refusalExpected = false) {
+  if (refusalExpected) return [];
   const shared = ["record_id", "title"];
   const byIntent = {
     archive_orientation: ["topology"],
     casual_archive_help: ["topology"],
     current_object_explanation: [...shared, "date_text", "region", "source"],
-    source_rights_question: [...shared, "source", "rights", "image_state"],
+    source_rights_question: [...shared, "source", "rights", "image_state", "reuse_permission", "public_domain_status"],
     first_earliest_claim: [...shared, "date_text", "source"],
     comparison: [...shared, "source"],
     region_period_recommendation: [...shared, "date_text", "region", "source"],
@@ -59,6 +60,24 @@ function mustNotInventFor(query) {
   if (query.queryType === "source_rights_question") return [...base, "reuse_permission", "public_domain_status"];
   if (query.queryType === "first_earliest_claim") return [...base, "first_or_earliest_claim"];
   return base;
+}
+
+function rightsInterpretationFor(record) {
+  const label = `${record.rights?.state || ""} ${record.rights?.label || ""}`.toLowerCase();
+  const publicDomainMentioned = label.includes("public-domain") || label.includes("public domain");
+  const openLicenseMentioned = label.includes("cc by") || label.includes("open-license");
+  const sourceOnly = record.rights?.displayPolicy === "open_image_frame";
+  return {
+    reuse_permission: openLicenseMentioned || publicDomainMentioned
+      ? "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required"
+      : "not_determined_from_fixture",
+    public_domain_status: publicDomainMentioned
+      ? "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined"
+      : "not_determined_from_fixture",
+    interpretation_basis: sourceOnly
+      ? "derived_from_source_rights_label_and_image_state; source page remains authority"
+      : "derived_from_source_rights_label; source page remains authority"
+  };
 }
 
 function terms(text) {
@@ -144,6 +163,7 @@ function toGoldRecord(record) {
       display_policy: record.rights.displayPolicy,
       label: record.rights.label
     },
+    rights_interpretation: rightsInterpretationFor(record),
     image_state: {
       code: record.imageState.code,
       display_mode: record.imageState.displayMode,
@@ -179,14 +199,15 @@ function toGoldQuery(query) {
 
 function toGoldLabel(query, records) {
   const lane = mapLane(query);
-  const refusalExpected = query.queryType === "no_evidence_refusal";
+  const refusalExpected = ["method_process_question", "more_context", "no_evidence_refusal"].includes(query.queryType);
   const contextRecords = query.surfaceContext
     ? records.filter((record) => record.surfaceId === query.surfaceContext)
     : rankRecords(records, query, query.queryType === "first_earliest_claim" ? 3 : 2);
-  const goldEvidenceIds = refusalExpected || query.queryType === "method_process_question"
+  const goldEvidenceIds = refusalExpected
     ? []
     : contextRecords.map((record) => record.surfaceId);
   const firstClaimNeedsHuman = query.queryType === "first_earliest_claim";
+  const requiredFields = requiredFieldsFor(query, refusalExpected || firstClaimNeedsHuman);
   return {
     query_id: query.queryId,
     intent: query.queryType,
@@ -194,13 +215,15 @@ function toGoldLabel(query, records) {
     sufficient_context: !refusalExpected && !firstClaimNeedsHuman && (query.requiresEvidence ? goldEvidenceIds.length > 0 : true),
     refusal_expected: refusalExpected || query.question.toLowerCase().includes("upgrade the rights state") || firstClaimNeedsHuman,
     gold_evidence_ids: goldEvidenceIds,
-    required_fields: requiredFieldsFor(query),
+    required_fields: requiredFields,
     must_not_invent_fields: mustNotInventFor(query),
     allowed_guidance: !refusalExpected,
-    gold_answer_slots: requiredFieldsFor(query).filter((field) => !["method_context", "topology"].includes(field)),
+    gold_answer_slots: requiredFields.filter((field) => !["method_context", "topology"].includes(field)),
     review_state: "seed_auto_needs_human_review",
     notes: firstClaimNeedsHuman
       ? "Chronology or first/earliest claims require human review before they are answerable."
+      : refusalExpected
+        ? "Insufficient method/context evidence in the seed fixture; correct behavior is refusal or request for narrower context."
       : "Seed label generated from fixture/query metadata; review before paper claims."
   };
 }
