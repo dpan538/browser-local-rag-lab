@@ -1,0 +1,66 @@
+{
+  "_provenance": {
+    "step": "detect_anomalies",
+    "timestamp": "2026-06-07T07:43:52.727Z",
+    "labels_path": "fixtures/gold/labels.jsonl",
+    "answers_path": "reports/webllm_round_02_answers.jsonl",
+    "records_path": "fixtures/gold/records.jsonl",
+    "review_fixture_path": "reports/review_fixture_round_02.jsonl"
+  },
+  "label_count": 30,
+  "answer_count": 30,
+  "anomaly_count": 8,
+  "fail_count": 0,
+  "warn_count": 8,
+  "info_count": 0,
+  "anomalies": [
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ06",
+      "detail": "tokens_per_second=5.62; avg=16.19"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ08",
+      "detail": "tokens_per_second=8.04; avg=16.19"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ12",
+      "detail": "tokens_per_second=5.87; avg=16.19"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ13",
+      "detail": "tokens_per_second=5.96; avg=16.19"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ19",
+      "detail": "tokens_per_second=8.08; avg=16.19"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ22",
+      "detail": "tokens_per_second=8.06; avg=16.19"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ25",
+      "detail": "tokens_per_second=7.63; avg=16.19"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ26",
+      "detail": "tokens_per_second=7.69; avg=16.19"
+    }
+  ]
+}

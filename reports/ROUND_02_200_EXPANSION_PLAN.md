@@ -38,9 +38,22 @@ Required closure steps:
 2. Review high-priority rows first. The review sheet automatically marks rows
    with visible required fields as `reviewed_candidate` and rows with implicit
    or missing fields as `needs_field_visibility_review`.
-3. Resolve or adjudicate the 8 remaining field-visibility warnings.
-4. Produce a reviewed answer fixture with reviewer decisions and notes.
-5. Mark reviewed labels/answers explicitly rather than inferring review from
+3. Build the editable review fixture:
+
+   ```bash
+   npm run review:fixture
+   ```
+
+4. Resolve or adjudicate the 8 remaining field-visibility warnings by editing
+   only `reviewer_decision` and `reviewer_notes` in
+   `reports/review_fixture_round_02.jsonl`.
+5. Validate and export reviewed answers:
+
+   ```bash
+   npm run review:apply
+   ```
+
+6. Mark reviewed labels/answers explicitly rather than inferring review from
    `FAIL=0`.
 
 Exit condition: 30 reviewed answers, no automatic hard failures, and all
@@ -83,6 +96,16 @@ Each batch must include:
 
 Do not add generated answers as evidence. Generated answers remain experiment
 outputs only.
+
+If a batch requires new evidence records, validate the proposed records before
+merging them into the gold fixture:
+
+```bash
+npm run records:validate-new -- fixtures/expansion/new_records.jsonl --strict
+```
+
+This checks record-id collisions, baseline source/rights/image-state fields,
+placeholder values, and method-context schema consistency.
 
 ## Query Mix Guidance
 
@@ -132,6 +155,16 @@ After each batch:
 npm run audit:full
 npm run round2:scale-readiness
 ```
+
+The full audit now also runs:
+
+```bash
+npm run audit:anomalies
+```
+
+The anomaly scan adds runtime behavior, evidence-label alignment, review-state,
+evidence-value, and intent-distribution checks on top of the deterministic label
+audit.
 
 If an earlier audit report is archived, compare it with:
 

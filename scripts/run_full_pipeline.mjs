@@ -10,7 +10,8 @@ const steps = [
   ["audit:labels:strict", ["npm", "run", "audit:labels:strict"]],
   ["gold:sufficiency", ["npm", "run", "gold:sufficiency"]],
   ["retrieval:coverage", ["npm", "run", "retrieval:coverage"]],
-  ["audit:quality", ["npm", "run", "audit:quality"]]
+  ["audit:quality", ["npm", "run", "audit:quality"]],
+  ["audit:anomalies", ["npm", "run", "audit:anomalies"]]
 ];
 
 for (const [name, command] of steps) {
