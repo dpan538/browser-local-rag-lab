@@ -46,6 +46,15 @@ function safeRows(payload) {
   return payload.results;
 }
 
+function roundSlug(payload) {
+  const id = String(payload.meta?.round_id || "webllm_round_01").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+  return id || "webllm_round_01";
+}
+
+function roundTitle(payload) {
+  return roundSlug(payload).toUpperCase();
+}
+
 function gitCommit() {
   try {
     return childProcess.execFileSync("git", ["rev-parse", "HEAD"], { cwd: repoRoot, encoding: "utf8" }).trim();
@@ -95,6 +104,11 @@ function metricIssues(results) {
       if (!("device_error" in row)) {
         issues.push({ row: index, query_id: row.query_id, type: "missing_metric", key: "device_error" });
       }
+      if (!row.cache_state) {
+        issues.push({ row: index, query_id: row.query_id, type: "missing_metric", key: "cache_state" });
+      } else if (row.cache_state === "ambiguous") {
+        issues.push({ row: index, query_id: row.query_id, type: "cache_state_ambiguous", key: "cache_state", value: row.cache_state });
+      }
     } else if (!row.error && !row.device_error) {
       issues.push({ row: index, query_id: row.query_id, type: "missing_error_detail", key: "error" });
     }
@@ -115,6 +129,7 @@ function answerRows(results) {
     prompt_tokens_est: row.prompt_tokens_est,
     model_load_ms: row.model_load_ms,
     tokenization_ms: row.tokenization_ms ?? null,
+    cache_state: row.cache_state || "ambiguous",
     ttft_ms: row.ttft_ms,
     total_latency_ms: row.total_latency_ms,
     output_tokens: row.output_tokens,
@@ -150,7 +165,7 @@ function markdownReport({ payload, results, contract, metrics, outputJsonPath, a
     ? "| none | none | none | none | none |"
     : metrics.map((item) => `| ${item.query_id || "unknown"} | ${item.row} | ${item.type} | ${item.key || "n/a"} | ${String(item.value ?? "").replaceAll("\n", " ")} |`).join("\n");
 
-  return `# WebLLM Round 01
+  return `# ${roundTitle(payload).replaceAll("_", " ")}
 
 Generated: ${new Date().toISOString()}
 
@@ -223,17 +238,21 @@ ${errorRows}
 }
 
 export function importWebllmRound(inputPath, {
-  outputJsonPath = defaultRoundJsonPath,
-  answersPath = defaultAnswersPath,
-  reportMdPath = defaultReportMdPath
+  outputJsonPath = null,
+  answersPath = null,
+  reportMdPath = null
 } = {}) {
   if (!inputPath) throw new Error("inputPath is required");
   const payload = readJson(inputPath);
   const results = safeRows(payload);
   const metrics = metricIssues(results);
   const importProvenance = provenance(inputPath, payload);
+  const slug = roundSlug(payload);
+  const finalOutputJsonPath = outputJsonPath || path.join(repoRoot, "reports", `${slug}.json`);
+  const finalAnswersPath = answersPath || path.join(repoRoot, "reports", `${slug}_answers.jsonl`);
+  const finalReportMdPath = reportMdPath || path.join(repoRoot, "reports", `${slug.toUpperCase()}.md`);
 
-  fs.writeFileSync(outputJsonPath, JSON.stringify({
+  fs.writeFileSync(finalOutputJsonPath, JSON.stringify({
     _provenance: importProvenance,
     imported_at: new Date().toISOString(),
     source_export_path: path.basename(inputPath),
@@ -241,14 +260,14 @@ export function importWebllmRound(inputPath, {
     ...payload
   }, null, 2) + "\n");
 
-  writeJsonl(answersPath, answerRows(results));
-  const contract = validateGenerationContract({ answersPath });
-  fs.writeFileSync(reportMdPath, markdownReport({ payload, results, contract, metrics, outputJsonPath, answersPath }));
+  writeJsonl(finalAnswersPath, answerRows(results));
+  const contract = validateGenerationContract({ answersPath: finalAnswersPath });
+  fs.writeFileSync(finalReportMdPath, markdownReport({ payload, results, contract, metrics, outputJsonPath: finalOutputJsonPath, answersPath: finalAnswersPath }));
 
   return {
-    report: relative(reportMdPath),
-    imported_json: relative(outputJsonPath),
-    answers: relative(answersPath),
+    report: relative(finalReportMdPath),
+    imported_json: relative(finalOutputJsonPath),
+    answers: relative(finalAnswersPath),
     result_count: results.length,
     completed_count: results.filter((row) => row.generation_status === "completed").length,
     error_count: results.filter((row) => row.generation_status !== "completed").length,

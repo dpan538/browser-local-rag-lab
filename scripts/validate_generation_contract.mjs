@@ -86,6 +86,15 @@ function extractFieldAssertion(text, field) {
   return match ? match[1].trim() : null;
 }
 
+function extractTaggedAssertion(text, tags) {
+  for (const tag of tags) {
+    const pattern = new RegExp(`${tag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*[:：]\\s*(.+?)(?:\\n|$)`, "i");
+    const match = String(text).match(pattern);
+    if (match) return match[1].trim();
+  }
+  return null;
+}
+
 function answerMentionsAnyValue(text, values) {
   const haystack = normalize(text);
   return values.some((value) => {
@@ -100,6 +109,27 @@ function answerAssertsField(text, field) {
 
 function addViolation(violations, severity, queryId, code, field, detail) {
   violations.push({ severity, query_id: queryId, code, field, detail });
+}
+
+function validateSourceRightsTags(violations, label, text, valuesByField) {
+  if (label.intent !== "source_rights_question" || label.refusal_expected) return;
+  const tagChecks = [
+    { field: "rights", tags: ["RIGHTS", "rights"] },
+    { field: "reuse_permission", tags: ["REUSE", "reuse_permission"] },
+    { field: "public_domain_status", tags: ["PUBLIC_DOMAIN", "public_domain_status"] }
+  ];
+  for (const check of tagChecks) {
+    const values = valuesByField.get(check.field) || [];
+    if (values.length === 0) continue;
+    const asserted = extractTaggedAssertion(text, check.tags);
+    if (!asserted) {
+      addViolation(violations, "fail", label.query_id, "G006_source_rights_tag_missing", check.field, `missing tags=${check.tags.join("/")}`);
+      continue;
+    }
+    if (!answerMentionsAnyValue(asserted, values)) {
+      addViolation(violations, "fail", label.query_id, "G007_source_rights_tag_mismatch", check.field, `asserted="${asserted}"`);
+    }
+  }
 }
 
 export function validateGenerationContract({
@@ -159,6 +189,8 @@ export function validateGenerationContract({
         addViolation(violations, "fail", label.query_id, "G005_unverified_field_assertion", field, `asserted="${asserted}"`);
       }
     }
+
+    validateSourceRightsTags(violations, label, text, valuesByField);
 
     if (query?.expected_lane && answerRow.lane && answerRow.lane !== query.expected_lane) {
       addViolation(violations, "warn", label.query_id, "G102_lane_mismatch", "lane", `expected=${query.expected_lane}; answer=${answerRow.lane}`);

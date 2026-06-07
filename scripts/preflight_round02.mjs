@@ -81,6 +81,17 @@ function recordSummary(record, fields) {
   ].join("\n");
 }
 
+function evidenceTagBlock(records, fields) {
+  const uniqueFields = [...new Set(fields)];
+  return [
+    "Evidence Tags:",
+    ...uniqueFields.map((field) => {
+      const values = [...new Set(records.map((record) => fieldLines(record, [field])[0].split(": ").slice(1).join(": ")).filter((value) => value && value !== "not available"))];
+      return `${field}: ${values.length ? values.join(" | ") : "not available"}`;
+    })
+  ].join("\n");
+}
+
 function orientationPrompt(query, label, records) {
   const folders = records.flatMap((record) => record.topology?.folder_titles || []);
   const surfaces = records.map((record) => record.topology?.surface_type);
@@ -100,42 +111,59 @@ function orientationPrompt(query, label, records) {
     `- Publication roles: ${list(roles)}.`,
     `- Source families: ${list(sources)}.`,
     `- Image states: ${list(imageStates)}.`,
-    "Required bullets: purpose; organization; next step."
+    "Required bullets: purpose; organization; next step.",
+    "",
+    "After the three bullets, append this exact field block:",
+    evidenceTagBlock(records, ["topology"])
   ].join("\n");
 }
 
 function refusalPrompt(query, label) {
   return [
-    "You are a research-only browser-local Qwen RAG experiment.",
-    "Generated text is not archive evidence.",
-    "Do not output hidden reasoning or <think> tags.",
-    `Question: ${query.query_text}`,
-    `Intent: ${label.intent}`,
-    "CRITICAL: The gold label says the evidence is insufficient.",
-    "Start with exactly: I cannot answer this question because the evidence is insufficient.",
-    "Do not provide factual claims, dates, names, source claims, rights claims, or first/earliest claims.",
-    "Ask for narrower context or stronger evidence in one short sentence."
+    "You are an archival assistant with strict evidence rules.",
+    "The evidence for this query is intentionally empty or insufficient.",
+    "",
+    `QUERY: ${query.query_text}`,
+    "",
+    "INSTRUCTION: You MUST answer with exactly the following sentence and nothing else:",
+    "\"I cannot answer this question because the evidence is insufficient.\"",
+    "",
+    "Do not explain. Do not provide any factual information. Do not speculate."
   ].join("\n");
 }
 
 function sourceRightsPrompt(query, label, records) {
+  const record = records[0] || {};
+  const fields = Object.fromEntries(["record_id", "title", "source", "rights", "image_state", "reuse_permission", "public_domain_status"].map((field) => {
+    const line = fieldLines(record, [field])[0] || `${field}: not available`;
+    return [field, line.split(": ").slice(1).join(": ")];
+  }));
   return [
-    "You are a rights-aware archive assistant in a browser-local research experiment.",
-    "Generated text is not archive evidence.",
+    "You are an archival rights assistant.",
+    "Use ONLY the evidence below. Do not interpret or summarize rights.",
     "Do not output hidden reasoning or <think> tags.",
-    "When mentioning rights, copy the exact field text. Do not interpret it as a new permission grant.",
-    `Question: ${query.query_text}`,
-    "Required output: record_id; source; rights; image_state; reuse_permission; public_domain_status; conservative caveat.",
-    "Evidence fields:",
-    ...records.map((record) => recordSummary(record, [
-      "record_id",
-      "title",
-      "source",
-      "rights",
-      "image_state",
-      "reuse_permission",
-      "public_domain_status"
-    ]))
+    "",
+    "EVIDENCE:",
+    `record_id: ${fields.record_id}`,
+    `title: ${fields.title}`,
+    `source: ${fields.source}`,
+    `rights: ${fields.rights}`,
+    `image_state: ${fields.image_state}`,
+    `reuse_permission: ${fields.reuse_permission}`,
+    `public_domain_status: ${fields.public_domain_status}`,
+    "",
+    `QUERY: ${query.query_text}`,
+    "",
+    "INSTRUCTION: Answer in exactly this format, with no extra text:",
+    "",
+    `record_id: ${fields.record_id}`,
+    `title: ${fields.title}`,
+    `source: ${fields.source}`,
+    `RIGHTS: ${fields.rights}`,
+    `image_state: ${fields.image_state}`,
+    `REUSE: ${fields.reuse_permission}`,
+    `PUBLIC_DOMAIN: ${fields.public_domain_status}`,
+    "CAVEAT: Verify the source page before reuse; this experiment does not grant rights."
   ].join("\n");
 }
 
@@ -149,8 +177,12 @@ function compactAnswerPrompt(query, label, records) {
     `Question: ${query.query_text}`,
     `Intent: ${label.intent}`,
     `Required fields to cite visibly: ${required.join(", ")}`,
+    "",
     "Evidence fields:",
-    ...records.map((record) => recordSummary(record, required))
+    ...records.map((record) => recordSummary(record, required)),
+    "",
+    "Answer briefly, then append this exact field block using values from evidence:",
+    evidenceTagBlock(records, required)
   ].join("\n");
 }
 
@@ -161,6 +193,22 @@ function buildRound02Prompt(query, label, records) {
   }
   if (label.intent === "source_rights_question") return sourceRightsPrompt(query, label, records);
   return compactAnswerPrompt(query, label, records);
+}
+
+function auditPrompt(row, prompt) {
+  const failures = [];
+  if (row.prompt_mode === "hard_refusal" && !prompt.includes("I cannot answer this question because the evidence is insufficient.")) {
+    failures.push("hard_refusal_missing_magic_phrase");
+  }
+  if (row.prompt_mode === "source_rights_field_summary") {
+    for (const token of ["RIGHTS:", "REUSE:", "PUBLIC_DOMAIN:"]) {
+      if (!prompt.includes(token)) failures.push(`source_rights_missing_${token.replace(":", "").toLowerCase()}_tag`);
+    }
+  }
+  if (["compact_required_field_summary", "orientation_structure_summary"].includes(row.prompt_mode) && !prompt.includes("Evidence Tags:")) {
+    failures.push("answerable_prompt_missing_evidence_tags");
+  }
+  return failures;
 }
 
 function main() {
@@ -176,7 +224,7 @@ function main() {
     const retrievedRecords = splitIds(retrievalRow?.retrieved_ids).map((id) => records.get(id)).filter(Boolean);
     const prompt = buildRound02Prompt(query, label, retrievedRecords);
     const promptTokensEst = estimateTokens(prompt);
-    return {
+    const row = {
       query_id: label.query_id,
       intent: label.intent,
       lane: label.gold_lane,
@@ -195,14 +243,19 @@ function main() {
             : "compact_required_field_summary",
       retry_required_from_round01: ["BQ11", "BQ22"].includes(label.query_id)
     };
+    row.prompt_audit_failures = auditPrompt(row, prompt);
+    row.prompt_audit_status = row.prompt_audit_failures.length === 0 ? "pass" : "fail";
+    return row;
   });
 
   const failRows = rows.filter((row) => row.token_budget_status === "fail");
+  const auditFailRows = rows.filter((row) => row.prompt_audit_status === "fail");
   const retryRows = rows.filter((row) => row.retry_required_from_round01);
   const summary = {
     total: rows.length,
     token_budget: tokenBudget,
     token_budget_fail_count: failRows.length,
+    prompt_audit_fail_count: auditFailRows.length,
     max_prompt_tokens_est: Math.max(...rows.map((row) => row.prompt_tokens_est)),
     avg_prompt_tokens_est: rows.reduce((sum, row) => sum + row.prompt_tokens_est, 0) / rows.length,
     round01_retry_rows: retryRows.map((row) => row.query_id)
@@ -228,7 +281,7 @@ function main() {
   };
   fs.writeFileSync(outputJsonPath, `${JSON.stringify(report, null, 2)}\n`);
 
-  const rowMd = rows.map((row) => `| ${row.query_id} | ${row.intent} | ${row.prompt_mode} | ${row.prompt_tokens_est} | ${row.token_budget_status} | ${row.retry_required_from_round01 ? "yes" : "no"} |`).join("\n");
+  const rowMd = rows.map((row) => `| ${row.query_id} | ${row.intent} | ${row.prompt_mode} | ${row.prompt_tokens_est} | ${row.token_budget_status} | ${row.prompt_audit_status} | ${row.retry_required_from_round01 ? "yes" : "no"} |`).join("\n");
   fs.writeFileSync(outputMdPath, `# Round 02 Design
 
 Generated: ${report._provenance.timestamp}
@@ -269,12 +322,13 @@ remove preventable runtime/prompt failures before broader comparison:
 - Token budget: ${tokenBudget}
 - Rows checked: ${summary.total}
 - Token-budget failures: ${summary.token_budget_fail_count}
+- Prompt-audit failures: ${summary.prompt_audit_fail_count}
 - Max estimated prompt tokens: ${summary.max_prompt_tokens_est}
 - Average estimated prompt tokens: ${summary.avg_prompt_tokens_est.toFixed(1)}
 - Round 01 retry rows: ${summary.round01_retry_rows.join(", ")}
 
-| Query | Intent | Prompt mode | Est. tokens | Budget | Round 01 retry |
-|---|---|---|---:|---|---|
+| Query | Intent | Prompt mode | Est. tokens | Budget | Prompt audit | Round 01 retry |
+|---|---|---|---:|---|---|---|
 ${rowMd}
 
 ## Round 02 Run Protocol
@@ -293,7 +347,7 @@ ${rowMd}
     json: path.relative(repoRoot, outputJsonPath),
     ...summary
   }, null, 2));
-  if (failRows.length > 0) process.exitCode = 1;
+  if (failRows.length > 0 || auditFailRows.length > 0) process.exitCode = 1;
 }
 
 main();

@@ -46,6 +46,14 @@
           Temperature
           <input id="temperature" type="number" min="0" max="2" step="0.1" value="0.2" />
         </label>
+        <label>
+          Cache state
+          <select id="cacheState">
+            <option value="warm_from_previous" selected>warm_from_previous</option>
+            <option value="cold_cleared">cold_cleared</option>
+            <option value="ambiguous">ambiguous</option>
+          </select>
+        </label>
         <button id="runOneButton" type="button">Run selected</button>
         <button id="runAllButton" type="button">Run all 30</button>
         <button id="downloadButton" type="button">Download results</button>
@@ -71,6 +79,6 @@
       </section>
       <textarea id="exportBuffer" hidden aria-hidden="true"></textarea>
     </main>
-    <script type="module" src="./webllm_round.js?v=7"></script>
+    <script type="module" src="./webllm_round.js?v=9"></script>
   </body>
 </html>

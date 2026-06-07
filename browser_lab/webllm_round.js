@@ -1,7 +1,7 @@
 import * as webllm from "https://esm.run/@mlc-ai/web-llm";
 
 const variantId = "top3_compressed_topology_source_rights";
-const roundId = "webllm_round_01";
+const roundId = "webllm_round_02";
 
 const state = {
   queries: [],
@@ -25,6 +25,7 @@ const el = {
   querySelect: document.querySelector("#querySelect"),
   maxTokens: document.querySelector("#maxTokens"),
   temperature: document.querySelector("#temperature"),
+  cacheState: document.querySelector("#cacheState"),
   runOneButton: document.querySelector("#runOneButton"),
   runAllButton: document.querySelector("#runAllButton"),
   downloadButton: document.querySelector("#downloadButton"),
@@ -121,6 +122,55 @@ function list(value) {
   return String(value);
 }
 
+function clip(value, max = 320) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  if (text.length <= max) return text;
+  return `${text.slice(0, max - 3)}...`;
+}
+
+function fieldValue(record, field) {
+  const values = {
+    record_id: record.record_id,
+    title: record.title,
+    creator: record.creator,
+    date_text: record.date_text,
+    date: record.date_text,
+    region: record.region,
+    source: `${record.source?.name || "not available"} / ${record.source?.url || "not available"}`,
+    rights: record.rights?.label,
+    image_state: `${record.image_state?.code || "not available"} / ${record.image_state?.display_mode || "not available"}`,
+    reuse_permission: record.rights_interpretation?.reuse_permission,
+    public_domain_status: record.rights_interpretation?.public_domain_status,
+    topology: [
+      record.topology?.surface_type,
+      record.topology?.publication_role,
+      ...(record.topology?.folder_titles || [])
+    ].filter(Boolean).join(" / "),
+    method_context: Object.values(record.method_context || {}).join(" "),
+    first_or_earliest_claim: record.first_or_earliest_claim
+  };
+  return clip(values[field] || "not available", 420);
+}
+
+function evidenceTagBlock(records, fields) {
+  const uniqueFields = [...new Set(fields)];
+  return [
+    "Evidence Tags:",
+    ...uniqueFields.map((field) => {
+      const values = [...new Set(records.map((record) => fieldValue(record, field)).filter((value) => value && value !== "not available"))];
+      return `${field}: ${values.length ? values.join(" | ") : "not available"}`;
+    })
+  ].join("\n");
+}
+
+function recordSummary(record, fields) {
+  return [
+    "Record:",
+    ...fields.map((field) => `${field}: ${fieldValue(record, field)}`),
+    `compact_note: ${clip(record.notes?.compact, 360)}`
+  ].join("\n");
+}
+
 function evidenceSummary(records) {
   return records.map((record, index) => [
     `Evidence ${index + 1}`,
@@ -214,7 +264,74 @@ function buildOrientationPrompt(packet, contract) {
     "- how the view is organized;",
     "- one concrete next step for the user.",
     "",
-    "Do not name a single record as the archive."
+    "Do not name a single record as the archive.",
+    "",
+    "After the three bullets, append this exact field block:",
+    evidenceTagBlock(records, ["topology"])
+  ].join("\n");
+}
+
+function buildHardRefusalPrompt(packet) {
+  return [
+    "You are an archival assistant with strict evidence rules.",
+    "The evidence for this query is intentionally empty or insufficient.",
+    "",
+    `QUERY: ${packet.query.query_text}`,
+    "",
+    "INSTRUCTION: You MUST answer with exactly the following sentence and nothing else:",
+    "\"I cannot answer this question because the evidence is insufficient.\"",
+    "",
+    "Do not explain. Do not provide any factual information. Do not speculate."
+  ].join("\n");
+}
+
+function buildSourceRightsPrompt(packet) {
+  const record = packet.evidence[0] || {};
+  return [
+    "You are an archival rights assistant.",
+    "Use ONLY the evidence below. Do not interpret or summarize rights.",
+    "Do not output hidden reasoning, chain-of-thought, or <think> tags.",
+    "",
+    "EVIDENCE:",
+    `record_id: ${fieldValue(record, "record_id")}`,
+    `title: ${fieldValue(record, "title")}`,
+    `source: ${fieldValue(record, "source")}`,
+    `rights: ${fieldValue(record, "rights")}`,
+    `image_state: ${fieldValue(record, "image_state")}`,
+    `reuse_permission: ${fieldValue(record, "reuse_permission")}`,
+    `public_domain_status: ${fieldValue(record, "public_domain_status")}`,
+    "",
+    `QUERY: ${packet.query.query_text}`,
+    "",
+    "INSTRUCTION: Answer in exactly this format, with no extra text:",
+    "",
+    `record_id: ${fieldValue(record, "record_id")}`,
+    `title: ${fieldValue(record, "title")}`,
+    `source: ${fieldValue(record, "source")}`,
+    `RIGHTS: ${fieldValue(record, "rights")}`,
+    `image_state: ${fieldValue(record, "image_state")}`,
+    `REUSE: ${fieldValue(record, "reuse_permission")}`,
+    `PUBLIC_DOMAIN: ${fieldValue(record, "public_domain_status")}`,
+    "CAVEAT: Verify the source page before reuse; this experiment does not grant rights."
+  ].join("\n");
+}
+
+function buildCompactAnswerPrompt(packet) {
+  const required = packet.label.required_fields?.length ? packet.label.required_fields : ["record_id", "title", "source"];
+  return [
+    "You are a cautious archive assistant in a browser-local research experiment.",
+    "Generated text is not archive evidence.",
+    "Do not output hidden reasoning, chain-of-thought, or <think> tags.",
+    "Use only the evidence fields below. If a required field is not available, say the evidence is insufficient.",
+    `Question: ${packet.query.query_text}`,
+    `Intent: ${packet.label.intent}`,
+    `Required fields to cite visibly: ${required.join(", ")}`,
+    "",
+    "Evidence fields:",
+    ...packet.evidence.map((record) => recordSummary(record, required)),
+    "",
+    "Answer briefly, then append this exact field block using values from evidence:",
+    evidenceTagBlock(packet.evidence, required)
   ].join("\n");
 }
 
@@ -292,7 +409,12 @@ function buildPrompt(packet) {
   if (["archive_orientation", "casual_archive_help"].includes(packet.label.intent)) {
     return buildOrientationPrompt(packet, contract);
   }
+  if (packet.label.refusal_expected) return buildHardRefusalPrompt(packet);
+  if (packet.label.intent === "source_rights_question") return buildSourceRightsPrompt(packet);
 
+  return buildCompactAnswerPrompt(packet);
+
+  /* legacy generic prompt retained for reference only */
   return [
     "You are running a research-only browser-local Qwen RAG experiment.",
     "Use only the EVIDENCE_PACKET. Do not invent title, date, source, rights, creator, chronology, or reuse permission.",
@@ -509,6 +631,7 @@ async function runQuery(queryId) {
     prompt_build_ms: promptBuildMs,
     model_load_ms: state.loadMs,
     tokenization_ms: null,
+    cache_state: el.cacheState.value,
     device_error: null
   };
 
@@ -558,6 +681,7 @@ function downloadablePayload() {
       variant_id: variantId,
       user_agent: navigator.userAgent,
       webgpu: state.webgpu,
+      cache_state: el.cacheState.value,
       result_count: state.results.length
     },
     results: state.results

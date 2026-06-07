@@ -1,8 +1,8 @@
 {
   "_provenance": {
     "step": "round02_preflight",
-    "timestamp": "2026-06-07T06:17:31.780Z",
-    "commit": "c94b9522ac9f31cb7032f3b9a125b01993db9999",
+    "timestamp": "2026-06-07T06:38:37.862Z",
+    "commit": "10d51a8167945f40b59a1bd89e5aeb18fa15f348",
     "input_paths": [
       "fixtures/gold/queries.jsonl",
       "fixtures/gold/labels.jsonl",
@@ -17,8 +17,9 @@
     "total": 30,
     "token_budget": 3800,
     "token_budget_fail_count": 0,
-    "max_prompt_tokens_est": 965,
-    "avg_prompt_tokens_est": 403.96666666666664,
+    "prompt_audit_fail_count": 0,
+    "max_prompt_tokens_est": 1215,
+    "avg_prompt_tokens_est": 417.9,
     "round01_retry_rows": [
       "BQ11",
       "BQ22"
@@ -31,12 +32,14 @@
       "lane": "help",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 886,
-      "prompt_tokens_est": 222,
+      "prompt_chars": 1281,
+      "prompt_tokens_est": 321,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "orientation_structure_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ02",
@@ -44,12 +47,14 @@
       "lane": "help",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 1124,
-      "prompt_tokens_est": 281,
+      "prompt_chars": 1397,
+      "prompt_tokens_est": 350,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "orientation_structure_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ03",
@@ -57,12 +62,14 @@
       "lane": "help",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 1038,
-      "prompt_tokens_est": 260,
+      "prompt_chars": 1406,
+      "prompt_tokens_est": 352,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "orientation_structure_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ04",
@@ -70,12 +77,14 @@
       "lane": "help",
       "refusal_expected": false,
       "retrieved_count": 2,
-      "prompt_chars": 886,
-      "prompt_tokens_est": 222,
+      "prompt_chars": 1173,
+      "prompt_tokens_est": 294,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "orientation_structure_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ05",
@@ -83,12 +92,14 @@
       "lane": "fast_answer",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 1988,
-      "prompt_tokens_est": 497,
+      "prompt_chars": 2744,
+      "prompt_tokens_est": 686,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ06",
@@ -96,12 +107,14 @@
       "lane": "fast_answer",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 1901,
-      "prompt_tokens_est": 476,
+      "prompt_chars": 2524,
+      "prompt_tokens_est": 631,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ07",
@@ -109,12 +122,14 @@
       "lane": "fast_answer",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 2198,
-      "prompt_tokens_est": 550,
+      "prompt_chars": 3015,
+      "prompt_tokens_est": 754,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ08",
@@ -122,12 +137,14 @@
       "lane": "source_rights",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 2967,
-      "prompt_tokens_est": 742,
+      "prompt_chars": 1396,
+      "prompt_tokens_est": 349,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "source_rights_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ09",
@@ -135,12 +152,14 @@
       "lane": "refusal_more_context",
       "refusal_expected": true,
       "retrieved_count": 3,
-      "prompt_chars": 569,
-      "prompt_tokens_est": 143,
+      "prompt_chars": 428,
+      "prompt_tokens_est": 107,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "hard_refusal",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ10",
@@ -148,12 +167,14 @@
       "lane": "refusal_more_context",
       "refusal_expected": true,
       "retrieved_count": 3,
-      "prompt_chars": 554,
-      "prompt_tokens_est": 139,
+      "prompt_chars": 413,
+      "prompt_tokens_est": 104,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "hard_refusal",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ11",
@@ -161,12 +182,14 @@
       "lane": "refusal_more_context",
       "refusal_expected": true,
       "retrieved_count": 3,
-      "prompt_chars": 561,
-      "prompt_tokens_est": 141,
+      "prompt_chars": 420,
+      "prompt_tokens_est": 105,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "hard_refusal",
-      "retry_required_from_round01": true
+      "retry_required_from_round01": true,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ12",
@@ -174,12 +197,14 @@
       "lane": "research_answer",
       "refusal_expected": false,
       "retrieved_count": 2,
-      "prompt_chars": 1811,
-      "prompt_tokens_est": 453,
+      "prompt_chars": 2387,
+      "prompt_tokens_est": 597,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ13",
@@ -187,12 +212,14 @@
       "lane": "research_answer",
       "refusal_expected": false,
       "retrieved_count": 2,
-      "prompt_chars": 1917,
-      "prompt_tokens_est": 480,
+      "prompt_chars": 2493,
+      "prompt_tokens_est": 624,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ14",
@@ -200,12 +227,14 @@
       "lane": "research_answer",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 1963,
-      "prompt_tokens_est": 491,
+      "prompt_chars": 2774,
+      "prompt_tokens_est": 694,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ15",
@@ -213,12 +242,14 @@
       "lane": "refusal_more_context",
       "refusal_expected": true,
       "retrieved_count": 1,
-      "prompt_chars": 573,
-      "prompt_tokens_est": 144,
+      "prompt_chars": 424,
+      "prompt_tokens_est": 106,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "hard_refusal",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ16",
@@ -226,12 +257,14 @@
       "lane": "research_answer",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 2758,
-      "prompt_tokens_est": 690,
+      "prompt_chars": 3713,
+      "prompt_tokens_est": 929,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ17",
@@ -239,12 +272,14 @@
       "lane": "refusal_more_context",
       "refusal_expected": true,
       "retrieved_count": 0,
-      "prompt_chars": 565,
-      "prompt_tokens_est": 142,
+      "prompt_chars": 416,
+      "prompt_tokens_est": 104,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "hard_refusal",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ18",
@@ -252,12 +287,14 @@
       "lane": "refusal_more_context",
       "refusal_expected": true,
       "retrieved_count": 0,
-      "prompt_chars": 574,
-      "prompt_tokens_est": 144,
+      "prompt_chars": 425,
+      "prompt_tokens_est": 107,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "hard_refusal",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ19",
@@ -265,12 +302,14 @@
       "lane": "source_rights",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 2720,
-      "prompt_tokens_est": 680,
+      "prompt_chars": 1365,
+      "prompt_tokens_est": 342,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "source_rights_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ20",
@@ -278,12 +317,14 @@
       "lane": "source_rights",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 2487,
-      "prompt_tokens_est": 622,
+      "prompt_chars": 1384,
+      "prompt_tokens_est": 346,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "source_rights_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ21",
@@ -291,12 +332,14 @@
       "lane": "source_rights",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 2619,
-      "prompt_tokens_est": 655,
+      "prompt_chars": 1391,
+      "prompt_tokens_est": 348,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "source_rights_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ22",
@@ -304,12 +347,14 @@
       "lane": "source_rights",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 3860,
-      "prompt_tokens_est": 965,
+      "prompt_chars": 1378,
+      "prompt_tokens_est": 345,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "source_rights_field_summary",
-      "retry_required_from_round01": true
+      "retry_required_from_round01": true,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ23",
@@ -317,12 +362,14 @@
       "lane": "research_answer",
       "refusal_expected": false,
       "retrieved_count": 1,
-      "prompt_chars": 1253,
-      "prompt_tokens_est": 314,
+      "prompt_chars": 1726,
+      "prompt_tokens_est": 432,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ24",
@@ -330,12 +377,14 @@
       "lane": "research_answer",
       "refusal_expected": false,
       "retrieved_count": 1,
-      "prompt_chars": 1257,
-      "prompt_tokens_est": 315,
+      "prompt_chars": 1730,
+      "prompt_tokens_est": 433,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ25",
@@ -343,12 +392,14 @@
       "lane": "research_answer",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 3335,
-      "prompt_tokens_est": 834,
+      "prompt_chars": 4860,
+      "prompt_tokens_est": 1215,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ26",
@@ -356,12 +407,14 @@
       "lane": "research_answer",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 3334,
-      "prompt_tokens_est": 834,
+      "prompt_chars": 4859,
+      "prompt_tokens_est": 1215,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "compact_required_field_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ27",
@@ -369,12 +422,14 @@
       "lane": "refusal_more_context",
       "refusal_expected": true,
       "retrieved_count": 0,
-      "prompt_chars": 565,
-      "prompt_tokens_est": 142,
+      "prompt_chars": 425,
+      "prompt_tokens_est": 107,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "hard_refusal",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ28",
@@ -382,12 +437,14 @@
       "lane": "refusal_more_context",
       "refusal_expected": true,
       "retrieved_count": 0,
-      "prompt_chars": 586,
-      "prompt_tokens_est": 147,
+      "prompt_chars": 446,
+      "prompt_tokens_est": 112,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "hard_refusal",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ29",
@@ -395,12 +452,14 @@
       "lane": "refusal_more_context",
       "refusal_expected": true,
       "retrieved_count": 0,
-      "prompt_chars": 558,
-      "prompt_tokens_est": 140,
+      "prompt_chars": 418,
+      "prompt_tokens_est": 105,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "hard_refusal",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     },
     {
       "query_id": "BQ30",
@@ -408,12 +467,14 @@
       "lane": "help",
       "refusal_expected": false,
       "retrieved_count": 3,
-      "prompt_chars": 1014,
-      "prompt_tokens_est": 254,
+      "prompt_chars": 1289,
+      "prompt_tokens_est": 323,
       "token_budget": 3800,
       "token_budget_status": "pass",
       "prompt_mode": "orientation_structure_summary",
-      "retry_required_from_round01": false
+      "retry_required_from_round01": false,
+      "prompt_audit_failures": [],
+      "prompt_audit_status": "pass"
     }
   ]
 }
