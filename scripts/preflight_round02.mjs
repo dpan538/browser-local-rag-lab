@@ -1,0 +1,299 @@
+#!/usr/bin/env node
+import fs from "node:fs";
+import path from "node:path";
+import childProcess from "node:child_process";
+
+const repoRoot = path.resolve(import.meta.dirname, "..");
+const labelsPath = path.join(repoRoot, "fixtures/gold/labels.jsonl");
+const queriesPath = path.join(repoRoot, "fixtures/gold/queries.jsonl");
+const recordsPath = path.join(repoRoot, "fixtures/gold/records.jsonl");
+const retrievalPath = path.join(repoRoot, "reports/retrieval_sufficiency_v0.json");
+const outputJsonPath = path.join(repoRoot, "reports/round02_preflight.json");
+const outputMdPath = path.join(repoRoot, "reports/ROUND_02_DESIGN.md");
+const variantId = "top3_compressed_topology_source_rights";
+const tokenBudget = 3800;
+
+function readJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
+
+function readJsonl(filePath) {
+  return fs.readFileSync(filePath, "utf8").trim().split("\n").filter(Boolean).map((line) => JSON.parse(line));
+}
+
+function gitCommit() {
+  try {
+    return childProcess.execFileSync("git", ["rev-parse", "HEAD"], { cwd: repoRoot, encoding: "utf8" }).trim();
+  } catch {
+    return "unknown";
+  }
+}
+
+function splitIds(value) {
+  return String(value || "").split("|").filter(Boolean);
+}
+
+function clip(value, max = 280) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  if (text.length <= max) return text;
+  return `${text.slice(0, max - 3)}...`;
+}
+
+function list(values) {
+  const clean = [...new Set(values.filter(Boolean).map((value) => String(value)))];
+  return clean.length ? clean.join(" | ") : "not available";
+}
+
+function estimateTokens(text) {
+  const words = String(text || "").split(/\s+/).filter(Boolean).length;
+  const chars = String(text || "").length;
+  return Math.max(Math.ceil(words * 1.3), Math.ceil(chars / 4));
+}
+
+function fieldLines(record, fields) {
+  const valueByField = {
+    record_id: record.record_id,
+    title: record.title,
+    creator: record.creator,
+    date_text: record.date_text,
+    region: record.region,
+    source: `${record.source?.name || "not available"} / ${record.source?.url || "not available"}`,
+    rights: record.rights?.label,
+    image_state: `${record.image_state?.code || "not available"} / ${record.image_state?.display_mode || "not available"}`,
+    reuse_permission: record.rights_interpretation?.reuse_permission,
+    public_domain_status: record.rights_interpretation?.public_domain_status,
+    topology: [
+      record.topology?.surface_type,
+      record.topology?.publication_role,
+      ...(record.topology?.folder_titles || [])
+    ].filter(Boolean).join(" / "),
+    method_context: Object.values(record.method_context || {}).join(" "),
+    first_or_earliest_claim: record.first_or_earliest_claim
+  };
+  return fields.map((field) => `${field}: ${clip(valueByField[field] || "not available", 360)}`);
+}
+
+function recordSummary(record, fields) {
+  return [
+    "Record:",
+    ...fieldLines(record, fields),
+    `compact_note: ${clip(record.notes?.compact, 420)}`
+  ].join("\n");
+}
+
+function orientationPrompt(query, label, records) {
+  const folders = records.flatMap((record) => record.topology?.folder_titles || []);
+  const surfaces = records.map((record) => record.topology?.surface_type);
+  const roles = records.map((record) => record.topology?.publication_role);
+  const sources = records.map((record) => record.source?.name);
+  const imageStates = records.map((record) => record.image_state?.code);
+  return [
+    "You are a research-only browser-local Qwen RAG experiment.",
+    "Answer in exactly three short bullet points.",
+    "Do not output hidden reasoning or <think> tags.",
+    "Do not name a single record as the archive.",
+    `Question: ${query.query_text}`,
+    "Facts:",
+    "- This is a source-linked research archive for graphic design and visual communication records.",
+    `- Folder/topology terms: ${list(folders)}.`,
+    `- Surface types: ${list(surfaces)}.`,
+    `- Publication roles: ${list(roles)}.`,
+    `- Source families: ${list(sources)}.`,
+    `- Image states: ${list(imageStates)}.`,
+    "Required bullets: purpose; organization; next step."
+  ].join("\n");
+}
+
+function refusalPrompt(query, label) {
+  return [
+    "You are a research-only browser-local Qwen RAG experiment.",
+    "Generated text is not archive evidence.",
+    "Do not output hidden reasoning or <think> tags.",
+    `Question: ${query.query_text}`,
+    `Intent: ${label.intent}`,
+    "CRITICAL: The gold label says the evidence is insufficient.",
+    "Start with exactly: I cannot answer this question because the evidence is insufficient.",
+    "Do not provide factual claims, dates, names, source claims, rights claims, or first/earliest claims.",
+    "Ask for narrower context or stronger evidence in one short sentence."
+  ].join("\n");
+}
+
+function sourceRightsPrompt(query, label, records) {
+  return [
+    "You are a rights-aware archive assistant in a browser-local research experiment.",
+    "Generated text is not archive evidence.",
+    "Do not output hidden reasoning or <think> tags.",
+    "When mentioning rights, copy the exact field text. Do not interpret it as a new permission grant.",
+    `Question: ${query.query_text}`,
+    "Required output: record_id; source; rights; image_state; reuse_permission; public_domain_status; conservative caveat.",
+    "Evidence fields:",
+    ...records.map((record) => recordSummary(record, [
+      "record_id",
+      "title",
+      "source",
+      "rights",
+      "image_state",
+      "reuse_permission",
+      "public_domain_status"
+    ]))
+  ].join("\n");
+}
+
+function compactAnswerPrompt(query, label, records) {
+  const required = label.required_fields?.length ? label.required_fields : ["record_id", "title", "source"];
+  return [
+    "You are a cautious archive assistant in a browser-local research experiment.",
+    "Generated text is not archive evidence.",
+    "Do not output hidden reasoning or <think> tags.",
+    "Use only the evidence fields below. If a required field is not available, say the evidence is insufficient.",
+    `Question: ${query.query_text}`,
+    `Intent: ${label.intent}`,
+    `Required fields to cite visibly: ${required.join(", ")}`,
+    "Evidence fields:",
+    ...records.map((record) => recordSummary(record, required))
+  ].join("\n");
+}
+
+function buildRound02Prompt(query, label, records) {
+  if (label.refusal_expected) return refusalPrompt(query, label);
+  if (["archive_orientation", "casual_archive_help"].includes(label.intent)) {
+    return orientationPrompt(query, label, records);
+  }
+  if (label.intent === "source_rights_question") return sourceRightsPrompt(query, label, records);
+  return compactAnswerPrompt(query, label, records);
+}
+
+function main() {
+  const labels = readJsonl(labelsPath);
+  const queries = new Map(readJsonl(queriesPath).map((query) => [query.query_id, query]));
+  const records = new Map(readJsonl(recordsPath).map((record) => [record.record_id, record]));
+  const retrieval = readJson(retrievalPath).rows.filter((row) => row.variant_id === variantId);
+  const retrievalByQuery = new Map(retrieval.map((row) => [row.query_id, row]));
+
+  const rows = labels.map((label) => {
+    const query = queries.get(label.query_id);
+    const retrievalRow = retrievalByQuery.get(label.query_id);
+    const retrievedRecords = splitIds(retrievalRow?.retrieved_ids).map((id) => records.get(id)).filter(Boolean);
+    const prompt = buildRound02Prompt(query, label, retrievedRecords);
+    const promptTokensEst = estimateTokens(prompt);
+    return {
+      query_id: label.query_id,
+      intent: label.intent,
+      lane: label.gold_lane,
+      refusal_expected: label.refusal_expected,
+      retrieved_count: retrievedRecords.length,
+      prompt_chars: prompt.length,
+      prompt_tokens_est: promptTokensEst,
+      token_budget: tokenBudget,
+      token_budget_status: promptTokensEst <= tokenBudget ? "pass" : "fail",
+      prompt_mode: label.refusal_expected
+        ? "hard_refusal"
+        : ["archive_orientation", "casual_archive_help"].includes(label.intent)
+          ? "orientation_structure_summary"
+          : label.intent === "source_rights_question"
+            ? "source_rights_field_summary"
+            : "compact_required_field_summary",
+      retry_required_from_round01: ["BQ11", "BQ22"].includes(label.query_id)
+    };
+  });
+
+  const failRows = rows.filter((row) => row.token_budget_status === "fail");
+  const retryRows = rows.filter((row) => row.retry_required_from_round01);
+  const summary = {
+    total: rows.length,
+    token_budget: tokenBudget,
+    token_budget_fail_count: failRows.length,
+    max_prompt_tokens_est: Math.max(...rows.map((row) => row.prompt_tokens_est)),
+    avg_prompt_tokens_est: rows.reduce((sum, row) => sum + row.prompt_tokens_est, 0) / rows.length,
+    round01_retry_rows: retryRows.map((row) => row.query_id)
+  };
+
+  const report = {
+    _provenance: {
+      step: "round02_preflight",
+      timestamp: new Date().toISOString(),
+      commit: gitCommit(),
+      input_paths: [
+        "fixtures/gold/queries.jsonl",
+        "fixtures/gold/labels.jsonl",
+        "fixtures/gold/records.jsonl",
+        "reports/retrieval_sufficiency_v0.json",
+        "reports/WEBLLM_ROUND_01.md"
+      ],
+      packet_variant: variantId,
+      token_budget: tokenBudget
+    },
+    summary,
+    rows
+  };
+  fs.writeFileSync(outputJsonPath, `${JSON.stringify(report, null, 2)}\n`);
+
+  const rowMd = rows.map((row) => `| ${row.query_id} | ${row.intent} | ${row.prompt_mode} | ${row.prompt_tokens_est} | ${row.token_budget_status} | ${row.retry_required_from_round01 ? "yes" : "no"} |`).join("\n");
+  fs.writeFileSync(outputMdPath, `# Round 02 Design
+
+Generated: ${report._provenance.timestamp}
+
+## Round 01 Diagnosis
+
+Round 01 proved that the WebLLM/Qwen runtime path works, but it is not yet a
+quality-passing RAG setup:
+
+- 30 rows executed; 28 completed and 2 hit context-window errors.
+- BQ11 and BQ22 exceeded the 4096 context window.
+- The generation contract reported 9 fail findings and 43 warnings.
+- The dominant failure modes were refusal-missing answers, oversized prompts,
+  and insufficient field externalization.
+
+## Round 02 Objective
+
+Round 02 is a repair round, not a paper-quality ablation round. Its goal is to
+remove preventable runtime/prompt failures before broader comparison:
+
+- 0 token-budget errors before WebLLM generation.
+- 0 completed rows missing metric fields.
+- Refusal-expected rows must start with the exact refusal phrase.
+- Source/rights answers must copy exact evidence field text, not interpret it.
+- Required fields should be visible enough for the generation contract.
+
+## Prompt Strategy
+
+- Orientation/help lanes use archive-structure facts, not object-level JSON.
+- Refusal lanes use a hard refusal template and do not include tempting object
+  facts.
+- Source/rights lanes use explicit field summaries with exact rights strings.
+- Other answerable lanes use compact required-field summaries instead of raw
+  evidence JSON.
+
+## Token Budget Preflight
+
+- Token budget: ${tokenBudget}
+- Rows checked: ${summary.total}
+- Token-budget failures: ${summary.token_budget_fail_count}
+- Max estimated prompt tokens: ${summary.max_prompt_tokens_est}
+- Average estimated prompt tokens: ${summary.avg_prompt_tokens_est.toFixed(1)}
+- Round 01 retry rows: ${summary.round01_retry_rows.join(", ")}
+
+| Query | Intent | Prompt mode | Est. tokens | Budget | Round 01 retry |
+|---|---|---|---:|---|---|
+${rowMd}
+
+## Round 02 Run Protocol
+
+1. Implement the Round 02 prompt modes in the browser runner.
+2. Run \`npm run round2:preflight\` and require 0 token-budget failures.
+3. Run the browser WebLLM round with cache state recorded as
+   \`warm_from_previous\`, \`cold_cleared\`, or \`ambiguous\`.
+4. Retry each runtime error at most once with the compact prompt mode.
+5. Import the browser export.
+6. Treat contract fail findings as blockers, not as qualitative caveats.
+`);
+
+  console.log(JSON.stringify({
+    report: path.relative(repoRoot, outputMdPath),
+    json: path.relative(repoRoot, outputJsonPath),
+    ...summary
+  }, null, 2));
+  if (failRows.length > 0) process.exitCode = 1;
+}
+
+main();

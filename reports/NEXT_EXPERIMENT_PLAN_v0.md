@@ -30,7 +30,17 @@ Metric gate: imported WebLLM rows must include non-negative values for load,
 TTFT, total latency, output tokens, tokens/s, and explicit WebGPU error state.
 Missing metrics are import failures, not paper caveats.
 
-Current implementation path:
+Round 02 token gate: before opening WebLLM, run:
+
+```bash
+npm run round2:preflight
+```
+
+The preflight must report 0 token-budget failures. Any row estimated above the
+budget must be compacted or marked as a controlled pre-generation error before
+the browser run starts.
+
+Current browser implementation path:
 
 ```bash
 npm run serve
@@ -45,6 +55,9 @@ npm run webllm:import -- path/to/webllm_round_01_export.json --strict
 
 The import must write `WEBLLM_ROUND_01.md` and pass the generation contract
 before the generated answers can be used for quality claims.
+
+Round 02 retry rule: each runtime error may be retried once with the compact
+prompt mode. A second error becomes a permanent runtime failure in the report.
 
 ## Priority 2: Top-K And Field Ablation
 
@@ -86,6 +99,10 @@ Cache gate: cold runs must record an explicit cache-clearing or fresh-profile
 state. Warm runs must record the prior successful load they depend on. If cache
 state is ambiguous, report the result as observational rather than controlled.
 
+Required cache-state values for exported rows are `cold_cleared`,
+`warm_from_previous`, or `ambiguous`. `ambiguous` is allowed for exploratory
+runs but cannot support cold/warm performance claims.
+
 ## Priority 5: Research-Only Runtime Comparison
 
 Compare Transformers.js, direct ONNX Runtime WebGPU, and WebLLM/MLC only as
@@ -123,13 +140,19 @@ rather than `natural`.
 
 ## Immediate Next Step
 
-Run the first browser-local Qwen/WebLLM measurement round:
+Design and run the second browser-local Qwen/WebLLM repair round:
 
-1. Start the static server with `npm run serve`.
-2. Open `browser_lab/webllm_round.html`.
-3. Probe WebGPU.
-4. Load the research-only WebLLM custom Qwen model.
-5. Run the 30-query top-3 compressed packet set.
-6. Download the browser export.
-7. Import with `npm run webllm:import -- <export.json> --strict`.
-8. Read `reports/WEBLLM_ROUND_01.md` before making any quality claim.
+1. Run `npm run round2:preflight`.
+2. Require 0 token-budget failures.
+3. Implement/use the Round 02 prompt modes:
+   - hard refusal template for `refusal_expected=true`;
+   - source/rights exact-field summary;
+   - compact required-field summary for answerable research lanes;
+   - archive-structure summary for orientation/help.
+4. Start the static server with `npm run serve`.
+5. Open `browser_lab/webllm_round.html`.
+6. Probe WebGPU and record cache state.
+7. Run the 30-query top-3 compressed packet set.
+8. Retry any runtime error once with compact prompt mode.
+9. Import with `npm run webllm:import -- <export.json> --strict`.
+10. Read the Round 02 report before starting ablation claims.
