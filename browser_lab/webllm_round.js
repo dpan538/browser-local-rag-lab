@@ -28,6 +28,7 @@ const el = {
   runOneButton: document.querySelector("#runOneButton"),
   runAllButton: document.querySelector("#runAllButton"),
   downloadButton: document.querySelector("#downloadButton"),
+  exportBuffer: document.querySelector("#exportBuffer"),
   metricLoad: document.querySelector("#metricLoad"),
   metricTtft: document.querySelector("#metricTtft"),
   metricTotal: document.querySelector("#metricTotal"),
@@ -60,6 +61,15 @@ function tokensPerSecond(outputTokens, totalMs, ttftMs) {
 
 function approxTokens(text) {
   return String(text || "").split(/\s+/).filter(Boolean).length;
+}
+
+function stripThinking(text) {
+  const raw = String(text || "");
+  if (!raw.includes("<think>")) return raw.trim();
+  if (raw.includes("</think>")) {
+    return raw.split("</think>").slice(1).join("</think>").trim();
+  }
+  return raw.replace(/<think>[\s\S]*$/i, "").trim();
 }
 
 function splitIds(value) {
@@ -105,6 +115,109 @@ function compactRecord(record) {
   };
 }
 
+function list(value) {
+  if (!value) return "not available";
+  if (Array.isArray(value)) return value.length ? value.join(", ") : "not available";
+  return String(value);
+}
+
+function evidenceSummary(records) {
+  return records.map((record, index) => [
+    `Evidence ${index + 1}`,
+    `record_id: ${record.record_id || "not available"}`,
+    `title: ${record.title || "not available"}`,
+    `creator: ${record.creator || "not available"}`,
+    `date_text: ${record.date_text || "not available"}`,
+    `region: ${record.region || "not available"}`,
+    `source_name: ${record.source?.name || "not available"}`,
+    `source_url: ${record.source?.url || "not available"}`,
+    `rights_label: ${record.rights?.label || "not available"}`,
+    `reuse_permission: ${record.rights_interpretation?.reuse_permission || "not available"}`,
+    `public_domain_status: ${record.rights_interpretation?.public_domain_status || "not available"}`,
+    `image_state: ${record.image_state?.code || "not available"} / ${record.image_state?.display_mode || "not available"}`,
+    `topology_surface_type: ${record.topology?.surface_type || "not available"}`,
+    `topology_publication_role: ${record.topology?.publication_role || "not available"}`,
+    `topology_folder_titles: ${list(record.topology?.folder_titles)}`,
+    `compact_note: ${record.notes?.compact || "not available"}`
+  ].join("\n")).join("\n\n");
+}
+
+function orientationEvidenceSummary(records) {
+  const folderTitles = [...new Set(records.flatMap((record) => record.topology?.folder_titles || []))];
+  const surfaceTypes = [...new Set(records.map((record) => record.topology?.surface_type).filter(Boolean))];
+  const publicationRoles = [...new Set(records.map((record) => record.topology?.publication_role).filter(Boolean))];
+  const sourceNames = [...new Set(records.map((record) => record.source?.name).filter(Boolean))];
+  const rightsStates = [...new Set(records.map((record) => record.rights?.state).filter(Boolean))];
+  const imageStates = [...new Set(records.map((record) => record.image_state?.code).filter(Boolean))];
+  const compactNotes = records.map((record) => record.notes?.compact).filter(Boolean).slice(0, 3);
+  return [
+    "Archive structure evidence, synthesized from retrieved records:",
+    `topology_folder_titles: ${list(folderTitles)}`,
+    `topology_surface_types: ${list(surfaceTypes)}`,
+    `topology_publication_roles: ${list(publicationRoles)}`,
+    `source_families: ${list(sourceNames)}`,
+    `rights_states: ${list(rightsStates)}`,
+    `image_states: ${list(imageStates)}`,
+    "compact_note_examples:",
+    ...compactNotes.map((note) => `- ${note}`)
+  ].join("\n");
+}
+
+function evidenceBlock(packet) {
+  if (["archive_orientation", "casual_archive_help"].includes(packet.label.intent)) {
+    return [
+      "EVIDENCE_SUMMARY:",
+      orientationEvidenceSummary(packet.evidence),
+      "",
+      "EVIDENCE_PACKET:",
+      "Object-level ids and titles are intentionally hidden for this orientation/help lane. Use the archive structure evidence above."
+    ].join("\n");
+  }
+  return [
+    "EVIDENCE_SUMMARY:",
+    evidenceSummary(packet.evidence),
+    "",
+    "EVIDENCE_PACKET:",
+    JSON.stringify(packet.evidence, null, 2)
+  ].join("\n");
+}
+
+function buildOrientationPrompt(packet, contract) {
+  const records = packet.evidence;
+  const folderTitles = [...new Set(records.flatMap((record) => record.topology?.folder_titles || []))];
+  const surfaceTypes = [...new Set(records.map((record) => record.topology?.surface_type).filter(Boolean))];
+  const publicationRoles = [...new Set(records.map((record) => record.topology?.publication_role).filter(Boolean))];
+  const sourceNames = [...new Set(records.map((record) => record.source?.name).filter(Boolean))];
+  const rightsStates = [...new Set(records.map((record) => record.rights?.state).filter(Boolean))];
+  const imageStates = [...new Set(records.map((record) => record.image_state?.code).filter(Boolean))];
+  return [
+    "You are running a research-only browser-local Qwen RAG experiment.",
+    "Generated text is not archive evidence.",
+    "Do not output hidden reasoning, chain-of-thought, or <think> tags.",
+    "Never write the literal words EVIDENCE_SUMMARY, EVIDENCE_PACKET, CONTRACT, or RESPONSE_PLAN.",
+    "",
+    `Question: ${packet.query.query_text}`,
+    `Intent: ${contract.intent}`,
+    "Required behavior: answer about the archive view as a whole, not about one object.",
+    "",
+    "Facts you may use:",
+    "- This is a source-linked research archive for graphic design and visual communication records.",
+    `- It organizes records through folders/topology: ${list(folderTitles)}.`,
+    `- Surface types in the packet: ${list(surfaceTypes)}.`,
+    `- Publication roles in the packet: ${list(publicationRoles)}.`,
+    `- Source families represented: ${list(sourceNames)}.`,
+    `- Rights states represented: ${list(rightsStates)}.`,
+    `- Image-state codes represented: ${list(imageStates)}.`,
+    "",
+    "Write exactly three short bullet points:",
+    "- what the archive is for;",
+    "- how the view is organized;",
+    "- one concrete next step for the user.",
+    "",
+    "Do not name a single record as the archive."
+  ].join("\n");
+}
+
 function selectedQueryId() {
   return el.querySelect.value;
 }
@@ -122,6 +235,44 @@ function buildPacket(queryId) {
   return { query, label, retrieval, retrievedIds, evidence };
 }
 
+function responsePlan(label) {
+  if (["archive_orientation", "casual_archive_help"].includes(label.intent)) {
+    return [
+      "Answer about the archive view as a source-linked research index, not about one evidence record.",
+      "Do not begin by saying 'The archive is RECORD_ID' or by naming a single item as the archive.",
+      "Use record ids only as examples if needed.",
+      "Mention that the archive organizes source-linked graphic design or visual communication records through folders/topology, compact notes, source links, rights labels, and image-state.",
+      "End with a concrete next step for the user."
+    ];
+  }
+  if (label.intent === "current_object_explanation") {
+    return [
+      "Explain the active object compactly.",
+      "Include title, date, region, source, and the evidence boundary.",
+      "Do not generalize beyond the cited record."
+    ];
+  }
+  if (label.intent === "source_rights_question") {
+    return [
+      "Answer source and rights conservatively.",
+      "Include source name/url, rights label, image_state, reuse_permission, and public_domain_status when available.",
+      "Do not grant reuse permission beyond the evidence."
+    ];
+  }
+  if (label.refusal_expected) {
+    return [
+      "Refuse briefly because the contract expects refusal.",
+      "Do not provide protected title/date/source/rights claims as if they answer the query.",
+      "Ask for narrower context or stronger evidence."
+    ];
+  }
+  return [
+    "Answer from the evidence packet only.",
+    "Use required fields when available.",
+    "Keep source/rights and evidence limits visible."
+  ];
+}
+
 function buildPrompt(packet) {
   const contract = {
     query_id: packet.query.query_id,
@@ -132,9 +283,15 @@ function buildPrompt(packet) {
     sufficient_context: packet.label.sufficient_context,
     required_fields: packet.label.required_fields,
     must_not_invent_fields: packet.label.must_not_invent_fields,
-    retrieved_ids: packet.retrievedIds,
+    retrieved_ids: ["archive_orientation", "casual_archive_help"].includes(packet.label.intent)
+      ? "hidden_for_orientation_lane"
+      : packet.retrievedIds,
     variant_id: variantId
   };
+
+  if (["archive_orientation", "casual_archive_help"].includes(packet.label.intent)) {
+    return buildOrientationPrompt(packet, contract);
+  }
 
   return [
     "You are running a research-only browser-local Qwen RAG experiment.",
@@ -142,12 +299,18 @@ function buildPrompt(packet) {
     "Generated text is not archive evidence.",
     "If refusal_expected is true, or if the evidence packet cannot support the requested fields, refuse briefly and ask for narrower context.",
     "Prefer a compact answer. Preserve source/rights caveats when relevant.",
+    "Do not output hidden reasoning, chain-of-thought, or <think> tags.",
+    "When required_fields includes topology, use the topology_* lines in EVIDENCE_SUMMARY. Do not say topology is missing if those lines have values.",
+    "When answering archive orientation/help queries, explain what the archive view is for and where to go next using topology and compact notes.",
+    "For archive orientation/help queries, do not treat a single evidence record as the archive itself; synthesize across the packet.",
     "",
     "CONTRACT:",
     JSON.stringify(contract, null, 2),
     "",
-    "EVIDENCE_PACKET:",
-    JSON.stringify(packet.evidence, null, 2),
+    "RESPONSE_PLAN:",
+    responsePlan(packet.label).map((line) => `- ${line}`).join("\n"),
+    "",
+    evidenceBlock(packet),
     "",
     "Answer the query now."
   ].join("\n");
@@ -285,6 +448,12 @@ async function streamCompletion(prompt) {
     messages,
     temperature,
     max_tokens: maxTokens,
+    extra_body: {
+      enable_thinking: false,
+      chat_template_kwargs: {
+        enable_thinking: false
+      }
+    },
     stream: true
   });
 
@@ -293,21 +462,24 @@ async function streamCompletion(prompt) {
     if (!delta) continue;
     if (firstTokenAt === null) firstTokenAt = performance.now();
     answerText += delta;
+    const cleanedAnswerText = stripThinking(answerText);
     el.answerOutput.textContent = [
       "PROMPT",
       prompt,
       "",
       "ANSWER",
-      answerText
+      cleanedAnswerText || "(thinking output suppressed until final answer appears)"
     ].join("\n");
   }
 
   const ended = performance.now();
-  const outputTokens = approxTokens(answerText);
+  const cleanedAnswerText = stripThinking(answerText);
+  const outputTokens = approxTokens(cleanedAnswerText);
   const ttftMs = firstTokenAt === null ? null : firstTokenAt - started;
   const totalMs = ended - started;
   return {
-    answer_text: answerText,
+    answer_text: cleanedAnswerText,
+    raw_answer_text: answerText,
     ttft_ms: ttftMs,
     total_latency_ms: totalMs,
     output_tokens: outputTokens,
@@ -349,6 +521,7 @@ async function runQuery(queryId) {
       ...generated
     };
     state.results.push(row);
+    syncExportBuffer();
     updateMetrics(row);
     log(`Completed ${queryId}: TTFT ${ms(row.ttft_ms)}, total ${ms(row.total_latency_ms)}, ${row.output_tokens} approx output tokens.`);
     return row;
@@ -365,6 +538,7 @@ async function runQuery(queryId) {
       device_error: error?.message || String(error)
     };
     state.results.push(row);
+    syncExportBuffer();
     updateMetrics(row);
     log(`ERROR ${queryId}: ${row.error}`);
     return row;
@@ -390,7 +564,15 @@ function downloadablePayload() {
   };
 }
 
+window.webllmRoundExport = downloadablePayload;
+
+function syncExportBuffer() {
+  if (!el.exportBuffer) return;
+  el.exportBuffer.value = JSON.stringify(downloadablePayload(), null, 2);
+}
+
 function downloadResults() {
+  syncExportBuffer();
   const payload = JSON.stringify(downloadablePayload(), null, 2);
   const blob = new Blob([payload, "\n"], { type: "application/json" });
   const url = URL.createObjectURL(blob);

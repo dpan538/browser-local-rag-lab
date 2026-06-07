@@ -63,7 +63,8 @@ function answerRows(results) {
     output_tokens: row.output_tokens,
     tokens_per_second: row.tokens_per_second,
     device_error: row.device_error ?? null,
-    answer_text: row.answer_text || ""
+    answer_text: row.answer_text || "",
+    raw_answer_text: row.raw_answer_text || row.answer_text || ""
   }));
 }
 
