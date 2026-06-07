@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import childProcess from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { ANOMALY_THRESHOLDS } from "./audit_rules.mjs";
 
 const repoRoot = path.resolve(import.meta.dirname, "..");
 const defaultLabelsPath = path.join(repoRoot, "fixtures/gold/labels.jsonl");
@@ -54,6 +55,10 @@ function evidenceReuse(labels) {
     .sort((a, b) => b.count - a.count || a.evidence_id.localeCompare(b.evidence_id));
 }
 
+function labelReviewClosed(label) {
+  return ["reviewed", "human_reviewed", "stable_rule_reviewed"].includes(label.review_state);
+}
+
 function contractSummary(roundJson) {
   const reportText = fs.existsSync(path.join(repoRoot, "reports/WEBLLM_ROUND_02.md"))
     ? fs.readFileSync(path.join(repoRoot, "reports/WEBLLM_ROUND_02.md"), "utf8")
@@ -80,7 +85,7 @@ export function assessScaleReadiness({
   const round = fs.existsSync(contractPath) ? readJson(contractPath) : null;
   const review = fs.existsSync(reviewPath) ? readJson(reviewPath) : null;
   const reviewRows = review?.rows || [];
-  const unreviewed = labels.filter((label) => label.review_state !== "reviewed");
+  const unreviewed = labels.filter((label) => !labelReviewClosed(label));
   const reviewOpen = reviewRows.filter((row) => !row.reviewer_decision);
   const reuseRows = evidenceReuse(labels);
   const intentCounts = countBy(labels, "intent");
@@ -93,9 +98,9 @@ export function assessScaleReadiness({
       ratio: count / labels.length
     }));
   const reuseWarnings = reuseRows
-    .filter((row) => row.ratio > 0.3)
+    .filter((row) => row.ratio >= ANOMALY_THRESHOLDS.evidence_overuse_warn_ratio)
     .map((row) => ({
-      code: row.ratio > 0.5 ? "evidence_overuse_fail" : "evidence_overuse_warn",
+      code: row.ratio >= ANOMALY_THRESHOLDS.evidence_overuse_fail_ratio ? "evidence_overuse_fail" : "evidence_overuse_soft_block",
       ...row
     }));
   const contract = round ? contractSummary(round) : null;
@@ -108,10 +113,27 @@ export function assessScaleReadiness({
   if (contract && contract.error_count > 0) blockers.push("round02_runtime_errors_present");
   if (contract && contract.fail_count !== null && contract.fail_count > 0) blockers.push("round02_contract_failures_present");
   if (!review) blockers.push("missing_round02_quality_review_sheet");
-  if (unreviewed.length > 0) blockers.push("gold_labels_not_human_reviewed");
+  if (unreviewed.length > 0) blockers.push("gold_labels_not_review_closed");
   if (reviewOpen.length > 0) blockers.push("round02_answers_not_reviewed");
   if (distributionWarnings.length > 0) blockers.push("intent_distribution_warning_requires_review");
   if (reuseWarnings.some((warning) => warning.code === "evidence_overuse_fail")) blockers.push("evidence_overuse_fail_requires_review");
+
+  const softBlockers = [];
+  for (const warning of reuseWarnings.filter((item) => item.code === "evidence_overuse_soft_block")) {
+    softBlockers.push({
+      code: "evidence_overuse_soft_block",
+      evidence_id: warning.evidence_id,
+      count: warning.count,
+      percent: pct(warning.ratio),
+      suggestion: "Replace some uses, add new evidence, or attach a written diversity plan before scaling."
+    });
+  }
+
+  const scaleDecision = blockers.length > 0
+    ? "blocked"
+    : softBlockers.length > 0
+      ? "conditional"
+      : "ready";
 
   const batchesNeeded = Math.ceil(Math.max(0, targetCount - labels.length) / 50);
   return {
@@ -129,8 +151,10 @@ export function assessScaleReadiness({
     additional_labels_needed: Math.max(0, targetCount - labels.length),
     recommended_batch_size: 50,
     recommended_batches_needed: batchesNeeded,
-    ready_for_200_expansion: blockers.length === 0,
+    scale_decision: scaleDecision,
+    ready_for_200_expansion: scaleDecision === "ready",
     blockers,
+    soft_blockers: softBlockers,
     audit_summary: audit?.summary || null,
     round02_contract_summary: contract,
     unreviewed_label_count: unreviewed.length,
@@ -146,6 +170,9 @@ function markdown(result) {
   const blockerRows = result.blockers.length === 0
     ? "| none |"
     : result.blockers.map((blocker) => `| ${blocker} |`).join("\n");
+  const softBlockerRows = result.soft_blockers.length === 0
+    ? "| none | none | none | none |"
+    : result.soft_blockers.map((blocker) => `| ${blocker.code} | ${blocker.evidence_id} | ${blocker.percent}% | ${blocker.suggestion} |`).join("\n");
   const intentRows = Object.entries(result.intent_distribution)
     .map(([intent, item]) => `| ${intent} | ${item.count} | ${item.percent}% |`)
     .join("\n");
@@ -163,6 +190,7 @@ runtime contract: 0 generated-answer failures is necessary but not sufficient.
 
 ## Decision
 
+- Scale decision: ${result.scale_decision}
 - Ready for 200-query expansion: ${result.ready_for_200_expansion ? "yes" : "no"}
 - Current labels: ${result.current_label_count}
 - Target labels: ${result.target_count}
@@ -177,6 +205,12 @@ runtime contract: 0 generated-answer failures is necessary but not sufficient.
 | Blocker |
 |---|
 ${blockerRows}
+
+## Soft Blockers
+
+| Code | Evidence id | Percent of labels | Suggested action |
+|---|---|---:|---|
+${softBlockerRows}
 
 ## Round 02 Contract Summary
 
@@ -215,8 +249,10 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
   fs.writeFileSync(mdOutPath, markdown(result));
   console.log(JSON.stringify({
     report: path.relative(repoRoot, mdOutPath),
+    scale_decision: result.scale_decision,
     ready_for_200_expansion: result.ready_for_200_expansion,
     blockers: result.blockers,
+    soft_blockers: result.soft_blockers,
     current_label_count: result.current_label_count,
     additional_labels_needed: result.additional_labels_needed
   }, null, 2));

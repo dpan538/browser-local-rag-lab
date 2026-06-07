@@ -1,6 +1,6 @@
 # Quality Review Sheet Round 02
 
-Generated: 2026-06-07T06:58:51.750Z
+Generated: 2026-06-07T07:19:49.417Z
 
 Answers: reports/webllm_round_02_answers.jsonl
 
@@ -12,18 +12,19 @@ Round 02 answer text and records contract findings for human adjudication.
 
 - Rows: 30
 - hard_fail_reject: 0
-- needs_human_review: 30
-- needs_field_visibility_review: 0
-- reviewed_candidate: 0
+- needs_field_visibility_review: 4
+- reviewed_candidate: 26
+- high priority rows: 4
+- low priority rows: 26
 
 ## Rows Requiring Attention
 
-| Query | Intent | Refusal | Suggested decision | Field status | Contract findings |
-|---|---|---|---|---|---|
-| BQ05 | current_object_explanation | no | needs_human_review | title:MISSING_OR_IMPLICIT; region:MISSING_OR_IMPLICIT; source:MISSING_OR_IMPLICIT | warn:G101_required_field_value_not_observed:title; warn:G101_required_field_value_not_observed:region; warn:G101_required_field_value_not_observed:source |
-| BQ14 | region_period_recommendation | no | needs_human_review | date_text:MISSING_OR_IMPLICIT; region:MISSING_OR_IMPLICIT; source:MISSING_OR_IMPLICIT | warn:G101_required_field_value_not_observed:date_text; warn:G101_required_field_value_not_observed:region; warn:G101_required_field_value_not_observed:source |
-| BQ25 | more_context | no | needs_human_review | source:MISSING_OR_IMPLICIT | warn:G101_required_field_value_not_observed:source |
-| BQ26 | more_context | no | needs_human_review | source:MISSING_OR_IMPLICIT | warn:G101_required_field_value_not_observed:source |
+| Query | Intent | Refusal | Priority | Suggested decision | Field status | Contract findings |
+|---|---|---|---|---|---|---|
+| BQ05 | current_object_explanation | no | high | needs_field_visibility_review | title:MISSING_OR_IMPLICIT; region:MISSING_OR_IMPLICIT; source:MISSING_OR_IMPLICIT | warn:G101_required_field_value_not_observed:title; warn:G101_required_field_value_not_observed:region; warn:G101_required_field_value_not_observed:source |
+| BQ14 | region_period_recommendation | no | high | needs_field_visibility_review | date_text:MISSING_OR_IMPLICIT; region:MISSING_OR_IMPLICIT; source:MISSING_OR_IMPLICIT | warn:G101_required_field_value_not_observed:date_text; warn:G101_required_field_value_not_observed:region; warn:G101_required_field_value_not_observed:source |
+| BQ25 | more_context | no | high | needs_field_visibility_review | source:MISSING_OR_IMPLICIT | warn:G101_required_field_value_not_observed:source |
+| BQ26 | more_context | no | high | needs_field_visibility_review | source:MISSING_OR_IMPLICIT | warn:G101_required_field_value_not_observed:source |
 
 ## Reviewer Protocol
 

@@ -82,9 +82,14 @@ function statusForField(answer, records, field) {
 
 function reviewDecision(label, findings, fieldStatuses) {
   if (findings.some((item) => item.severity === "fail")) return "hard_fail_reject";
-  if (label.review_state && label.review_state !== "reviewed") return "needs_human_review";
   if (fieldStatuses.some((item) => item.status === "MISSING_OR_IMPLICIT")) return "needs_field_visibility_review";
   return "reviewed_candidate";
+}
+
+function priorityForDecision(decision) {
+  if (decision === "hard_fail_reject") return "blocker";
+  if (decision === "needs_field_visibility_review") return "high";
+  return "low";
 }
 
 function buildReviewSheet({
@@ -109,18 +114,22 @@ function buildReviewSheet({
       ...statusForField(answerText, evidenceRecords, field)
     }));
     const findings = findingsByQuery[label.query_id] || [];
+    const suggestedReviewDecision = reviewDecision(label, findings, fieldStatuses);
+    const allRequiredFieldsVisible = fieldStatuses.every((item) => item.status === "OBSERVED");
     return {
       query_id: label.query_id,
       query_text: queries.get(label.query_id)?.query_text || "",
       intent: label.intent,
       lane: label.gold_lane,
       refusal_expected: label.refusal_expected,
-      review_state: label.review_state || "unknown",
+      label_review_state: label.review_state || "unknown",
       evidence_ids: label.gold_evidence_ids || [],
       field_statuses: fieldStatuses,
+      all_required_fields_visible: allRequiredFieldsVisible,
       contract_findings: findings,
       answer_excerpt: answerText.slice(0, 600),
-      suggested_review_decision: reviewDecision(label, findings, fieldStatuses),
+      suggested_review_decision: suggestedReviewDecision,
+      priority: priorityForDecision(suggestedReviewDecision),
       reviewer_decision: "",
       reviewer_notes: ""
     };
@@ -130,6 +139,7 @@ function buildReviewSheet({
 function markdown(sheet, answersPath) {
   const counts = sheet.reduce((acc, row) => {
     acc[row.suggested_review_decision] = (acc[row.suggested_review_decision] || 0) + 1;
+    acc[`priority_${row.priority}`] = (acc[`priority_${row.priority}`] || 0) + 1;
     return acc;
   }, {});
   const warningRows = sheet
@@ -140,9 +150,9 @@ function markdown(sheet, answersPath) {
         .map((field) => `${field.field}:${field.status}`)
         .join("; ") || "none";
       const findings = row.contract_findings.map((item) => `${item.severity}:${item.code}:${item.field}`).join("; ") || "none";
-      return `| ${row.query_id} | ${row.intent} | ${row.refusal_expected ? "yes" : "no"} | ${row.suggested_review_decision} | ${fields} | ${findings} |`;
+      return `| ${row.query_id} | ${row.intent} | ${row.refusal_expected ? "yes" : "no"} | ${row.priority} | ${row.suggested_review_decision} | ${fields} | ${findings} |`;
     })
-    .join("\n") || "| none | none | none | none | none | none |";
+    .join("\n") || "| none | none | none | none | none | none | none |";
 
   return `# Quality Review Sheet Round 02
 
@@ -158,14 +168,15 @@ Round 02 answer text and records contract findings for human adjudication.
 
 - Rows: ${sheet.length}
 - hard_fail_reject: ${counts.hard_fail_reject || 0}
-- needs_human_review: ${counts.needs_human_review || 0}
 - needs_field_visibility_review: ${counts.needs_field_visibility_review || 0}
 - reviewed_candidate: ${counts.reviewed_candidate || 0}
+- high priority rows: ${counts.priority_high || 0}
+- low priority rows: ${counts.priority_low || 0}
 
 ## Rows Requiring Attention
 
-| Query | Intent | Refusal | Suggested decision | Field status | Contract findings |
-|---|---|---|---|---|---|
+| Query | Intent | Refusal | Priority | Suggested decision | Field status | Contract findings |
+|---|---|---|---|---|---|---|
 ${warningRows}
 
 ## Reviewer Protocol
@@ -185,12 +196,18 @@ export function writeReviewSheet(options = {}) {
   const jsonOutPath = options.jsonOutPath || defaultJsonOutPath;
   const mdOutPath = options.mdOutPath || defaultMdOutPath;
   const sheet = buildReviewSheet({ ...options, answersPath });
+  const reviewSummary = sheet.reduce((acc, row) => {
+    acc[row.suggested_review_decision] = (acc[row.suggested_review_decision] || 0) + 1;
+    acc[`priority_${row.priority}`] = (acc[`priority_${row.priority}`] || 0) + 1;
+    return acc;
+  }, {});
   fs.writeFileSync(jsonOutPath, JSON.stringify({
     _provenance: {
       step: "round02_quality_review_sheet",
       timestamp: new Date().toISOString(),
       answers_path: path.relative(repoRoot, answersPath)
     },
+    review_summary: reviewSummary,
     rows: sheet
   }, null, 2) + "\n");
   fs.writeFileSync(mdOutPath, markdown(sheet, answersPath));

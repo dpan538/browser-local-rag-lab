@@ -1,8 +1,14 @@
 {
   "_provenance": {
     "step": "round02_quality_review_sheet",
-    "timestamp": "2026-06-07T06:58:51.749Z",
+    "timestamp": "2026-06-07T07:19:49.416Z",
     "answers_path": "reports/webllm_round_02_answers.jsonl"
+  },
+  "review_summary": {
+    "reviewed_candidate": 26,
+    "priority_low": 26,
+    "needs_field_visibility_review": 4,
+    "priority_high": 4
   },
   "rows": [
     {
@@ -11,7 +17,7 @@
       "intent": "archive_orientation",
       "lane": "help",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-ER1830R004",
         "SURF-ER1830R015"
@@ -32,9 +38,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "- The archive is for graphic design and visual communication records, organized into specific folders and topological units.\n- The view is organized through a hierarchy of source-linked research archives including France, Midcentury modern graphic communication, Graphic design object record, United Kingdom, Trade card, and Unresolved region.\n- One concrete next step for the user is to navigate the \"Graphic design object record\" folder to access the specific visual communication records.\n\nEvidence Tags:\ntopology: sheet / main_sheet / France / Midcentury modern graphic communication / Graphic de",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -44,7 +52,7 @@
       "intent": "archive_orientation",
       "lane": "help",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-CGS2026R0909",
         "SURF-CGS2026R0910"
@@ -62,9 +70,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "- The archive is for graphic design and visual communication records.\n- The view is organized through folders and topologies including Mexico, World War and public-information graphics, Advertisement, France, Midcentury modern graphic communication, and Graphic design object record.\n- The next step is to navigate the folder structure to locate the specific record or document.\n\nEvidence Tags:\ntopology: sheet / main_sheet / Mexico / World War and public-information graphics / Advertisement | sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -74,7 +84,7 @@
       "intent": "archive_orientation",
       "lane": "help",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-CGS2026R0908",
         "SURF-CRG2026R0005"
@@ -94,9 +104,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "- The archive is for visual and typographic records related to graphic design and layout.\n- The view is organized into specific folders and topological sections including France, Modern typography and layout, Graphic design object record, Unresolved region, Publication design, and Midcentury modern graphic communication.\n- The next step is to navigate the \"Graphic design object record\" folder to view the specific source file.\n\nEvidence Tags:\ntopology: sheet / main_sheet / France / Modern typography and layout / Graphic design object record | sheet / main_sheet / Unresolved region / Modern typo",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -106,7 +118,7 @@
       "intent": "casual_archive_help",
       "lane": "help",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-ER1830R015",
         "SURF-CRG2026R0051"
@@ -126,9 +138,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "- The archive is for graphic design and visual communication records.\n- The view is organized into folders and topologies including Unresolved region, Modern typography and layout, Graphic design object record, India, and World War and public-information graphics.\n- The next step is to navigate the Unresolved region folder to find the specific record.\n\nEvidence Tags:\ntopology: sheet / main_sheet / Unresolved region / Modern typography and layout / Graphic design object record | sheet / main_sheet / India / World War and public-information graphics / Graphic design object record",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -138,7 +152,7 @@
       "intent": "current_object_explanation",
       "lane": "fast_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-GAX1970R001"
       ],
@@ -180,6 +194,7 @@
           ]
         }
       ],
+      "all_required_fields_visible": false,
       "contract_findings": [
         {
           "severity": "warn",
@@ -204,7 +219,8 @@
         }
       ],
       "answer_excerpt": "Answer: The provided evidence does not contain information about the event \"What is happening on SURF-GAX1970R001?\". The available records (SURF-GAX1970R001, SURF-CRG2026R0001, SURF-ER1830R001-GROUP) pertain to different archival records (Monsieur, Paganini bust, and trade cards), none of which describe the specific event or context of SURF-GAX1970R001. The required fields are insufficient.",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "needs_field_visibility_review",
+      "priority": "high",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -214,7 +230,7 @@
       "intent": "current_object_explanation",
       "lane": "fast_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-GAX1970R001"
       ],
@@ -256,9 +272,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "Evidence Tags:\nrecord_id: SURF-GAX1970R001 | LAB-METHOD-CONTEXT-V0 | SURF-ER1830R001-GROUP\ntitle: Monsieur, vous avez réclamé votre inscription... | Browser-local RAG lab method context | Trade card grouped records, 1830-1922\ndate_text: 1830 | 2026-06-07 | 1830-1922\nregion: France | Research method | London\nsource: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -268,7 +286,7 @@
       "intent": "current_object_explanation",
       "lane": "fast_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-GAX1970R001"
       ],
@@ -310,9 +328,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "Evidence Tags:\nrecord_id: SURF-GAX1970R001 | SURF-CRG2026R0001 | SURF-CHW2026R001\ntitle: Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Die Thierwelt (The Animal Kinggom)\ndate_text: 1830 | ca. 1835\nregion: France | Global / release gate expansion | Austria Vienna Europe / Austria / Vienna / Europe\nsource: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -322,7 +342,7 @@
       "intent": "source_rights_question",
       "lane": "source_rights",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-GAX1970R001"
       ],
@@ -380,9 +400,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "record_id: SURF-GAX1970R001\ntitle: Monsieur, vous avez réclamé votre inscription...\nsource: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h\nRIGHTS: IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.\nimage_state: IMG03 / open_image_frame\nREUSE: source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required\nPUBLIC_DOMAIN: source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined\nCAVEAT: Verify the source page before reuse; this experiment does not",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -392,12 +414,14 @@
       "intent": "first_earliest_claim",
       "lane": "refusal_more_context",
       "refusal_expected": true,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [],
       "field_statuses": [],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "\"I cannot answer this question because the evidence is insufficient.\"",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -407,12 +431,14 @@
       "intent": "first_earliest_claim",
       "lane": "refusal_more_context",
       "refusal_expected": true,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [],
       "field_statuses": [],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "\"I cannot answer this question because the evidence is insufficient.\"",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -422,12 +448,14 @@
       "intent": "first_earliest_claim",
       "lane": "refusal_more_context",
       "refusal_expected": true,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [],
       "field_statuses": [],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "\"I cannot answer this question because the evidence is insufficient.\"",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -437,7 +465,7 @@
       "intent": "comparison",
       "lane": "research_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-COM1970R007",
         "SURF-CRG2026R0235"
@@ -470,9 +498,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "Evidence Tags:\nrecord_id: SURF-COM1970R007 | SURF-CRG2026R0235\ntitle: Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg | ApollonMagazine.jpg\nsource: Wikimedia Commons / https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg | Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526 / https://commons.wikimedia",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -482,7 +512,7 @@
       "intent": "comparison",
       "lane": "research_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-COM1970R007",
         "SURF-CRG2026R0235"
@@ -515,9 +545,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "Evidence Tags:\nrecord_id: SURF-COM1970R007 | SURF-CRG2026R0235\ntitle: Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg | ApollonMagazine.jpg\nsource: Wikimedia Commons / https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg | Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526 / https://commons.wikimedia",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -527,7 +559,7 @@
       "intent": "region_period_recommendation",
       "lane": "research_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-GAX1970R001",
         "SURF-GAX1970R002",
@@ -579,6 +611,7 @@
           ]
         }
       ],
+      "all_required_fields_visible": false,
       "contract_findings": [
         {
           "severity": "warn",
@@ -603,7 +636,8 @@
         }
       ],
       "answer_excerpt": "Evidence Tags:\nrecord_id: SURF-GAX1970R001 | SURF-GAX1970R002 | SURF-GA1970R001\ntitle: Monsieur, vous avez réclamé votre inscription... | La typographie : poëme / par M. L. Pelletier | Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "needs_field_visibility_review",
+      "priority": "high",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -613,12 +647,14 @@
       "intent": "region_period_recommendation",
       "lane": "refusal_more_context",
       "refusal_expected": true,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [],
       "field_statuses": [],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "\"I cannot answer this question because the evidence is insufficient.\"",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -628,7 +664,7 @@
       "intent": "region_period_recommendation",
       "lane": "research_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-CGS2026R0681",
         "SURF-CGS2026R0328",
@@ -683,9 +719,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "Evidence Tags:\nrecord_id: SURF-CGS2026R0681 | SURF-CGS2026R0328 | SURF-CGS2026R0030\ntitle: Diego Portales-D S No 20.JPG | El restaurador de las leyes.jpg | Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg\ndate_text: 1837 | 1840 | 1842\nregion: Latin America / Chile | Latin America / Argentina\nsource: Wikimedia Commons file source / Diego Portales-D S No 20.JPG / page 7016695 / https://commons.wikimedia.org/wiki/File:",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -695,12 +733,14 @@
       "intent": "region_period_recommendation",
       "lane": "refusal_more_context",
       "refusal_expected": true,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [],
       "field_statuses": [],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "\"I cannot answer this question because the evidence is insufficient.\"",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -710,12 +750,14 @@
       "intent": "region_period_recommendation",
       "lane": "refusal_more_context",
       "refusal_expected": true,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [],
       "field_statuses": [],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "\"I cannot answer this question because the evidence is insufficient.\"",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -725,7 +767,7 @@
       "intent": "source_rights_question",
       "lane": "source_rights",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-GAX1970R001"
       ],
@@ -783,9 +825,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "record_id: SURF-GAX1970R001\ntitle: Monsieur, vous avez réclamé votre inscription...\nsource: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h\nRIGHTS: IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.\nimage_state: IMG03 / open_image_frame\nREUSE: source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required\nPUBLIC_DOMAIN: source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined\nCAVEAT: Verify the source page before reuse; this experiment does not",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -795,7 +839,7 @@
       "intent": "source_rights_question",
       "lane": "source_rights",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-GAX1970R001"
       ],
@@ -853,9 +897,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "record_id: SURF-GAX1970R001\ntitle: Monsieur, vous avez réclamé votre inscription...\nsource: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h\nRIGHTS: IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.\nimage_state: IMG03 / open_image_frame\nREUSE: source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required\nPUBLIC_DOMAIN: source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined\nCAVEAT: Verify the source page before reuse; this experiment does not",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -865,7 +911,7 @@
       "intent": "source_rights_question",
       "lane": "source_rights",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-GAX1970R001"
       ],
@@ -923,9 +969,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "record_id: SURF-GAX1970R001\ntitle: Monsieur, vous avez réclamé votre inscription...\nsource: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h\nRIGHTS: IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.\nimage_state: IMG03 / open_image_frame\nREUSE: source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required\nPUBLIC_DOMAIN: source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined\nCAVEAT: Verify the source page before reuse; this experiment does not",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -935,7 +983,7 @@
       "intent": "source_rights_question",
       "lane": "source_rights",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-GAX1970R001"
       ],
@@ -993,9 +1041,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "record_id: SURF-GAX1970R001\ntitle: Monsieur, vous avez réclamé votre inscription...\nsource: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h\nRIGHTS: IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.\nimage_state: IMG03 / open_image_frame\nREUSE: source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required\nPUBLIC_DOMAIN: source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined\nCAVEAT: Verify the source page before reuse; this experiment does not",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -1005,7 +1055,7 @@
       "intent": "method_process_question",
       "lane": "research_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "LAB-METHOD-CONTEXT-V0"
       ],
@@ -1021,9 +1071,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "Evidence Tags:\nmethod_context: Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence. Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation. AI output is experimental text and cannot become archive evidence. Refuse or request narrower context when required fields or claim support are absent.",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -1033,7 +1085,7 @@
       "intent": "method_process_question",
       "lane": "research_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "LAB-METHOD-CONTEXT-V0"
       ],
@@ -1049,9 +1101,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "Evidence Tags:\nmethod_context: Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence. Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation. AI output is experimental text and cannot become archive evidence. Refuse or request narrower context when required fields or claim support are absent.",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -1061,7 +1115,7 @@
       "intent": "more_context",
       "lane": "research_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-COM1970R007",
         "SURF-CRG2026R0274",
@@ -1130,6 +1184,7 @@
           ]
         }
       ],
+      "all_required_fields_visible": false,
       "contract_findings": [
         {
           "severity": "warn",
@@ -1140,7 +1195,8 @@
         }
       ],
       "answer_excerpt": "Evidence Tags:\nrecord_id: SURF-COM1970R007 | SURF-CRG2026R0274 | SURF-CRG2026R0071\ntitle: Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg | Sergey Filippov PSE Russia 2012.jpg | The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png\ndate_text: 1897 | 1912 | 187",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "needs_field_visibility_review",
+      "priority": "high",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -1150,7 +1206,7 @@
       "intent": "more_context",
       "lane": "research_answer",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-COM1970R007",
         "SURF-CRG2026R0274",
@@ -1219,6 +1275,7 @@
           ]
         }
       ],
+      "all_required_fields_visible": false,
       "contract_findings": [
         {
           "severity": "warn",
@@ -1229,7 +1286,8 @@
         }
       ],
       "answer_excerpt": "Evidence Tags:\nrecord_id: SURF-COM1970R007 | SURF-CRG2026R0274 | SURF-CRG2026R0071\ntitle: Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg | Sergey Filippov PSE Russia 2012.jpg | The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png\ndate_text: 1897 | 1912 | 187",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "needs_field_visibility_review",
+      "priority": "high",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -1239,12 +1297,14 @@
       "intent": "no_evidence_refusal",
       "lane": "refusal_more_context",
       "refusal_expected": true,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [],
       "field_statuses": [],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "\"I cannot answer this question because the evidence is insufficient.\"",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -1254,12 +1314,14 @@
       "intent": "no_evidence_refusal",
       "lane": "refusal_more_context",
       "refusal_expected": true,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [],
       "field_statuses": [],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "\"I cannot answer this question because the evidence is insufficient.\"",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -1269,12 +1331,14 @@
       "intent": "no_evidence_refusal",
       "lane": "refusal_more_context",
       "refusal_expected": true,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [],
       "field_statuses": [],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "\"I cannot answer this question because the evidence is insufficient.\"",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     },
@@ -1284,7 +1348,7 @@
       "intent": "casual_archive_help",
       "lane": "help",
       "refusal_expected": false,
-      "review_state": "seed_auto_needs_human_review",
+      "label_review_state": "seed_auto_needs_human_review",
       "evidence_ids": [
         "SURF-CRG2026R0031",
         "SURF-CRG2026R0032"
@@ -1302,9 +1366,11 @@
           ]
         }
       ],
+      "all_required_fields_visible": true,
       "contract_findings": [],
       "answer_excerpt": "- The archive is for graphic design and visual communication records.\n- The view is organized through folders and topologies including India, Modern typography and layout, Graphic design object record, Unresolved region, Midcentury modern graphic communication, and Lithographic print.\n- One concrete next step for the user is to navigate the \"Graphic design object record\" folder to access the specific image or document.\n\nEvidence Tags:\ntopology: sheet / main_sheet / India / Modern typography and layout / Graphic design object record | sheet / main_sheet / Unresolved region / Midcentury modern g",
-      "suggested_review_decision": "needs_human_review",
+      "suggested_review_decision": "reviewed_candidate",
+      "priority": "low",
       "reviewer_decision": "",
       "reviewer_notes": ""
     }

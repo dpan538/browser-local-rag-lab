@@ -1,6 +1,6 @@
 # Round 02 200-Query Scale Readiness
 
-Generated: 2026-06-07T06:59:00.130Z
+Generated: 2026-06-07T07:19:55.492Z
 
 This gate decides whether the current 30-query Round 02 baseline is ready to
 be expanded toward a 200-query benchmark. It is intentionally stricter than the
@@ -8,6 +8,7 @@ runtime contract: 0 generated-answer failures is necessary but not sufficient.
 
 ## Decision
 
+- Scale decision: blocked
 - Ready for 200-query expansion: no
 - Current labels: 30
 - Target labels: 200
@@ -21,8 +22,14 @@ runtime contract: 0 generated-answer failures is necessary but not sufficient.
 
 | Blocker |
 |---|
-| gold_labels_not_human_reviewed |
+| gold_labels_not_review_closed |
 | round02_answers_not_reviewed |
+
+## Soft Blockers
+
+| Code | Evidence id | Percent of labels | Suggested action |
+|---|---|---:|---|
+| evidence_overuse_soft_block | SURF-GAX1970R001 | 30% | Replace some uses, add new evidence, or attach a written diversity plan before scaling. |
 
 ## Round 02 Contract Summary
 

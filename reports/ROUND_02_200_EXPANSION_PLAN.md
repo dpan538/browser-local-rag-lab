@@ -35,7 +35,9 @@ Required closure steps:
    npm run round2:review-sheet
    ```
 
-2. Review all rows in `reports/quality_review_sheet_round_02.json`.
+2. Review high-priority rows first. The review sheet automatically marks rows
+   with visible required fields as `reviewed_candidate` and rows with implicit
+   or missing fields as `needs_field_visibility_review`.
 3. Resolve or adjudicate the 8 remaining field-visibility warnings.
 4. Produce a reviewed answer fixture with reviewer decisions and notes.
 5. Mark reviewed labels/answers explicitly rather than inferring review from
@@ -43,6 +45,21 @@ Required closure steps:
 
 Exit condition: 30 reviewed answers, no automatic hard failures, and all
 remaining soft warnings either corrected or explicitly adjudicated.
+
+For label review-state closure, first run a dry run:
+
+```bash
+npm run labels:promote
+```
+
+By default this proposes `stable_rule_reviewed`, not `human_reviewed`. Use
+`--execute` only after accepting the deterministic audit as sufficient for label
+contract review. If a human has actually reviewed the labels, the target state
+can be made explicit:
+
+```bash
+npm run labels:promote -- --state human_reviewed --execute
+```
 
 ## Stage 2: Expand In Audited Batches
 
@@ -131,6 +148,15 @@ Batch acceptance requires:
 - no existing reviewed row regresses;
 - Qwen/WebLLM generation contract has no hard failures for the batch.
 
+To keep batches balanced by intent, first split proposed new queries:
+
+```bash
+npm run queries:split-batches -- fixtures/expansion/new_queries.jsonl --batch-size 50
+```
+
+The splitter uses the current gold label intent distribution as the baseline
+and writes a batch plan under `reports/`.
+
 ## Current Decision
 
 Run the scale readiness gate after generating the Round 02 review sheet:
@@ -143,3 +169,10 @@ npm run round2:scale-readiness
 The expected current decision is "not ready" because the 30-query baseline still
 requires human review closure. That is a useful guardrail, not a failure of the
 runtime experiment.
+
+The readiness gate now has three states:
+
+- `ready`: no hard blockers and no soft blockers;
+- `conditional`: no hard blockers, but evidence diversity or distribution
+  issues require a written plan before scaling;
+- `blocked`: review, audit, runtime, or contract closure is incomplete.
