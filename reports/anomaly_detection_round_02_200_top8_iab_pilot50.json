@@ -1,0 +1,73 @@
+{
+  "_provenance": {
+    "step": "detect_anomalies",
+    "timestamp": "2026-06-08T09:16:12.917Z",
+    "labels_path": "fixtures/expansion/round02_200/labels.jsonl",
+    "answers_path": "reports/webllm_round_02_200_top8_iab_pilot50_answers.jsonl",
+    "records_path": "fixtures/expansion/round02_200/records.jsonl",
+    "review_fixture_path": "reports/review_fixture_round_02.jsonl",
+    "only_answered": true
+  },
+  "label_count": 50,
+  "answer_count": 50,
+  "anomaly_count": 9,
+  "fail_count": 0,
+  "warn_count": 9,
+  "info_count": 0,
+  "anomalies": [
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ05",
+      "detail": "tokens_per_second=6.69; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ06",
+      "detail": "tokens_per_second=6.90; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ07",
+      "detail": "tokens_per_second=5.04; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ08",
+      "detail": "tokens_per_second=6.87; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ12",
+      "detail": "tokens_per_second=5.46; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ14",
+      "detail": "tokens_per_second=7.07; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ16",
+      "detail": "tokens_per_second=7.53; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ22",
+      "detail": "tokens_per_second=5.76; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "M2_generation_speed_low",
+      "query_id": "BQ25",
+      "detail": "tokens_per_second=5.30; avg=16.08"
+    }
+  ]
+}

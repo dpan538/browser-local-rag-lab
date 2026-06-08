@@ -1,0 +1,229 @@
+{
+  "generated_at": "2026-06-08T10:26:53.930Z",
+  "round_json_path": "reports/webllm_round_02_200_top8_iab_full200.json",
+  "answers_path": "reports/webllm_round_02_200_top8_iab_full200_answers.jsonl",
+  "expected_count": 200,
+  "result_count": 200,
+  "completed_count": 200,
+  "error_count": 0,
+  "metric_issue_count": 0,
+  "contract_fail_count": 0,
+  "contract_warn_count": 0,
+  "gate_fail_count": 0,
+  "gate_warn_count": 35,
+  "blocking_finding_count": 0,
+  "performance_observation_count": 35,
+  "ready_for_next_step": true,
+  "findings": [
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ05",
+      "detail": "tokens_per_second=4.11; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ07",
+      "detail": "tokens_per_second=3.54; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ064",
+      "detail": "tokens_per_second=6.33; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ066",
+      "detail": "tokens_per_second=5.40; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ069",
+      "detail": "tokens_per_second=6.42; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ074",
+      "detail": "tokens_per_second=5.67; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ080",
+      "detail": "tokens_per_second=5.21; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ082",
+      "detail": "tokens_per_second=4.45; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ088",
+      "detail": "tokens_per_second=5.88; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ089",
+      "detail": "tokens_per_second=2.99; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ094",
+      "detail": "tokens_per_second=6.70; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ096",
+      "detail": "tokens_per_second=5.20; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ097",
+      "detail": "tokens_per_second=6.37; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ099",
+      "detail": "tokens_per_second=6.12; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ101",
+      "detail": "tokens_per_second=5.85; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ103",
+      "detail": "tokens_per_second=5.31; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ105",
+      "detail": "tokens_per_second=6.55; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ112",
+      "detail": "tokens_per_second=6.69; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ120",
+      "detail": "tokens_per_second=6.51; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ133",
+      "detail": "tokens_per_second=5.01; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ136",
+      "detail": "tokens_per_second=4.61; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ139",
+      "detail": "tokens_per_second=5.38; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ161",
+      "detail": "tokens_per_second=6.18; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ162",
+      "detail": "tokens_per_second=3.38; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ164",
+      "detail": "tokens_per_second=4.29; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ165",
+      "detail": "tokens_per_second=6.12; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ166",
+      "detail": "tokens_per_second=5.44; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ167",
+      "detail": "tokens_per_second=3.42; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ168",
+      "detail": "tokens_per_second=4.64; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ169",
+      "detail": "tokens_per_second=3.41; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ170",
+      "detail": "tokens_per_second=5.27; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ172",
+      "detail": "tokens_per_second=4.30; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ173",
+      "detail": "tokens_per_second=4.02; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ174",
+      "detail": "tokens_per_second=2.88; avg=13.44"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ175",
+      "detail": "tokens_per_second=4.24; avg=13.44"
+    }
+  ]
+}

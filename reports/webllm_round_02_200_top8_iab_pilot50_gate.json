@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-06-08T09:15:33.178Z",
+  "round_json_path": "reports/webllm_round_02_200_top8_iab_pilot50.json",
+  "answers_path": "reports/webllm_round_02_200_top8_iab_pilot50_answers.jsonl",
+  "expected_count": 50,
+  "result_count": 50,
+  "completed_count": 50,
+  "error_count": 0,
+  "metric_issue_count": 0,
+  "contract_fail_count": 0,
+  "contract_warn_count": 0,
+  "gate_fail_count": 0,
+  "gate_warn_count": 9,
+  "blocking_finding_count": 0,
+  "performance_observation_count": 9,
+  "ready_for_next_step": true,
+  "findings": [
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ05",
+      "detail": "tokens_per_second=6.69; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ06",
+      "detail": "tokens_per_second=6.90; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ07",
+      "detail": "tokens_per_second=5.04; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ08",
+      "detail": "tokens_per_second=6.87; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ12",
+      "detail": "tokens_per_second=5.46; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ14",
+      "detail": "tokens_per_second=7.07; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ16",
+      "detail": "tokens_per_second=7.53; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ22",
+      "detail": "tokens_per_second=5.76; avg=16.08"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ25",
+      "detail": "tokens_per_second=5.30; avg=16.08"
+    }
+  ]
+}

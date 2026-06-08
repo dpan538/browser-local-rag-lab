@@ -33,7 +33,8 @@ function parseArgs(args) {
     answersPath: defaultAnswersPath,
     reviewFixturePath: defaultReviewFixturePath,
     jsonOutPath: defaultJsonOutPath,
-    mdOutPath: defaultMdOutPath
+    mdOutPath: defaultMdOutPath,
+    onlyAnswered: false
   };
   for (let index = 0; index < args.length; index += 1) {
     const arg = args[index];
@@ -44,6 +45,7 @@ function parseArgs(args) {
     else if (arg === "--review-fixture") parsed.reviewFixturePath = path.resolve(args[++index]);
     else if (arg === "--json-out") parsed.jsonOutPath = path.resolve(args[++index]);
     else if (arg === "--md-out") parsed.mdOutPath = path.resolve(args[++index]);
+    else if (arg === "--only-answered") parsed.onlyAnswered = true;
   }
   return parsed;
 }
@@ -156,12 +158,15 @@ export function detectAnomalies({
   labelsPath = defaultLabelsPath,
   recordsPath = defaultRecordsPath,
   answersPath = defaultAnswersPath,
-  reviewFixturePath = defaultReviewFixturePath
+  reviewFixturePath = defaultReviewFixturePath,
+  onlyAnswered = false
 } = {}) {
-  const labels = readJsonl(labelsPath);
+  const allLabels = readJsonl(labelsPath);
   const records = readJsonl(recordsPath);
   const answers = readJsonl(answersPath);
   const reviewRows = readJsonl(reviewFixturePath);
+  const answeredIds = new Set(answers.map((answer) => answer.query_id || answer.id).filter(Boolean));
+  const labels = onlyAnswered ? allLabels.filter((label) => answeredIds.has(label.query_id)) : allLabels;
   const recordsById = new Map(records.map((record) => [record.record_id, record]));
   const anomalies = [];
 
@@ -175,7 +180,13 @@ export function detectAnomalies({
     add(anomalies, issue.severity, `M6_${issue.code}`, null, `${issue.record_id} ${issue.field}: ${issue.detail}`, { record_id: issue.record_id, field: issue.field });
   }
 
-  const contract = validateGenerationContract({ queriesPath, labelsPath, recordsPath, answersPath });
+  const contract = validateGenerationContract({
+    queriesPath,
+    labelsPath,
+    recordsPath,
+    answersPath,
+    allowedQueryIds: onlyAnswered ? answeredIds : null
+  });
   for (const violation of contract.violations) {
     if (violation.severity === "fail") {
       add(anomalies, "fail", `contract_${violation.code}`, violation.query_id, violation.detail, { field: violation.field });
@@ -189,7 +200,8 @@ export function detectAnomalies({
       labels_path: path.relative(repoRoot, labelsPath),
       answers_path: path.relative(repoRoot, answersPath),
       records_path: path.relative(repoRoot, recordsPath),
-      review_fixture_path: fs.existsSync(reviewFixturePath) ? path.relative(repoRoot, reviewFixturePath) : null
+      review_fixture_path: fs.existsSync(reviewFixturePath) ? path.relative(repoRoot, reviewFixturePath) : null,
+      only_answered: onlyAnswered
     },
     label_count: labels.length,
     answer_count: answers.length,

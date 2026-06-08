@@ -32,17 +32,7 @@ function answerText(row) {
 
 function answerRefuses(text) {
   const normalizedText = normalize(text);
-  return [
-    "not enough evidence",
-    "insufficient evidence",
-    "cannot determine",
-    "can not determine",
-    "cannot answer",
-    "can not answer",
-    "need more context",
-    "not supported by the evidence",
-    "i do not have evidence"
-  ].some((phrase) => normalizedText.includes(phrase));
+  return normalizedText.startsWith("i cannot answer this question because the evidence is insufficient");
 }
 
 function fieldValues(record, field) {
