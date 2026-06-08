@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-06-08T07:18:08.233Z",
+  "round_json_path": "reports/webllm_round_02_200_contract_iab_smoke.json",
+  "answers_path": "reports/webllm_round_02_200_contract_iab_smoke_answers.jsonl",
+  "expected_count": 1,
+  "result_count": 1,
+  "completed_count": 1,
+  "error_count": 0,
+  "metric_issue_count": 0,
+  "contract_fail_count": 0,
+  "contract_warn_count": 0,
+  "gate_fail_count": 0,
+  "gate_warn_count": 0,
+  "ready_for_next_step": true,
+  "findings": []
+}

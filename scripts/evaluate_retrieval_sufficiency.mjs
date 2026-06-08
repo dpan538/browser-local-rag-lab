@@ -189,6 +189,43 @@ function coversGoldEvidence(candidates, label) {
   return label.gold_evidence_ids.every((id) => candidateIds.has(id));
 }
 
+export function computeGoldIdCoverage(labels, retrievalResults) {
+  const details = [];
+  let totalGold = 0;
+  let totalCovered = 0;
+  const labelMap = new Map(labels.map((label) => [label.query_id || label.id, label]));
+  const retrievalMap = new Map(retrievalResults.map((row) => [
+    row.query_id,
+    new Set(Array.isArray(row.retrieved_ids) ? row.retrieved_ids : String(row.retrieved_ids || "").split("|").filter(Boolean))
+  ]));
+
+  for (const [queryId, label] of labelMap.entries()) {
+    const goldIds = label.refusal_expected ? [] : label.gold_evidence_ids || [];
+    const retrievedSet = retrievalMap.get(queryId) || new Set();
+    const covered = goldIds.filter((id) => retrievedSet.has(id));
+    const missing = goldIds.filter((id) => !retrievedSet.has(id));
+    totalGold += goldIds.length;
+    totalCovered += covered.length;
+    if (missing.length > 0) {
+      details.push({
+        query_id: queryId,
+        intent: label.intent,
+        gold_ids: goldIds,
+        covered,
+        missing,
+        coverage_rate: goldIds.length > 0 ? covered.length / goldIds.length : 1
+      });
+    }
+  }
+
+  return {
+    rate: totalGold > 0 ? totalCovered / totalGold : 1,
+    total_gold: totalGold,
+    total_covered: totalCovered,
+    details
+  };
+}
+
 function estimateTokens(text) {
   return Math.ceil(String(text).length / 4);
 }
@@ -245,6 +282,11 @@ for (const query of queries) {
       ? candidates.length === 0
       : true;
     const evidenceCovered = coversGoldEvidence(candidates, label);
+    const candidateIds = new Set(candidates.map((record) => record.record_id));
+    const goldIds = label.refusal_expected ? [] : label.gold_evidence_ids;
+    const coveredGoldIds = goldIds.filter((id) => candidateIds.has(id));
+    const missingGoldIds = goldIds.filter((id) => !candidateIds.has(id));
+    const goldIdCoverageRate = goldIds.length > 0 ? coveredGoldIds.length / goldIds.length : 1;
     const fieldsPresent = hasRequiredFields(candidates, label, variant);
     const sufficientPacket = label.sufficient_context ? evidenceCovered && fieldsPresent : refusalGateAvailable;
     const text = packetText(candidates, variant);
@@ -259,6 +301,11 @@ for (const query of queries) {
       prompt_tokens_est: estimateTokens(text),
       gold_evidence_ids: label.gold_evidence_ids.join("|"),
       retrieved_ids: candidates.map((record) => record.record_id).join("|"),
+      covered_gold_evidence_ids: coveredGoldIds.join("|"),
+      missing_gold_evidence_ids: missingGoldIds.join("|"),
+      gold_evidence_total: goldIds.length,
+      gold_evidence_covered: coveredGoldIds.length,
+      gold_id_coverage_rate: Number(goldIdCoverageRate.toFixed(4)),
       sufficient_context: label.sufficient_context,
       refusal_expected: label.refusal_expected,
       refusal_gate_available: refusalGateAvailable,
@@ -274,17 +321,43 @@ for (const query of queries) {
 const summary = variants.map((variant) => {
   const subset = rows.filter((row) => row.variant_id === variant.variant_id);
   const avg = (field) => subset.reduce((sum, row) => sum + Number(row[field] || 0), 0) / subset.length;
+  const goldCoverage = computeGoldIdCoverage(
+    readJsonl(args.labelsPath),
+    subset.map((row) => ({ query_id: row.query_id, retrieved_ids: row.retrieved_ids }))
+  );
   return {
     variant_id: variant.variant_id,
     runs: subset.length,
     sufficiency_rate: Number((subset.filter((row) => row.sufficient_packet).length / subset.length).toFixed(3)),
     evidence_coverage_rate: Number((subset.filter((row) => row.evidence_covered).length / subset.length).toFixed(3)),
+    gold_id_coverage_rate: Number(goldCoverage.rate.toFixed(4)),
+    gold_id_coverage_fail_count: goldCoverage.details.length,
+    gold_id_total: goldCoverage.total_gold,
+    gold_id_covered: goldCoverage.total_covered,
     required_fields_rate: Number((subset.filter((row) => row.required_fields_present).length / subset.length).toFixed(3)),
     refusal_gate_rate: Number((subset.filter((row) => row.refusal_expected ? row.refusal_gate_available : true).length / subset.length).toFixed(3)),
     empty_retrieval_correct_rate: Number((subset.filter((row) => row.empty_retrieval_correct).length / subset.length).toFixed(3)),
     avg_prompt_tokens_est: Math.round(avg("prompt_tokens_est")),
     avg_retrieval_ms: Number(avg("retrieval_ms").toFixed(3))
   };
+});
+
+const findings = variants.flatMap((variant) => {
+  const subset = rows.filter((row) => row.variant_id === variant.variant_id);
+  const coverage = computeGoldIdCoverage(
+    readJsonl(args.labelsPath),
+    subset.map((row) => ({ query_id: row.query_id, retrieved_ids: row.retrieved_ids }))
+  );
+  return coverage.details.map((detail) => ({
+    severity: "fail",
+    code: "retrieval_missing_gold_evidence",
+    variant_id: variant.variant_id,
+    query_id: detail.query_id,
+    intent: detail.intent,
+    coverage_rate: Number(detail.coverage_rate.toFixed(4)),
+    missing_gold_evidence_ids: detail.missing.join("|"),
+    detail: "retrieval variant did not include all gold_evidence_ids; do not use this packet for generation experiments without adjudication"
+  }));
 });
 
 const report = {
@@ -294,6 +367,7 @@ const report = {
     warning: "Gold labels are seed labels and require human review before paper claims."
   },
   summary,
+  findings,
   rows
 };
 
@@ -308,9 +382,21 @@ variants preserve seeded gold evidence and required fields before any model
 generation. Labels are marked \`seed_auto_needs_human_review\`; use this as a
 method scaffold, not as final paper evidence.
 
-| Variant | Runs | Sufficiency | Evidence coverage | Required fields | Refusal gate | Empty retrieval check | Avg tokens est. | Avg retrieval ms |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-${summary.map((row) => `| ${row.variant_id} | ${row.runs} | ${row.sufficiency_rate} | ${row.evidence_coverage_rate} | ${row.required_fields_rate} | ${row.refusal_gate_rate} | ${row.empty_retrieval_correct_rate} | ${row.avg_prompt_tokens_est} | ${row.avg_retrieval_ms} |`).join("\n")}
+| Variant | Runs | Sufficiency | Evidence coverage | Gold ID coverage | Gold ID fail rows | Required fields | Refusal gate | Empty retrieval check | Avg tokens est. | Avg retrieval ms |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+${summary.map((row) => `| ${row.variant_id} | ${row.runs} | ${row.sufficiency_rate} | ${row.evidence_coverage_rate} | ${row.gold_id_coverage_rate} | ${row.gold_id_coverage_fail_count} | ${row.required_fields_rate} | ${row.refusal_gate_rate} | ${row.empty_retrieval_correct_rate} | ${row.avg_prompt_tokens_est} | ${row.avg_retrieval_ms} |`).join("\n")}
+
+## Gold Evidence Coverage Gate
+
+Any variant with \`gold_id_coverage_rate < 1.0\` has fail-level findings and
+must not be used for generation experiments unless it is explicitly a
+research-only negative-control retrieval condition.
+
+- Fail findings: ${findings.length}
+
+| Severity | Variant | Query | Intent | Missing gold evidence IDs |
+|---|---|---|---|---|
+${findings.length === 0 ? "| none | none | none | none | none |" : findings.map((finding) => `| ${finding.severity} | ${finding.variant_id} | ${finding.query_id} | ${finding.intent} | ${finding.missing_gold_evidence_ids} |`).join("\n")}
 
 ## Reading
 

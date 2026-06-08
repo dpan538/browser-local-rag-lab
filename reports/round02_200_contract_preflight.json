@@ -1,8 +1,8 @@
 {
   "_provenance": {
     "step": "round02_200_contract_preflight",
-    "timestamp": "2026-06-08T07:05:20.316Z",
-    "commit": "7859e7e25f6b9d49c4ac81569c2087da865d3387",
+    "timestamp": "2026-06-08T07:13:35.735Z",
+    "commit": "4c54089ea0bd0318dd2d381e18e6f21fe6644bbd",
     "input_paths": [
       "fixtures/expansion/round02_200/queries.jsonl",
       "fixtures/expansion/round02_200/labels.jsonl",

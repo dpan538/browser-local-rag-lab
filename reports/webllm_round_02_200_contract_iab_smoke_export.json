@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "round_id": "webllm_round_02_200_contract_iab_smoke",
+    "generated_at": "2026-06-08T07:15:05.332Z",
+    "research_only": true,
+    "note": "Browser-local WebLLM custom-model run. AI output is experimental and not archive evidence.",
+    "model_id": "Qwen3.5-0.8B-q4f16_1-MLC",
+    "model_url": "https://huggingface.co/mlc-ai/Qwen3.5-0.8B-q4f16_1-MLC",
+    "model_lib_url": "https://raw.githubusercontent.com/akaashrp/mlc-binaries/main/Qwen3.5-0.8B-q4f16_1-webgpu-mlc.wasm",
+    "variant_id": "top3_gold_contract_source_rights",
+    "queries_path": "../fixtures/expansion/round02_200/queries.jsonl",
+    "labels_path": "../fixtures/expansion/round02_200/labels.jsonl",
+    "records_path": "../fixtures/expansion/round02_200/records.jsonl",
+    "retrieval_path": "../reports/retrieval_sufficiency_200_contract.json",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.519.41501 Chrome/148.0.7778.97 Electron/42.1.0 Safari/537.36",
+    "webgpu": {
+      "status": "available",
+      "has_navigator_gpu": true,
+      "adapter_info": {},
+      "error": null
+    },
+    "cache_state": "warm_from_previous",
+    "run_scope": {
+      "query_start": 1,
+      "query_limit": 1,
+      "skip_completed": false,
+      "query_ids": null
+    },
+    "result_count": 1
+  },
+  "results": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "lane": "help",
+      "variant_id": "top3_gold_contract_source_rights",
+      "producer": "webllm_qwen3_5_0_8b_research_runtime",
+      "generation_status": "completed",
+      "retrieved_ids": "SURF-ER1830R004|SURF-ER1830R015|LAB-METHOD-CONTEXT-V0",
+      "candidate_count": 3,
+      "prompt_chars": 1636,
+      "prompt_tokens_est": 409,
+      "prompt_build_ms": 0.19999980926513672,
+      "model_load_ms": 16639.599999904633,
+      "tokenization_ms": null,
+      "cache_state": "warm_from_previous",
+      "device_error": null,
+      "answer_text": "- The archive is for graphic design and visual communication records.\n- The view is organized through folders and topologies including Unresolved region, Midcentury modern graphic communication, Trade card, India, Graphic design object record, and Research lab method.\n- The next step for the user is to navigate the Unresolved region folder to access the specific record.\n\nEVIDENCE TAGS:\ntopology: sheet / support_packet_appendix_text / Unresolved region / Midcentury modern graphic communication / Trade card | sheet / main_sheet / India / Midcentury modern graphic communication / Graphic design object record | method / method_context / Research lab method",
+      "raw_answer_text": "<think>\n\n</think>\n\n- The archive is for graphic design and visual communication records.\n- The view is organized through folders and topologies including Unresolved region, Midcentury modern graphic communication, Trade card, India, Graphic design object record, and Research lab method.\n- The next step for the user is to navigate the Unresolved region folder to access the specific record.\n\nEVIDENCE TAGS:\ntopology: sheet / support_packet_appendix_text / Unresolved region / Midcentury modern graphic communication / Trade card | sheet / main_sheet / India / Midcentury modern graphic communication / Graphic design object record | method / method_context / Research lab method",
+      "ttft_ms": 1675.6000003814697,
+      "total_latency_ms": 6298,
+      "output_tokens": 98,
+      "tokens_per_second": 21.20110765145543,
+      "model_answer_text": "- The archive is for graphic design and visual communication records.\n- The view is organized through folders and topologies including Unresolved region, Midcentury modern graphic communication, Trade card, India, Graphic design object record, and Research lab method.\n- The next step for the user is to navigate the Unresolved region folder to access the specific record.\n\nEVIDENCE TAGS:\ntopology: sheet / support_packet_appendix_text / Unresolved region / Midcentury modern graphic communication / Trade card | sheet / main_sheet / India / Midcentury modern graphic communication / Graphic design object record | method / method_context / Research lab method",
+      "answer_postprocess": "deterministic_contract_fields_v1"
+    }
+  ]
+}

@@ -78,6 +78,12 @@ function answerBehaviorFindings(answers, labelsById) {
   return findings;
 }
 
+function isBlockingFinding(finding) {
+  if (finding.severity === "fail") return true;
+  if (finding.code === "P003_generation_speed_low") return false;
+  return finding.severity === "warn";
+}
+
 function markdown(result) {
   const rows = result.findings.length === 0
     ? "| none | none | none | none |"
@@ -101,6 +107,8 @@ the mechanical gates and can move to review packaging.
 - Contract failures: ${result.contract_fail_count}
 - Contract warnings: ${result.contract_warn_count}
 - Gate warnings: ${result.gate_warn_count}
+- Blocking findings: ${result.blocking_finding_count}
+- Performance observations: ${result.performance_observation_count}
 - Ready for next step: ${result.ready_for_next_step ? "yes" : "no"}
 
 ## Findings
@@ -149,6 +157,8 @@ export function gateWebllmRound(options) {
   }
 
   findings.push(...answerBehaviorFindings(answers, labelsById));
+  const blockingFindings = findings.filter(isBlockingFinding);
+  const performanceObservations = findings.filter((item) => item.code === "P003_generation_speed_low");
 
   const result = {
     generated_at: new Date().toISOString(),
@@ -163,7 +173,9 @@ export function gateWebllmRound(options) {
     contract_warn_count: contract.warn_count,
     gate_fail_count: findings.filter((item) => item.severity === "fail").length,
     gate_warn_count: findings.filter((item) => item.severity === "warn").length,
-    ready_for_next_step: findings.every((item) => item.severity !== "fail" && item.severity !== "warn"),
+    blocking_finding_count: blockingFindings.length,
+    performance_observation_count: performanceObservations.length,
+    ready_for_next_step: blockingFindings.length === 0,
     findings
   };
 

@@ -1,0 +1,74 @@
+{
+  "_provenance": {
+    "step": "webllm_round_import",
+    "timestamp": "2026-06-08T07:27:29.097Z",
+    "commit": "4c54089ea0bd0318dd2d381e18e6f21fe6644bbd",
+    "input_path": "webllm_round_02_200_contract_iab_bq23_repair_export.json",
+    "packet_variant": "top3_gold_contract_source_rights",
+    "model_id": "Qwen3.5-0.8B-q4f16_1-MLC",
+    "runtime": "WebLLM/MLC custom model",
+    "webgpu_status": "available",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.519.41501 Chrome/148.0.7778.97 Electron/42.1.0 Safari/537.36"
+  },
+  "imported_at": "2026-06-08T07:27:29.120Z",
+  "source_export_path": "webllm_round_02_200_contract_iab_bq23_repair_export.json",
+  "metric_issues": [],
+  "meta": {
+    "round_id": "webllm_round_02_200_contract_iab_bq23_repair",
+    "generated_at": "2026-06-08T07:27:18.871Z",
+    "research_only": true,
+    "note": "Browser-local WebLLM custom-model run. AI output is experimental and not archive evidence.",
+    "model_id": "Qwen3.5-0.8B-q4f16_1-MLC",
+    "model_url": "https://huggingface.co/mlc-ai/Qwen3.5-0.8B-q4f16_1-MLC",
+    "model_lib_url": "https://raw.githubusercontent.com/akaashrp/mlc-binaries/main/Qwen3.5-0.8B-q4f16_1-webgpu-mlc.wasm",
+    "variant_id": "top3_gold_contract_source_rights",
+    "queries_path": "../fixtures/expansion/round02_200/queries.jsonl",
+    "labels_path": "../fixtures/expansion/round02_200/labels.jsonl",
+    "records_path": "../fixtures/expansion/round02_200/records.jsonl",
+    "retrieval_path": "../reports/retrieval_sufficiency_200_contract.json",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.519.41501 Chrome/148.0.7778.97 Electron/42.1.0 Safari/537.36",
+    "webgpu": {
+      "status": "available",
+      "has_navigator_gpu": true,
+      "adapter_info": {},
+      "error": null
+    },
+    "cache_state": "warm_from_previous",
+    "run_scope": {
+      "query_start": 1,
+      "query_limit": 1,
+      "skip_completed": false,
+      "query_ids": [
+        "BQ23"
+      ]
+    },
+    "result_count": 1
+  },
+  "results": [
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "lane": "research_answer",
+      "variant_id": "top3_gold_contract_source_rights",
+      "producer": "webllm_qwen3_5_0_8b_research_runtime",
+      "generation_status": "completed",
+      "retrieved_ids": "LAB-METHOD-CONTEXT-V0",
+      "candidate_count": 1,
+      "prompt_chars": 1814,
+      "prompt_tokens_est": 454,
+      "prompt_build_ms": 0.09999990463256836,
+      "model_load_ms": 2313,
+      "tokenization_ms": null,
+      "cache_state": "warm_from_previous",
+      "device_error": null,
+      "answer_text": "1. The evidence field \"method_context\" explicitly states that \"AI output is experimental text and cannot become archive evidence.\" This directive directly prohibits the generation of the final answer as archive evidence, forcing the assistant to refuse the request to generate the answer.\n\nEVIDENCE TAGS:\nmethod_context: Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence. Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation. AI output is experimental text and cannot become archive evidence. Refuse or request narrower context when required fields or claim support are absent.",
+      "raw_answer_text": "<think>\n\n</think>\n\n1. The evidence field \"method_context\" explicitly states that \"AI output is experimental text and cannot become archive evidence.\" This directive directly prohibits the generation of the final answer as archive evidence, forcing the assistant to refuse the request to generate the answer.\n\nEVIDENCE TAGS:\nmethod_context: Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence. Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation. AI output is experimental text and cannot become archive evidence. Refuse or request narrower context when required fields or claim support are absent.",
+      "ttft_ms": 1963.7000002861023,
+      "total_latency_ms": 7906.800000190735,
+      "output_tokens": 91,
+      "tokens_per_second": 15.3118742746143,
+      "model_answer_text": "1. The evidence field \"method_context\" explicitly states that \"AI output is experimental text and cannot become archive evidence.\" This directive directly prohibits the generation of the final answer as archive evidence, forcing the assistant to refuse the request to generate the answer.\n\nEVIDENCE TAGS:\nmethod_context: Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence. Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation. AI output is experimental text and cannot become archive evidence. Refuse or request narrower context when required fields or claim support are absent.",
+      "answer_postprocess": "deterministic_contract_fields_v1"
+    }
+  ]
+}

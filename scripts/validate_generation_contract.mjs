@@ -80,10 +80,24 @@ function evidenceValues(records, fields) {
   return values;
 }
 
+function evidenceTagsSection(text) {
+  const match = String(text).match(/EVIDENCE TAGS:\s*\n([\s\S]*)/i);
+  return match ? match[1] : null;
+}
+
+function extractFieldAssertionFromText(text, field) {
+  const pattern = new RegExp(`^\\s*${field.replaceAll("_", "[_ -]?")}\\s*[:：]\\s*(.+?)\\s*$`, "gim");
+  const matches = [...String(text).matchAll(pattern)];
+  return matches.length > 0 ? matches.at(-1)[1].trim() : null;
+}
+
 function extractFieldAssertion(text, field) {
-  const pattern = new RegExp(`${field.replaceAll("_", "[_ -]?")}\\s*[:：]\\s*(.+?)(?:\\n|$)`, "i");
-  const match = String(text).match(pattern);
-  return match ? match[1].trim() : null;
+  const tags = evidenceTagsSection(text);
+  if (tags) {
+    const taggedAssertion = extractFieldAssertionFromText(tags, field);
+    if (taggedAssertion) return taggedAssertion;
+  }
+  return extractFieldAssertionFromText(text, field);
 }
 
 function extractTaggedAssertion(text, tags) {

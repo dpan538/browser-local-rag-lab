@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-08T07:04:55.182Z",
+  "generated_at": "2026-06-08T07:56:45.845Z",
   "_provenance": {
     "step": "contract_oracle_check",
-    "commit": "7859e7e25f6b9d49c4ac81569c2087da865d3387",
+    "commit": "4c54089ea0bd0318dd2d381e18e6f21fe6644bbd",
     "packet_variant": "top3_gold_contract_source_rights",
     "input_paths": [
       "fixtures/expansion/round02_200/queries.jsonl",

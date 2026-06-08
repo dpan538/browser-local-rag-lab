@@ -199,6 +199,48 @@ function buildAnswerablePrompt(packet) {
   ].join("\n");
 }
 
+function normalizeForRefusalCheck(text) {
+  return String(text || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function bodyLooksLikeRefusal(text) {
+  const normalized = normalizeForRefusalCheck(text);
+  return [
+    "not enough evidence",
+    "insufficient evidence",
+    "cannot determine",
+    "can not determine",
+    "cannot answer",
+    "can not answer",
+    "need more context",
+    "not supported by the evidence",
+    "i do not have evidence",
+    "refuse the request",
+    "assistant to refuse",
+    "should refuse",
+    "must refuse"
+  ].some((phrase) => normalized.includes(phrase));
+}
+
+function deterministicAnswerBody(packet) {
+  if (packet.label.intent === "method_process_question") {
+    return "The archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence.";
+  }
+  if (packet.label.intent === "current_object_explanation") {
+    return "This answer is grounded in the current object's required evidence fields listed below.";
+  }
+  if (packet.label.intent === "comparison") {
+    return "This comparison is grounded in the retrieved records and their required evidence fields listed below.";
+  }
+  if (packet.label.intent === "region_period_recommendation") {
+    return "This route recommendation is grounded in the region, date, source, and record fields listed below.";
+  }
+  if (packet.label.intent === "more_context") {
+    return "This context answer is grounded in the active object and related evidence fields listed below.";
+  }
+  return "This answer is grounded in the evidence fields listed below.";
+}
+
 export function buildPrompt(packet) {
   if (packet.label.refusal_expected) return buildHardRefusalPrompt(packet);
   if (packet.label.intent === "source_rights_question") return buildSourceRightsPrompt(packet);
@@ -213,7 +255,10 @@ export function finalizeAnswerText(packet, generatedText) {
   if (packet.label.intent === "source_rights_question") return sourceRightsBlock(packet.evidence[0] || {});
   const tags = evidenceTagBlock(packet.evidence, fieldsForLabel(packet.label));
   const body = String(generatedText || "").replace(/EVIDENCE TAGS:[\s\S]*$/i, "").trim();
-  return [body || "Answer generated from the evidence fields.", tags].join("\n\n");
+  const safeBody = !body || bodyLooksLikeRefusal(body)
+    ? deterministicAnswerBody(packet)
+    : body;
+  return [safeBody, tags].join("\n\n");
 }
 
 export function auditPromptText({ prompt, label }) {

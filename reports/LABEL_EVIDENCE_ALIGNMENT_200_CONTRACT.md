@@ -1,6 +1,6 @@
 # Label Evidence Alignment 200
 
-Generated: 2026-06-08T07:04:55.164Z
+Generated: 2026-06-08T07:56:45.822Z
 
 This audit checks whether label contracts can be satisfied by their gold
 evidence and, when a retrieval report is supplied, by the retrieved packet that
