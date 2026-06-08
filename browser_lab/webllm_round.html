@@ -54,8 +54,18 @@
             <option value="ambiguous">ambiguous</option>
           </select>
         </label>
+        <label>
+          Start
+          <input id="runStart" type="number" min="1" value="1" />
+        </label>
+        <label>
+          Limit
+          <input id="runLimit" type="number" min="1" value="50" />
+        </label>
         <button id="runOneButton" type="button">Run selected</button>
+        <button id="runScopeButton" type="button">Run scope</button>
         <button id="runAllButton" type="button">Run all</button>
+        <button id="clearCheckpointButton" type="button">Clear checkpoint</button>
         <button id="downloadButton" type="button">Download results</button>
       </section>
 
@@ -79,6 +89,6 @@
       </section>
       <textarea id="exportBuffer" hidden aria-hidden="true"></textarea>
     </main>
-    <script type="module" src="./webllm_round.js?v=10"></script>
+    <script type="module" src="./webllm_round.js?v=11"></script>
   </body>
 </html>

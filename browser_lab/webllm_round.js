@@ -7,7 +7,10 @@ const config = {
   recordsPath: params.get("records") || "../fixtures/gold/records.jsonl",
   retrievalPath: params.get("retrieval") || "../reports/retrieval_sufficiency_v0.json",
   variantId: params.get("variant") || "top3_compressed_topology_source_rights",
-  roundId: params.get("round") || "webllm_round_02"
+  roundId: params.get("round") || "webllm_round_02",
+  queryStart: Math.max(1, Number(params.get("start") || 1)),
+  queryLimit: Math.max(1, Number(params.get("limit") || 50)),
+  skipCompleted: params.get("skipCompleted") !== "false"
 };
 
 const state = {
@@ -33,8 +36,12 @@ const el = {
   maxTokens: document.querySelector("#maxTokens"),
   temperature: document.querySelector("#temperature"),
   cacheState: document.querySelector("#cacheState"),
+  runStart: document.querySelector("#runStart"),
+  runLimit: document.querySelector("#runLimit"),
   runOneButton: document.querySelector("#runOneButton"),
+  runScopeButton: document.querySelector("#runScopeButton"),
   runAllButton: document.querySelector("#runAllButton"),
+  clearCheckpointButton: document.querySelector("#clearCheckpointButton"),
   downloadButton: document.querySelector("#downloadButton"),
   exportBuffer: document.querySelector("#exportBuffer"),
   metricLoad: document.querySelector("#metricLoad"),
@@ -60,6 +67,53 @@ function updateRoundChrome() {
   document.title = `${config.roundId} WebLLM Qwen runtime`;
   const titleNode = document.querySelector("[data-round-title]");
   if (titleNode) titleNode.textContent = config.roundId.replaceAll("_", " ");
+}
+
+function checkpointKey() {
+  return `webllm-round-results:${config.roundId}:${config.variantId}`;
+}
+
+function loadCheckpoint() {
+  try {
+    const raw = localStorage.getItem(checkpointKey());
+    if (!raw) return [];
+    const rows = JSON.parse(raw);
+    return Array.isArray(rows) ? rows : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveCheckpoint() {
+  localStorage.setItem(checkpointKey(), JSON.stringify(state.results));
+}
+
+function upsertResult(row) {
+  const existingIndex = state.results.findIndex((item) => item.query_id === row.query_id);
+  if (existingIndex >= 0) {
+    state.results[existingIndex] = row;
+  } else {
+    state.results.push(row);
+  }
+  saveCheckpoint();
+}
+
+function clearCheckpoint() {
+  localStorage.removeItem(checkpointKey());
+  state.results = [];
+  syncExportBuffer();
+  log("Cleared checkpoint for this round and variant.");
+}
+
+function completedQueryIds() {
+  return new Set(state.results.filter((row) => row.generation_status === "completed").map((row) => row.query_id));
+}
+
+function scopedQueries({ all = false } = {}) {
+  if (all) return state.queries;
+  const start = Math.max(1, Number(el.runStart.value || config.queryStart));
+  const limit = Math.max(1, Number(el.runLimit.value || config.queryLimit));
+  return state.queries.slice(start - 1, start - 1 + limit);
 }
 
 function ms(value) {
@@ -487,6 +541,7 @@ async function loadData() {
       .filter((row) => row.variant_id === config.variantId)
       .map((row) => [row.query_id, row])
   );
+  state.results = loadCheckpoint();
 
   el.querySelect.innerHTML = "";
   for (const query of queries) {
@@ -496,9 +551,13 @@ async function loadData() {
     el.querySelect.append(option);
   }
 
+  el.runStart.value = String(config.queryStart);
+  el.runLimit.value = String(config.queryLimit);
   el.runAllButton.textContent = `Run all ${queries.length}`;
   updatePromptPreview(buildPacket(selectedQueryId()));
+  syncExportBuffer();
   log(`Loaded ${queries.length} benchmark queries and ${records.length} records for ${config.roundId}.`);
+  log(`Checkpoint contains ${state.results.length} result rows.`);
 }
 
 async function probeWebGPU() {
@@ -657,7 +716,7 @@ async function runQuery(queryId) {
       generation_status: "completed",
       ...generated
     };
-    state.results.push(row);
+    upsertResult(row);
     syncExportBuffer();
     updateMetrics(row);
     log(`Completed ${queryId}: TTFT ${ms(row.ttft_ms)}, total ${ms(row.total_latency_ms)}, ${row.output_tokens} approx output tokens.`);
@@ -674,7 +733,7 @@ async function runQuery(queryId) {
       error: error?.message || String(error),
       device_error: error?.message || String(error)
     };
-    state.results.push(row);
+    upsertResult(row);
     syncExportBuffer();
     updateMetrics(row);
     log(`ERROR ${queryId}: ${row.error}`);
@@ -700,6 +759,11 @@ function downloadablePayload() {
       user_agent: navigator.userAgent,
       webgpu: state.webgpu,
       cache_state: el.cacheState.value,
+      run_scope: {
+        query_start: Math.max(1, Number(el.runStart.value || config.queryStart)),
+        query_limit: Math.max(1, Number(el.runLimit.value || config.queryLimit)),
+        skip_completed: config.skipCompleted
+      },
       result_count: state.results.length
     },
     results: state.results
@@ -756,17 +820,33 @@ el.runOneButton.addEventListener("click", async () => {
   }
 });
 
-el.runAllButton.addEventListener("click", async () => {
+async function runQueries(queries, label) {
+  const completed = completedQueryIds();
+  const pending = queries.filter((query) => !(config.skipCompleted && completed.has(query.query_id)));
+  log(`${label}: ${pending.length}/${queries.length} rows pending; skipCompleted=${config.skipCompleted}.`);
+  for (const query of pending) {
+    await runQuery(query.query_id);
+  }
+  log(`${label} complete: ${state.results.length} result rows in checkpoint.`);
+}
+
+el.runScopeButton.addEventListener("click", async () => {
   try {
-    for (const query of state.queries) {
-      await runQuery(query.query_id);
-    }
-    log(`Run all complete: ${state.results.length} result rows in memory.`);
+    await runQueries(scopedQueries(), "Scoped run");
   } catch (error) {
     log(error?.message || String(error));
   }
 });
 
+el.runAllButton.addEventListener("click", async () => {
+  try {
+    await runQueries(scopedQueries({ all: true }), "Run all");
+  } catch (error) {
+    log(error?.message || String(error));
+  }
+});
+
+el.clearCheckpointButton.addEventListener("click", clearCheckpoint);
 el.downloadButton.addEventListener("click", downloadResults);
 
 updateRoundChrome();

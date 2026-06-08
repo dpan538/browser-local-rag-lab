@@ -77,6 +77,20 @@ function provenance(inputPath, payload) {
   };
 }
 
+function resolveLabPath(value, fallback) {
+  if (!value) return fallback;
+  if (path.isAbsolute(value)) return value;
+  return path.resolve(repoRoot, value);
+}
+
+function contractInputs(payload) {
+  return {
+    queriesPath: resolveLabPath(payload.meta?.queries_path, path.join(repoRoot, "fixtures/gold/queries.jsonl")),
+    labelsPath: resolveLabPath(payload.meta?.labels_path, path.join(repoRoot, "fixtures/gold/labels.jsonl")),
+    recordsPath: resolveLabPath(payload.meta?.records_path, path.join(repoRoot, "fixtures/gold/records.jsonl"))
+  };
+}
+
 function metricIssues(results) {
   const issues = [];
   const requiredCompletedMetrics = [
@@ -261,7 +275,13 @@ export function importWebllmRound(inputPath, {
   }, null, 2) + "\n");
 
   writeJsonl(finalAnswersPath, answerRows(results));
-  const contract = validateGenerationContract({ answersPath: finalAnswersPath });
+  const queryIds = [...new Set(results.map((row) => row.query_id).filter(Boolean))];
+  const contract = validateGenerationContract({
+    ...contractInputs(payload),
+    answersPath: finalAnswersPath,
+    requireAllAnswers: false,
+    allowedQueryIds: queryIds
+  });
   fs.writeFileSync(finalReportMdPath, markdownReport({ payload, results, contract, metrics, outputJsonPath: finalOutputJsonPath, answersPath: finalAnswersPath }));
 
   return {
@@ -280,12 +300,21 @@ export function importWebllmRound(inputPath, {
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
   const inputPath = process.argv.slice(2).find((arg) => !arg.startsWith("-"));
   if (!inputPath) {
-    console.error("Usage: node scripts/import_webllm_round.mjs <browser_export.json> [--strict]");
+    console.error("Usage: node scripts/import_webllm_round.mjs <browser_export.json> [--json-out path] [--answers-out path] [--md-out path] [--strict]");
     process.exit(1);
   }
+  const args = process.argv.slice(2);
+  const option = (name) => {
+    const index = args.indexOf(name);
+    return index >= 0 ? args[index + 1] : null;
+  };
 
   try {
-    const summary = importWebllmRound(inputPath);
+    const summary = importWebllmRound(inputPath, {
+      outputJsonPath: option("--json-out") ? path.resolve(option("--json-out")) : null,
+      answersPath: option("--answers-out") ? path.resolve(option("--answers-out")) : null,
+      reportMdPath: option("--md-out") ? path.resolve(option("--md-out")) : null
+    });
     console.log(JSON.stringify(summary, null, 2));
     if (process.argv.includes("--strict")) {
       if (summary.completed_count === 0 || summary.contract_fail_count > 0) process.exitCode = 1;

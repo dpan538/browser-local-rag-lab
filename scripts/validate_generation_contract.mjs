@@ -136,11 +136,14 @@ export function validateGenerationContract({
   queriesPath = defaultQueriesPath,
   labelsPath = defaultLabelsPath,
   recordsPath = defaultRecordsPath,
-  answersPath
+  answersPath,
+  requireAllAnswers = true,
+  allowedQueryIds = null
 }) {
   if (!answersPath) throw new Error("answersPath is required");
   const queries = new Map(readJsonl(queriesPath).map((query) => [query.query_id, query]));
-  const labels = readJsonl(labelsPath);
+  const allowed = allowedQueryIds ? new Set(allowedQueryIds) : null;
+  const labels = readJsonl(labelsPath).filter((label) => !allowed || allowed.has(label.query_id));
   const recordsById = new Map(readJsonl(recordsPath).map((record) => [record.record_id, record]));
   const answers = new Map(readJsonl(answersPath).map((row) => [row.query_id || row.id, row]));
   const violations = [];
@@ -149,7 +152,9 @@ export function validateGenerationContract({
     const query = queries.get(label.query_id);
     const answerRow = answers.get(label.query_id);
     if (!answerRow) {
-      addViolation(violations, "fail", label.query_id, "G001_missing_answer", "answer", "no generated answer row found");
+      if (requireAllAnswers) {
+        addViolation(violations, "fail", label.query_id, "G001_missing_answer", "answer", "no generated answer row found");
+      }
       continue;
     }
 
