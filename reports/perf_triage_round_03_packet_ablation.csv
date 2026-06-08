@@ -1,0 +1,201 @@
+query_id,intent,gold_total_ms,top3_total_ms,top8_total_ms,top8_vs_gold,top8_prompt_tokens,top8_output_tokens,top8_tokens_per_second,recommendation
+BQ01,archive_orientation,4883.8,7961.5,5678.2,1.16,409,98,22.93,Monitor; no immediate packet change.
+BQ02,archive_orientation,4060.7,8061.6,7778.9,1.92,697,126,23.98,Monitor; no immediate packet change.
+BQ03,archive_orientation,4933.5,8157.9,9162.2,1.86,465,96,24.42,Monitor; no immediate packet change.
+BQ04,casual_archive_help,5115.3,7286,10052,1.97,405,92,24.33,Monitor; no immediate packet change.
+BQ05,current_object_explanation,6446.2,12250.5,36608.9,5.68,1723,49,4.11,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ06,current_object_explanation,5861.7,10185.1,24005.4,4.1,527,85,9.74,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ07,current_object_explanation,6432,12456.9,47722.6,7.42,1724,37,3.54,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ08,source_rights_question,7371.9,8927.7,17737.4,2.41,360,49,6.87,Monitor; no immediate packet change.
+BQ09,first_earliest_claim,1003,969.2,1998.7,1.99,107,10,18.91,Monitor; no immediate packet change.
+BQ10,first_earliest_claim,1000.9,969.3,1927.7,1.93,104,10,20.66,Monitor; no immediate packet change.
+BQ11,first_earliest_claim,999.3,967.6,1898.8,1.9,105,10,18.32,Monitor; no immediate packet change.
+BQ12,comparison,10020.6,11128.5,20808.3,2.08,601,80,12.16,Keep only the two comparison records plus required source fields.
+BQ13,comparison,8130.1,11181.4,16652.4,2.05,628,70,12.15,Keep only the two comparison records plus required source fields.
+BQ14,region_period_recommendation,9307.2,10874.8,34766.5,3.74,1888,81,10.16,Use route-specific top3 records and suppress extra topology spillover.
+BQ15,region_period_recommendation,722.3,735,1384.1,1.92,106,10,30.02,Use route-specific top3 records and suppress extra topology spillover.
+BQ16,region_period_recommendation,9786,9783.4,42943.3,4.39,2482,83,8.85,Use route-specific top3 records and suppress extra topology spillover.
+BQ17,region_period_recommendation,725.5,713.2,1413.1,1.95,104,10,28.7,Use route-specific top3 records and suppress extra topology spillover.
+BQ18,region_period_recommendation,729,727.2,1483.8,2.04,107,10,28.91,Use route-specific top3 records and suppress extra topology spillover.
+BQ19,source_rights_question,6291,6273.4,12739.2,2.02,352,49,9.6,Monitor; no immediate packet change.
+BQ20,source_rights_question,6335.7,6334.1,12320.8,1.94,357,49,10.08,Monitor; no immediate packet change.
+BQ21,source_rights_question,6236.5,6314.1,12757,2.05,359,49,9.59,Monitor; no immediate packet change.
+BQ22,source_rights_question,6155.1,6256.4,12729.8,2.07,356,49,9.56,Monitor; no immediate packet change.
+BQ23,method_process_question,5101.7,5089.8,11138.4,2.18,454,103,20.19,Monitor; no immediate packet change.
+BQ24,method_process_question,5509,5529.5,11991.9,2.18,455,94,21.26,Monitor; no immediate packet change.
+BQ25,more_context,11374.7,11362.2,44966.1,3.95,2901,69,7.17,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ26,more_context,11410.2,11371.7,45026.1,3.95,2901,71,7.75,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ27,no_evidence_refusal,718.4,727.3,1441.1,2.01,107,10,28.24,Monitor; no immediate packet change.
+BQ28,no_evidence_refusal,715.7,732,1459.9,2.04,112,10,28.01,Monitor; no immediate packet change.
+BQ29,no_evidence_refusal,713.9,718.2,1453.1,2.04,105,10,27.16,Monitor; no immediate packet change.
+BQ30,casual_archive_help,3937.4,5371.1,15086.4,3.83,638,119,21.65,Monitor; no immediate packet change.
+BQ031,archive_orientation,5363.5,5528,14496.4,2.7,641,114,22.56,Monitor; no immediate packet change.
+BQ032,archive_orientation,5170.6,6737.3,15934,3.08,713,121,21.62,Monitor; no immediate packet change.
+BQ033,archive_orientation,5448.7,6776.4,15830.6,2.91,720,122,22.65,Monitor; no immediate packet change.
+BQ034,archive_orientation,5260.1,6770.3,15890.3,3.02,728,126,22.42,Monitor; no immediate packet change.
+BQ035,archive_orientation,4774.2,5931.5,14593.9,3.06,614,120,22.19,Monitor; no immediate packet change.
+BQ036,archive_orientation,4590.8,5500.1,18315.9,3.99,720,124,22.28,Monitor; no immediate packet change.
+BQ037,archive_orientation,5003.5,5669.5,15440.5,3.09,652,128,23.05,Monitor; no immediate packet change.
+BQ038,archive_orientation,6416.8,6155.2,15250.2,2.38,653,130,23.16,Monitor; no immediate packet change.
+BQ039,archive_orientation,6406.3,6338.5,15910.1,2.48,701,130,22.99,Monitor; no immediate packet change.
+BQ040,archive_orientation,6445.8,6791.7,16099.8,2.5,719,125,21.97,Monitor; no immediate packet change.
+BQ041,archive_orientation,4961.3,6355.8,16163.2,3.26,729,127,22.38,Monitor; no immediate packet change.
+BQ042,archive_orientation,5039,6090.5,16245.7,3.22,762,118,21.69,Monitor; no immediate packet change.
+BQ043,archive_orientation,4614.7,5883.1,19597,4.25,698,123,13.04,Monitor; no immediate packet change.
+BQ044,casual_archive_help,4046,6102.8,20133.4,4.98,629,121,20.74,Monitor; no immediate packet change.
+BQ045,casual_archive_help,3420.7,4925.1,20259.6,5.92,629,120,15.8,Monitor; no immediate packet change.
+BQ046,casual_archive_help,3657.8,4973.1,20478.5,5.6,629,120,15.62,Monitor; no immediate packet change.
+BQ047,casual_archive_help,3739.3,4626.3,20695.4,5.53,629,119,15.51,Monitor; no immediate packet change.
+BQ048,casual_archive_help,3740.6,4724.9,20794.6,5.56,629,118,15.23,Monitor; no immediate packet change.
+BQ049,casual_archive_help,3775.3,5342.8,17049.7,4.52,657,69,16.31,Monitor; no immediate packet change.
+BQ050,casual_archive_help,3796.3,6120.4,21240.4,5.6,652,122,15.8,Monitor; no immediate packet change.
+BQ051,casual_archive_help,4217.5,4105.1,17901.6,4.24,661,124,22.24,Monitor; no immediate packet change.
+BQ052,casual_archive_help,3986.2,6053.2,23951.8,6.01,664,123,15.68,Monitor; no immediate packet change.
+BQ053,casual_archive_help,4180.2,6005.4,21100.2,5.05,671,123,16.06,Monitor; no immediate packet change.
+BQ054,casual_archive_help,5173.8,6218.6,20412,3.95,680,122,17.71,Monitor; no immediate packet change.
+BQ055,casual_archive_help,3800.6,5483.3,15199.6,4,656,120,22.62,Monitor; no immediate packet change.
+BQ056,casual_archive_help,3687.7,4149.1,14402,3.91,667,115,22.02,Monitor; no immediate packet change.
+BQ057,casual_archive_help,3627.6,6028.4,14797.3,4.08,674,124,22.65,Monitor; no immediate packet change.
+BQ058,current_object_explanation,6903.2,8805.1,30744.5,4.45,1684,71,9.14,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ059,current_object_explanation,6849.6,8671.7,30221.7,4.41,1677,93,12.58,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ060,current_object_explanation,6819.1,8706.6,30635.2,4.49,1684,87,11.22,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ061,current_object_explanation,6954.4,8894.7,30616.6,4.4,1749,74,9.89,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ062,current_object_explanation,7314.1,9490.6,32051.4,4.38,1792,59,7.43,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ063,current_object_explanation,6593.8,8597,30194.3,4.58,1656,86,11.19,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ064,current_object_explanation,6522,8421.4,29728.9,4.56,1653,48,6.33,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ065,current_object_explanation,8561.2,10424.9,34292.2,4.01,1885,76,9.25,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ066,current_object_explanation,8657.4,10369.7,34158.3,3.95,1885,45,5.4,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ067,current_object_explanation,7043.8,8742,31246.8,4.44,1691,66,8.33,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ068,current_object_explanation,7858.3,9445.8,32380.2,4.12,1839,62,7.63,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ069,current_object_explanation,7073.7,8750.9,31189.9,4.41,1758,50,6.42,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ070,current_object_explanation,8349.4,8933.5,31040.4,3.72,1760,74,9.61,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ071,current_object_explanation,8102.3,8788.3,30817.7,3.8,1715,65,8.33,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ072,current_object_explanation,9923.6,10178,33513.9,3.38,1920,74,9.41,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ073,current_object_explanation,7655.9,8220.7,29576.2,3.86,1619,81,10.72,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ074,current_object_explanation,8344.2,8871.4,30654.1,3.67,1703,43,5.67,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ075,current_object_explanation,7663.4,8259.5,29704.3,3.88,1629,72,9.44,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ076,current_object_explanation,10088.2,9469.2,32073.4,3.18,1817,62,7.77,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ077,current_object_explanation,8835.4,8185.5,29376.1,3.32,1626,60,7.92,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ078,current_object_explanation,8806.7,8218.4,29638,3.37,1631,69,9.04,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ079,current_object_explanation,8736.1,7894.3,28982.3,3.32,1630,64,8.84,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ080,current_object_explanation,8865.9,7990.7,40053.6,4.52,1636,53,5.21,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ081,current_object_explanation,6799.8,8249.2,32363.3,4.76,1649,61,7.98,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ082,current_object_explanation,6846.5,8584,36993.9,5.4,1658,45,4.45,Prefer gold-only or top3; top8 adds latency without a contract benefit.
+BQ083,source_rights_question,5934.4,5961.3,16416.4,2.77,338,69,10.77,Monitor; no immediate packet change.
+BQ084,source_rights_question,5547.7,5568.8,15326.9,2.76,305,52,8.46,Monitor; no immediate packet change.
+BQ085,source_rights_question,5704.9,5667.8,15669.6,2.75,333,56,9.13,Monitor; no immediate packet change.
+BQ086,source_rights_question,5612,5614.7,15535.3,2.77,315,58,9.38,Monitor; no immediate packet change.
+BQ087,source_rights_question,4938.9,4849.5,13312.6,2.7,288,45,8.62,Monitor; no immediate packet change.
+BQ088,source_rights_question,9076.5,6489.6,17403.2,1.92,355,40,5.88,Monitor; no immediate packet change.
+BQ089,source_rights_question,8746,7073.5,19678.3,2.25,461,22,2.99,Monitor; no immediate packet change.
+BQ090,source_rights_question,6678.9,5444.7,15012.1,2.25,307,58,9.67,Monitor; no immediate packet change.
+BQ091,source_rights_question,7078.8,5549.4,15710.3,2.22,328,52,8.42,Monitor; no immediate packet change.
+BQ092,source_rights_question,6103.7,4822,13320.1,2.18,290,50,9.87,Monitor; no immediate packet change.
+BQ093,source_rights_question,6212.7,4921.7,14054,2.26,290,51,9.14,Monitor; no immediate packet change.
+BQ094,source_rights_question,8136.5,6523.9,18509.5,2.27,410,48,6.7,Monitor; no immediate packet change.
+BQ095,source_rights_question,8865.1,6779.9,19473.5,2.2,521,59,8.07,Monitor; no immediate packet change.
+BQ096,source_rights_question,7870.9,6597.1,18571.7,2.36,387,36,5.2,Monitor; no immediate packet change.
+BQ097,source_rights_question,6450.2,6321.5,18242.5,2.83,361,46,6.37,Monitor; no immediate packet change.
+BQ098,source_rights_question,6808.3,6716.3,19672.9,2.89,478,69,9.41,Monitor; no immediate packet change.
+BQ099,source_rights_question,6392.8,6241.8,18030.5,2.82,372,44,6.12,Monitor; no immediate packet change.
+BQ100,source_rights_question,6502.9,6524.7,17923.4,2.76,395,48,6.81,Monitor; no immediate packet change.
+BQ101,source_rights_question,6474.8,6405.9,18223.4,2.81,373,43,5.85,Monitor; no immediate packet change.
+BQ102,comparison,7411.9,7425.7,20532.1,2.77,533,57,7.81,Keep only the two comparison records plus required source fields.
+BQ103,comparison,9805.5,9811.4,28694.5,2.93,798,43,5.31,Keep only the two comparison records plus required source fields.
+BQ104,comparison,9847.7,9905,28310.1,2.87,787,65,7.57,Keep only the two comparison records plus required source fields.
+BQ105,comparison,8270.9,8236.6,22854.6,2.76,602,52,6.55,Keep only the two comparison records plus required source fields.
+BQ106,comparison,9232.7,9238,19022.2,2.06,814,72,12.33,Keep only the two comparison records plus required source fields.
+BQ107,comparison,8981.5,8827.9,20467.2,2.28,778,79,10.37,Keep only the two comparison records plus required source fields.
+BQ108,comparison,8010.9,8048.6,19505.5,2.43,642,79,12.24,Keep only the two comparison records plus required source fields.
+BQ109,comparison,7710.8,7654.9,15486.8,2.01,600,128,23.02,Keep only the two comparison records plus required source fields.
+BQ110,comparison,10901,11034.9,22255.5,2.04,1029,67,10.3,Keep only the two comparison records plus required source fields.
+BQ111,comparison,9372.9,9192,18678.6,1.99,739,49,8.28,Keep only the two comparison records plus required source fields.
+BQ112,comparison,8422,8296.1,16678,1.98,625,38,6.69,Keep only the two comparison records plus required source fields.
+BQ113,comparison,8479.2,8401.5,20558,2.42,696,77,11.45,Keep only the two comparison records plus required source fields.
+BQ114,comparison,9113.2,8967.2,18112.2,1.99,807,87,14.86,Keep only the two comparison records plus required source fields.
+BQ115,comparison,7686.2,7640.2,17011.9,2.21,618,78,11.67,Keep only the two comparison records plus required source fields.
+BQ116,comparison,7559.5,7578.7,15133.4,2,583,58,10.68,Keep only the two comparison records plus required source fields.
+BQ117,comparison,8871.9,9638.4,17543.1,1.98,783,68,12.14,Keep only the two comparison records plus required source fields.
+BQ118,comparison,7032.1,10141.3,16500.4,2.35,494,46,7.11,Keep only the two comparison records plus required source fields.
+BQ119,comparison,7703.8,10656,18629.7,2.42,572,71,10.83,Keep only the two comparison records plus required source fields.
+BQ120,comparison,7199.6,8622.2,17616.1,2.45,506,42,6.51,Keep only the two comparison records plus required source fields.
+BQ121,comparison,8520.2,10338.2,20278.5,2.38,722,69,10.49,Keep only the two comparison records plus required source fields.
+BQ122,comparison,6581.7,8300.5,16697,2.54,443,73,11.48,Keep only the two comparison records plus required source fields.
+BQ123,comparison,7038.1,8503.3,16875.8,2.4,490,45,7.14,Keep only the two comparison records plus required source fields.
+BQ124,comparison,6853.7,8441.6,16546.1,2.41,473,43,6.8,Keep only the two comparison records plus required source fields.
+BQ125,comparison,7191.9,8820.9,17703.8,2.46,517,48,7.4,Keep only the two comparison records plus required source fields.
+BQ126,comparison,7699.2,9286.3,19090.9,2.48,552,49,7.07,Keep only the two comparison records plus required source fields.
+BQ127,comparison,8257.3,9880.3,17028.4,2.06,637,44,7.77,Keep only the two comparison records plus required source fields.
+BQ128,region_period_recommendation,9233.9,12273.6,32605.9,3.53,1757,65,8.4,Use route-specific top3 records and suppress extra topology spillover.
+BQ129,region_period_recommendation,9432.7,12526.6,34492.8,3.66,1927,57,6.95,Use route-specific top3 records and suppress extra topology spillover.
+BQ130,region_period_recommendation,9926.9,14602.3,35061.8,3.53,1992,54,6.86,Use route-specific top3 records and suppress extra topology spillover.
+BQ131,region_period_recommendation,10331.9,15190,36245.2,3.51,2089,82,9.72,Use route-specific top3 records and suppress extra topology spillover.
+BQ132,region_period_recommendation,9030.8,13627.1,33314.5,3.69,1938,78,10.21,Use route-specific top3 records and suppress extra topology spillover.
+BQ133,region_period_recommendation,7694.7,11990.9,31188.3,4.05,1730,39,5.01,Use route-specific top3 records and suppress extra topology spillover.
+BQ134,region_period_recommendation,7718.5,12088.2,31302.7,4.06,1754,52,6.83,Use route-specific top3 records and suppress extra topology spillover.
+BQ135,region_period_recommendation,8520.5,12861.4,32692.9,3.84,1793,54,6.75,Use route-specific top3 records and suppress extra topology spillover.
+BQ136,region_period_recommendation,9222.7,13637.5,33937.7,3.68,1926,37,4.61,Use route-specific top3 records and suppress extra topology spillover.
+BQ137,region_period_recommendation,9068.3,13497.5,32887.4,3.63,1829,58,7.21,Use route-specific top3 records and suppress extra topology spillover.
+BQ138,region_period_recommendation,8853.9,13147.4,32609.8,3.68,1768,77,9.55,Use route-specific top3 records and suppress extra topology spillover.
+BQ139,region_period_recommendation,8967.3,13490.3,33714.1,3.76,1908,44,5.38,Use route-specific top3 records and suppress extra topology spillover.
+BQ140,region_period_recommendation,9244.2,13612.4,34094.2,3.69,1970,65,7.9,Use route-specific top3 records and suppress extra topology spillover.
+BQ141,region_period_recommendation,9416.6,13948.6,32534.6,3.46,1828,94,11.61,Use route-specific top3 records and suppress extra topology spillover.
+BQ142,region_period_recommendation,8278.1,12561.9,34651.5,4.19,1892,75,9.05,Use route-specific top3 records and suppress extra topology spillover.
+BQ143,region_period_recommendation,8419.6,12852.1,34325.4,4.08,1892,58,6.98,Use route-specific top3 records and suppress extra topology spillover.
+BQ144,region_period_recommendation,7906.4,8936.1,34612.1,4.38,1892,74,8.93,Use route-specific top3 records and suppress extra topology spillover.
+BQ145,region_period_recommendation,7729.6,10391.6,34417.3,4.45,1892,56,6.74,Use route-specific top3 records and suppress extra topology spillover.
+BQ146,region_period_recommendation,7395,8545.9,34782,4.7,1892,89,10.69,Use route-specific top3 records and suppress extra topology spillover.
+BQ147,method_process_question,5351.6,6417.2,10231.7,1.91,459,92,22.96,Monitor; no immediate packet change.
+BQ148,method_process_question,5850.9,6334.1,9939.7,1.7,459,91,21.65,Monitor; no immediate packet change.
+BQ149,method_process_question,5214.4,5886.2,11586.3,2.22,459,106,20.68,Monitor; no immediate packet change.
+BQ150,method_process_question,6296.6,5436.9,12686,2.01,459,101,19.83,Monitor; no immediate packet change.
+BQ151,method_process_question,6313.2,5926.3,12755.4,2.02,459,110,21.38,Monitor; no immediate packet change.
+BQ152,method_process_question,6313,5058.9,11978.7,1.9,459,94,21.53,Monitor; no immediate packet change.
+BQ153,method_process_question,4622.8,5342.1,10035.7,2.17,459,86,22.82,Monitor; no immediate packet change.
+BQ154,method_process_question,6278.4,5341.2,12707.9,2.02,459,104,20.34,Monitor; no immediate packet change.
+BQ155,method_process_question,5184,5504.2,12710.8,2.45,459,99,19.14,Monitor; no immediate packet change.
+BQ156,method_process_question,6313.8,6309.4,12803.5,2.03,459,109,21.14,Monitor; no immediate packet change.
+BQ157,method_process_question,5288.8,6307.6,11640.9,2.2,459,88,21.71,Monitor; no immediate packet change.
+BQ158,method_process_question,6240.6,5112.5,11510.5,1.84,459,86,22.03,Monitor; no immediate packet change.
+BQ159,method_process_question,6317.1,5257.7,11128.7,1.76,459,104,21.08,Monitor; no immediate packet change.
+BQ160,method_process_question,6328.8,5954,12736.3,2.01,459,107,20.8,Monitor; no immediate packet change.
+BQ161,more_context,8017.6,9786.2,33281.7,4.15,2236,51,6.18,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ162,more_context,7973,9366.6,41809,5.24,2585,32,3.38,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ163,more_context,7701.7,9230.6,42591.6,5.53,2687,72,7.64,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ164,more_context,7683.9,9339.3,41226,5.37,2547,40,4.29,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ165,more_context,9267.4,10422.5,43742.5,4.72,2715,59,6.12,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ166,more_context,11366,11694.6,49822.8,4.38,2730,57,5.44,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ167,more_context,11527.2,12012.4,55863.1,4.85,2730,36,3.42,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ168,more_context,9782.9,9227.9,43329.1,4.43,2212,49,4.64,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ169,more_context,10933.8,10133.3,47005.4,4.3,2396,36,3.41,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ170,more_context,9464.3,9311.3,44524.7,4.7,2233,55,5.27,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ171,more_context,9699.2,9627,44852.5,4.62,2278,106,10.1,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ172,more_context,10476.8,11015.9,55747.5,5.32,2691,50,4.3,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ173,more_context,11399,11861,56175.4,4.93,2736,47,4.02,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ174,more_context,11476.4,11895,57601,5.02,2785,34,2.88,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ175,more_context,10837.5,9827.4,45635.3,4.21,2057,44,4.24,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ176,more_context,12022.7,11196.5,46301.2,3.85,2103,89,8.54,Use adaptive top3 or a precompressed context skeleton; avoid default top8.
+BQ177,first_earliest_claim,868.4,738.9,1908.6,2.2,107,10,22.18,Monitor; no immediate packet change.
+BQ178,first_earliest_claim,872.5,729.5,1916,2.2,107,10,21.95,Monitor; no immediate packet change.
+BQ179,first_earliest_claim,859.3,733.8,1927.9,2.24,107,10,21.5,Monitor; no immediate packet change.
+BQ180,first_earliest_claim,847.2,727,1961.1,2.31,107,10,20.75,Monitor; no immediate packet change.
+BQ181,first_earliest_claim,863,730.6,1911.3,2.21,107,10,21.37,Monitor; no immediate packet change.
+BQ182,first_earliest_claim,879.1,721.7,1918.1,2.18,107,10,20.84,Monitor; no immediate packet change.
+BQ183,first_earliest_claim,877.2,743,1957.6,2.23,107,10,20.83,Monitor; no immediate packet change.
+BQ184,first_earliest_claim,854.9,718.1,1947.4,2.28,107,10,21.11,Monitor; no immediate packet change.
+BQ185,first_earliest_claim,859.4,731,1918.9,2.23,107,10,21.53,Monitor; no immediate packet change.
+BQ186,first_earliest_claim,881.9,729.4,1944.2,2.2,108,10,20.48,Monitor; no immediate packet change.
+BQ187,first_earliest_claim,883.4,727.9,2035.2,2.3,108,10,19.47,Monitor; no immediate packet change.
+BQ188,first_earliest_claim,867.8,726,1952.7,2.25,108,10,21.21,Monitor; no immediate packet change.
+BQ189,no_evidence_refusal,861.8,746.3,2008.9,2.33,113,10,20.67,Monitor; no immediate packet change.
+BQ190,no_evidence_refusal,865,737.5,1971.3,2.28,113,10,21.05,Monitor; no immediate packet change.
+BQ191,no_evidence_refusal,860.3,734.6,1968.4,2.29,113,10,21.63,Monitor; no immediate packet change.
+BQ192,no_evidence_refusal,885.5,737.7,1947.9,2.2,113,10,20.41,Monitor; no immediate packet change.
+BQ193,no_evidence_refusal,869.3,743.5,1993.1,2.29,113,10,21.03,Monitor; no immediate packet change.
+BQ194,no_evidence_refusal,868.5,732,1968.8,2.27,113,10,20.66,Monitor; no immediate packet change.
+BQ195,no_evidence_refusal,875.5,742.5,1937.9,2.21,113,10,21.06,Monitor; no immediate packet change.
+BQ196,no_evidence_refusal,899.5,737.9,1987.5,2.21,113,10,20.35,Monitor; no immediate packet change.
+BQ197,no_evidence_refusal,873.7,734.2,1968.9,2.25,113,10,20.3,Monitor; no immediate packet change.
+BQ198,no_evidence_refusal,883.3,738.1,1960.1,2.22,113,10,20.66,Monitor; no immediate packet change.
+BQ199,no_evidence_refusal,862.6,745.5,1956.8,2.27,113,10,21.34,Monitor; no immediate packet change.
+BQ200,no_evidence_refusal,901.4,740.3,1977.2,2.19,113,10,21.11,Monitor; no immediate packet change.
