@@ -1,0 +1,199 @@
+{
+  "generated_at": "2026-06-08T12:25:21.574Z",
+  "round_json_path": "reports/webllm_round_03_300.json",
+  "answers_path": "reports/webllm_round_03_300_answers.jsonl",
+  "expected_count": 300,
+  "result_count": 300,
+  "completed_count": 300,
+  "error_count": 0,
+  "metric_issue_count": 0,
+  "contract_fail_count": 0,
+  "contract_warn_count": 0,
+  "gate_fail_count": 0,
+  "gate_warn_count": 30,
+  "blocking_finding_count": 0,
+  "performance_observation_count": 30,
+  "ready_for_next_step": true,
+  "findings": [
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ062",
+      "detail": "tokens_per_second=8.29; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ088",
+      "detail": "tokens_per_second=7.17; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ089",
+      "detail": "tokens_per_second=3.67; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ096",
+      "detail": "tokens_per_second=6.41; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ097",
+      "detail": "tokens_per_second=8.25; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ099",
+      "detail": "tokens_per_second=7.90; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ101",
+      "detail": "tokens_per_second=7.66; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ103",
+      "detail": "tokens_per_second=8.48; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ105",
+      "detail": "tokens_per_second=6.61; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ115",
+      "detail": "tokens_per_second=8.39; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ123",
+      "detail": "tokens_per_second=8.05; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ131",
+      "detail": "tokens_per_second=7.00; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ136",
+      "detail": "tokens_per_second=8.35; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ138",
+      "detail": "tokens_per_second=6.23; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ142",
+      "detail": "tokens_per_second=6.79; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ161",
+      "detail": "tokens_per_second=7.07; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ162",
+      "detail": "tokens_per_second=6.33; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ167",
+      "detail": "tokens_per_second=6.32; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ169",
+      "detail": "tokens_per_second=7.20; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ173",
+      "detail": "tokens_per_second=5.53; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ174",
+      "detail": "tokens_per_second=7.23; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ213",
+      "detail": "tokens_per_second=8.07; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ214",
+      "detail": "tokens_per_second=8.07; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ220",
+      "detail": "tokens_per_second=7.90; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ222",
+      "detail": "tokens_per_second=7.38; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ223",
+      "detail": "tokens_per_second=6.36; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ224",
+      "detail": "tokens_per_second=8.44; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ227",
+      "detail": "tokens_per_second=6.26; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ230",
+      "detail": "tokens_per_second=6.47; avg=17.02"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ243",
+      "detail": "tokens_per_second=8.39; avg=17.02"
+    }
+  ]
+}
