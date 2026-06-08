@@ -1,0 +1,868 @@
+{
+  "_provenance": {
+    "step": "intent_saturation_check",
+    "timestamp": "2026-06-08T11:30:13.826Z",
+    "labels_path": "fixtures/expansion/round03_300/labels.jsonl",
+    "records_path": "fixtures/expansion/round03_300/records.jsonl"
+  },
+  "summary": {
+    "label_count": 300,
+    "record_count": 54,
+    "intent_count": 10
+  },
+  "intents": [
+    {
+      "intent": "archive_orientation",
+      "query_count": 22,
+      "answerable_count": 22,
+      "refusal_count": 0,
+      "gold_evidence_references": 44,
+      "unique_counts": {
+        "creator": 25,
+        "date_text": 27,
+        "image_state_code": 5,
+        "object_type": 17,
+        "public_domain_status": 2,
+        "record_id": 33,
+        "region": 15,
+        "reuse_permission": 2,
+        "rights_label": 12,
+        "rights_state": 5,
+        "source_domain": 6,
+        "source_name": 26,
+        "topology_publication_role": 2,
+        "topology_surface_type": 1
+      },
+      "samples": {
+        "creator": [
+          "\"Posta Romana\"",
+          "Design by Patricio Aguirre Warden; scanned by Penarc",
+          "Fleeson, Isaac Neville; Dryden, W. G",
+          "General Post Office ; scanned by User:Nickpo. The original uploader was Nickpo at Russian Wikipedia .",
+          "Henri Frederich Müller (Creator)"
+        ],
+        "date_text": [
+          "1830",
+          "1832",
+          "1834",
+          "1835",
+          "1837"
+        ],
+        "image_state_code": [
+          "IMG00",
+          "IMG01",
+          "IMG02",
+          "IMG03",
+          "IMG04"
+        ],
+        "object_type": [
+          "1 print :",
+          "Chromolithograph",
+          "Die Thierwelt (The Animal Kinggom) (Game)",
+          "Gallica visual/document record",
+          "Open image record; poster/print candidate"
+        ],
+        "public_domain_status": [
+          "not_determined_from_fixture",
+          "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined"
+        ],
+        "record_id": [
+          "SURF-CGS2026R0030",
+          "SURF-CGS2026R0031",
+          "SURF-CGS2026R0328",
+          "SURF-CGS2026R0681",
+          "SURF-CGS2026R0904"
+        ],
+        "region": [
+          "Austria Vienna Europe / Austria / Vienna / Europe",
+          "East Asia / China",
+          "Eastern Europe / Romania",
+          "France",
+          "Global / release gate expansion"
+        ],
+        "reuse_permission": [
+          "not_determined_from_fixture",
+          "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required"
+        ],
+        "rights_label": [
+          "Compound sheet uses no image frame. Each member keeps its own IMG00-IMG04 status and source link.",
+          "IMG00: AIC image identifier exists, but search row does not report public-domain status.",
+          "IMG01: LOC search row exposes a thumbnail; item-level rights advisory was not captured in this pass.",
+          "IMG02: Cooper Hewitt GraphQL exposes a source-hosted collection image; image display stays source-linked and item rights remain authoritative.",
+          "IMG02: Gallica exposes an IIIF source-hosted image, but the SRU rights value is not an explicit public-domain signal."
+        ],
+        "rights_state": [
+          "compound_member_rights",
+          "open_candidate",
+          "rights_review_required",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "source_domain": [
+          "collection.cooperhewitt.org",
+          "collections.vam.ac.uk",
+          "commons.wikimedia.org",
+          "gallica.bnf.fr",
+          "www.artic.edu"
+        ],
+        "source_name": [
+          "Art Institute of Chicago API",
+          "Cooper Hewitt Collection GraphQL API",
+          "Gallica / BnF APIs",
+          "Library of Congress loc.gov API",
+          "Smithsonian Open Access"
+        ],
+        "topology_publication_role": [
+          "main_sheet",
+          "support_packet_appendix_text"
+        ],
+        "topology_surface_type": [
+          "sheet"
+        ]
+      }
+    },
+    {
+      "intent": "casual_archive_help",
+      "query_count": 22,
+      "answerable_count": 22,
+      "refusal_count": 0,
+      "gold_evidence_references": 24,
+      "unique_counts": {
+        "creator": 15,
+        "date_text": 19,
+        "image_state_code": 4,
+        "object_type": 10,
+        "public_domain_status": 2,
+        "record_id": 22,
+        "region": 11,
+        "reuse_permission": 2,
+        "rights_label": 8,
+        "rights_state": 4,
+        "source_domain": 5,
+        "source_name": 18,
+        "topology_publication_role": 1,
+        "topology_surface_type": 1
+      },
+      "samples": {
+        "creator": [
+          "\"Posta Romana\"",
+          "General Post Office ; scanned by User:Nickpo. The original uploader was Nickpo at Russian Wikipedia .",
+          "Henri Frederich Müller (Creator)",
+          "Israel Kaplan",
+          "Jean-Pierre Dalbéra from Paris, France"
+        ],
+        "date_text": [
+          "1830",
+          "1832",
+          "1834",
+          "1835",
+          "1838-1839"
+        ],
+        "image_state_code": [
+          "IMG01",
+          "IMG02",
+          "IMG03",
+          "IMG04"
+        ],
+        "object_type": [
+          "1 print :",
+          "Chromolithograph",
+          "Die Thierwelt (The Animal Kinggom) (Game)",
+          "Gallica visual/document record",
+          "Open image record; poster/print candidate"
+        ],
+        "public_domain_status": [
+          "not_determined_from_fixture",
+          "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined"
+        ],
+        "record_id": [
+          "SURF-CGS2026R0031",
+          "SURF-CGS2026R0904",
+          "SURF-CHW2026R001",
+          "SURF-COM1970R007",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
+        ],
+        "region": [
+          "Austria Vienna Europe / Austria / Vienna / Europe",
+          "East Asia / China",
+          "Eastern Europe / Romania",
+          "France",
+          "Global / release gate expansion"
+        ],
+        "reuse_permission": [
+          "not_determined_from_fixture",
+          "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required"
+        ],
+        "rights_label": [
+          "Compound sheet uses no image frame. Each member keeps its own IMG00-IMG04 status and source link.",
+          "IMG01: LOC search row exposes a thumbnail; item-level rights advisory was not captured in this pass.",
+          "IMG02: Cooper Hewitt GraphQL exposes a source-hosted collection image; image display stays source-linked and item rights remain authoritative.",
+          "IMG02: Gallica exposes an IIIF source-hosted image, but the SRU rights value is not an explicit public-domain signal.",
+          "IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF."
+        ],
+        "rights_state": [
+          "compound_member_rights",
+          "open_candidate",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "source_domain": [
+          "collection.cooperhewitt.org",
+          "collections.vam.ac.uk",
+          "commons.wikimedia.org",
+          "gallica.bnf.fr",
+          "www.loc.gov"
+        ],
+        "source_name": [
+          "Cooper Hewitt Collection GraphQL API",
+          "Gallica / BnF APIs",
+          "Library of Congress loc.gov API",
+          "V&A Collections API",
+          "Wikimedia Commons"
+        ],
+        "topology_publication_role": [
+          "main_sheet"
+        ],
+        "topology_surface_type": [
+          "sheet"
+        ]
+      }
+    },
+    {
+      "intent": "comparison",
+      "query_count": 38,
+      "answerable_count": 38,
+      "refusal_count": 0,
+      "gold_evidence_references": 76,
+      "unique_counts": {
+        "creator": 29,
+        "date_text": 33,
+        "image_state_code": 5,
+        "object_type": 20,
+        "public_domain_status": 2,
+        "record_id": 38,
+        "region": 18,
+        "reuse_permission": 2,
+        "rights_label": 13,
+        "rights_state": 4,
+        "source_domain": 6,
+        "source_name": 27,
+        "topology_publication_role": 3,
+        "topology_surface_type": 1
+      },
+      "samples": {
+        "creator": [
+          "\"(Independent) Postal Administration of Ras al-Kaima\" (1964-1972)",
+          "Design by Patricio Aguirre Warden; scanned by Penarc",
+          "Eugène Grasset (French, 1841–1917)",
+          "Fleeson, Isaac Neville; Dryden, W. G",
+          "General Post Office ; scanned by User:Nickpo. The original uploader was Nickpo at Russian Wikipedia ."
+        ],
+        "date_text": [
+          "1830-1922",
+          "1831",
+          "1834",
+          "1837",
+          "1840"
+        ],
+        "image_state_code": [
+          "IMG00",
+          "IMG01",
+          "IMG02",
+          "IMG03",
+          "IMG04"
+        ],
+        "object_type": [
+          "1 item.",
+          "1 photographic print :",
+          "1 print :",
+          "Die Thierwelt (The Animal Kinggom) (Game)",
+          "Open image record; poster/print candidate"
+        ],
+        "public_domain_status": [
+          "not_determined_from_fixture",
+          "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined"
+        ],
+        "record_id": [
+          "SURF-CGS2026R0030",
+          "SURF-CGS2026R0031",
+          "SURF-CGS2026R0328",
+          "SURF-CGS2026R0681",
+          "SURF-CGS2026R0904"
+        ],
+        "region": [
+          "Austria Vienna Europe / Austria / Vienna / Europe",
+          "East Asia / China",
+          "France",
+          "France, 19th century",
+          "Ghent"
+        ],
+        "reuse_permission": [
+          "not_determined_from_fixture",
+          "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required"
+        ],
+        "rights_label": [
+          "IMG00: AIC image identifier exists, but search row does not report public-domain status.",
+          "IMG01: LOC search row exposes a thumbnail; item-level rights advisory was not captured in this pass.",
+          "IMG02: Cooper Hewitt GraphQL exposes a source-hosted collection image; image display stays source-linked and item rights remain authoritative.",
+          "IMG02: V&A API exposes source-hosted IIIF/image service metadata; no local copy is permitted in this pass.",
+          "IMG03: AIC search API reports is_public_domain=true."
+        ],
+        "rights_state": [
+          "open_candidate",
+          "rights_review_required",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "source_domain": [
+          "clevelandart.org",
+          "collection.cooperhewitt.org",
+          "collections.vam.ac.uk",
+          "commons.wikimedia.org",
+          "www.artic.edu"
+        ],
+        "source_name": [
+          "Art Institute of Chicago API",
+          "Cleveland Museum Open Access API",
+          "Cooper Hewitt Collection GraphQL API",
+          "Library of Congress loc.gov API",
+          "Smithsonian Open Access"
+        ],
+        "topology_publication_role": [
+          "main_sheet",
+          "support_packet_appendix_text",
+          "thin_visual_support_packet"
+        ],
+        "topology_surface_type": [
+          "sheet"
+        ]
+      }
+    },
+    {
+      "intent": "current_object_explanation",
+      "query_count": 32,
+      "answerable_count": 32,
+      "refusal_count": 0,
+      "gold_evidence_references": 32,
+      "unique_counts": {
+        "creator": 23,
+        "date_text": 24,
+        "image_state_code": 4,
+        "object_type": 15,
+        "public_domain_status": 2,
+        "record_id": 28,
+        "region": 15,
+        "reuse_permission": 2,
+        "rights_label": 10,
+        "rights_state": 4,
+        "source_domain": 6,
+        "source_name": 21,
+        "topology_publication_role": 3,
+        "topology_surface_type": 1
+      },
+      "samples": {
+        "creator": [
+          "\"(Independent) Postal Administration of Ras al-Kaima\" (1964-1972)",
+          "Design by Patricio Aguirre Warden; scanned by Penarc",
+          "Eugène Grasset (French, 1841–1917)",
+          "Fleeson, Isaac Neville; Dryden, W. G",
+          "Henri de Toulouse-Lautrec\nFrench, 1864-1901"
+        ],
+        "date_text": [
+          "1830",
+          "1830-1922",
+          "1837",
+          "1840",
+          "1840-1849"
+        ],
+        "image_state_code": [
+          "IMG00",
+          "IMG01",
+          "IMG02",
+          "IMG03"
+        ],
+        "object_type": [
+          "1 print :",
+          "Gallica visual/document record",
+          "Print",
+          "Trade card",
+          "lithograph; poster; print; prints and drawing"
+        ],
+        "public_domain_status": [
+          "not_determined_from_fixture",
+          "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined"
+        ],
+        "record_id": [
+          "SURF-CGS2026R0030",
+          "SURF-CGS2026R0031",
+          "SURF-CGS2026R0328",
+          "SURF-CGS2026R0681",
+          "SURF-CGS2026R0904"
+        ],
+        "region": [
+          "East Asia / China",
+          "France",
+          "France, 19th century",
+          "Ghent",
+          "Global / release gate expansion"
+        ],
+        "reuse_permission": [
+          "not_determined_from_fixture",
+          "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required"
+        ],
+        "rights_label": [
+          "IMG00: AIC image identifier exists, but search row does not report public-domain status.",
+          "IMG01: LOC search row exposes a thumbnail; item-level rights advisory was not captured in this pass.",
+          "IMG02: V&A API exposes source-hosted IIIF/image service metadata; no local copy is permitted in this pass.",
+          "IMG03: AIC search API reports is_public_domain=true.",
+          "IMG03: Cleveland Museum API share_license_status=CC0."
+        ],
+        "rights_state": [
+          "open_candidate",
+          "rights_review_required",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "source_domain": [
+          "clevelandart.org",
+          "collections.vam.ac.uk",
+          "commons.wikimedia.org",
+          "gallica.bnf.fr",
+          "www.artic.edu"
+        ],
+        "source_name": [
+          "Art Institute of Chicago API",
+          "Cleveland Museum Open Access API",
+          "Gallica / BnF APIs",
+          "Library of Congress loc.gov API",
+          "V&A Collections API"
+        ],
+        "topology_publication_role": [
+          "main_sheet",
+          "support_packet_appendix_text",
+          "thin_visual_support_packet"
+        ],
+        "topology_surface_type": [
+          "sheet"
+        ]
+      }
+    },
+    {
+      "intent": "first_earliest_claim",
+      "query_count": 35,
+      "answerable_count": 0,
+      "refusal_count": 35,
+      "gold_evidence_references": 0,
+      "unique_counts": {},
+      "samples": {}
+    },
+    {
+      "intent": "method_process_question",
+      "query_count": 22,
+      "answerable_count": 22,
+      "refusal_count": 0,
+      "gold_evidence_references": 22,
+      "unique_counts": {
+        "creator": 1,
+        "date_text": 1,
+        "image_state_code": 1,
+        "method_context_kind": 1,
+        "object_type": 1,
+        "public_domain_status": 1,
+        "record_id": 1,
+        "region": 1,
+        "reuse_permission": 1,
+        "rights_label": 1,
+        "rights_state": 1,
+        "source_domain": 1,
+        "source_name": 1,
+        "topology_publication_role": 1,
+        "topology_surface_type": 1
+      },
+      "samples": {
+        "creator": [
+          "browser-local-rag-lab"
+        ],
+        "date_text": [
+          "2026-06-07"
+        ],
+        "image_state_code": [
+          "IMG00"
+        ],
+        "method_context_kind": [
+          "method_context"
+        ],
+        "object_type": [
+          "method_context"
+        ],
+        "public_domain_status": [
+          "not_applicable_to_archive_object_reuse"
+        ],
+        "record_id": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "region": [
+          "Research method"
+        ],
+        "reuse_permission": [
+          "not_applicable_to_archive_object_reuse"
+        ],
+        "rights_label": [
+          "Research-only method fixture; not archive object evidence."
+        ],
+        "rights_state": [
+          "research_fixture"
+        ],
+        "source_domain": [
+          "github.com"
+        ],
+        "source_name": [
+          "browser-local-rag-lab method files"
+        ],
+        "topology_publication_role": [
+          "method_context"
+        ],
+        "topology_surface_type": [
+          "method"
+        ]
+      }
+    },
+    {
+      "intent": "more_context",
+      "query_count": 24,
+      "answerable_count": 24,
+      "refusal_count": 0,
+      "gold_evidence_references": 50,
+      "unique_counts": {
+        "creator": 24,
+        "date_text": 29,
+        "image_state_code": 5,
+        "object_type": 17,
+        "public_domain_status": 2,
+        "record_id": 35,
+        "region": 14,
+        "reuse_permission": 2,
+        "rights_label": 15,
+        "rights_state": 5,
+        "source_domain": 7,
+        "source_name": 23,
+        "topology_publication_role": 3,
+        "topology_surface_type": 1
+      },
+      "samples": {
+        "creator": [
+          "\"(Independent) Postal Administration of Ras al-Kaima\" (1964-1972)",
+          "\"Posta Romana\"",
+          "Eugène Grasset (French, 1841–1917)",
+          "General Post Office ; scanned by User:Nickpo. The original uploader was Nickpo at Russian Wikipedia .",
+          "Henri Frederich Müller (Creator)"
+        ],
+        "date_text": [
+          "1830",
+          "1830-1922",
+          "1831",
+          "1832",
+          "1834"
+        ],
+        "image_state_code": [
+          "IMG00",
+          "IMG01",
+          "IMG02",
+          "IMG03",
+          "IMG04"
+        ],
+        "object_type": [
+          "1 item.",
+          "1 photographic print :",
+          "1 print :",
+          "Chromolithograph",
+          "Die Thierwelt (The Animal Kinggom) (Game)"
+        ],
+        "public_domain_status": [
+          "not_determined_from_fixture",
+          "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined"
+        ],
+        "record_id": [
+          "SURF-CGS2026R0030",
+          "SURF-CHW2026R001",
+          "SURF-COM1970R007",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-CRG2026R0001"
+        ],
+        "region": [
+          "Austria Vienna Europe / Austria / Vienna / Europe",
+          "Eastern Europe / Romania",
+          "France",
+          "France, 19th century",
+          "Ghent"
+        ],
+        "reuse_permission": [
+          "not_determined_from_fixture",
+          "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required"
+        ],
+        "rights_label": [
+          "Compound sheet uses no image frame. Each member keeps its own IMG00-IMG04 status and source link.",
+          "IMG00: AIC image identifier exists, but search row does not report public-domain status.",
+          "IMG01: LOC search row exposes a thumbnail; item-level rights advisory was not captured in this pass.",
+          "IMG02: Cooper Hewitt GraphQL exposes a source-hosted collection image; image display stays source-linked and item rights remain authoritative.",
+          "IMG02: Gallica exposes an IIIF source-hosted image, but the SRU rights value is not an explicit public-domain signal."
+        ],
+        "rights_state": [
+          "compound_member_rights",
+          "open_candidate",
+          "rights_review_required",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "source_domain": [
+          "clevelandart.org",
+          "collection.cooperhewitt.org",
+          "collections.vam.ac.uk",
+          "commons.wikimedia.org",
+          "gallica.bnf.fr"
+        ],
+        "source_name": [
+          "Art Institute of Chicago API",
+          "Cleveland Museum Open Access API",
+          "Cooper Hewitt Collection GraphQL API",
+          "Gallica / BnF APIs",
+          "Library of Congress loc.gov API"
+        ],
+        "topology_publication_role": [
+          "main_sheet",
+          "support_packet_appendix_text",
+          "thin_visual_support_packet"
+        ],
+        "topology_surface_type": [
+          "sheet"
+        ]
+      }
+    },
+    {
+      "intent": "no_evidence_refusal",
+      "query_count": 35,
+      "answerable_count": 0,
+      "refusal_count": 35,
+      "gold_evidence_references": 0,
+      "unique_counts": {},
+      "samples": {}
+    },
+    {
+      "intent": "region_period_recommendation",
+      "query_count": 34,
+      "answerable_count": 31,
+      "refusal_count": 3,
+      "gold_evidence_references": 64,
+      "unique_counts": {
+        "creator": 20,
+        "date_text": 25,
+        "image_state_code": 4,
+        "object_type": 15,
+        "public_domain_status": 2,
+        "record_id": 33,
+        "region": 6,
+        "reuse_permission": 2,
+        "rights_label": 10,
+        "rights_state": 4,
+        "source_domain": 4,
+        "source_name": 24,
+        "topology_publication_role": 2,
+        "topology_surface_type": 1
+      },
+      "samples": {
+        "creator": [
+          "\"(Independent) Postal Administration of Ras al-Kaima\" (1964-1972)",
+          "Design by Patricio Aguirre Warden; scanned by Penarc",
+          "General Post Office ; scanned by User:Nickpo. The original uploader was Nickpo at Russian Wikipedia .",
+          "Henri de Toulouse-Lautrec\nFrench, 1864-1901",
+          "Humphrey Bolton"
+        ],
+        "date_text": [
+          "1830",
+          "1831",
+          "1832",
+          "1834",
+          "1835"
+        ],
+        "image_state_code": [
+          "IMG01",
+          "IMG02",
+          "IMG03",
+          "IMG04"
+        ],
+        "object_type": [
+          "1 item.",
+          "1 photographic print :",
+          "1 print :",
+          "Gallica visual/document record",
+          "lithograph; poster; print; prints and drawing"
+        ],
+        "public_domain_status": [
+          "not_determined_from_fixture",
+          "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined"
+        ],
+        "record_id": [
+          "SURF-CGS2026R0030",
+          "SURF-CGS2026R0031",
+          "SURF-CGS2026R0328",
+          "SURF-CGS2026R0681",
+          "SURF-CRG2026R0001"
+        ],
+        "region": [
+          "France",
+          "Global / release gate expansion",
+          "Latin America / Argentina",
+          "Latin America / Chile",
+          "South Asia / India"
+        ],
+        "reuse_permission": [
+          "not_determined_from_fixture",
+          "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required"
+        ],
+        "rights_label": [
+          "IMG01: LOC search row exposes a thumbnail; item-level rights advisory was not captured in this pass.",
+          "IMG02: Gallica exposes an IIIF source-hosted image, but the SRU rights value is not an explicit public-domain signal.",
+          "IMG03: AIC search API reports is_public_domain=true.",
+          "IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.",
+          "IMG03: Wikimedia Commons open-license metadata: CC BY 2.0."
+        ],
+        "rights_state": [
+          "open_candidate",
+          "rights_review_required",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "source_domain": [
+          "commons.wikimedia.org",
+          "gallica.bnf.fr",
+          "www.artic.edu",
+          "www.loc.gov"
+        ],
+        "source_name": [
+          "Art Institute of Chicago API",
+          "Gallica / BnF APIs",
+          "Library of Congress loc.gov API",
+          "Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526",
+          "Wikimedia Commons file source / Buffalo Bill's Wild West and congress of rough riders of the world A congress of American Indians (...). LCCN2001696164.jpg / page 67035846"
+        ],
+        "topology_publication_role": [
+          "main_sheet",
+          "support_packet_appendix_text"
+        ],
+        "topology_surface_type": [
+          "sheet"
+        ]
+      }
+    },
+    {
+      "intent": "source_rights_question",
+      "query_count": 36,
+      "answerable_count": 36,
+      "refusal_count": 0,
+      "gold_evidence_references": 36,
+      "unique_counts": {
+        "creator": 18,
+        "date_text": 22,
+        "image_state_code": 4,
+        "object_type": 18,
+        "public_domain_status": 2,
+        "record_id": 27,
+        "region": 14,
+        "reuse_permission": 2,
+        "rights_label": 17,
+        "rights_state": 5,
+        "source_domain": 7,
+        "source_name": 17,
+        "topology_publication_role": 3,
+        "topology_surface_type": 1
+      },
+      "samples": {
+        "creator": [
+          "Design by Patricio Aguirre Warden; scanned by Penarc",
+          "Eugène Grasset (French, 1841–1917)",
+          "Henri Frederich Müller (Creator)",
+          "Henri de Toulouse-Lautrec\nFrench, 1864-1901",
+          "Humphrey Bolton"
+        ],
+        "date_text": [
+          "1830",
+          "1830-1922",
+          "1831",
+          "1832",
+          "1834"
+        ],
+        "image_state_code": [
+          "IMG01",
+          "IMG02",
+          "IMG03",
+          "IMG04"
+        ],
+        "object_type": [
+          "1 item.",
+          "1 photographic print :",
+          "1 print :",
+          "Chromolithograph",
+          "Die Thierwelt (The Animal Kinggom) (Game)"
+        ],
+        "public_domain_status": [
+          "not_determined_from_fixture",
+          "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined"
+        ],
+        "record_id": [
+          "SURF-CGS2026R0031",
+          "SURF-CGS2026R0681",
+          "SURF-CHW2026R001",
+          "SURF-COM1970R007",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
+        ],
+        "region": [
+          "Austria Vienna Europe / Austria / Vienna / Europe",
+          "France",
+          "France, 19th century",
+          "Ghent",
+          "Global / release gate expansion"
+        ],
+        "reuse_permission": [
+          "not_determined_from_fixture",
+          "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required"
+        ],
+        "rights_label": [
+          "Compound sheet uses no image frame. Each member keeps its own IMG00-IMG04 status and source link.",
+          "IMG01: LOC search row exposes a thumbnail; item-level rights advisory was not captured in this pass.",
+          "IMG02: Cooper Hewitt GraphQL exposes a source-hosted collection image; image display stays source-linked and item rights remain authoritative.",
+          "IMG02: Gallica exposes an IIIF source-hosted image, but the SRU rights value is not an explicit public-domain signal.",
+          "IMG02: V&A API exposes source-hosted IIIF/image service metadata; no local copy is permitted in this pass."
+        ],
+        "rights_state": [
+          "compound_member_rights",
+          "open_candidate",
+          "rights_review_required",
+          "source_viewer_candidate",
+          "thumbnail_candidate"
+        ],
+        "source_domain": [
+          "clevelandart.org",
+          "collection.cooperhewitt.org",
+          "collections.vam.ac.uk",
+          "commons.wikimedia.org",
+          "gallica.bnf.fr"
+        ],
+        "source_name": [
+          "Art Institute of Chicago API",
+          "Cleveland Museum Open Access API",
+          "Cooper Hewitt Collection GraphQL API",
+          "Gallica / BnF APIs",
+          "Library of Congress loc.gov API"
+        ],
+        "topology_publication_role": [
+          "main_sheet",
+          "support_packet_appendix_text",
+          "thin_visual_support_packet"
+        ],
+        "topology_surface_type": [
+          "sheet"
+        ]
+      }
+    }
+  ]
+}

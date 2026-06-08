@@ -51,7 +51,7 @@ function markdown(report) {
   const rows = changedRows.length === 0
     ? "| none | none | none |"
     : changedRows.slice(0, 120).map((row) => `| ${row.query_id} | ${row.intent} | ${row.gold_injected_count} | ${row.retrieved_ids} |`).join("\n");
-  return `# Retrieval Sufficiency 200 Contract Variant
+  return `# Retrieval Sufficiency Contract Variant
 
 Generated: ${report.meta.generated_at}
 

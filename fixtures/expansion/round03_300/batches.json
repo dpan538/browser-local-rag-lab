@@ -1,0 +1,840 @@
+{
+  "generated_at": "2026-06-08T11:30:04.608Z",
+  "batches": [
+    {
+      "batch_id": "batch_01",
+      "size": 50,
+      "intent_counts": {
+        "archive_orientation": 4,
+        "casual_archive_help": 4,
+        "comparison": 6,
+        "current_object_explanation": 4,
+        "first_earliest_claim": 6,
+        "method_process_question": 4,
+        "more_context": 4,
+        "no_evidence_refusal": 6,
+        "region_period_recommendation": 6,
+        "source_rights_question": 6
+      },
+      "queries": [
+        {
+          "query_id": "BQ201",
+          "query_text": "How should I use the archive topology to move between Latin America / Argentina and United States evidence?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ202",
+          "query_text": "How should I use the archive topology to move between Latin America / Colombia and France evidence?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ203",
+          "query_text": "How should I use the archive topology to move between Austria Vienna Europe / Austria / Vienna / Europe and United States evidence?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ204",
+          "query_text": "How should I use the archive topology to move between great britain; berlin; Berlin and USA; USA evidence?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ207",
+          "query_text": "I found SURF-CGS2026R0031; what is a simple archive help next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CGS2026R0031",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ208",
+          "query_text": "I found SURF-CGS2026R0904; what is a simple archive help next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CGS2026R0904",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ209",
+          "query_text": "I found SURF-CHW2026R001; what is a simple archive help next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CHW2026R001",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ210",
+          "query_text": "I found SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES; what is a simple archive help next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ229",
+          "query_text": "Compare SURF-CRG2026R0100 and SURF-CGS2026R0681 as source-grounded graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ230",
+          "query_text": "Compare SURF-CRG2026R0153 and SURF-CGS2026R0908 as source-grounded graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ231",
+          "query_text": "Compare SURF-ER1830R001-GROUP and SURF-CGS2026R0909 as source-grounded graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ232",
+          "query_text": "Compare SURF-ER1830R002 and SURF-CGS2026R0910 as source-grounded graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ233",
+          "query_text": "Compare SURF-ER1830R008 and SURF-CRG2026R0031 as source-grounded graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ234",
+          "query_text": "Compare SURF-ER1830R011 and SURF-CRG2026R0032 as source-grounded graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ213",
+          "query_text": "Explain SURF-CRG2026R0100 using only source-linked evidence and its date and region.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CRG2026R0100",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ214",
+          "query_text": "Explain SURF-CRG2026R0153 using only source-linked evidence and its date and region.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-CRG2026R0153",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ215",
+          "query_text": "Explain SURF-ER1830R001-GROUP using only source-linked evidence and its date and region.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R001-GROUP",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ216",
+          "query_text": "Explain SURF-ER1830R002 using only source-linked evidence and its date and region.",
+          "intent": "current_object_explanation",
+          "active_object_id": "SURF-ER1830R002",
+          "expected_lane": "fast_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ261",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-1?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ262",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-2?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ263",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-3?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ264",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-4?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ265",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-5?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ266",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-6?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ249",
+          "query_text": "How should the browser-local RAG lab decide whether evidence is sufficient or whether to refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ250",
+          "query_text": "How should the browser-local RAG lab decide whether evidence is sufficient or whether to refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ251",
+          "query_text": "How should the browser-local RAG lab decide whether evidence is sufficient or whether to refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ252",
+          "query_text": "How should the browser-local RAG lab decide whether evidence is sufficient or whether to refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ255",
+          "query_text": "What related context should I inspect around SURF-ER1830R059 before making a broader claim?",
+          "intent": "more_context",
+          "active_object_id": "SURF-ER1830R059",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ256",
+          "query_text": "What related context should I inspect around SURF-ER1830R064 before making a broader claim?",
+          "intent": "more_context",
+          "active_object_id": "SURF-ER1830R064",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ257",
+          "query_text": "What related context should I inspect around SURF-ER1830R065 before making a broader claim?",
+          "intent": "more_context",
+          "active_object_id": "SURF-ER1830R065",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ258",
+          "query_text": "What related context should I inspect around SURF-ER1830R066 before making a broader claim?",
+          "intent": "more_context",
+          "active_object_id": "SURF-ER1830R066",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ281",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-1?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ282",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-2?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ283",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-3?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ284",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-4?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ285",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-5?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ286",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-6?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ239",
+          "query_text": "Recommend a research route through Latin America / Argentina period evidence using source-backed records.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ240",
+          "query_text": "Recommend a research route through Latin America / Argentina period evidence using source-backed records.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ241",
+          "query_text": "Recommend a research route through Latin America / Argentina period evidence using source-backed records.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ242",
+          "query_text": "Recommend a research route through South Asia / India period evidence using source-backed records.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ243",
+          "query_text": "Recommend a research route through South Asia / India period evidence using source-backed records.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ244",
+          "query_text": "Recommend a research route through South Asia / India period evidence using source-backed records.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ217",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ218",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-ER1830R046?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-ER1830R046",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ219",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-ER1830R059?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-ER1830R059",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ220",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-GAX1970R003?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-GAX1970R003",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ221",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-SI1970R001?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-SI1970R001",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ222",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-COM1970R007?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-COM1970R007",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        }
+      ]
+    },
+    {
+      "batch_id": "batch_02",
+      "size": 50,
+      "intent_counts": {
+        "archive_orientation": 2,
+        "casual_archive_help": 2,
+        "comparison": 4,
+        "first_earliest_claim": 14,
+        "method_process_question": 2,
+        "more_context": 2,
+        "no_evidence_refusal": 14,
+        "region_period_recommendation": 4,
+        "source_rights_question": 6
+      },
+      "queries": [
+        {
+          "query_id": "BQ205",
+          "query_text": "How should I use the archive topology to move between Eastern Europe / Romania and Latin America / Argentina evidence?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ206",
+          "query_text": "How should I use the archive topology to move between East Asia / China and Latin America / Argentina evidence?",
+          "intent": "archive_orientation",
+          "active_object_id": null,
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ211",
+          "query_text": "I found SURF-CRG2026R0006; what is a simple archive help next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CRG2026R0006",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ212",
+          "query_text": "I found SURF-CRG2026R0027; what is a simple archive help next step?",
+          "intent": "casual_archive_help",
+          "active_object_id": "SURF-CRG2026R0027",
+          "expected_lane": "help",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ235",
+          "query_text": "Compare SURF-ER1830R017 and SURF-ER1830R004 as source-grounded graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ236",
+          "query_text": "Compare SURF-ER1830R018 and SURF-ER1830R046 as source-grounded graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ237",
+          "query_text": "Compare SURF-ER1830R019 and SURF-CRG2026R0002 as source-grounded graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ238",
+          "query_text": "Compare SURF-ER1830R052 and SURF-CRG2026R0003 as source-grounded graphic communication evidence.",
+          "intent": "comparison",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ267",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-7?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ268",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-8?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ269",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-9?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ270",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-10?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ271",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-11?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ272",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-12?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ253",
+          "query_text": "How should the browser-local RAG lab decide whether evidence is sufficient or whether to refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ254",
+          "query_text": "How should the browser-local RAG lab decide whether evidence is sufficient or whether to refuse?",
+          "intent": "method_process_question",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ259",
+          "query_text": "What related context should I inspect around SURF-SI1970R001 before making a broader claim?",
+          "intent": "more_context",
+          "active_object_id": "SURF-SI1970R001",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ260",
+          "query_text": "What related context should I inspect around SURF-CGS2026R0030 before making a broader claim?",
+          "intent": "more_context",
+          "active_object_id": "SURF-CGS2026R0030",
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ287",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-7?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ288",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-8?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ289",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-9?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ290",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-10?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ291",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-11?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ292",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-12?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ245",
+          "query_text": "Recommend a research route through Unresolved region period evidence using source-backed records.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ246",
+          "query_text": "Recommend a research route through Unresolved region period evidence using source-backed records.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ247",
+          "query_text": "Recommend a research route through Unresolved region period evidence using source-backed records.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ248",
+          "query_text": "Recommend a research route through Unresolved region period evidence using source-backed records.",
+          "intent": "region_period_recommendation",
+          "active_object_id": null,
+          "expected_lane": "research_answer",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ223",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-CRG2026R0001?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CRG2026R0001",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ224",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-CRG2026R0004?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CRG2026R0004",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ225",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-CGS2026R0681?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CGS2026R0681",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ226",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-CRG2026R0100?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CRG2026R0100",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ227",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-CRG2026R0153?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CRG2026R0153",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ228",
+          "query_text": "What source, rights, reuse, and public domain status information is attached to SURF-CGS2026R0031?",
+          "intent": "source_rights_question",
+          "active_object_id": "SURF-CGS2026R0031",
+          "expected_lane": "source_rights",
+          "requires_evidence": true
+        },
+        {
+          "query_id": "BQ273",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-13?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ293",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-13?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ274",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-14?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ294",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-14?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ275",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-15?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ295",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-15?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ276",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-16?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ296",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-16?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ277",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-17?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ297",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-17?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ278",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-18?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ298",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-18?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ279",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-19?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ299",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-19?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ280",
+          "query_text": "Which item is the first or earliest example for unsupported chronology claim ROUND3-20?",
+          "intent": "first_earliest_claim",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        },
+        {
+          "query_id": "BQ300",
+          "query_text": "Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-20?",
+          "intent": "no_evidence_refusal",
+          "active_object_id": null,
+          "expected_lane": "refusal_more_context",
+          "requires_evidence": false
+        }
+      ]
+    }
+  ]
+}

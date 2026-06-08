@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-06-08T11:30:04.609Z",
+  "query_count": 300,
+  "label_count": 300,
+  "source_query_count": 200,
+  "new_query_count": 100,
+  "record_count": 54,
+  "batch_count": 2,
+  "source_intent_distribution": {
+    "archive_orientation": 16,
+    "casual_archive_help": 16,
+    "current_object_explanation": 28,
+    "source_rights_question": 24,
+    "first_earliest_claim": 15,
+    "comparison": 28,
+    "region_period_recommendation": 24,
+    "method_process_question": 16,
+    "more_context": 18,
+    "no_evidence_refusal": 15
+  },
+  "intent_distribution": {
+    "archive_orientation": 22,
+    "casual_archive_help": 22,
+    "current_object_explanation": 32,
+    "source_rights_question": 36,
+    "first_earliest_claim": 35,
+    "comparison": 38,
+    "region_period_recommendation": 34,
+    "method_process_question": 22,
+    "more_context": 24,
+    "no_evidence_refusal": 35
+  },
+  "target_counts": {
+    "archive_orientation": 22,
+    "casual_archive_help": 22,
+    "comparison": 38,
+    "current_object_explanation": 32,
+    "first_earliest_claim": 35,
+    "method_process_question": 22,
+    "more_context": 24,
+    "no_evidence_refusal": 35,
+    "region_period_recommendation": 34,
+    "source_rights_question": 36
+  },
+  "rule_of_three_upper_bounds": {
+    "first_earliest_claim": 8.6,
+    "no_evidence_refusal": 8.6
+  },
+  "overused_seed_id": "SURF-GAX1970R001",
+  "overused_seed_count": 9,
+  "overused_seed_percent": 3,
+  "fail_count": 0,
+  "warn_count": 0,
+  "issues": []
+}
