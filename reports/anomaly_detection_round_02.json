@@ -1,7 +1,7 @@
 {
   "_provenance": {
     "step": "detect_anomalies",
-    "timestamp": "2026-06-07T07:55:18.159Z",
+    "timestamp": "2026-06-08T06:35:30.043Z",
     "labels_path": "fixtures/gold/labels.jsonl",
     "answers_path": "reports/webllm_round_02_answers.jsonl",
     "records_path": "fixtures/gold/records.jsonl",

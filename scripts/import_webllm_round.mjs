@@ -80,7 +80,9 @@ function provenance(inputPath, payload) {
 function resolveLabPath(value, fallback) {
   if (!value) return fallback;
   if (path.isAbsolute(value)) return value;
-  return path.resolve(repoRoot, value);
+  const rootRelative = path.resolve(repoRoot, value);
+  if (fs.existsSync(rootRelative)) return rootRelative;
+  return path.resolve(repoRoot, "browser_lab", value);
 }
 
 function contractInputs(payload) {

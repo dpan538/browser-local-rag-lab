@@ -1,0 +1,1343 @@
+{
+  "generated_at": "2026-06-08T06:35:01.549Z",
+  "round_json_path": "reports/webllm_round_02_200.json",
+  "answers_path": "reports/webllm_round_02_200_answers.jsonl",
+  "expected_count": 200,
+  "result_count": 200,
+  "completed_count": 200,
+  "error_count": 0,
+  "metric_issue_count": 0,
+  "contract_fail_count": 61,
+  "contract_warn_count": 146,
+  "gate_fail_count": 61,
+  "gate_warn_count": 160,
+  "ready_for_next_step": false,
+  "findings": [
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ01",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ04",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ14",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ14",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ14",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ25",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ26",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ058",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ058",
+      "detail": "asserted=\"Wikimedia Commons file source / Sergey Filippov PSE Russia 2012.jpg / page 25675\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ061",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ061",
+      "detail": "asserted=\"Wikimedia Commons file source / Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg / page 30\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ062",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ062",
+      "detail": "asserted=\"Wikimedia Commons file source / Temple of\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ065",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ065",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ066",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ066",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ067",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ067",
+      "detail": "asserted=\"Wikimedia Commons file source / Stamp 1968 UAE-RK MiNr0\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ068",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ069",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ069",
+      "detail": "asserted=\"Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar -\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ070",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ070",
+      "detail": "asserted=\"Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar-\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ071",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ072",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ072",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ074",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ074",
+      "detail": "asserted=\"Wikimedia Commons file source / Oud-generaal als straatmuzikant, NG-85\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ076",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ076",
+      "detail": "asserted=\"Wikimedia Commons file source /\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ089",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ089",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ089",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ089",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ089",
+      "detail": "missing tags=RIGHTS/rights"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ089",
+      "detail": "missing tags=REUSE/reuse_permission"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ089",
+      "detail": "missing tags=PUBLIC_DOMAIN/public_domain_status"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ094",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ094",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ094",
+      "detail": "missing tags=REUSE/reuse_permission"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ094",
+      "detail": "missing tags=PUBLIC_DOMAIN/public_domain_status"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ095",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ095",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ095",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ095",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ095",
+      "detail": "missing tags=RIGHTS/rights"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ095",
+      "detail": "missing tags=REUSE/reuse_permission"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ095",
+      "detail": "missing tags=PUBLIC_DOMAIN/public_domain_status"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ096",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ096",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ096",
+      "detail": "missing tags=REUSE/reuse_permission"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ096",
+      "detail": "missing tags=PUBLIC_DOMAIN/public_domain_status"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ098",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ098",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ098",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ098",
+      "detail": "asserted=\"IMG03: Gallica SRU metadata reports public-domain rights;\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G007_source_rights_tag_mismatch",
+      "query_id": "BQ098",
+      "detail": "asserted=\"IMG03: Gallica SRU metadata reports public-domain rights;\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ098",
+      "detail": "missing tags=REUSE/reuse_permission"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G006_source_rights_tag_missing",
+      "query_id": "BQ098",
+      "detail": "missing tags=PUBLIC_DOMAIN/public_domain_status"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ099",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ099",
+      "detail": "asserted=\"IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnB.\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G007_source_rights_tag_mismatch",
+      "query_id": "BQ099",
+      "detail": "asserted=\"IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnB.\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ100",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G007_source_rights_tag_mismatch",
+      "query_id": "BQ100",
+      "detail": "asserted=\"source_metadata_mentions_public_domain_but_global_public_domain_status_not_d\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ103",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ103",
+      "detail": "asserted=\"Wikimedia Commons file source / Sergey Filippov PSE Russia 2012.jpg / page 2\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ104",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ104",
+      "detail": "asserted=\"Wikimedia Commons file source / Diego Portales-D S No 20.JPG / page 701\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ110",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ111",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ111",
+      "detail": "asserted=\"Wikimedia Commons file source / Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ117",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ117",
+      "detail": "asserted=\"Wikimedia Commons file source / HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ128",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ128",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ129",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ129",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ129",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ129",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ129",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ129",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ130",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ130",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ130",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ130",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ130",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ130",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ131",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ131",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ131",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ131",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ131",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ131",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ132",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ132",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ132",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ132",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ132",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ132",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ133",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ133",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ133",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ133",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ133",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ133",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ134",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ134",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ134",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ134",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ134",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ134",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ135",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ135",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ135",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ135",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ135",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ135",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ136",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ136",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ136",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ136",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ136",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ136",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ137",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ137",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ137",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ137",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ137",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ137",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ138",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ138",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ138",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ138",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ138",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ138",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ139",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ139",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ139",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ139",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ139",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ139",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ140",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ140",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ140",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ140",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ140",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ140",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ141",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ141",
+      "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ142",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ142",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ142",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ143",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ143",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ143",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ144",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ144",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ144",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ144",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ144",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ144",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | La typographie : poëme / par M. L. Pelletier | Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ145",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ145",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ145",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ145",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ145",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ145",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | La typographie : poëme / par M. L. Pelletier | Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ146",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ146",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ146",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ146",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ146",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ146",
+      "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | La typographie : poëme / par M. L. Pelletier | Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ161",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ161",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ161",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ162",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ162",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ163",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ163",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ163",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ163",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ164",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ164",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ164",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ165",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ165",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ165",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ166",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ166",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ166",
+      "detail": "asserted=\"Wikimedia Commons file source / Putzmühle im Pöbeltal 002.JPG\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ167",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ167",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ167",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ169",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ172",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ172",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ172",
+      "detail": "asserted=\"Wikimedia Commons file source / The Town\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ173",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ173",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ174",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ174",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "fail",
+      "code": "CONTRACT_G005_unverified_field_assertion",
+      "query_id": "BQ174",
+      "detail": "asserted=\"Wikimedia Commons file source\""
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ176",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ176",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "CONTRACT_G101_required_field_value_not_observed",
+      "query_id": "BQ176",
+      "detail": "answer does not visibly include an evidence value for this required field"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ12",
+      "detail": "tokens_per_second=6.94; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ13",
+      "detail": "tokens_per_second=6.94; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ066",
+      "detail": "tokens_per_second=7.84; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ088",
+      "detail": "tokens_per_second=7.73; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ089",
+      "detail": "tokens_per_second=4.09; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ096",
+      "detail": "tokens_per_second=6.77; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ110",
+      "detail": "tokens_per_second=6.62; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ112",
+      "detail": "tokens_per_second=6.12; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ127",
+      "detail": "tokens_per_second=6.30; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ162",
+      "detail": "tokens_per_second=7.17; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ163",
+      "detail": "tokens_per_second=6.96; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ165",
+      "detail": "tokens_per_second=7.66; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ167",
+      "detail": "tokens_per_second=6.68; avg=15.87"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ174",
+      "detail": "tokens_per_second=7.39; avg=15.87"
+    }
+  ]
+}

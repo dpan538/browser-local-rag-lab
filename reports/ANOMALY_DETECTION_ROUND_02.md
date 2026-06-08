@@ -1,6 +1,6 @@
 # Anomaly Detection Round 02
 
-Generated: 2026-06-07T07:55:18.159Z
+Generated: 2026-06-08T06:35:30.043Z
 
 This scan catches runtime, evidence-label, review-state, distribution, and
 evidence-value anomalies that are not fully represented by a single audit.
