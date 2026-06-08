@@ -1,4 +1,5 @@
 import * as webllm from "https://esm.run/@mlc-ai/web-llm";
+import { buildPrompt as buildContractPrompt, finalizeAnswerText } from "../scripts/prompt_builder.mjs";
 
 const params = new URLSearchParams(window.location.search);
 const config = {
@@ -10,7 +11,10 @@ const config = {
   roundId: params.get("round") || "webllm_round_02",
   queryStart: Math.max(1, Number(params.get("start") || 1)),
   queryLimit: Math.max(1, Number(params.get("limit") || 50)),
-  skipCompleted: params.get("skipCompleted") !== "false"
+  skipCompleted: params.get("skipCompleted") !== "false",
+  queryIds: params.get("queryIds")
+    ? params.get("queryIds").split(",").map((id) => id.trim()).filter(Boolean)
+    : null
 };
 
 const state = {
@@ -114,6 +118,12 @@ function scopedQueries({ all = false } = {}) {
   const start = Math.max(1, Number(el.runStart.value || config.queryStart));
   const limit = Math.max(1, Number(el.runLimit.value || config.queryLimit));
   return state.queries.slice(start - 1, start - 1 + limit);
+}
+
+function filterQueries(queries) {
+  if (!config.queryIds) return queries;
+  const selected = new Set(config.queryIds);
+  return queries.filter((query) => selected.has(query.query_id));
 }
 
 function ms(value) {
@@ -458,28 +468,7 @@ function responsePlan(label) {
 }
 
 function buildPrompt(packet) {
-  const contract = {
-    query_id: packet.query.query_id,
-    query_text: packet.query.query_text,
-    intent: packet.label.intent,
-    lane: packet.label.gold_lane,
-    refusal_expected: packet.label.refusal_expected,
-    sufficient_context: packet.label.sufficient_context,
-    required_fields: packet.label.required_fields,
-    must_not_invent_fields: packet.label.must_not_invent_fields,
-    retrieved_ids: ["archive_orientation", "casual_archive_help"].includes(packet.label.intent)
-      ? "hidden_for_orientation_lane"
-      : packet.retrievedIds,
-    variant_id: config.variantId
-  };
-
-  if (["archive_orientation", "casual_archive_help"].includes(packet.label.intent)) {
-    return buildOrientationPrompt(packet, contract);
-  }
-  if (packet.label.refusal_expected) return buildHardRefusalPrompt(packet);
-  if (packet.label.intent === "source_rights_question") return buildSourceRightsPrompt(packet);
-
-  return buildCompactAnswerPrompt(packet);
+  return buildContractPrompt(packet);
 
   /* legacy generic prompt retained for reference only */
   return [
@@ -533,7 +522,7 @@ async function loadData() {
     fetchJson(config.retrievalPath)
   ]);
 
-  state.queries = queries;
+  state.queries = filterQueries(queries);
   state.labelsByQuery = new Map(labels.map((label) => [label.query_id, label]));
   state.recordsById = new Map(records.map((record) => [record.record_id, record]));
   state.retrievalByQuery = new Map(
@@ -544,7 +533,7 @@ async function loadData() {
   state.results = loadCheckpoint();
 
   el.querySelect.innerHTML = "";
-  for (const query of queries) {
+  for (const query of state.queries) {
     const option = document.createElement("option");
     option.value = query.query_id;
     option.textContent = `${query.query_id} · ${query.intent} · ${query.query_text}`;
@@ -553,10 +542,11 @@ async function loadData() {
 
   el.runStart.value = String(config.queryStart);
   el.runLimit.value = String(config.queryLimit);
-  el.runAllButton.textContent = `Run all ${queries.length}`;
+  el.runAllButton.textContent = `Run all ${state.queries.length}`;
   updatePromptPreview(buildPacket(selectedQueryId()));
   syncExportBuffer();
-  log(`Loaded ${queries.length} benchmark queries and ${records.length} records for ${config.roundId}.`);
+  log(`Loaded ${state.queries.length}/${queries.length} benchmark queries and ${records.length} records for ${config.roundId}.`);
+  if (config.queryIds) log(`Active queryIds filter: ${config.queryIds.join(",")}.`);
   log(`Checkpoint contains ${state.results.length} result rows.`);
 }
 
@@ -711,10 +701,14 @@ async function runQuery(queryId) {
   try {
     log(`Running ${queryId} (${packet.label.intent}).`);
     const generated = await streamCompletion(prompt);
+    const finalizedAnswerText = finalizeAnswerText(packet, generated.answer_text);
     const row = {
       ...base,
       generation_status: "completed",
-      ...generated
+      ...generated,
+      model_answer_text: generated.answer_text,
+      answer_text: finalizedAnswerText,
+      answer_postprocess: "deterministic_contract_fields_v1"
     };
     upsertResult(row);
     syncExportBuffer();
@@ -762,7 +756,8 @@ function downloadablePayload() {
       run_scope: {
         query_start: Math.max(1, Number(el.runStart.value || config.queryStart)),
         query_limit: Math.max(1, Number(el.runLimit.value || config.queryLimit)),
-        skip_completed: config.skipCompleted
+        skip_completed: config.skipCompleted,
+        query_ids: config.queryIds
       },
       result_count: state.results.length
     },

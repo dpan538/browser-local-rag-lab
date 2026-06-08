@@ -1,0 +1,3646 @@
+{
+  "generated_at": "2026-06-08T07:00:26.946Z",
+  "_provenance": {
+    "step": "contract_oracle_check",
+    "commit": "7859e7e25f6b9d49c4ac81569c2087da865d3387",
+    "packet_variant": "top3_compressed_topology_source_rights",
+    "input_paths": [
+      "fixtures/expansion/round02_200/queries.jsonl",
+      "fixtures/expansion/round02_200/labels.jsonl",
+      "fixtures/expansion/round02_200/records.jsonl",
+      "reports/retrieval_sufficiency_200.json"
+    ]
+  },
+  "summary": {
+    "rows": 200,
+    "gold_coverage_fail_count": 49,
+    "contract_fail_count": 27,
+    "contract_warn_count": 59,
+    "ready_for_webllm_rerun": false
+  },
+  "coverage": {
+    "rows": [
+      {
+        "query_id": "BQ01",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R004",
+          "SURF-ER1830R015"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [
+          "SURF-ER1830R004",
+          "SURF-ER1830R015"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ02",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0909",
+          "SURF-CGS2026R0910"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0909",
+          "SURF-CGS2026R0910",
+          "SURF-CRG2026R0001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ03",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0908",
+          "SURF-CRG2026R0005"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0005",
+          "SURF-CGS2026R0908",
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ04",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R015",
+          "SURF-CRG2026R0051"
+        ],
+        "retrieved_ids": [],
+        "missing_gold_ids": [
+          "SURF-ER1830R015",
+          "SURF-CRG2026R0051"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ05",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ06",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ07",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CHW2026R001",
+          "SURF-CRG2026R0001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ08",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-ER1830R065"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ09",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R052",
+          "SURF-CRG2026R0100",
+          "SURF-CRG2026R0175"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ10",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ11",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-COM1970R007",
+          "SURF-GA1970R001",
+          "SURF-CRG2026R0100"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ12",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-COM1970R007",
+          "SURF-CRG2026R0235"
+        ],
+        "retrieved_ids": [
+          "SURF-COM1970R007",
+          "SURF-CRG2026R0235"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ13",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-COM1970R007",
+          "SURF-CRG2026R0235"
+        ],
+        "retrieved_ids": [
+          "SURF-COM1970R007",
+          "SURF-CRG2026R0235"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ14",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R001",
+          "SURF-GAX1970R002",
+          "SURF-GA1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-GAX1970R002",
+          "SURF-GA1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ15",
+        "intent": "region_period_recommendation",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-CRG2026R0274"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ16",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0681",
+          "SURF-CGS2026R0328",
+          "SURF-CGS2026R0030"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0681",
+          "SURF-CGS2026R0328",
+          "SURF-CGS2026R0030"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ17",
+        "intent": "region_period_recommendation",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ18",
+        "intent": "region_period_recommendation",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ19",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ20",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CHW2026R001",
+          "SURF-GAX1970R002"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ21",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CRG2026R0001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ22",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CGS2026R0909",
+          "SURF-CGS2026R0910"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ23",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ24",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ25",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-COM1970R007",
+          "SURF-CRG2026R0274",
+          "SURF-CRG2026R0071"
+        ],
+        "retrieved_ids": [
+          "SURF-COM1970R007",
+          "SURF-CRG2026R0274",
+          "SURF-CRG2026R0071"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ26",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-COM1970R007",
+          "SURF-CRG2026R0274",
+          "SURF-CRG2026R0071"
+        ],
+        "retrieved_ids": [
+          "SURF-COM1970R007",
+          "SURF-CRG2026R0274",
+          "SURF-CRG2026R0071"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ27",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ28",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ29",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ30",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0031",
+          "SURF-CRG2026R0032"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0031",
+          "SURF-CRG2026R0032",
+          "SURF-ER1830R011"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ031",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0050"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002",
+          "SURF-CRG2026R0003"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0050"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ032",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R002",
+          "SURF-CRG2026R0051"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0100",
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R002",
+          "SURF-CRG2026R0051"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ033",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GA1970R001",
+          "SURF-CRG2026R0052"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0100",
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002"
+        ],
+        "missing_gold_ids": [
+          "SURF-GA1970R001",
+          "SURF-CRG2026R0052"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ034",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R003",
+          "SURF-CRG2026R0071"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0100",
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R003",
+          "SURF-CRG2026R0071"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ035",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R004",
+          "SURF-COM1970R007"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0100",
+          "SURF-ER1830R001-GROUP",
+          "SURF-CRG2026R0274"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R004",
+          "SURF-COM1970R007"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ036",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R005",
+          "SURF-CRG2026R0235"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0100",
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R005",
+          "SURF-CRG2026R0235"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ037",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0006",
+          "SURF-CRG2026R0246"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0006",
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0246"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ038",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0050",
+          "SURF-CRG2026R0274"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002",
+          "SURF-CRG2026R0003"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0050",
+          "SURF-CRG2026R0274"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ039",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0051",
+          "SURF-CGS2026R0681"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0051",
+          "SURF-CGS2026R0681"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ040",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0052",
+          "SURF-CGS2026R0328"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0052",
+          "SURF-CGS2026R0328"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ041",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0071",
+          "SURF-CGS2026R0030"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0071",
+          "SURF-CGS2026R0030"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ042",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-COM1970R007",
+          "SURF-CGS2026R0908"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CGS2026R0908",
+          "SURF-CGS2026R0909"
+        ],
+        "missing_gold_ids": [
+          "SURF-COM1970R007"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ043",
+        "intent": "archive_orientation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0235",
+          "SURF-CGS2026R0904"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0002"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0235",
+          "SURF-CGS2026R0904"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ044",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0001"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ045",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R002"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R002",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ046",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GA1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GA1970R001",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ047",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R003"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R003",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ048",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R004"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R004",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ049",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R005"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R005",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ050",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0006"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0006",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ051",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0050"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0050",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ052",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0051"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0051",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ053",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0052"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0052",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ054",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0071"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0071",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ055",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-COM1970R007"
+        ],
+        "retrieved_ids": [
+          "SURF-COM1970R007",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ056",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0235"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0235",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ057",
+        "intent": "casual_archive_help",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0246"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0246",
+          "SURF-ER1830R052",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ058",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0274"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0274",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ059",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0681"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0681",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ060",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0328"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0328",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ061",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0030"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0030",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ062",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0908"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0908",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ063",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0904"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0904",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ064",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0031"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0031",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ065",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0909"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0909",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ066",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0910"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0910",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ067",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0020"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0020",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ068",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0027"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0027",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ069",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0031"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0031",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ070",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0032"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0032",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ071",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R015"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R015",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ072",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0100"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0100",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ073",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R046"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R046",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ074",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0153"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0153",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ075",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R059"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R059",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ076",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0175"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0175",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ077",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R052"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R052",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ078",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R064"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R064",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ079",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R065"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R065",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ080",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R066"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R066",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ081",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R011"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R011",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ082",
+        "intent": "current_object_explanation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R017"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R017",
+          "LAB-METHOD-CONTEXT-V0",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ083",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R019"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R019",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ084",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R001-GROUP"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ085",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CHW2026R001"
+        ],
+        "retrieved_ids": [
+          "SURF-CHW2026R001",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ086",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R002"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R002",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ087",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-SI1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-SI1970R001",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ088",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0002"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0002",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ089",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0003"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0003",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ090",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R004"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R004",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ091",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
+        ],
+        "retrieved_ids": [
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-ER1830R066",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ092",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R008"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R008",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ093",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R018"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R018",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ094",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0004"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0004",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ095",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0005"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0005",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ096",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0001"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0001",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ097",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R002"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R002",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ098",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GA1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GA1970R001",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ099",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R003"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R003",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ100",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R004"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R004",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ101",
+        "intent": "source_rights_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R005"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R005",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GAX1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ102",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0246",
+          "SURF-CGS2026R0031"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0246",
+          "SURF-CGS2026R0031"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ103",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0274",
+          "SURF-CGS2026R0909"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0274",
+          "SURF-CGS2026R0909"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ104",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0681",
+          "SURF-CGS2026R0910"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0681",
+          "SURF-CGS2026R0910"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ105",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0328",
+          "SURF-CRG2026R0020"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0328",
+          "SURF-CRG2026R0020"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ106",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0030",
+          "SURF-CRG2026R0027"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0030",
+          "SURF-CRG2026R0027"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ107",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0908",
+          "SURF-CRG2026R0031"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0908",
+          "SURF-CRG2026R0031"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ108",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0904",
+          "SURF-CRG2026R0032"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0904",
+          "SURF-CRG2026R0032"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ109",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0031",
+          "SURF-ER1830R015"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0031",
+          "SURF-ER1830R015"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ110",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0909",
+          "SURF-CRG2026R0100"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0909",
+          "SURF-CRG2026R0100"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ111",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CGS2026R0910",
+          "SURF-ER1830R046"
+        ],
+        "retrieved_ids": [
+          "SURF-CGS2026R0910",
+          "SURF-ER1830R046"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ112",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0020",
+          "SURF-CRG2026R0153"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0020",
+          "SURF-CRG2026R0153"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ113",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0027",
+          "SURF-ER1830R059"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0027",
+          "SURF-ER1830R059"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ114",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0031",
+          "SURF-CRG2026R0175"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0031",
+          "SURF-CRG2026R0175"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ115",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0032",
+          "SURF-ER1830R052"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0032",
+          "SURF-ER1830R052"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ116",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R015",
+          "SURF-ER1830R064"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R015",
+          "SURF-ER1830R064"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ117",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0100",
+          "SURF-ER1830R065"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0100",
+          "SURF-ER1830R065"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ118",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R046",
+          "SURF-ER1830R066"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R046",
+          "SURF-ER1830R066"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ119",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0153",
+          "SURF-ER1830R011"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0153",
+          "SURF-ER1830R011"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ120",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R059",
+          "SURF-ER1830R017"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R059",
+          "SURF-ER1830R017"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ121",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0175",
+          "SURF-ER1830R019"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0175",
+          "SURF-ER1830R019"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ122",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R052",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R052",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ123",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R064",
+          "SURF-CHW2026R001"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R064",
+          "SURF-CHW2026R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ124",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R065",
+          "SURF-ER1830R002"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R065",
+          "SURF-ER1830R002"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ125",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R066",
+          "SURF-SI1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R066",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ126",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R011",
+          "SURF-CRG2026R0002"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R011",
+          "SURF-CRG2026R0002"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ127",
+        "intent": "comparison",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R017",
+          "SURF-CRG2026R0003"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R017",
+          "SURF-CRG2026R0003"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ128",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0050"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0050"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ129",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0050",
+          "SURF-CRG2026R0051"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0050",
+          "SURF-CRG2026R0051"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ130",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0051",
+          "SURF-CRG2026R0052"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0051",
+          "SURF-CRG2026R0052"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ131",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0052",
+          "SURF-CRG2026R0071"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0052",
+          "SURF-CRG2026R0071"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ132",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0071",
+          "SURF-CRG2026R0235"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0071",
+          "SURF-CRG2026R0235"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ133",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0235",
+          "SURF-CRG2026R0246"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0235",
+          "SURF-CRG2026R0246"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ134",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0246",
+          "SURF-CRG2026R0274"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0246",
+          "SURF-CRG2026R0274"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ135",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0274",
+          "SURF-CRG2026R0020"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0274",
+          "SURF-CRG2026R0020"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ136",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0020",
+          "SURF-CRG2026R0175"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0020",
+          "SURF-CRG2026R0175"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ137",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0002"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0002"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ138",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0002",
+          "SURF-CRG2026R0003"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0002",
+          "SURF-CRG2026R0003"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ139",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0003",
+          "SURF-CRG2026R0004"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0003",
+          "SURF-CRG2026R0004"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ140",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0004",
+          "SURF-CRG2026R0005"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0004",
+          "SURF-CRG2026R0005"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ141",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0005",
+          "SURF-CRG2026R0001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-CRG2026R0001",
+          "SURF-ER1830R001-GROUP"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0005"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ142",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R002",
+          "SURF-GA1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-GAX1970R002",
+          "SURF-GA1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ143",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GA1970R001",
+          "SURF-GAX1970R003"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-GAX1970R002",
+          "SURF-GA1970R001"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R003"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ144",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R003",
+          "SURF-GAX1970R004"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-GAX1970R002",
+          "SURF-GA1970R001"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R003",
+          "SURF-GAX1970R004"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ145",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R004",
+          "SURF-GAX1970R005"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-GAX1970R002",
+          "SURF-GA1970R001"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R004",
+          "SURF-GAX1970R005"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ146",
+        "intent": "region_period_recommendation",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R005",
+          "SURF-ER1830R046"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R001",
+          "SURF-GAX1970R002",
+          "SURF-GA1970R001"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R005",
+          "SURF-ER1830R046"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ147",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ148",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ149",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ150",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ151",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ152",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ153",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ154",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ155",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ156",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ157",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ158",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ159",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ160",
+        "intent": "method_process_question",
+        "refusal_expected": false,
+        "gold_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "retrieved_ids": [
+          "LAB-METHOD-CONTEXT-V0"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ161",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R019",
+          "SURF-ER1830R004"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R019",
+          "SURF-ER1830R017",
+          "SURF-ER1830R011"
+        ],
+        "missing_gold_ids": [
+          "SURF-ER1830R004"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ162",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CGS2026R0328",
+          "SURF-CGS2026R0909"
+        ],
+        "missing_gold_ids": [
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ163",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CHW2026R001",
+          "SURF-ER1830R008"
+        ],
+        "retrieved_ids": [
+          "SURF-CHW2026R001",
+          "SURF-CGS2026R0328",
+          "SURF-CGS2026R0909"
+        ],
+        "missing_gold_ids": [
+          "SURF-ER1830R008"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ164",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R002",
+          "SURF-ER1830R018"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R002",
+          "SURF-CGS2026R0328",
+          "SURF-CGS2026R0909"
+        ],
+        "missing_gold_ids": [
+          "SURF-ER1830R018"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ165",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-SI1970R001",
+          "SURF-CRG2026R0004"
+        ],
+        "retrieved_ids": [
+          "SURF-SI1970R001",
+          "SURF-CGS2026R0328",
+          "SURF-CGS2026R0909"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0004"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ166",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0002",
+          "SURF-CRG2026R0005"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0002",
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0235"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0005"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ167",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0003",
+          "SURF-CRG2026R0001"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0003",
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0235"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0001"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ168",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R004",
+          "SURF-GAX1970R002"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R004",
+          "SURF-ER1830R008",
+          "SURF-ER1830R011"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R002"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ169",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-GA1970R001"
+        ],
+        "retrieved_ids": [
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+          "SURF-ER1830R004",
+          "SURF-ER1830R008"
+        ],
+        "missing_gold_ids": [
+          "SURF-GA1970R001"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ170",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R008",
+          "SURF-GAX1970R003"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R008",
+          "SURF-ER1830R011",
+          "SURF-ER1830R004"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R003"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ171",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-ER1830R018",
+          "SURF-GAX1970R004"
+        ],
+        "retrieved_ids": [
+          "SURF-ER1830R018",
+          "SURF-ER1830R017",
+          "SURF-ER1830R019"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R004"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ172",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0004",
+          "SURF-GAX1970R005"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0004",
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0235"
+        ],
+        "missing_gold_ids": [
+          "SURF-GAX1970R005"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ173",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0005",
+          "SURF-CRG2026R0006"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0005",
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0235"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0006"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ174",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0050"
+        ],
+        "retrieved_ids": [
+          "SURF-CRG2026R0001",
+          "SURF-CRG2026R0175",
+          "SURF-CRG2026R0235"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0050"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ175",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GAX1970R002",
+          "SURF-CRG2026R0051"
+        ],
+        "retrieved_ids": [
+          "SURF-GAX1970R002",
+          "SURF-ER1830R046",
+          "SURF-ER1830R065"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0051"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ176",
+        "intent": "more_context",
+        "refusal_expected": false,
+        "gold_ids": [
+          "SURF-GA1970R001",
+          "SURF-CRG2026R0052"
+        ],
+        "retrieved_ids": [
+          "SURF-GA1970R001",
+          "SURF-ER1830R046",
+          "SURF-ER1830R065"
+        ],
+        "missing_gold_ids": [
+          "SURF-CRG2026R0052"
+        ],
+        "gold_coverage_status": "fail"
+      },
+      {
+        "query_id": "BQ177",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ178",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ179",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ180",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ181",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ182",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ183",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ184",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ185",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ186",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ187",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ188",
+        "intent": "first_earliest_claim",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [
+          "SURF-ER1830R001-GROUP",
+          "SURF-CHW2026R001",
+          "SURF-SI1970R001"
+        ],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ189",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ190",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ191",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ192",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ193",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ194",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ195",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ196",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ197",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ198",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ199",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      },
+      {
+        "query_id": "BQ200",
+        "intent": "no_evidence_refusal",
+        "refusal_expected": true,
+        "gold_ids": [],
+        "retrieved_ids": [],
+        "missing_gold_ids": [],
+        "gold_coverage_status": "pass"
+      }
+    ]
+  },
+  "contract": {
+    "answer_count": 200,
+    "label_count": 200,
+    "fail_count": 27,
+    "warn_count": 59,
+    "violations": [
+      {
+        "severity": "warn",
+        "query_id": "BQ01",
+        "code": "G101_required_field_value_not_observed",
+        "field": "topology",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ04",
+        "code": "G101_required_field_value_not_observed",
+        "field": "topology",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ129",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ129",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ129",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ129",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ129",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ129",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ130",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ130",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ130",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ130",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ130",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ130",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ131",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ131",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ131",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ131",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ131",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ131",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ132",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ132",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ132",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ132",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ132",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ132",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ133",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ133",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ133",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ133",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ133",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ133",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ134",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ134",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ134",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ134",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ134",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ134",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ135",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ135",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ135",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ135",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ135",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ135",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ136",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ136",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ136",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ136",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ136",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ136",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ137",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ137",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ137",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ137",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ137",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ137",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ138",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ138",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ138",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ138",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ138",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ138",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ139",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ139",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ139",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ139",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ139",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ139",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ140",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ140",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ140",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ140",
+        "code": "G101_required_field_value_not_observed",
+        "field": "source",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ140",
+        "code": "G005_unverified_field_assertion",
+        "field": "source",
+        "detail": "asserted=\"Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/\""
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ140",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ144",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ144",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ144",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ144",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | La typographie : poëme / par M. L. Pelletier | Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe]\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ145",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ145",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ145",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ145",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | La typographie : poëme / par M. L. Pelletier | Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe]\""
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ146",
+        "code": "G101_required_field_value_not_observed",
+        "field": "record_id",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ146",
+        "code": "G101_required_field_value_not_observed",
+        "field": "title",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "warn",
+        "query_id": "BQ146",
+        "code": "G101_required_field_value_not_observed",
+        "field": "date_text",
+        "detail": "answer does not visibly include an evidence value for this required field"
+      },
+      {
+        "severity": "fail",
+        "query_id": "BQ146",
+        "code": "G005_unverified_field_assertion",
+        "field": "title",
+        "detail": "asserted=\"Monsieur, vous avez réclamé votre inscription... | La typographie : poëme / par M. L. Pelletier | Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe]\""
+      }
+    ]
+  }
+}

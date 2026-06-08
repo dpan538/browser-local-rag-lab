@@ -1,6 +1,6 @@
-# ROUND02 200 Design
+# ROUND02 200 CONTRACT Design
 
-Generated: 2026-06-08T06:58:12.121Z
+Generated: 2026-06-08T07:05:20.316Z
 
 ## Round 01 Diagnosis
 
@@ -39,16 +39,16 @@ remove preventable runtime/prompt failures before broader comparison:
 - Rows checked: 200
 - Token-budget failures: 0
 - Prompt-audit failures: 0
-- Max estimated prompt tokens: 1250
-- Average estimated prompt tokens: 547.7
+- Max estimated prompt tokens: 1299
+- Average estimated prompt tokens: 560.9
 - Round 01 retry rows: BQ11, BQ22
 
 | Query | Intent | Prompt mode | Est. tokens | Budget | Prompt audit | Round 01 retry |
 |---|---|---|---:|---|---|---|
-| BQ01 | archive_orientation | orientation_structure_with_tags | 293 | pass | pass | no |
+| BQ01 | archive_orientation | orientation_structure_with_tags | 409 | pass | pass | no |
 | BQ02 | archive_orientation | orientation_structure_with_tags | 484 | pass | pass | no |
 | BQ03 | archive_orientation | orientation_structure_with_tags | 465 | pass | pass | no |
-| BQ04 | casual_archive_help | orientation_structure_with_tags | 285 | pass | pass | no |
+| BQ04 | casual_archive_help | orientation_structure_with_tags | 405 | pass | pass | no |
 | BQ05 | current_object_explanation | answerable_with_evidence_tags | 705 | pass | pass | no |
 | BQ06 | current_object_explanation | answerable_with_evidence_tags | 527 | pass | pass | no |
 | BQ07 | current_object_explanation | answerable_with_evidence_tags | 773 | pass | pass | no |
@@ -75,19 +75,19 @@ remove preventable runtime/prompt failures before broader comparison:
 | BQ28 | no_evidence_refusal | hard_refusal | 112 | pass | pass | no |
 | BQ29 | no_evidence_refusal | hard_refusal | 105 | pass | pass | no |
 | BQ30 | casual_archive_help | orientation_structure_with_tags | 443 | pass | pass | no |
-| BQ031 | archive_orientation | orientation_structure_with_tags | 451 | pass | pass | no |
-| BQ032 | archive_orientation | orientation_structure_with_tags | 502 | pass | pass | no |
-| BQ033 | archive_orientation | orientation_structure_with_tags | 502 | pass | pass | no |
-| BQ034 | archive_orientation | orientation_structure_with_tags | 502 | pass | pass | no |
-| BQ035 | archive_orientation | orientation_structure_with_tags | 496 | pass | pass | no |
-| BQ036 | archive_orientation | orientation_structure_with_tags | 502 | pass | pass | no |
-| BQ037 | archive_orientation | orientation_structure_with_tags | 439 | pass | pass | no |
-| BQ038 | archive_orientation | orientation_structure_with_tags | 451 | pass | pass | no |
-| BQ039 | archive_orientation | orientation_structure_with_tags | 483 | pass | pass | no |
-| BQ040 | archive_orientation | orientation_structure_with_tags | 484 | pass | pass | no |
-| BQ041 | archive_orientation | orientation_structure_with_tags | 484 | pass | pass | no |
-| BQ042 | archive_orientation | orientation_structure_with_tags | 519 | pass | pass | no |
-| BQ043 | archive_orientation | orientation_structure_with_tags | 484 | pass | pass | no |
+| BQ031 | archive_orientation | orientation_structure_with_tags | 449 | pass | pass | no |
+| BQ032 | archive_orientation | orientation_structure_with_tags | 498 | pass | pass | no |
+| BQ033 | archive_orientation | orientation_structure_with_tags | 505 | pass | pass | no |
+| BQ034 | archive_orientation | orientation_structure_with_tags | 514 | pass | pass | no |
+| BQ035 | archive_orientation | orientation_structure_with_tags | 456 | pass | pass | no |
+| BQ036 | archive_orientation | orientation_structure_with_tags | 479 | pass | pass | no |
+| BQ037 | archive_orientation | orientation_structure_with_tags | 474 | pass | pass | no |
+| BQ038 | archive_orientation | orientation_structure_with_tags | 476 | pass | pass | no |
+| BQ039 | archive_orientation | orientation_structure_with_tags | 484 | pass | pass | no |
+| BQ040 | archive_orientation | orientation_structure_with_tags | 502 | pass | pass | no |
+| BQ041 | archive_orientation | orientation_structure_with_tags | 512 | pass | pass | no |
+| BQ042 | archive_orientation | orientation_structure_with_tags | 454 | pass | pass | no |
+| BQ043 | archive_orientation | orientation_structure_with_tags | 453 | pass | pass | no |
 | BQ044 | casual_archive_help | orientation_structure_with_tags | 438 | pass | pass | no |
 | BQ045 | casual_archive_help | orientation_structure_with_tags | 377 | pass | pass | no |
 | BQ046 | casual_archive_help | orientation_structure_with_tags | 377 | pass | pass | no |
@@ -172,25 +172,25 @@ remove preventable runtime/prompt failures before broader comparison:
 | BQ125 | comparison | answerable_with_evidence_tags | 517 | pass | pass | no |
 | BQ126 | comparison | answerable_with_evidence_tags | 552 | pass | pass | no |
 | BQ127 | comparison | answerable_with_evidence_tags | 637 | pass | pass | no |
-| BQ128 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ129 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ130 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ131 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ132 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ133 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ134 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ135 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ136 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ137 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ138 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ139 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ140 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
-| BQ141 | region_period_recommendation | answerable_with_evidence_tags | 720 | pass | pass | no |
+| BQ128 | region_period_recommendation | answerable_with_evidence_tags | 885 | pass | pass | no |
+| BQ129 | region_period_recommendation | answerable_with_evidence_tags | 937 | pass | pass | no |
+| BQ130 | region_period_recommendation | answerable_with_evidence_tags | 1002 | pass | pass | no |
+| BQ131 | region_period_recommendation | answerable_with_evidence_tags | 1099 | pass | pass | no |
+| BQ132 | region_period_recommendation | answerable_with_evidence_tags | 948 | pass | pass | no |
+| BQ133 | region_period_recommendation | answerable_with_evidence_tags | 739 | pass | pass | no |
+| BQ134 | region_period_recommendation | answerable_with_evidence_tags | 764 | pass | pass | no |
+| BQ135 | region_period_recommendation | answerable_with_evidence_tags | 802 | pass | pass | no |
+| BQ136 | region_period_recommendation | answerable_with_evidence_tags | 935 | pass | pass | no |
+| BQ137 | region_period_recommendation | answerable_with_evidence_tags | 925 | pass | pass | no |
+| BQ138 | region_period_recommendation | answerable_with_evidence_tags | 864 | pass | pass | no |
+| BQ139 | region_period_recommendation | answerable_with_evidence_tags | 918 | pass | pass | no |
+| BQ140 | region_period_recommendation | answerable_with_evidence_tags | 979 | pass | pass | no |
+| BQ141 | region_period_recommendation | answerable_with_evidence_tags | 956 | pass | pass | no |
 | BQ142 | region_period_recommendation | answerable_with_evidence_tags | 732 | pass | pass | no |
-| BQ143 | region_period_recommendation | answerable_with_evidence_tags | 732 | pass | pass | no |
-| BQ144 | region_period_recommendation | answerable_with_evidence_tags | 732 | pass | pass | no |
-| BQ145 | region_period_recommendation | answerable_with_evidence_tags | 732 | pass | pass | no |
-| BQ146 | region_period_recommendation | answerable_with_evidence_tags | 732 | pass | pass | no |
+| BQ143 | region_period_recommendation | answerable_with_evidence_tags | 753 | pass | pass | no |
+| BQ144 | region_period_recommendation | answerable_with_evidence_tags | 686 | pass | pass | no |
+| BQ145 | region_period_recommendation | answerable_with_evidence_tags | 702 | pass | pass | no |
+| BQ146 | region_period_recommendation | answerable_with_evidence_tags | 663 | pass | pass | no |
 | BQ147 | method_process_question | answerable_with_evidence_tags | 459 | pass | pass | no |
 | BQ148 | method_process_question | answerable_with_evidence_tags | 459 | pass | pass | no |
 | BQ149 | method_process_question | answerable_with_evidence_tags | 459 | pass | pass | no |
@@ -205,22 +205,22 @@ remove preventable runtime/prompt failures before broader comparison:
 | BQ158 | method_process_question | answerable_with_evidence_tags | 459 | pass | pass | no |
 | BQ159 | method_process_question | answerable_with_evidence_tags | 459 | pass | pass | no |
 | BQ160 | method_process_question | answerable_with_evidence_tags | 459 | pass | pass | no |
-| BQ161 | more_context | answerable_with_evidence_tags | 974 | pass | pass | no |
-| BQ162 | more_context | answerable_with_evidence_tags | 1117 | pass | pass | no |
-| BQ163 | more_context | answerable_with_evidence_tags | 1185 | pass | pass | no |
-| BQ164 | more_context | answerable_with_evidence_tags | 1122 | pass | pass | no |
-| BQ165 | more_context | answerable_with_evidence_tags | 1184 | pass | pass | no |
-| BQ166 | more_context | answerable_with_evidence_tags | 1119 | pass | pass | no |
-| BQ167 | more_context | answerable_with_evidence_tags | 1195 | pass | pass | no |
-| BQ168 | more_context | answerable_with_evidence_tags | 932 | pass | pass | no |
-| BQ169 | more_context | answerable_with_evidence_tags | 977 | pass | pass | no |
-| BQ170 | more_context | answerable_with_evidence_tags | 932 | pass | pass | no |
-| BQ171 | more_context | answerable_with_evidence_tags | 967 | pass | pass | no |
-| BQ172 | more_context | answerable_with_evidence_tags | 1174 | pass | pass | no |
-| BQ173 | more_context | answerable_with_evidence_tags | 1250 | pass | pass | no |
-| BQ174 | more_context | answerable_with_evidence_tags | 1150 | pass | pass | no |
-| BQ175 | more_context | answerable_with_evidence_tags | 811 | pass | pass | no |
-| BQ176 | more_context | answerable_with_evidence_tags | 943 | pass | pass | no |
+| BQ161 | more_context | answerable_with_evidence_tags | 1001 | pass | pass | no |
+| BQ162 | more_context | answerable_with_evidence_tags | 919 | pass | pass | no |
+| BQ163 | more_context | answerable_with_evidence_tags | 944 | pass | pass | no |
+| BQ164 | more_context | answerable_with_evidence_tags | 887 | pass | pass | no |
+| BQ165 | more_context | answerable_with_evidence_tags | 1050 | pass | pass | no |
+| BQ166 | more_context | answerable_with_evidence_tags | 1282 | pass | pass | no |
+| BQ167 | more_context | answerable_with_evidence_tags | 1258 | pass | pass | no |
+| BQ168 | more_context | answerable_with_evidence_tags | 883 | pass | pass | no |
+| BQ169 | more_context | answerable_with_evidence_tags | 1072 | pass | pass | no |
+| BQ170 | more_context | answerable_with_evidence_tags | 876 | pass | pass | no |
+| BQ171 | more_context | answerable_with_evidence_tags | 944 | pass | pass | no |
+| BQ172 | more_context | answerable_with_evidence_tags | 1153 | pass | pass | no |
+| BQ173 | more_context | answerable_with_evidence_tags | 1299 | pass | pass | no |
+| BQ174 | more_context | answerable_with_evidence_tags | 1247 | pass | pass | no |
+| BQ175 | more_context | answerable_with_evidence_tags | 964 | pass | pass | no |
+| BQ176 | more_context | answerable_with_evidence_tags | 1142 | pass | pass | no |
 | BQ177 | first_earliest_claim | hard_refusal | 107 | pass | pass | no |
 | BQ178 | first_earliest_claim | hard_refusal | 107 | pass | pass | no |
 | BQ179 | first_earliest_claim | hard_refusal | 107 | pass | pass | no |

@@ -2,6 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import childProcess from "node:child_process";
+import { auditPromptText, buildPrompt as buildContractPrompt, promptModeForLabel } from "./prompt_builder.mjs";
 
 const repoRoot = path.resolve(import.meta.dirname, "..");
 const defaultLabelsPath = path.join(repoRoot, "fixtures/gold/labels.jsonl");
@@ -224,22 +225,6 @@ function buildRound02Prompt(query, label, records) {
   return compactAnswerPrompt(query, label, records);
 }
 
-function auditPrompt(row, prompt) {
-  const failures = [];
-  if (row.prompt_mode === "hard_refusal" && !prompt.includes("I cannot answer this question because the evidence is insufficient.")) {
-    failures.push("hard_refusal_missing_magic_phrase");
-  }
-  if (row.prompt_mode === "source_rights_field_summary") {
-    for (const token of ["RIGHTS:", "REUSE:", "PUBLIC_DOMAIN:"]) {
-      if (!prompt.includes(token)) failures.push(`source_rights_missing_${token.replace(":", "").toLowerCase()}_tag`);
-    }
-  }
-  if (["compact_required_field_summary", "orientation_structure_summary"].includes(row.prompt_mode) && !prompt.includes("Evidence Tags:")) {
-    failures.push("answerable_prompt_missing_evidence_tags");
-  }
-  return failures;
-}
-
 function main() {
   const {
     labelsPath,
@@ -261,8 +246,9 @@ function main() {
   const rows = labels.map((label) => {
     const query = queries.get(label.query_id);
     const retrievalRow = retrievalByQuery.get(label.query_id);
-    const retrievedRecords = splitIds(retrievalRow?.retrieved_ids).map((id) => records.get(id)).filter(Boolean);
-    const prompt = buildRound02Prompt(query, label, retrievedRecords);
+    const retrievedIds = splitIds(retrievalRow?.retrieved_ids);
+    const retrievedRecords = retrievedIds.map((id) => records.get(id)).filter(Boolean);
+    const prompt = buildContractPrompt({ query, label, evidence: retrievedRecords, retrievedIds });
     const promptTokensEst = estimateTokens(prompt);
     const row = {
       query_id: label.query_id,
@@ -274,16 +260,10 @@ function main() {
       prompt_tokens_est: promptTokensEst,
       token_budget: tokenBudget,
       token_budget_status: promptTokensEst <= tokenBudget ? "pass" : "fail",
-      prompt_mode: label.refusal_expected
-        ? "hard_refusal"
-        : ["archive_orientation", "casual_archive_help"].includes(label.intent)
-          ? "orientation_structure_summary"
-          : label.intent === "source_rights_question"
-            ? "source_rights_field_summary"
-            : "compact_required_field_summary",
+      prompt_mode: promptModeForLabel(label),
       retry_required_from_round01: ["BQ11", "BQ22"].includes(label.query_id)
     };
-    row.prompt_audit_failures = auditPrompt(row, prompt);
+    row.prompt_audit_failures = auditPromptText({ prompt, label });
     row.prompt_audit_status = row.prompt_audit_failures.length === 0 ? "pass" : "fail";
     return row;
   });
