@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-08T08:15:00.100Z",
+  "generated_at": "2026-06-08T08:15:00.088Z",
   "_provenance": {
     "step": "contract_oracle_check",
     "commit": "ac980f830731dcfdf4ca9bc4d16740aa18ea3387",
-    "packet_variant": "top3_gold_contract_source_rights",
+    "packet_variant": "gold_only_contract_source_rights",
     "input_paths": [
       "fixtures/expansion/round02_200/queries.jsonl",
       "fixtures/expansion/round02_200/labels.jsonl",
       "fixtures/expansion/round02_200/records.jsonl",
-      "reports/retrieval_sufficiency_200_contract.json"
+      "reports/retrieval_sufficiency_200_contract_gold_only.json"
     ]
   },
   "summary": {
@@ -30,8 +30,7 @@
         ],
         "retrieved_ids": [
           "SURF-ER1830R004",
-          "SURF-ER1830R015",
-          "LAB-METHOD-CONTEXT-V0"
+          "SURF-ER1830R015"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -46,8 +45,7 @@
         ],
         "retrieved_ids": [
           "SURF-CGS2026R0909",
-          "SURF-CGS2026R0910",
-          "SURF-CRG2026R0001"
+          "SURF-CGS2026R0910"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -62,8 +60,7 @@
         ],
         "retrieved_ids": [
           "SURF-CGS2026R0908",
-          "SURF-CRG2026R0005",
-          "LAB-METHOD-CONTEXT-V0"
+          "SURF-CRG2026R0005"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -91,9 +88,7 @@
           "SURF-GAX1970R001"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R001",
-          "SURF-CRG2026R0001",
-          "SURF-ER1830R001-GROUP"
+          "SURF-GAX1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -106,8 +101,7 @@
           "SURF-GAX1970R001"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R001",
-          "LAB-METHOD-CONTEXT-V0"
+          "SURF-GAX1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -120,9 +114,7 @@
           "SURF-GAX1970R001"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R001",
-          "SURF-CHW2026R001",
-          "SURF-CRG2026R0001"
+          "SURF-GAX1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -135,9 +127,7 @@
           "SURF-GAX1970R001"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R001",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-ER1830R065"
+          "SURF-GAX1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -268,9 +258,7 @@
           "SURF-GAX1970R001"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R001",
-          "SURF-CRG2026R0001",
-          "SURF-ER1830R001-GROUP"
+          "SURF-GAX1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -283,9 +271,7 @@
           "SURF-GAX1970R001"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R001",
-          "SURF-CHW2026R001",
-          "SURF-GAX1970R002"
+          "SURF-GAX1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -298,9 +284,7 @@
           "SURF-GAX1970R001"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R001",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CRG2026R0001"
+          "SURF-GAX1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -313,9 +297,7 @@
           "SURF-GAX1970R001"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R001",
-          "SURF-CGS2026R0909",
-          "SURF-CGS2026R0910"
+          "SURF-GAX1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -417,8 +399,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0031",
-          "SURF-CRG2026R0032",
-          "SURF-ER1830R011"
+          "SURF-CRG2026R0032"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -433,8 +414,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0001",
-          "SURF-CRG2026R0050",
-          "SURF-CRG2026R0002"
+          "SURF-CRG2026R0050"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -449,8 +429,7 @@
         ],
         "retrieved_ids": [
           "SURF-GAX1970R002",
-          "SURF-CRG2026R0051",
-          "SURF-CRG2026R0100"
+          "SURF-CRG2026R0051"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -465,8 +444,7 @@
         ],
         "retrieved_ids": [
           "SURF-GA1970R001",
-          "SURF-CRG2026R0052",
-          "SURF-CRG2026R0100"
+          "SURF-CRG2026R0052"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -481,8 +459,7 @@
         ],
         "retrieved_ids": [
           "SURF-GAX1970R003",
-          "SURF-CRG2026R0071",
-          "SURF-CRG2026R0100"
+          "SURF-CRG2026R0071"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -497,8 +474,7 @@
         ],
         "retrieved_ids": [
           "SURF-GAX1970R004",
-          "SURF-COM1970R007",
-          "SURF-CRG2026R0100"
+          "SURF-COM1970R007"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -513,8 +489,7 @@
         ],
         "retrieved_ids": [
           "SURF-GAX1970R005",
-          "SURF-CRG2026R0235",
-          "SURF-CRG2026R0100"
+          "SURF-CRG2026R0235"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -529,8 +504,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0006",
-          "SURF-CRG2026R0246",
-          "SURF-CRG2026R0001"
+          "SURF-CRG2026R0246"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -545,8 +519,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0050",
-          "SURF-CRG2026R0274",
-          "SURF-CRG2026R0001"
+          "SURF-CRG2026R0274"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -561,8 +534,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0051",
-          "SURF-CGS2026R0681",
-          "SURF-CRG2026R0175"
+          "SURF-CGS2026R0681"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -577,8 +549,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0052",
-          "SURF-CGS2026R0328",
-          "SURF-CRG2026R0175"
+          "SURF-CGS2026R0328"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -593,8 +564,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0071",
-          "SURF-CGS2026R0030",
-          "SURF-CRG2026R0175"
+          "SURF-CGS2026R0030"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -609,8 +579,7 @@
         ],
         "retrieved_ids": [
           "SURF-COM1970R007",
-          "SURF-CGS2026R0908",
-          "SURF-ER1830R001-GROUP"
+          "SURF-CGS2026R0908"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -625,8 +594,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0235",
-          "SURF-CGS2026R0904",
-          "SURF-CRG2026R0175"
+          "SURF-CGS2026R0904"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -639,9 +607,7 @@
           "SURF-CRG2026R0001"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0001",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -654,9 +620,7 @@
           "SURF-GAX1970R002"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R002",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R002"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -669,9 +633,7 @@
           "SURF-GA1970R001"
         ],
         "retrieved_ids": [
-          "SURF-GA1970R001",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-GA1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -684,9 +646,7 @@
           "SURF-GAX1970R003"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R003",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R003"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -699,9 +659,7 @@
           "SURF-GAX1970R004"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R004",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R004"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -714,9 +672,7 @@
           "SURF-GAX1970R005"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R005",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R005"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -729,9 +685,7 @@
           "SURF-CRG2026R0006"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0006",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0006"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -744,9 +698,7 @@
           "SURF-CRG2026R0050"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0050",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0050"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -759,9 +711,7 @@
           "SURF-CRG2026R0051"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0051",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0051"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -774,9 +724,7 @@
           "SURF-CRG2026R0052"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0052",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0052"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -789,9 +737,7 @@
           "SURF-CRG2026R0071"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0071",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0071"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -804,9 +750,7 @@
           "SURF-COM1970R007"
         ],
         "retrieved_ids": [
-          "SURF-COM1970R007",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-COM1970R007"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -819,9 +763,7 @@
           "SURF-CRG2026R0235"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0235",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0235"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -834,9 +776,7 @@
           "SURF-CRG2026R0246"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0246",
-          "SURF-ER1830R052",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0246"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -849,9 +789,7 @@
           "SURF-CRG2026R0274"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0274",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CRG2026R0274"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -864,9 +802,7 @@
           "SURF-CGS2026R0681"
         ],
         "retrieved_ids": [
-          "SURF-CGS2026R0681",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CGS2026R0681"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -879,9 +815,7 @@
           "SURF-CGS2026R0328"
         ],
         "retrieved_ids": [
-          "SURF-CGS2026R0328",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CGS2026R0328"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -894,9 +828,7 @@
           "SURF-CGS2026R0030"
         ],
         "retrieved_ids": [
-          "SURF-CGS2026R0030",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CGS2026R0030"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -909,9 +841,7 @@
           "SURF-CGS2026R0908"
         ],
         "retrieved_ids": [
-          "SURF-CGS2026R0908",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CGS2026R0908"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -924,9 +854,7 @@
           "SURF-CGS2026R0904"
         ],
         "retrieved_ids": [
-          "SURF-CGS2026R0904",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CGS2026R0904"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -939,9 +867,7 @@
           "SURF-CGS2026R0031"
         ],
         "retrieved_ids": [
-          "SURF-CGS2026R0031",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CGS2026R0031"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -954,9 +880,7 @@
           "SURF-CGS2026R0909"
         ],
         "retrieved_ids": [
-          "SURF-CGS2026R0909",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CGS2026R0909"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -969,9 +893,7 @@
           "SURF-CGS2026R0910"
         ],
         "retrieved_ids": [
-          "SURF-CGS2026R0910",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CGS2026R0910"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -984,9 +906,7 @@
           "SURF-CRG2026R0020"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0020",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CRG2026R0020"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -999,9 +919,7 @@
           "SURF-CRG2026R0027"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0027",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CRG2026R0027"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1014,9 +932,7 @@
           "SURF-CRG2026R0031"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0031",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CRG2026R0031"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1029,9 +945,7 @@
           "SURF-CRG2026R0032"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0032",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CRG2026R0032"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1044,9 +958,7 @@
           "SURF-ER1830R015"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R015",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-ER1830R015"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1059,9 +971,7 @@
           "SURF-CRG2026R0100"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0100",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CRG2026R0100"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1074,9 +984,7 @@
           "SURF-ER1830R046"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R046",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-ER1830R046"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1089,9 +997,7 @@
           "SURF-CRG2026R0153"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0153",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CRG2026R0153"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1104,9 +1010,7 @@
           "SURF-ER1830R059"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R059",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-ER1830R059"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1119,9 +1023,7 @@
           "SURF-CRG2026R0175"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0175",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-CRG2026R0175"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1134,9 +1036,7 @@
           "SURF-ER1830R052"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R052",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-ER1830R052"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1149,9 +1049,7 @@
           "SURF-ER1830R064"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R064",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-ER1830R064"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1164,9 +1062,7 @@
           "SURF-ER1830R065"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R065",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-ER1830R065"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1179,9 +1075,7 @@
           "SURF-ER1830R066"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R066",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-ER1830R066"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1194,9 +1088,7 @@
           "SURF-ER1830R011"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R011",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-ER1830R011"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1209,9 +1101,7 @@
           "SURF-ER1830R017"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R017",
-          "LAB-METHOD-CONTEXT-V0",
-          "SURF-CHW2026R001"
+          "SURF-ER1830R017"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1224,9 +1114,7 @@
           "SURF-ER1830R019"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R019",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-ER1830R019"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1239,9 +1127,7 @@
           "SURF-ER1830R001-GROUP"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R001-GROUP",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-ER1830R001-GROUP"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1254,9 +1140,7 @@
           "SURF-CHW2026R001"
         ],
         "retrieved_ids": [
-          "SURF-CHW2026R001",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-CHW2026R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1269,9 +1153,7 @@
           "SURF-ER1830R002"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R002",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-ER1830R002"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1284,9 +1166,7 @@
           "SURF-SI1970R001"
         ],
         "retrieved_ids": [
-          "SURF-SI1970R001",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-SI1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1299,9 +1179,7 @@
           "SURF-CRG2026R0002"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0002",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0002"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1314,9 +1192,7 @@
           "SURF-CRG2026R0003"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0003",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0003"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1329,9 +1205,7 @@
           "SURF-ER1830R004"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R004",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-ER1830R004"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1344,9 +1218,7 @@
           "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
         ],
         "retrieved_ids": [
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-ER1830R066",
-          "SURF-GAX1970R001"
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1359,9 +1231,7 @@
           "SURF-ER1830R008"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R008",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-ER1830R008"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1374,9 +1244,7 @@
           "SURF-ER1830R018"
         ],
         "retrieved_ids": [
-          "SURF-ER1830R018",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-ER1830R018"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1389,9 +1257,7 @@
           "SURF-CRG2026R0004"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0004",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0004"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1404,9 +1270,7 @@
           "SURF-CRG2026R0005"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0005",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0005"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1419,9 +1283,7 @@
           "SURF-CRG2026R0001"
         ],
         "retrieved_ids": [
-          "SURF-CRG2026R0001",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1434,9 +1296,7 @@
           "SURF-GAX1970R002"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R002",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R002"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1449,9 +1309,7 @@
           "SURF-GA1970R001"
         ],
         "retrieved_ids": [
-          "SURF-GA1970R001",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-GA1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1464,9 +1322,7 @@
           "SURF-GAX1970R003"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R003",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R003"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1479,9 +1335,7 @@
           "SURF-GAX1970R004"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R004",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R004"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1494,9 +1348,7 @@
           "SURF-GAX1970R005"
         ],
         "retrieved_ids": [
-          "SURF-GAX1970R005",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R005"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1901,8 +1753,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0001",
-          "SURF-CRG2026R0050",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0050"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1917,8 +1768,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0050",
-          "SURF-CRG2026R0051",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0051"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1933,8 +1783,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0051",
-          "SURF-CRG2026R0052",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0052"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1949,8 +1798,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0052",
-          "SURF-CRG2026R0071",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0071"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1965,8 +1813,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0071",
-          "SURF-CRG2026R0235",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0235"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1981,8 +1828,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0235",
-          "SURF-CRG2026R0246",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0246"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -1997,8 +1843,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0246",
-          "SURF-CRG2026R0274",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0274"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2013,8 +1858,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0274",
-          "SURF-CRG2026R0020",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0020"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2029,8 +1873,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0020",
-          "SURF-CRG2026R0175",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0175"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2045,8 +1888,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0175",
-          "SURF-CRG2026R0002",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0002"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2061,8 +1903,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0002",
-          "SURF-CRG2026R0003",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0003"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2077,8 +1918,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0003",
-          "SURF-CRG2026R0004",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0004"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2093,8 +1933,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0004",
-          "SURF-CRG2026R0005",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0005"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2109,8 +1948,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0005",
-          "SURF-CRG2026R0001",
-          "SURF-GAX1970R001"
+          "SURF-CRG2026R0001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2125,8 +1963,7 @@
         ],
         "retrieved_ids": [
           "SURF-GAX1970R002",
-          "SURF-GA1970R001",
-          "SURF-GAX1970R001"
+          "SURF-GA1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2141,8 +1978,7 @@
         ],
         "retrieved_ids": [
           "SURF-GA1970R001",
-          "SURF-GAX1970R003",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R003"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2157,8 +1993,7 @@
         ],
         "retrieved_ids": [
           "SURF-GAX1970R003",
-          "SURF-GAX1970R004",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R004"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2173,8 +2008,7 @@
         ],
         "retrieved_ids": [
           "SURF-GAX1970R004",
-          "SURF-GAX1970R005",
-          "SURF-GAX1970R001"
+          "SURF-GAX1970R005"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2189,8 +2023,7 @@
         ],
         "retrieved_ids": [
           "SURF-GAX1970R005",
-          "SURF-ER1830R046",
-          "SURF-GAX1970R001"
+          "SURF-ER1830R046"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2387,8 +2220,7 @@
         ],
         "retrieved_ids": [
           "SURF-ER1830R019",
-          "SURF-ER1830R004",
-          "SURF-ER1830R017"
+          "SURF-ER1830R004"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2403,8 +2235,7 @@
         ],
         "retrieved_ids": [
           "SURF-ER1830R001-GROUP",
-          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-CGS2026R0328"
+          "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2419,8 +2250,7 @@
         ],
         "retrieved_ids": [
           "SURF-CHW2026R001",
-          "SURF-ER1830R008",
-          "SURF-CGS2026R0328"
+          "SURF-ER1830R008"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2435,8 +2265,7 @@
         ],
         "retrieved_ids": [
           "SURF-ER1830R002",
-          "SURF-ER1830R018",
-          "SURF-CGS2026R0328"
+          "SURF-ER1830R018"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2451,8 +2280,7 @@
         ],
         "retrieved_ids": [
           "SURF-SI1970R001",
-          "SURF-CRG2026R0004",
-          "SURF-CGS2026R0328"
+          "SURF-CRG2026R0004"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2467,8 +2295,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0002",
-          "SURF-CRG2026R0005",
-          "SURF-CRG2026R0175"
+          "SURF-CRG2026R0005"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2483,8 +2310,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0003",
-          "SURF-CRG2026R0001",
-          "SURF-CRG2026R0175"
+          "SURF-CRG2026R0001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2499,8 +2325,7 @@
         ],
         "retrieved_ids": [
           "SURF-ER1830R004",
-          "SURF-GAX1970R002",
-          "SURF-ER1830R008"
+          "SURF-GAX1970R002"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2515,8 +2340,7 @@
         ],
         "retrieved_ids": [
           "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
-          "SURF-GA1970R001",
-          "SURF-ER1830R004"
+          "SURF-GA1970R001"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2531,8 +2355,7 @@
         ],
         "retrieved_ids": [
           "SURF-ER1830R008",
-          "SURF-GAX1970R003",
-          "SURF-ER1830R011"
+          "SURF-GAX1970R003"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2547,8 +2370,7 @@
         ],
         "retrieved_ids": [
           "SURF-ER1830R018",
-          "SURF-GAX1970R004",
-          "SURF-ER1830R017"
+          "SURF-GAX1970R004"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2563,8 +2385,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0004",
-          "SURF-GAX1970R005",
-          "SURF-CRG2026R0175"
+          "SURF-GAX1970R005"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2579,8 +2400,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0005",
-          "SURF-CRG2026R0006",
-          "SURF-CRG2026R0175"
+          "SURF-CRG2026R0006"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2595,8 +2415,7 @@
         ],
         "retrieved_ids": [
           "SURF-CRG2026R0001",
-          "SURF-CRG2026R0050",
-          "SURF-CRG2026R0175"
+          "SURF-CRG2026R0050"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2611,8 +2430,7 @@
         ],
         "retrieved_ids": [
           "SURF-GAX1970R002",
-          "SURF-CRG2026R0051",
-          "SURF-ER1830R046"
+          "SURF-CRG2026R0051"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"
@@ -2627,8 +2445,7 @@
         ],
         "retrieved_ids": [
           "SURF-GA1970R001",
-          "SURF-CRG2026R0052",
-          "SURF-ER1830R046"
+          "SURF-CRG2026R0052"
         ],
         "missing_gold_ids": [],
         "gold_coverage_status": "pass"

@@ -98,6 +98,10 @@ export function buildContractRetrievalVariant(options) {
     const targetCount = Math.max(options.topK, goldIds.length);
     const retrievedIds = unique([...goldIds, ...sourceIds]).slice(0, targetCount);
     const injected = goldIds.filter((id) => !sourceIds.includes(id));
+    const retrievedSet = new Set(retrievedIds);
+    const coveredGoldIds = goldIds.filter((id) => retrievedSet.has(id));
+    const missingGoldIds = goldIds.filter((id) => !retrievedSet.has(id));
+    const evidenceCovered = missingGoldIds.length === 0;
     return {
       ...source,
       variant_id: options.contractVariantId,
@@ -105,8 +109,13 @@ export function buildContractRetrievalVariant(options) {
       retrieved_ids: retrievedIds.join("|"),
       gold_evidence_ids: (label.gold_evidence_ids || []).join("|"),
       candidate_count: retrievedIds.length,
-      evidence_covered: injected.length === 0,
-      sufficient_packet: true,
+      covered_gold_evidence_ids: coveredGoldIds.join("|"),
+      missing_gold_evidence_ids: missingGoldIds.join("|"),
+      gold_evidence_total: goldIds.length,
+      gold_evidence_covered: coveredGoldIds.length,
+      gold_id_coverage_rate: goldIds.length > 0 ? Number((coveredGoldIds.length / goldIds.length).toFixed(4)) : 1,
+      evidence_covered: evidenceCovered,
+      sufficient_packet: label.refusal_expected || evidenceCovered,
       contract_retrieval_variant: true,
       contract_retrieval_note: "research-only gold evidence injection for generation contract testing; not product retrieval",
       gold_injected_count: injected.length,
