@@ -1,0 +1,430 @@
+{
+  "generated_at": "2026-06-08T13:06:23.372Z",
+  "source_triage": "reports/round03_300_latency_triage.json",
+  "source_queries": "fixtures/expansion/round03_300/queries.jsonl",
+  "source_labels": "fixtures/expansion/round03_300/labels.jsonl",
+  "source_records": "fixtures/expansion/round03_300/records.jsonl",
+  "source_retrieval": "reports/retrieval_sufficiency_300_contract.json",
+  "out_dir": "fixtures/optimization/round03_latency_pilot50",
+  "selected_count": 50,
+  "bucket_counts": {
+    "latency_tail_top26": 26,
+    "low_decode_speed": 8,
+    "source_rights_hybrid_candidate": 6,
+    "refusal_hybrid_candidate": 5,
+    "fast_control": 5
+  },
+  "intent_counts": {
+    "more_context": 12,
+    "region_period_recommendation": 12,
+    "comparison": 4,
+    "current_object_explanation": 2,
+    "source_rights_question": 10,
+    "first_earliest_claim": 3,
+    "no_evidence_refusal": 2,
+    "archive_orientation": 3,
+    "method_process_question": 2
+  },
+  "selected": [
+    {
+      "query_id": "BQ166",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 14291.599999904633,
+      "tokens_per_second": 16.030779096068294,
+      "prompt_tokens_est": 1282
+    },
+    {
+      "query_id": "BQ131",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 13550.89999961853,
+      "tokens_per_second": 7.002637660341221,
+      "prompt_tokens_est": 1099
+    },
+    {
+      "query_id": "BQ167",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 13042.299999713898,
+      "tokens_per_second": 6.323694091298334,
+      "prompt_tokens_est": 1258
+    },
+    {
+      "query_id": "BQ174",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 12774.800000190735,
+      "tokens_per_second": 7.227807346080557,
+      "prompt_tokens_est": 1247
+    },
+    {
+      "query_id": "BQ132",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 12708.60000038147,
+      "tokens_per_second": 10.366909873367716,
+      "prompt_tokens_est": 948
+    },
+    {
+      "query_id": "BQ173",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 12544.699999809265,
+      "tokens_per_second": 5.529854470628663,
+      "prompt_tokens_est": 1299
+    },
+    {
+      "query_id": "BQ136",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 12171.699999809265,
+      "tokens_per_second": 8.345177400320226,
+      "prompt_tokens_est": 935
+    },
+    {
+      "query_id": "BQ129",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 12023.5,
+      "tokens_per_second": 8.784572095257705,
+      "prompt_tokens_est": 937
+    },
+    {
+      "query_id": "BQ110",
+      "intent": "comparison",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11940.400000095367,
+      "tokens_per_second": 8.585901949234085,
+      "prompt_tokens_est": 1029
+    },
+    {
+      "query_id": "BQ176",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11891.599999904633,
+      "tokens_per_second": 13.309671694412902,
+      "prompt_tokens_est": 1142
+    },
+    {
+      "query_id": "BQ260",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11755.900000095367,
+      "tokens_per_second": 11.178024004657601,
+      "prompt_tokens_est": 1221
+    },
+    {
+      "query_id": "BQ130",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11732.5,
+      "tokens_per_second": 9.59652856023076,
+      "prompt_tokens_est": 1002
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11718.199999809265,
+      "tokens_per_second": 10.06711409395973,
+      "prompt_tokens_est": 1223
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11692.900000095367,
+      "tokens_per_second": 13.646612080411392,
+      "prompt_tokens_est": 1223
+    },
+    {
+      "query_id": "BQ242",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11687.699999809265,
+      "tokens_per_second": 9.143725294602955,
+      "prompt_tokens_est": 1119
+    },
+    {
+      "query_id": "BQ243",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11672.299999713898,
+      "tokens_per_second": 8.393438891838645,
+      "prompt_tokens_est": 1175
+    },
+    {
+      "query_id": "BQ244",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11585.900000095367,
+      "tokens_per_second": 9.829339866965613,
+      "prompt_tokens_est": 1121
+    },
+    {
+      "query_id": "BQ213",
+      "intent": "current_object_explanation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11456.099999904633,
+      "tokens_per_second": 8.074632676086093,
+      "prompt_tokens_est": 1076
+    },
+    {
+      "query_id": "BQ065",
+      "intent": "current_object_explanation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11453.400000095367,
+      "tokens_per_second": 12.278669996627414,
+      "prompt_tokens_est": 999
+    },
+    {
+      "query_id": "BQ141",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11345.099999904633,
+      "tokens_per_second": 13.451972255307224,
+      "prompt_tokens_est": 956
+    },
+    {
+      "query_id": "BQ137",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11316.900000095367,
+      "tokens_per_second": 10.642453961419749,
+      "prompt_tokens_est": 925
+    },
+    {
+      "query_id": "BQ172",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11230.099999904633,
+      "tokens_per_second": 10.51145748926477,
+      "prompt_tokens_est": 1153
+    },
+    {
+      "query_id": "BQ104",
+      "intent": "comparison",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11207,
+      "tokens_per_second": 9.197267870426726,
+      "prompt_tokens_est": 787
+    },
+    {
+      "query_id": "BQ165",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11170.699999809265,
+      "tokens_per_second": 10.185604346270106,
+      "prompt_tokens_est": 1050
+    },
+    {
+      "query_id": "BQ169",
+      "intent": "more_context",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 11113,
+      "tokens_per_second": 7.203157864803611,
+      "prompt_tokens_est": 1072
+    },
+    {
+      "query_id": "BQ142",
+      "intent": "region_period_recommendation",
+      "bucket": "latency_tail_top26",
+      "total_latency_ms": 10943.699999809265,
+      "tokens_per_second": 6.78711534015023,
+      "prompt_tokens_est": 732
+    },
+    {
+      "query_id": "BQ089",
+      "intent": "source_rights_question",
+      "bucket": "low_decode_speed",
+      "total_latency_ms": 7783.800000190735,
+      "tokens_per_second": 3.671745915007344,
+      "prompt_tokens_est": 461
+    },
+    {
+      "query_id": "BQ138",
+      "intent": "region_period_recommendation",
+      "bucket": "low_decode_speed",
+      "total_latency_ms": 10501.599999904633,
+      "tokens_per_second": 6.234228885260501,
+      "prompt_tokens_est": 864
+    },
+    {
+      "query_id": "BQ227",
+      "intent": "source_rights_question",
+      "bucket": "low_decode_speed",
+      "total_latency_ms": 7064.299999713898,
+      "tokens_per_second": 6.260508711157487,
+      "prompt_tokens_est": 378
+    },
+    {
+      "query_id": "BQ162",
+      "intent": "more_context",
+      "bucket": "low_decode_speed",
+      "total_latency_ms": 10313.400000095367,
+      "tokens_per_second": 6.332453825857519,
+      "prompt_tokens_est": 919
+    },
+    {
+      "query_id": "BQ223",
+      "intent": "source_rights_question",
+      "bucket": "low_decode_speed",
+      "total_latency_ms": 7294.199999809265,
+      "tokens_per_second": 6.35581998916088,
+      "prompt_tokens_est": 394
+    },
+    {
+      "query_id": "BQ096",
+      "intent": "source_rights_question",
+      "bucket": "low_decode_speed",
+      "total_latency_ms": 7214.200000286102,
+      "tokens_per_second": 6.409799871695163,
+      "prompt_tokens_est": 387
+    },
+    {
+      "query_id": "BQ230",
+      "intent": "comparison",
+      "bucket": "low_decode_speed",
+      "total_latency_ms": 9216,
+      "tokens_per_second": 6.469037568736133,
+      "prompt_tokens_est": 726
+    },
+    {
+      "query_id": "BQ105",
+      "intent": "comparison",
+      "bucket": "low_decode_speed",
+      "total_latency_ms": 9084,
+      "tokens_per_second": 6.606890042472864,
+      "prompt_tokens_est": 602
+    },
+    {
+      "query_id": "BQ226",
+      "intent": "source_rights_question",
+      "bucket": "source_rights_hybrid_candidate",
+      "total_latency_ms": 8424.800000190735,
+      "tokens_per_second": 10.939286957040673,
+      "prompt_tokens_est": 597
+    },
+    {
+      "query_id": "BQ098",
+      "intent": "source_rights_question",
+      "bucket": "source_rights_hybrid_candidate",
+      "total_latency_ms": 7674.300000190735,
+      "tokens_per_second": 11.654814789415575,
+      "prompt_tokens_est": 478
+    },
+    {
+      "query_id": "BQ095",
+      "intent": "source_rights_question",
+      "bucket": "source_rights_hybrid_candidate",
+      "total_latency_ms": 7531,
+      "tokens_per_second": 10.231864453470758,
+      "prompt_tokens_est": 521
+    },
+    {
+      "query_id": "BQ224",
+      "intent": "source_rights_question",
+      "bucket": "source_rights_hybrid_candidate",
+      "total_latency_ms": 7266.199999809265,
+      "tokens_per_second": 8.436000633265625,
+      "prompt_tokens_est": 417
+    },
+    {
+      "query_id": "BQ094",
+      "intent": "source_rights_question",
+      "bucket": "source_rights_hybrid_candidate",
+      "total_latency_ms": 7161.900000095367,
+      "tokens_per_second": 8.515923001862859,
+      "prompt_tokens_est": 410
+    },
+    {
+      "query_id": "BQ100",
+      "intent": "source_rights_question",
+      "bucket": "source_rights_hybrid_candidate",
+      "total_latency_ms": 7034.099999904633,
+      "tokens_per_second": 8.521970705725698,
+      "prompt_tokens_est": 395
+    },
+    {
+      "query_id": "BQ274",
+      "intent": "first_earliest_claim",
+      "bucket": "refusal_hybrid_candidate",
+      "total_latency_ms": 790,
+      "tokens_per_second": 25.11931676060177,
+      "prompt_tokens_est": 113
+    },
+    {
+      "query_id": "BQ261",
+      "intent": "first_earliest_claim",
+      "bucket": "refusal_hybrid_candidate",
+      "total_latency_ms": 783.2000002861023,
+      "tokens_per_second": 25.297242588350453,
+      "prompt_tokens_est": 113
+    },
+    {
+      "query_id": "BQ295",
+      "intent": "no_evidence_refusal",
+      "bucket": "refusal_hybrid_candidate",
+      "total_latency_ms": 779.4000000953674,
+      "tokens_per_second": 25.720164596435875,
+      "prompt_tokens_est": 114
+    },
+    {
+      "query_id": "BQ291",
+      "intent": "no_evidence_refusal",
+      "bucket": "refusal_hybrid_candidate",
+      "total_latency_ms": 779.1999998092651,
+      "tokens_per_second": 25.81977796898295,
+      "prompt_tokens_est": 114
+    },
+    {
+      "query_id": "BQ264",
+      "intent": "first_earliest_claim",
+      "bucket": "refusal_hybrid_candidate",
+      "total_latency_ms": 778.3000001907349,
+      "tokens_per_second": 25.26528548555086,
+      "prompt_tokens_est": 113
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "bucket": "fast_control",
+      "total_latency_ms": 6840.400000095367,
+      "tokens_per_second": 21.980140750024102,
+      "prompt_tokens_est": 498
+    },
+    {
+      "query_id": "BQ157",
+      "intent": "method_process_question",
+      "bucket": "fast_control",
+      "total_latency_ms": 6886.200000286102,
+      "tokens_per_second": 17.63008868438912,
+      "prompt_tokens_est": 459
+    },
+    {
+      "query_id": "BQ206",
+      "intent": "archive_orientation",
+      "bucket": "fast_control",
+      "total_latency_ms": 6831.699999809265,
+      "tokens_per_second": 21.54724327671382,
+      "prompt_tokens_est": 497
+    },
+    {
+      "query_id": "BQ154",
+      "intent": "method_process_question",
+      "bucket": "fast_control",
+      "total_latency_ms": 6895.199999809265,
+      "tokens_per_second": 18.621313423936673,
+      "prompt_tokens_est": 459
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "bucket": "fast_control",
+      "total_latency_ms": 6829.199999809265,
+      "tokens_per_second": 21.61066381232072,
+      "prompt_tokens_est": 514
+    }
+  ]
+}
