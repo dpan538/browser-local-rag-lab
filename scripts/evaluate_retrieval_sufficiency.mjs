@@ -4,67 +4,36 @@ import path from "node:path";
 import { performance } from "node:perf_hooks";
 
 const repoRoot = path.resolve(import.meta.dirname, "..");
-const fixturePath = path.join(repoRoot, "fixtures/archive_fixture_v0.json");
-const goldDir = path.join(repoRoot, "fixtures/gold");
-const reportJsonPath = path.join(repoRoot, "reports/retrieval_sufficiency_v0.json");
-const reportCsvPath = path.join(repoRoot, "reports/retrieval_sufficiency_v0.csv");
-const reportMdPath = path.join(repoRoot, "reports/RETRIEVAL_SUFFICIENCY_v0.md");
+const defaultGoldDir = path.join(repoRoot, "fixtures/gold");
+const defaultReportJsonPath = path.join(repoRoot, "reports/retrieval_sufficiency_v0.json");
+const defaultReportCsvPath = path.join(repoRoot, "reports/retrieval_sufficiency_v0.csv");
+const defaultReportMdPath = path.join(repoRoot, "reports/RETRIEVAL_SUFFICIENCY_v0.md");
 
 const STOP = new Set("a an and are as at be by can did do does for from has have here how i if in is it me of on or should the this to using was what when where who why with without".split(" "));
-
-function readJson(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, "utf8"));
-}
 
 function readJsonl(filePath) {
   return fs.readFileSync(filePath, "utf8").trim().split("\n").filter(Boolean).map((line) => JSON.parse(line));
 }
 
-function methodRecord() {
-  return {
-    surfaceId: "LAB-METHOD-CONTEXT-V0",
-    sourceRecordId: "LAB-METHOD-CONTEXT-V0",
-    title: "Browser-local RAG lab method context",
-    creator: "browser-local-rag-lab",
-    dateText: "2026-06-07",
-    dateStart: 2026,
-    dateEnd: 2026,
-    region: "Research method",
-    objectType: "method_context",
-    medium: "research-only fixture record",
-    source: {
-      name: "browser-local-rag-lab method files",
-      url: "https://github.com/dpan538/browser-local-rag-lab",
-      accessDate: "2026-06-07"
-    },
-    rights: {
-      state: "research_fixture",
-      displayPolicy: "text_only",
-      label: "Research-only method fixture; not archive object evidence."
-    },
-    imageState: {
-      code: "IMG00",
-      displayMode: "no_image",
-      hasImageFrame: false,
-      modelImageEligible: false
-    },
-    topology: {
-      surfaceType: "method",
-      publicationRole: "method_context",
-      folderTitles: ["Research lab method"],
-      historicalNodeIds: [],
-      movementIds: []
-    },
-    methodContext: {
-      evidenceDefinition: "Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence.",
-      answerLanePolicy: "Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation.",
-      nonEvidenceRule: "AI output is experimental text and cannot become archive evidence.",
-      refusalRule: "Refuse or request narrower context when required fields or claim support are absent."
-    },
-    text: {
-      descriptionSummary: "The lab method defines evidence fields, answer lanes, non-evidence generated output, and refusal behavior."
-    }
+function parseArgs(args) {
+  const parsed = {
+    queriesPath: path.join(defaultGoldDir, "queries.jsonl"),
+    labelsPath: path.join(defaultGoldDir, "labels.jsonl"),
+    recordsPath: path.join(defaultGoldDir, "records.jsonl"),
+    reportJsonPath: defaultReportJsonPath,
+    reportCsvPath: defaultReportCsvPath,
+    reportMdPath: defaultReportMdPath
   };
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index];
+    if (arg === "--queries") parsed.queriesPath = path.resolve(args[++index]);
+    else if (arg === "--labels") parsed.labelsPath = path.resolve(args[++index]);
+    else if (arg === "--records") parsed.recordsPath = path.resolve(args[++index]);
+    else if (arg === "--json-out") parsed.reportJsonPath = path.resolve(args[++index]);
+    else if (arg === "--csv-out") parsed.reportCsvPath = path.resolve(args[++index]);
+    else if (arg === "--md-out") parsed.reportMdPath = path.resolve(args[++index]);
+  }
+  return parsed;
 }
 
 function terms(text) {
@@ -77,21 +46,21 @@ function terms(text) {
 
 function haystack(record) {
   return [
-    record.surfaceId,
-    record.sourceRecordId,
+    record.record_id,
+    record.object_id,
     record.title,
     record.creator,
-    record.dateText,
+    record.date_text,
     record.region,
-    record.objectType,
+    record.object_type,
     record.medium,
     record.source?.name,
     record.source?.url,
     record.rights?.state,
     record.rights?.label,
-    record.imageState?.code,
-    Object.values(record.methodContext || {}).join(" "),
-    record.topology?.folderTitles?.join(" "),
+    record.image_state?.code,
+    Object.values(record.method_context || {}).join(" "),
+    record.topology?.folder_titles?.join(" "),
     Object.values(record.text || {}).join(" ")
   ].join(" ").toLowerCase();
 }
@@ -99,7 +68,7 @@ function haystack(record) {
 function mentionedRecords(records, query) {
   const text = query.query_text.toLowerCase();
   return records.filter((record) => {
-    const id = record.surfaceId || "";
+    const id = record.record_id || "";
     const title = record.title.toLowerCase();
     return text.includes(id.toLowerCase())
       || text.includes(title)
@@ -122,7 +91,7 @@ function recordMatchesRegion(record, queryText) {
 
 function recordMatchesPeriod(record, queryText) {
   const text = queryText.toLowerCase();
-  const start = record.dateStart || Number.parseInt(record.dateText, 10);
+  const start = record.date_start || Number.parseInt(record.date_text, 10);
   if (!Number.isFinite(start)) return false;
   if (text.includes("nineteenth")) return start >= 1800 && start <= 1899;
   if (text.includes("twentieth")) return start >= 1900 && start <= 1999;
@@ -133,27 +102,27 @@ function recordMatchesPeriod(record, queryText) {
 function routeRecords(records, query, limit) {
   return records
     .filter((record) => recordMatchesRegion(record, query.query_text) && recordMatchesPeriod(record, query.query_text))
-    .filter((record) => record.title && record.source?.url && record.region && record.dateText)
-    .sort((a, b) => (a.dateStart || 9999) - (b.dateStart || 9999))
+    .filter((record) => record.title && record.source?.url && record.region && record.date_text)
+    .sort((a, b) => (a.date_start || 9999) - (b.date_start || 9999))
     .slice(0, limit);
 }
 
 function contextRecords(records, query, limit) {
-  const active = query.active_object_id ? records.find((record) => record.surfaceId === query.active_object_id) : null;
+  const active = query.active_object_id ? records.find((record) => record.record_id === query.active_object_id) : null;
   if (!active) return [];
   const related = records
-    .filter((record) => record.surfaceId !== active.surfaceId)
+    .filter((record) => record.record_id !== active.record_id)
     .map((record) => {
       const activeRegion = String(active.region || "").toLowerCase();
       const region = String(record.region || "").toLowerCase();
       const title = String(record.title || "").toLowerCase();
-      const type = String(record.objectType || "").toLowerCase();
+      const type = String(record.object_type || "").toLowerCase();
       let score = 0;
       if (region === activeRegion) score += 5;
       if (activeRegion.includes("russia") && (title.includes("russia") || title.includes("soviet"))) score += 4;
       if (type.includes("poster") || type.includes("advertising") || type.includes("print")) score += 2;
       if (record.source?.name && active.source?.name && record.source.name.split(" ")[0] === active.source.name.split(" ")[0]) score += 1;
-      const dateDistance = Math.abs((record.dateStart || 0) - (active.dateStart || 0));
+      const dateDistance = Math.abs((record.date_start || 0) - (active.date_start || 0));
       return { record, score, dateDistance };
     })
     .filter((item) => item.score > 0)
@@ -165,12 +134,12 @@ function contextRecords(records, query, limit) {
 
 function retrieve(records, query, topK) {
   if (query.intent === "no_evidence_refusal") return [];
-  if (query.intent === "method_process_question") return records.filter((record) => record.surfaceId === "LAB-METHOD-CONTEXT-V0").slice(0, topK);
+  if (query.intent === "method_process_question") return records.filter((record) => record.object_type === "method_context" || record.topology?.publication_role === "method_context").slice(0, topK);
   if (query.intent === "comparison") return mentionedRecords(records, query).slice(0, topK);
   if (query.intent === "region_period_recommendation") return routeRecords(records, query, topK);
   if (query.intent === "more_context") return contextRecords(records, query, topK);
   const queryTerms = terms(query.query_text);
-  const exact = query.active_object_id ? records.find((record) => record.surfaceId === query.active_object_id) : null;
+  const exact = query.active_object_id ? records.find((record) => record.record_id === query.active_object_id) : null;
   const ranked = records
     .map((record) => {
       const text = haystack(record);
@@ -179,16 +148,16 @@ function retrieve(records, query, topK) {
         if (text.includes(term)) score += 1;
         if (record.title.toLowerCase().includes(term)) score += 2;
       }
-      if (query.active_object_id && record.surfaceId === query.active_object_id) score += 100;
+      if (query.active_object_id && record.record_id === query.active_object_id) score += 100;
       if (query.intent === "source_rights_question" && record.rights?.label) score += 4;
       if (query.intent === "region_period_recommendation" && record.region) score += 2;
-      if (query.intent === "first_earliest_claim" && record.dateStart) score += Math.max(0, 4 - record.dateStart / 1000);
+      if (query.intent === "first_earliest_claim" && record.date_start) score += Math.max(0, 4 - record.date_start / 1000);
       return { record, score };
     })
     .filter((item) => item.score > 0)
-    .sort((a, b) => b.score - a.score || (a.record.dateStart || 9999) - (b.record.dateStart || 9999))
+    .sort((a, b) => b.score - a.score || (a.record.date_start || 9999) - (b.record.date_start || 9999))
     .map((item) => item.record);
-  if (exact && !ranked.some((record) => record.surfaceId === exact.surfaceId)) ranked.unshift(exact);
+  if (exact && !ranked.some((record) => record.record_id === exact.record_id)) ranked.unshift(exact);
   return ranked.slice(0, topK);
 }
 
@@ -196,15 +165,15 @@ function packetFieldsAvailable(record, variant) {
   return {
     record_id: true,
     title: Boolean(record.title),
-    date_text: Boolean(record.dateText),
+    date_text: Boolean(record.date_text),
     region: Boolean(record.region),
     source: variant.includeSourceRights && Boolean(record.source?.name && record.source?.url),
     rights: variant.includeSourceRights && Boolean(record.rights?.label || record.rights?.state),
-    image_state: Boolean(record.imageState?.code),
+    image_state: Boolean(record.image_state?.code),
     public_domain_status: variant.includeSourceRights && Boolean(record.rights?.label || record.rights?.state),
     reuse_permission: variant.includeSourceRights && Boolean(record.rights?.label || record.rights?.state),
-    topology: variant.includeTopology && Boolean(record.topology?.folderTitles?.length),
-    method_context: Boolean(record.methodContext)
+    topology: variant.includeTopology && Boolean(record.topology?.folder_titles?.length),
+    method_context: Boolean(record.method_context)
   };
 }
 
@@ -216,7 +185,7 @@ function hasRequiredFields(candidates, label, variant) {
 
 function coversGoldEvidence(candidates, label) {
   if (label.gold_evidence_ids.length === 0) return !label.sufficient_context;
-  const candidateIds = new Set(candidates.map((record) => record.surfaceId));
+  const candidateIds = new Set(candidates.map((record) => record.record_id));
   return label.gold_evidence_ids.every((id) => candidateIds.has(id));
 }
 
@@ -226,9 +195,9 @@ function estimateTokens(text) {
 
 function packetText(candidates, variant) {
   return JSON.stringify(candidates.map((record) => ({
-    id: record.surfaceId,
+    id: record.record_id,
     title: record.title,
-    date: record.dateText,
+    date: record.date_text,
     region: record.region,
     source: variant.includeSourceRights ? record.source : undefined,
     rights: variant.includeSourceRights ? record.rights : undefined,
@@ -236,12 +205,12 @@ function packetText(candidates, variant) {
       reusePermission: record.rights?.label || record.rights?.state ? "derived from source rights metadata; verify source before reuse" : undefined,
       publicDomainStatus: record.rights?.label || record.rights?.state ? "not globally determined by fixture unless source rights explicitly say so" : undefined
     } : undefined,
-    methodContext: record.methodContext,
-    imageState: record.imageState,
+    methodContext: record.method_context,
+    imageState: record.image_state,
     topology: variant.includeTopology ? record.topology : undefined,
     note: variant.noteMode === "raw"
-      ? record.text?.descriptionSummary
-      : [record.text?.sourceDescription, record.text?.sourceNotes, record.text?.uncertaintyNote].filter(Boolean).join(" ")
+      ? record.notes?.raw
+      : record.notes?.compact
   })));
 }
 
@@ -251,10 +220,10 @@ function toCsv(rows) {
   return [headers.join(","), ...rows.map((row) => headers.map((header) => escape(row[header])).join(","))].join("\n") + "\n";
 }
 
-const fixture = readJson(fixturePath);
-const records = [...fixture.records, methodRecord()];
-const queries = readJsonl(path.join(goldDir, "queries.jsonl"));
-const labels = new Map(readJsonl(path.join(goldDir, "labels.jsonl")).map((label) => [label.query_id, label]));
+const args = parseArgs(process.argv.slice(2));
+const records = readJsonl(args.recordsPath);
+const queries = readJsonl(args.queriesPath);
+const labels = new Map(readJsonl(args.labelsPath).map((label) => [label.query_id, label]));
 const variants = [
   { variant_id: "top1_compressed_topology_source_rights", topK: 1, noteMode: "compressed", includeTopology: true, includeSourceRights: true },
   { variant_id: "top3_compressed_topology_source_rights", topK: 3, noteMode: "compressed", includeTopology: true, includeSourceRights: true },
@@ -289,7 +258,7 @@ for (const query of queries) {
       retrieval_ms: Number((t1 - t0).toFixed(3)),
       prompt_tokens_est: estimateTokens(text),
       gold_evidence_ids: label.gold_evidence_ids.join("|"),
-      retrieved_ids: candidates.map((record) => record.surfaceId).join("|"),
+      retrieved_ids: candidates.map((record) => record.record_id).join("|"),
       sufficient_context: label.sufficient_context,
       refusal_expected: label.refusal_expected,
       refusal_gate_available: refusalGateAvailable,
@@ -328,9 +297,9 @@ const report = {
   rows
 };
 
-fs.writeFileSync(reportJsonPath, JSON.stringify(report, null, 2) + "\n");
-fs.writeFileSync(reportCsvPath, toCsv(rows));
-fs.writeFileSync(reportMdPath, `# Retrieval Sufficiency v0
+fs.writeFileSync(args.reportJsonPath, JSON.stringify(report, null, 2) + "\n");
+fs.writeFileSync(args.reportCsvPath, toCsv(rows));
+fs.writeFileSync(args.reportMdPath, `# Retrieval Sufficiency v0
 
 Generated: ${report.meta.generated_at}
 
@@ -357,6 +326,6 @@ ${summary.map((row) => `| ${row.variant_id} | ${row.runs} | ${row.sufficiency_ra
 
 console.log(JSON.stringify({
   rows: rows.length,
-  report: path.relative(repoRoot, reportMdPath),
+  report: path.relative(repoRoot, args.reportMdPath),
   summary
 }, null, 2));

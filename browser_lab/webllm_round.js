@@ -1,7 +1,14 @@
 import * as webllm from "https://esm.run/@mlc-ai/web-llm";
 
-const variantId = "top3_compressed_topology_source_rights";
-const roundId = "webllm_round_02";
+const params = new URLSearchParams(window.location.search);
+const config = {
+  queriesPath: params.get("queries") || "../fixtures/gold/queries.jsonl",
+  labelsPath: params.get("labels") || "../fixtures/gold/labels.jsonl",
+  recordsPath: params.get("records") || "../fixtures/gold/records.jsonl",
+  retrievalPath: params.get("retrieval") || "../reports/retrieval_sufficiency_v0.json",
+  variantId: params.get("variant") || "top3_compressed_topology_source_rights",
+  roundId: params.get("round") || "webllm_round_02"
+};
 
 const state = {
   queries: [],
@@ -47,6 +54,12 @@ function log(message) {
 
 function setStatus(message) {
   el.runtimeStatus.textContent = message;
+}
+
+function updateRoundChrome() {
+  document.title = `${config.roundId} WebLLM Qwen runtime`;
+  const titleNode = document.querySelector("[data-round-title]");
+  if (titleNode) titleNode.textContent = config.roundId.replaceAll("_", " ");
 }
 
 function ms(value) {
@@ -403,7 +416,7 @@ function buildPrompt(packet) {
     retrieved_ids: ["archive_orientation", "casual_archive_help"].includes(packet.label.intent)
       ? "hidden_for_orientation_lane"
       : packet.retrievedIds,
-    variant_id: variantId
+    variant_id: config.variantId
   };
 
   if (["archive_orientation", "casual_archive_help"].includes(packet.label.intent)) {
@@ -460,10 +473,10 @@ function updateMetrics(result = {}) {
 
 async function loadData() {
   const [queries, labels, records, retrieval] = await Promise.all([
-    fetchJsonl("../fixtures/gold/queries.jsonl"),
-    fetchJsonl("../fixtures/gold/labels.jsonl"),
-    fetchJsonl("../fixtures/gold/records.jsonl"),
-    fetchJson("../reports/retrieval_sufficiency_v0.json")
+    fetchJsonl(config.queriesPath),
+    fetchJsonl(config.labelsPath),
+    fetchJsonl(config.recordsPath),
+    fetchJson(config.retrievalPath)
   ]);
 
   state.queries = queries;
@@ -471,7 +484,7 @@ async function loadData() {
   state.recordsById = new Map(records.map((record) => [record.record_id, record]));
   state.retrievalByQuery = new Map(
     retrieval.rows
-      .filter((row) => row.variant_id === variantId)
+      .filter((row) => row.variant_id === config.variantId)
       .map((row) => [row.query_id, row])
   );
 
@@ -483,8 +496,9 @@ async function loadData() {
     el.querySelect.append(option);
   }
 
+  el.runAllButton.textContent = `Run all ${queries.length}`;
   updatePromptPreview(buildPacket(selectedQueryId()));
-  log(`Loaded ${queries.length} benchmark queries and ${records.length} records.`);
+  log(`Loaded ${queries.length} benchmark queries and ${records.length} records for ${config.roundId}.`);
 }
 
 async function probeWebGPU() {
@@ -621,7 +635,7 @@ async function runQuery(queryId) {
     query_id: queryId,
     intent: packet.label.intent,
     lane: packet.label.gold_lane,
-    variant_id: variantId,
+    variant_id: config.variantId,
     producer: "webllm_qwen3_5_0_8b_research_runtime",
     generation_status: "running",
     retrieved_ids: packet.retrievedIds.join("|"),
@@ -671,14 +685,18 @@ async function runQuery(queryId) {
 function downloadablePayload() {
   return {
     meta: {
-      round_id: roundId,
+      round_id: config.roundId,
       generated_at: new Date().toISOString(),
       research_only: true,
       note: "Browser-local WebLLM custom-model run. AI output is experimental and not archive evidence.",
       model_id: el.modelId.value.trim(),
       model_url: el.modelUrl.value.trim(),
       model_lib_url: el.modelLibUrl.value.trim(),
-      variant_id: variantId,
+      variant_id: config.variantId,
+      queries_path: config.queriesPath,
+      labels_path: config.labelsPath,
+      records_path: config.recordsPath,
+      retrieval_path: config.retrievalPath,
       user_agent: navigator.userAgent,
       webgpu: state.webgpu,
       cache_state: el.cacheState.value,
@@ -702,7 +720,7 @@ function downloadResults() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${roundId}_${new Date().toISOString().replaceAll(":", "-")}.json`;
+  link.download = `${config.roundId}_${new Date().toISOString().replaceAll(":", "-")}.json`;
   link.click();
   URL.revokeObjectURL(url);
 }
@@ -750,6 +768,8 @@ el.runAllButton.addEventListener("click", async () => {
 });
 
 el.downloadButton.addEventListener("click", downloadResults);
+
+updateRoundChrome();
 
 loadData().catch((error) => {
   setStatus("data error");

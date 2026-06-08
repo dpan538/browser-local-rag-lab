@@ -11,7 +11,7 @@
       <header class="topbar">
         <div>
           <p class="eyebrow">research-only webgpu runtime</p>
-          <h1>WebLLM Qwen execution round</h1>
+          <h1 data-round-title>webllm round</h1>
         </div>
         <div class="runtime-pill" id="runtimeStatus">not loaded</div>
       </header>
@@ -55,7 +55,7 @@
           </select>
         </label>
         <button id="runOneButton" type="button">Run selected</button>
-        <button id="runAllButton" type="button">Run all 30</button>
+        <button id="runAllButton" type="button">Run all</button>
         <button id="downloadButton" type="button">Download results</button>
       </section>
 
@@ -79,6 +79,6 @@
       </section>
       <textarea id="exportBuffer" hidden aria-hidden="true"></textarea>
     </main>
-    <script type="module" src="./webllm_round.js?v=9"></script>
+    <script type="module" src="./webllm_round.js?v=10"></script>
   </body>
 </html>

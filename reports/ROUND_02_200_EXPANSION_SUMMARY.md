@@ -1,6 +1,6 @@
 # Round 02 200-Query Expansion Summary
 
-Generated: 2026-06-07T07:54:50.817Z
+Generated: 2026-06-08T05:48:30.577Z
 
 This expansion creates a candidate 200-query fixture for the research lab. It
 does not overwrite the 30-query gold baseline and does not add new evidence

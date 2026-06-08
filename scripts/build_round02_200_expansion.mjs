@@ -135,6 +135,28 @@ function pairCycle(items) {
   };
 }
 
+function routePairCycle(items) {
+  const byRegion = new Map();
+  for (const item of items) {
+    const key = String(item.region || "unknown").toLowerCase();
+    const group = byRegion.get(key) || [];
+    group.push(item);
+    byRegion.set(key, group);
+  }
+  const groups = [...byRegion.values()].filter((group) => group.length >= 2);
+  let groupIndex = 0;
+  let itemIndex = 0;
+  return () => {
+    if (groups.length === 0) return pairCycle(items)();
+    const group = groups[groupIndex % groups.length];
+    const first = group[itemIndex % group.length];
+    const second = group[(itemIndex + 1) % group.length];
+    itemIndex += 1;
+    if (itemIndex % group.length === 0) groupIndex += 1;
+    return first.record_id === second.record_id ? [first, group[(itemIndex + 2) % group.length]] : [first, second];
+  };
+}
+
 function addExpansionRow(state, intent, queryText, evidenceIds, options = {}) {
   const idNumber = state.nextId;
   state.nextId += 1;
@@ -159,6 +181,7 @@ function buildExpansion() {
   const chronologyRefusalRecords = [];
   const nextObject = cycle(objectRecords);
   const nextPair = pairCycle(objectRecords);
+  const nextRoutePair = routePairCycle(objectRecords);
   const nextMethod = cycle(methodRecords);
   const state = {
     nextId: 31,
@@ -191,7 +214,7 @@ function buildExpansion() {
     addExpansionRow(state, "comparison", `Compare ${a.record_id} and ${b.record_id} as graphic communication evidence.`, [a.record_id, b.record_id]);
   }
   for (let index = 0; index < need("region_period_recommendation"); index += 1) {
-    const [a, b] = nextPair();
+    const [a, b] = nextRoutePair();
     addExpansionRow(state, "region_period_recommendation", `Recommend a research route through ${a.region} and nearby period evidence.`, [a.record_id, b.record_id]);
   }
   for (let index = 0; index < need("method_process_question"); index += 1) {

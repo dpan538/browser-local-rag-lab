@@ -149,7 +149,7 @@ export function intentHintFindings(queryText, labeledIntent) {
     current_object_explanation: ["what is happening", "explain", "sources", "surf-"],
     first_earliest_claim: ["first", "earliest", "oldest", "original"],
     method_process_question: ["evidence", "assistant", "general chatbot", "decide"],
-    more_context: ["more context", "related items", "after this", "around this"],
+    more_context: ["more context", "related items", "after this", "around this", "related context", "inspect around", "read after"],
     no_evidence_refusal: ["fictional", "absent", "upgrade the rights", "directly influenced"],
     region_period_recommendation: ["route", "recommend", "region", "century"],
     source_rights_question: ["rights", "reuse", "reused", "source archive", "public domain"]

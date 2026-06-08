@@ -12,6 +12,28 @@ const defaultAnswersPath = path.join(repoRoot, "reports/webllm_round_02_answers.
 const defaultJsonOutPath = path.join(repoRoot, "reports/quality_review_sheet_round_02.json");
 const defaultMdOutPath = path.join(repoRoot, "reports/QUALITY_REVIEW_SHEET_ROUND_02.md");
 
+function parseArgs(args) {
+  const parsed = {
+    queriesPath: defaultQueriesPath,
+    labelsPath: defaultLabelsPath,
+    recordsPath: defaultRecordsPath,
+    answersPath: defaultAnswersPath,
+    jsonOutPath: defaultJsonOutPath,
+    mdOutPath: defaultMdOutPath
+  };
+
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index];
+    if (arg === "--queries") parsed.queriesPath = path.resolve(args[++index]);
+    else if (arg === "--labels") parsed.labelsPath = path.resolve(args[++index]);
+    else if (arg === "--records") parsed.recordsPath = path.resolve(args[++index]);
+    else if (arg === "--answers") parsed.answersPath = path.resolve(args[++index]);
+    else if (arg === "--json-out") parsed.jsonOutPath = path.resolve(args[++index]);
+    else if (arg === "--md-out") parsed.mdOutPath = path.resolve(args[++index]);
+  }
+  return parsed;
+}
+
 function readJsonl(filePath) {
   const text = fs.readFileSync(filePath, "utf8").trim();
   if (!text) return [];
@@ -215,7 +237,6 @@ export function writeReviewSheet(options = {}) {
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
-  const answersPath = process.argv.slice(2).find((arg) => !arg.startsWith("-")) || defaultAnswersPath;
-  const summary = writeReviewSheet({ answersPath });
+  const summary = writeReviewSheet(parseArgs(process.argv.slice(2)));
   console.log(JSON.stringify(summary, null, 2));
 }

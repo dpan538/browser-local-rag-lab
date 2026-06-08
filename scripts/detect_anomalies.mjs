@@ -31,12 +31,19 @@ function parseArgs(args) {
     labelsPath: defaultLabelsPath,
     recordsPath: defaultRecordsPath,
     answersPath: defaultAnswersPath,
-    reviewFixturePath: defaultReviewFixturePath
+    reviewFixturePath: defaultReviewFixturePath,
+    jsonOutPath: defaultJsonOutPath,
+    mdOutPath: defaultMdOutPath
   };
   for (let index = 0; index < args.length; index += 1) {
     const arg = args[index];
+    if (arg === "--queries") parsed.queriesPath = path.resolve(args[++index]);
+    else if (arg === "--labels") parsed.labelsPath = path.resolve(args[++index]);
+    else if (arg === "--records") parsed.recordsPath = path.resolve(args[++index]);
     if (arg === "--answers") parsed.answersPath = path.resolve(args[++index]);
     else if (arg === "--review-fixture") parsed.reviewFixturePath = path.resolve(args[++index]);
+    else if (arg === "--json-out") parsed.jsonOutPath = path.resolve(args[++index]);
+    else if (arg === "--md-out") parsed.mdOutPath = path.resolve(args[++index]);
   }
   return parsed;
 }
@@ -226,10 +233,10 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
   const args = parseArgs(process.argv.slice(2));
   const strict = process.argv.includes("--strict");
   const result = detectAnomalies(args);
-  fs.writeFileSync(defaultJsonOutPath, JSON.stringify(result, null, 2) + "\n");
-  fs.writeFileSync(defaultMdOutPath, markdown(result));
+  fs.writeFileSync(args.jsonOutPath, JSON.stringify(result, null, 2) + "\n");
+  fs.writeFileSync(args.mdOutPath, markdown(result));
   console.log(JSON.stringify({
-    report: path.relative(repoRoot, defaultMdOutPath),
+    report: path.relative(repoRoot, args.mdOutPath),
     anomaly_count: result.anomaly_count,
     fail_count: result.fail_count,
     warn_count: result.warn_count,

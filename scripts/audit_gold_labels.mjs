@@ -19,10 +19,30 @@ import {
 } from "./audit_rules.mjs";
 
 const repoRoot = path.resolve(import.meta.dirname, "..");
-const goldDir = path.join(repoRoot, "fixtures/gold");
-const reportPath = path.join(repoRoot, "reports/GOLD_LABEL_AUDIT_v0.md");
-const jsonPath = path.join(repoRoot, "reports/gold_label_audit_v0.json");
-const strictMode = process.argv.includes("--strict");
+const defaultGoldDir = path.join(repoRoot, "fixtures/gold");
+const defaultReportPath = path.join(repoRoot, "reports/GOLD_LABEL_AUDIT_v0.md");
+const defaultJsonPath = path.join(repoRoot, "reports/gold_label_audit_v0.json");
+
+function parseArgs(args) {
+  const parsed = {
+    queriesPath: path.join(defaultGoldDir, "queries.jsonl"),
+    labelsPath: path.join(defaultGoldDir, "labels.jsonl"),
+    recordsPath: path.join(defaultGoldDir, "records.jsonl"),
+    reportPath: defaultReportPath,
+    jsonPath: defaultJsonPath,
+    strictMode: args.includes("--strict")
+  };
+
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index];
+    if (arg === "--queries") parsed.queriesPath = path.resolve(args[++index]);
+    else if (arg === "--labels") parsed.labelsPath = path.resolve(args[++index]);
+    else if (arg === "--records") parsed.recordsPath = path.resolve(args[++index]);
+    else if (arg === "--report") parsed.reportPath = path.resolve(args[++index]);
+    else if (arg === "--json") parsed.jsonPath = path.resolve(args[++index]);
+  }
+  return parsed;
+}
 
 function readJsonl(filePath) {
   const text = fs.readFileSync(filePath, "utf8").trim();
@@ -361,52 +381,70 @@ function detectAnomalies(labels, recordsById) {
   return anomalies;
 }
 
-const records = readJsonl(path.join(goldDir, "records.jsonl"));
-const queries = new Map(readJsonl(path.join(goldDir, "queries.jsonl")).map((query) => [query.query_id, query]));
-const labels = readJsonl(path.join(goldDir, "labels.jsonl"));
-const recordsByRecordId = new Map(records.map((record) => [record.record_id, record]));
-const recordsById = new Set(records.map((record) => record.record_id));
-const audits = labels.map((label) => classify(label, queries.get(label.query_id), recordsById, recordsByRecordId));
-const anomalies = detectAnomalies(labels, recordsById);
-const rule_config_findings = stableRuleConfigFindings();
+function runAudit({
+  queriesPath,
+  labelsPath,
+  recordsPath,
+  reportPath,
+  jsonPath
+}) {
+  const records = readJsonl(recordsPath);
+  const queries = new Map(readJsonl(queriesPath).map((query) => [query.query_id, query]));
+  const labels = readJsonl(labelsPath);
+  const recordsByRecordId = new Map(records.map((record) => [record.record_id, record]));
+  const recordsById = new Set(records.map((record) => record.record_id));
+  const audits = labels.map((label) => classify(label, queries.get(label.query_id), recordsById, recordsByRecordId));
+  const anomalies = detectAnomalies(labels, recordsById);
+  const rule_config_findings = stableRuleConfigFindings();
 
-const byIntent = audits.reduce((acc, audit) => {
-  acc[audit.intent] ||= { total: 0, stable_by_rule: 0, needs_human_review: 0, fails: 0, warnings: 0 };
-  acc[audit.intent].total += 1;
-  if (audit.stable_by_rule) acc[audit.intent].stable_by_rule += 1;
-  if (audit.needs_human_review) acc[audit.intent].needs_human_review += 1;
-  acc[audit.intent].fails += audit.fail_count;
-  acc[audit.intent].warnings += audit.warn_count;
-  return acc;
-}, {});
+  const byIntent = audits.reduce((acc, audit) => {
+    acc[audit.intent] ||= { total: 0, stable_by_rule: 0, needs_human_review: 0, fails: 0, warnings: 0 };
+    acc[audit.intent].total += 1;
+    if (audit.stable_by_rule) acc[audit.intent].stable_by_rule += 1;
+    if (audit.needs_human_review) acc[audit.intent].needs_human_review += 1;
+    acc[audit.intent].fails += audit.fail_count;
+    acc[audit.intent].warnings += audit.warn_count;
+    return acc;
+  }, {});
 
-const summary = {
-  label_count: audits.length,
-  stable_by_rule: audits.filter((audit) => audit.stable_by_rule).length,
-  needs_human_review: audits.filter((audit) => audit.needs_human_review).length,
-  fail_count: audits.reduce((sum, audit) => sum + audit.fail_count, 0),
-  warn_count: audits.reduce((sum, audit) => sum + audit.warn_count, 0),
-  anomaly_count: anomalies.length,
-  anomaly_fail_count: anomalies.filter((anomaly) => anomaly.severity === "fail").length,
-  rule_config_fail_count: rule_config_findings.filter((finding) => finding.severity === "fail").length,
-  by_intent: Object.fromEntries(Object.entries(byIntent).sort(([a], [b]) => a.localeCompare(b)))
-};
+  const summary = {
+    label_count: audits.length,
+    stable_by_rule: audits.filter((audit) => audit.stable_by_rule).length,
+    needs_human_review: audits.filter((audit) => audit.needs_human_review).length,
+    fail_count: audits.reduce((sum, audit) => sum + audit.fail_count, 0),
+    warn_count: audits.reduce((sum, audit) => sum + audit.warn_count, 0),
+    anomaly_count: anomalies.length,
+    anomaly_fail_count: anomalies.filter((anomaly) => anomaly.severity === "fail").length,
+    rule_config_fail_count: rule_config_findings.filter((finding) => finding.severity === "fail").length,
+    by_intent: Object.fromEntries(Object.entries(byIntent).sort(([a], [b]) => a.localeCompare(b)))
+  };
 
-fs.writeFileSync(jsonPath, JSON.stringify({ generated_at: new Date().toISOString(), summary, audits, anomalies, rule_config_findings }, null, 2) + "\n");
+  fs.writeFileSync(jsonPath, JSON.stringify({
+    generated_at: new Date().toISOString(),
+    inputs: {
+      queries_path: path.relative(repoRoot, queriesPath),
+      labels_path: path.relative(repoRoot, labelsPath),
+      records_path: path.relative(repoRoot, recordsPath)
+    },
+    summary,
+    audits,
+    anomalies,
+    rule_config_findings
+  }, null, 2) + "\n");
 
-const findingRows = audits
-  .filter((audit) => audit.findings.length > 0 || audit.needs_human_review)
-  .map((audit) => `| ${audit.query_id} | ${audit.intent} | ${audit.gold_lane} | ${audit.final_state} | ${audit.findings.map((finding) => `${finding.severity}:${finding.code}`).join("; ") || "method review"} |`);
-const reviewQueueRows = findingRows.length === 0 ? "| none | none | none | none | none |" : findingRows.join("\n");
+  const findingRows = audits
+    .filter((audit) => audit.findings.length > 0 || audit.needs_human_review)
+    .map((audit) => `| ${audit.query_id} | ${audit.intent} | ${audit.gold_lane} | ${audit.final_state} | ${audit.findings.map((finding) => `${finding.severity}:${finding.code}`).join("; ") || "method review"} |`);
+  const reviewQueueRows = findingRows.length === 0 ? "| none | none | none | none | none |" : findingRows.join("\n");
 
-const anomalyRows = anomalies.length === 0
-  ? "| none | none | none |"
-  : anomalies.map((anomaly) => `| ${anomaly.severity} | ${anomaly.code} | ${anomaly.detail} |`).join("\n");
-const ruleConfigRows = rule_config_findings.length === 0
-  ? "| none | none | none |"
-  : rule_config_findings.map((finding) => `| ${finding.severity} | ${finding.code} | ${finding.detail} |`).join("\n");
+  const anomalyRows = anomalies.length === 0
+    ? "| none | none | none |"
+    : anomalies.map((anomaly) => `| ${anomaly.severity} | ${anomaly.code} | ${anomaly.detail} |`).join("\n");
+  const ruleConfigRows = rule_config_findings.length === 0
+    ? "| none | none | none |"
+    : rule_config_findings.map((finding) => `| ${finding.severity} | ${finding.code} | ${finding.detail} |`).join("\n");
 
-fs.writeFileSync(reportPath, `# Gold Label Audit v0
+  fs.writeFileSync(reportPath, `# Gold Label Audit v0
 
 Generated: ${new Date().toISOString()}
 
@@ -459,7 +497,12 @@ ${ruleConfigRows}
   evidence.
 `);
 
-console.log(JSON.stringify({ summary, report: path.relative(repoRoot, reportPath), strict: strictMode }, null, 2));
-if (strictMode && (summary.fail_count > 0 || summary.anomaly_fail_count > 0 || summary.rule_config_fail_count > 0)) {
+  return { summary, reportPath };
+}
+
+const args = parseArgs(process.argv.slice(2));
+const result = runAudit(args);
+console.log(JSON.stringify({ summary: result.summary, report: path.relative(repoRoot, args.reportPath), strict: args.strictMode }, null, 2));
+if (args.strictMode && (result.summary.fail_count > 0 || result.summary.anomaly_fail_count > 0 || result.summary.rule_config_fail_count > 0)) {
   process.exitCode = 1;
 }

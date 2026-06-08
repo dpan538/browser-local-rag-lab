@@ -4,14 +4,43 @@ import path from "node:path";
 import childProcess from "node:child_process";
 
 const repoRoot = path.resolve(import.meta.dirname, "..");
-const labelsPath = path.join(repoRoot, "fixtures/gold/labels.jsonl");
-const queriesPath = path.join(repoRoot, "fixtures/gold/queries.jsonl");
-const recordsPath = path.join(repoRoot, "fixtures/gold/records.jsonl");
-const retrievalPath = path.join(repoRoot, "reports/retrieval_sufficiency_v0.json");
-const outputJsonPath = path.join(repoRoot, "reports/round02_preflight.json");
-const outputMdPath = path.join(repoRoot, "reports/ROUND_02_DESIGN.md");
-const variantId = "top3_compressed_topology_source_rights";
-const tokenBudget = 3800;
+const defaultLabelsPath = path.join(repoRoot, "fixtures/gold/labels.jsonl");
+const defaultQueriesPath = path.join(repoRoot, "fixtures/gold/queries.jsonl");
+const defaultRecordsPath = path.join(repoRoot, "fixtures/gold/records.jsonl");
+const defaultRetrievalPath = path.join(repoRoot, "reports/retrieval_sufficiency_v0.json");
+const defaultOutputJsonPath = path.join(repoRoot, "reports/round02_preflight.json");
+const defaultOutputMdPath = path.join(repoRoot, "reports/ROUND_02_DESIGN.md");
+const defaultVariantId = "top3_compressed_topology_source_rights";
+const defaultTokenBudget = 3800;
+const defaultRoundId = "round02";
+
+function parseArgs(args) {
+  const parsed = {
+    labelsPath: defaultLabelsPath,
+    queriesPath: defaultQueriesPath,
+    recordsPath: defaultRecordsPath,
+    retrievalPath: defaultRetrievalPath,
+    outputJsonPath: defaultOutputJsonPath,
+    outputMdPath: defaultOutputMdPath,
+    variantId: defaultVariantId,
+    tokenBudget: defaultTokenBudget,
+    roundId: defaultRoundId
+  };
+
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index];
+    if (arg === "--labels") parsed.labelsPath = path.resolve(args[++index]);
+    else if (arg === "--queries") parsed.queriesPath = path.resolve(args[++index]);
+    else if (arg === "--records") parsed.recordsPath = path.resolve(args[++index]);
+    else if (arg === "--retrieval") parsed.retrievalPath = path.resolve(args[++index]);
+    else if (arg === "--json-out") parsed.outputJsonPath = path.resolve(args[++index]);
+    else if (arg === "--md-out") parsed.outputMdPath = path.resolve(args[++index]);
+    else if (arg === "--variant") parsed.variantId = args[++index];
+    else if (arg === "--token-budget") parsed.tokenBudget = Number(args[++index]);
+    else if (arg === "--round-id") parsed.roundId = args[++index];
+  }
+  return parsed;
+}
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -212,6 +241,17 @@ function auditPrompt(row, prompt) {
 }
 
 function main() {
+  const {
+    labelsPath,
+    queriesPath,
+    recordsPath,
+    retrievalPath,
+    outputJsonPath,
+    outputMdPath,
+    variantId,
+    tokenBudget,
+    roundId
+  } = parseArgs(process.argv.slice(2));
   const labels = readJsonl(labelsPath);
   const queries = new Map(readJsonl(queriesPath).map((query) => [query.query_id, query]));
   const records = new Map(readJsonl(recordsPath).map((record) => [record.record_id, record]));
@@ -252,6 +292,8 @@ function main() {
   const auditFailRows = rows.filter((row) => row.prompt_audit_status === "fail");
   const retryRows = rows.filter((row) => row.retry_required_from_round01);
   const summary = {
+    round_id: roundId,
+    variant_id: variantId,
     total: rows.length,
     token_budget: tokenBudget,
     token_budget_fail_count: failRows.length,
@@ -263,15 +305,14 @@ function main() {
 
   const report = {
     _provenance: {
-      step: "round02_preflight",
+      step: `${roundId}_preflight`,
       timestamp: new Date().toISOString(),
       commit: gitCommit(),
       input_paths: [
-        "fixtures/gold/queries.jsonl",
-        "fixtures/gold/labels.jsonl",
-        "fixtures/gold/records.jsonl",
-        "reports/retrieval_sufficiency_v0.json",
-        "reports/WEBLLM_ROUND_01.md"
+        path.relative(repoRoot, queriesPath),
+        path.relative(repoRoot, labelsPath),
+        path.relative(repoRoot, recordsPath),
+        path.relative(repoRoot, retrievalPath)
       ],
       packet_variant: variantId,
       token_budget: tokenBudget
@@ -282,7 +323,8 @@ function main() {
   fs.writeFileSync(outputJsonPath, `${JSON.stringify(report, null, 2)}\n`);
 
   const rowMd = rows.map((row) => `| ${row.query_id} | ${row.intent} | ${row.prompt_mode} | ${row.prompt_tokens_est} | ${row.token_budget_status} | ${row.prompt_audit_status} | ${row.retry_required_from_round01 ? "yes" : "no"} |`).join("\n");
-  fs.writeFileSync(outputMdPath, `# Round 02 Design
+  const roundTitle = String(roundId).replaceAll("_", " ").toUpperCase();
+  fs.writeFileSync(outputMdPath, `# ${roundTitle} Design
 
 Generated: ${report._provenance.timestamp}
 

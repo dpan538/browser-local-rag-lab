@@ -21,7 +21,11 @@ function validDateText(value) {
   if (!hasValue(value)) return false;
   const text = String(value).trim().toLowerCase();
   return /^(\d{4})(-\d{2})?(-\d{2})?\.?$/.test(text)
+    || /^\d{4}-\d{4}$/.test(text)
+    || /^\d{4}\/\d{2}$/.test(text)
     || /^c\.?\s?\d{4}\.?$/.test(text)
+    || /^ca\.?\s+\d{4}$/.test(text)
+    || /^ca\.?\s+\d{4};\s+\d{4}s;\s+\d{4}s$/.test(text)
     || /^circa\s+\d{4}\.?$/.test(text)
     || /^\[between\s+\d{4}\s+and\s+\d{4}\]$/.test(text)
     || /^\[ca\.?\s+\d{4}\]$/.test(text);
