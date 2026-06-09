@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-06-09T14:17:55.896Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency_pilot50_v31_evidence_prune_tag_injection_answers.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl"
+  },
+  "gate": {
+    "pass": false,
+    "evaluated_answer_count": 36,
+    "suspicious_answer_count": 1,
+    "suspicious_answer_ratio": 0.0278,
+    "suspicious_ratio_threshold": 0.1,
+    "date_hallucination_count": 2
+  },
+  "findings": [
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "date_issue_count": 2,
+      "entity_issue_count": 0,
+      "suspicious_items": [
+        {
+          "type": "date_not_in_evidence",
+          "value": "1970"
+        },
+        {
+          "type": "date_not_in_evidence",
+          "value": "2026"
+        }
+      ],
+      "answer_body": "SURF-COM1970R007 is a 1970 image of a Jewish school advertisement in Minsk, while SURF-CRG2026R0235 is a 2026 image of ApollonMagazine."
+    }
+  ]
+}

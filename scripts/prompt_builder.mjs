@@ -114,9 +114,24 @@ function reorderEvidence(records = [], label = {}) {
   ];
 }
 
-function summaryFieldsForV31(label = {}) {
+function summaryFieldsForV31(label = {}, records = []) {
   const required = fieldsForLabel(label);
-  return [...new Set(["record_id", "title", ...required])];
+  const safeRequired = required.filter((field) => {
+    return !["record_id", "source", "rights", "image_state", "reuse_permission", "public_domain_status"].includes(field);
+  });
+  const contextualFields = [];
+  if (records.some((record) => record?.date_text)) contextualFields.push("date_text");
+  if (records.some((record) => record?.region)) contextualFields.push("region");
+  if (["archive_orientation", "casual_archive_help", "more_context"].includes(label.intent)) contextualFields.push("topology");
+  if (label.intent === "method_process_question") contextualFields.push("method_context");
+  if (label.intent === "first_earliest_claim") contextualFields.push("first_or_earliest_claim");
+  return [...new Set(["title", ...safeRequired, ...contextualFields])];
+}
+
+function modelEvidenceForV31(records = [], label = {}) {
+  const reordered = reorderEvidence(records, label);
+  if (label.intent === "current_object_explanation") return reordered.slice(0, 1);
+  return reordered;
 }
 
 function valueOnlyRecordLine(record, fields, options = {}) {
@@ -291,16 +306,18 @@ function buildOrientationPrompt(packet, options = {}) {
 function buildAnswerablePrompt(packet, options = {}) {
   const required = fieldsForLabel(packet.label);
   if (isV31EvidencePruneTagInjection(options)) {
-    const records = reorderEvidence(packet.evidence, packet.label);
-    const fields = summaryFieldsForV31(packet.label);
+    const records = modelEvidenceForV31(packet.evidence, packet.label);
+    const fields = summaryFieldsForV31(packet.label, records);
     return [
       "You are a cautious archive assistant in a browser-local research experiment.",
       "Generated text is not archive evidence.",
       "Do not output hidden reasoning, chain-of-thought, or <think> tags.",
       "Use only the evidence values below. If the values cannot support the query, keep the answer narrow.",
+      "Do not infer dates from record IDs, object IDs, source page numbers, or URL numbers. Use date_text values only for dates.",
       `Question: ${packet.query.query_text}`,
       `Intent: ${packet.label.intent}`,
       lengthControlLine(packet.label),
+      packet.label.intent === "current_object_explanation" ? "For this intent, describe Record 1 only; related records are not the current object." : "",
       "",
       `Evidence value order: ${fields.join(" | ")}`,
       "Primary record is listed first when a primary evidence id is available.",
@@ -428,7 +445,12 @@ export function auditPromptText({ prompt, label }) {
       if (!prompt.includes(token)) failures.push(`source_rights_missing_${token.replace(":", "").toLowerCase()}_tag`);
     }
   }
-  if (!label.refusal_expected && mode !== "source_rights_strict" && !prompt.includes("EVIDENCE TAGS:")) {
+  if (
+    !label.refusal_expected &&
+    mode !== "source_rights_strict" &&
+    !prompt.includes("EVIDENCE TAGS:") &&
+    !prompt.includes("browser lab appends exact tags")
+  ) {
     failures.push("answerable_prompt_missing_evidence_tags");
   }
   if (prompt.includes("???")) failures.push("prompt_contains_placeholder");

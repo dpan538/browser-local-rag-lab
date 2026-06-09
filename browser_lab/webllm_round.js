@@ -1,6 +1,6 @@
 import * as webllm from "https://esm.run/@mlc-ai/web-llm";
 import { generateDeterministicAnswer } from "../scripts/deterministic_responder.mjs?v=2";
-import { buildPrompt as buildContractPrompt, finalizeAnswerText } from "../scripts/prompt_builder.mjs?v=5";
+import { buildPrompt as buildContractPrompt, finalizeAnswerText } from "../scripts/prompt_builder.mjs?v=6";
 
 const params = new URLSearchParams(window.location.search);
 const config = {

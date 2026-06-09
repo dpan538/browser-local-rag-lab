@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-06-09T14:17:56.175Z",
+  "inputs": {
+    "answersPath": "reports/webllm_round_03_latency_pilot50_v31_evidence_prune_tag_injection_answers.jsonl",
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl"
+  },
+  "group_count": 31,
+  "repeated_evidence_group_count": 4,
+  "cacheable_candidate_count": 0,
+  "candidates": [
+    {
+      "evidence_ids": [
+        "SURF-GAX1970R001"
+      ],
+      "query_count": 3,
+      "intents": [
+        "current_object_explanation"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 3,
+      "avg_query_similarity": 0.1429,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ05",
+        "BQ06",
+        "BQ07"
+      ],
+      "answer_preview": "The document records the 1830 trade card group, 1830-1922, located in London."
+    },
+    {
+      "evidence_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0235"
+      ],
+      "query_count": 2,
+      "intents": [
+        "comparison"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ12",
+        "BQ13"
+      ],
+      "answer_preview": "SURF-COM1970R007 is a 1970 image of a Jewish school advertisement in Minsk, while SURF-CRG2026R0235 is a 2026 image of ApollonMagazine."
+    },
+    {
+      "evidence_ids": [
+        "LAB-METHOD-CONTEXT-V0"
+      ],
+      "query_count": 2,
+      "intents": [
+        "method_process_question"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0.0625,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ23",
+        "BQ24"
+      ],
+      "answer_preview": "The archive uses source_rights to determine what counts as evidence."
+    },
+    {
+      "evidence_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0071",
+        "SURF-CRG2026R0274"
+      ],
+      "query_count": 2,
+      "intents": [
+        "more_context"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0.0714,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ25",
+        "BQ26"
+      ],
+      "answer_preview": "The provided evidence indicates the object's period spans from 1897 to 1912, with the primary record dated 1897 and the secondary records referencing 1877 and 2012."
+    }
+  ]
+}

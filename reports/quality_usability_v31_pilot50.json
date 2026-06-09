@@ -1,0 +1,477 @@
+{
+  "generated_at": "2026-06-09T14:17:56.017Z",
+  "inputs": {
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl",
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "answersPath": "reports/webllm_round_03_latency_pilot50_v31_evidence_prune_tag_injection_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 36,
+    "too_short_count": 0,
+    "too_short_ratio": 0,
+    "too_short_ratio_threshold": 0.05,
+    "off_topic_count": 0,
+    "off_topic_ratio": 0,
+    "off_topic_ratio_threshold": 0.05,
+    "off_topic_similarity_threshold": 0.05,
+    "too_short_word_threshold": 4
+  },
+  "rows": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "answer_word_count": 6,
+      "query_keyword_count": 0,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "This archive organizes graphic design records through folders and surface types."
+    },
+    {
+      "query_id": "BQ02",
+      "intent": "archive_orientation",
+      "answer_word_count": 16,
+      "query_keyword_count": 1,
+      "jaccard_similarity": 0.0625,
+      "intent_anchor_hits": [
+        "folders",
+        "organized"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "This page is organized into Mexico, World War and public-information graphics, Advertisement, France, Travel and transport poster culture, and Graphic design object record folders."
+    },
+    {
+      "query_id": "BQ03",
+      "intent": "archive_orientation",
+      "answer_word_count": 6,
+      "query_keyword_count": 1,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [
+        "view",
+        "start"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Start with the main_sheet to begin viewing the archive view."
+    },
+    {
+      "query_id": "BQ04",
+      "intent": "casual_archive_help",
+      "answer_word_count": 9,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.2727,
+      "intent_anchor_hits": [
+        "view"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The simplest next step is to view the main_sheet to see the full context of the source."
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "answer_word_count": 8,
+      "query_keyword_count": 2,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "document"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The document records the 1830 trade card group, 1830-1922, located in London."
+    },
+    {
+      "query_id": "BQ06",
+      "intent": "current_object_explanation",
+      "answer_word_count": 6,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.6667,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Monsieur, vous avez réclamé votre inscription..."
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "answer_word_count": 4,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.4,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "SURF-GAX1970R001 is linked to the primary evidence."
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "answer_word_count": 11,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.1818,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "SURF-COM1970R007 is a 1970 image of a Jewish school advertisement in Minsk, while SURF-CRG2026R0235 is a 2026 image of ApollonMagazine."
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "answer_word_count": 10,
+      "query_keyword_count": 15,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "primary",
+        "secondary"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The primary evidence (Surf-COM1970R007) provides the source for the image, while the secondary evidence (Surf-CRG2026R0235) provides the source for the image."
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 6,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.25,
+      "intent_anchor_hits": [
+        "route"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The 19th-century France route is the 1830s, as recorded by the 1830s record."
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 8,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.3636,
+      "intent_anchor_hits": [
+        "recommend"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Recommend Chile via Diego Portales-D S No 20 for modern graphic design."
+    },
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "answer_word_count": 5,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.3333,
+      "intent_anchor_hits": [
+        "evidence",
+        "rights"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The archive uses source_rights to determine what counts as evidence."
+    },
+    {
+      "query_id": "BQ24",
+      "intent": "method_process_question",
+      "answer_word_count": 11,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.4167,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The assistant does not answer like a general chatbot because it lacks the necessary context to provide accurate information."
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "answer_word_count": 15,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [
+        "evidence"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The provided evidence indicates the object's period spans from 1897 to 1912, with the primary record dated 1897 and the secondary records referencing 1877 and 2012."
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "answer_word_count": 13,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.0667,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Read the 1897 Kaplan advertisement and the 1977 Dzerzhinsky stamp to understand the context of the 2012 PSE Russia image."
+    },
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "answer_word_count": 5,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 1,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "I can help you use this archive without making unsupported claims."
+    },
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "answer_word_count": 9,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The archive view is a unified collection of design and visual records organized by topic, not a single object."
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "answer_word_count": 64,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.0167,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "This is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: France, Midcentury modern graphic communication, Graphic design object record, Unresolved region, Modern typography and layout, World War and public-information graphics. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Gallica / BnF APIs, Wikimedia Commons file source / The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg / page 39286166, Wikimedia Commons file source / HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders"
+    },
+    {
+      "query_id": "BQ033",
+      "intent": "archive_orientation",
+      "answer_word_count": 63,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.0179,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The archive is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: France, Midcentury modern graphic communication, Graphic design object record, Unresolved region, Modern typography and layout, World War and public-information graphics. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Gallica / BnF APIs, Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690, Wikimedia Commons file source / HYMNES et PAVILLONS"
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "answer_word_count": 17,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.0435,
+      "intent_anchor_hits": [
+        "folders",
+        "view"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The archive presents a unified view of French and Global records through topological folders and surface types, ensuring the user navigates the entire collection rather than a single object."
+    },
+    {
+      "query_id": "BQ035",
+      "intent": "archive_orientation",
+      "answer_word_count": 6,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0.6667,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "I should orient myself between France and Russia records by viewing the archive as a whole."
+    },
+    {
+      "query_id": "BQ036",
+      "intent": "archive_orientation",
+      "answer_word_count": 11,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.2857,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "I should orient myself between France and Global by examining the source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ037",
+      "intent": "archive_orientation",
+      "answer_word_count": 59,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.0172,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "This is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, France, Travel and transport poster culture, Russia, World War and public-information graphics. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / Stamp 1974 Romania MiNr3179 pm B002a.jpg / page 117737469, Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 3721318"
+    },
+    {
+      "query_id": "BQ038",
+      "intent": "archive_orientation",
+      "answer_word_count": 60,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "This is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, France, Travel and transport poster culture, Russia. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg / page 39228667, Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183, Wikimedia"
+    },
+    {
+      "query_id": "BQ039",
+      "intent": "archive_orientation",
+      "answer_word_count": 8,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The archive view is a unified collection of records organized by topic and provenance, not a single document."
+    },
+    {
+      "query_id": "BQ040",
+      "intent": "archive_orientation",
+      "answer_word_count": 63,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.0333,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "This is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, Latin America, World War and public-information graphics, Poster, United States. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690, Wikimedia Commons file source / El restaurador de las leyes.jpg / page 10603704"
+    },
+    {
+      "query_id": "BQ041",
+      "intent": "archive_orientation",
+      "answer_word_count": 14,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.1,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The archive is a unified visual communication record for graphic design and typography, organizing records across Unresolved region, Modern typography, and Latin America."
+    },
+    {
+      "query_id": "BQ042",
+      "intent": "archive_orientation",
+      "answer_word_count": 12,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.0588,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The archive presents a structured visual layout organizing records across Russia, Midcentury modern graphic communication, and France."
+    },
+    {
+      "query_id": "BQ043",
+      "intent": "archive_orientation",
+      "answer_word_count": 12,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.75,
+      "intent_anchor_hits": [
+        "view"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "I should orient myself between Global / release gate expansion and Latin America / Colombia records by examining the archive view as a whole."
+    },
+    {
+      "query_id": "BQ044",
+      "intent": "casual_archive_help",
+      "answer_word_count": 6,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "research",
+        "design",
+        "communication"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "This is a source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ045",
+      "intent": "casual_archive_help",
+      "answer_word_count": 7,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.3333,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The next step is to retrieve the specific image metadata for SURF-GAX1970R002."
+    },
+    {
+      "query_id": "BQ046",
+      "intent": "casual_archive_help",
+      "answer_word_count": 6,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.2222,
+      "intent_anchor_hits": [
+        "view"
+      ],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The next step is to access the file and view the image."
+    },
+    {
+      "query_id": "BQ047",
+      "intent": "casual_archive_help",
+      "answer_word_count": 5,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 1,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "I found SURF-GAX1970R003; what is a simple next step?"
+    },
+    {
+      "query_id": "BQ048",
+      "intent": "casual_archive_help",
+      "answer_word_count": 5,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 1,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "I found SURF-GAX1970R004; what is a simple next step?"
+    },
+    {
+      "query_id": "BQ049",
+      "intent": "casual_archive_help",
+      "answer_word_count": 5,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 1,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "I found SURF-GAX1970R005; what is a simple next step?"
+    },
+    {
+      "query_id": "BQ050",
+      "intent": "casual_archive_help",
+      "answer_word_count": 10,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1538,
+      "intent_anchor_hits": [],
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "The next step is to retrieve the specific image file and verify the source-family rights status."
+    }
+  ]
+}

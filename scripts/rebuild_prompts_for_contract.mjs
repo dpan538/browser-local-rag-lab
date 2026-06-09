@@ -24,6 +24,7 @@ function parseArgs(args) {
     recordsPath: path.join(repoRoot, "fixtures/expansion/round02_200/records.jsonl"),
     retrievalPath: path.join(repoRoot, "reports/retrieval_sufficiency_200.json"),
     variantId: "top3_compressed_topology_source_rights",
+    promptVariant: "r03_v0_baseline",
     outputPath: path.join(repoRoot, "reports/round02_200_prompts_fixed.json")
   };
   for (let index = 0; index < args.length; index += 1) {
@@ -33,6 +34,7 @@ function parseArgs(args) {
     else if (arg === "--records") parsed.recordsPath = path.resolve(args[++index]);
     else if (arg === "--retrieval") parsed.retrievalPath = path.resolve(args[++index]);
     else if (arg === "--variant") parsed.variantId = args[++index];
+    else if (arg === "--prompt-variant") parsed.promptVariant = args[++index];
     else if (arg === "--out") parsed.outputPath = path.resolve(args[++index]);
   }
   return parsed;
@@ -62,13 +64,14 @@ export function rebuildPrompts(options) {
     const retrieval = retrievalByQuery.get(label.query_id);
     const retrievedIds = splitIds(retrieval?.retrieved_ids);
     const evidence = retrievedIds.map((id) => records.get(id)).filter(Boolean);
-    const prompt = buildPrompt({ query, label, evidence, retrievedIds, retrieval });
+    const prompt = buildPrompt({ query, label, evidence, retrievedIds, retrieval }, { promptVariant: options.promptVariant });
     return {
       query_id: label.query_id,
       intent: label.intent,
       lane: label.gold_lane,
       refusal_expected: label.refusal_expected,
       prompt_mode: promptModeForLabel(label),
+      prompt_variant: options.promptVariant,
       retrieved_ids: retrievedIds,
       prompt,
       prompt_audit_failures: auditPromptText({ prompt, label })
@@ -86,7 +89,8 @@ export function rebuildPrompts(options) {
         path.relative(repoRoot, options.recordsPath),
         path.relative(repoRoot, options.retrievalPath)
       ],
-      packet_variant: options.variantId
+      packet_variant: options.variantId,
+      prompt_variant: options.promptVariant
     },
     summary: {
       rows: rows.length,
