@@ -142,6 +142,18 @@ function valueOnlyEvidenceSummary(records = [], fields = [], options = {}) {
   return records.map((record, index) => `Record ${index + 1}: ${valueOnlyRecordLine(record, fields, options)}`).join("\n");
 }
 
+function uniqueValues(records = [], field, max = 160) {
+  return [
+    ...new Set(records.map((record) => fieldValue(record, field, max)).filter((value) => value && value !== "not available"))
+  ];
+}
+
+function compactList(values = [], limit = 2) {
+  const shown = values.slice(0, limit);
+  if (shown.length === 0) return "the listed evidence";
+  return shown.length < values.length ? `${shown.join("; ")} and related records` : shown.join("; ");
+}
+
 function recordSummary(record, fields, options = {}) {
   const compactNoteMax = isEvidenceCompress(options) ? 90 : 360;
   return [
@@ -395,21 +407,76 @@ function bodyLooksLikeRefusal(text) {
   ].some((phrase) => normalized.includes(phrase));
 }
 
+function packetDateTokens(packet = {}) {
+  const dateText = packet.evidence
+    .flatMap((record) => [record?.date_text, record?.title, record?.notes?.compact])
+    .filter(Boolean)
+    .join(" ");
+  return new Set((dateText.match(/\b(?:circa\s+)?\d{4}(?:s|-\d{2}(?:-\d{2})?)?\b/gi) || [])
+    .map((value) => String(value).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()));
+}
+
+function dateTokenIsSupported(value, knownDates) {
+  const normalized = String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  if (knownDates.has(normalized)) return true;
+  const yearMatch = normalized.match(/\b(\d{4})s?\b/);
+  if (!yearMatch) return false;
+  const year = Number(yearMatch[1]);
+  if (!Number.isFinite(year)) return false;
+  if (normalized.endsWith("s")) {
+    const decadeStart = Math.floor(year / 10) * 10;
+    return [...knownDates].some((known) => {
+      const knownYear = Number(known.match(/\b(\d{4})\b/)?.[1]);
+      return Number.isFinite(knownYear) && knownYear >= decadeStart && knownYear < decadeStart + 10;
+    });
+  }
+  return false;
+}
+
+function bodyContainsUnsupportedDates(packet, text) {
+  const knownDates = packetDateTokens(packet);
+  const dates = String(text || "").match(/\b(?:circa\s+)?\d{4}(?:s|-\d{2}(?:-\d{2})?)?\b/gi) || [];
+  return dates.some((date) => !dateTokenIsSupported(date, knownDates));
+}
+
+function bodyLooksLikePromptEcho(text) {
+  return [
+    /evidence value order/i,
+    /primary record is listed first/i,
+    /output:\s*write/i,
+    /do not write the official/i,
+    /browser lab appends/i,
+    /generate concise answer/i,
+    /^record\s+\d+\s*:/im,
+    /explain record \d+ using only/i
+  ].some((pattern) => pattern.test(String(text || "")));
+}
+
+function bodyLooksUnsafe(packet, text) {
+  return bodyLooksLikePromptEcho(text) || bodyContainsUnsupportedDates(packet, text);
+}
+
 function deterministicAnswerBody(packet) {
+  const titles = uniqueValues(packet.evidence, "title", 140);
+  const dates = uniqueValues(packet.evidence, "date_text", 80);
+  const regions = uniqueValues(packet.evidence, "region", 120);
   if (packet.label.intent === "method_process_question") {
     return "The archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence.";
   }
   if (packet.label.intent === "current_object_explanation") {
-    return "This answer is grounded in the current object's required evidence fields listed below.";
+    return `This record is represented by ${titles[0] || "the listed title"}${dates[0] ? `, dated ${dates[0]}` : ""}${regions[0] ? `, with region ${regions[0]}` : ""}.`;
   }
   if (packet.label.intent === "comparison") {
-    return "This comparison is grounded in the retrieved records and their required evidence fields listed below.";
+    return `Compare the source-linked records ${compactList(titles, 2)} using the exact evidence tags below.`;
   }
   if (packet.label.intent === "region_period_recommendation") {
-    return "This route recommendation is grounded in the region, date, source, and record fields listed below.";
+    return `Use ${compactList(titles, 2)} as a source-backed route through ${compactList(regions, 2)}${dates.length ? ` around ${compactList(dates, 2)}` : ""}.`;
   }
   if (packet.label.intent === "more_context") {
-    return "This context answer is grounded in the active object and related evidence fields listed below.";
+    return `Use ${titles[0] || "the primary record"} with the related records in the evidence tags below for context.`;
+  }
+  if (["archive_orientation", "casual_archive_help"].includes(packet.label.intent)) {
+    return "This archive view organizes source-linked records by topology, folders, surface type, and evidence fields.";
   }
   return "This answer is grounded in the evidence fields listed below.";
 }
@@ -428,7 +495,7 @@ export function finalizeAnswerText(packet, generatedText) {
   if (packet.label.intent === "source_rights_question") return sourceRightsBlock(packet.evidence[0] || {});
   const tags = evidenceTagBlock(packet.evidence, fieldsForLabel(packet.label));
   const body = String(generatedText || "").replace(/EVIDENCE TAGS:[\s\S]*$/i, "").trim();
-  const safeBody = !body || bodyLooksLikeRefusal(body)
+  const safeBody = !body || bodyLooksLikeRefusal(body) || bodyLooksUnsafe(packet, body)
     ? deterministicAnswerBody(packet)
     : body;
   return [safeBody, tags].join("\n\n");

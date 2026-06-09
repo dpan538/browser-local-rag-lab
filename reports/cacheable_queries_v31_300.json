@@ -1,0 +1,302 @@
+{
+  "generated_at": "2026-06-09T14:32:31.891Z",
+  "inputs": {
+    "answersPath": "reports/webllm_round_03_latency300_v31_evidence_prune_tag_injection_answers.jsonl",
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl"
+  },
+  "group_count": 155,
+  "repeated_evidence_group_count": 14,
+  "cacheable_candidate_count": 4,
+  "candidates": [
+    {
+      "evidence_ids": [
+        "SURF-CRG2026R0153"
+      ],
+      "query_count": 2,
+      "intents": [
+        "current_object_explanation"
+      ],
+      "identical_answer_bodies": true,
+      "unique_answer_body_count": 1,
+      "avg_query_similarity": 0.6667,
+      "cacheability": "exact_answer_cache_candidate",
+      "query_ids": [
+        "BQ074",
+        "BQ214"
+      ],
+      "answer_preview": "Oud-generaal als straatmuzikant, NG-850-60.jpg | 1895 | South Asia / India"
+    },
+    {
+      "evidence_ids": [
+        "SURF-GAX1970R001"
+      ],
+      "query_count": 3,
+      "intents": [
+        "current_object_explanation"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 3,
+      "avg_query_similarity": 0.1429,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ05",
+        "BQ06",
+        "BQ07"
+      ],
+      "answer_preview": "Monsieur requested his inscription in 1830."
+    },
+    {
+      "evidence_ids": [
+        "SURF-CRG2026R0001",
+        "SURF-CRG2026R0050"
+      ],
+      "query_count": 3,
+      "intents": [
+        "archive_orientation",
+        "region_period_recommendation",
+        "more_context"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 3,
+      "avg_query_similarity": 0.1,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ031",
+        "BQ128",
+        "BQ174"
+      ],
+      "answer_preview": "I should orient myself between Global / release gate expansion and Global / release gate expansion records by examining the source-linked research archive for graphic design and vi"
+    },
+    {
+      "evidence_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0235"
+      ],
+      "query_count": 2,
+      "intents": [
+        "comparison"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ12",
+        "BQ13"
+      ],
+      "answer_preview": "SURF-COM1970R007 is a 1897 image of Israel Kaplan's school in Minsk, Russia. SURF-CRG2026R0235 is a 1909 image of ApollonMagazine. The 1897 image predates the 1909 image by 11 year"
+    },
+    {
+      "evidence_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0071",
+        "SURF-CRG2026R0274"
+      ],
+      "query_count": 2,
+      "intents": [
+        "more_context"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0.0714,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ25",
+        "BQ26"
+      ],
+      "answer_preview": "The object's period spans the late 19th century to the early 20th century, with the 1897 image being a primary record of the \"LeTorah Va'at\" school and the 1877 and 1912 stamps bei"
+    },
+    {
+      "evidence_ids": [
+        "SURF-CRG2026R0031",
+        "SURF-CRG2026R0032"
+      ],
+      "query_count": 2,
+      "intents": [
+        "casual_archive_help",
+        "region_period_recommendation"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ30",
+        "BQ243"
+      ],
+      "answer_preview": "I cannot help you use this archive without making unsupported claims."
+    },
+    {
+      "evidence_ids": [
+        "SURF-CRG2026R0051",
+        "SURF-GAX1970R002"
+      ],
+      "query_count": 2,
+      "intents": [
+        "archive_orientation",
+        "more_context"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0.0476,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ032",
+        "BQ175"
+      ],
+      "answer_preview": "I should orient myself between France and Global by examining the archive view as a whole."
+    },
+    {
+      "evidence_ids": [
+        "SURF-CRG2026R0052",
+        "SURF-GA1970R001"
+      ],
+      "query_count": 2,
+      "intents": [
+        "archive_orientation",
+        "more_context"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0.0476,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ033",
+        "BQ176"
+      ],
+      "answer_preview": "I should orient myself between France and Global by viewing the archive as a whole, not one object."
+    },
+    {
+      "evidence_ids": [
+        "SURF-CGS2026R0904"
+      ],
+      "query_count": 2,
+      "intents": [
+        "current_object_explanation",
+        "casual_archive_help"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0.1333,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ063",
+        "BQ208"
+      ],
+      "answer_preview": "Ingermina.png | 1844 | Latin America / Colombia"
+    },
+    {
+      "evidence_ids": [
+        "SURF-CGS2026R0031"
+      ],
+      "query_count": 2,
+      "intents": [
+        "current_object_explanation",
+        "casual_archive_help"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0.1333,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ064",
+        "BQ207"
+      ],
+      "answer_preview": "Record 1: Facundo.jpg | 1845 | Latin America / Argentina"
+    },
+    {
+      "evidence_ids": [
+        "SURF-CRG2026R0027"
+      ],
+      "query_count": 2,
+      "intents": [
+        "current_object_explanation",
+        "casual_archive_help"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0.1333,
+      "cacheability": "not_obvious",
+      "query_ids": [
+        "BQ068",
+        "BQ212"
+      ],
+      "answer_preview": "SURF-CRG2026R0027 is a Japanese military document from 1863."
+    },
+    {
+      "evidence_ids": [
+        "LAB-METHOD-CONTEXT-V0"
+      ],
+      "query_count": 22,
+      "intents": [
+        "method_process_question"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 21,
+      "avg_query_similarity": 0.7586,
+      "cacheability": "template_cache_review_candidate",
+      "query_ids": [
+        "BQ23",
+        "BQ24",
+        "BQ147",
+        "BQ148",
+        "BQ149",
+        "BQ150",
+        "BQ151",
+        "BQ152",
+        "BQ153",
+        "BQ154",
+        "BQ155",
+        "BQ156",
+        "BQ157",
+        "BQ158",
+        "BQ159",
+        "BQ160",
+        "BQ249",
+        "BQ250",
+        "BQ251",
+        "BQ252",
+        "BQ253",
+        "BQ254"
+      ],
+      "answer_preview": "The archive defines evidence as source-linked metadata, compact text, source, rights, image-state, and topology fields."
+    },
+    {
+      "evidence_ids": [
+        "SURF-CRG2026R0006"
+      ],
+      "query_count": 2,
+      "intents": [
+        "casual_archive_help"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0.7778,
+      "cacheability": "template_cache_review_candidate",
+      "query_ids": [
+        "BQ050",
+        "BQ211"
+      ],
+      "answer_preview": "I found SURF-CRG2026R0006; what is a simple next step?"
+    },
+    {
+      "evidence_ids": [
+        "SURF-CRG2026R0100"
+      ],
+      "query_count": 2,
+      "intents": [
+        "current_object_explanation"
+      ],
+      "identical_answer_bodies": false,
+      "unique_answer_body_count": 2,
+      "avg_query_similarity": 0.6667,
+      "cacheability": "template_cache_review_candidate",
+      "query_ids": [
+        "BQ072",
+        "BQ213"
+      ],
+      "answer_preview": "SURF-CRG2026R0100 is a 1941 French Indochina anthem by HYMNES et PAVILLIONS D'INDOCHINE."
+    }
+  ]
+}

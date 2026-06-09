@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-06-09T14:47:01.337Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency300_v31_safe_body_answers.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 191,
+    "suspicious_answer_count": 12,
+    "suspicious_answer_ratio": 0.0628,
+    "suspicious_ratio_threshold": 0.1,
+    "date_hallucination_count": 0,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": [
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "French"
+        }
+      ],
+      "answer_body": "Monsieur requested inscription in 1830. Dorsay's Théâtre began 1834. Pelletier's 1832 work is a contemporary French text."
+    },
+    {
+      "query_id": "BQ128",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Reasoning"
+        }
+      ],
+      "answer_body": "Recommend route: Use Global / release gate expansion to access Paganini par David d'Angers (14911656518).\nReasoning: This record is the primary evidence for the region_period recommendation."
+    },
+    {
+      "query_id": "BQ144",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 2,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Recommendation"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "French"
+        }
+      ],
+      "answer_body": "Recommendation: Use the 1838-1839 journal to trace the 1835 typographical movement, as it links the 1830 inscription claim to the 1835 French typographical period."
+    },
+    {
+      "query_id": "BQ176",
+      "intent": "more_context",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Communist Party"
+        }
+      ],
+      "answer_body": "The provided evidence indicates the historical context of the image, which is a 1970 Soviet Union publication by the Communist Party of the Soviet Union (1970 CPA 3886). The image features Lenin, 1920 with 16 labels, and 16 labels 'Leader of the world proletariat'. The surrounding context includes the 1834 Théâtre Dorsay, the 1893 Aristide Bruant, and the 1870 Global release gate expansion."
+    },
+    {
+      "query_id": "BQ213",
+      "intent": "current_object_explanation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "PAVILLIONS D'INDOCHINE."
+        }
+      ],
+      "answer_body": "SURF-CRG2026R0100 is a 1941 French Indochina anthem by HYMNES et PAVILLIONS D'INDOCHINE."
+    },
+    {
+      "query_id": "BQ229",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Chilean"
+        }
+      ],
+      "answer_body": "SURF-CRG2026R0100 is a 1941 French Indochina anthem. SURF-CGS2026R0681 is a 1837 Chilean flag."
+    },
+    {
+      "query_id": "BQ230",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "South Indian"
+        }
+      ],
+      "answer_body": "SURF-CRG2026R0153 is a 1895 South Indian street musician. SURF-CGS2026R0908 is a 1842 London News 1867 Mexico."
+    },
+    {
+      "query_id": "BQ232",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 2,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Caribbean"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Americas. The"
+        }
+      ],
+      "answer_body": "SURF-ER1830R002 (1840-1849) and SURF-CGS2026R0910 (1846) differ in era and region. The first is from the 1840s in the Caribbean, while the second is from 1846 in the Americas. The first is a trade card, while the second is a political document."
+    },
+    {
+      "query_id": "BQ237",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Both"
+        }
+      ],
+      "answer_body": "SURF-ER1830R019 depicts Santa with toys in a sleigh, drawn by reindeer, with a church on the right and another in the distance (1880-1890). SURF-CRG2026R0002 is a Putzmühle im Pöbeltal 002.JPG image from 1831. Both records are ungrounded and do not support the comparison."
+    },
+    {
+      "query_id": "BQ245",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Recommendation"
+        }
+      ],
+      "answer_body": "Recommendation: Use Source-backed records to guide research through Unresolved region period evidence."
+    },
+    {
+      "query_id": "BQ246",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Recommendation"
+        }
+      ],
+      "answer_body": "Recommendation: Use source-backed records to guide research through Unresolved region period evidence."
+    },
+    {
+      "query_id": "BQ248",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 2,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Conclusion"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Reasoning"
+        }
+      ],
+      "answer_body": "Recommend Route 1: Use source-backed records to verify Unresolved region period evidence.\nEvidence: Record 1 (Pearsall Photography Studio trade card) | 1880. | Unresolved region.\nEvidence: Record 2 (Santa with toys in a sleigh, drawn by reindeer, with a church on the right and another in the distance) | [between 1880 and 1890] | Unresolved region.\nEvidence: Record 3 (Monsieur, vous avez réclamé votre inscription... | 1830 | France).\nConclusion: Use Record 2 to verify the Unresolved region period evidence.\nReasoning: Record 2 is a source-backed record that provides a date range"
+    }
+  ]
+}

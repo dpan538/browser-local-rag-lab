@@ -1,0 +1,328 @@
+{
+  "generated_at": "2026-06-09T14:32:01.532Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency300_v31_evidence_prune_tag_injection_answers.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl"
+  },
+  "gate": {
+    "pass": false,
+    "evaluated_answer_count": 191,
+    "suspicious_answer_count": 21,
+    "suspicious_answer_ratio": 0.1099,
+    "suspicious_ratio_threshold": 0.1,
+    "date_hallucination_count": 5
+  },
+  "findings": [
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Soviet-era"
+        }
+      ],
+      "answer_body": "The object's period spans the late 19th century to the early 20th century, with the 1897 image being a primary record of the \"LeTorah Va'at\" school and the 1877 and 1912 stamps being related Soviet-era propaganda documents."
+    },
+    {
+      "query_id": "BQ068",
+      "intent": "current_object_explanation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Japanese"
+        }
+      ],
+      "answer_body": "SURF-CRG2026R0027 is a Japanese military document from 1863."
+    },
+    {
+      "query_id": "BQ072",
+      "intent": "current_object_explanation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "PAVILLIONS D'INDOCHINE."
+        }
+      ],
+      "answer_body": "SURF-CRG2026R0100 is a 1941 French Indochina anthem by HYMNES et PAVILLIONS D'INDOCHINE."
+    },
+    {
+      "query_id": "BQ104",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Rio Grande. Both"
+        }
+      ],
+      "answer_body": "SURF-CGS2026R0681 is a 1837 image from Diego Portales-D S No 20, while SURF-CGS2026R0910 is a 1846 image from the Republic of Rio Grande. Both records are from Latin America."
+    },
+    {
+      "query_id": "BQ107",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Both"
+        }
+      ],
+      "answer_body": "SURF-CGS2026R0908 is a 1867 London News image of Mexico, while SURF-CRG2026R0031 is a 1865 India stamp. Both are graphic communication evidence."
+    },
+    {
+      "query_id": "BQ113",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Both"
+        }
+      ],
+      "answer_body": "SURF-CRG2026R0027 is a 19th-century French sculptress from the 1890s. SURF-ER1830R059 is a 19th-century French sculptress from the 1890s. Both records are identical in content and date."
+    },
+    {
+      "query_id": "BQ115",
+      "intent": "comparison",
+      "date_issue_count": 2,
+      "entity_issue_count": 0,
+      "suspicious_items": [
+        {
+          "type": "date_not_in_evidence",
+          "value": "2026"
+        },
+        {
+          "type": "date_not_in_evidence",
+          "value": "1830"
+        }
+      ],
+      "answer_body": "SURF-CRG2026R0032 is a 2026 record, while SURF-ER1830R052 is a 1830 record. The 2026 record is more recent than the 1830 record."
+    },
+    {
+      "query_id": "BQ129",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 3,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Reason"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Matches Global"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Grounded"
+        }
+      ],
+      "answer_body": "Recommend route: Record 1 (Soviet Union 1970 CPA 3849).\nReason: Matches Global / release gate expansion and nearby period evidence.\nReason: Supports region_period_recommendation.\nReason: Grounded in evidence values.\nReason: Keep answer under 95 words."
+    },
+    {
+      "query_id": "BQ133",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Explore Global"
+        }
+      ],
+      "answer_body": "Recommend route: Explore Global / release gate expansion and nearby period evidence."
+    },
+    {
+      "query_id": "BQ137",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "France Generate"
+        }
+      ],
+      "answer_body": "Recommend route through Global / release gate expansion and nearby period evidence.\nRecord 1: Buffalo Bill's Wild West and congress of rough riders of the world A congress of American Indians (...). LCCN2001696164.jpg | 1899 | Global / release gate expansion\nRecord 2: Putzmühle im Pöbeltal 002.JPG | 1831 | Global / release gate expansion\nRecord 3: Monsieur, vous avez réclamé votre inscription... | 1830 | France\nGenerate concise answer body under 95 words."
+    },
+    {
+      "query_id": "BQ145",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 3,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Primary"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "France Output"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Write"
+        }
+      ],
+      "answer_body": "Recommend a research route through France and nearby period evidence.\n\nEvidence value order: title | date_text | region\nPrimary record is listed first when a primary evidence id is available.\nRecord 1: Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie | 1838-1839 | France\nRecord 2: Monsieur, vous avez réclamé votre inscription... | 1830 | France\nRecord 3: Imprimerie lithographique, Autographique, E. Simon Fils, Strasbourg | 1840 | France\n\nOutput: Write only the concise natural-language answer body.\nDo not write the official evidence tag block, field labels, or key"
+    },
+    {
+      "query_id": "BQ162",
+      "intent": "more_context",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "United Kingdom. Therefore"
+        }
+      ],
+      "answer_body": "The provided evidence indicates the SURF-ER1830R001-GROUP is a 1830-1922 trade card from the United Kingdom. It is a sheet of midcentury modern graphic communication, specifically a trade card.\n\nThe surrounding context includes the El restaurador de las leyes.jpg poster from 1840 and the Arundel Society chromolithograph series from 1864-1891. The region is Latin America/Argentina. The topology suggests it is a sheet of Germany/United Kingdom.\n\nTherefore, the related context is the 1830-1922 trade card from the United Kingdom."
+    },
+    {
+      "query_id": "BQ170",
+      "intent": "more_context",
+      "date_issue_count": 1,
+      "entity_issue_count": 0,
+      "suspicious_items": [
+        {
+          "type": "date_not_in_evidence",
+          "value": "1860s"
+        }
+      ],
+      "answer_body": "The context includes midcentury graphic communication records and lithographic prints from the 1830s and 1860s."
+    },
+    {
+      "query_id": "BQ229",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Chilean"
+        }
+      ],
+      "answer_body": "SURF-CRG2026R0100 and SURF-CGS2026R0681 differ in content and context. Record 1 (1885) is a French Indochina anthem, while Record 2 (1837) is a Chilean document."
+    },
+    {
+      "query_id": "BQ233",
+      "intent": "comparison",
+      "date_issue_count": 1,
+      "entity_issue_count": 0,
+      "suspicious_items": [
+        {
+          "type": "date_not_in_evidence",
+          "value": "1869"
+        }
+      ],
+      "answer_body": "SURF-ER1830R008 is a 1869 Unresolved region photograph. SURF-CRG2026R0031 is a 1865 South Asia/India postage stamp."
+    },
+    {
+      "query_id": "BQ234",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Zanzibar. Both"
+        }
+      ],
+      "answer_body": "SURF-ER1830R011 is a documented cockroach and bed bug exterminator sold by druggists in the 1870s-1890s region. SURF-CRG2026R0032 is a Queen Victoria stamp from 1865 in Zanzibar. Both are source-grounded graphic communication evidence."
+    },
+    {
+      "query_id": "BQ239",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 3,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Primary"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Chile Output"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Write"
+        }
+      ],
+      "answer_body": "Recommend a research route through Latin America / Argentina period evidence using source-backed records.\nEvidence value order: title | date_text | region\nPrimary record is listed first when a primary evidence id is available.\nRecord 1: Facundo.jpg | 1845 | Latin America / Argentina\nRecord 2: Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg | 1842 | Latin America / Argentina\nRecord 3: Diego Portales-D S No 20.JPG | 1837 | Latin America / Chile\nOutput: Write only the concise natural-language answer body.\nDo not write the official evidence tag block, field labels, or key-value blocks; the browser lab appends exact tags after generation"
+    },
+    {
+      "query_id": "BQ245",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 3,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Recommendation"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Conclusion"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Combine"
+        }
+      ],
+      "answer_body": "Recommendation: Use source-backed records to find Unresolved region period evidence.\nEvidence: Record 1 (Gardner's card) and Record 2 (Getz exterminators) both date to Unresolved region.\nEvidence: Record 3 (Monsieur inscription) is from 1830.\nConclusion: Combine these records to find Unresolved region period evidence."
+    },
+    {
+      "query_id": "BQ246",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Recommendation"
+        }
+      ],
+      "answer_body": "Recommendation: Use Record 2 (Deacon Crankett card, 1880-1882) for Unresolved region period evidence."
+    },
+    {
+      "query_id": "BQ248",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "France. Reasoning"
+        }
+      ],
+      "answer_body": "Recommend Route 1: Use Source-backed records to find Unresolved region evidence.\nEvidence: Record 1 (Pearsall Photography Studio trade card) | 1880 | Unresolved region.\nEvidence: Record 2 (Santa with toys in a sleigh, drawn by reindeer, with a church on the right and another in the distance) | [between 1880 and 1890] | Unresolved region.\nEvidence: Record 3 (Monsieur, vous avez réclamé votre inscription...) | 1830 | France.\nReasoning: Record 1 and 2 provide Unresolved region evidence dates (1880, 1890). Record 3 provides France inscription ("
+    },
+    {
+      "query_id": "BQ255",
+      "intent": "more_context",
+      "date_issue_count": 1,
+      "entity_issue_count": 0,
+      "suspicious_items": [
+        {
+          "type": "date_not_in_evidence",
+          "value": "1741"
+        }
+      ],
+      "answer_body": "Inspect the 1897 Minsk ad and the 1741 Tamworth town hall for the 1897 record to establish the 1897 date."
+    }
+  ]
+}

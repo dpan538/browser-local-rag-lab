@@ -1,0 +1,1 @@
+query_id,intent,lane,deterministic,latency_bucket,hybrid_lane,refusal_expected,candidate_count,prompt_tokens_est,ttft_ms,total_latency_ms,output_tokens,tokens_per_second,evidence_chars,slow_reason,recommendation

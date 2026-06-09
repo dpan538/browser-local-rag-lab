@@ -8,6 +8,7 @@ const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const defaults = {
   queriesPath: path.join(repoRoot, "fixtures/expansion/round03_300/queries.jsonl"),
   labelsPath: path.join(repoRoot, "fixtures/expansion/round03_300/labels.jsonl"),
+  recordsPath: path.join(repoRoot, "fixtures/expansion/round03_300/records.jsonl"),
   answersPath: path.join(repoRoot, "reports/webllm_round_03_latency_pilot50_v31_evidence_prune_tag_injection_answers.jsonl"),
   jsonOutPath: null,
   mdOutPath: null,
@@ -16,7 +17,8 @@ const defaults = {
   offTopicThreshold: 0.05,
   tooShortWordThreshold: 4,
   offTopicRatioThreshold: 0.05,
-  tooShortRatioThreshold: 0.05
+  tooShortRatioThreshold: 0.05,
+  rawModel: false
 };
 
 const STOPWORDS = new Set([
@@ -46,6 +48,7 @@ function parseArgs(args) {
     const arg = args[index];
     if (arg === "--queries") parsed.queriesPath = path.resolve(args[++index]);
     else if (arg === "--labels") parsed.labelsPath = path.resolve(args[++index]);
+    else if (arg === "--records") parsed.recordsPath = path.resolve(args[++index]);
     else if (arg === "--answers") parsed.answersPath = path.resolve(args[++index]);
     else if (arg === "--json-out") parsed.jsonOutPath = path.resolve(args[++index]);
     else if (arg === "--md-out") parsed.mdOutPath = path.resolve(args[++index]);
@@ -55,6 +58,7 @@ function parseArgs(args) {
     else if (arg === "--too-short-ratio-threshold") parsed.tooShortRatioThreshold = Number(args[++index]);
     else if (arg === "--strict") parsed.strict = true;
     else if (arg === "--include-deterministic") parsed.includeDeterministic = true;
+    else if (arg === "--raw-model") parsed.rawModel = true;
     else positional.push(arg);
   }
   if (positional[0]) parsed.queriesPath = path.resolve(positional[0]);
@@ -81,8 +85,11 @@ function stripModelNoise(text) {
     .trim();
 }
 
-function answerBody(row) {
-  return stripModelNoise(row.raw_answer_text || row.answer_text || row.generated_text || "");
+function answerBody(row, rawModel = false) {
+  const text = rawModel
+    ? (row.raw_answer_text || row.model_answer_text || row.answer_text || row.generated_text || "")
+    : (row.answer_text || row.generated_text || row.model_answer_text || row.raw_answer_text || "");
+  return stripModelNoise(text);
 }
 
 function tokenize(text) {
@@ -103,18 +110,47 @@ function jaccard(leftTokens, rightTokens) {
   return union === 0 ? 0 : intersection / union;
 }
 
+function flattenValues(value) {
+  if (value === null || value === undefined) return [];
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") return [String(value)];
+  if (Array.isArray(value)) return value.flatMap((item) => flattenValues(item));
+  if (typeof value === "object") return Object.values(value).flatMap((item) => flattenValues(item));
+  return [];
+}
+
+function evidenceValuesForUsability(records) {
+  const fields = ["record_id", "title", "creator", "date_text", "region", "object_type", "medium", "topology"];
+  return [
+    ...new Set(records.flatMap((record) => fields.flatMap((field) => flattenValues(record?.[field]))))
+  ].filter((value) => String(value).trim().length >= 4);
+}
+
+function bodyMentionsEvidenceValue(body, records) {
+  const haystack = body.toLowerCase();
+  return evidenceValuesForUsability(records).some((value) => {
+    const normalized = String(value).toLowerCase().replace(/\s+/g, " ").trim();
+    if (normalized.length < 4) return false;
+    if (haystack.includes(normalized)) return true;
+    const tokens = normalized.split(/[^a-z0-9]+/).filter((token) => token.length >= 4);
+    return tokens.length > 0 && tokens.some((token) => haystack.includes(token));
+  });
+}
+
 function scoreUsability({
   queriesPath,
   labelsPath,
+  recordsPath,
   answersPath,
   includeDeterministic = false,
   offTopicThreshold = 0.05,
   tooShortWordThreshold = 4,
   offTopicRatioThreshold = 0.05,
-  tooShortRatioThreshold = 0.05
+  tooShortRatioThreshold = 0.05,
+  rawModel = false
 }) {
   const queriesById = new Map(readJsonl(queriesPath).map((query) => [idOf(query), query]));
   const labelsById = new Map(readJsonl(labelsPath).map((label) => [idOf(label), label]));
+  const recordsById = new Map(readJsonl(recordsPath).map((record) => [record.record_id || record.id, record]));
   const answers = readJsonl(answersPath);
   const rows = [];
 
@@ -124,15 +160,22 @@ function scoreUsability({
     if (!label || label.refusal_expected) continue;
     if (!includeDeterministic && (answer.deterministic === true || answer.latency_bucket === "hybrid_system_latency")) continue;
     const query = queriesById.get(queryId);
-    const body = answerBody(answer);
+    const body = answerBody(answer, rawModel);
     if (!body) continue;
     const queryTokens = tokenize(query?.query_text || query?.text || "");
     const answerTokens = tokenize(body);
     const similarity = jaccard(queryTokens, answerTokens);
     const answerTokenSet = new Set(answerTokens);
     const anchorHits = (INTENT_ANCHORS[label.intent] || []).filter((anchor) => answerTokenSet.has(anchor));
+    const retrievedIds = String(answer.retrieved_ids || "")
+      .split("|")
+      .map((evidenceId) => evidenceId.trim())
+      .filter(Boolean);
+    const evidenceIds = retrievedIds.length > 0 ? retrievedIds : (label.gold_evidence_ids || []);
+    const evidenceRecords = evidenceIds.map((evidenceId) => recordsById.get(evidenceId)).filter(Boolean);
+    const evidence_value_hit = bodyMentionsEvidenceValue(body, evidenceRecords);
     const tooShort = answerTokens.length < tooShortWordThreshold;
-    const offTopic = similarity < offTopicThreshold && queryTokens.length > 0 && anchorHits.length === 0;
+    const offTopic = similarity < offTopicThreshold && queryTokens.length > 0 && anchorHits.length === 0 && !evidence_value_hit;
     rows.push({
       query_id: queryId,
       intent: label.intent,
@@ -140,6 +183,7 @@ function scoreUsability({
       query_keyword_count: queryTokens.length,
       jaccard_similarity: Number(similarity.toFixed(4)),
       intent_anchor_hits: anchorHits,
+      evidence_value_hit,
       too_short: tooShort,
       off_topic: offTopic,
       answer_body: body
@@ -157,6 +201,7 @@ function scoreUsability({
     inputs: {
       queriesPath: path.relative(repoRoot, queriesPath),
       labelsPath: path.relative(repoRoot, labelsPath),
+      recordsPath: path.relative(repoRoot, recordsPath),
       answersPath: path.relative(repoRoot, answersPath)
     },
     gate: {
@@ -170,6 +215,8 @@ function scoreUsability({
       off_topic_ratio_threshold: offTopicRatioThreshold,
       off_topic_similarity_threshold: offTopicThreshold,
       too_short_word_threshold: tooShortWordThreshold
+      ,
+      answer_source: rawModel ? "raw_model_text" : "delivered_answer_text"
     },
     rows
   };

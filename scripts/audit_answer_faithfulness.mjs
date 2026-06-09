@@ -14,7 +14,8 @@ const defaults = {
   mdOutPath: null,
   suspiciousRatioThreshold: 0.10,
   strict: false,
-  includeDeterministic: false
+  includeDeterministic: false,
+  rawModel: false
 };
 
 const COMMON_CAPITALIZED = new Set([
@@ -38,6 +39,7 @@ function parseArgs(args) {
     else if (arg === "--suspicious-ratio-threshold") parsed.suspiciousRatioThreshold = Number(args[++index]);
     else if (arg === "--strict") parsed.strict = true;
     else if (arg === "--include-deterministic") parsed.includeDeterministic = true;
+    else if (arg === "--raw-model") parsed.rawModel = true;
     else positional.push(arg);
   }
   if (positional[0]) parsed.labelsPath = path.resolve(positional[0]);
@@ -73,8 +75,11 @@ function stripModelNoise(text) {
     .trim();
 }
 
-function answerBody(row) {
-  return stripModelNoise(row.raw_answer_text || row.answer_text || row.generated_text || "");
+function answerBody(row, rawModel = false) {
+  const text = rawModel
+    ? (row.raw_answer_text || row.model_answer_text || row.answer_text || row.generated_text || "")
+    : (row.answer_text || row.generated_text || row.model_answer_text || row.raw_answer_text || "");
+  return stripModelNoise(text);
 }
 
 function flattenValues(value) {
@@ -145,7 +150,7 @@ function candidateEntities(text) {
   return [...new Set(matches.map((term) => term.replace(/\s+/g, " ").trim()).filter(Boolean))];
 }
 
-function auditFaithfulness({ labelsPath, recordsPath, answersPath, queriesPath, includeDeterministic = false, suspiciousRatioThreshold = 0.10 }) {
+function auditFaithfulness({ labelsPath, recordsPath, answersPath, queriesPath, includeDeterministic = false, suspiciousRatioThreshold = 0.10, rawModel = false }) {
   const labels = readJsonl(labelsPath);
   const recordsById = new Map(readJsonl(recordsPath).map((record) => [record.record_id || record.id, record]));
   const answersById = new Map(readJsonl(answersPath).map((answer) => [idOf(answer), answer]));
@@ -163,7 +168,7 @@ function auditFaithfulness({ labelsPath, recordsPath, answersPath, queriesPath, 
     if (!includeDeterministic && (answer.deterministic === true || answer.latency_bucket === "hybrid_system_latency")) continue;
     if (label.refusal_expected) continue;
 
-    const body = answerBody(answer);
+    const body = answerBody(answer, rawModel);
     if (!body) continue;
     evaluated += 1;
 
@@ -217,7 +222,8 @@ function auditFaithfulness({ labelsPath, recordsPath, answersPath, queriesPath, 
       suspicious_answer_count: suspiciousAnswerCount,
       suspicious_answer_ratio: Number(suspiciousAnswerRatio.toFixed(4)),
       suspicious_ratio_threshold: suspiciousRatioThreshold,
-      date_hallucination_count: dateHallucinationCount
+      date_hallucination_count: dateHallucinationCount,
+      answer_source: rawModel ? "raw_model_text" : "delivered_answer_text"
     },
     findings
   };
