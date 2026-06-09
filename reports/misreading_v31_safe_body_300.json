@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-06-09T22:26:24.362Z",
+  "inputs": {
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl",
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency300_v31_safe_body_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 191,
+    "prompt_leak_count": 0,
+    "prompt_leak_threshold": 0,
+    "negation_mismatch_count": 0,
+    "negation_mismatch_ratio": 0,
+    "negation_mismatch_ratio_threshold": 0.03,
+    "overconfidence_answer_count": 3,
+    "overconfidence_ratio": 0.0157,
+    "overconfidence_ratio_threshold": 0.15,
+    "unwarranted_inference_answer_count": 0,
+    "unwarranted_inference_ratio": 0,
+    "unwarranted_inference_ratio_threshold": 0.15,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": [
+    {
+      "query_id": "BQ156",
+      "intent": "method_process_question",
+      "prompt_leak": false,
+      "possible_negation_misread": false,
+      "overconfidence_terms": [
+        "must"
+      ],
+      "unwarranted_inference_terms": [],
+      "answer_body": "The browser-local RAG lab must decide whether to answer or refuse by evaluating the source-linked metadata for rights and research_answer fields."
+    },
+    {
+      "query_id": "BQ157",
+      "intent": "method_process_question",
+      "prompt_leak": false,
+      "possible_negation_misread": false,
+      "overconfidence_terms": [
+        "must"
+      ],
+      "unwarranted_inference_terms": [],
+      "answer_body": "The browser-local RAG lab must decide whether to answer or refuse by evaluating the request against the provided evidence."
+    },
+    {
+      "query_id": "BQ249",
+      "intent": "method_process_question",
+      "prompt_leak": false,
+      "possible_negation_misread": false,
+      "overconfidence_terms": [
+        "must"
+      ],
+      "unwarranted_inference_terms": [],
+      "answer_body": "The browser-local RAG lab must decide evidence sufficiency by evaluating the source-linked metadata, compact text, and rights fields as retrieval evidence. It should choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation."
+    }
+  ]
+}

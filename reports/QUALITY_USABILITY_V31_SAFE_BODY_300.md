@@ -1,6 +1,6 @@
 # V3.1 Answer Usability Check
 
-Generated: 2026-06-09T14:47:01.476Z
+Generated: 2026-06-09T22:26:24.055Z
 
 This check reviews Qwen-generated prose after removing injected `EVIDENCE TAGS`.
 It is a fast screen for extremely short or obviously off-topic answer bodies, not a

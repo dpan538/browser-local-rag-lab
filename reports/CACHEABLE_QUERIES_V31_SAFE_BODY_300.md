@@ -1,6 +1,6 @@
 # V3.1 Cacheable Query Probe
 
-Generated: 2026-06-09T14:47:01.605Z
+Generated: 2026-06-09T22:26:24.660Z
 
 This probe looks only at non-deterministic Qwen rows. It groups answers by
 `gold_evidence_ids` to identify whether any remaining model-generation lanes

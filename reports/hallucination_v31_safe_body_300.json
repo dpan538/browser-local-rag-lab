@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-06-09T22:26:24.237Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl",
+    "answersPath": "reports/webllm_round_03_latency300_v31_safe_body_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 191,
+    "unsupported_date_count": 0,
+    "unsupported_triple_answer_count": 2,
+    "unsupported_triple_ratio": 0.0105,
+    "unsupported_triple_ratio_threshold": 0.05,
+    "unsupported_entity_answer_count": 3,
+    "unsupported_entity_ratio": 0.0157,
+    "unsupported_entity_ratio_threshold": 0.1,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": [
+    {
+      "query_id": "BQ176",
+      "intent": "more_context",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Communist Party"
+      ],
+      "unsupported_triples": [
+        {
+          "subject": "which",
+          "relation": "is",
+          "object": "a 1970 Soviet Union publication by the Communist Party of the Soviet Union (1970 CPA 3886)"
+        }
+      ],
+      "answer_body": "The provided evidence indicates the historical context of the image, which is a 1970 Soviet Union publication by the Communist Party of the Soviet Union (1970 CPA 3886). The image features Lenin, 1920 with 16 labels, and 16 labels 'Leader of the world proletariat'. The surrounding context includes the 1834 Théâtre Dorsay, the 1893 Aristide Bruant, and the 1870 Global release gate expansion."
+    },
+    {
+      "query_id": "BQ213",
+      "intent": "current_object_explanation",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "PAVILLIONS D'INDOCHINE."
+      ],
+      "unsupported_triples": [],
+      "answer_body": "SURF-CRG2026R0100 is a 1941 French Indochina anthem by HYMNES et PAVILLIONS D'INDOCHINE."
+    },
+    {
+      "query_id": "BQ232",
+      "intent": "comparison",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Caribbean",
+        "Americas. The"
+      ],
+      "unsupported_triples": [
+        {
+          "subject": "era and region. The first",
+          "relation": "is",
+          "object": "from the 1840s in the Caribbean, while the second is from 1846 in the Americas"
+        },
+        {
+          "subject": "The first is",
+          "relation": "from",
+          "object": "the 1840s in the Caribbean, while the second is from 1846 in the Americas"
+        }
+      ],
+      "answer_body": "SURF-ER1830R002 (1840-1849) and SURF-CGS2026R0910 (1846) differ in era and region. The first is from the 1840s in the Caribbean, while the second is from 1846 in the Americas. The first is a trade card, while the second is a political document."
+    }
+  ]
+}

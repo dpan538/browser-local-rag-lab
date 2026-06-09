@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T14:47:01.605Z",
+  "generated_at": "2026-06-09T22:26:24.660Z",
   "inputs": {
     "answersPath": "reports/webllm_round_03_latency300_v31_safe_body_answers.jsonl",
     "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",

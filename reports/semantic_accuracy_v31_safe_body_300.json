@@ -1,0 +1,2577 @@
+{
+  "generated_at": "2026-06-09T22:26:41.818Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency300_v31_safe_body_answers.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 191,
+    "low_accuracy_count": 0,
+    "low_accuracy_ratio": 0,
+    "low_accuracy_ratio_threshold": 0.05,
+    "min_delivered_coverage": 0.8,
+    "min_delivered_rouge": 0.2,
+    "avg_delivered_required_field_coverage": 1,
+    "avg_body_required_field_coverage": 0.5447,
+    "answer_source": "delivered_answer_text"
+  },
+  "rows": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.4434,
+      "body_rouge1_recall": 0.0849,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ02",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.2593,
+      "body_rouge1_recall": 0.237,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ03",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.3615,
+      "body_rouge1_recall": 0.0923,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ04",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.3011,
+      "body_rouge1_recall": 0.0645,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8077,
+      "body_rouge1_recall": 0.0897,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "date_text",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ06",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8431,
+      "body_rouge1_recall": 0.1765,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "date_text",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.7586,
+      "body_rouge1_recall": 0.0575,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.75,
+      "body_rouge1_recall": 0.3362,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7422,
+      "body_rouge1_recall": 0.5078,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id"
+      ]
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8155,
+      "body_rouge1_recall": 0.1012,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.8,
+      "delivered_rouge1_recall": 0.7716,
+      "body_rouge1_recall": 0.4873,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id"
+      ]
+    },
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.7368,
+      "body_rouge1_recall": 0.2368,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ24",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.7922,
+      "body_rouge1_recall": 0.2597,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.1667,
+      "delivered_rouge1_recall": 0.8467,
+      "body_rouge1_recall": 0.0348,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "region",
+        "source",
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.1667,
+      "delivered_rouge1_recall": 0.8403,
+      "body_rouge1_recall": 0.0694,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "region",
+        "source",
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.3433,
+      "body_rouge1_recall": 0.0821,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.5149,
+      "body_rouge1_recall": 0.3731,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.3636,
+      "body_rouge1_recall": 0.3636,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ033",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.2157,
+      "body_rouge1_recall": 0.0343,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.232,
+      "body_rouge1_recall": 0.0825,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ035",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.2716,
+      "body_rouge1_recall": 0.1111,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ036",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.2899,
+      "body_rouge1_recall": 0.0947,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ037",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.2766,
+      "body_rouge1_recall": 0.0426,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ038",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.4257,
+      "body_rouge1_recall": 0.4257,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ039",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.4965,
+      "body_rouge1_recall": 0.4965,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ040",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.4333,
+      "body_rouge1_recall": 0.2067,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ041",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.359,
+      "body_rouge1_recall": 0.1987,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ042",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.4634,
+      "body_rouge1_recall": 0.122,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ043",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.2308,
+      "body_rouge1_recall": 0.0538,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ044",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.3167,
+      "body_rouge1_recall": 0.025,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ045",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.3786,
+      "body_rouge1_recall": 0.1068,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ046",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.3023,
+      "body_rouge1_recall": 0.0853,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ047",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.3421,
+      "body_rouge1_recall": 0.0965,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ048",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.375,
+      "body_rouge1_recall": 0.1058,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ049",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.3558,
+      "body_rouge1_recall": 0.3558,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ050",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.3966,
+      "body_rouge1_recall": 0.0948,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ051",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.4672,
+      "body_rouge1_recall": 0.4672,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ052",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.3089,
+      "body_rouge1_recall": 0.0244,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ053",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.432,
+      "body_rouge1_recall": 0.432,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ054",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.2923,
+      "body_rouge1_recall": 0.0231,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ055",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.3545,
+      "body_rouge1_recall": 0.3545,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ056",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.3596,
+      "body_rouge1_recall": 0.0439,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ057",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.3415,
+      "body_rouge1_recall": 0.0488,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ058",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7668,
+      "body_rouge1_recall": 0.1969,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ059",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7719,
+      "body_rouge1_recall": 0.1287,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ060",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7816,
+      "body_rouge1_recall": 0.1494,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ061",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.7969,
+      "body_rouge1_recall": 0.1302,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ062",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.8,
+      "delivered_rouge1_recall": 0.8357,
+      "body_rouge1_recall": 0.3043,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id"
+      ]
+    },
+    {
+      "query_id": "BQ063",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7711,
+      "body_rouge1_recall": 0.0964,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ064",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7711,
+      "body_rouge1_recall": 0.1084,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ065",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8411,
+      "body_rouge1_recall": 0.1075,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ066",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.8341,
+      "body_rouge1_recall": 0.0461,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "region"
+      ]
+    },
+    {
+      "query_id": "BQ067",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7926,
+      "body_rouge1_recall": 0.2074,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ068",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.8384,
+      "body_rouge1_recall": 0.0568,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "region"
+      ]
+    },
+    {
+      "query_id": "BQ069",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.8246,
+      "body_rouge1_recall": 0.0474,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "region"
+      ]
+    },
+    {
+      "query_id": "BQ070",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.8246,
+      "body_rouge1_recall": 0.0474,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "region"
+      ]
+    },
+    {
+      "query_id": "BQ071",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.8475,
+      "body_rouge1_recall": 0.096,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ072",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.8213,
+      "body_rouge1_recall": 0.079,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "region"
+      ]
+    },
+    {
+      "query_id": "BQ073",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7205,
+      "body_rouge1_recall": 0.0497,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ074",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.8,
+      "body_rouge1_recall": 0.1778,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ075",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7881,
+      "body_rouge1_recall": 0.0662,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ076",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.8,
+      "delivered_rouge1_recall": 0.8203,
+      "body_rouge1_recall": 0.2995,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id"
+      ]
+    },
+    {
+      "query_id": "BQ077",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.7378,
+      "body_rouge1_recall": 0.0427,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "date_text",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ078",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7613,
+      "body_rouge1_recall": 0.0645,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ079",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7763,
+      "body_rouge1_recall": 0.0658,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ080",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7455,
+      "body_rouge1_recall": 0.0909,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ081",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.8471,
+      "body_rouge1_recall": 0.1059,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "date_text",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ082",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.7892,
+      "body_rouge1_recall": 0.0663,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ102",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.5405,
+      "body_rouge1_recall": 0.1171,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ103",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.733,
+      "body_rouge1_recall": 0.0909,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ104",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.8038,
+      "body_rouge1_recall": 0.6392,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ105",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.6718,
+      "body_rouge1_recall": 0.145,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ106",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.8168,
+      "body_rouge1_recall": 0.1414,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ107",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7926,
+      "body_rouge1_recall": 0.0638,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ108",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7483,
+      "body_rouge1_recall": 0.1293,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ109",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7155,
+      "body_rouge1_recall": 0.0862,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ110",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.8073,
+      "body_rouge1_recall": 0.0655,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ111",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.6954,
+      "body_rouge1_recall": 0.1854,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ112",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7007,
+      "body_rouge1_recall": 0.1314,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ113",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7351,
+      "body_rouge1_recall": 0.4901,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id"
+      ]
+    },
+    {
+      "query_id": "BQ114",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7919,
+      "body_rouge1_recall": 0.0964,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ115",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.3333,
+      "delivered_rouge1_recall": 0.6871,
+      "body_rouge1_recall": 0.0952,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ116",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.3333,
+      "delivered_rouge1_recall": 0.7429,
+      "body_rouge1_recall": 0.2381,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ117",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7778,
+      "body_rouge1_recall": 0.0787,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ118",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.3333,
+      "delivered_rouge1_recall": 0.4632,
+      "body_rouge1_recall": 0.1579,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ119",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7583,
+      "body_rouge1_recall": 0.1417,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ120",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.6512,
+      "body_rouge1_recall": 0.314,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ121",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.3333,
+      "delivered_rouge1_recall": 0.7582,
+      "body_rouge1_recall": 0.0915,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ122",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.6629,
+      "body_rouge1_recall": 0.4719,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ123",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.6383,
+      "body_rouge1_recall": 0.3404,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ124",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.3333,
+      "delivered_rouge1_recall": 0.7067,
+      "body_rouge1_recall": 0.32,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ125",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.6458,
+      "body_rouge1_recall": 0.4167,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ126",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.7632,
+      "body_rouge1_recall": 0.2895,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ127",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7639,
+      "body_rouge1_recall": 0.2014,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ128",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.8182,
+      "body_rouge1_recall": 0.2536,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ129",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8496,
+      "body_rouge1_recall": 0.1195,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ130",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.8529,
+      "body_rouge1_recall": 0.1218,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ131",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8727,
+      "body_rouge1_recall": 0.1011,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ132",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.8182,
+      "body_rouge1_recall": 0.2045,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ133",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.7143,
+      "body_rouge1_recall": 0.1677,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ134",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.6828,
+      "body_rouge1_recall": 0.2151,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ135",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.7525,
+      "body_rouge1_recall": 0.1364,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ136",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8018,
+      "body_rouge1_recall": 0.1216,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ137",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.8182,
+      "body_rouge1_recall": 0.2584,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ138",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8259,
+      "body_rouge1_recall": 0.1343,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ139",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8318,
+      "body_rouge1_recall": 0.1227,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ140",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8108,
+      "body_rouge1_recall": 0.1126,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ141",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.7963,
+      "body_rouge1_recall": 0.1806,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ142",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.8187,
+      "body_rouge1_recall": 0.3275,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ143",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7892,
+      "body_rouge1_recall": 0.3351,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ144",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.7299,
+      "body_rouge1_recall": 0.1095,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ145",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7742,
+      "body_rouge1_recall": 0.3306,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ146",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.6899,
+      "body_rouge1_recall": 0.2868,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ147",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.9114,
+      "body_rouge1_recall": 0.3544,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ148",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8987,
+      "body_rouge1_recall": 0.4304,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ149",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.8734,
+      "body_rouge1_recall": 0.4177,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ150",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8861,
+      "body_rouge1_recall": 0.2911,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ151",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8734,
+      "body_rouge1_recall": 0.2785,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ152",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.8734,
+      "body_rouge1_recall": 0.481,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ153",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8987,
+      "body_rouge1_recall": 0.3924,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ154",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8861,
+      "body_rouge1_recall": 0.3671,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ155",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8987,
+      "body_rouge1_recall": 0.3038,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ156",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8987,
+      "body_rouge1_recall": 0.4051,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ157",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8987,
+      "body_rouge1_recall": 0.2911,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ158",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.9114,
+      "body_rouge1_recall": 0.3671,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ159",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.7089,
+      "body_rouge1_recall": 0.2785,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ160",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8734,
+      "body_rouge1_recall": 0.2278,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ161",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.1667,
+      "delivered_rouge1_recall": 0.815,
+      "body_rouge1_recall": 0.0694,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "date_text",
+        "region",
+        "source",
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ162",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.8516,
+      "body_rouge1_recall": 0.1758,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ163",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7656,
+      "body_rouge1_recall": 0.1979,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "date_text",
+        "region"
+      ]
+    },
+    {
+      "query_id": "BQ164",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.5,
+      "delivered_rouge1_recall": 0.8313,
+      "body_rouge1_recall": 0.1506,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ165",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.8311,
+      "body_rouge1_recall": 0.1279,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ166",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.8333,
+      "delivered_rouge1_recall": 0.8525,
+      "body_rouge1_recall": 0.1367,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "region"
+      ]
+    },
+    {
+      "query_id": "BQ167",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.8333,
+      "delivered_rouge1_recall": 0.8305,
+      "body_rouge1_recall": 0.1932,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ168",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.8333,
+      "delivered_rouge1_recall": 0.7613,
+      "body_rouge1_recall": 0.2774,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ169",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.5,
+      "delivered_rouge1_recall": 0.8828,
+      "body_rouge1_recall": 0.2218,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "date_text",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ170",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.3333,
+      "delivered_rouge1_recall": 0.8035,
+      "body_rouge1_recall": 0.0867,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "date_text",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ171",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.5,
+      "delivered_rouge1_recall": 0.8063,
+      "body_rouge1_recall": 0.2125,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ172",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.83,
+      "body_rouge1_recall": 0.0711,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "region",
+        "source",
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ173",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.5,
+      "delivered_rouge1_recall": 0.8368,
+      "body_rouge1_recall": 0.184,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "region",
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ174",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.3333,
+      "delivered_rouge1_recall": 0.827,
+      "body_rouge1_recall": 0.0346,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "date_text",
+        "region",
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ175",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.5,
+      "delivered_rouge1_recall": 0.75,
+      "body_rouge1_recall": 0.1887,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "region",
+        "source",
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ176",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.8212,
+      "body_rouge1_recall": 0.2774,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ201",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.3308,
+      "body_rouge1_recall": 0.1385,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ202",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.4234,
+      "body_rouge1_recall": 0.1441,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ203",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.4242,
+      "body_rouge1_recall": 0.2121,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ204",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.5752,
+      "body_rouge1_recall": 0.5133,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ205",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.3651,
+      "body_rouge1_recall": 0.2381,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ206",
+      "intent": "archive_orientation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.3377,
+      "body_rouge1_recall": 0.1258,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ207",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.5492,
+      "body_rouge1_recall": 0.5492,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ208",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.5492,
+      "body_rouge1_recall": 0.5492,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ209",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.424,
+      "body_rouge1_recall": 0.424,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ210",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.3509,
+      "body_rouge1_recall": 0.0263,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ211",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.4331,
+      "body_rouge1_recall": 0.1102,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ212",
+      "intent": "casual_archive_help",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.5493,
+      "body_rouge1_recall": 0.5493,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ213",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.7928,
+      "body_rouge1_recall": 0.0954,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "date_text",
+        "region"
+      ]
+    },
+    {
+      "query_id": "BQ214",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7565,
+      "body_rouge1_recall": 0.1865,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ215",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7784,
+      "body_rouge1_recall": 0.1198,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ216",
+      "intent": "current_object_explanation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7744,
+      "body_rouge1_recall": 0.1341,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ229",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7436,
+      "body_rouge1_recall": 0.1197,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ230",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7736,
+      "body_rouge1_recall": 0.2201,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ231",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.8582,
+      "body_rouge1_recall": 0.2695,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ232",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.8085,
+      "body_rouge1_recall": 0.1915,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ233",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7681,
+      "body_rouge1_recall": 0.5072,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id"
+      ]
+    },
+    {
+      "query_id": "BQ234",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6667,
+      "delivered_rouge1_recall": 0.7974,
+      "body_rouge1_recall": 0.1373,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title"
+      ]
+    },
+    {
+      "query_id": "BQ235",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.3333,
+      "delivered_rouge1_recall": 0.6701,
+      "body_rouge1_recall": 0.1856,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ236",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.3333,
+      "delivered_rouge1_recall": 0.6322,
+      "body_rouge1_recall": 0.1724,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ237",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.7168,
+      "body_rouge1_recall": 0.4425,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ238",
+      "intent": "comparison",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.6644,
+      "body_rouge1_recall": 0.2397,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ239",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.8,
+      "delivered_rouge1_recall": 0.7179,
+      "body_rouge1_recall": 0.4154,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id"
+      ]
+    },
+    {
+      "query_id": "BQ240",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.8,
+      "delivered_rouge1_recall": 0.7241,
+      "body_rouge1_recall": 0.4236,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id"
+      ]
+    },
+    {
+      "query_id": "BQ241",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.6836,
+      "body_rouge1_recall": 0.3446,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ242",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.8,
+      "delivered_rouge1_recall": 0.8042,
+      "body_rouge1_recall": 0.3846,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id"
+      ]
+    },
+    {
+      "query_id": "BQ243",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.8,
+      "delivered_rouge1_recall": 0.8165,
+      "body_rouge1_recall": 0.443,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id"
+      ]
+    },
+    {
+      "query_id": "BQ244",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.4,
+      "delivered_rouge1_recall": 0.8252,
+      "body_rouge1_recall": 0.2028,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ245",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8551,
+      "body_rouge1_recall": 0.1449,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ246",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.2,
+      "delivered_rouge1_recall": 0.8079,
+      "body_rouge1_recall": 0.1325,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ247",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.7727,
+      "body_rouge1_recall": 0.2197,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ248",
+      "intent": "region_period_recommendation",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.6,
+      "delivered_rouge1_recall": 0.8496,
+      "body_rouge1_recall": 0.5263,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ249",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.8765,
+      "body_rouge1_recall": 0.5926,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ250",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.6914,
+      "body_rouge1_recall": 0.284,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ251",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.9136,
+      "body_rouge1_recall": 0.3333,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ252",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.8519,
+      "body_rouge1_recall": 0.5926,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ253",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 1,
+      "delivered_rouge1_recall": 0.8519,
+      "body_rouge1_recall": 0.321,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": []
+    },
+    {
+      "query_id": "BQ254",
+      "intent": "method_process_question",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0,
+      "delivered_rouge1_recall": 0.8148,
+      "body_rouge1_recall": 0.284,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "method_context"
+      ]
+    },
+    {
+      "query_id": "BQ255",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.5,
+      "delivered_rouge1_recall": 0.8468,
+      "body_rouge1_recall": 0.1622,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ256",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.5,
+      "delivered_rouge1_recall": 0.698,
+      "body_rouge1_recall": 0.1089,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ257",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.1667,
+      "delivered_rouge1_recall": 0.7227,
+      "body_rouge1_recall": 0.0636,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "region",
+        "source",
+        "topology"
+      ]
+    },
+    {
+      "query_id": "BQ258",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.5,
+      "delivered_rouge1_recall": 0.6452,
+      "body_rouge1_recall": 0.1183,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "title",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ259",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.5,
+      "delivered_rouge1_recall": 0.8317,
+      "body_rouge1_recall": 0.1154,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "region",
+        "source"
+      ]
+    },
+    {
+      "query_id": "BQ260",
+      "intent": "more_context",
+      "delivered_required_field_coverage": 1,
+      "body_required_field_coverage": 0.5,
+      "delivered_rouge1_recall": 0.7887,
+      "body_rouge1_recall": 0.1547,
+      "low_accuracy": false,
+      "missing_delivered_fields": [],
+      "missing_body_fields": [
+        "record_id",
+        "region",
+        "source"
+      ]
+    }
+  ]
+}
