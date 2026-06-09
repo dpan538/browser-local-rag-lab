@@ -1,6 +1,6 @@
 import * as webllm from "https://esm.run/@mlc-ai/web-llm";
 import { generateDeterministicAnswer } from "../scripts/deterministic_responder.mjs?v=2";
-import { buildPrompt as buildContractPrompt, finalizeAnswerText } from "../scripts/prompt_builder.mjs?v=7";
+import { buildPrompt as buildContractPrompt, finalizeAnswerText } from "../scripts/prompt_builder.mjs?v=8";
 
 const params = new URLSearchParams(window.location.search);
 const config = {
@@ -753,7 +753,7 @@ async function runQuery(queryId) {
     if (!state.engine) throw new Error("Load WebLLM before running generation.");
     log(`Running ${queryId} (${packet.label.intent}).`);
     const generated = await streamCompletion(prompt);
-    const finalizedAnswerText = finalizeAnswerText(packet, generated.answer_text);
+    const finalizedAnswerText = finalizeAnswerText(packet, generated.answer_text, { promptVariant: config.promptVariant });
     const row = {
       ...base,
       generation_status: "completed",

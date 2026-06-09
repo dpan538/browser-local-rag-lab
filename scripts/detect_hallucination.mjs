@@ -208,6 +208,13 @@ function tripleHasUnsupportedAnchor(triple, allowedText, knownDates) {
   return unsupportedDatesIn(text, knownDates).length > 0 || unsupportedEntitiesIn(text, allowedText).length > 0;
 }
 
+function classifyUnsupportedTriple(triple, allowedText, knownDates) {
+  const text = `${triple.subject} ${triple.object}`;
+  if (unsupportedDatesIn(text, knownDates).length > 0) return "wrong_date";
+  if (unsupportedEntitiesIn(text, allowedText).length > 0) return "wrong_entity";
+  return "wrong_relation";
+}
+
 export function detectHallucination(options) {
   const labels = readJsonl(options.labelsPath);
   const recordsById = new Map(readJsonl(options.recordsPath).map((record) => [record.record_id || record.id, record]));
@@ -242,7 +249,11 @@ export function detectHallucination(options) {
     const unsupportedEntities = unsupportedEntitiesIn(body, allowedText);
     const unsupportedTriples = extractTriples(body)
       .filter((triple) => !tripleSupported(triple, allowedText))
-      .filter((triple) => tripleHasUnsupportedAnchor(triple, allowedText, knownDates));
+      .filter((triple) => tripleHasUnsupportedAnchor(triple, allowedText, knownDates))
+      .map((triple) => ({
+        ...triple,
+        type: classifyUnsupportedTriple(triple, allowedText, knownDates)
+      }));
 
     unsupportedDateCount += unsupportedDates.length;
     if (unsupportedEntities.length > 0) unsupportedEntityAnswers += 1;
@@ -292,7 +303,7 @@ export function detectHallucination(options) {
 function markdown(report) {
   const rows = report.findings.length === 0
     ? "| none | none | none | none | none |"
-    : report.findings.map((finding) => `| ${finding.query_id} | ${finding.intent} | ${finding.unsupported_dates.join("; ") || "none"} | ${finding.unsupported_entities.join("; ") || "none"} | ${finding.unsupported_triples.map((triple) => `${triple.subject} ${triple.relation} ${triple.object}`).join("; ") || "none"} |`).join("\n");
+    : report.findings.map((finding) => `| ${finding.query_id} | ${finding.intent} | ${finding.unsupported_dates.join("; ") || "none"} | ${finding.unsupported_entities.join("; ") || "none"} | ${finding.unsupported_triples.map((triple) => `[${triple.type}] ${triple.subject} ${triple.relation} ${triple.object}`).join("; ") || "none"} |`).join("\n");
   return `# Hallucination And Unsupported Fact Check
 
 Generated: ${report.generated_at}

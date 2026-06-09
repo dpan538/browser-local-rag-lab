@@ -1,0 +1,3202 @@
+{
+  "generated_at": "2026-06-09T22:38:56.265Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency300_v31_safe_body_answers.jsonl",
+    "baselinePath": null
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 191,
+    "avg_coverage_ratio": 0.2904,
+    "baseline_avg_coverage_ratio": null,
+    "average_drop": null,
+    "max_average_drop": 0.05,
+    "answer_source": "delivered_answer_text"
+  },
+  "rows": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "fact_count": 51,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.2353,
+      "uncovered_sample": [
+        "SURF-ER1830R004",
+        "[Trade card for McKay Iron and Locomotive Works and an Arkansas railroad]",
+        "Thomas, Henry Atwell, 1834-1904",
+        "[between 1863 and 1868]",
+        "Unresolved region",
+        "1 print :",
+        "1 print : chromolithograph.",
+        "Library of Congress loc.gov API"
+      ]
+    },
+    {
+      "query_id": "BQ02",
+      "intent": "archive_orientation",
+      "fact_count": 39,
+      "covered_fact_count": 19,
+      "coverage_ratio": 0.4872,
+      "uncovered_sample": [
+        "SURF-CGS2026R0909",
+        "McLeod, H",
+        "1846",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ03",
+      "intent": "archive_orientation",
+      "fact_count": 50,
+      "covered_fact_count": 11,
+      "coverage_ratio": 0.22,
+      "uncovered_sample": [
+        "SURF-CGS2026R0908",
+        "Temple of Xochicalco, Exposition Universelle Paris 1867, from Illustrated London News, 01. Juni 1867.jpg",
+        "The Illustrated London News, 1. Juni 1867",
+        "1842",
+        "Latin America / Mexico",
+        "open image record; graphic design",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Temple of Xochicalco, Exposition Universelle Paris 1867, from Illustrated London News, 01. Juni 1867.jpg / page 124497294"
+      ]
+    },
+    {
+      "query_id": "BQ04",
+      "intent": "casual_archive_help",
+      "fact_count": 36,
+      "covered_fact_count": 4,
+      "coverage_ratio": 0.1111,
+      "uncovered_sample": [
+        "SURF-ER1830R015",
+        "Unknown",
+        "1876.",
+        "India",
+        "1 print :",
+        "1 print : wood engraving.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/99614267/"
+      ]
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "fact_count": 45,
+      "covered_fact_count": 4,
+      "coverage_ratio": 0.0889,
+      "uncovered_sample": [
+        "Unknown",
+        "1830",
+        "France",
+        "Gallica visual/document record",
+        "2 p. ; in-8; Nombre total de vues : 6",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",
+        "2026-05-31"
+      ]
+    },
+    {
+      "query_id": "BQ06",
+      "intent": "current_object_explanation",
+      "fact_count": 39,
+      "covered_fact_count": 1,
+      "coverage_ratio": 0.0256,
+      "uncovered_sample": [
+        "SURF-GAX1970R001",
+        "Unknown",
+        "1830",
+        "France",
+        "Gallica visual/document record",
+        "2 p. ; in-8; Nombre total de vues : 6",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k5456008h"
+      ]
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "fact_count": 45,
+      "covered_fact_count": 4,
+      "coverage_ratio": 0.0889,
+      "uncovered_sample": [
+        "SURF-GAX1970R001",
+        "Unknown",
+        "Gallica visual/document record",
+        "2 p. ; in-8; Nombre total de vues : 6",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",
+        "2026-05-31",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "fact_count": 34,
+      "covered_fact_count": 18,
+      "coverage_ratio": 0.5294,
+      "uncovered_sample": [
+        "poster / print / graphic record",
+        "Wikimedia Commons",
+        "open_candidate",
+        "sheet",
+        "main_sheet",
+        "Midcentury modern graphic communication",
+        "Poster",
+        "HN009"
+      ]
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "fact_count": 34,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.3529,
+      "uncovered_sample": [
+        "SURF-COM1970R007",
+        "Russia",
+        "Wikimedia Commons",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons image with open license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "fact_count": 32,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.2188,
+      "uncovered_sample": [
+        "SURF-GAX1970R001",
+        "Unknown",
+        "France",
+        "Gallica visual/document record",
+        "2 p. ; in-8; Nombre total de vues : 6",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",
+        "2026-05-31"
+      ]
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "fact_count": 39,
+      "covered_fact_count": 21,
+      "coverage_ratio": 0.5385,
+      "uncovered_sample": [
+        "SURF-CGS2026R0681",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC BY-SA 3.0.",
+        "sheet",
+        "main_sheet",
+        "HN009"
+      ]
+    },
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.7222,
+      "uncovered_sample": [
+        "browser-local-rag-lab",
+        "2026-06-07",
+        "research-only fixture record",
+        "https://github.com/dpan538/browser-local-rag-lab",
+        "research_fixture"
+      ]
+    },
+    {
+      "query_id": "BQ24",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.7222,
+      "uncovered_sample": [
+        "browser-local-rag-lab",
+        "2026-06-07",
+        "research-only fixture record",
+        "https://github.com/dpan538/browser-local-rag-lab",
+        "research_fixture"
+      ]
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "fact_count": 41,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.122,
+      "uncovered_sample": [
+        "SURF-COM1970R007",
+        "Israel Kaplan",
+        "Russia",
+        "Open image record; poster/print candidate",
+        "poster / print / graphic record",
+        "Wikimedia Commons",
+        "2026-05-31",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "fact_count": 41,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1707,
+      "uncovered_sample": [
+        "SURF-COM1970R007",
+        "Israel Kaplan",
+        "Russia",
+        "Wikimedia Commons",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons image with open license metadata: Public domain."
+      ]
+    },
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "fact_count": 41,
+      "covered_fact_count": 1,
+      "coverage_ratio": 0.0244,
+      "uncovered_sample": [
+        "SURF-CRG2026R0031",
+        "East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865.jpg",
+        "Unknown artist Unknown artist",
+        "1865",
+        "South Asia / India",
+        "release-gate open image record; stamp",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865.jpg / page 63346338"
+      ]
+    },
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "fact_count": 39,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.2051,
+      "uncovered_sample": [
+        "SURF-CRG2026R0001",
+        "Paganini par David d'Angers (Angers) (14911656518).jpg",
+        "Jean-Pierre Dalbéra from Paris, France",
+        "1830",
+        "https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "fact_count": 44,
+      "covered_fact_count": 27,
+      "coverage_ratio": 0.6136,
+      "uncovered_sample": [
+        "La typographie : poëme / par M. L. Pelletier",
+        "Pelletier, H L. Auteur du texte",
+        "1832",
+        "1 vol. (250 p.) ; in-8; Nombre total de vues : 258",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame",
+        "HN009"
+      ]
+    },
+    {
+      "query_id": "BQ033",
+      "intent": "archive_orientation",
+      "fact_count": 44,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.2955,
+      "uncovered_sample": [
+        "Unknown",
+        "1834",
+        "France",
+        "estampe ; 27 x 19 cm (f.); image/jpeg; Nombre total de vues : 1",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/btv1b8438046c",
+        "2026-05-31",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "fact_count": 44,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1591,
+      "uncovered_sample": [
+        "SURF-GAX1970R003",
+        "Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1",
+        "Roret, Nicolas-Edme (1797-1860). Auteur du texte; Frey, Antoine (1780-18..). Auteur du texte",
+        "1835",
+        "Gallica visual/document record",
+        "2 vol. in-18, pl.; Nombre total de vues : 322",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k6332775h"
+      ]
+    },
+    {
+      "query_id": "BQ035",
+      "intent": "archive_orientation",
+      "fact_count": 46,
+      "covered_fact_count": 16,
+      "coverage_ratio": 0.3478,
+      "uncovered_sample": [
+        "SURF-GAX1970R004",
+        "Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie",
+        "Unknown",
+        "1838-1839",
+        "Nombre total de vues : 124",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/cb328023517",
+        "2026-05-31"
+      ]
+    },
+    {
+      "query_id": "BQ036",
+      "intent": "archive_orientation",
+      "fact_count": 46,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1522,
+      "uncovered_sample": [
+        "SURF-GAX1970R005",
+        "Imprimerie lithographique, Autographique, E. Simon Fils, Strasbourg",
+        "Unknown",
+        "1840",
+        "Gallica visual/document record",
+        "10,5 x 14,5 cm; image/jpeg; Nombre total de vues : 1",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/btv1b10202743j"
+      ]
+    },
+    {
+      "query_id": "BQ037",
+      "intent": "archive_orientation",
+      "fact_count": 41,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.3171,
+      "uncovered_sample": [
+        "SURF-CRG2026R0006",
+        "Stamp 1974 Romania MiNr3179 pm B002a.jpg",
+        "\"Posta Romana\"",
+        "1841",
+        "Eastern Europe / Romania",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ038",
+      "intent": "archive_orientation",
+      "fact_count": 39,
+      "covered_fact_count": 28,
+      "coverage_ratio": 0.7179,
+      "uncovered_sample": [
+        "1870",
+        "Global / release gate expansion",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "HN009",
+        "HN010",
+        "HN011"
+      ]
+    },
+    {
+      "query_id": "BQ039",
+      "intent": "archive_orientation",
+      "fact_count": 41,
+      "covered_fact_count": 30,
+      "coverage_ratio": 0.7317,
+      "uncovered_sample": [
+        "1870",
+        "Global / release gate expansion",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "HN009",
+        "HN010",
+        "HN011"
+      ]
+    },
+    {
+      "query_id": "BQ040",
+      "intent": "archive_orientation",
+      "fact_count": 41,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1707,
+      "uncovered_sample": [
+        "SURF-CRG2026R0052",
+        "The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png",
+        "USSR Post",
+        "1870",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690",
+        "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3886_sheet_with_16_labels_(Lenin,_1920_with_16_labels_%27Leader_of_the_world_proletariat%27).png",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ041",
+      "intent": "archive_orientation",
+      "fact_count": 40,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.175,
+      "uncovered_sample": [
+        "SURF-CRG2026R0071",
+        "The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png",
+        "USSR Post",
+        "1877",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png / page 102829467",
+        "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1977_CPA_4695_stamp_(Birth_centenary_of_Felix_Dzerzhinsky,_%27Iron_Felix%27,_Bolshevik_revolutionary_and_official,_led_Cheka_and_OGPU).png",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ042",
+      "intent": "archive_orientation",
+      "fact_count": 49,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2041,
+      "uncovered_sample": [
+        "Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg",
+        "Israel Kaplan",
+        "1897",
+        "Wikimedia Commons",
+        "https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ043",
+      "intent": "archive_orientation",
+      "fact_count": 40,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.15,
+      "uncovered_sample": [
+        "SURF-CRG2026R0235",
+        "ApollonMagazine.jpg",
+        "Nikolai Remisov",
+        "1909",
+        "Global / release gate expansion",
+        "Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526",
+        "https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ044",
+      "intent": "casual_archive_help",
+      "fact_count": 47,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1277,
+      "uncovered_sample": [
+        "SURF-CRG2026R0001",
+        "Paganini par David d'Angers (Angers) (14911656518).jpg",
+        "Jean-Pierre Dalbéra from Paris, France",
+        "1830",
+        "Global / release gate expansion",
+        "release-gate open image record; brochure",
+        "2026-06-06",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ045",
+      "intent": "casual_archive_help",
+      "fact_count": 42,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0714,
+      "uncovered_sample": [
+        "La typographie : poëme / par M. L. Pelletier",
+        "Pelletier, H L. Auteur du texte",
+        "1832",
+        "France",
+        "Gallica visual/document record",
+        "1 vol. (250 p.) ; in-8; Nombre total de vues : 258",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k54640797"
+      ]
+    },
+    {
+      "query_id": "BQ046",
+      "intent": "casual_archive_help",
+      "fact_count": 41,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0732,
+      "uncovered_sample": [
+        "Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe]",
+        "Unknown",
+        "1834",
+        "France",
+        "Gallica visual/document record",
+        "estampe ; 27 x 19 cm (f.); image/jpeg; Nombre total de vues : 1",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/btv1b8438046c"
+      ]
+    },
+    {
+      "query_id": "BQ047",
+      "intent": "casual_archive_help",
+      "fact_count": 42,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0714,
+      "uncovered_sample": [
+        "Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1",
+        "Roret, Nicolas-Edme (1797-1860). Auteur du texte; Frey, Antoine (1780-18..). Auteur du texte",
+        "1835",
+        "France",
+        "Gallica visual/document record",
+        "2 vol. in-18, pl.; Nombre total de vues : 322",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k6332775h"
+      ]
+    },
+    {
+      "query_id": "BQ048",
+      "intent": "casual_archive_help",
+      "fact_count": 44,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0682,
+      "uncovered_sample": [
+        "Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie",
+        "Unknown",
+        "1838-1839",
+        "France",
+        "Gallica visual/document record",
+        "Nombre total de vues : 124",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/cb328023517"
+      ]
+    },
+    {
+      "query_id": "BQ049",
+      "intent": "casual_archive_help",
+      "fact_count": 42,
+      "covered_fact_count": 27,
+      "coverage_ratio": 0.6429,
+      "uncovered_sample": [
+        "Imprimerie lithographique, Autographique, E. Simon Fils, Strasbourg",
+        "Unknown",
+        "1840",
+        "2026-05-31",
+        "HN009",
+        "HN010",
+        "HN011",
+        "HN014"
+      ]
+    },
+    {
+      "query_id": "BQ050",
+      "intent": "casual_archive_help",
+      "fact_count": 49,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1224,
+      "uncovered_sample": [
+        "Stamp 1974 Romania MiNr3179 pm B002a.jpg",
+        "\"Posta Romana\"",
+        "1841",
+        "Eastern Europe / Romania",
+        "release-gate open image record; stamp",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Stamp 1974 Romania MiNr3179 pm B002a.jpg / page 117737469",
+        "https://commons.wikimedia.org/wiki/File:Stamp_1974_Romania_MiNr3179_pm_B002a.jpg"
+      ]
+    },
+    {
+      "query_id": "BQ051",
+      "intent": "casual_archive_help",
+      "fact_count": 49,
+      "covered_fact_count": 33,
+      "coverage_ratio": 0.6735,
+      "uncovered_sample": [
+        "1870",
+        "Global / release gate expansion",
+        "2026-06-06",
+        "HN009",
+        "HN010",
+        "HN011",
+        "HN014",
+        "1895"
+      ]
+    },
+    {
+      "query_id": "BQ052",
+      "intent": "casual_archive_help",
+      "fact_count": 49,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0612,
+      "uncovered_sample": [
+        "SURF-CRG2026R0051",
+        "The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg",
+        "USSR Post",
+        "1870",
+        "Global / release gate expansion",
+        "release-gate open image record; stamp",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ053",
+      "intent": "casual_archive_help",
+      "fact_count": 49,
+      "covered_fact_count": 31,
+      "coverage_ratio": 0.6327,
+      "uncovered_sample": [
+        "1870",
+        "Global / release gate expansion",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "HN009",
+        "HN010",
+        "HN011"
+      ]
+    },
+    {
+      "query_id": "BQ054",
+      "intent": "casual_archive_help",
+      "fact_count": 49,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1429,
+      "uncovered_sample": [
+        "SURF-CRG2026R0071",
+        "The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png",
+        "USSR Post",
+        "1877",
+        "Global / release gate expansion",
+        "release-gate open image record; stamp",
+        "2026-06-06",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ055",
+      "intent": "casual_archive_help",
+      "fact_count": 46,
+      "covered_fact_count": 30,
+      "coverage_ratio": 0.6522,
+      "uncovered_sample": [
+        "Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg",
+        "Israel Kaplan",
+        "1897",
+        "2026-05-31",
+        "HN009",
+        "HN010",
+        "HN011",
+        "HN014"
+      ]
+    },
+    {
+      "query_id": "BQ056",
+      "intent": "casual_archive_help",
+      "fact_count": 49,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2041,
+      "uncovered_sample": [
+        "SURF-CRG2026R0235",
+        "ApollonMagazine.jpg",
+        "Nikolai Remisov",
+        "1909",
+        "Global / release gate expansion",
+        "2026-06-06",
+        "open_candidate",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ057",
+      "intent": "casual_archive_help",
+      "fact_count": 49,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2041,
+      "uncovered_sample": [
+        "SURF-CRG2026R0246",
+        "PlumEdwardVII.jpg",
+        "General Post Office ; scanned by User:Nickpo. The original uploader was Nickpo at Russian Wikipedia .",
+        "1910",
+        "Global / release gate expansion",
+        "https://commons.wikimedia.org/wiki/File:PlumEdwardVII.jpg",
+        "2026-06-06",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ058",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 11,
+      "coverage_ratio": 0.2,
+      "uncovered_sample": [
+        "SURF-CRG2026R0274",
+        "Russian Post , Publishing and Trade Centre \"Marka\" ( ИТЦ «Марка» ). The design of the envelope by R. Komsa. Scanned by Dmitry Ivanov .",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ059",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 11,
+      "coverage_ratio": 0.2,
+      "uncovered_sample": [
+        "SURF-CGS2026R0681",
+        "Design by Patricio Aguirre Warden; scanned by Penarc",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC BY-SA 3.0.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ060",
+      "intent": "current_object_explanation",
+      "fact_count": 56,
+      "covered_fact_count": 11,
+      "coverage_ratio": 0.1964,
+      "uncovered_sample": [
+        "SURF-CGS2026R0328",
+        "Unknown author Unknown author",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ061",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.1455,
+      "uncovered_sample": [
+        "SURF-CGS2026R0030",
+        "The General Directorate of Posts and Telegraphs, which is now defunct.",
+        "1842",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain."
+      ]
+    },
+    {
+      "query_id": "BQ062",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 11,
+      "coverage_ratio": 0.2,
+      "uncovered_sample": [
+        "SURF-CGS2026R0908",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ063",
+      "intent": "current_object_explanation",
+      "fact_count": 56,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1071,
+      "uncovered_sample": [
+        "SURF-CGS2026R0904",
+        "Juan José Nieto Gil",
+        "open image record; book cover",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain."
+      ]
+    },
+    {
+      "query_id": "BQ064",
+      "intent": "current_object_explanation",
+      "fact_count": 56,
+      "covered_fact_count": 11,
+      "coverage_ratio": 0.1964,
+      "uncovered_sample": [
+        "SURF-CGS2026R0031",
+        "Unknown author Unknown author",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ065",
+      "intent": "current_object_explanation",
+      "fact_count": 56,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.1607,
+      "uncovered_sample": [
+        "SURF-CGS2026R0909",
+        "McLeod, H",
+        "Latin America / Mexico",
+        "open image record; advertising",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ066",
+      "intent": "current_object_explanation",
+      "fact_count": 56,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.1607,
+      "uncovered_sample": [
+        "Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg",
+        "Fleeson, Isaac Neville; Dryden, W. G",
+        "1846",
+        "Latin America / Mexico",
+        "open image record; advertising",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg / page 100419033",
+        "https://commons.wikimedia.org/wiki/File:Republic_of_Rio_Grande._And_Friend_of_the_People._(Brownsville,_Tex.),_Vol._1,_No._4,_Ed._1_Tuesday,_June_16,_1846_-_DPLA_-_9546c5d7758eb3aa72d3bb309e23827c_(page_2).jpg"
+      ]
+    },
+    {
+      "query_id": "BQ067",
+      "intent": "current_object_explanation",
+      "fact_count": 54,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.1852,
+      "uncovered_sample": [
+        "SURF-CRG2026R0020",
+        "\"(Independent) Postal Administration of Ras al-Kaima\" (1964-1972)",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ068",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.1818,
+      "uncovered_sample": [
+        "HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif",
+        "1863",
+        "East Asia / China",
+        "release-gate open image record; leaflet",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif / page 16525059",
+        "https://commons.wikimedia.org/wiki/File:HQ._FEAF,_TOKYO-Col._John_K._Arnold_Jr._(right),_Montgomery,_Ala.,_is_escorted_by_Col._Herbert_R._Volin,_Tokyo_Air..._-_NARA_-_542291.tif",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ069",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.1455,
+      "uncovered_sample": [
+        "East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865.jpg",
+        "Unknown artist Unknown artist",
+        "1865",
+        "South Asia / India",
+        "release-gate open image record; stamp",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865.jpg / page 63346338",
+        "https://commons.wikimedia.org/wiki/File:East_India_postage_Queen_Victoria_stamp_used_in_Zanzibar_-_One_anna_brown,_1865.jpg"
+      ]
+    },
+    {
+      "query_id": "BQ070",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.1636,
+      "uncovered_sample": [
+        "East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865.jpg",
+        "Unknown artist Unknown artist",
+        "1865",
+        "South Asia / India",
+        "release-gate open image record; stamp",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865.jpg / page 63346339",
+        "https://commons.wikimedia.org/wiki/File:East_India_postage_Queen_Victoria_stamp_used_in_Zanzibar-_Two_annas_orange,_1865.jpg"
+      ]
+    },
+    {
+      "query_id": "BQ071",
+      "intent": "current_object_explanation",
+      "fact_count": 53,
+      "covered_fact_count": 4,
+      "coverage_ratio": 0.0755,
+      "uncovered_sample": [
+        "SURF-ER1830R015",
+        "Unknown",
+        "1876.",
+        "1 print :",
+        "1 print : wood engraving.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/99614267/",
+        "2026-05-30"
+      ]
+    },
+    {
+      "query_id": "BQ072",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.1636,
+      "uncovered_sample": [
+        "1885",
+        "Southeast Asia / Vietnam",
+        "release-gate open image record; leaflet",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC BY-SA 4.0.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ073",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0545,
+      "uncovered_sample": [
+        "SURF-ER1830R046",
+        "Henri de Toulouse-Lautrec\nFrench, 1864-1901",
+        "lithograph; poster; print; prints and drawing",
+        "Color lithograph poster on tan wove paper, laid down on white wove Japan tissue",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/13598",
+        "2026-05-30",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ074",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1091,
+      "uncovered_sample": [
+        "SURF-CRG2026R0153",
+        "Rijksmuseum",
+        "release-gate open image record; pamphlet",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC0."
+      ]
+    },
+    {
+      "query_id": "BQ075",
+      "intent": "current_object_explanation",
+      "fact_count": 56,
+      "covered_fact_count": 4,
+      "coverage_ratio": 0.0714,
+      "uncovered_sample": [
+        "SURF-ER1830R059",
+        "Eugène Grasset (French, 1841–1917)",
+        "Print",
+        "lithograph with watercolor added by hand",
+        "Cleveland Museum Open Access API",
+        "https://clevelandart.org/art/1986.136",
+        "2026-05-30",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ076",
+      "intent": "current_object_explanation",
+      "fact_count": 56,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.125,
+      "uncovered_sample": [
+        "SURF-CRG2026R0175",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ077",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1091,
+      "uncovered_sample": [
+        "SURF-ER1830R052",
+        "William H. Bradley (American, 1868-1962)\nprinted and published by Charles Scribner's Sons (American, founded 19th century)",
+        "1895",
+        "United States",
+        "Zincograph in green and blue on cream wove paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/55093",
+        "2026-05-30"
+      ]
+    },
+    {
+      "query_id": "BQ078",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 4,
+      "coverage_ratio": 0.0727,
+      "uncovered_sample": [
+        "SURF-ER1830R064",
+        "James Montgomery Flagg\nAmerican, 1877-1960",
+        "poster; print; prints and drawing",
+        "Color lithograph on cream wove paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/7772",
+        "2026-05-30",
+        "rights_review_required"
+      ]
+    },
+    {
+      "query_id": "BQ079",
+      "intent": "current_object_explanation",
+      "fact_count": 55,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0545,
+      "uncovered_sample": [
+        "SURF-ER1830R065",
+        "Unknown Artist\nFrench, 20th century",
+        "poster; print; prints and drawing",
+        "Color lithograph on paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/7933",
+        "2026-05-30",
+        "rights_review_required"
+      ]
+    },
+    {
+      "query_id": "BQ080",
+      "intent": "current_object_explanation",
+      "fact_count": 56,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.1429,
+      "uncovered_sample": [
+        "SURF-ER1830R066",
+        "Unknown Artist (American, 20th century)\npublished by the Society of Poster Art (American, 20th century)",
+        "poster; print; prints and drawing",
+        "Color lithograph on cream wove paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/7962",
+        "2026-05-30",
+        "rights_review_required"
+      ]
+    },
+    {
+      "query_id": "BQ081",
+      "intent": "current_object_explanation",
+      "fact_count": 53,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0566,
+      "uncovered_sample": [
+        "Unknown",
+        "[between 1870 and 1890]",
+        "Unresolved region",
+        "1 print :",
+        "1 print : chromolithograph.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2008677258/",
+        "2026-05-30"
+      ]
+    },
+    {
+      "query_id": "BQ082",
+      "intent": "current_object_explanation",
+      "fact_count": 54,
+      "covered_fact_count": 4,
+      "coverage_ratio": 0.0741,
+      "uncovered_sample": [
+        "SURF-ER1830R017",
+        "Mead, Larkin G. (Larkin Goldsmith), 1835-1910",
+        "[between 1880 and 1882]",
+        "1 print :",
+        "1 print : lithograph mounted on calendar ; irregular sheet 12 x 11 cm, on page 20 x 13 cm.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2014646356/",
+        "2026-05-30"
+      ]
+    },
+    {
+      "query_id": "BQ102",
+      "intent": "comparison",
+      "fact_count": 33,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1515,
+      "uncovered_sample": [
+        "PlumEdwardVII.jpg",
+        "General Post Office ; scanned by User:Nickpo. The original uploader was Nickpo at Russian Wikipedia .",
+        "1910",
+        "Global / release gate expansion",
+        "release-gate open image record; stamp",
+        "Wikimedia Commons file source / PlumEdwardVII.jpg / page 7544844",
+        "https://commons.wikimedia.org/wiki/File:PlumEdwardVII.jpg",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ103",
+      "intent": "comparison",
+      "fact_count": 33,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1515,
+      "uncovered_sample": [
+        "Sergey Filippov PSE Russia 2012.jpg",
+        "Russian Post , Publishing and Trade Centre \"Marka\" ( ИТЦ «Марка» ). The design of the envelope by R. Komsa. Scanned by Dmitry Ivanov .",
+        "1912",
+        "Global / release gate expansion",
+        "release-gate open image record; stamp",
+        "Wikimedia Commons file source / Sergey Filippov PSE Russia 2012.jpg / page 25675602",
+        "https://commons.wikimedia.org/wiki/File:Sergey_Filippov_PSE_Russia_2012.jpg",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ104",
+      "intent": "comparison",
+      "fact_count": 34,
+      "covered_fact_count": 19,
+      "coverage_ratio": 0.5588,
+      "uncovered_sample": [
+        "Design by Patricio Aguirre Warden; scanned by Penarc",
+        "open image record; stamp",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC BY-SA 3.0.",
+        "sheet",
+        "main_sheet",
+        "Modern typography and layout"
+      ]
+    },
+    {
+      "query_id": "BQ105",
+      "intent": "comparison",
+      "fact_count": 33,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.2121,
+      "uncovered_sample": [
+        "El restaurador de las leyes.jpg",
+        "Unknown author Unknown author",
+        "1840",
+        "Latin America / Argentina",
+        "Wikimedia Commons file source / El restaurador de las leyes.jpg / page 10603704",
+        "https://commons.wikimedia.org/wiki/File:El_restaurador_de_las_leyes.jpg",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ106",
+      "intent": "comparison",
+      "fact_count": 32,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.3125,
+      "uncovered_sample": [
+        "Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg",
+        "The General Directorate of Posts and Telegraphs, which is now defunct.",
+        "open image record; stamp",
+        "Wikimedia Commons file source / Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg / page 30060076",
+        "https://commons.wikimedia.org/wiki/File:Stamp_commemorating_the_centenary_of_the_birth_of_Jos%C3%A9_Manuel_Estrada.jpg",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain."
+      ]
+    },
+    {
+      "query_id": "BQ107",
+      "intent": "comparison",
+      "fact_count": 31,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0968,
+      "uncovered_sample": [
+        "Temple of Xochicalco, Exposition Universelle Paris 1867, from Illustrated London News, 01. Juni 1867.jpg",
+        "The Illustrated London News, 1. Juni 1867",
+        "1842",
+        "Latin America / Mexico",
+        "open image record; graphic design",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Temple of Xochicalco, Exposition Universelle Paris 1867, from Illustrated London News, 01. Juni 1867.jpg / page 124497294",
+        "https://commons.wikimedia.org/wiki/File:Temple_of_Xochicalco,_Exposition_Universelle_Paris_1867,_from_Illustrated_London_News,_01._Juni_1867.jpg"
+      ]
+    },
+    {
+      "query_id": "BQ108",
+      "intent": "comparison",
+      "fact_count": 32,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1563,
+      "uncovered_sample": [
+        "Ingermina.png",
+        "Juan José Nieto Gil",
+        "1844",
+        "Latin America / Colombia",
+        "open image record; book cover",
+        "Wikimedia Commons file source / Ingermina.png / page 61897791",
+        "https://commons.wikimedia.org/wiki/File:Ingermina.png",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ109",
+      "intent": "comparison",
+      "fact_count": 37,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1622,
+      "uncovered_sample": [
+        "Facundo.jpg",
+        "Unknown author Unknown author",
+        "1845",
+        "Latin America / Argentina",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Facundo.jpg / page 6629018",
+        "https://commons.wikimedia.org/wiki/File:Facundo.jpg",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ110",
+      "intent": "comparison",
+      "fact_count": 33,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.2424,
+      "uncovered_sample": [
+        "McLeod, H",
+        "Latin America / Mexico",
+        "open image record; advertising",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ111",
+      "intent": "comparison",
+      "fact_count": 36,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.3611,
+      "uncovered_sample": [
+        "Fleeson, Isaac Neville; Dryden, W. G",
+        "1846",
+        "Latin America / Mexico",
+        "open image record; advertising",
+        "open_candidate",
+        "open_image_frame",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ112",
+      "intent": "comparison",
+      "fact_count": 33,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.2121,
+      "uncovered_sample": [
+        "Stamp 1968 UAE-RK MiNr0243A pm B002.jpg",
+        "\"(Independent) Postal Administration of Ras al-Kaima\" (1964-1972)",
+        "1853",
+        "Global / release gate expansion",
+        "Wikimedia Commons file source / Stamp 1968 UAE-RK MiNr0243A pm B002.jpg / page 118013751",
+        "https://commons.wikimedia.org/wiki/File:Stamp_1968_UAE-RK_MiNr0243A_pm_B002.jpg",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ113",
+      "intent": "comparison",
+      "fact_count": 36,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1944,
+      "uncovered_sample": [
+        "SURF-CRG2026R0027",
+        "Unknown author Unknown author or not provided",
+        "1863",
+        "East Asia / China",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain."
+      ]
+    },
+    {
+      "query_id": "BQ114",
+      "intent": "comparison",
+      "fact_count": 32,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.2188,
+      "uncovered_sample": [
+        "East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865.jpg",
+        "Unknown artist Unknown artist",
+        "1865",
+        "South Asia / India",
+        "Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865.jpg / page 63346338",
+        "https://commons.wikimedia.org/wiki/File:East_India_postage_Queen_Victoria_stamp_used_in_Zanzibar_-_One_anna_brown,_1865.jpg",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ115",
+      "intent": "comparison",
+      "fact_count": 38,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1316,
+      "uncovered_sample": [
+        "East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865.jpg",
+        "Unknown artist Unknown artist",
+        "1865",
+        "South Asia / India",
+        "release-gate open image record; stamp",
+        "Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865.jpg / page 63346339",
+        "https://commons.wikimedia.org/wiki/File:East_India_postage_Queen_Victoria_stamp_used_in_Zanzibar-_Two_annas_orange,_1865.jpg",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ116",
+      "intent": "comparison",
+      "fact_count": 35,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.2,
+      "uncovered_sample": [
+        "Unknown",
+        "1 print :",
+        "1 print : wood engraving.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/99614267/",
+        "2026-05-30",
+        "thumbnail_candidate",
+        "thumbnail_frame"
+      ]
+    },
+    {
+      "query_id": "BQ117",
+      "intent": "comparison",
+      "fact_count": 35,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1714,
+      "uncovered_sample": [
+        "HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of French Indochina WW2 Vichy France 50 LUANG-PRABANG Le Patriote Lao Hymne national Laotien Thong Dy 01 - IDEO. Hanoi Unidentified author designer No know copyright restrict.jpg",
+        "Unidentified author of the publication (photographers, designers, etc. not credited). Booklet on the leaders, flags and anthems of Vichy France and French Indochina published by Les Presses de Imprimerie d’Extrême Orient in Hanoi on 31st December 1941. No known copyright restrictions.",
+        "1885",
+        "Southeast Asia / Vietnam",
+        "release-gate open image record; leaflet",
+        "Wikimedia Commons file source / HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of French Indochina WW2 Vichy France 50 LUANG-PRABANG Le Patriote Lao Hymne national Laotien Thong Dy 01 - IDEO. Hanoi...",
+        "https://commons.wikimedia.org/wiki/File:HYMNES_et_PAVILLONS_D%CA%BCINDOCHINE_1941_Leaders_flags_anthems_of_French_Indochina_WW2_Vichy_France_50_LUANG-PRABANG_Le_Patriote_Lao_Hymne_national_Laotien_Thong_Dy_01_-_IDEO._Hanoi_Unidentified_author_designer_No_know_copyright_restrict.jpg",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ118",
+      "intent": "comparison",
+      "fact_count": 33,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0909,
+      "uncovered_sample": [
+        "Aristide Bruant",
+        "Henri de Toulouse-Lautrec\nFrench, 1864-1901",
+        "1893",
+        "France",
+        "lithograph; poster; print; prints and drawing",
+        "Color lithograph poster on tan wove paper, laid down on white wove Japan tissue",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/13598"
+      ]
+    },
+    {
+      "query_id": "BQ119",
+      "intent": "comparison",
+      "fact_count": 37,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1892,
+      "uncovered_sample": [
+        "Oud-generaal als straatmuzikant, NG-850-60.jpg",
+        "Rijksmuseum",
+        "1895",
+        "South Asia / India",
+        "release-gate open image record; pamphlet",
+        "Wikimedia Commons file source / Oud-generaal als straatmuzikant, NG-850-60.jpg / page 83869797",
+        "https://commons.wikimedia.org/wiki/File:Oud-generaal_als_straatmuzikant,_NG-850-60.jpg",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ120",
+      "intent": "comparison",
+      "fact_count": 36,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2778,
+      "uncovered_sample": [
+        "Eugène Grasset (French, 1841–1917)",
+        "Print",
+        "lithograph with watercolor added by hand",
+        "Cleveland Museum Open Access API",
+        "https://clevelandart.org/art/1986.136",
+        "2026-05-30",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ121",
+      "intent": "comparison",
+      "fact_count": 37,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1351,
+      "uncovered_sample": [
+        "Buffalo Bill's Wild West and congress of rough riders of the world A congress of American Indians (...). LCCN2001696164.jpg",
+        "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+        "1899",
+        "Global / release gate expansion",
+        "release-gate open image record; poster",
+        "Wikimedia Commons file source / Buffalo Bill's Wild West and congress of rough riders of the world A congress of American Indians (...). LCCN2001696164.jpg / page 67035846",
+        "https://commons.wikimedia.org/wiki/File:Buffalo_Bill%27s_Wild_West_and_congress_of_rough_riders_of_the_world_A_congress_of_American_Indians_(...)._LCCN2001696164.jpg",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ122",
+      "intent": "comparison",
+      "fact_count": 34,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.3824,
+      "uncovered_sample": [
+        "William H. Bradley (American, 1868-1962)\nprinted and published by Charles Scribner's Sons (American, founded 19th century)",
+        "United States",
+        "Zincograph in green and blue on cream wove paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/55093",
+        "2026-05-30",
+        "rights_review_required",
+        "empty_rights_frame"
+      ]
+    },
+    {
+      "query_id": "BQ123",
+      "intent": "comparison",
+      "fact_count": 37,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.3514,
+      "uncovered_sample": [
+        "James Montgomery Flagg\nAmerican, 1877-1960",
+        "poster; print; prints and drawing",
+        "Color lithograph on cream wove paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/7772",
+        "rights_review_required",
+        "empty_rights_frame",
+        "IMG00: AIC image identifier exists, but search row does not report public-domain status."
+      ]
+    },
+    {
+      "query_id": "BQ124",
+      "intent": "comparison",
+      "fact_count": 34,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1765,
+      "uncovered_sample": [
+        "SURF-ER1830R065",
+        "Unknown Artist\nFrench, 20th century",
+        "c. 1918",
+        "France",
+        "poster; print; prints and drawing",
+        "Color lithograph on paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/7933"
+      ]
+    },
+    {
+      "query_id": "BQ125",
+      "intent": "comparison",
+      "fact_count": 37,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.2162,
+      "uncovered_sample": [
+        "Unknown Artist (American, 20th century)\npublished by the Society of Poster Art (American, 20th century)",
+        "United States",
+        "poster; print; prints and drawing",
+        "Color lithograph on cream wove paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/7962",
+        "2026-05-30",
+        "rights_review_required"
+      ]
+    },
+    {
+      "query_id": "BQ126",
+      "intent": "comparison",
+      "fact_count": 36,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.2222,
+      "uncovered_sample": [
+        "Unknown",
+        "[between 1870 and 1890]",
+        "1 print :",
+        "1 print : chromolithograph.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2008677258/",
+        "thumbnail_candidate",
+        "thumbnail_frame"
+      ]
+    },
+    {
+      "query_id": "BQ127",
+      "intent": "comparison",
+      "fact_count": 37,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.3514,
+      "uncovered_sample": [
+        "Mead, Larkin G. (Larkin Goldsmith), 1835-1910",
+        "1 print :",
+        "1 print : lithograph mounted on calendar ; irregular sheet 12 x 11 cm, on page 20 x 13 cm.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2014646356/",
+        "thumbnail_candidate",
+        "thumbnail_frame",
+        "IMG01: LOC search row exposes a thumbnail; item-level rights advisory was not captured in this pass."
+      ]
+    },
+    {
+      "query_id": "BQ128",
+      "intent": "region_period_recommendation",
+      "fact_count": 42,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.2143,
+      "uncovered_sample": [
+        "SURF-CRG2026R0001",
+        "Jean-Pierre Dalbéra from Paris, France",
+        "1830",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC BY 2.0."
+      ]
+    },
+    {
+      "query_id": "BQ129",
+      "intent": "region_period_recommendation",
+      "fact_count": 38,
+      "covered_fact_count": 2,
+      "coverage_ratio": 0.0526,
+      "uncovered_sample": [
+        "SURF-CRG2026R0050",
+        "The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg",
+        "USSR Post",
+        "1870",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg / page 39228667",
+        "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3849_stamp_(With_Lenin_(After_Vladimir_Serov)).jpg",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ130",
+      "intent": "region_period_recommendation",
+      "fact_count": 38,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1316,
+      "uncovered_sample": [
+        "SURF-CRG2026R0051",
+        "The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg",
+        "USSR Post",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg / page 39286166",
+        "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3854_stamp_(Fedot_Sychkov_and_Painting_Sledding_from_Hills).jpg",
+        "2026-06-06",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ131",
+      "intent": "region_period_recommendation",
+      "fact_count": 39,
+      "covered_fact_count": 2,
+      "coverage_ratio": 0.0513,
+      "uncovered_sample": [
+        "SURF-CRG2026R0052",
+        "The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png",
+        "USSR Post",
+        "1870",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690",
+        "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3886_sheet_with_16_labels_(Lenin,_1920_with_16_labels_%27Leader_of_the_world_proletariat%27).png",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ132",
+      "intent": "region_period_recommendation",
+      "fact_count": 42,
+      "covered_fact_count": 11,
+      "coverage_ratio": 0.2619,
+      "uncovered_sample": [
+        "SURF-CRG2026R0071",
+        "USSR Post",
+        "1877",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain."
+      ]
+    },
+    {
+      "query_id": "BQ133",
+      "intent": "region_period_recommendation",
+      "fact_count": 44,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0682,
+      "uncovered_sample": [
+        "SURF-CRG2026R0235",
+        "ApollonMagazine.jpg",
+        "Nikolai Remisov",
+        "1909",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526",
+        "https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ134",
+      "intent": "region_period_recommendation",
+      "fact_count": 41,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.1951,
+      "uncovered_sample": [
+        "SURF-CRG2026R0246",
+        "General Post Office ; scanned by User:Nickpo. The original uploader was Nickpo at Russian Wikipedia .",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ135",
+      "intent": "region_period_recommendation",
+      "fact_count": 41,
+      "covered_fact_count": 2,
+      "coverage_ratio": 0.0488,
+      "uncovered_sample": [
+        "SURF-CRG2026R0274",
+        "Sergey Filippov PSE Russia 2012.jpg",
+        "Russian Post , Publishing and Trade Centre \"Marka\" ( ИТЦ «Марка» ). The design of the envelope by R. Komsa. Scanned by Dmitry Ivanov .",
+        "1912",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Sergey Filippov PSE Russia 2012.jpg / page 25675602",
+        "https://commons.wikimedia.org/wiki/File:Sergey_Filippov_PSE_Russia_2012.jpg",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ136",
+      "intent": "region_period_recommendation",
+      "fact_count": 43,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1395,
+      "uncovered_sample": [
+        "SURF-CRG2026R0020",
+        "Stamp 1968 UAE-RK MiNr0243A pm B002.jpg",
+        "\"(Independent) Postal Administration of Ras al-Kaima\" (1964-1972)",
+        "1853",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Stamp 1968 UAE-RK MiNr0243A pm B002.jpg / page 118013751",
+        "https://commons.wikimedia.org/wiki/File:Stamp_1968_UAE-RK_MiNr0243A_pm_B002.jpg",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ137",
+      "intent": "region_period_recommendation",
+      "fact_count": 44,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.2727,
+      "uncovered_sample": [
+        "SURF-CRG2026R0175",
+        "Miscellaneous Items in High Demand, PPOC, Library of Congress",
+        "1899",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain."
+      ]
+    },
+    {
+      "query_id": "BQ138",
+      "intent": "region_period_recommendation",
+      "fact_count": 41,
+      "covered_fact_count": 2,
+      "coverage_ratio": 0.0488,
+      "uncovered_sample": [
+        "SURF-CRG2026R0002",
+        "Putzmühle im Pöbeltal 002.JPG",
+        "Loracco",
+        "1831",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Putzmühle im Pöbeltal 002.JPG / page 25370103",
+        "https://commons.wikimedia.org/wiki/File:Putzm%C3%BChle_im_P%C3%B6beltal_002.JPG",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ139",
+      "intent": "region_period_recommendation",
+      "fact_count": 41,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0732,
+      "uncovered_sample": [
+        "SURF-CRG2026R0003",
+        "Stamp of Umm al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg",
+        "Unknown author Unknown author",
+        "1834",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Stamp of Umm al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg / page 165867587",
+        "https://commons.wikimedia.org/wiki/File:Stamp_of_Umm_al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ140",
+      "intent": "region_period_recommendation",
+      "fact_count": 43,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2326,
+      "uncovered_sample": [
+        "SURF-CRG2026R0004",
+        "Humphrey Bolton",
+        "1834",
+        "Global / release gate expansion",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ141",
+      "intent": "region_period_recommendation",
+      "fact_count": 43,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.2093,
+      "uncovered_sample": [
+        "SURF-CRG2026R0005",
+        "William Colenso (1811 - 1899)",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ142",
+      "intent": "region_period_recommendation",
+      "fact_count": 32,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.2813,
+      "uncovered_sample": [
+        "SURF-GAX1970R002",
+        "1 vol. (250 p.) ; in-8; Nombre total de vues : 258",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k54640797",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ143",
+      "intent": "region_period_recommendation",
+      "fact_count": 32,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.2813,
+      "uncovered_sample": [
+        "SURF-GA1970R001",
+        "Unknown",
+        "estampe ; 27 x 19 cm (f.); image/jpeg; Nombre total de vues : 1",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/btv1b8438046c",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ144",
+      "intent": "region_period_recommendation",
+      "fact_count": 35,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.2,
+      "uncovered_sample": [
+        "SURF-GAX1970R003",
+        "Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1",
+        "Roret, Nicolas-Edme (1797-1860). Auteur du texte; Frey, Antoine (1780-18..). Auteur du texte",
+        "France",
+        "Gallica visual/document record",
+        "2 vol. in-18, pl.; Nombre total de vues : 322",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k6332775h"
+      ]
+    },
+    {
+      "query_id": "BQ145",
+      "intent": "region_period_recommendation",
+      "fact_count": 35,
+      "covered_fact_count": 11,
+      "coverage_ratio": 0.3143,
+      "uncovered_sample": [
+        "SURF-GAX1970R004",
+        "Unknown",
+        "Nombre total de vues : 124",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/cb328023517",
+        "2026-05-31",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ146",
+      "intent": "region_period_recommendation",
+      "fact_count": 39,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.3077,
+      "uncovered_sample": [
+        "SURF-GAX1970R005",
+        "Unknown",
+        "10,5 x 14,5 cm; image/jpeg; Nombre total de vues : 1",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/btv1b10202743j",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ147",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 14,
+      "coverage_ratio": 0.7778,
+      "uncovered_sample": [
+        "2026-06-07",
+        "research-only fixture record",
+        "research_fixture",
+        "text_only"
+      ]
+    },
+    {
+      "query_id": "BQ148",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 15,
+      "coverage_ratio": 0.8333,
+      "uncovered_sample": [
+        "2026-06-07",
+        "text_only",
+        "AI output is experimental text and cannot become archive evidence."
+      ]
+    },
+    {
+      "query_id": "BQ149",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 15,
+      "coverage_ratio": 0.8333,
+      "uncovered_sample": [
+        "2026-06-07",
+        "research-only fixture record",
+        "research_fixture"
+      ]
+    },
+    {
+      "query_id": "BQ150",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.4444,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "2026-06-07",
+        "Research method",
+        "method_context",
+        "research_fixture",
+        "text_only",
+        "Research-only method fixture; not archive object evidence.",
+        "method"
+      ]
+    },
+    {
+      "query_id": "BQ151",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.6667,
+      "uncovered_sample": [
+        "2026-06-07",
+        "Research method",
+        "research-only fixture record",
+        "research_fixture",
+        "method",
+        "Research lab method"
+      ]
+    },
+    {
+      "query_id": "BQ152",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 17,
+      "coverage_ratio": 0.9444,
+      "uncovered_sample": [
+        "2026-06-07"
+      ]
+    },
+    {
+      "query_id": "BQ153",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 15,
+      "coverage_ratio": 0.8333,
+      "uncovered_sample": [
+        "2026-06-07",
+        "research-only fixture record",
+        "research_fixture"
+      ]
+    },
+    {
+      "query_id": "BQ154",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 15,
+      "coverage_ratio": 0.8333,
+      "uncovered_sample": [
+        "2026-06-07",
+        "research-only fixture record",
+        "research_fixture"
+      ]
+    },
+    {
+      "query_id": "BQ155",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.6667,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "2026-06-07",
+        "method_context",
+        "text_only",
+        "method",
+        "AI output is experimental text and cannot become archive evidence."
+      ]
+    },
+    {
+      "query_id": "BQ156",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.6667,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "2026-06-07",
+        "method_context",
+        "text_only",
+        "method",
+        "AI output is experimental text and cannot become archive evidence."
+      ]
+    },
+    {
+      "query_id": "BQ157",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.5,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "2026-06-07",
+        "Research method",
+        "method_context",
+        "research-only fixture record",
+        "research_fixture",
+        "text_only",
+        "method"
+      ]
+    },
+    {
+      "query_id": "BQ158",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 15,
+      "coverage_ratio": 0.8333,
+      "uncovered_sample": [
+        "2026-06-07",
+        "research-only fixture record",
+        "research_fixture"
+      ]
+    },
+    {
+      "query_id": "BQ159",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.3333,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "Browser-local RAG lab method context",
+        "browser-local-rag-lab",
+        "2026-06-07",
+        "Research method",
+        "method_context",
+        "research-only fixture record",
+        "browser-local-rag-lab method files"
+      ]
+    },
+    {
+      "query_id": "BQ160",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.3333,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "2026-06-07",
+        "Research method",
+        "method_context",
+        "research-only fixture record",
+        "research_fixture",
+        "text_only",
+        "Research-only method fixture; not archive object evidence."
+      ]
+    },
+    {
+      "query_id": "BQ161",
+      "intent": "more_context",
+      "fact_count": 39,
+      "covered_fact_count": 4,
+      "coverage_ratio": 0.1026,
+      "uncovered_sample": [
+        "[Santa with toys in a sleigh, drawn by reindeer, with a church on the right and another in the distance]",
+        "Unknown",
+        "[between 1880 and 1890]",
+        "Unresolved region",
+        "1 print :",
+        "1 print : color wood engraving ; sheet 7 x 11.3 cm.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2015651615/"
+      ]
+    },
+    {
+      "query_id": "BQ162",
+      "intent": "more_context",
+      "fact_count": 49,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1224,
+      "uncovered_sample": [
+        "Unknown",
+        "London",
+        "V&A Collections API",
+        "https://collections.vam.ac.uk/item/O693551/",
+        "2026-05-30",
+        "source_viewer_candidate",
+        "source_viewer_frame",
+        "IMG02: V&A API exposes source-hosted IIIF/image service metadata; no local copy is permitted in this pass."
+      ]
+    },
+    {
+      "query_id": "BQ163",
+      "intent": "more_context",
+      "fact_count": 52,
+      "covered_fact_count": 19,
+      "coverage_ratio": 0.3654,
+      "uncovered_sample": [
+        "Henri Frederich Müller (Creator)",
+        "ca. 1835",
+        "source_viewer_candidate",
+        "source_viewer_frame",
+        "sheet",
+        "main_sheet",
+        "Unresolved region",
+        "HN009"
+      ]
+    },
+    {
+      "query_id": "BQ164",
+      "intent": "more_context",
+      "fact_count": 48,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1042,
+      "uncovered_sample": [
+        "SURF-ER1830R002",
+        "Jacqmain, G.",
+        "Ghent",
+        "V&A Collections API",
+        "https://collections.vam.ac.uk/item/O89238/",
+        "2026-05-30",
+        "source_viewer_candidate",
+        "source_viewer_frame"
+      ]
+    },
+    {
+      "query_id": "BQ165",
+      "intent": "more_context",
+      "fact_count": 46,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.1957,
+      "uncovered_sample": [
+        "SURF-SI1970R001",
+        "Unknown",
+        "USA; USA",
+        "Lithograph on paper; 8.6 × 12.4 cm (3 3/8 × 4 7/8 in.)",
+        "Smithsonian Open Access",
+        "https://collection.cooperhewitt.org/view/objects/asitem/id/79923",
+        "2026-05-31",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ166",
+      "intent": "more_context",
+      "fact_count": 40,
+      "covered_fact_count": 19,
+      "coverage_ratio": 0.475,
+      "uncovered_sample": [
+        "Loracco",
+        "Global / release gate expansion",
+        "open_candidate",
+        "IMG03: Wikimedia Commons open-license metadata: CC BY-SA 3.0.",
+        "sheet",
+        "main_sheet",
+        "Unresolved region",
+        "Modern typography and layout"
+      ]
+    },
+    {
+      "query_id": "BQ167",
+      "intent": "more_context",
+      "fact_count": 41,
+      "covered_fact_count": 18,
+      "coverage_ratio": 0.439,
+      "uncovered_sample": [
+        "Unknown author Unknown author",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet",
+        "main_sheet",
+        "Unresolved region"
+      ]
+    },
+    {
+      "query_id": "BQ168",
+      "intent": "more_context",
+      "fact_count": 44,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2273,
+      "uncovered_sample": [
+        "Thomas, Henry Atwell, 1834-1904",
+        "1 print :",
+        "1 print : chromolithograph.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2010646699/",
+        "2026-05-30",
+        "rights_review_required",
+        "no_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ169",
+      "intent": "more_context",
+      "fact_count": 50,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.24,
+      "uncovered_sample": [
+        "Multiple source records",
+        "1864-1891",
+        "great britain; berlin; Berlin",
+        "Lithographic print",
+        "V&A Collections API",
+        "https://collections.vam.ac.uk/item/O1026162/",
+        "2026-05-30",
+        "no_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ170",
+      "intent": "more_context",
+      "fact_count": 46,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1522,
+      "uncovered_sample": [
+        "SURF-ER1830R008",
+        "Unknown",
+        "c1869",
+        "Unresolved region",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2007675841/",
+        "2026-05-30",
+        "rights_review_required"
+      ]
+    },
+    {
+      "query_id": "BQ171",
+      "intent": "more_context",
+      "fact_count": 45,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.2889,
+      "uncovered_sample": [
+        "Unknown",
+        "Unresolved region",
+        "1 item.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2010635174/",
+        "2026-05-30",
+        "rights_review_required",
+        "no_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ172",
+      "intent": "more_context",
+      "fact_count": 45,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1333,
+      "uncovered_sample": [
+        "SURF-CRG2026R0004",
+        "Humphrey Bolton",
+        "1834",
+        "Global / release gate expansion",
+        "release-gate open image record; leaflet",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ173",
+      "intent": "more_context",
+      "fact_count": 40,
+      "covered_fact_count": 16,
+      "coverage_ratio": 0.4,
+      "uncovered_sample": [
+        "William Colenso (1811 - 1899)",
+        "Global / release gate expansion",
+        "release-gate open image record; book cover",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ174",
+      "intent": "more_context",
+      "fact_count": 41,
+      "covered_fact_count": 4,
+      "coverage_ratio": 0.0976,
+      "uncovered_sample": [
+        "Paganini par David d'Angers (Angers) (14911656518).jpg",
+        "Jean-Pierre Dalbéra from Paris, France",
+        "1830",
+        "Global / release gate expansion",
+        "release-gate open image record; brochure",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183",
+        "https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg"
+      ]
+    },
+    {
+      "query_id": "BQ175",
+      "intent": "more_context",
+      "fact_count": 46,
+      "covered_fact_count": 15,
+      "coverage_ratio": 0.3261,
+      "uncovered_sample": [
+        "France",
+        "Gallica visual/document record",
+        "1 vol. (250 p.) ; in-8; Nombre total de vues : 258",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k54640797",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ176",
+      "intent": "more_context",
+      "fact_count": 46,
+      "covered_fact_count": 17,
+      "coverage_ratio": 0.3696,
+      "uncovered_sample": [
+        "SURF-GA1970R001",
+        "Unknown",
+        "France",
+        "Gallica visual/document record",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/btv1b8438046c",
+        "2026-05-31",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ201",
+      "intent": "archive_orientation",
+      "fact_count": 46,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1087,
+      "uncovered_sample": [
+        "SURF-CGS2026R0031",
+        "Facundo.jpg",
+        "Unknown author Unknown author",
+        "1845",
+        "open image record; book cover",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Facundo.jpg / page 6629018",
+        "https://commons.wikimedia.org/wiki/File:Facundo.jpg"
+      ]
+    },
+    {
+      "query_id": "BQ202",
+      "intent": "archive_orientation",
+      "fact_count": 51,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1373,
+      "uncovered_sample": [
+        "SURF-CGS2026R0904",
+        "Ingermina.png",
+        "Juan José Nieto Gil",
+        "1844",
+        "open image record; book cover",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ203",
+      "intent": "archive_orientation",
+      "fact_count": 50,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.16,
+      "uncovered_sample": [
+        "SURF-CHW2026R001",
+        "Die Thierwelt (The Animal Kinggom)",
+        "Henri Frederich Müller (Creator)",
+        "ca. 1835",
+        "Die Thierwelt (The Animal Kinggom) (Game)",
+        "Marbled paper slipcase with applied printed label; {\"dimensions\": [{\"value\": \"27.5 × 19 cm (10 13/16 × 7 1/2 in.)\"}]}",
+        "https://collection.cooperhewitt.org/objects/18437221/",
+        "2026-05-31"
+      ]
+    },
+    {
+      "query_id": "BQ204",
+      "intent": "archive_orientation",
+      "fact_count": 56,
+      "covered_fact_count": 25,
+      "coverage_ratio": 0.4464,
+      "uncovered_sample": [
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "Arundel Society chromolithograph copy series",
+        "Multiple source records",
+        "1864-1891",
+        "Chromolithograph",
+        "V&A Collections API",
+        "https://collections.vam.ac.uk/item/O1026162/",
+        "2026-05-30"
+      ]
+    },
+    {
+      "query_id": "BQ205",
+      "intent": "archive_orientation",
+      "fact_count": 45,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2222,
+      "uncovered_sample": [
+        "SURF-CRG2026R0006",
+        "Stamp 1974 Romania MiNr3179 pm B002a.jpg",
+        "\"Posta Romana\"",
+        "1841",
+        "Wikimedia Commons file source / Stamp 1974 Romania MiNr3179 pm B002a.jpg / page 117737469",
+        "https://commons.wikimedia.org/wiki/File:Stamp_1974_Romania_MiNr3179_pm_B002a.jpg",
+        "2026-06-06",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ206",
+      "intent": "archive_orientation",
+      "fact_count": 42,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.1905,
+      "uncovered_sample": [
+        "SURF-CRG2026R0027",
+        "HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif",
+        "Unknown author Unknown author or not provided",
+        "1863",
+        "release-gate open image record; leaflet",
+        "Wikimedia Commons file source / HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif / page 16525059",
+        "https://commons.wikimedia.org/wiki/File:HQ._FEAF,_TOKYO-Col._John_K._Arnold_Jr._(right),_Montgomery,_Ala.,_is_escorted_by_Col._Herbert_R._Volin,_Tokyo_Air..._-_NARA_-_542291.tif",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ207",
+      "intent": "casual_archive_help",
+      "fact_count": 56,
+      "covered_fact_count": 44,
+      "coverage_ratio": 0.7857,
+      "uncovered_sample": [
+        "Unknown author Unknown author",
+        "1845",
+        "2026-06-06",
+        "HN009",
+        "HN010",
+        "HN011",
+        "HN014",
+        "1895"
+      ]
+    },
+    {
+      "query_id": "BQ208",
+      "intent": "casual_archive_help",
+      "fact_count": 56,
+      "covered_fact_count": 44,
+      "coverage_ratio": 0.7857,
+      "uncovered_sample": [
+        "Juan José Nieto Gil",
+        "1844",
+        "2026-06-06",
+        "HN009",
+        "HN010",
+        "HN011",
+        "HN014",
+        "1895"
+      ]
+    },
+    {
+      "query_id": "BQ209",
+      "intent": "casual_archive_help",
+      "fact_count": 55,
+      "covered_fact_count": 39,
+      "coverage_ratio": 0.7091,
+      "uncovered_sample": [
+        "Die Thierwelt (The Animal Kinggom)",
+        "Henri Frederich Müller (Creator)",
+        "ca. 1835",
+        "Austria Vienna Europe / Austria / Vienna / Europe",
+        "Die Thierwelt (The Animal Kinggom) (Game)",
+        "Marbled paper slipcase with applied printed label; {\"dimensions\": [{\"value\": \"27.5 × 19 cm (10 13/16 × 7 1/2 in.)\"}]}",
+        "2026-05-31",
+        "HN009"
+      ]
+    },
+    {
+      "query_id": "BQ210",
+      "intent": "casual_archive_help",
+      "fact_count": 44,
+      "covered_fact_count": 1,
+      "coverage_ratio": 0.0227,
+      "uncovered_sample": [
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "Arundel Society chromolithograph copy series",
+        "1864-1891",
+        "great britain; berlin; Berlin",
+        "Chromolithograph",
+        "Lithographic print",
+        "V&A Collections API",
+        "https://collections.vam.ac.uk/item/O1026162/"
+      ]
+    },
+    {
+      "query_id": "BQ211",
+      "intent": "casual_archive_help",
+      "fact_count": 56,
+      "covered_fact_count": 14,
+      "coverage_ratio": 0.25,
+      "uncovered_sample": [
+        "SURF-CRG2026R0006",
+        "Stamp 1974 Romania MiNr3179 pm B002a.jpg",
+        "\"Posta Romana\"",
+        "1841",
+        "Eastern Europe / Romania",
+        "https://commons.wikimedia.org/wiki/File:Stamp_1974_Romania_MiNr3179_pm_B002a.jpg",
+        "2026-06-06",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ212",
+      "intent": "casual_archive_help",
+      "fact_count": 55,
+      "covered_fact_count": 37,
+      "coverage_ratio": 0.6727,
+      "uncovered_sample": [
+        "Unknown author Unknown author or not provided",
+        "1863",
+        "East Asia / China",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "HN009",
+        "HN010"
+      ]
+    },
+    {
+      "query_id": "BQ213",
+      "intent": "current_object_explanation",
+      "fact_count": 47,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.1915,
+      "uncovered_sample": [
+        "1885",
+        "Southeast Asia / Vietnam",
+        "release-gate open image record; leaflet",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC BY-SA 4.0.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ214",
+      "intent": "current_object_explanation",
+      "fact_count": 47,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1277,
+      "uncovered_sample": [
+        "SURF-CRG2026R0153",
+        "Rijksmuseum",
+        "release-gate open image record; pamphlet",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC0."
+      ]
+    },
+    {
+      "query_id": "BQ215",
+      "intent": "current_object_explanation",
+      "fact_count": 48,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.125,
+      "uncovered_sample": [
+        "SURF-ER1830R001-GROUP",
+        "Unknown",
+        "V&A Collections API",
+        "https://collections.vam.ac.uk/item/O693551/",
+        "2026-05-30",
+        "source_viewer_candidate",
+        "source_viewer_frame",
+        "IMG02: V&A API exposes source-hosted IIIF/image service metadata; no local copy is permitted in this pass."
+      ]
+    },
+    {
+      "query_id": "BQ216",
+      "intent": "current_object_explanation",
+      "fact_count": 47,
+      "covered_fact_count": 4,
+      "coverage_ratio": 0.0851,
+      "uncovered_sample": [
+        "SURF-ER1830R002",
+        "Jacqmain, G.",
+        "V&A Collections API",
+        "https://collections.vam.ac.uk/item/O89238/",
+        "2026-05-30",
+        "source_viewer_candidate",
+        "source_viewer_frame",
+        "IMG02: V&A API exposes source-hosted IIIF/image service metadata; no local copy is permitted in this pass."
+      ]
+    },
+    {
+      "query_id": "BQ229",
+      "intent": "comparison",
+      "fact_count": 33,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.2727,
+      "uncovered_sample": [
+        "1885",
+        "Southeast Asia / Vietnam",
+        "release-gate open image record; leaflet",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC BY-SA 4.0.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ230",
+      "intent": "comparison",
+      "fact_count": 33,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.3636,
+      "uncovered_sample": [
+        "Oud-generaal als straatmuzikant, NG-850-60.jpg",
+        "Rijksmuseum",
+        "release-gate open image record; pamphlet",
+        "source-hosted open image; graphic design / visual communication candidate",
+        "Wikimedia Commons file source / Oud-generaal als straatmuzikant, NG-850-60.jpg / page 83869797",
+        "https://commons.wikimedia.org/wiki/File:Oud-generaal_als_straatmuzikant,_NG-850-60.jpg",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ231",
+      "intent": "comparison",
+      "fact_count": 37,
+      "covered_fact_count": 14,
+      "coverage_ratio": 0.3784,
+      "uncovered_sample": [
+        "Unknown",
+        "V&A Collections API",
+        "https://collections.vam.ac.uk/item/O693551/",
+        "source_viewer_candidate",
+        "source_viewer_frame",
+        "IMG02: V&A API exposes source-hosted IIIF/image service metadata; no local copy is permitted in this pass.",
+        "sheet",
+        "thin_visual_support_packet"
+      ]
+    },
+    {
+      "query_id": "BQ232",
+      "intent": "comparison",
+      "fact_count": 36,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.3333,
+      "uncovered_sample": [
+        "Jacqmain, G.",
+        "Ghent",
+        "V&A Collections API",
+        "https://collections.vam.ac.uk/item/O89238/",
+        "source_viewer_candidate",
+        "source_viewer_frame",
+        "IMG02: V&A API exposes source-hosted IIIF/image service metadata; no local copy is permitted in this pass.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ233",
+      "intent": "comparison",
+      "fact_count": 38,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.3421,
+      "uncovered_sample": [
+        "SURF-ER1830R008",
+        "Unknown",
+        "c1869",
+        "Unresolved region",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2007675841/",
+        "2026-05-30",
+        "rights_review_required"
+      ]
+    },
+    {
+      "query_id": "BQ234",
+      "intent": "comparison",
+      "fact_count": 37,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2703,
+      "uncovered_sample": [
+        "Use Getz cockroach and bed bug exterminators, sold by all druggists I sink I tan hit it.",
+        "Unknown",
+        "[between 1870 and 1890]",
+        "1 print :",
+        "1 print : chromolithograph.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2008677258/",
+        "thumbnail_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ235",
+      "intent": "comparison",
+      "fact_count": 31,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1935,
+      "uncovered_sample": [
+        "[Advertising card for play \"Deacon Crankett\"]",
+        "Mead, Larkin G. (Larkin Goldsmith), 1835-1910",
+        "1 print :",
+        "1 print : lithograph mounted on calendar ; irregular sheet 12 x 11 cm, on page 20 x 13 cm.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2014646356/",
+        "2026-05-30",
+        "thumbnail_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ236",
+      "intent": "comparison",
+      "fact_count": 34,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1471,
+      "uncovered_sample": [
+        "[Pearsall Photography Studio trade card]",
+        "Unknown",
+        "1 item.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2010635174/",
+        "2026-05-30",
+        "rights_review_required",
+        "no_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ237",
+      "intent": "comparison",
+      "fact_count": 35,
+      "covered_fact_count": 14,
+      "coverage_ratio": 0.4,
+      "uncovered_sample": [
+        "Unknown",
+        "Unresolved region",
+        "1 print :",
+        "1 print : color wood engraving ; sheet 7 x 11.3 cm.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2015651615/",
+        "thumbnail_candidate",
+        "thumbnail_frame"
+      ]
+    },
+    {
+      "query_id": "BQ238",
+      "intent": "comparison",
+      "fact_count": 38,
+      "covered_fact_count": 17,
+      "coverage_ratio": 0.4474,
+      "uncovered_sample": [
+        "William H. Bradley (American, 1868-1962)\nprinted and published by Charles Scribner's Sons (American, founded 19th century)",
+        "Zincograph in green and blue on cream wove paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/55093",
+        "rights_review_required",
+        "empty_rights_frame",
+        "IMG00: AIC image identifier exists, but search row does not report public-domain status.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ239",
+      "intent": "region_period_recommendation",
+      "fact_count": 38,
+      "covered_fact_count": 16,
+      "coverage_ratio": 0.4211,
+      "uncovered_sample": [
+        "SURF-CGS2026R0031",
+        "Unknown author Unknown author",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ240",
+      "intent": "region_period_recommendation",
+      "fact_count": 39,
+      "covered_fact_count": 16,
+      "coverage_ratio": 0.4103,
+      "uncovered_sample": [
+        "SURF-CGS2026R0030",
+        "The General Directorate of Posts and Telegraphs, which is now defunct.",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ241",
+      "intent": "region_period_recommendation",
+      "fact_count": 40,
+      "covered_fact_count": 17,
+      "coverage_ratio": 0.425,
+      "uncovered_sample": [
+        "SURF-CGS2026R0328",
+        "Unknown author Unknown author",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ242",
+      "intent": "region_period_recommendation",
+      "fact_count": 40,
+      "covered_fact_count": 17,
+      "coverage_ratio": 0.425,
+      "uncovered_sample": [
+        "SURF-CRG2026R0153",
+        "Rijksmuseum",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC0.",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ243",
+      "intent": "region_period_recommendation",
+      "fact_count": 36,
+      "covered_fact_count": 16,
+      "coverage_ratio": 0.4444,
+      "uncovered_sample": [
+        "SURF-CRG2026R0031",
+        "Unknown artist Unknown artist",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ244",
+      "intent": "region_period_recommendation",
+      "fact_count": 40,
+      "covered_fact_count": 16,
+      "coverage_ratio": 0.4,
+      "uncovered_sample": [
+        "SURF-CRG2026R0032",
+        "Unknown artist Unknown artist",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain.",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ245",
+      "intent": "region_period_recommendation",
+      "fact_count": 45,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1333,
+      "uncovered_sample": [
+        "SURF-ER1830R008",
+        "Gardner's photographic advertising card",
+        "Unknown",
+        "c1869",
+        "1 photographic print :",
+        "1 photographic print : albumen silver.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2007675841/"
+      ]
+    },
+    {
+      "query_id": "BQ246",
+      "intent": "region_period_recommendation",
+      "fact_count": 41,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.122,
+      "uncovered_sample": [
+        "SURF-ER1830R011",
+        "Use Getz cockroach and bed bug exterminators, sold by all druggists I sink I tan hit it.",
+        "Unknown",
+        "[between 1870 and 1890]",
+        "1 print :",
+        "1 print : chromolithograph.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2008677258/"
+      ]
+    },
+    {
+      "query_id": "BQ247",
+      "intent": "region_period_recommendation",
+      "fact_count": 45,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.1778,
+      "uncovered_sample": [
+        "SURF-ER1830R017",
+        "Mead, Larkin G. (Larkin Goldsmith), 1835-1910",
+        "1 print :",
+        "1 print : lithograph mounted on calendar ; irregular sheet 12 x 11 cm, on page 20 x 13 cm.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2014646356/",
+        "2026-05-30",
+        "thumbnail_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ248",
+      "intent": "region_period_recommendation",
+      "fact_count": 42,
+      "covered_fact_count": 12,
+      "coverage_ratio": 0.2857,
+      "uncovered_sample": [
+        "SURF-ER1830R018",
+        "Unknown",
+        "1 item.",
+        "Library of Congress loc.gov API",
+        "https://www.loc.gov/pictures/item/2010635174/",
+        "2026-05-30",
+        "rights_review_required",
+        "no_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ249",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 16,
+      "coverage_ratio": 0.8889,
+      "uncovered_sample": [
+        "2026-06-07",
+        "method"
+      ]
+    },
+    {
+      "query_id": "BQ250",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.3333,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "Browser-local RAG lab method context",
+        "browser-local-rag-lab",
+        "2026-06-07",
+        "Research method",
+        "method_context",
+        "research-only fixture record",
+        "browser-local-rag-lab method files"
+      ]
+    },
+    {
+      "query_id": "BQ251",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.5,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "2026-06-07",
+        "Research method",
+        "method_context",
+        "research-only fixture record",
+        "research_fixture",
+        "text_only",
+        "method"
+      ]
+    },
+    {
+      "query_id": "BQ252",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 16,
+      "coverage_ratio": 0.8889,
+      "uncovered_sample": [
+        "2026-06-07",
+        "method"
+      ]
+    },
+    {
+      "query_id": "BQ253",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.3889,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "2026-06-07",
+        "Research method",
+        "method_context",
+        "research-only fixture record",
+        "research_fixture",
+        "text_only",
+        "Research-only method fixture; not archive object evidence."
+      ]
+    },
+    {
+      "query_id": "BQ254",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 15,
+      "coverage_ratio": 0.8333,
+      "uncovered_sample": [
+        "2026-06-07",
+        "research-only fixture record",
+        "research_fixture"
+      ]
+    },
+    {
+      "query_id": "BQ255",
+      "intent": "more_context",
+      "fact_count": 48,
+      "covered_fact_count": 15,
+      "coverage_ratio": 0.3125,
+      "uncovered_sample": [
+        "SURF-ER1830R059",
+        "Sculptress",
+        "Print",
+        "lithograph with watercolor added by hand",
+        "Cleveland Museum Open Access API",
+        "https://clevelandart.org/art/1986.136",
+        "2026-05-30",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ256",
+      "intent": "more_context",
+      "fact_count": 44,
+      "covered_fact_count": 8,
+      "coverage_ratio": 0.1818,
+      "uncovered_sample": [
+        "SURF-ER1830R064",
+        "Tell that to the Marines!",
+        "James Montgomery Flagg\nAmerican, 1877-1960",
+        "United States",
+        "poster; print; prints and drawing",
+        "Color lithograph on cream wove paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/7772"
+      ]
+    },
+    {
+      "query_id": "BQ257",
+      "intent": "more_context",
+      "fact_count": 46,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1304,
+      "uncovered_sample": [
+        "SURF-ER1830R065",
+        "To the Amputees—Join the Workforce",
+        "Unknown Artist\nFrench, 20th century",
+        "c. 1918",
+        "France",
+        "poster; print; prints and drawing",
+        "Color lithograph on paper",
+        "Art Institute of Chicago API"
+      ]
+    },
+    {
+      "query_id": "BQ258",
+      "intent": "more_context",
+      "fact_count": 43,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.3023,
+      "uncovered_sample": [
+        "SURF-ER1830R066",
+        "Buy a Little Present for the Kaiser",
+        "Color lithograph on cream wove paper",
+        "Art Institute of Chicago API",
+        "https://www.artic.edu/artworks/7962",
+        "2026-05-30",
+        "rights_review_required",
+        "empty_rights_frame"
+      ]
+    },
+    {
+      "query_id": "BQ259",
+      "intent": "more_context",
+      "fact_count": 49,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.102,
+      "uncovered_sample": [
+        "SURF-SI1970R001",
+        "Unknown",
+        "USA; USA",
+        "Lithograph on paper; 8.6 × 12.4 cm (3 3/8 × 4 7/8 in.)",
+        "Smithsonian Open Access",
+        "https://collection.cooperhewitt.org/view/objects/asitem/id/79923",
+        "2026-05-31",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ260",
+      "intent": "more_context",
+      "fact_count": 40,
+      "covered_fact_count": 14,
+      "coverage_ratio": 0.35,
+      "uncovered_sample": [
+        "SURF-CGS2026R0030",
+        "The General Directorate of Posts and Telegraphs, which is now defunct.",
+        "Latin America / Argentina",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "sheet",
+        "main_sheet"
+      ]
+    }
+  ]
+}

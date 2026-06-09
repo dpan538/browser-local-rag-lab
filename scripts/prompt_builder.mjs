@@ -87,8 +87,16 @@ function isV31EvidencePruneTagInjection(options = {}) {
   return options.promptVariant === "r03_v31_evidence_prune_tag_injection";
 }
 
+function isV32GuardedProse(options = {}) {
+  return options.promptVariant === "r03_v32_guarded_prose_budgeted_generation";
+}
+
+function isPrunedTagInjection(options = {}) {
+  return isV31EvidencePruneTagInjection(options) || isV32GuardedProse(options);
+}
+
 function promptFieldValue(record, field, options = {}) {
-  if (!isEvidenceCompress(options) && !isV31EvidencePruneTagInjection(options)) return fieldValue(record, field);
+  if (!isEvidenceCompress(options) && !isPrunedTagInjection(options)) return fieldValue(record, field);
   const maxByField = {
     source: 180,
     topology: 180,
@@ -183,6 +191,38 @@ function lengthControlLine(label = {}) {
   return "Keep the generated answer body concise.";
 }
 
+function guardedLengthLine(label = {}) {
+  if (["archive_orientation", "casual_archive_help"].includes(label.intent)) {
+    return "Keep the answer body to 35-55 words.";
+  }
+  if (label.intent === "current_object_explanation") {
+    return "Keep the answer body to 35-55 words.";
+  }
+  if (label.intent === "method_process_question") {
+    return "Keep the answer body to 55-80 words.";
+  }
+  if (label.intent === "comparison") {
+    return "Keep the answer body to 75-105 words.";
+  }
+  if (["region_period_recommendation", "more_context"].includes(label.intent)) {
+    return "Keep the answer body to 80-120 words.";
+  }
+  return "Keep the answer body concise.";
+}
+
+function guardedProseLines(label = {}) {
+  const firstClaimLine = label.intent === "first_earliest_claim"
+    ? "Only mention first, earliest, or original if the evidence values explicitly include chronology proof."
+    : "Do not use the words first, earliest, or original for historical priority claims.";
+  return [
+    "Begin the answer body with: Based on these records,",
+    "Use cautious, source-limited language.",
+    "Do not use absolute words such as all, every, never, always, certainly, definitely, or proves.",
+    "Do not use inference words such as therefore, thus, implies, consequently, or as a result.",
+    firstClaimLine
+  ];
+}
+
 function orientationEvidenceSummary(records) {
   const folderTitles = [...new Set(records.flatMap((record) => record.topology?.folder_titles || []))];
   const surfaceTypes = [...new Set(records.map((record) => record.topology?.surface_type).filter(Boolean))];
@@ -247,7 +287,7 @@ function buildSourceRightsPrompt(packet) {
 }
 
 function buildOrientationPrompt(packet, options = {}) {
-  if (isV31EvidencePruneTagInjection(options)) {
+  if (isPrunedTagInjection(options)) {
     const records = reorderEvidence(packet.evidence, packet.label);
     return [
       "You are running a research-only browser-local Qwen RAG experiment.",
@@ -257,7 +297,8 @@ function buildOrientationPrompt(packet, options = {}) {
       `Question: ${packet.query.query_text}`,
       `Intent: ${packet.label.intent}`,
       "Required behavior: answer about the archive view as a whole, not about one object.",
-      "Keep the generated answer body under 45 words.",
+      isV32GuardedProse(options) ? guardedLengthLine(packet.label) : "Keep the generated answer body under 45 words.",
+      ...(isV32GuardedProse(options) ? guardedProseLines(packet.label) : []),
       "",
       "Archive facts you may use:",
       orientationEvidenceSummary(records),
@@ -317,7 +358,7 @@ function buildOrientationPrompt(packet, options = {}) {
 
 function buildAnswerablePrompt(packet, options = {}) {
   const required = fieldsForLabel(packet.label);
-  if (isV31EvidencePruneTagInjection(options)) {
+  if (isPrunedTagInjection(options)) {
     const records = modelEvidenceForV31(packet.evidence, packet.label);
     const fields = summaryFieldsForV31(packet.label, records);
     return [
@@ -328,7 +369,8 @@ function buildAnswerablePrompt(packet, options = {}) {
       "Do not infer dates from record IDs, object IDs, source page numbers, or URL numbers. Use date_text values only for dates.",
       `Question: ${packet.query.query_text}`,
       `Intent: ${packet.label.intent}`,
-      lengthControlLine(packet.label),
+      isV32GuardedProse(options) ? guardedLengthLine(packet.label) : lengthControlLine(packet.label),
+      ...(isV32GuardedProse(options) ? guardedProseLines(packet.label) : []),
       packet.label.intent === "current_object_explanation" ? "For this intent, describe Record 1 only; related records are not the current object." : "",
       "",
       `Evidence value order: ${fields.join(" | ")}`,
@@ -481,6 +523,13 @@ function deterministicAnswerBody(packet) {
   return "This answer is grounded in the evidence fields listed below.";
 }
 
+function hedgeBodyForV32(body) {
+  const text = String(body || "").trim();
+  if (/^based on these records,/i.test(text)) return text;
+  if (!text) return "Based on these records, the answer is grounded in the evidence fields listed below.";
+  return `Based on these records, ${text.replace(/^[A-Z]/, (letter) => letter.toLowerCase())}`;
+}
+
 export function buildPrompt(packet, options = {}) {
   if (packet.label.refusal_expected) return buildHardRefusalPrompt(packet);
   if (packet.label.intent === "source_rights_question") return buildSourceRightsPrompt(packet);
@@ -490,7 +539,7 @@ export function buildPrompt(packet, options = {}) {
   return buildAnswerablePrompt(packet, options);
 }
 
-export function finalizeAnswerText(packet, generatedText) {
+export function finalizeAnswerText(packet, generatedText, options = {}) {
   if (packet.label.refusal_expected) return `"${REFUSAL_PHRASE}"`;
   if (packet.label.intent === "source_rights_question") return sourceRightsBlock(packet.evidence[0] || {});
   const tags = evidenceTagBlock(packet.evidence, fieldsForLabel(packet.label));
@@ -498,7 +547,8 @@ export function finalizeAnswerText(packet, generatedText) {
   const safeBody = !body || bodyLooksLikeRefusal(body) || bodyLooksUnsafe(packet, body)
     ? deterministicAnswerBody(packet)
     : body;
-  return [safeBody, tags].join("\n\n");
+  const finalBody = isV32GuardedProse(options) ? hedgeBodyForV32(safeBody) : safeBody;
+  return [finalBody, tags].join("\n\n");
 }
 
 export function auditPromptText({ prompt, label }) {
