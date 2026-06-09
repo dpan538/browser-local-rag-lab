@@ -1,0 +1,6 @@
+query_id,intent,lane,refusal_expected,candidate_count,prompt_tokens_est,ttft_ms,total_latency_ms,output_tokens,tokens_per_second,evidence_chars,slow_reason,recommendation
+BQ173,more_context,research_answer,false,3,913,6240.599999427795,17315.599999427795,103,9.300225733634312,11128,total_latency_tail+long_output+large_evidence_text,Compress context skeleton and cap answer length.
+BQ131,region_period_recommendation,research_answer,false,3,793,5742.300000190735,16738,66,6.002346371867627,10115,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ136,region_period_recommendation,research_answer,false,3,711,5336,16676.5,48,4.232617609452846,10062,total_latency_tail+low_decode_speed+large_evidence_text,Use route-specific field summaries and length control.
+BQ176,more_context,research_answer,false,3,817,4911.700000762939,15145.900000572205,85,8.305485529067651,9475,total_latency_tail+large_evidence_text,Compress context skeleton and cap answer length.
+BQ130,region_period_recommendation,research_answer,false,3,745,3428.9000005722046,10564.400000572205,71,9.950248756218905,10115,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.

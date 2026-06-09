@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-06-09T10:33:50.785Z",
+  "round_json_path": "reports/webllm_round_03_latency_pilot50_v1_length_control.json",
+  "answers_path": "reports/webllm_round_03_latency_pilot50_v1_length_control_answers.jsonl",
+  "expected_count": 50,
+  "result_count": 50,
+  "completed_count": 50,
+  "error_count": 0,
+  "metric_issue_count": 0,
+  "contract_fail_count": 0,
+  "contract_warn_count": 0,
+  "gate_fail_count": 0,
+  "gate_warn_count": 6,
+  "blocking_finding_count": 0,
+  "performance_observation_count": 6,
+  "ready_for_next_step": true,
+  "findings": [
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ169",
+      "detail": "tokens_per_second=3.83; avg=7.75"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ089",
+      "detail": "tokens_per_second=2.21; avg=7.75"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ227",
+      "detail": "tokens_per_second=3.69; avg=7.75"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ223",
+      "detail": "tokens_per_second=3.71; avg=7.75"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ096",
+      "detail": "tokens_per_second=3.68; avg=7.75"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ100",
+      "detail": "tokens_per_second=3.83; avg=7.75"
+    }
+  ]
+}

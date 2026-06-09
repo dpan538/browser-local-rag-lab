@@ -1,0 +1,33 @@
+query_id,intent,lane,refusal_expected,candidate_count,prompt_tokens_est,ttft_ms,total_latency_ms,output_tokens,tokens_per_second,evidence_chars,slow_reason,recommendation
+BQ176,more_context,research_answer,false,3,914,4850.199999809265,16129.5,98,8.688482441139326,9475,total_latency_tail+large_evidence_text,Compress context skeleton and cap answer length.
+BQ213,current_object_explanation,fast_answer,false,3,831,5309.300000190735,15960.20000076294,53,4.976105305387587,10962,total_latency_tail+large_evidence_text,Prefer one primary object and move evidence tags before prose.
+BQ173,more_context,research_answer,false,3,1017,4788.300000190735,14872.699999809265,55,5.453968506017267,11128,total_latency_tail+large_prompt+large_evidence_text,Compress context skeleton and cap answer length.
+BQ260,more_context,research_answer,false,3,963,4816.299999237061,14828.199999809265,78,7.790729032006124,10916,total_latency_tail+large_evidence_text,Compress context skeleton and cap answer length.
+BQ167,more_context,research_answer,false,3,991,5197.60000038147,14098.60000038147,51,5.72969329288844,11932,total_latency_tail+large_evidence_text,Compress context skeleton and cap answer length.
+BQ165,more_context,research_answer,false,3,835,4297.39999961853,13931.199999809265,61,6.331873196328789,10735,total_latency_tail+large_evidence_text,Compress context skeleton and cap answer length.
+BQ244,region_period_recommendation,research_answer,false,3,852,4530.60000038147,13824.900000572205,77,8.284647579529372,12549,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ065,current_object_explanation,fast_answer,false,3,758,4550.60000038147,13675.699999809265,70,7.671148809809148,8840,total_latency_tail,Prefer one primary object and move evidence tags before prose.
+BQ174,more_context,research_answer,false,3,984,4984.599999427795,13464.39999961853,44,5.188801622563069,12020,total_latency_tail+large_evidence_text,Compress context skeleton and cap answer length.
+BQ25,more_context,research_answer,false,3,966,4408.699999809265,13402.79999923706,69,7.671695890015652,11715,total_latency_tail+large_evidence_text,Compress context skeleton and cap answer length.
+BQ26,more_context,research_answer,false,3,966,4538.699999809265,13183.199999809265,66,7.634912372028457,11715,total_latency_tail+large_evidence_text,Compress context skeleton and cap answer length.
+BQ104,comparison,research_answer,false,2,592,3391.2999992370605,13069.599999427795,76,7.852618744872781,8074,total_latency_tail,Keep two comparison records plus exact evidence tags; avoid spillover.
+BQ131,region_period_recommendation,research_answer,false,3,849,4201.200000762939,13056.70000076294,117,13.21212805601039,10115,total_latency_tail+long_output+large_evidence_text,Use route-specific field summaries and length control.
+BQ136,region_period_recommendation,research_answer,false,3,738,3725.800000190735,12711.199999809265,62,6.900082356114606,10062,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ166,more_context,research_answer,false,3,1000,4779.699999809265,12684.099999427795,60,7.590708972584336,11063,total_latency_tail+large_evidence_text,Compress context skeleton and cap answer length.
+BQ130,region_period_recommendation,research_answer,false,3,784,4687.60000038147,12634.10000038147,69,8.683068017366136,10115,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ169,more_context,research_answer,false,3,890,4480,12398.699999809265,60,7.5770012756443865,8783,total_latency_tail,Compress context skeleton and cap answer length.
+BQ132,region_period_recommendation,research_answer,false,3,736,3535.300000190735,12355.400000572205,94,10.657475538365155,10121,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ243,region_period_recommendation,research_answer,false,3,887,3783.199999809265,12219.39999961853,69,8.179037955662505,12108,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ242,region_period_recommendation,research_answer,false,3,851,4579.900000572205,12158.800000190735,77,10.159785721394352,12535,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ032,archive_orientation,help,false,3,498,1962.8999996185303,12102.5,123,12.13065604120207,11003,total_latency_tail+long_output+large_evidence_text,Monitor under current prompt budget.
+BQ172,more_context,research_answer,false,3,915,4097.799999237061,12042.099999427795,46,5.7903150685265645,11004,total_latency_tail+large_evidence_text,Compress context skeleton and cap answer length.
+BQ138,region_period_recommendation,research_answer,false,3,687,3578,11430.699999809265,44,5.603168337141202,9873,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ141,region_period_recommendation,research_answer,false,3,754,3721.5,11400.5,78,10.157572600599035,10472,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ137,region_period_recommendation,research_answer,false,3,727,3446.6000003814697,11361,67,8.465581724859668,9981,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ110,comparison,research_answer,false,2,769,3985.8999996185303,11282.300000190735,50,6.8526944789319195,8863,total_latency_tail,Keep two comparison records plus exact evidence tags; avoid spillover.
+BQ162,more_context,research_answer,false,3,782,3278.5999994277954,11133.300000190735,42,5.347117012224588,8158,total_latency_tail,Compress context skeleton and cap answer length.
+BQ142,region_period_recommendation,research_answer,false,3,628,3297.300000190735,11055.699999809265,67,8.635801196547522,8045,total_latency_tail,Use route-specific field summaries and length control.
+BQ129,region_period_recommendation,research_answer,false,3,741,3567,10629.900000572205,90,12.742641123718105,10319,total_latency_tail+large_evidence_text,Use route-specific field summaries and length control.
+BQ226,source_rights_question,source_rights,false,3,597,2784.699999809265,10521.300000190735,66,8.530879197159699,13172,total_latency_tail+large_evidence_text,Hybrid deterministic source/rights lane can return exact evidence fields.
+BQ098,source_rights_question,source_rights,false,3,478,2350.5,10320.5,69,8.657465495608532,8147,total_latency_tail,Hybrid deterministic source/rights lane can return exact evidence fields.
+BQ230,comparison,research_answer,false,2,560,2667.1000003814697,10146.20000076294,65,8.690885266500606,8451,total_latency_tail,Keep two comparison records plus exact evidence tags; avoid spillover.

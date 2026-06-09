@@ -34,6 +34,10 @@ function average(rows, field) {
   return values.reduce((sum, value) => sum + value, 0) / values.length;
 }
 
+function isDeterministicRow(row) {
+  return row.deterministic === true || row.latency_bucket === "hybrid_system_latency";
+}
+
 function formatNumber(value, digits = 1) {
   if (value === null || value === undefined || Number.isNaN(value)) return "n/a";
   return Number(value).toFixed(digits);
@@ -138,10 +142,14 @@ function answerRows(results) {
     intent: row.intent,
     lane: row.lane,
     variant_id: row.variant_id,
+    prompt_variant: row.prompt_variant,
     producer: row.producer || "webllm_qwen3_5_0_8b_research_runtime",
     generation_status: row.generation_status,
     retrieved_ids: row.retrieved_ids,
     candidate_count: row.candidate_count,
+    deterministic: row.deterministic === true,
+    hybrid_lane: row.hybrid_lane || null,
+    latency_bucket: row.latency_bucket || (row.deterministic ? "hybrid_system_latency" : "qwen_generation_latency"),
     prompt_tokens_est: row.prompt_tokens_est,
     model_load_ms: row.model_load_ms,
     tokenization_ms: row.tokenization_ms ?? null,
@@ -166,6 +174,8 @@ function byStatus(rows) {
 
 function markdownReport({ payload, results, contract, metrics, outputJsonPath, answersPath }) {
   const completed = results.filter((row) => row.generation_status === "completed");
+  const deterministicRows = completed.filter(isDeterministicRow);
+  const modelRows = completed.filter((row) => !isDeterministicRow(row));
   const errors = results.filter((row) => row.generation_status !== "completed");
   const statusRows = Object.entries(byStatus(results))
     .sort(([a], [b]) => a.localeCompare(b))
@@ -208,10 +218,14 @@ experiment outputs only and are not archive evidence.
 - Result rows: ${results.length}
 - Completed rows: ${completed.length}
 - Error rows: ${errors.length}
-- Average TTFT: ${formatNumber(average(completed, "ttft_ms"))} ms
-- Average total latency: ${formatNumber(average(completed, "total_latency_ms"))} ms
-- Average tokens/s: ${formatNumber(average(completed, "tokens_per_second"), 2)}
-- Average prompt tokens estimate: ${formatNumber(average(completed, "prompt_tokens_est"))}
+- Deterministic hybrid rows: ${deterministicRows.length}
+- Qwen model-generation rows: ${modelRows.length}
+- Qwen average TTFT: ${formatNumber(average(modelRows, "ttft_ms"))} ms
+- Qwen average total latency: ${formatNumber(average(modelRows, "total_latency_ms"))} ms
+- Qwen average tokens/s: ${formatNumber(average(modelRows, "tokens_per_second"), 2)}
+- Qwen average prompt tokens estimate: ${formatNumber(average(modelRows, "prompt_tokens_est"))}
+- Hybrid deterministic average total latency: ${formatNumber(average(deterministicRows, "total_latency_ms"), 3)} ms
+- All-row average total latency: ${formatNumber(average(completed, "total_latency_ms"))} ms
 - Metric validity issues: ${metrics.length}
 
 ## Metric Validity Gate

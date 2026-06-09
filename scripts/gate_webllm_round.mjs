@@ -46,6 +46,10 @@ function add(findings, severity, code, detail, queryId = null) {
   findings.push({ severity, code, query_id: queryId, detail });
 }
 
+function isDeterministicRow(row) {
+  return row.deterministic === true || row.latency_bucket === "hybrid_system_latency";
+}
+
 function metricIssues(round) {
   return round.metric_issues || [];
 }
@@ -53,7 +57,8 @@ function metricIssues(round) {
 function answerBehaviorFindings(answers, labelsById) {
   const findings = [];
   const completed = answers.filter((row) => row.generation_status === "completed");
-  const tpsValues = completed
+  const modelRows = completed.filter((row) => !isDeterministicRow(row));
+  const tpsValues = modelRows
     .map((row) => row.tokens_per_second)
     .filter((value) => typeof value === "number" && Number.isFinite(value));
   const avgTps = tpsValues.length
@@ -70,7 +75,7 @@ function answerBehaviorFindings(answers, labelsById) {
     if (!label.refusal_expected && text.length < 50) {
       add(findings, "warn", "P002_answerable_answer_too_short", `length=${text.length}; threshold=50`, row.query_id);
     }
-    if (avgTps !== null && typeof row.tokens_per_second === "number" && row.tokens_per_second < avgTps * 0.5) {
+    if (!isDeterministicRow(row) && avgTps !== null && typeof row.tokens_per_second === "number" && row.tokens_per_second < avgTps * 0.5) {
       add(findings, "warn", "P003_generation_speed_low", `tokens_per_second=${row.tokens_per_second.toFixed(2)}; avg=${avgTps.toFixed(2)}`, row.query_id);
     }
   }
@@ -102,6 +107,8 @@ the mechanical gates and can move to review packaging.
 - Expected rows: ${result.expected_count ?? "not set"}
 - Result rows: ${result.result_count}
 - Completed rows: ${result.completed_count}
+- Deterministic hybrid rows: ${result.deterministic_count}
+- Qwen model-generation rows: ${result.model_generation_count}
 - Error rows: ${result.error_count}
 - Metric issues: ${result.metric_issue_count}
 - Contract failures: ${result.contract_fail_count}
@@ -131,6 +138,8 @@ export function gateWebllmRound(options) {
   const findings = [];
 
   const completed = answers.filter((row) => row.generation_status === "completed");
+  const deterministicRows = completed.filter(isDeterministicRow);
+  const modelRows = completed.filter((row) => !isDeterministicRow(row));
   const errors = answers.filter((row) => row.generation_status !== "completed");
   if (options.expectedCount !== null && answers.length !== options.expectedCount) {
     add(findings, "fail", "GATE001_unexpected_result_count", `expected=${options.expectedCount}; actual=${answers.length}`);
@@ -167,6 +176,8 @@ export function gateWebllmRound(options) {
     expected_count: options.expectedCount,
     result_count: answers.length,
     completed_count: completed.length,
+    deterministic_count: deterministicRows.length,
+    model_generation_count: modelRows.length,
     error_count: errors.length,
     metric_issue_count: metricIssues(round).length,
     contract_fail_count: contract.fail_count,

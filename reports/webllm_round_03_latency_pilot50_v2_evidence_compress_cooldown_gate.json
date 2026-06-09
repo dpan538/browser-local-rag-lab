@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-06-09T11:55:32.007Z",
+  "round_json_path": "reports/webllm_round_03_latency_pilot50_v2_evidence_compress_cooldown.json",
+  "answers_path": "reports/webllm_round_03_latency_pilot50_v2_evidence_compress_cooldown_answers.jsonl",
+  "expected_count": 50,
+  "result_count": 50,
+  "completed_count": 50,
+  "error_count": 0,
+  "metric_issue_count": 0,
+  "contract_fail_count": 0,
+  "contract_warn_count": 0,
+  "gate_fail_count": 0,
+  "gate_warn_count": 1,
+  "blocking_finding_count": 0,
+  "performance_observation_count": 1,
+  "ready_for_next_step": true,
+  "findings": [
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ089",
+      "detail": "tokens_per_second=3.04; avg=9.51"
+    }
+  ]
+}

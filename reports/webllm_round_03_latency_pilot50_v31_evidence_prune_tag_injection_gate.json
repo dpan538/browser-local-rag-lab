@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-09T13:57:59.241Z",
+  "round_json_path": "reports/webllm_round_03_latency_pilot50_v31_evidence_prune_tag_injection.json",
+  "answers_path": "reports/webllm_round_03_latency_pilot50_v31_evidence_prune_tag_injection_answers.jsonl",
+  "expected_count": 50,
+  "result_count": 50,
+  "completed_count": 50,
+  "deterministic_count": 14,
+  "model_generation_count": 36,
+  "error_count": 0,
+  "metric_issue_count": 0,
+  "contract_fail_count": 0,
+  "contract_warn_count": 0,
+  "gate_fail_count": 0,
+  "gate_warn_count": 0,
+  "blocking_finding_count": 0,
+  "performance_observation_count": 0,
+  "ready_for_next_step": true,
+  "findings": []
+}

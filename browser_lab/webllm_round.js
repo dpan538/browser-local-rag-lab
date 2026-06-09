@@ -1,5 +1,6 @@
 import * as webllm from "https://esm.run/@mlc-ai/web-llm";
-import { buildPrompt as buildContractPrompt, finalizeAnswerText } from "../scripts/prompt_builder.mjs";
+import { generateDeterministicAnswer } from "../scripts/deterministic_responder.mjs?v=2";
+import { buildPrompt as buildContractPrompt, finalizeAnswerText } from "../scripts/prompt_builder.mjs?v=5";
 
 const params = new URLSearchParams(window.location.search);
 const config = {
@@ -8,6 +9,7 @@ const config = {
   recordsPath: params.get("records") || "../fixtures/gold/records.jsonl",
   retrievalPath: params.get("retrieval") || "../reports/retrieval_sufficiency_v0.json",
   variantId: params.get("variant") || "top3_compressed_topology_source_rights",
+  promptVariant: params.get("promptVariant") || "r03_v0_baseline",
   roundId: params.get("round") || "webllm_round_02",
   queryStart: Math.max(1, Number(params.get("start") || 1)),
   queryLimit: Math.max(1, Number(params.get("limit") || 50)),
@@ -74,7 +76,7 @@ function updateRoundChrome() {
 }
 
 function checkpointKey() {
-  return `webllm-round-results:${config.roundId}:${config.variantId}`;
+  return `webllm-round-results:${config.roundId}:${config.variantId}:${config.promptVariant}`;
 }
 
 function loadCheckpoint() {
@@ -468,7 +470,7 @@ function responsePlan(label) {
 }
 
 function buildPrompt(packet) {
-  return buildContractPrompt(packet);
+  return buildContractPrompt(packet, { promptVariant: config.promptVariant });
 
   /* legacy generic prompt retained for reference only */
   return [
@@ -495,6 +497,19 @@ function buildPrompt(packet) {
 }
 
 function updatePromptPreview(packet, answer = "") {
+  const deterministic = generateDeterministicAnswer(packet, { promptVariant: config.promptVariant });
+  if (deterministic) {
+    state.lastPrompt = "";
+    el.answerOutput.textContent = [
+      "DETERMINISTIC HYBRID LANE",
+      `lane: ${deterministic.lane}`,
+      "No Qwen/WebLLM prompt is sent for this query.",
+      "",
+      "ANSWER",
+      answer || deterministic.answer_text
+    ].join("\n");
+    return;
+  }
   const prompt = buildPrompt(packet);
   state.lastPrompt = prompt;
   el.answerOutput.textContent = [
@@ -673,11 +688,23 @@ async function streamCompletion(prompt) {
 }
 
 async function runQuery(queryId) {
-  if (!state.engine) throw new Error("Load WebLLM before running generation.");
   const packet = buildPacket(queryId);
-  const prompt = buildPrompt(packet);
   const promptBuildStarted = performance.now();
-  updatePromptPreview(packet);
+  const deterministic = generateDeterministicAnswer(packet, { promptVariant: config.promptVariant });
+  const prompt = deterministic ? "" : buildPrompt(packet);
+  if (deterministic) {
+    state.lastPrompt = "";
+    el.answerOutput.textContent = [
+      "DETERMINISTIC HYBRID LANE",
+      `lane: ${deterministic.lane}`,
+      "No Qwen/WebLLM prompt is sent for this query.",
+      "",
+      "ANSWER",
+      deterministic.answer_text
+    ].join("\n");
+  } else {
+    updatePromptPreview(packet);
+  }
   const promptBuildMs = performance.now() - promptBuildStarted;
 
   const base = {
@@ -685,20 +712,45 @@ async function runQuery(queryId) {
     intent: packet.label.intent,
     lane: packet.label.gold_lane,
     variant_id: config.variantId,
-    producer: "webllm_qwen3_5_0_8b_research_runtime",
+    prompt_variant: config.promptVariant,
+    producer: deterministic ? "deterministic_hybrid_system_v1" : "webllm_qwen3_5_0_8b_research_runtime",
     generation_status: "running",
     retrieved_ids: packet.retrievedIds.join("|"),
     candidate_count: Number(packet.retrieval?.candidate_count || 0),
     prompt_chars: prompt.length,
     prompt_tokens_est: Math.ceil(prompt.length / 4),
     prompt_build_ms: promptBuildMs,
-    model_load_ms: state.loadMs,
+    model_load_ms: deterministic ? 0 : state.loadMs,
     tokenization_ms: null,
     cache_state: el.cacheState.value,
-    device_error: null
+    device_error: null,
+    deterministic: Boolean(deterministic),
+    hybrid_lane: deterministic?.lane || null,
+    latency_bucket: deterministic?.latency_bucket || "qwen_generation_latency"
   };
 
   try {
+    if (deterministic) {
+      const row = {
+        ...base,
+        generation_status: "completed",
+        ttft_ms: deterministic.elapsed_ms,
+        total_latency_ms: deterministic.elapsed_ms,
+        output_tokens: approxTokens(deterministic.answer_text),
+        tokens_per_second: 0,
+        raw_answer_text: "",
+        model_answer_text: "",
+        answer_text: deterministic.answer_text,
+        answer_postprocess: "deterministic_hybrid_lane_v1"
+      };
+      upsertResult(row);
+      syncExportBuffer();
+      updateMetrics(row);
+      log(`Completed ${queryId} via deterministic ${deterministic.lane} lane: total ${ms(row.total_latency_ms)}.`);
+      return row;
+    }
+
+    if (!state.engine) throw new Error("Load WebLLM before running generation.");
     log(`Running ${queryId} (${packet.label.intent}).`);
     const generated = await streamCompletion(prompt);
     const finalizedAnswerText = finalizeAnswerText(packet, generated.answer_text);
@@ -746,6 +798,7 @@ function downloadablePayload() {
       model_url: el.modelUrl.value.trim(),
       model_lib_url: el.modelLibUrl.value.trim(),
       variant_id: config.variantId,
+      prompt_variant: config.promptVariant,
       queries_path: config.queriesPath,
       labels_path: config.labelsPath,
       records_path: config.recordsPath,

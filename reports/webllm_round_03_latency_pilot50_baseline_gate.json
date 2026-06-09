@@ -1,0 +1,67 @@
+{
+  "generated_at": "2026-06-09T10:19:40.232Z",
+  "round_json_path": "reports/webllm_round_03_latency_pilot50_baseline.json",
+  "answers_path": "reports/webllm_round_03_latency_pilot50_baseline_answers.jsonl",
+  "expected_count": 50,
+  "result_count": 50,
+  "completed_count": 50,
+  "error_count": 0,
+  "metric_issue_count": 0,
+  "contract_fail_count": 0,
+  "contract_warn_count": 0,
+  "gate_fail_count": 0,
+  "gate_warn_count": 8,
+  "blocking_finding_count": 0,
+  "performance_observation_count": 8,
+  "ready_for_next_step": true,
+  "findings": [
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ166",
+      "detail": "tokens_per_second=5.74; avg=11.51"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ173",
+      "detail": "tokens_per_second=5.25; avg=11.51"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ110",
+      "detail": "tokens_per_second=1.53; avg=11.51"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ242",
+      "detail": "tokens_per_second=4.21; avg=11.51"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ089",
+      "detail": "tokens_per_second=3.92; avg=11.51"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ162",
+      "detail": "tokens_per_second=4.50; avg=11.51"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ223",
+      "detail": "tokens_per_second=5.10; avg=11.51"
+    },
+    {
+      "severity": "warn",
+      "code": "P003_generation_speed_low",
+      "query_id": "BQ096",
+      "detail": "tokens_per_second=5.18; avg=11.51"
+    }
+  ]
+}

@@ -1,0 +1,2867 @@
+{
+  "_provenance": {
+    "step": "round03_300_latency_triage",
+    "timestamp": "2026-06-09T10:33:50.887Z",
+    "round_path": "reports/webllm_round_03_latency_pilot50_v1_length_control.json",
+    "labels_path": "fixtures/optimization/round03_latency_pilot50/labels.jsonl",
+    "records_path": "fixtures/optimization/round03_latency_pilot50/records.jsonl",
+    "gate_path": "reports/webllm_round_03_latency_pilot50_v1_length_control_gate.json",
+    "research_only": true
+  },
+  "thresholds": {
+    "slow_total_ms": 10000,
+    "slow_total_count": 43,
+    "low_speed_ratio": 0.5,
+    "low_speed_tokens_per_second": 3.88,
+    "low_speed_count": 6
+  },
+  "gate": {
+    "contract_fail_count": 0,
+    "contract_warn_count": 0,
+    "blocking_finding_count": 0,
+    "performance_observation_count": 6,
+    "ready_for_next_step": true
+  },
+  "summary": {
+    "n": 50,
+    "avg_ttft_ms": 4811.6,
+    "p50_ttft_ms": 5472.7,
+    "p95_ttft_ms": 8222.5,
+    "avg_total_ms": 13973.4,
+    "p50_total_ms": 15004.3,
+    "p95_total_ms": 19330.2,
+    "max_total_ms": 19509.8,
+    "avg_tokens_per_second": 7.75,
+    "avg_prompt_tokens": 771.1,
+    "avg_output_tokens": 62.6,
+    "avg_evidence_chars": 8997.5
+  },
+  "correlations": {
+    "prompt_tokens_est -> ttft_ms": {
+      "pearson": 0.93,
+      "spearman": 0.878
+    },
+    "prompt_tokens_est -> total_latency_ms": {
+      "pearson": 0.823,
+      "spearman": 0.794
+    },
+    "output_tokens -> total_latency_ms": {
+      "pearson": 0.439,
+      "spearman": 0.333
+    },
+    "evidence_chars -> prompt_tokens_est": {
+      "pearson": 0.629,
+      "spearman": 0.493
+    },
+    "candidate_count -> total_latency_ms": {
+      "pearson": 0.805,
+      "spearman": 0.508
+    }
+  },
+  "by_intent": [
+    {
+      "intent": "more_context",
+      "n": 12,
+      "avg_ttft_ms": 7079.4,
+      "p50_ttft_ms": 7381.9,
+      "p95_ttft_ms": 8464.5,
+      "avg_total_ms": 17124.8,
+      "p50_total_ms": 17673.6,
+      "p95_total_ms": 19486.6,
+      "max_total_ms": 19509.8,
+      "avg_tokens_per_second": 6.46,
+      "avg_prompt_tokens": 1174.1,
+      "avg_output_tokens": 64.7,
+      "avg_evidence_chars": 10720.3,
+      "slow_rows": 12,
+      "low_speed_rows": 1
+    },
+    {
+      "intent": "current_object_explanation",
+      "n": 2,
+      "avg_ttft_ms": 6376.6,
+      "p50_ttft_ms": 6376.6,
+      "p95_ttft_ms": 7724.3,
+      "avg_total_ms": 18093.6,
+      "p50_total_ms": 18093.6,
+      "p95_total_ms": 18834.3,
+      "max_total_ms": 18916.6,
+      "avg_tokens_per_second": 6.07,
+      "avg_prompt_tokens": 1037.5,
+      "avg_output_tokens": 71,
+      "avg_evidence_chars": 9901,
+      "slow_rows": 2,
+      "low_speed_rows": 0
+    },
+    {
+      "intent": "region_period_recommendation",
+      "n": 12,
+      "avg_ttft_ms": 6731.3,
+      "p50_ttft_ms": 6806.9,
+      "p95_ttft_ms": 8016.7,
+      "avg_total_ms": 17255,
+      "p50_total_ms": 17285.4,
+      "p95_total_ms": 18783.3,
+      "max_total_ms": 18883.5,
+      "avg_tokens_per_second": 6.9,
+      "avg_prompt_tokens": 984.4,
+      "avg_output_tokens": 71.6,
+      "avg_evidence_chars": 10524.6,
+      "slow_rows": 12,
+      "low_speed_rows": 0
+    },
+    {
+      "intent": "comparison",
+      "n": 4,
+      "avg_ttft_ms": 5385.9,
+      "p50_ttft_ms": 5051.2,
+      "p95_ttft_ms": 6958.1,
+      "avg_total_ms": 15270.7,
+      "p50_total_ms": 15320.8,
+      "p95_total_ms": 17439.8,
+      "max_total_ms": 17726.4,
+      "avg_tokens_per_second": 6.4,
+      "avg_prompt_tokens": 786,
+      "avg_output_tokens": 62,
+      "avg_evidence_chars": 8127,
+      "slow_rows": 4,
+      "low_speed_rows": 0
+    },
+    {
+      "intent": "source_rights_question",
+      "n": 10,
+      "avg_ttft_ms": 2838.7,
+      "p50_ttft_ms": 2787.6,
+      "p95_ttft_ms": 3640.2,
+      "avg_total_ms": 13033.3,
+      "p50_total_ms": 12850.7,
+      "p95_total_ms": 15871.4,
+      "max_total_ms": 15996.6,
+      "avg_tokens_per_second": 4.58,
+      "avg_prompt_tokens": 443.8,
+      "avg_output_tokens": 46.7,
+      "avg_evidence_chars": 10536.4,
+      "slow_rows": 10,
+      "low_speed_rows": 5
+    },
+    {
+      "intent": "archive_orientation",
+      "n": 3,
+      "avg_ttft_ms": 2010.2,
+      "p50_ttft_ms": 1933,
+      "p95_ttft_ms": 2156.4,
+      "avg_total_ms": 10459,
+      "p50_total_ms": 11580.5,
+      "p95_total_ms": 12567,
+      "max_total_ms": 12676.6,
+      "avg_tokens_per_second": 16.07,
+      "avg_prompt_tokens": 503,
+      "avg_output_tokens": 123.3,
+      "avg_evidence_chars": 11305,
+      "slow_rows": 2,
+      "low_speed_rows": 0
+    },
+    {
+      "intent": "method_process_question",
+      "n": 2,
+      "avg_ttft_ms": 1713.3,
+      "p50_ttft_ms": 1713.3,
+      "p95_ttft_ms": 1716,
+      "avg_total_ms": 10395.8,
+      "p50_total_ms": 10395.8,
+      "p95_total_ms": 11976.7,
+      "max_total_ms": 12152.3,
+      "avg_tokens_per_second": 12.97,
+      "avg_prompt_tokens": 459,
+      "avg_output_tokens": 108,
+      "avg_evidence_chars": 1673,
+      "slow_rows": 1,
+      "low_speed_rows": 0
+    },
+    {
+      "intent": "no_evidence_refusal",
+      "n": 2,
+      "avg_ttft_ms": 623.3,
+      "p50_ttft_ms": 623.3,
+      "p95_ttft_ms": 744.1,
+      "avg_total_ms": 1406.2,
+      "p50_total_ms": 1406.2,
+      "p95_total_ms": 1569.5,
+      "max_total_ms": 1587.6,
+      "avg_tokens_per_second": 12.82,
+      "avg_prompt_tokens": 114,
+      "avg_output_tokens": 10,
+      "avg_evidence_chars": 0,
+      "slow_rows": 0,
+      "low_speed_rows": 0
+    },
+    {
+      "intent": "first_earliest_claim",
+      "n": 3,
+      "avg_ttft_ms": 488.8,
+      "p50_ttft_ms": 492.4,
+      "p95_ttft_ms": 493.8,
+      "avg_total_ms": 1176.8,
+      "p50_total_ms": 1194.3,
+      "p95_total_ms": 1215.6,
+      "max_total_ms": 1218,
+      "avg_tokens_per_second": 14.58,
+      "avg_prompt_tokens": 113,
+      "avg_output_tokens": 10,
+      "avg_evidence_chars": 0,
+      "slow_rows": 0,
+      "low_speed_rows": 0
+    }
+  ],
+  "slow_rows": [
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1223,
+      "prompt_chars": 4892,
+      "ttft_ms": 8598.10000038147,
+      "total_latency_ms": 19509.800000190735,
+      "output_tokens": 81,
+      "tokens_per_second": 7.423224612243359,
+      "retrieved_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0274",
+        "SURF-CRG2026R0071"
+      ],
+      "gold_evidence_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0274",
+        "SURF-CRG2026R0071"
+      ],
+      "evidence_chars": 11715,
+      "source_chars": 856,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ260",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1221,
+      "prompt_chars": 4881,
+      "ttft_ms": 8171.39999961853,
+      "total_latency_ms": 19467.599999427795,
+      "output_tokens": 61,
+      "tokens_per_second": 5.4000460332704785,
+      "retrieved_ids": [
+        "SURF-CGS2026R0030",
+        "SURF-CRG2026R0005",
+        "SURF-CGS2026R0328"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CGS2026R0030",
+        "SURF-CRG2026R0005"
+      ],
+      "evidence_chars": 10916,
+      "source_chars": 865,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ169",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1072,
+      "prompt_chars": 4288,
+      "ttft_ms": 7056.10000038147,
+      "total_latency_ms": 19337,
+      "output_tokens": 47,
+      "tokens_per_second": 3.827081077238632,
+      "retrieved_ids": [
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GA1970R001",
+        "SURF-ER1830R004"
+      ],
+      "gold_evidence_ids": [
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GA1970R001"
+      ],
+      "evidence_chars": 8783,
+      "source_chars": 345,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+low_decode_speed+large_prompt",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1223,
+      "prompt_chars": 4891,
+      "ttft_ms": 8355.10000038147,
+      "total_latency_ms": 19321.89999961853,
+      "output_tokens": 92,
+      "tokens_per_second": 8.388955757960414,
+      "retrieved_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0274",
+        "SURF-CRG2026R0071"
+      ],
+      "gold_evidence_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0274",
+        "SURF-CRG2026R0071"
+      ],
+      "evidence_chars": 11715,
+      "source_chars": 856,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ176",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1142,
+      "prompt_chars": 4566,
+      "ttft_ms": 8186.5,
+      "total_latency_ms": 19284.300000190735,
+      "output_tokens": 94,
+      "tokens_per_second": 8.470147236243621,
+      "retrieved_ids": [
+        "SURF-GA1970R001",
+        "SURF-CRG2026R0052",
+        "SURF-ER1830R046"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GA1970R001",
+        "SURF-CRG2026R0052"
+      ],
+      "evidence_chars": 9475,
+      "source_chars": 598,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ213",
+      "intent": "current_object_explanation",
+      "lane": "fast_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1076,
+      "prompt_chars": 4303,
+      "ttft_ms": 7874,
+      "total_latency_ms": 18916.599999427795,
+      "output_tokens": 70,
+      "tokens_per_second": 6.339086809594413,
+      "retrieved_ids": [
+        "SURF-CRG2026R0100",
+        "SURF-CHW2026R001",
+        "SURF-CRG2026R0002"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0100"
+      ],
+      "evidence_chars": 10962,
+      "source_chars": 880,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Prefer one primary object and move evidence tags before prose."
+    },
+    {
+      "query_id": "BQ244",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1121,
+      "prompt_chars": 4482,
+      "ttft_ms": 8060.900000572205,
+      "total_latency_ms": 18883.5,
+      "output_tokens": 75,
+      "tokens_per_second": 6.929942897636921,
+      "retrieved_ids": [
+        "SURF-CRG2026R0032",
+        "SURF-CRG2026R0153",
+        "SURF-CRG2026R0027"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0032",
+        "SURF-CRG2026R0153"
+      ],
+      "evidence_chars": 12549,
+      "source_chars": 939,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ243",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1175,
+      "prompt_chars": 4697,
+      "ttft_ms": 7980.5,
+      "total_latency_ms": 18701.39999961853,
+      "output_tokens": 65,
+      "tokens_per_second": 6.062923821909805,
+      "retrieved_ids": [
+        "SURF-CRG2026R0031",
+        "SURF-CRG2026R0032",
+        "SURF-CRG2026R0027"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0031",
+        "SURF-CRG2026R0032"
+      ],
+      "evidence_chars": 12108,
+      "source_chars": 1013,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ130",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1002,
+      "prompt_chars": 4005,
+      "ttft_ms": 7627.099999427795,
+      "total_latency_ms": 18651.39999961853,
+      "output_tokens": 90,
+      "tokens_per_second": 8.163783641450513,
+      "retrieved_ids": [
+        "SURF-CRG2026R0051",
+        "SURF-CRG2026R0052",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0051",
+        "SURF-CRG2026R0052"
+      ],
+      "evidence_chars": 10115,
+      "source_chars": 800,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ242",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1119,
+      "prompt_chars": 4476,
+      "ttft_ms": 7872,
+      "total_latency_ms": 18584.5,
+      "output_tokens": 53,
+      "tokens_per_second": 4.947491248541423,
+      "retrieved_ids": [
+        "SURF-CRG2026R0153",
+        "SURF-CRG2026R0031",
+        "SURF-CRG2026R0027"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0153",
+        "SURF-CRG2026R0031"
+      ],
+      "evidence_chars": 12535,
+      "source_chars": 937,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ173",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1299,
+      "prompt_chars": 5194,
+      "ttft_ms": 8251.89999961853,
+      "total_latency_ms": 18301.89999961853,
+      "output_tokens": 54,
+      "tokens_per_second": 5.3731343283582085,
+      "retrieved_ids": [
+        "SURF-CRG2026R0005",
+        "SURF-CRG2026R0006",
+        "SURF-CRG2026R0175"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0005",
+        "SURF-CRG2026R0006"
+      ],
+      "evidence_chars": 11128,
+      "source_chars": 981,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ129",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 937,
+      "prompt_chars": 3745,
+      "ttft_ms": 7085.700000762939,
+      "total_latency_ms": 17983.10000038147,
+      "output_tokens": 75,
+      "tokens_per_second": 6.882375612772351,
+      "retrieved_ids": [
+        "SURF-CRG2026R0050",
+        "SURF-CRG2026R0051",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0050",
+        "SURF-CRG2026R0051"
+      ],
+      "evidence_chars": 10319,
+      "source_chars": 712,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ110",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 2,
+      "prompt_tokens_est": 1029,
+      "prompt_chars": 4113,
+      "ttft_ms": 7208.200000762939,
+      "total_latency_ms": 17726.400000572205,
+      "output_tokens": 61,
+      "tokens_per_second": 5.79947139254874,
+      "retrieved_ids": [
+        "SURF-CGS2026R0909",
+        "SURF-CRG2026R0100"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CGS2026R0909",
+        "SURF-CRG2026R0100"
+      ],
+      "evidence_chars": 8863,
+      "source_chars": 1015,
+      "required_field_count": 3,
+      "slow_reason": "total_latency_tail+large_prompt",
+      "recommendation": "Keep two comparison records plus exact evidence tags; avoid spillover."
+    },
+    {
+      "query_id": "BQ141",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 956,
+      "prompt_chars": 3823,
+      "ttft_ms": 5601.199999809265,
+      "total_latency_ms": 17359.300000190735,
+      "output_tokens": 79,
+      "tokens_per_second": 6.718772590591762,
+      "retrieved_ids": [
+        "SURF-CRG2026R0005",
+        "SURF-CRG2026R0001",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0005",
+        "SURF-CRG2026R0001"
+      ],
+      "evidence_chars": 10472,
+      "source_chars": 739,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ065",
+      "intent": "current_object_explanation",
+      "lane": "fast_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 999,
+      "prompt_chars": 3993,
+      "ttft_ms": 4879.10000038147,
+      "total_latency_ms": 17270.60000038147,
+      "output_tokens": 72,
+      "tokens_per_second": 5.810434572085704,
+      "retrieved_ids": [
+        "SURF-CGS2026R0909",
+        "LAB-METHOD-CONTEXT-V0",
+        "SURF-CHW2026R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CGS2026R0909"
+      ],
+      "evidence_chars": 8840,
+      "source_chars": 739,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Prefer one primary object and move evidence tags before prose."
+    },
+    {
+      "query_id": "BQ137",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 925,
+      "prompt_chars": 3698,
+      "ttft_ms": 5489,
+      "total_latency_ms": 17211.5,
+      "output_tokens": 68,
+      "tokens_per_second": 5.800810407336319,
+      "retrieved_ids": [
+        "SURF-CRG2026R0175",
+        "SURF-CRG2026R0002",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0175",
+        "SURF-CRG2026R0002"
+      ],
+      "evidence_chars": 9981,
+      "source_chars": 698,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ138",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 864,
+      "prompt_chars": 3456,
+      "ttft_ms": 6528,
+      "total_latency_ms": 17210.5,
+      "output_tokens": 46,
+      "tokens_per_second": 4.30610812075825,
+      "retrieved_ids": [
+        "SURF-CRG2026R0002",
+        "SURF-CRG2026R0003",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0002",
+        "SURF-CRG2026R0003"
+      ],
+      "evidence_chars": 9873,
+      "source_chars": 617,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ136",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 935,
+      "prompt_chars": 3740,
+      "ttft_ms": 7368.5,
+      "total_latency_ms": 17196.300000190735,
+      "output_tokens": 62,
+      "tokens_per_second": 6.308634689228182,
+      "retrieved_ids": [
+        "SURF-CRG2026R0020",
+        "SURF-CRG2026R0175",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0020",
+        "SURF-CRG2026R0175"
+      ],
+      "evidence_chars": 10062,
+      "source_chars": 709,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ174",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1247,
+      "prompt_chars": 4988,
+      "ttft_ms": 7707.699999809265,
+      "total_latency_ms": 17045.29999923706,
+      "output_tokens": 74,
+      "tokens_per_second": 7.924948595413671,
+      "retrieved_ids": [
+        "SURF-CRG2026R0001",
+        "SURF-CRG2026R0050",
+        "SURF-CRG2026R0175"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0001",
+        "SURF-CRG2026R0050"
+      ],
+      "evidence_chars": 12020,
+      "source_chars": 915,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ142",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 732,
+      "prompt_chars": 2927,
+      "ttft_ms": 5889.10000038147,
+      "total_latency_ms": 16702,
+      "output_tokens": 77,
+      "tokens_per_second": 7.121123843068602,
+      "retrieved_ids": [
+        "SURF-GAX1970R002",
+        "SURF-GA1970R001",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GAX1970R002",
+        "SURF-GA1970R001"
+      ],
+      "evidence_chars": 8045,
+      "source_chars": 336,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ162",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 919,
+      "prompt_chars": 3675,
+      "ttft_ms": 6260.800000190735,
+      "total_latency_ms": 16678.300000190735,
+      "output_tokens": 59,
+      "tokens_per_second": 5.6635469162467,
+      "retrieved_ids": [
+        "SURF-ER1830R001-GROUP",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-CGS2026R0328"
+      ],
+      "gold_evidence_ids": [
+        "SURF-ER1830R001-GROUP",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
+      ],
+      "evidence_chars": 8158,
+      "source_chars": 416,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ226",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 597,
+      "prompt_chars": 2385,
+      "ttft_ms": 4007.2999992370605,
+      "total_latency_ms": 15996.599999427795,
+      "output_tokens": 66,
+      "tokens_per_second": 5.504908543363668,
+      "retrieved_ids": [
+        "SURF-CRG2026R0100",
+        "SURF-CGS2026R0909",
+        "SURF-CGS2026R0910"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0100"
+      ],
+      "evidence_chars": 13172,
+      "source_chars": 1489,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ230",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 2,
+      "prompt_tokens_est": 726,
+      "prompt_chars": 2903,
+      "ttft_ms": 5541.10000038147,
+      "total_latency_ms": 15815.400000572205,
+      "output_tokens": 40,
+      "tokens_per_second": 3.8932092696589966,
+      "retrieved_ids": [
+        "SURF-CRG2026R0153",
+        "SURF-CGS2026R0908"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0153",
+        "SURF-CGS2026R0908"
+      ],
+      "evidence_chars": 8451,
+      "source_chars": 571,
+      "required_field_count": 3,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Keep two comparison records plus exact evidence tags; avoid spillover."
+    },
+    {
+      "query_id": "BQ100",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 395,
+      "prompt_chars": 1580,
+      "ttft_ms": 3191.5999994277954,
+      "total_latency_ms": 15718.300000190735,
+      "output_tokens": 48,
+      "tokens_per_second": 3.8318152424083403,
+      "retrieved_ids": [
+        "SURF-GAX1970R004",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GAX1970R004"
+      ],
+      "evidence_chars": 8546,
+      "source_chars": 332,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+low_decode_speed",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ132",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 948,
+      "prompt_chars": 3790,
+      "ttft_ms": 5817.10000038147,
+      "total_latency_ms": 15182.5,
+      "output_tokens": 90,
+      "tokens_per_second": 9.609840477039514,
+      "retrieved_ids": [
+        "SURF-CRG2026R0071",
+        "SURF-CRG2026R0235",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0071",
+        "SURF-CRG2026R0235"
+      ],
+      "evidence_chars": 10121,
+      "source_chars": 726,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ105",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 2,
+      "prompt_tokens_est": 602,
+      "prompt_chars": 2407,
+      "ttft_ms": 4561.199999809265,
+      "total_latency_ms": 14826.199999809265,
+      "output_tokens": 70,
+      "tokens_per_second": 6.819288845591816,
+      "retrieved_ids": [
+        "SURF-CGS2026R0328",
+        "SURF-CRG2026R0020"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CGS2026R0328",
+        "SURF-CRG2026R0020"
+      ],
+      "evidence_chars": 7120,
+      "source_chars": 411,
+      "required_field_count": 3,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Keep two comparison records plus exact evidence tags; avoid spillover."
+    },
+    {
+      "query_id": "BQ166",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1282,
+      "prompt_chars": 5126,
+      "ttft_ms": 5741.60000038147,
+      "total_latency_ms": 14415.699999809265,
+      "output_tokens": 46,
+      "tokens_per_second": 5.30314384236226,
+      "retrieved_ids": [
+        "SURF-CRG2026R0002",
+        "SURF-CRG2026R0005",
+        "SURF-CRG2026R0175"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0002",
+        "SURF-CRG2026R0005"
+      ],
+      "evidence_chars": 11063,
+      "source_chars": 968,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ172",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1153,
+      "prompt_chars": 4611,
+      "ttft_ms": 5753.89999961853,
+      "total_latency_ms": 14411.699999809265,
+      "output_tokens": 48,
+      "tokens_per_second": 5.544133613497949,
+      "retrieved_ids": [
+        "SURF-CRG2026R0004",
+        "SURF-GAX1970R005",
+        "SURF-CRG2026R0175"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0004",
+        "SURF-GAX1970R005"
+      ],
+      "evidence_chars": 11004,
+      "source_chars": 769,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ167",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1258,
+      "prompt_chars": 5032,
+      "ttft_ms": 6052.300000190735,
+      "total_latency_ms": 14257.10000038147,
+      "output_tokens": 60,
+      "tokens_per_second": 7.3127925115304695,
+      "retrieved_ids": [
+        "SURF-CRG2026R0003",
+        "SURF-CRG2026R0001",
+        "SURF-CRG2026R0175"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0003",
+        "SURF-CRG2026R0001"
+      ],
+      "evidence_chars": 11932,
+      "source_chars": 930,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ098",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 478,
+      "prompt_chars": 1911,
+      "ttft_ms": 2571.199999809265,
+      "total_latency_ms": 13473.60000038147,
+      "output_tokens": 69,
+      "tokens_per_second": 6.328881713785826,
+      "retrieved_ids": [
+        "SURF-GA1970R001",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GA1970R001"
+      ],
+      "evidence_chars": 8147,
+      "source_chars": 334,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ165",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1050,
+      "prompt_chars": 4198,
+      "ttft_ms": 4816.900000572205,
+      "total_latency_ms": 13467.60000038147,
+      "output_tokens": 60,
+      "tokens_per_second": 6.935854902068376,
+      "retrieved_ids": [
+        "SURF-SI1970R001",
+        "SURF-CRG2026R0004",
+        "SURF-CGS2026R0328"
+      ],
+      "gold_evidence_ids": [
+        "SURF-SI1970R001",
+        "SURF-CRG2026R0004"
+      ],
+      "evidence_chars": 10735,
+      "source_chars": 604,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ131",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1099,
+      "prompt_chars": 4394,
+      "ttft_ms": 5456.300000190735,
+      "total_latency_ms": 13393.60000038147,
+      "output_tokens": 79,
+      "tokens_per_second": 9.953006689693172,
+      "retrieved_ids": [
+        "SURF-CRG2026R0052",
+        "SURF-CRG2026R0071",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0052",
+        "SURF-CRG2026R0071"
+      ],
+      "evidence_chars": 10115,
+      "source_chars": 929,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ095",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 521,
+      "prompt_chars": 2081,
+      "ttft_ms": 2407.2000007629395,
+      "total_latency_ms": 13183.900000572205,
+      "output_tokens": 59,
+      "tokens_per_second": 5.474774281648763,
+      "retrieved_ids": [
+        "SURF-CRG2026R0005",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0005"
+      ],
+      "evidence_chars": 8855,
+      "source_chars": 604,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ089",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 461,
+      "prompt_chars": 1841,
+      "ttft_ms": 3135.8999996185303,
+      "total_latency_ms": 13072.199999809265,
+      "output_tokens": 22,
+      "tokens_per_second": 2.2141038414276633,
+      "retrieved_ids": [
+        "SURF-CRG2026R0003",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0003"
+      ],
+      "evidence_chars": 8990,
+      "source_chars": 524,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+low_decode_speed",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ104",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 2,
+      "prompt_tokens_est": 787,
+      "prompt_chars": 3147,
+      "ttft_ms": 4233.199999809265,
+      "total_latency_ms": 12714.89999961853,
+      "output_tokens": 77,
+      "tokens_per_second": 9.078368723455387,
+      "retrieved_ids": [
+        "SURF-CGS2026R0681",
+        "SURF-CGS2026R0910"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CGS2026R0681",
+        "SURF-CGS2026R0910"
+      ],
+      "evidence_chars": 8074,
+      "source_chars": 664,
+      "required_field_count": 3,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Keep two comparison records plus exact evidence tags; avoid spillover."
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "lane": "help",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 498,
+      "prompt_chars": 1990,
+      "ttft_ms": 1933,
+      "total_latency_ms": 12676.60000038147,
+      "output_tokens": 122,
+      "tokens_per_second": 11.35559775081613,
+      "retrieved_ids": [
+        "SURF-GAX1970R002",
+        "SURF-CRG2026R0051",
+        "SURF-CRG2026R0100"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GAX1970R002",
+        "SURF-CRG2026R0051"
+      ],
+      "evidence_chars": 11003,
+      "source_chars": 966,
+      "required_field_count": 1,
+      "slow_reason": "total_latency_tail+long_output+large_evidence_text",
+      "recommendation": "Monitor under current prompt budget."
+    },
+    {
+      "query_id": "BQ096",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 387,
+      "prompt_chars": 1545,
+      "ttft_ms": 2833.4000005722046,
+      "total_latency_ms": 12629.10000038147,
+      "output_tokens": 36,
+      "tokens_per_second": 3.6750819237727743,
+      "retrieved_ids": [
+        "SURF-CRG2026R0001",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0001"
+      ],
+      "evidence_chars": 9480,
+      "source_chars": 467,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+low_decode_speed+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ223",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 394,
+      "prompt_chars": 1575,
+      "ttft_ms": 2815.8999996185303,
+      "total_latency_ms": 12509.5,
+      "output_tokens": 36,
+      "tokens_per_second": 3.7137905420672714,
+      "retrieved_ids": [
+        "SURF-CRG2026R0001",
+        "SURF-CGS2026R0909",
+        "SURF-CGS2026R0910"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0001"
+      ],
+      "evidence_chars": 12878,
+      "source_chars": 1193,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+low_decode_speed+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ157",
+      "intent": "method_process_question",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 1,
+      "prompt_tokens_est": 459,
+      "prompt_chars": 1833,
+      "ttft_ms": 1710.3999996185303,
+      "total_latency_ms": 12152.300000190735,
+      "output_tokens": 108,
+      "tokens_per_second": 10.342945248861005,
+      "retrieved_ids": [
+        "LAB-METHOD-CONTEXT-V0"
+      ],
+      "gold_evidence_ids": [
+        "LAB-METHOD-CONTEXT-V0"
+      ],
+      "evidence_chars": 1673,
+      "source_chars": 129,
+      "required_field_count": 1,
+      "slow_reason": "total_latency_tail+long_output",
+      "recommendation": "Monitor under current prompt budget."
+    },
+    {
+      "query_id": "BQ227",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 378,
+      "prompt_chars": 1511,
+      "ttft_ms": 2540.5,
+      "total_latency_ms": 12025.89999961853,
+      "output_tokens": 35,
+      "tokens_per_second": 3.689881291395996,
+      "retrieved_ids": [
+        "SURF-CRG2026R0153",
+        "SURF-CGS2026R0909",
+        "SURF-CGS2026R0910"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0153"
+      ],
+      "evidence_chars": 12838,
+      "source_chars": 1175,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+low_decode_speed+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ206",
+      "intent": "archive_orientation",
+      "lane": "help",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 497,
+      "prompt_chars": 1986,
+      "ttft_ms": 2181.199999809265,
+      "total_latency_ms": 11580.5,
+      "output_tokens": 126,
+      "tokens_per_second": 13.405253582441581,
+      "retrieved_ids": [
+        "SURF-CRG2026R0027",
+        "SURF-CGS2026R0328",
+        "SURF-CRG2026R0031"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0027",
+        "SURF-CGS2026R0328"
+      ],
+      "evidence_chars": 11812,
+      "source_chars": 907,
+      "required_field_count": 1,
+      "slow_reason": "total_latency_tail+long_output+large_evidence_text",
+      "recommendation": "Monitor under current prompt budget."
+    },
+    {
+      "query_id": "BQ224",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 417,
+      "prompt_chars": 1667,
+      "ttft_ms": 2759.300000190735,
+      "total_latency_ms": 11282.300000190735,
+      "output_tokens": 48,
+      "tokens_per_second": 5.631819781766984,
+      "retrieved_ids": [
+        "SURF-CRG2026R0004",
+        "SURF-CGS2026R0909",
+        "SURF-CGS2026R0910"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0004"
+      ],
+      "evidence_chars": 12928,
+      "source_chars": 1221,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ094",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 410,
+      "prompt_chars": 1637,
+      "ttft_ms": 2124.5,
+      "total_latency_ms": 10441.400000572205,
+      "output_tokens": 48,
+      "tokens_per_second": 5.771381163257655,
+      "retrieved_ids": [
+        "SURF-CRG2026R0004",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0004"
+      ],
+      "evidence_chars": 9530,
+      "source_chars": 495,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    }
+  ],
+  "repeated_slow_evidence": [
+    {
+      "evidence_id": "SURF-GAX1970R001",
+      "slow_rows": 15,
+      "all_rows": 15,
+      "avg_total_ms": 15293.9,
+      "avg_evidence_chars": 9510.1
+    },
+    {
+      "evidence_id": "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+      "slow_rows": 8,
+      "all_rows": 8,
+      "avg_total_ms": 14316.7,
+      "avg_evidence_chars": 8811.1
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0175",
+      "slow_rows": 7,
+      "all_rows": 7,
+      "avg_total_ms": 16119.9,
+      "avg_evidence_chars": 11027.1
+    },
+    {
+      "evidence_id": "SURF-CGS2026R0909",
+      "slow_rows": 6,
+      "all_rows": 6,
+      "avg_total_ms": 14468.6,
+      "avg_evidence_chars": 11586.5
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0005",
+      "slow_rows": 5,
+      "all_rows": 5,
+      "avg_total_ms": 16545.7,
+      "avg_evidence_chars": 10486.8
+    },
+    {
+      "evidence_id": "SURF-CGS2026R0328",
+      "slow_rows": 5,
+      "all_rows": 5,
+      "avg_total_ms": 15204,
+      "avg_evidence_chars": 9748.2
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0001",
+      "slow_rows": 5,
+      "all_rows": 5,
+      "avg_total_ms": 14760.1,
+      "avg_evidence_chars": 11356.4
+    },
+    {
+      "evidence_id": "SURF-CGS2026R0910",
+      "slow_rows": 5,
+      "all_rows": 5,
+      "avg_total_ms": 12905.8,
+      "avg_evidence_chars": 11978
+    },
+    {
+      "evidence_id": "SURF-GA1970R001",
+      "slow_rows": 4,
+      "all_rows": 4,
+      "avg_total_ms": 17199.2,
+      "avg_evidence_chars": 8612.5
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0002",
+      "slow_rows": 4,
+      "all_rows": 4,
+      "avg_total_ms": 16938.6,
+      "avg_evidence_chars": 10469.8
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0027",
+      "slow_rows": 4,
+      "all_rows": 4,
+      "avg_total_ms": 16937.5,
+      "avg_evidence_chars": 12251
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0153",
+      "slow_rows": 4,
+      "all_rows": 4,
+      "avg_total_ms": 16327.3,
+      "avg_evidence_chars": 11593.3
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0071",
+      "slow_rows": 4,
+      "all_rows": 5,
+      "avg_total_ms": 14905.5,
+      "avg_evidence_chars": 10953.2
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0100",
+      "slow_rows": 4,
+      "all_rows": 5,
+      "avg_total_ms": 14487.2,
+      "avg_evidence_chars": 11020
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0004",
+      "slow_rows": 4,
+      "all_rows": 4,
+      "avg_total_ms": 12400.8,
+      "avg_evidence_chars": 11049.3
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0052",
+      "slow_rows": 3,
+      "all_rows": 3,
+      "avg_total_ms": 17109.8,
+      "avg_evidence_chars": 9901.7
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0051",
+      "slow_rows": 3,
+      "all_rows": 3,
+      "avg_total_ms": 16437,
+      "avg_evidence_chars": 10479
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0031",
+      "slow_rows": 3,
+      "all_rows": 3,
+      "avg_total_ms": 16288.8,
+      "avg_evidence_chars": 12151.7
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0003",
+      "slow_rows": 3,
+      "all_rows": 3,
+      "avg_total_ms": 14846.6,
+      "avg_evidence_chars": 10265
+    },
+    {
+      "evidence_id": "SURF-COM1970R007",
+      "slow_rows": 2,
+      "all_rows": 2,
+      "avg_total_ms": 19415.8,
+      "avg_evidence_chars": 11715
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0274",
+      "slow_rows": 2,
+      "all_rows": 2,
+      "avg_total_ms": 19415.8,
+      "avg_evidence_chars": 11715
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0032",
+      "slow_rows": 2,
+      "all_rows": 2,
+      "avg_total_ms": 18792.4,
+      "avg_evidence_chars": 12328.5
+    },
+    {
+      "evidence_id": "SURF-CHW2026R001",
+      "slow_rows": 2,
+      "all_rows": 2,
+      "avg_total_ms": 18093.6,
+      "avg_evidence_chars": 9901
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0050",
+      "slow_rows": 2,
+      "all_rows": 2,
+      "avg_total_ms": 17514.2,
+      "avg_evidence_chars": 11169.5
+    },
+    {
+      "evidence_id": "SURF-CRG2026R0020",
+      "slow_rows": 2,
+      "all_rows": 2,
+      "avg_total_ms": 16011.3,
+      "avg_evidence_chars": 8591
+    },
+    {
+      "evidence_id": "SURF-GAX1970R002",
+      "slow_rows": 2,
+      "all_rows": 2,
+      "avg_total_ms": 14689.3,
+      "avg_evidence_chars": 9524
+    },
+    {
+      "evidence_id": "LAB-METHOD-CONTEXT-V0",
+      "slow_rows": 2,
+      "all_rows": 3,
+      "avg_total_ms": 12687.4,
+      "avg_evidence_chars": 4062
+    }
+  ],
+  "hybrid_lane_candidates": {
+    "refusal_expected": {
+      "rows": 5,
+      "total_ms": 6342.8,
+      "avg_ms": 1268.6
+    },
+    "source_rights": {
+      "rows": 10,
+      "total_ms": 130332.8,
+      "avg_ms": 13033.3
+    },
+    "combined": {
+      "rows": 15,
+      "total_ms": 136675.6,
+      "avg_ms": 9111.7
+    }
+  },
+  "rows": [
+    {
+      "query_id": "BQ166",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1282,
+      "prompt_chars": 5126,
+      "ttft_ms": 5741.60000038147,
+      "total_latency_ms": 14415.699999809265,
+      "output_tokens": 46,
+      "tokens_per_second": 5.30314384236226,
+      "retrieved_ids": [
+        "SURF-CRG2026R0002",
+        "SURF-CRG2026R0005",
+        "SURF-CRG2026R0175"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0002",
+        "SURF-CRG2026R0005"
+      ],
+      "evidence_chars": 11063,
+      "source_chars": 968,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ131",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1099,
+      "prompt_chars": 4394,
+      "ttft_ms": 5456.300000190735,
+      "total_latency_ms": 13393.60000038147,
+      "output_tokens": 79,
+      "tokens_per_second": 9.953006689693172,
+      "retrieved_ids": [
+        "SURF-CRG2026R0052",
+        "SURF-CRG2026R0071",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0052",
+        "SURF-CRG2026R0071"
+      ],
+      "evidence_chars": 10115,
+      "source_chars": 929,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ167",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1258,
+      "prompt_chars": 5032,
+      "ttft_ms": 6052.300000190735,
+      "total_latency_ms": 14257.10000038147,
+      "output_tokens": 60,
+      "tokens_per_second": 7.3127925115304695,
+      "retrieved_ids": [
+        "SURF-CRG2026R0003",
+        "SURF-CRG2026R0001",
+        "SURF-CRG2026R0175"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0003",
+        "SURF-CRG2026R0001"
+      ],
+      "evidence_chars": 11932,
+      "source_chars": 930,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ174",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1247,
+      "prompt_chars": 4988,
+      "ttft_ms": 7707.699999809265,
+      "total_latency_ms": 17045.29999923706,
+      "output_tokens": 74,
+      "tokens_per_second": 7.924948595413671,
+      "retrieved_ids": [
+        "SURF-CRG2026R0001",
+        "SURF-CRG2026R0050",
+        "SURF-CRG2026R0175"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0001",
+        "SURF-CRG2026R0050"
+      ],
+      "evidence_chars": 12020,
+      "source_chars": 915,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ132",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 948,
+      "prompt_chars": 3790,
+      "ttft_ms": 5817.10000038147,
+      "total_latency_ms": 15182.5,
+      "output_tokens": 90,
+      "tokens_per_second": 9.609840477039514,
+      "retrieved_ids": [
+        "SURF-CRG2026R0071",
+        "SURF-CRG2026R0235",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0071",
+        "SURF-CRG2026R0235"
+      ],
+      "evidence_chars": 10121,
+      "source_chars": 726,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ173",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1299,
+      "prompt_chars": 5194,
+      "ttft_ms": 8251.89999961853,
+      "total_latency_ms": 18301.89999961853,
+      "output_tokens": 54,
+      "tokens_per_second": 5.3731343283582085,
+      "retrieved_ids": [
+        "SURF-CRG2026R0005",
+        "SURF-CRG2026R0006",
+        "SURF-CRG2026R0175"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0005",
+        "SURF-CRG2026R0006"
+      ],
+      "evidence_chars": 11128,
+      "source_chars": 981,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ136",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 935,
+      "prompt_chars": 3740,
+      "ttft_ms": 7368.5,
+      "total_latency_ms": 17196.300000190735,
+      "output_tokens": 62,
+      "tokens_per_second": 6.308634689228182,
+      "retrieved_ids": [
+        "SURF-CRG2026R0020",
+        "SURF-CRG2026R0175",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0020",
+        "SURF-CRG2026R0175"
+      ],
+      "evidence_chars": 10062,
+      "source_chars": 709,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ129",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 937,
+      "prompt_chars": 3745,
+      "ttft_ms": 7085.700000762939,
+      "total_latency_ms": 17983.10000038147,
+      "output_tokens": 75,
+      "tokens_per_second": 6.882375612772351,
+      "retrieved_ids": [
+        "SURF-CRG2026R0050",
+        "SURF-CRG2026R0051",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0050",
+        "SURF-CRG2026R0051"
+      ],
+      "evidence_chars": 10319,
+      "source_chars": 712,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ110",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 2,
+      "prompt_tokens_est": 1029,
+      "prompt_chars": 4113,
+      "ttft_ms": 7208.200000762939,
+      "total_latency_ms": 17726.400000572205,
+      "output_tokens": 61,
+      "tokens_per_second": 5.79947139254874,
+      "retrieved_ids": [
+        "SURF-CGS2026R0909",
+        "SURF-CRG2026R0100"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CGS2026R0909",
+        "SURF-CRG2026R0100"
+      ],
+      "evidence_chars": 8863,
+      "source_chars": 1015,
+      "required_field_count": 3,
+      "slow_reason": "total_latency_tail+large_prompt",
+      "recommendation": "Keep two comparison records plus exact evidence tags; avoid spillover."
+    },
+    {
+      "query_id": "BQ176",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1142,
+      "prompt_chars": 4566,
+      "ttft_ms": 8186.5,
+      "total_latency_ms": 19284.300000190735,
+      "output_tokens": 94,
+      "tokens_per_second": 8.470147236243621,
+      "retrieved_ids": [
+        "SURF-GA1970R001",
+        "SURF-CRG2026R0052",
+        "SURF-ER1830R046"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GA1970R001",
+        "SURF-CRG2026R0052"
+      ],
+      "evidence_chars": 9475,
+      "source_chars": 598,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ260",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1221,
+      "prompt_chars": 4881,
+      "ttft_ms": 8171.39999961853,
+      "total_latency_ms": 19467.599999427795,
+      "output_tokens": 61,
+      "tokens_per_second": 5.4000460332704785,
+      "retrieved_ids": [
+        "SURF-CGS2026R0030",
+        "SURF-CRG2026R0005",
+        "SURF-CGS2026R0328"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CGS2026R0030",
+        "SURF-CRG2026R0005"
+      ],
+      "evidence_chars": 10916,
+      "source_chars": 865,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ130",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1002,
+      "prompt_chars": 4005,
+      "ttft_ms": 7627.099999427795,
+      "total_latency_ms": 18651.39999961853,
+      "output_tokens": 90,
+      "tokens_per_second": 8.163783641450513,
+      "retrieved_ids": [
+        "SURF-CRG2026R0051",
+        "SURF-CRG2026R0052",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0051",
+        "SURF-CRG2026R0052"
+      ],
+      "evidence_chars": 10115,
+      "source_chars": 800,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1223,
+      "prompt_chars": 4892,
+      "ttft_ms": 8598.10000038147,
+      "total_latency_ms": 19509.800000190735,
+      "output_tokens": 81,
+      "tokens_per_second": 7.423224612243359,
+      "retrieved_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0274",
+        "SURF-CRG2026R0071"
+      ],
+      "gold_evidence_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0274",
+        "SURF-CRG2026R0071"
+      ],
+      "evidence_chars": 11715,
+      "source_chars": 856,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1223,
+      "prompt_chars": 4891,
+      "ttft_ms": 8355.10000038147,
+      "total_latency_ms": 19321.89999961853,
+      "output_tokens": 92,
+      "tokens_per_second": 8.388955757960414,
+      "retrieved_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0274",
+        "SURF-CRG2026R0071"
+      ],
+      "gold_evidence_ids": [
+        "SURF-COM1970R007",
+        "SURF-CRG2026R0274",
+        "SURF-CRG2026R0071"
+      ],
+      "evidence_chars": 11715,
+      "source_chars": 856,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ242",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1119,
+      "prompt_chars": 4476,
+      "ttft_ms": 7872,
+      "total_latency_ms": 18584.5,
+      "output_tokens": 53,
+      "tokens_per_second": 4.947491248541423,
+      "retrieved_ids": [
+        "SURF-CRG2026R0153",
+        "SURF-CRG2026R0031",
+        "SURF-CRG2026R0027"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0153",
+        "SURF-CRG2026R0031"
+      ],
+      "evidence_chars": 12535,
+      "source_chars": 937,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ243",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1175,
+      "prompt_chars": 4697,
+      "ttft_ms": 7980.5,
+      "total_latency_ms": 18701.39999961853,
+      "output_tokens": 65,
+      "tokens_per_second": 6.062923821909805,
+      "retrieved_ids": [
+        "SURF-CRG2026R0031",
+        "SURF-CRG2026R0032",
+        "SURF-CRG2026R0027"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0031",
+        "SURF-CRG2026R0032"
+      ],
+      "evidence_chars": 12108,
+      "source_chars": 1013,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ244",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1121,
+      "prompt_chars": 4482,
+      "ttft_ms": 8060.900000572205,
+      "total_latency_ms": 18883.5,
+      "output_tokens": 75,
+      "tokens_per_second": 6.929942897636921,
+      "retrieved_ids": [
+        "SURF-CRG2026R0032",
+        "SURF-CRG2026R0153",
+        "SURF-CRG2026R0027"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0032",
+        "SURF-CRG2026R0153"
+      ],
+      "evidence_chars": 12549,
+      "source_chars": 939,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ213",
+      "intent": "current_object_explanation",
+      "lane": "fast_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1076,
+      "prompt_chars": 4303,
+      "ttft_ms": 7874,
+      "total_latency_ms": 18916.599999427795,
+      "output_tokens": 70,
+      "tokens_per_second": 6.339086809594413,
+      "retrieved_ids": [
+        "SURF-CRG2026R0100",
+        "SURF-CHW2026R001",
+        "SURF-CRG2026R0002"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0100"
+      ],
+      "evidence_chars": 10962,
+      "source_chars": 880,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Prefer one primary object and move evidence tags before prose."
+    },
+    {
+      "query_id": "BQ065",
+      "intent": "current_object_explanation",
+      "lane": "fast_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 999,
+      "prompt_chars": 3993,
+      "ttft_ms": 4879.10000038147,
+      "total_latency_ms": 17270.60000038147,
+      "output_tokens": 72,
+      "tokens_per_second": 5.810434572085704,
+      "retrieved_ids": [
+        "SURF-CGS2026R0909",
+        "LAB-METHOD-CONTEXT-V0",
+        "SURF-CHW2026R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CGS2026R0909"
+      ],
+      "evidence_chars": 8840,
+      "source_chars": 739,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Prefer one primary object and move evidence tags before prose."
+    },
+    {
+      "query_id": "BQ141",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 956,
+      "prompt_chars": 3823,
+      "ttft_ms": 5601.199999809265,
+      "total_latency_ms": 17359.300000190735,
+      "output_tokens": 79,
+      "tokens_per_second": 6.718772590591762,
+      "retrieved_ids": [
+        "SURF-CRG2026R0005",
+        "SURF-CRG2026R0001",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0005",
+        "SURF-CRG2026R0001"
+      ],
+      "evidence_chars": 10472,
+      "source_chars": 739,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ137",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 925,
+      "prompt_chars": 3698,
+      "ttft_ms": 5489,
+      "total_latency_ms": 17211.5,
+      "output_tokens": 68,
+      "tokens_per_second": 5.800810407336319,
+      "retrieved_ids": [
+        "SURF-CRG2026R0175",
+        "SURF-CRG2026R0002",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0175",
+        "SURF-CRG2026R0002"
+      ],
+      "evidence_chars": 9981,
+      "source_chars": 698,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ172",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1153,
+      "prompt_chars": 4611,
+      "ttft_ms": 5753.89999961853,
+      "total_latency_ms": 14411.699999809265,
+      "output_tokens": 48,
+      "tokens_per_second": 5.544133613497949,
+      "retrieved_ids": [
+        "SURF-CRG2026R0004",
+        "SURF-GAX1970R005",
+        "SURF-CRG2026R0175"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0004",
+        "SURF-GAX1970R005"
+      ],
+      "evidence_chars": 11004,
+      "source_chars": 769,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ104",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 2,
+      "prompt_tokens_est": 787,
+      "prompt_chars": 3147,
+      "ttft_ms": 4233.199999809265,
+      "total_latency_ms": 12714.89999961853,
+      "output_tokens": 77,
+      "tokens_per_second": 9.078368723455387,
+      "retrieved_ids": [
+        "SURF-CGS2026R0681",
+        "SURF-CGS2026R0910"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CGS2026R0681",
+        "SURF-CGS2026R0910"
+      ],
+      "evidence_chars": 8074,
+      "source_chars": 664,
+      "required_field_count": 3,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Keep two comparison records plus exact evidence tags; avoid spillover."
+    },
+    {
+      "query_id": "BQ165",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1050,
+      "prompt_chars": 4198,
+      "ttft_ms": 4816.900000572205,
+      "total_latency_ms": 13467.60000038147,
+      "output_tokens": 60,
+      "tokens_per_second": 6.935854902068376,
+      "retrieved_ids": [
+        "SURF-SI1970R001",
+        "SURF-CRG2026R0004",
+        "SURF-CGS2026R0328"
+      ],
+      "gold_evidence_ids": [
+        "SURF-SI1970R001",
+        "SURF-CRG2026R0004"
+      ],
+      "evidence_chars": 10735,
+      "source_chars": 604,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+large_prompt+large_evidence_text",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ169",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 1072,
+      "prompt_chars": 4288,
+      "ttft_ms": 7056.10000038147,
+      "total_latency_ms": 19337,
+      "output_tokens": 47,
+      "tokens_per_second": 3.827081077238632,
+      "retrieved_ids": [
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GA1970R001",
+        "SURF-ER1830R004"
+      ],
+      "gold_evidence_ids": [
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GA1970R001"
+      ],
+      "evidence_chars": 8783,
+      "source_chars": 345,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail+low_decode_speed+large_prompt",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ142",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 732,
+      "prompt_chars": 2927,
+      "ttft_ms": 5889.10000038147,
+      "total_latency_ms": 16702,
+      "output_tokens": 77,
+      "tokens_per_second": 7.121123843068602,
+      "retrieved_ids": [
+        "SURF-GAX1970R002",
+        "SURF-GA1970R001",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GAX1970R002",
+        "SURF-GA1970R001"
+      ],
+      "evidence_chars": 8045,
+      "source_chars": 336,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ089",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 461,
+      "prompt_chars": 1841,
+      "ttft_ms": 3135.8999996185303,
+      "total_latency_ms": 13072.199999809265,
+      "output_tokens": 22,
+      "tokens_per_second": 2.2141038414276633,
+      "retrieved_ids": [
+        "SURF-CRG2026R0003",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0003"
+      ],
+      "evidence_chars": 8990,
+      "source_chars": 524,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+low_decode_speed",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ138",
+      "intent": "region_period_recommendation",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 864,
+      "prompt_chars": 3456,
+      "ttft_ms": 6528,
+      "total_latency_ms": 17210.5,
+      "output_tokens": 46,
+      "tokens_per_second": 4.30610812075825,
+      "retrieved_ids": [
+        "SURF-CRG2026R0002",
+        "SURF-CRG2026R0003",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0002",
+        "SURF-CRG2026R0003"
+      ],
+      "evidence_chars": 9873,
+      "source_chars": 617,
+      "required_field_count": 5,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Use route-specific field summaries and length control."
+    },
+    {
+      "query_id": "BQ227",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 378,
+      "prompt_chars": 1511,
+      "ttft_ms": 2540.5,
+      "total_latency_ms": 12025.89999961853,
+      "output_tokens": 35,
+      "tokens_per_second": 3.689881291395996,
+      "retrieved_ids": [
+        "SURF-CRG2026R0153",
+        "SURF-CGS2026R0909",
+        "SURF-CGS2026R0910"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0153"
+      ],
+      "evidence_chars": 12838,
+      "source_chars": 1175,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+low_decode_speed+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ162",
+      "intent": "more_context",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 919,
+      "prompt_chars": 3675,
+      "ttft_ms": 6260.800000190735,
+      "total_latency_ms": 16678.300000190735,
+      "output_tokens": 59,
+      "tokens_per_second": 5.6635469162467,
+      "retrieved_ids": [
+        "SURF-ER1830R001-GROUP",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-CGS2026R0328"
+      ],
+      "gold_evidence_ids": [
+        "SURF-ER1830R001-GROUP",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES"
+      ],
+      "evidence_chars": 8158,
+      "source_chars": 416,
+      "required_field_count": 6,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Compress context skeleton and cap answer length."
+    },
+    {
+      "query_id": "BQ223",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 394,
+      "prompt_chars": 1575,
+      "ttft_ms": 2815.8999996185303,
+      "total_latency_ms": 12509.5,
+      "output_tokens": 36,
+      "tokens_per_second": 3.7137905420672714,
+      "retrieved_ids": [
+        "SURF-CRG2026R0001",
+        "SURF-CGS2026R0909",
+        "SURF-CGS2026R0910"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0001"
+      ],
+      "evidence_chars": 12878,
+      "source_chars": 1193,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+low_decode_speed+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ096",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 387,
+      "prompt_chars": 1545,
+      "ttft_ms": 2833.4000005722046,
+      "total_latency_ms": 12629.10000038147,
+      "output_tokens": 36,
+      "tokens_per_second": 3.6750819237727743,
+      "retrieved_ids": [
+        "SURF-CRG2026R0001",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0001"
+      ],
+      "evidence_chars": 9480,
+      "source_chars": 467,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+low_decode_speed+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ230",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 2,
+      "prompt_tokens_est": 726,
+      "prompt_chars": 2903,
+      "ttft_ms": 5541.10000038147,
+      "total_latency_ms": 15815.400000572205,
+      "output_tokens": 40,
+      "tokens_per_second": 3.8932092696589966,
+      "retrieved_ids": [
+        "SURF-CRG2026R0153",
+        "SURF-CGS2026R0908"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0153",
+        "SURF-CGS2026R0908"
+      ],
+      "evidence_chars": 8451,
+      "source_chars": 571,
+      "required_field_count": 3,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Keep two comparison records plus exact evidence tags; avoid spillover."
+    },
+    {
+      "query_id": "BQ105",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 2,
+      "prompt_tokens_est": 602,
+      "prompt_chars": 2407,
+      "ttft_ms": 4561.199999809265,
+      "total_latency_ms": 14826.199999809265,
+      "output_tokens": 70,
+      "tokens_per_second": 6.819288845591816,
+      "retrieved_ids": [
+        "SURF-CGS2026R0328",
+        "SURF-CRG2026R0020"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CGS2026R0328",
+        "SURF-CRG2026R0020"
+      ],
+      "evidence_chars": 7120,
+      "source_chars": 411,
+      "required_field_count": 3,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Keep two comparison records plus exact evidence tags; avoid spillover."
+    },
+    {
+      "query_id": "BQ226",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 597,
+      "prompt_chars": 2385,
+      "ttft_ms": 4007.2999992370605,
+      "total_latency_ms": 15996.599999427795,
+      "output_tokens": 66,
+      "tokens_per_second": 5.504908543363668,
+      "retrieved_ids": [
+        "SURF-CRG2026R0100",
+        "SURF-CGS2026R0909",
+        "SURF-CGS2026R0910"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0100"
+      ],
+      "evidence_chars": 13172,
+      "source_chars": 1489,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ098",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 478,
+      "prompt_chars": 1911,
+      "ttft_ms": 2571.199999809265,
+      "total_latency_ms": 13473.60000038147,
+      "output_tokens": 69,
+      "tokens_per_second": 6.328881713785826,
+      "retrieved_ids": [
+        "SURF-GA1970R001",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GA1970R001"
+      ],
+      "evidence_chars": 8147,
+      "source_chars": 334,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ095",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 521,
+      "prompt_chars": 2081,
+      "ttft_ms": 2407.2000007629395,
+      "total_latency_ms": 13183.900000572205,
+      "output_tokens": 59,
+      "tokens_per_second": 5.474774281648763,
+      "retrieved_ids": [
+        "SURF-CRG2026R0005",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0005"
+      ],
+      "evidence_chars": 8855,
+      "source_chars": 604,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ224",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 417,
+      "prompt_chars": 1667,
+      "ttft_ms": 2759.300000190735,
+      "total_latency_ms": 11282.300000190735,
+      "output_tokens": 48,
+      "tokens_per_second": 5.631819781766984,
+      "retrieved_ids": [
+        "SURF-CRG2026R0004",
+        "SURF-CGS2026R0909",
+        "SURF-CGS2026R0910"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0004"
+      ],
+      "evidence_chars": 12928,
+      "source_chars": 1221,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ094",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 410,
+      "prompt_chars": 1637,
+      "ttft_ms": 2124.5,
+      "total_latency_ms": 10441.400000572205,
+      "output_tokens": 48,
+      "tokens_per_second": 5.771381163257655,
+      "retrieved_ids": [
+        "SURF-CRG2026R0004",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0004"
+      ],
+      "evidence_chars": 9530,
+      "source_chars": 495,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+large_evidence_text",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ100",
+      "intent": "source_rights_question",
+      "lane": "source_rights",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 395,
+      "prompt_chars": 1580,
+      "ttft_ms": 3191.5999994277954,
+      "total_latency_ms": 15718.300000190735,
+      "output_tokens": 48,
+      "tokens_per_second": 3.8318152424083403,
+      "retrieved_ids": [
+        "SURF-GAX1970R004",
+        "SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES",
+        "SURF-GAX1970R001"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GAX1970R004"
+      ],
+      "evidence_chars": 8546,
+      "source_chars": 332,
+      "required_field_count": 7,
+      "slow_reason": "total_latency_tail+low_decode_speed",
+      "recommendation": "Hybrid deterministic source/rights lane can return exact evidence fields."
+    },
+    {
+      "query_id": "BQ274",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "candidate_count": 0,
+      "prompt_tokens_est": 113,
+      "prompt_chars": 450,
+      "ttft_ms": 480,
+      "total_latency_ms": 1118.2000007629395,
+      "output_tokens": 10,
+      "tokens_per_second": 15.669069238554448,
+      "retrieved_ids": [],
+      "gold_evidence_ids": [],
+      "evidence_chars": 0,
+      "source_chars": 0,
+      "required_field_count": 0,
+      "slow_reason": "none",
+      "recommendation": "Hybrid deterministic refusal lane can skip model generation."
+    },
+    {
+      "query_id": "BQ261",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "candidate_count": 0,
+      "prompt_tokens_est": 113,
+      "prompt_chars": 449,
+      "ttft_ms": 492.3999996185303,
+      "total_latency_ms": 1218,
+      "output_tokens": 10,
+      "tokens_per_second": 13.781697897936464,
+      "retrieved_ids": [],
+      "gold_evidence_ids": [],
+      "evidence_chars": 0,
+      "source_chars": 0,
+      "required_field_count": 0,
+      "slow_reason": "none",
+      "recommendation": "Hybrid deterministic refusal lane can skip model generation."
+    },
+    {
+      "query_id": "BQ295",
+      "intent": "no_evidence_refusal",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "candidate_count": 0,
+      "prompt_tokens_est": 114,
+      "prompt_chars": 455,
+      "ttft_ms": 757.5,
+      "total_latency_ms": 1587.6000003814697,
+      "output_tokens": 10,
+      "tokens_per_second": 12.046741350927038,
+      "retrieved_ids": [],
+      "gold_evidence_ids": [],
+      "evidence_chars": 0,
+      "source_chars": 0,
+      "required_field_count": 0,
+      "slow_reason": "none",
+      "recommendation": "Hybrid deterministic refusal lane can skip model generation."
+    },
+    {
+      "query_id": "BQ291",
+      "intent": "no_evidence_refusal",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "candidate_count": 0,
+      "prompt_tokens_est": 114,
+      "prompt_chars": 455,
+      "ttft_ms": 489.1000003814697,
+      "total_latency_ms": 1224.7000007629395,
+      "output_tokens": 10,
+      "tokens_per_second": 13.594344745533126,
+      "retrieved_ids": [],
+      "gold_evidence_ids": [],
+      "evidence_chars": 0,
+      "source_chars": 0,
+      "required_field_count": 0,
+      "slow_reason": "none",
+      "recommendation": "Hybrid deterministic refusal lane can skip model generation."
+    },
+    {
+      "query_id": "BQ264",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "candidate_count": 0,
+      "prompt_tokens_est": 113,
+      "prompt_chars": 449,
+      "ttft_ms": 494,
+      "total_latency_ms": 1194.3000001907349,
+      "output_tokens": 10,
+      "tokens_per_second": 14.279594455628136,
+      "retrieved_ids": [],
+      "gold_evidence_ids": [],
+      "evidence_chars": 0,
+      "source_chars": 0,
+      "required_field_count": 0,
+      "slow_reason": "none",
+      "recommendation": "Hybrid deterministic refusal lane can skip model generation."
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "lane": "help",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 498,
+      "prompt_chars": 1990,
+      "ttft_ms": 1933,
+      "total_latency_ms": 12676.60000038147,
+      "output_tokens": 122,
+      "tokens_per_second": 11.35559775081613,
+      "retrieved_ids": [
+        "SURF-GAX1970R002",
+        "SURF-CRG2026R0051",
+        "SURF-CRG2026R0100"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GAX1970R002",
+        "SURF-CRG2026R0051"
+      ],
+      "evidence_chars": 11003,
+      "source_chars": 966,
+      "required_field_count": 1,
+      "slow_reason": "total_latency_tail+long_output+large_evidence_text",
+      "recommendation": "Monitor under current prompt budget."
+    },
+    {
+      "query_id": "BQ157",
+      "intent": "method_process_question",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 1,
+      "prompt_tokens_est": 459,
+      "prompt_chars": 1833,
+      "ttft_ms": 1710.3999996185303,
+      "total_latency_ms": 12152.300000190735,
+      "output_tokens": 108,
+      "tokens_per_second": 10.342945248861005,
+      "retrieved_ids": [
+        "LAB-METHOD-CONTEXT-V0"
+      ],
+      "gold_evidence_ids": [
+        "LAB-METHOD-CONTEXT-V0"
+      ],
+      "evidence_chars": 1673,
+      "source_chars": 129,
+      "required_field_count": 1,
+      "slow_reason": "total_latency_tail+long_output",
+      "recommendation": "Monitor under current prompt budget."
+    },
+    {
+      "query_id": "BQ206",
+      "intent": "archive_orientation",
+      "lane": "help",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 497,
+      "prompt_chars": 1986,
+      "ttft_ms": 2181.199999809265,
+      "total_latency_ms": 11580.5,
+      "output_tokens": 126,
+      "tokens_per_second": 13.405253582441581,
+      "retrieved_ids": [
+        "SURF-CRG2026R0027",
+        "SURF-CGS2026R0328",
+        "SURF-CRG2026R0031"
+      ],
+      "gold_evidence_ids": [
+        "SURF-CRG2026R0027",
+        "SURF-CGS2026R0328"
+      ],
+      "evidence_chars": 11812,
+      "source_chars": 907,
+      "required_field_count": 1,
+      "slow_reason": "total_latency_tail+long_output+large_evidence_text",
+      "recommendation": "Monitor under current prompt budget."
+    },
+    {
+      "query_id": "BQ154",
+      "intent": "method_process_question",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "candidate_count": 1,
+      "prompt_tokens_est": 459,
+      "prompt_chars": 1833,
+      "ttft_ms": 1716.3000001907349,
+      "total_latency_ms": 8639.300000190735,
+      "output_tokens": 108,
+      "tokens_per_second": 15.60017333525928,
+      "retrieved_ids": [
+        "LAB-METHOD-CONTEXT-V0"
+      ],
+      "gold_evidence_ids": [
+        "LAB-METHOD-CONTEXT-V0"
+      ],
+      "evidence_chars": 1673,
+      "source_chars": 129,
+      "required_field_count": 1,
+      "slow_reason": "long_output",
+      "recommendation": "Monitor under current prompt budget."
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "lane": "help",
+      "refusal_expected": false,
+      "candidate_count": 3,
+      "prompt_tokens_est": 514,
+      "prompt_chars": 2053,
+      "ttft_ms": 1916.3999996185303,
+      "total_latency_ms": 7119.89999961853,
+      "output_tokens": 122,
+      "tokens_per_second": 23.44575766311137,
+      "retrieved_ids": [
+        "SURF-GAX1970R003",
+        "SURF-CRG2026R0071",
+        "SURF-CRG2026R0100"
+      ],
+      "gold_evidence_ids": [
+        "SURF-GAX1970R003",
+        "SURF-CRG2026R0071"
+      ],
+      "evidence_chars": 11100,
+      "source_chars": 1095,
+      "required_field_count": 1,
+      "slow_reason": "long_output+large_evidence_text",
+      "recommendation": "Monitor under current prompt budget."
+    }
+  ]
+}

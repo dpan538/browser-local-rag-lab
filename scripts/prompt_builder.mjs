@@ -10,7 +10,7 @@ export function clip(value, max = 420) {
   return `${text.slice(0, max - 3)}...`;
 }
 
-export function fieldValue(record = {}, field) {
+export function fieldValue(record = {}, field, max = 420) {
   const values = {
     record_id: record.record_id,
     title: record.title,
@@ -31,7 +31,7 @@ export function fieldValue(record = {}, field) {
     method_context: Object.values(record.method_context || {}).join(" "),
     first_or_earliest_claim: record.first_or_earliest_claim
   };
-  return clip(values[field] || "not available");
+  return clip(values[field] || "not available", max);
 }
 
 function list(value) {
@@ -79,12 +79,81 @@ export function sourceRightsBlock(record = {}) {
   ].join("\n");
 }
 
-function recordSummary(record, fields) {
+function isEvidenceCompress(options = {}) {
+  return options.promptVariant === "r03_v2_evidence_compress";
+}
+
+function isV31EvidencePruneTagInjection(options = {}) {
+  return options.promptVariant === "r03_v31_evidence_prune_tag_injection";
+}
+
+function promptFieldValue(record, field, options = {}) {
+  if (!isEvidenceCompress(options) && !isV31EvidencePruneTagInjection(options)) return fieldValue(record, field);
+  const maxByField = {
+    source: 180,
+    topology: 180,
+    method_context: 220,
+    image_state: 140,
+    rights: 140,
+    reuse_permission: 140,
+    public_domain_status: 140
+  };
+  return fieldValue(record, field, maxByField[field] || 220);
+}
+
+function reorderEvidence(records = [], label = {}) {
+  const primaryId = label.primary_evidence_id || label.gold_evidence_ids?.[0];
+  if (!primaryId) return records;
+  const primaryRecord = records.find((record) => record.record_id === primaryId);
+  if (!primaryRecord) return records;
+  return [
+    primaryRecord,
+    ...records
+      .filter((record) => record.record_id !== primaryId)
+      .sort((left, right) => String(left.record_id || "").localeCompare(String(right.record_id || "")))
+  ];
+}
+
+function summaryFieldsForV31(label = {}) {
+  const required = fieldsForLabel(label);
+  return [...new Set(["record_id", "title", ...required])];
+}
+
+function valueOnlyRecordLine(record, fields, options = {}) {
+  return fields.map((field) => promptFieldValue(record, field, options)).join(" | ");
+}
+
+function valueOnlyEvidenceSummary(records = [], fields = [], options = {}) {
+  return records.map((record, index) => `Record ${index + 1}: ${valueOnlyRecordLine(record, fields, options)}`).join("\n");
+}
+
+function recordSummary(record, fields, options = {}) {
+  const compactNoteMax = isEvidenceCompress(options) ? 90 : 360;
   return [
     "Record:",
-    ...fields.map((field) => `${field}: ${fieldValue(record, field)}`),
-    `compact_note: ${clip(record.notes?.compact, 360)}`
+    ...fields.map((field) => `${field}: ${promptFieldValue(record, field, options)}`),
+    `compact_note: ${clip(record.notes?.compact, compactNoteMax)}`
   ].join("\n");
+}
+
+function isLengthControl(options = {}) {
+  return options.promptVariant === "r03_v1_length_control";
+}
+
+function lengthControlLine(label = {}) {
+  if (["archive_orientation", "casual_archive_help"].includes(label.intent)) {
+    return "Keep the generated answer body under 45 words.";
+  }
+  if (label.intent === "current_object_explanation") {
+    return "Keep the generated answer body under 55 words.";
+  }
+  if (label.intent === "method_process_question") {
+    return "Keep the generated answer body under 65 words.";
+  }
+  if (["comparison", "region_period_recommendation", "more_context"].includes(label.intent)) {
+    return "Keep the generated answer body under 95 words.";
+  }
+  return "Keep the generated answer body concise.";
 }
 
 function orientationEvidenceSummary(records) {
@@ -150,7 +219,50 @@ function buildSourceRightsPrompt(packet) {
   ].join("\n");
 }
 
-function buildOrientationPrompt(packet) {
+function buildOrientationPrompt(packet, options = {}) {
+  if (isV31EvidencePruneTagInjection(options)) {
+    const records = reorderEvidence(packet.evidence, packet.label);
+    return [
+      "You are running a research-only browser-local Qwen RAG experiment.",
+      "Generated text is not archive evidence.",
+      "Do not output hidden reasoning, chain-of-thought, or <think> tags.",
+      "",
+      `Question: ${packet.query.query_text}`,
+      `Intent: ${packet.label.intent}`,
+      "Required behavior: answer about the archive view as a whole, not about one object.",
+      "Keep the generated answer body under 45 words.",
+      "",
+      "Archive facts you may use:",
+      orientationEvidenceSummary(records),
+      "",
+      "OUTPUT FORMAT:",
+      "Write only the concise natural-language answer body.",
+      "Do not write the official evidence tag block or field labels; the browser lab appends exact tags after generation.",
+      "Do not name a single record as the archive."
+    ].join("\n");
+  }
+
+  if (isLengthControl(options)) {
+    return [
+      "You are running a research-only browser-local Qwen RAG experiment.",
+      "Generated text is not archive evidence.",
+      "Do not output hidden reasoning, chain-of-thought, or <think> tags.",
+      "",
+      `Question: ${packet.query.query_text}`,
+      `Intent: ${packet.label.intent}`,
+      "Required behavior: answer about the archive view as a whole, not about one object.",
+      lengthControlLine(packet.label),
+      "",
+      "Facts you may use:",
+      orientationEvidenceSummary(packet.evidence),
+      "",
+      "OUTPUT FORMAT:",
+      "Write only the concise answer body.",
+      "Do not write EVIDENCE TAGS; the browser lab appends exact tags after generation.",
+      "Do not name a single record as the archive."
+    ].join("\n");
+  }
+
   return [
     "You are running a research-only browser-local Qwen RAG experiment.",
     "Generated text is not archive evidence.",
@@ -176,8 +288,52 @@ function buildOrientationPrompt(packet) {
   ].join("\n");
 }
 
-function buildAnswerablePrompt(packet) {
+function buildAnswerablePrompt(packet, options = {}) {
   const required = fieldsForLabel(packet.label);
+  if (isV31EvidencePruneTagInjection(options)) {
+    const records = reorderEvidence(packet.evidence, packet.label);
+    const fields = summaryFieldsForV31(packet.label);
+    return [
+      "You are a cautious archive assistant in a browser-local research experiment.",
+      "Generated text is not archive evidence.",
+      "Do not output hidden reasoning, chain-of-thought, or <think> tags.",
+      "Use only the evidence values below. If the values cannot support the query, keep the answer narrow.",
+      `Question: ${packet.query.query_text}`,
+      `Intent: ${packet.label.intent}`,
+      lengthControlLine(packet.label),
+      "",
+      `Evidence value order: ${fields.join(" | ")}`,
+      "Primary record is listed first when a primary evidence id is available.",
+      valueOnlyEvidenceSummary(records, fields, options),
+      "",
+      "OUTPUT FORMAT:",
+      "Write only the concise natural-language answer body.",
+      "Do not write the official evidence tag block, field labels, or key-value blocks; the browser lab appends exact tags after generation.",
+      "Do not restate long source URLs unless they are necessary for the prose."
+    ].join("\n");
+  }
+
+  if (isLengthControl(options)) {
+    return [
+      "You are a cautious archive assistant in a browser-local research experiment.",
+      "Generated text is not archive evidence.",
+      "Do not output hidden reasoning, chain-of-thought, or <think> tags.",
+      "Use only the evidence fields below. If a required field is not available, say the evidence is insufficient.",
+      `Question: ${packet.query.query_text}`,
+      `Intent: ${packet.label.intent}`,
+      `Required fields available for browser-appended EVIDENCE TAGS: ${required.join(", ")}`,
+      lengthControlLine(packet.label),
+      "",
+      "Evidence fields:",
+      ...packet.evidence.map((record) => recordSummary(record, required, options)),
+      "",
+      "OUTPUT FORMAT:",
+      "Write only the concise answer body.",
+      "Do not write EVIDENCE TAGS; the browser lab appends exact tags after generation.",
+      "Do not restate long source URLs unless they are needed in the prose."
+    ].join("\n");
+  }
+
   return [
     "You are a cautious archive assistant in a browser-local research experiment.",
     "Generated text is not archive evidence.",
@@ -188,7 +344,7 @@ function buildAnswerablePrompt(packet) {
     `Required fields to cite visibly: ${required.join(", ")}`,
     "",
     "Evidence fields:",
-    ...packet.evidence.map((record) => recordSummary(record, required)),
+    ...packet.evidence.map((record) => recordSummary(record, required, options)),
     "",
     "OUTPUT FORMAT:",
     "1. Write a brief answer based only on the evidence fields.",
@@ -241,13 +397,13 @@ function deterministicAnswerBody(packet) {
   return "This answer is grounded in the evidence fields listed below.";
 }
 
-export function buildPrompt(packet) {
+export function buildPrompt(packet, options = {}) {
   if (packet.label.refusal_expected) return buildHardRefusalPrompt(packet);
   if (packet.label.intent === "source_rights_question") return buildSourceRightsPrompt(packet);
   if (["archive_orientation", "casual_archive_help"].includes(packet.label.intent)) {
-    return buildOrientationPrompt(packet);
+    return buildOrientationPrompt(packet, options);
   }
-  return buildAnswerablePrompt(packet);
+  return buildAnswerablePrompt(packet, options);
 }
 
 export function finalizeAnswerText(packet, generatedText) {

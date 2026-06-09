@@ -132,6 +132,7 @@ function spearman(rows, leftKey, rightKey) {
 }
 
 function summarizeRows(rows) {
+  const totalValues = rows.map((row) => row.total_latency_ms).filter((value) => typeof value === "number" && Number.isFinite(value));
   return {
     n: rows.length,
     avg_ttft_ms: round(mean(rows.map((row) => row.ttft_ms)), 1),
@@ -140,12 +141,16 @@ function summarizeRows(rows) {
     avg_total_ms: round(mean(rows.map((row) => row.total_latency_ms)), 1),
     p50_total_ms: round(quantile(rows.map((row) => row.total_latency_ms), 0.5), 1),
     p95_total_ms: round(quantile(rows.map((row) => row.total_latency_ms), 0.95), 1),
-    max_total_ms: round(Math.max(...rows.map((row) => row.total_latency_ms)), 1),
+    max_total_ms: totalValues.length ? round(Math.max(...totalValues), 1) : null,
     avg_tokens_per_second: round(mean(rows.map((row) => row.tokens_per_second)), 2),
     avg_prompt_tokens: round(mean(rows.map((row) => row.prompt_tokens_est)), 1),
     avg_output_tokens: round(mean(rows.map((row) => row.output_tokens)), 1),
     avg_evidence_chars: round(mean(rows.map((row) => row.evidence_chars)), 1)
   };
+}
+
+function isDeterministicRow(row) {
+  return row.deterministic === true || row.latency_bucket === "hybrid_system_latency";
 }
 
 function recordTextSize(record) {
@@ -185,6 +190,9 @@ function makeCsv(rows) {
     "query_id",
     "intent",
     "lane",
+    "deterministic",
+    "latency_bucket",
+    "hybrid_lane",
     "refusal_expected",
     "candidate_count",
     "prompt_tokens_est",
@@ -220,6 +228,8 @@ function table(rows, columns, limit = rows.length) {
 
 function markdown(report) {
   const summary = report.summary;
+  const modelSummary = report.summary_model_generation || { n: 0 };
+  const hybridSummary = report.summary_hybrid_system || { n: 0 };
   const correlations = report.correlations;
   const corrRows = Object.entries(correlations).map(([name, value]) => ({
     pair: name,
@@ -271,6 +281,8 @@ remain experimental outputs and are not archive evidence.
 | Metric | Value |
 |---|---:|
 | Rows | ${summary.n} |
+| Qwen model-generation rows | ${modelSummary.n} |
+| Deterministic hybrid rows | ${hybridSummary.n} |
 | Contract failures | ${report.gate.contract_fail_count} |
 | Contract warnings | ${report.gate.contract_warn_count} |
 | Gate blocking findings | ${report.gate.blocking_finding_count} |
@@ -282,6 +294,12 @@ remain experimental outputs and are not archive evidence.
 | P95 total latency ms | ${summary.p95_total_ms} |
 | Max total latency ms | ${summary.max_total_ms} |
 | Avg tokens/s | ${summary.avg_tokens_per_second} |
+| Qwen avg TTFT ms | ${modelSummary.avg_ttft_ms ?? ""} |
+| Qwen P95 TTFT ms | ${modelSummary.p95_ttft_ms ?? ""} |
+| Qwen avg total latency ms | ${modelSummary.avg_total_ms ?? ""} |
+| Qwen P95 total latency ms | ${modelSummary.p95_total_ms ?? ""} |
+| Qwen avg tokens/s | ${modelSummary.avg_tokens_per_second ?? ""} |
+| Hybrid avg total latency ms | ${hybridSummary.avg_total_ms ?? ""} |
 | Slow rows > ${report.thresholds.slow_total_ms} ms | ${report.thresholds.slow_total_count} |
 | Low-speed rows < ${report.thresholds.low_speed_tokens_per_second} tokens/s | ${report.thresholds.low_speed_count} |
 
@@ -397,6 +415,9 @@ export function buildLatencyTriage({
       total_latency_ms: row.total_latency_ms,
       output_tokens: row.output_tokens,
       tokens_per_second: row.tokens_per_second,
+      deterministic: isDeterministicRow(row),
+      hybrid_lane: row.hybrid_lane || null,
+      latency_bucket: row.latency_bucket || (isDeterministicRow(row) ? "hybrid_system_latency" : "qwen_generation_latency"),
       retrieved_ids: retrievedIds,
       gold_evidence_ids: label.gold_evidence_ids || [],
       evidence_chars: evidenceChars,
@@ -406,12 +427,16 @@ export function buildLatencyTriage({
     return enriched;
   });
 
+  const modelRows = rows.filter((row) => !row.deterministic);
+  const hybridRows = rows.filter((row) => row.deterministic);
   const summary = summarizeRows(rows);
-  const lowSpeedThreshold = (summary.avg_tokens_per_second || 0) * lowSpeedRatio;
+  const modelSummary = summarizeRows(modelRows);
+  const hybridSummary = summarizeRows(hybridRows);
+  const lowSpeedThreshold = (modelSummary.avg_tokens_per_second || 0) * lowSpeedRatio;
   const rowsWithSignals = rows.map((row) => {
     const signals = [];
     if (row.total_latency_ms > slowTotalMs) signals.push("total_latency_tail");
-    if (row.tokens_per_second < lowSpeedThreshold) signals.push("low_decode_speed");
+    if (!row.deterministic && row.tokens_per_second < lowSpeedThreshold) signals.push("low_decode_speed");
     if (row.prompt_tokens_est > 1000) signals.push("large_prompt");
     if (row.output_tokens > 100) signals.push("long_output");
     if (row.evidence_chars > 9000) signals.push("large_evidence_text");
@@ -432,29 +457,30 @@ export function buildLatencyTriage({
     intent,
     ...summarizeRows(intentRows),
     slow_rows: intentRows.filter((row) => row.total_latency_ms > slowTotalMs).length,
-    low_speed_rows: intentRows.filter((row) => row.tokens_per_second < lowSpeedThreshold).length
+    low_speed_rows: intentRows.filter((row) => !row.deterministic && row.tokens_per_second < lowSpeedThreshold).length
   })).sort((left, right) => (right.p95_total_ms || 0) - (left.p95_total_ms || 0));
 
+  const modelRowsWithSignals = rowsWithSignals.filter((row) => !row.deterministic);
   const correlations = {
     "prompt_tokens_est -> ttft_ms": {
-      pearson: round(pearson(rowsWithSignals, "prompt_tokens_est", "ttft_ms"), 3),
-      spearman: round(spearman(rowsWithSignals, "prompt_tokens_est", "ttft_ms"), 3)
+      pearson: round(pearson(modelRowsWithSignals, "prompt_tokens_est", "ttft_ms"), 3),
+      spearman: round(spearman(modelRowsWithSignals, "prompt_tokens_est", "ttft_ms"), 3)
     },
     "prompt_tokens_est -> total_latency_ms": {
-      pearson: round(pearson(rowsWithSignals, "prompt_tokens_est", "total_latency_ms"), 3),
-      spearman: round(spearman(rowsWithSignals, "prompt_tokens_est", "total_latency_ms"), 3)
+      pearson: round(pearson(modelRowsWithSignals, "prompt_tokens_est", "total_latency_ms"), 3),
+      spearman: round(spearman(modelRowsWithSignals, "prompt_tokens_est", "total_latency_ms"), 3)
     },
     "output_tokens -> total_latency_ms": {
-      pearson: round(pearson(rowsWithSignals, "output_tokens", "total_latency_ms"), 3),
-      spearman: round(spearman(rowsWithSignals, "output_tokens", "total_latency_ms"), 3)
+      pearson: round(pearson(modelRowsWithSignals, "output_tokens", "total_latency_ms"), 3),
+      spearman: round(spearman(modelRowsWithSignals, "output_tokens", "total_latency_ms"), 3)
     },
     "evidence_chars -> prompt_tokens_est": {
-      pearson: round(pearson(rowsWithSignals, "evidence_chars", "prompt_tokens_est"), 3),
-      spearman: round(spearman(rowsWithSignals, "evidence_chars", "prompt_tokens_est"), 3)
+      pearson: round(pearson(modelRowsWithSignals, "evidence_chars", "prompt_tokens_est"), 3),
+      spearman: round(spearman(modelRowsWithSignals, "evidence_chars", "prompt_tokens_est"), 3)
     },
     "candidate_count -> total_latency_ms": {
-      pearson: round(pearson(rowsWithSignals, "candidate_count", "total_latency_ms"), 3),
-      spearman: round(spearman(rowsWithSignals, "candidate_count", "total_latency_ms"), 3)
+      pearson: round(pearson(modelRowsWithSignals, "candidate_count", "total_latency_ms"), 3),
+      spearman: round(spearman(modelRowsWithSignals, "candidate_count", "total_latency_ms"), 3)
     }
   };
 
@@ -510,7 +536,7 @@ export function buildLatencyTriage({
       slow_total_count: slowRows.length,
       low_speed_ratio: lowSpeedRatio,
       low_speed_tokens_per_second: round(lowSpeedThreshold, 2),
-      low_speed_count: rowsWithSignals.filter((row) => row.tokens_per_second < lowSpeedThreshold).length
+      low_speed_count: rowsWithSignals.filter((row) => !row.deterministic && row.tokens_per_second < lowSpeedThreshold).length
     },
     gate: {
       contract_fail_count: gate.contract_fail_count ?? null,
@@ -520,6 +546,8 @@ export function buildLatencyTriage({
       ready_for_next_step: gate.ready_for_next_step ?? null
     },
     summary,
+    summary_model_generation: modelSummary,
+    summary_hybrid_system: hybridSummary,
     correlations,
     by_intent: byIntent,
     slow_rows: slowRows,
