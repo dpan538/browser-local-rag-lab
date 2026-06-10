@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-06-10T06:47:22.474Z",
+  "summary": {
+    "purpose": "Show why each reliability/latency layer is necessary rather than decorative.",
+    "row_count": 6
+  },
+  "supporting_metrics": {
+    "round01": {
+      "g002_refusal_missing": 8,
+      "g005_unverified_field_assertion": 1
+    },
+    "round02_200": {
+      "g101_required_field_value_not_observed": 146,
+      "g005_unverified_field_assertion": 46,
+      "g006_source_rights_tag_missing": 12,
+      "g007_source_rights_tag_mismatch": 3
+    },
+    "v31_safe_body": {
+      "latency": {
+        "result_count": 300,
+        "deterministic_count": 109,
+        "qwen_count": 191,
+        "avg_total_ms": 1973.8316666762034,
+        "qwen_avg_total_ms": 3100.251308920496,
+        "qwen_p95_total_ms": 7916,
+        "qwen_slow_gt_10s": 0
+      },
+      "misreading": {
+        "pass": true,
+        "evaluated_answer_count": 191,
+        "prompt_leak_count": 0,
+        "prompt_leak_threshold": 0,
+        "negation_mismatch_count": 0,
+        "negation_mismatch_ratio": 0,
+        "negation_mismatch_ratio_threshold": 0.03,
+        "overconfidence_answer_count": 3,
+        "overconfidence_ratio": 0.0157,
+        "overconfidence_ratio_threshold": 0.15,
+        "unwarranted_inference_answer_count": 0,
+        "unwarranted_inference_ratio": 0,
+        "unwarranted_inference_ratio_threshold": 0.15,
+        "answer_source": "delivered_answer_text"
+      }
+    },
+    "v32_guarded_prose": {
+      "latency": {
+        "result_count": 300,
+        "deterministic_count": 109,
+        "qwen_count": 191,
+        "avg_total_ms": 5411.007666667302,
+        "qwen_avg_total_ms": 8498.95445028275,
+        "qwen_p95_total_ms": 15307.199999809265,
+        "qwen_slow_gt_10s": 63
+      },
+      "misreading": {
+        "pass": true,
+        "evaluated_answer_count": 191,
+        "prompt_leak_count": 0,
+        "prompt_leak_threshold": 0,
+        "negation_mismatch_count": 1,
+        "negation_mismatch_ratio": 0.0052,
+        "negation_mismatch_ratio_threshold": 0.03,
+        "overconfidence_answer_count": 0,
+        "overconfidence_ratio": 0,
+        "overconfidence_ratio_threshold": 0.15,
+        "unwarranted_inference_answer_count": 0,
+        "unwarranted_inference_ratio": 0,
+        "unwarranted_inference_ratio_threshold": 0.15,
+        "answer_source": "delivered_answer_text"
+      }
+    },
+    "v33_postprocessed_prose": {
+      "latency": {
+        "result_count": 300,
+        "deterministic_count": 109,
+        "qwen_count": 191,
+        "avg_total_ms": 1585.8293333180745,
+        "qwen_avg_total_ms": 2490.823036618258,
+        "qwen_p95_total_ms": 4190.300000190735,
+        "qwen_slow_gt_10s": 0
+      },
+      "misreading": {
+        "pass": true,
+        "evaluated_answer_count": 191,
+        "prompt_leak_count": 0,
+        "prompt_leak_threshold": 0,
+        "negation_mismatch_count": 1,
+        "negation_mismatch_ratio": 0.0052,
+        "negation_mismatch_ratio_threshold": 0.03,
+        "overconfidence_answer_count": 0,
+        "overconfidence_ratio": 0,
+        "overconfidence_ratio_threshold": 0.15,
+        "unwarranted_inference_answer_count": 0,
+        "unwarranted_inference_ratio": 0,
+        "unwarranted_inference_ratio_threshold": 0.15,
+        "answer_source": "delivered_answer_text"
+      }
+    }
+  },
+  "rows": [
+    {
+      "removed_layer": "deterministic refusal lane",
+      "controlled_layer": "refusal_expected answers are bypassed to a fixed refusal phrase",
+      "expected_failure_mode": "model answers when evidence contract requires refusal",
+      "observed_without_layer": "Round 01: 8 G002 refusal failures; 2 context-window runtime errors also show prompt-only routing fragility.",
+      "observed_with_layer": "V3.3 latency300: deterministic refusal rows complete with contract fail/warn = 0/0.",
+      "source_reports": [
+        "reports/WEBLLM_ROUND_01.md",
+        "reports/WEBLLM_ROUND_03_LATENCY300_V33_POSTPROCESSED_PROSE.md"
+      ]
+    },
+    {
+      "removed_layer": "deterministic source/rights lane",
+      "controlled_layer": "source_rights_question answers are assembled from evidence fields",
+      "expected_failure_mode": "rights/source labels missing, truncated, interpreted, or mismatched",
+      "observed_without_layer": "Round 01/02: 47 G005 unverified field assertions, 12 G006 missing source-rights tags, and 3 G007 tag mismatches.",
+      "observed_with_layer": "V3.3 latency300: source/rights rows are deterministic hybrid rows; contract fail/warn = 0/0.",
+      "source_reports": [
+        "reports/WEBLLM_ROUND_01.md",
+        "reports/WEBLLM_ROUND_02_200.md",
+        "reports/WEBLLM_ROUND_03_LATENCY300_V33_POSTPROCESSED_PROSE.md"
+      ]
+    },
+    {
+      "removed_layer": "post-generation evidence tag injection",
+      "controlled_layer": "EVIDENCE TAGS are injected by code instead of generated by the model",
+      "expected_failure_mode": "required fields are implicit, omitted, or copied imprecisely",
+      "observed_without_layer": "Round 02 200: 61 contract failures and 146 warnings; 146 G101 required-field visibility warnings.",
+      "observed_with_layer": "V3.3 latency300: contract fail/warn = 0/0 because required tags are exact evidence-derived strings.",
+      "source_reports": [
+        "reports/WEBLLM_ROUND_02_200.md",
+        "reports/WEBLLM_ROUND_03_LATENCY300_V33_POSTPROCESSED_PROSE.md"
+      ]
+    },
+    {
+      "removed_layer": "post-generation prose polisher",
+      "controlled_layer": "polish_prose weakens absolute/first claims and inserts source-limited hedge",
+      "expected_failure_mode": "overconfidence and unsupported first/earliest language leak into delivered prose",
+      "observed_without_layer": "V3.1 safe-body 300: 3/191 overconfidence answers.",
+      "observed_with_layer": "V3.3 latency300: 0 overconfidence, 0 unwarranted inference; guardrail compliance pass.",
+      "source_reports": [
+        "reports/misreading_v31_safe_body_300.json",
+        "reports/misreading_v33_300.json",
+        "reports/GUARDRAIL_COMPLIANCE_V33_300.md"
+      ]
+    },
+    {
+      "removed_layer": "prompt-heavy guardrails",
+      "controlled_layer": "quality enforced by post-processing rather than long negative instructions",
+      "expected_failure_mode": "prompt-only guardrails preserve quality but inflate latency",
+      "observed_without_layer": "V3.2 guarded prose: Qwen avg total 8499 ms, P95 15307 ms, slow >10s 63.",
+      "observed_with_layer": "V3.3 postprocessed prose: Qwen avg total 2491 ms, P95 4190 ms, slow >10s 0; quality gates still pass.",
+      "source_reports": [
+        "reports/WEBLLM_ROUND_03_LATENCY300_V32_GUARDED_PROSE_BUDGETED_GENERATION.md",
+        "reports/WEBLLM_ROUND_03_LATENCY300_V33_POSTPROCESSED_PROSE.md"
+      ]
+    },
+    {
+      "removed_layer": "evidence pruning / compact value-only packets",
+      "controlled_layer": "model sees compact value summaries while tags preserve exact fields",
+      "expected_failure_mode": "larger prompts increase TTFT and long-tail latency",
+      "observed_without_layer": "Earlier less-pruned variants show higher generation cost; V3.1 safe body Qwen avg total 3100 ms and P95 7916 ms.",
+      "observed_with_layer": "V3.3 Qwen avg TTFT is reported separately in latency300 output and Qwen P95 total is 4190 ms.",
+      "source_reports": [
+        "reports/WEBLLM_ROUND_03_LATENCY300_V31_SAFE_BODY.md",
+        "reports/WEBLLM_ROUND_03_LATENCY300_V33_POSTPROCESSED_PROSE.md"
+      ]
+    }
+  ]
+}
