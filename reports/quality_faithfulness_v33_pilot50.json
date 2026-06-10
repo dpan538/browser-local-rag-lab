@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-06-10T05:55:52.479Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency_pilot50_v33_postprocessed_prose_answers.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 36,
+    "suspicious_answer_count": 1,
+    "suspicious_answer_ratio": 0.0278,
+    "suspicious_ratio_threshold": 0.1,
+    "date_hallucination_count": 0,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": [
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Specific"
+        }
+      ],
+      "answer_body": "Based on these records, the archive view is a structured collection of design and typography records organized by publication roles and surface types. Specific rights states and image-state codes define its content."
+    }
+  ]
+}
