@@ -675,9 +675,17 @@ export function finalizeAnswer(packet, generatedText, options = {}) {
   const polished = isV33PostprocessedProse(options)
     ? polishProse(guardedBody, { label: packet.label, evidence: packet.evidence })
     : { text: guardedBody, actions: [] };
-  const finalBody = isV32GuardedProse(options)
+  if (isV33PostprocessedProse(options) && bodyWordCount(polished.text) <= 4) {
+    polished.actions.push({ code: "fallback_too_short_body", from: "too short generated body", to: "deterministic answer body", count: 1 });
+    polished.text = hedgeBodyForV32(deterministicAnswerBody(packet));
+  }
+  let finalBody = isV32GuardedProse(options)
     ? hedgeBodyForV32(guardedBody)
     : (isV33PostprocessedProse(options) ? splitLongBodySentences(polished.text, polished.actions) : polished.text);
+  if (isV33PostprocessedProse(options) && bodyFailsV32Readability(finalBody)) {
+    polished.actions.push({ code: "fallback_readability_body", from: "readability gate failed after polish", to: "readable deterministic body", count: 1 });
+    finalBody = hedgeBodyForV32(readableV32AnswerBody(packet));
+  }
   return {
     answer_text: [finalBody, tags].join("\n\n"),
     answer_postprocess: isV33PostprocessedProse(options)
