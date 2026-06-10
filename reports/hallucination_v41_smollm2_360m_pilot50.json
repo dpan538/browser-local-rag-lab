@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-06-10T07:27:16.049Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl",
+    "answersPath": "reports/v41_smollm2_360m_pilot50_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 36,
+    "unsupported_date_count": 0,
+    "unsupported_triple_answer_count": 0,
+    "unsupported_triple_ratio": 0,
+    "unsupported_triple_ratio_threshold": 0.05,
+    "unsupported_entity_answer_count": 0,
+    "unsupported_entity_ratio": 0,
+    "unsupported_entity_ratio_threshold": 0.1,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": []
+}

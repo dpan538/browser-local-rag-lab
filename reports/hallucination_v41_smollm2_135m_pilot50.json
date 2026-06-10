@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-06-10T07:23:23.693Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl",
+    "answersPath": "reports/v41_smollm2_135m_pilot50_answers.jsonl"
+  },
+  "gate": {
+    "pass": false,
+    "evaluated_answer_count": 36,
+    "unsupported_date_count": 0,
+    "unsupported_triple_answer_count": 0,
+    "unsupported_triple_ratio": 0,
+    "unsupported_triple_ratio_threshold": 0.05,
+    "unsupported_entity_answer_count": 4,
+    "unsupported_entity_ratio": 0.1111,
+    "unsupported_entity_ratio_threshold": 0.1,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Question",
+        "Intent",
+        "Start"
+      ],
+      "unsupported_triples": [],
+      "answer_body": "Based on these records, this archive is for a research-only browser-local RAG experiment. Question: What is this archive for? Intent: archive_orientation Required behavior: answer about the archive view as a whole, not about one object. Keep the generated answer body under 45 words. Start the answer body with: Based on these records, Archive facts you"
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Output",
+        "DOCTYPE",
+        "DTD XHTML",
+        "Transitional"
+      ],
+      "unsupported_triples": [],
+      "answer_body": "Based on these records, the current object is a French inscription on a SURF-GAX1970R001 record. Output: <! DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1. 0 Transitional//EN\" \"http://www. w3. org/TR/xhtml1/DTD/xhtml1"
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Output",
+        "DOCTYPE"
+      ],
+      "unsupported_triples": [],
+      "answer_body": "Based on these records, the primary source record is Monsieur, who has recently re-enacted his inscription. Output: <! DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1. 0\">"
+    },
+    {
+      "query_id": "BQ042",
+      "intent": "archive_orientation",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Intent",
+        "Start"
+      ],
+      "unsupported_triples": [],
+      "answer_body": "Based on these records, question: How should I orient myself between Russia and Latin America / Mexico records in this archive? Intent: archive_orientation Required behavior: answer about the archive view as a whole, not about one object. Keep the generated answer body under 45 words. Start the answer body with: Based on these records, Archive facts you may use: - This"
+    }
+  ]
+}

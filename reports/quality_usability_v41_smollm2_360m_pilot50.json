@@ -1,0 +1,556 @@
+{
+  "generated_at": "2026-06-10T07:27:16.144Z",
+  "inputs": {
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl",
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/v41_smollm2_360m_pilot50_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 36,
+    "too_short_count": 0,
+    "too_short_ratio": 0,
+    "too_short_ratio_threshold": 0.05,
+    "off_topic_count": 0,
+    "off_topic_ratio": 0,
+    "off_topic_ratio_threshold": 0.05,
+    "off_topic_similarity_threshold": 0.05,
+    "too_short_word_threshold": 4,
+    "answer_source": "delivered_answer_text"
+  },
+  "rows": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "answer_word_count": 33,
+      "query_keyword_count": 0,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive organizes graphic design and visual communication records through folders/topology, with surface types including sheet, method, and publication roles. It uses publication roles to organize records, and the source family Library of Congress loc. gov API is represented. The archive also includes rights states, image-state codes, and image-type codes."
+    },
+    {
+      "query_id": "BQ02",
+      "intent": "archive_orientation",
+      "answer_word_count": 35,
+      "query_keyword_count": 1,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive organizes records through folders/topology: Mexico, World War and public-information graphics, Advertisement, France, Travel and transport poster culture, Graphic design object record. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / Republic of Rio Grande. And"
+    },
+    {
+      "query_id": "BQ03",
+      "intent": "archive_orientation",
+      "answer_word_count": 32,
+      "query_keyword_count": 1,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is organized through folders/topology, with a focus on French, Modern typography and layout, and Graphic design object records. It organizes records through sheets, methods, publication roles, source families, and image-state codes. The archive is organized into three main categories: Wikimedia Commons, the Temple of Xochicalco, and the Exposition Universelle Paris"
+    },
+    {
+      "query_id": "BQ04",
+      "intent": "casual_archive_help",
+      "answer_word_count": 10,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.3636,
+      "intent_anchor_hits": [
+        "folders"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the simplest next step from here is to explore the archive's folders and understand the organization and structure of the records."
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "answer_word_count": 9,
+      "query_keyword_count": 2,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1: Monsieur, vous avez réclamé votre inscription. is the current object."
+    },
+    {
+      "query_id": "BQ06",
+      "intent": "current_object_explanation",
+      "answer_word_count": 7,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.6,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Monsieur, vous avez réclamé votre inscription."
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "answer_word_count": 12,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "region"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this record is represented by Monsieur, vous avez réclamé votre inscription. , dated 1830, with region France."
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "answer_word_count": 20,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.0476,
+      "intent_anchor_hits": [
+        "compare",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, compare the source-linked records Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897. jpg; ApollonMagazine. jpg using the exact evidence tags below."
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "answer_word_count": 20,
+      "query_keyword_count": 15,
+      "jaccard_similarity": 0.5714,
+      "intent_anchor_hits": [
+        "compare",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, compare the source-linked records Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897. jpg; ApollonMagazine. jpg using the exact evidence tags below."
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 11,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.2308,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, France's primary evidence for the nineteenth century is Monsieur, who has successfully recorded your inscription."
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 10,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.4167,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Latin America routes for modern graphic design should focus on Chile and Argentina."
+    },
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.0526,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ24",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "answer_word_count": 6,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0.25,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the period of the object is the late 19th century."
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "answer_word_count": 9,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.0909,
+      "intent_anchor_hits": [
+        "context",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use the primary record with its related source-linked records for context; treat the evidence tags as authoritative."
+    },
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "answer_word_count": 39,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive organizes records through folders/topology: India, Modern typography and layout, Graphic design object record, Unresolved region, Midcentury modern graphic communication, Lithographic print. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / East India postage Queen Victoria stamp"
+    },
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "answer_word_count": 37,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive organizes records through folders/topology: France, Travel and transport poster culture, Graphic design object record, Unresolved region, Modern typography and layout. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / Paganini par David d'Angers (Angers) (149"
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "answer_word_count": 37,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.025,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is organized into folders/topology: France, Midcentury modern graphic communication, Graphic design object record, Unresolved region, Modern typography and layout, World War and public-information graphics. Surface types in the packet include sheet. Publication roles are main_sheet. Source families represented are Gallica / BnF APIs, Wikimedia"
+    },
+    {
+      "query_id": "BQ033",
+      "intent": "archive_orientation",
+      "answer_word_count": 33,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is organized into folders/topology, with surface types as sheet and publication roles as main_sheet. The source families represented include Gallica, BnF APIs, and Wikimedia Commons file sources, while publication roles include main_sheet. The source families are open_candidate, and the image-state codes are IMG03."
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "answer_word_count": 36,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.0263,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is organized into folders/topology: France, Midcentury modern graphic communication, Graphic design object record, Unresolved region, Modern typography and layout, World War and public-information graphics. Surface types in the packet include sheet. Publication roles in the packet are main_sheet. Source families represented are Gallica / BnF"
+    },
+    {
+      "query_id": "BQ035",
+      "intent": "archive_orientation",
+      "answer_word_count": 37,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0.0571,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive organizes records through folders/topology: France, Midcentury modern graphic communication, Graphic design object record, Russia, Poster, World War and public-information graphics. Surface types in the packet are sheet. Publication roles are main_sheet. Source families represented are Gallica / BnF APIs, Wikimedia Commons, Wikimedia Commons file source / HYMNES"
+    },
+    {
+      "query_id": "BQ036",
+      "intent": "archive_orientation",
+      "answer_word_count": 37,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.0263,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is organized into France, Midcentury modern graphic communication, Lithographic print, World War and public-information graphics, Graphic design object record, Unresolved region, Modern typography and layout, Poster, and surface types in the packet. The surface types are sheet, and publication roles are main_sheet. The source families represented are Gallica / BnF"
+    },
+    {
+      "query_id": "BQ037",
+      "intent": "archive_orientation",
+      "answer_word_count": 22,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is organized through folders/topology, with sources linked through packet information. The surface types are sheet, and publication roles are main_sheet. The source families are Wikimedia Commons, and the image-state codes are IMG03."
+    },
+    {
+      "query_id": "BQ038",
+      "intent": "archive_orientation",
+      "answer_word_count": 35,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive organizes records through folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, France, Travel and transport poster culture, Russia. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / The Soviet Union 1970"
+    },
+    {
+      "query_id": "BQ039",
+      "intent": "archive_orientation",
+      "answer_word_count": 37,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.0476,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is organized into folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, Latin America, United States, Poster. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / The Soviet Union 1970 CPA 385"
+    },
+    {
+      "query_id": "BQ040",
+      "intent": "archive_orientation",
+      "answer_word_count": 37,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.0465,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is organized into folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, Latin America, World War and public-information graphics, Poster, United States. The surface types are sheet, and publication roles are main_sheet. The source families represented are Wikimedia Commons file source / The Soviet Union 1970 C"
+    },
+    {
+      "query_id": "BQ041",
+      "intent": "archive_orientation",
+      "answer_word_count": 35,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.05,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is organized through folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, Latin America, United States, Poster. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / The Soviet Union 1977"
+    },
+    {
+      "query_id": "BQ042",
+      "intent": "archive_orientation",
+      "answer_word_count": 38,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.0263,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive organizes records through folders/topology: Russia, Midcentury modern graphic communication, Poster, France, Modern typography and layout, Graphic design object record, United Kingdom, Trade card. Surface types in the packet: sheet. Publication roles in the packet: main_sheet, thin_visual_support_packet. Source families represented: Wikimedia Commons"
+    },
+    {
+      "query_id": "BQ043",
+      "intent": "archive_orientation",
+      "answer_word_count": 33,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.0938,
+      "intent_anchor_hits": [
+        "folder",
+        "folders",
+        "organized",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is organized through folders/topology, with Latin America and Colombia records in the Latin America folder. The surface types are sheet, and publication roles are main_sheet. The source families represented are Wikimedia Commons file sources / ApollonMagazine. jpg / page 4027526, Wikimedia Commons file sources / Ingermina. png /"
+    },
+    {
+      "query_id": "BQ044",
+      "intent": "casual_archive_help",
+      "answer_word_count": 6,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.375,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to explore the contents of the SURF-CRG2026R0001 record."
+    },
+    {
+      "query_id": "BQ045",
+      "intent": "casual_archive_help",
+      "answer_word_count": 6,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.2222,
+      "intent_anchor_hits": [
+        "folder"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to organize the records into a folder structure."
+    },
+    {
+      "query_id": "BQ046",
+      "intent": "casual_archive_help",
+      "answer_word_count": 5,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.25,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to explore the contents of the archive."
+    },
+    {
+      "query_id": "BQ047",
+      "intent": "casual_archive_help",
+      "answer_word_count": 6,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.2222,
+      "intent_anchor_hits": [
+        "folder"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to organize the records into a folder structure."
+    },
+    {
+      "query_id": "BQ048",
+      "intent": "casual_archive_help",
+      "answer_word_count": 6,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.375,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to explore the contents of the SURF-GAX1970R004 record."
+    },
+    {
+      "query_id": "BQ049",
+      "intent": "casual_archive_help",
+      "answer_word_count": 6,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.2222,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to explore the archive's structure and content."
+    },
+    {
+      "query_id": "BQ050",
+      "intent": "casual_archive_help",
+      "answer_word_count": 11,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1429,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to explore the archive's contents and understand the relationships between different sources and their roles in the project."
+    }
+  ]
+}

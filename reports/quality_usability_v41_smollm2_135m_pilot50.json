@@ -1,0 +1,572 @@
+{
+  "generated_at": "2026-06-10T07:23:23.807Z",
+  "inputs": {
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl",
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/v41_smollm2_135m_pilot50_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 36,
+    "too_short_count": 0,
+    "too_short_ratio": 0,
+    "too_short_ratio_threshold": 0.05,
+    "off_topic_count": 0,
+    "off_topic_ratio": 0,
+    "off_topic_ratio_threshold": 0.05,
+    "off_topic_similarity_threshold": 0.05,
+    "too_short_word_threshold": 4,
+    "answer_source": "delivered_answer_text"
+  },
+  "rows": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "answer_word_count": 25,
+      "query_keyword_count": 0,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "view",
+        "start"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive is for a research-only browser-local RAG experiment. Question: What is this archive for? Intent: archive_orientation Required behavior: answer about the archive view as a whole, not about one object. Keep the generated answer body under 45 words. Start the answer body with: Based on these records, Archive facts you"
+    },
+    {
+      "query_id": "BQ02",
+      "intent": "archive_orientation",
+      "answer_word_count": 36,
+      "query_keyword_count": 1,
+      "jaccard_similarity": 0.0526,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this page is organized by folders/topology: Mexico, World War, public-information graphics, Advertisement, France, Travel and transport poster culture, Graphic design object record. The archive is organized by the following folders/topology: Mexico, World War, public-information graphics, Advertisement, France, Travel and transport poster culture, Graphic design object record. The archive"
+    },
+    {
+      "query_id": "BQ03",
+      "intent": "archive_orientation",
+      "answer_word_count": 33,
+      "query_keyword_count": 1,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, - This is a source-linked research archive for graphic design and visual communication records. - It organizes records through folders/topology: France, Modern typography and layout, Graphic design object record, Research lab method, Unresolved region, Publication design. - Surface types in the packet: sheet, method. - Publication roles in the packet: main_"
+    },
+    {
+      "query_id": "BQ04",
+      "intent": "casual_archive_help",
+      "answer_word_count": 10,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "answer_word_count": 20,
+      "query_keyword_count": 2,
+      "jaccard_similarity": 0.0526,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the current object is a French inscription on a SURF-GAX1970R001 record. Output: <! DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1. 0 Transitional//EN\" \"http://www. w3. org/TR/xhtml1/DTD/xhtml1"
+    },
+    {
+      "query_id": "BQ06",
+      "intent": "current_object_explanation",
+      "answer_word_count": 12,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.4,
+      "intent_anchor_hits": [
+        "region"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this record is represented by Monsieur, vous avez réclamé votre inscription. , dated 1830, with region France."
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "answer_word_count": 24,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the primary source record is Monsieur, who has recently re-enacted his inscription. Output: <! DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1. 0\">"
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "answer_word_count": 20,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.0476,
+      "intent_anchor_hits": [
+        "compare",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, compare the source-linked records Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897. jpg; ApollonMagazine. jpg using the exact evidence tags below."
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "answer_word_count": 20,
+      "query_keyword_count": 15,
+      "jaccard_similarity": 0.5714,
+      "intent_anchor_hits": [
+        "compare",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, compare the source-linked records Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897. jpg; ApollonMagazine. jpg using the exact evidence tags below."
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 18,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1,
+      "intent_anchor_hits": [
+        "route"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use Monsieur, vous avez réclamé votre inscription. ; La typographie : poëme / par M. L. Pelletier and related records as a source-backed route through France around 1830; 1832 and related records."
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 21,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.1429,
+      "intent_anchor_hits": [
+        "route"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use Diego Portales-D S No 20. JPG; El restaurador de las leyes. jpg and related records as a source-backed route through Latin America / Chile; Latin America / Argentina around 1837; 1840 and related records."
+    },
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.0526,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ24",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "answer_word_count": 9,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0.0833,
+      "intent_anchor_hits": [
+        "context",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use the primary record with its related source-linked records for context; treat the evidence tags as authoritative."
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "answer_word_count": 9,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.0909,
+      "intent_anchor_hits": [
+        "context",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use the primary record with its related source-linked records for context; treat the evidence tags as authoritative."
+    },
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "answer_word_count": 33,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, - This is a source-linked research archive for graphic design and visual communication records. - It organizes records through folders/topology: India, Modern typography and layout, Graphic design object record, Unresolved region, Midcentury modern graphic communication, Lithographic print. - Surface types in the packet: sheet. - Publication roles in the packet: main"
+    },
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ033",
+      "intent": "archive_orientation",
+      "answer_word_count": 31,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.0323,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, - France is the source of the archive. - It organizes records through folders/topology: France, Midcentury modern graphic communication, Graphic design object record, Unresolved region, Modern typography and layout, World War and public-information graphics. - It organizes records through folders/topology: Gallica / BnF APIs, Wikimedia Commons file source"
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "answer_word_count": 31,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.0323,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, - France is the source of the archive. - It organizes records through folders/topology: France, Midcentury modern graphic communication, Graphic design object record, Unresolved region, Modern typography and layout, World War and public-information graphics. - It organizes records through folders/topology: Gallica / BnF APIs, Wikimedia Commons file source"
+    },
+    {
+      "query_id": "BQ035",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ036",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ037",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ038",
+      "intent": "archive_orientation",
+      "answer_word_count": 30,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Archive facts you may use: - This is a source-linked research archive for graphic design and visual communication records. - It organizes records through folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, France, Travel and transport poster culture, Russia. - Surface types in the packet: sheet. - Publication"
+    },
+    {
+      "query_id": "BQ039",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ040",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ041",
+      "intent": "archive_orientation",
+      "answer_word_count": 28,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.0571,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, The archive is organized by folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, Latin America, United States, Poster. The archive is directed to the source family represented by the page 102829467, Wikimedia Commons file source / The Soviet Union 1977 CPA"
+    },
+    {
+      "query_id": "BQ042",
+      "intent": "archive_orientation",
+      "answer_word_count": 27,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.2609,
+      "intent_anchor_hits": [
+        "view",
+        "start"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, question: How should I orient myself between Russia and Latin America / Mexico records in this archive? Intent: archive_orientation Required behavior: answer about the archive view as a whole, not about one object. Keep the generated answer body under 45 words. Start the answer body with: Based on these records, Archive facts you may use: - This"
+    },
+    {
+      "query_id": "BQ043",
+      "intent": "archive_orientation",
+      "answer_word_count": 29,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.0588,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Archive facts you may use: - This is a source-linked research archive for graphic design and visual communication records. - It organizes records through folders/topology: Unresolved region, Modern typography and layout, Poster, Latin America, Publication design, United States. - Surface types in the packet: sheet. - Publication roles in the"
+    },
+    {
+      "query_id": "BQ044",
+      "intent": "casual_archive_help",
+      "answer_word_count": 10,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ045",
+      "intent": "casual_archive_help",
+      "answer_word_count": 10,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ046",
+      "intent": "casual_archive_help",
+      "answer_word_count": 10,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ047",
+      "intent": "casual_archive_help",
+      "answer_word_count": 10,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ048",
+      "intent": "casual_archive_help",
+      "answer_word_count": 10,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ049",
+      "intent": "casual_archive_help",
+      "answer_word_count": 10,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ050",
+      "intent": "casual_archive_help",
+      "answer_word_count": 10,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    }
+  ]
+}

@@ -95,6 +95,9 @@
     "v41:raw-template:300": "node scripts/build_v41_raw_generation_template.mjs --packets reports/v41_universal_packets_300.json --out reports/v41_raw_generation_template_300.jsonl",
     "v41:finalize:pilot50": "node scripts/finalize_v41_model_results.mjs --packets reports/v41_universal_packets_pilot50.json --raw-generations reports/v41_raw_generations_pilot50.jsonl --round-id v41_cross_model_pilot50 --json-out reports/v41_cross_model_pilot50_export.json --imported-json-out reports/v41_cross_model_pilot50.json --answers-out reports/v41_cross_model_pilot50_answers.jsonl --md-out reports/V41_CROSS_MODEL_PILOT50.md --strict",
     "v41:finalize:300": "node scripts/finalize_v41_model_results.mjs --packets reports/v41_universal_packets_300.json --raw-generations reports/v41_raw_generations_300.jsonl --round-id v41_cross_model_300 --json-out reports/v41_cross_model_300_export.json --imported-json-out reports/v41_cross_model_300.json --answers-out reports/v41_cross_model_300_answers.jsonl --md-out reports/V41_CROSS_MODEL_300.md --strict",
+    "v41:run:smollm2-135m:pilot50": "node scripts/run_v41_transformers_generation.mjs --template reports/v41_raw_generation_template_pilot50.jsonl --out reports/v41_raw_generations_pilot50_smollm2_135m.jsonl --model HuggingFaceTB/SmolLM2-135M-Instruct --runtime transformers_js_node_smollm2_135m --max-new-tokens 80",
+    "v41:run:smollm2-360m:pilot50": "node scripts/run_v41_transformers_generation.mjs --template reports/v41_raw_generation_template_pilot50.jsonl --out reports/v41_raw_generations_pilot50_smollm2_360m.jsonl --model HuggingFaceTB/SmolLM2-360M-Instruct --runtime transformers_js_node_smollm2_360m --max-new-tokens 80",
+    "v41:run:smollm2-360m:300": "node scripts/run_v41_transformers_generation.mjs --template reports/v41_raw_generation_template_300.jsonl --out reports/v41_raw_generations_300_smollm2_360m.jsonl --model HuggingFaceTB/SmolLM2-360M-Instruct --runtime transformers_js_node_smollm2_360m --max-new-tokens 80",
     "quality:faithfulness": "node scripts/audit_answer_faithfulness.mjs",
     "quality:usability": "node scripts/score_answer_usability.mjs",
     "quality:hallucination": "node scripts/detect_hallucination.mjs",
@@ -170,5 +173,8 @@
     "evidence-compression",
     "digital-archives"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0"
+  }
 }
