@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-06-10T07:44:34.085Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl",
+    "answersPath": "reports/v41_smollm2_360m_300_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 191,
+    "unsupported_date_count": 0,
+    "unsupported_triple_answer_count": 0,
+    "unsupported_triple_ratio": 0,
+    "unsupported_triple_ratio_threshold": 0.05,
+    "unsupported_entity_answer_count": 6,
+    "unsupported_entity_ratio": 0.0314,
+    "unsupported_entity_ratio_threshold": 0.1,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": [
+    {
+      "query_id": "BQ079",
+      "intent": "current_object_explanation",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "France Summary"
+      ],
+      "unsupported_triples": [],
+      "answer_body": "Based on these records, To the Amputees—Join the Workforce | c. 1918 | France Summary: This record is about a primary evidence id, which is a primary record. The record is about a primary evidence id, which is a primary record."
+    },
+    {
+      "query_id": "BQ081",
+      "intent": "current_object_explanation",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Summary"
+      ],
+      "unsupported_triples": [],
+      "answer_body": "Based on these records, Use Getz cockroach and bed bug exterminators, sold by all druggists I sink I tan hit it. Summary: Use Getz cockroach and bed bug exterminators, sold by all druggists I sink I tan hit it."
+    },
+    {
+      "query_id": "BQ131",
+      "intent": "region_period_recommendation",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Next"
+      ],
+      "unsupported_triples": [],
+      "answer_body": "Based on these records, the most relevant research route through Global / release gate expansion and nearby period evidence is to explore the Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat'). This record provides a primary evidence id for the period. Next"
+    },
+    {
+      "query_id": "BQ211",
+      "intent": "casual_archive_help",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Images"
+      ],
+      "unsupported_triples": [],
+      "answer_body": "Based on these records, the archive view is organized through folders and topology, with publication roles and surface types represented. The source families include Wikimedia Commons, Art Institute of Chicago, and the browser-local RAG lab. The archive is open, requires a research fixture, and has rights states. Images are IMG03 and IMG00."
+    },
+    {
+      "query_id": "BQ214",
+      "intent": "current_object_explanation",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Output"
+      ],
+      "unsupported_triples": [],
+      "answer_body": "Based on these records, Oud-generaal als straatmuzikant, NG-850-60. jpg, is a primary record for the current object. Output: Based on these records, Oud-generaal als straatmuzikant, NG-850-60. jpg, is a primary"
+    },
+    {
+      "query_id": "BQ233",
+      "intent": "comparison",
+      "unsupported_dates": [],
+      "unsupported_entities": [
+        "Output"
+      ],
+      "unsupported_triples": [],
+      "answer_body": "Based on these records, SURF-ER1830R008 and SURF-CRG2026R0031 are source-grounded graphic communication evidence. Output body: Based on these records, SURF-ER1830R008 and SURF-CRG2026R"
+    }
+  ]
+}

@@ -138,7 +138,9 @@ export function polishProse(text, { label = {}, evidence = [] } = {}) {
     polished = replaceAndLog(polished, /\bthe earliest\b/gi, "one of the early", actions, "soften_the_earliest");
     if (label.intent !== "first_earliest_claim") {
       polished = replaceAndLog(polished, /\bfirst\s+(example|case|instance|use|appearance)\b/gi, "early $1", actions, "soften_first_claim");
+      polished = replaceAndLog(polished, /\bfirst\s+(published|printed|issued|released|created|made|produced|recorded|appeared)\b/gi, "$1", actions, "remove_adverbial_first_claim");
       polished = replaceAndLog(polished, /\bearliest\s+(example|case|instance|use|appearance)\b/gi, "early $1", actions, "soften_earliest_claim");
+      polished = replaceAndLog(polished, /\bearliest\s+(published|printed|issued|released|created|made|produced|recorded|appeared)\b/gi, "$1", actions, "remove_adverbial_earliest_claim");
       polished = replaceAndLog(polished, /\boriginal\s+(example|case|instance|use|appearance)\b/gi, "early $1", actions, "soften_original_claim");
     }
   }
