@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-10T06:07:46.907Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency300_v33_postprocessed_prose_answers.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 191,
+    "suspicious_answer_count": 6,
+    "suspicious_answer_ratio": 0.0314,
+    "suspicious_ratio_threshold": 0.1,
+    "date_hallucination_count": 0,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": [
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Specific"
+        }
+      ],
+      "answer_body": "Based on these records, the archive view is a comprehensive collection of visual and design records organized by geography and typography, managed by Wikimedia Commons and the Paganini archive. Specific rights states and image-state codes define its scope."
+    },
+    {
+      "query_id": "BQ110",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Brazil"
+        }
+      ],
+      "answer_body": "Based on these records, SURF-CGS2026R0909 is a 1846 publication from Brazil, while SURF-CRG2026R0100 is a 1885 publication from Vietnam."
+    },
+    {
+      "query_id": "BQ113",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Japanese"
+        }
+      ],
+      "answer_body": "Based on these records, SURF-CRG2026R0027 is a Japanese military aerial reconnaissance image while SURF-ER1830R059 is a 19th-century French sculptress portrait."
+    },
+    {
+      "query_id": "BQ115",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "South Asian"
+        }
+      ],
+      "answer_body": "Based on these records, the 1865 Zanzibar stamp is a South Asian currency, while the 1895 US Modern Poster is a US currency."
+    },
+    {
+      "query_id": "BQ230",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 2,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "South Asia Indian"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Latin American Mexico"
+        }
+      ],
+      "answer_body": "Based on these records, SURF-CRG2026R0153 is a 1895 South Asia Indian street musician, while SURF-CGS2026R0908 is a 1842 Latin American Mexico museum."
+    },
+    {
+      "query_id": "BQ232",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Caribbean"
+        }
+      ],
+      "answer_body": "Based on these records, SURF-ER1830R002 (1840-1849) and SURF-CGS2026R0910 (1846) differ in region and date. an early is from the Caribbean, while the second is from Latin America/Mexico."
+    }
+  ]
+}

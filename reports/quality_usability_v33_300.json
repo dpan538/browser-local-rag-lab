@@ -1,0 +1,2710 @@
+{
+  "generated_at": "2026-06-10T06:07:47.036Z",
+  "inputs": {
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl",
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency300_v33_postprocessed_prose_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 191,
+    "too_short_count": 7,
+    "too_short_ratio": 0.0366,
+    "too_short_ratio_threshold": 0.05,
+    "off_topic_count": 0,
+    "off_topic_ratio": 0,
+    "off_topic_ratio_threshold": 0.05,
+    "off_topic_similarity_threshold": 0.05,
+    "too_short_word_threshold": 4,
+    "answer_source": "delivered_answer_text"
+  },
+  "rows": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "answer_word_count": 7,
+      "query_keyword_count": 0,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive is a source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ02",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 1,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ03",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 1,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a structured collection of design and layout records organized by themes and publication roles."
+    },
+    {
+      "query_id": "BQ04",
+      "intent": "casual_archive_help",
+      "answer_word_count": 8,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.3,
+      "intent_anchor_hits": [
+        "folder"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the simplest next step is to access the unresolvable region folder."
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "answer_word_count": 7,
+      "query_keyword_count": 2,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Monsieur requested his inscription in 1830 in France."
+    },
+    {
+      "query_id": "BQ06",
+      "intent": "current_object_explanation",
+      "answer_word_count": 7,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.1429,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Monsieur requested his inscription in 1830 in France."
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "answer_word_count": 12,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "region"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this record is represented by Monsieur, vous avez réclamé votre inscription. , dated 1830, with region France."
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "answer_word_count": 15,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-COM1970R007 is a 1897 image of Israel Kaplan's school in Minsk, Russia, while SURF-CRG2026R0235 is a 1909 Global release gate expansion."
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "answer_word_count": 20,
+      "query_keyword_count": 15,
+      "jaccard_similarity": 0.7368,
+      "intent_anchor_hits": [
+        "primary",
+        "secondary"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897. jpg and ApollonMagazine. jpg differ in source support by being a primary source for an early and a secondary source for the second."
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 6,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1,
+      "intent_anchor_hits": [
+        "route",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the recommended route is the 1832 period of the *Poëme* by M. L. Pelletier."
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 21,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.2174,
+      "intent_anchor_hits": [
+        "region"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, modern graphic design in Latin America often utilizes the 1837 Diego Portales-D S No 20. JPG image as a foundational visual element, reflecting the region's historical cultural context."
+    },
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "answer_word_count": 13,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.1538,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive decides what counts as evidence by evaluating the source-linked metadata, compact text, and rights fields as retrieval evidence."
+    },
+    {
+      "query_id": "BQ24",
+      "intent": "method_process_question",
+      "answer_word_count": 30,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.2,
+      "intent_anchor_hits": [
+        "method",
+        "metadata",
+        "rights"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the assistant does not answer like a general chatbot because the Browser-local RAG lab method context indicates the data is stored in a Browser-local RAG lab method context. This is a source-linked metadata field requiring compact text and source rights before generation. AI. | 2026-06-07 | Research method"
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "answer_word_count": 14,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0.1333,
+      "intent_anchor_hits": [
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the object's period spans from 1897 to 1912, with the primary evidence being the 1897 advertisement of the \"LeTorah Va'at\" school in Minsk, Russia."
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "answer_word_count": 8,
+      "query_keyword_count": 3,
+      "jaccard_similarity": 0.1,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, you should read the 1897 Minsk poster and the 1977 Soviet stamp."
+    },
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "answer_word_count": 69,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: India, Modern typography and layout, Graphic design object record, Unresolved region, Midcentury modern graphic communication, Lithographic print. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865. jpg / page 63346338, Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865. jpg / page 6334633"
+    },
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "answer_word_count": 20,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a comprehensive collection of visual and design records organized by geography and typography, managed by Wikimedia Commons and the Paganini archive. Specific rights states and image-state codes define its scope."
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a structured collection of visual and typographic documents organized by thematic domains."
+    },
+    {
+      "query_id": "BQ033",
+      "intent": "archive_orientation",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a structured collection of visual and textual documents organized by thematic categories and publication roles. It serves as a source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ035",
+      "intent": "archive_orientation",
+      "answer_word_count": 21,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a unified structure organizing French and Russian visual records under specific topological folders and surface types. This helps ensure the entire system reflects both cultural domains."
+    },
+    {
+      "query_id": "BQ036",
+      "intent": "archive_orientation",
+      "answer_word_count": 18,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a structured collection of visual and textual documents organized by thematic and geographic domains. It serves as a comprehensive repository for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ037",
+      "intent": "archive_orientation",
+      "answer_word_count": 19,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a structured collection of visual and textual documents organized by thematic regions and publication roles. It serves as a source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ038",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "organized",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a unified source for graphic design and visual communication records organized by unstructured folders."
+    },
+    {
+      "query_id": "BQ039",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a unified structure organizing records by topic and type, not a single isolated object."
+    },
+    {
+      "query_id": "BQ040",
+      "intent": "archive_orientation",
+      "answer_word_count": 18,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a structured collection of graphic design and visual communication documents organized by topic and publication roles. It serves as a comprehensive record of the period's visual culture."
+    },
+    {
+      "query_id": "BQ041",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ042",
+      "intent": "archive_orientation",
+      "answer_word_count": 11,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "organized",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a structured collection of visual communication and design objects organized by geography and era."
+    },
+    {
+      "query_id": "BQ043",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ044",
+      "intent": "casual_archive_help",
+      "answer_word_count": 9,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to verify the file's ownership status and access permissions."
+    },
+    {
+      "query_id": "BQ045",
+      "intent": "casual_archive_help",
+      "answer_word_count": 14,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1176,
+      "intent_anchor_hits": [
+        "design"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to verify the image state code IMG03 and check the source-family details for the Graphic design object record."
+    },
+    {
+      "query_id": "BQ046",
+      "intent": "casual_archive_help",
+      "answer_word_count": 56,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: France, Midcentury modern graphic communication, Graphic design object record, United States, Poster. Surface types in the packet: sheet. Publication roles in the packet: main_sheet, support_packet_appendix_text. Source families represented: Gallica / BnF APIs, Art Institute of Chicago API. Rights states represented: open_candidate, rights_review_required. Image-state codes represented: IMG03, IMG00."
+    },
+    {
+      "query_id": "BQ047",
+      "intent": "casual_archive_help",
+      "answer_word_count": 8,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1818,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to verify the source-family rights status for the image."
+    },
+    {
+      "query_id": "BQ048",
+      "intent": "casual_archive_help",
+      "answer_word_count": 7,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this is a source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ049",
+      "intent": "casual_archive_help",
+      "answer_word_count": 7,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.3333,
+      "intent_anchor_hits": [
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, it is a simple next step to view the main_sheet."
+    },
+    {
+      "query_id": "BQ050",
+      "intent": "casual_archive_help",
+      "answer_word_count": 8,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1818,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to verify the image's provenance and copyright status."
+    },
+    {
+      "query_id": "BQ051",
+      "intent": "casual_archive_help",
+      "answer_word_count": 13,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to verify the source-family link and check the rights_review_required status for the specific image."
+    },
+    {
+      "query_id": "BQ052",
+      "intent": "casual_archive_help",
+      "answer_word_count": 8,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1818,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to verify the image's provenance and copyright status."
+    },
+    {
+      "query_id": "BQ053",
+      "intent": "casual_archive_help",
+      "answer_word_count": 7,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this is a source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ054",
+      "intent": "casual_archive_help",
+      "answer_word_count": 69,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, United States, Midcentury modern graphic communication, Poster, France. Surface types in the packet: sheet. Publication roles in the packet: main_sheet, support_packet_appendix_text. Source families represented: Wikimedia Commons file source / The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU). png / page 102829467, Art Institute of Chicago API, Gallica / Bn"
+    },
+    {
+      "query_id": "BQ055",
+      "intent": "casual_archive_help",
+      "answer_word_count": 7,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this is a source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ056",
+      "intent": "casual_archive_help",
+      "answer_word_count": 9,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1818,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to verify the source's current status and associated rights status."
+    },
+    {
+      "query_id": "BQ057",
+      "intent": "casual_archive_help",
+      "answer_word_count": 16,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1053,
+      "intent_anchor_hits": [
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the next step is to verify the image's publication role and source family to ensure it is correctly categorized within the graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ058",
+      "intent": "current_object_explanation",
+      "answer_word_count": 2,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": true,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary source."
+    },
+    {
+      "query_id": "BQ059",
+      "intent": "current_object_explanation",
+      "answer_word_count": 7,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Diego Portales-D S No 20. JPG is the primary source for the current object."
+    },
+    {
+      "query_id": "BQ060",
+      "intent": "current_object_explanation",
+      "answer_word_count": 7,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 describes the restoration of laws in Latin America and Argentina."
+    },
+    {
+      "query_id": "BQ061",
+      "intent": "current_object_explanation",
+      "answer_word_count": 3,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": true,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary evidence."
+    },
+    {
+      "query_id": "BQ062",
+      "intent": "current_object_explanation",
+      "answer_word_count": 17,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the Temple of Xochicalco, Exposition Universelle Paris 1867, from Illustrated London News, 01. Juni 1867. jpg | 1842 | Latin America / Mexico."
+    },
+    {
+      "query_id": "BQ063",
+      "intent": "current_object_explanation",
+      "answer_word_count": 8,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0.0909,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Ingermina. png is the primary evidence of Latin America and Colombia."
+    },
+    {
+      "query_id": "BQ064",
+      "intent": "current_object_explanation",
+      "answer_word_count": 5,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is located in Latin America/Argentina."
+    },
+    {
+      "query_id": "BQ065",
+      "intent": "current_object_explanation",
+      "answer_word_count": 4,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary source for the current object."
+    },
+    {
+      "query_id": "BQ066",
+      "intent": "current_object_explanation",
+      "answer_word_count": 4,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary source for the current object."
+    },
+    {
+      "query_id": "BQ067",
+      "intent": "current_object_explanation",
+      "answer_word_count": 4,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary source for the current object."
+    },
+    {
+      "query_id": "BQ068",
+      "intent": "current_object_explanation",
+      "answer_word_count": 3,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": true,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary evidence."
+    },
+    {
+      "query_id": "BQ069",
+      "intent": "current_object_explanation",
+      "answer_word_count": 5,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary evidence for the current object."
+    },
+    {
+      "query_id": "BQ070",
+      "intent": "current_object_explanation",
+      "answer_word_count": 14,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865. jpg."
+    },
+    {
+      "query_id": "BQ071",
+      "intent": "current_object_explanation",
+      "answer_word_count": 6,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 describes the Indian trading post and fort."
+    },
+    {
+      "query_id": "BQ072",
+      "intent": "current_object_explanation",
+      "answer_word_count": 9,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is a 1941 French Indochina anthem from the 1885 period in Southeast Asia."
+    },
+    {
+      "query_id": "BQ073",
+      "intent": "current_object_explanation",
+      "answer_word_count": 3,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": true,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is not the current object."
+    },
+    {
+      "query_id": "BQ074",
+      "intent": "current_object_explanation",
+      "answer_word_count": 10,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Oud-generaal als straatmuzikant, NG-850-60. jpg | 1895 | South Asia / India"
+    },
+    {
+      "query_id": "BQ075",
+      "intent": "current_object_explanation",
+      "answer_word_count": 4,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Sculptress is the current object."
+    },
+    {
+      "query_id": "BQ076",
+      "intent": "current_object_explanation",
+      "answer_word_count": 4,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary source for the current object."
+    },
+    {
+      "query_id": "BQ077",
+      "intent": "current_object_explanation",
+      "answer_word_count": 7,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "document"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, The Modern Poster is a 1895 United States document."
+    },
+    {
+      "query_id": "BQ078",
+      "intent": "current_object_explanation",
+      "answer_word_count": 3,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": true,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary source for this object."
+    },
+    {
+      "query_id": "BQ079",
+      "intent": "current_object_explanation",
+      "answer_word_count": 4,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 describes the Amputees' Workforce."
+    },
+    {
+      "query_id": "BQ080",
+      "intent": "current_object_explanation",
+      "answer_word_count": 3,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": true,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the current object."
+    },
+    {
+      "query_id": "BQ081",
+      "intent": "current_object_explanation",
+      "answer_word_count": 11,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Getz cockroach and bed bug exterminators are sold by all druggists I sink I tan hit it."
+    },
+    {
+      "query_id": "BQ082",
+      "intent": "current_object_explanation",
+      "answer_word_count": 3,
+      "query_keyword_count": 4,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "region"
+      ],
+      "evidence_value_hit": true,
+      "too_short": true,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is an Unresolved region."
+    },
+    {
+      "query_id": "BQ102",
+      "intent": "comparison",
+      "answer_word_count": 12,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CRG2026R0246 is a global release gate expansion from 1910, while SURF-CGS2026R0031 is a Latin America/Argentina record from 1845."
+    },
+    {
+      "query_id": "BQ103",
+      "intent": "comparison",
+      "answer_word_count": 11,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1333,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CRG2026R0274 is a Russian release gate expansion while SURF-CGS2026R0909 is a Latin America document from 1846."
+    },
+    {
+      "query_id": "BQ104",
+      "intent": "comparison",
+      "answer_word_count": 23,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Diego Portales-D S No 20. JPG (1837) and Republic of Rio Grande. And Friend of the People. (Brownsville, Tex. ), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2). jpg (1846) are graphic communication evidence."
+    },
+    {
+      "query_id": "BQ105",
+      "intent": "comparison",
+      "answer_word_count": 8,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CGS2026R0328 and SURF-CRG2026R0020 differ in region, date, and content type."
+    },
+    {
+      "query_id": "BQ106",
+      "intent": "comparison",
+      "answer_word_count": 32,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.0571,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CGS2026R0030 is a 1842 stamp commemorating the centenary of José Manuel Estrada, while SURF-CRG2026R0027 is a 1863 image of HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala. , is escorted by Col. Herbert R. Volin, Tokyo Air. - NARA - 542291. tif | 1863 | East Asia / China."
+    },
+    {
+      "query_id": "BQ107",
+      "intent": "comparison",
+      "answer_word_count": 9,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1538,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CGS2026R0908 is from 1842 in Latin America, while SURF-CRG2026R0031 is from 1865 in South Asia."
+    },
+    {
+      "query_id": "BQ108",
+      "intent": "comparison",
+      "answer_word_count": 14,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1765,
+      "intent_anchor_hits": [
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Ingermina. png (1844) and East India postage Queen Victoria stamp (1865) are graphic communication evidence."
+    },
+    {
+      "query_id": "BQ109",
+      "intent": "comparison",
+      "answer_word_count": 16,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R015 is a 1876 illustration of Indian traders preparing for trade, while SURF-CGS2026R0031 is a 1845 image of a trader's store and fort in Latin America."
+    },
+    {
+      "query_id": "BQ110",
+      "intent": "comparison",
+      "answer_word_count": 9,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CGS2026R0909 is a 1846 publication from Brazil, while SURF-CRG2026R0100 is a 1885 publication from Vietnam."
+    },
+    {
+      "query_id": "BQ111",
+      "intent": "comparison",
+      "answer_word_count": 8,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CGS2026R0910 is a 19th-century document while SURF-ER1830R046 is a 21st-century digital image."
+    },
+    {
+      "query_id": "BQ112",
+      "intent": "comparison",
+      "answer_word_count": 12,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CRG2026R0020 is a global release gate expansion while SURF-CRG2026R0153 is a South Asia/India street musician."
+    },
+    {
+      "query_id": "BQ113",
+      "intent": "comparison",
+      "answer_word_count": 12,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CRG2026R0027 is a Japanese military aerial reconnaissance image while SURF-ER1830R059 is a 19th-century French sculptress portrait."
+    },
+    {
+      "query_id": "BQ114",
+      "intent": "comparison",
+      "answer_word_count": 12,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CRG2026R0031 is a 1865 stamp from South Asia, while SURF-CRG2026R0175 is a 1899 global release gate expansion."
+    },
+    {
+      "query_id": "BQ115",
+      "intent": "comparison",
+      "answer_word_count": 11,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the 1865 Zanzibar stamp is a South Asian currency, while the 1895 US Modern Poster is a US currency."
+    },
+    {
+      "query_id": "BQ116",
+      "intent": "comparison",
+      "answer_word_count": 12,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R015 depicts Indian traders preparing for trade and returning with dissatisfaction, while SURF-ER1830R064 shows the Marines."
+    },
+    {
+      "query_id": "BQ117",
+      "intent": "comparison",
+      "answer_word_count": 9,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1538,
+      "intent_anchor_hits": [
+        "compare",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, compare the two source-linked records using the evidence tags as the authoritative field list."
+    },
+    {
+      "query_id": "BQ118",
+      "intent": "comparison",
+      "answer_word_count": 13,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.3571,
+      "intent_anchor_hits": [
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R066 is a superior graphic communication evidence as it provides more detailed and specific visual data compared to SURF-ER1830R046."
+    },
+    {
+      "query_id": "BQ119",
+      "intent": "comparison",
+      "answer_word_count": 9,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1538,
+      "intent_anchor_hits": [
+        "compare",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, compare the two source-linked records using the evidence tags as the authoritative field list."
+    },
+    {
+      "query_id": "BQ120",
+      "intent": "comparison",
+      "answer_word_count": 11,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1333,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R059 is a 19th-century female sculptress from France, while SURF-ER1830R017 is an unresolved advertising card from 1880-1882."
+    },
+    {
+      "query_id": "BQ121",
+      "intent": "comparison",
+      "answer_word_count": 7,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.4444,
+      "intent_anchor_hits": [
+        "evidence",
+        "primary",
+        "secondary"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R019 is a primary graphic evidence while SURF-CRG2026R0175 is secondary."
+    },
+    {
+      "query_id": "BQ122",
+      "intent": "comparison",
+      "answer_word_count": 7,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.4444,
+      "intent_anchor_hits": [
+        "evidence",
+        "primary",
+        "secondary"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R052 is the primary graphic evidence while SURF-ER1830R001-GROUP is secondary."
+    },
+    {
+      "query_id": "BQ123",
+      "intent": "comparison",
+      "answer_word_count": 8,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R064 is a 1914/18 US record while SURF-CHW2026R001 is a ca. 1835 Austria Vienna Europe record."
+    },
+    {
+      "query_id": "BQ124",
+      "intent": "comparison",
+      "answer_word_count": 10,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1429,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R065 and SURF-ER1830R002 differ in their specific Trade card details and associated dates."
+    },
+    {
+      "query_id": "BQ125",
+      "intent": "comparison",
+      "answer_word_count": 7,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1818,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R066 and SURF-SI1970R001 differ in region, date, and content."
+    },
+    {
+      "query_id": "BQ126",
+      "intent": "comparison",
+      "answer_word_count": 6,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.2,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R011 is Unresolved region while SURF-CRG2026R0002 is Global."
+    },
+    {
+      "query_id": "BQ127",
+      "intent": "comparison",
+      "answer_word_count": 14,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.1176,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R017 is an Unresolved region dated between 1880 and 1882, while SURF-CRG2026R0003 is a global release gate expansion dated 1834."
+    },
+    {
+      "query_id": "BQ128",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 17,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.2381,
+      "intent_anchor_hits": [
+        "route"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the recommended route is to explore the 14911656518. jpg record for Paganini par David d'Angers (Angers) (1830) to see the Global / release gate expansion."
+    },
+    {
+      "query_id": "BQ129",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 31,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.2381,
+      "intent_anchor_hits": [
+        "region",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the 1870 Global/Release gate expansion records suggest the region is a historical period of global expansion, while the 1830 France record indicates a specific local context. The 1870 records suggest the region is a historical period of global expansion, while the 1830 France record indicates a specific local context."
+    },
+    {
+      "query_id": "BQ130",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 13,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.2778,
+      "intent_anchor_hits": [
+        "region",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the 1870 Global/Release Gate expansion records suggest the 1830 France records are the primary source for the region_period recommendation."
+    },
+    {
+      "query_id": "BQ131",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 44,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.1163,
+      "intent_anchor_hits": [
+        "route"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat'). png; The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka. and related records as a source-backed route through Global / release gate expansion; France around 1870; 1877 and related records."
+    },
+    {
+      "query_id": "BQ132",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 15,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.4118,
+      "intent_anchor_hits": [
+        "route",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the route involves expanding the Global release gate via Record 1 (1877) and exploring nearby period evidence via Record 2 (1909)."
+    },
+    {
+      "query_id": "BQ133",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 18,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.2,
+      "intent_anchor_hits": [
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the 1909 Global expansion and 1910 expansion are primary evidence for the 1830 France period, indicating a direct historical continuity of the 1830 France period."
+    },
+    {
+      "query_id": "BQ134",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 18,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [
+        "route",
+        "region",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the route involves exploring the 1910 Global expansion via the 1912 PSE Russia record and examining the 1830 France inscription to determine the region's period."
+    },
+    {
+      "query_id": "BQ135",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 16,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.2381,
+      "intent_anchor_hits": [
+        "route",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the recommended route is to explore the 1912 Global expansion via the 1853 MiNr0243A and the 1830 France inscription to gather period evidence."
+    },
+    {
+      "query_id": "BQ136",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 18,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.4,
+      "intent_anchor_hits": [
+        "route",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the route involves examining the 1853 Global / release gate expansion (Record 1) and the 1899 Buffalo Bill's Wild West (Record 2) to find nearby period evidence."
+    },
+    {
+      "query_id": "BQ137",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 17,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.2857,
+      "intent_anchor_hits": [
+        "route",
+        "region",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the route involves expanding the Global release gate to include the 1831 Putzmühle and 1830 Monsieur records to capture the region's period evidence."
+    },
+    {
+      "query_id": "BQ138",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 16,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.0833,
+      "intent_anchor_hits": [
+        "route"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the recommended research route is to explore the 1831 Putzmühle in the Pöbeltal and the 1834 Umm al-Quwain-1967-Irones record to verify the 1830 France inscription."
+    },
+    {
+      "query_id": "BQ139",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 23,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.1852,
+      "intent_anchor_hits": [
+        "route"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the route involves examining the 1834 stamps of Umm al-Quwain and the Town Hall. This indicate a global release gate expansion context, while the 1830 record of Monsieur confirms the specific French inscription context."
+    },
+    {
+      "query_id": "BQ140",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 49,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.0889,
+      "intent_anchor_hits": [
+        "region"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, The Town Hall, Market Place, Tamworth - geograph. org. uk - 1741283. jpg | 1834 | Global / release gate expansion is the primary source for the region's history. The Treaty of Waitangi, New Zealand, February 5 and 6, 1840 - Cover. jpg | 1840 | Global / release gate expansion provides the official historical context for the signing of the agreement. Monsieur, vous avez réclamé votre inscription. | 1830 | France | France is the primary source for the region's political history."
+    },
+    {
+      "query_id": "BQ141",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 30,
+      "query_keyword_count": 10,
+      "jaccard_similarity": 0.1563,
+      "intent_anchor_hits": [
+        "route"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use The authentic and genuine history of the signing of the Treaty of Waitangi, New Zealand, February 5 and 6, 1840 - Cover. jpg; Paganini par David d'Angers (Angers) (14911656518). jpg and related records as a source-backed route through Global / release gate expansion; France around 1840; 1830."
+    },
+    {
+      "query_id": "BQ142",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 22,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.16,
+      "intent_anchor_hits": [
+        "route",
+        "region",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the recommended research route is to examine the 1832 typographical poem by M. L. Pelletier and the 1834 play by M. Dorsay and Jane Gray, as these primary sources provide the most direct evidence for the region's period."
+    },
+    {
+      "query_id": "BQ143",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 8,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.1538,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, France has historical theater and typographical evidence from 1830 and 1835."
+    },
+    {
+      "query_id": "BQ144",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 24,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.0769,
+      "intent_anchor_hits": [
+        "route"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use Manuel nouveau de typographie, imprimerie,. par A. Frey. Partie 1; Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie and related records as a source-backed route through France around 1835; 1838-1839 and related records."
+    },
+    {
+      "query_id": "BQ145",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 15,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.05,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, France's typographical industry operated from 1838 to 1839, while the 1830 inscription request and 1840 Lithographic printing occurred in France."
+    },
+    {
+      "query_id": "BQ146",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 12,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.2667,
+      "intent_anchor_hits": [
+        "route",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the primary route is through the 1840 lithographic press in France, which provides one of the early documented period evidence."
+    },
+    {
+      "query_id": "BQ147",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ148",
+      "intent": "method_process_question",
+      "answer_word_count": 7,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.75,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the browser-local RAG lab should decide to refuse to answer."
+    },
+    {
+      "query_id": "BQ149",
+      "intent": "method_process_question",
+      "answer_word_count": 7,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.75,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the browser-local RAG lab should decide to refuse to answer."
+    },
+    {
+      "query_id": "BQ150",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ151",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ152",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ153",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ154",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ155",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ156",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ157",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ158",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ159",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ160",
+      "intent": "method_process_question",
+      "answer_word_count": 19,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ161",
+      "intent": "more_context",
+      "answer_word_count": 9,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [
+        "context",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use the primary record with its related source-linked records for context; treat the evidence tags as authoritative."
+    },
+    {
+      "query_id": "BQ162",
+      "intent": "more_context",
+      "answer_word_count": 17,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.0476,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the surrounding context includes the 1830-1922 Trade card, the 1840 El restaurador de las leyes. jpg poster, and the Arundel Society chromolithograph series."
+    },
+    {
+      "query_id": "BQ163",
+      "intent": "more_context",
+      "answer_word_count": 19,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.0435,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the surrounding context includes midcentury modern graphic design and public-information graphics, with the primary source being Die Thierwelt (The Animal Kinggom) from ca. 1835 in Austria Vienna Europe."
+    },
+    {
+      "query_id": "BQ164",
+      "intent": "more_context",
+      "answer_word_count": 12,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.2143,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, inspect the Trade card for C. & J. Lintelo Brothers, Gold and Silversmiths, 1840-1849, to understand the context of SURF-ER1830R002."
+    },
+    {
+      "query_id": "BQ165",
+      "intent": "more_context",
+      "answer_word_count": 19,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.2353,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the context to inspect around SURF-SI1970R001 involves examining the 1830s Trade card and the 1840 poster to understand the historical Trade card's regional and global context."
+    },
+    {
+      "query_id": "BQ166",
+      "intent": "more_context",
+      "answer_word_count": 16,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.05,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the surrounding context includes the 1831 Putzmühle in the Pöbeltal, the 1840 Treaty of Waitangi, and the 1899 Buffalo Bill's Wild West."
+    },
+    {
+      "query_id": "BQ167",
+      "intent": "more_context",
+      "answer_word_count": 9,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [
+        "context",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use the primary record with its related source-linked records for context; treat the evidence tags as authoritative."
+    },
+    {
+      "query_id": "BQ168",
+      "intent": "more_context",
+      "answer_word_count": 9,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1667,
+      "intent_anchor_hits": [
+        "context",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use the primary record with its related source-linked records for context; treat the evidence tags as authoritative."
+    },
+    {
+      "query_id": "BQ169",
+      "intent": "more_context",
+      "answer_word_count": 50,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the related context to inspect around SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES includes the Arundel Society chromolithograph copy series (1864-1891), the Trade card for McKay Iron and Locomotive Works and an Arkansas railroad (between 1863 and 1868), and Théâtre dirigé par M. Dorsay ci-devant Mad. e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bello. (1834)."
+    },
+    {
+      "query_id": "BQ170",
+      "intent": "more_context",
+      "answer_word_count": 13,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, I should inspect the Unresolved region and Midcentury modern graphic communication sections to find the specific SURF-ER1830R008 entry."
+    },
+    {
+      "query_id": "BQ171",
+      "intent": "more_context",
+      "answer_word_count": 6,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.1,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, I should inspect the Trade card and Lithographic print."
+    },
+    {
+      "query_id": "BQ172",
+      "intent": "more_context",
+      "answer_word_count": 12,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the Town Hall is a modern typography object, the Buffalo Bill's is a poster, and the Imprimerie is a Lithographic print."
+    },
+    {
+      "query_id": "BQ173",
+      "intent": "more_context",
+      "answer_word_count": 15,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.0556,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the surrounding context includes the Treaty of Waitangi signing dates, the 1840 historical context, and the 1841 Eastern Europe stamp."
+    },
+    {
+      "query_id": "BQ174",
+      "intent": "more_context",
+      "answer_word_count": 7,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.0909,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the context includes 14911656518, 1830, Global, and 1870."
+    },
+    {
+      "query_id": "BQ175",
+      "intent": "more_context",
+      "answer_word_count": 14,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.0556,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the context includes the 1832 typographical work, the 1870 Soviet Union stamp, and the 1893 Aristide Bruant publication."
+    },
+    {
+      "query_id": "BQ176",
+      "intent": "more_context",
+      "answer_word_count": 17,
+      "query_keyword_count": 5,
+      "jaccard_similarity": 0.0476,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the surrounding context includes the Théâtre M. Dorsay, the 1834 historical drama, the 1870 Soviet Union 3886 sheet, and the 1893 Aristide Bruant."
+    },
+    {
+      "query_id": "BQ201",
+      "intent": "archive_orientation",
+      "answer_word_count": 18,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.3684,
+      "intent_anchor_hits": [
+        "folder",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive topology allows moving between Latin America / Argentina and United States evidence by navigating through the folder structure and accessing associated publication roles and source families."
+    },
+    {
+      "query_id": "BQ202",
+      "intent": "archive_orientation",
+      "answer_word_count": 13,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.3333,
+      "intent_anchor_hits": [
+        "folder",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive topology allows users to navigate between Latin America and France evidence through the folder structure and surface types."
+    },
+    {
+      "query_id": "BQ203",
+      "intent": "archive_orientation",
+      "answer_word_count": 20,
+      "query_keyword_count": 11,
+      "jaccard_similarity": 0.3889,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive topology allows moving between Austria Vienna Europe / Austria / Vienna / Europe and United States evidence through the Unresolved region and Midcentury modern graphic communication folders."
+    },
+    {
+      "query_id": "BQ204",
+      "intent": "archive_orientation",
+      "answer_word_count": 24,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.2727,
+      "intent_anchor_hits": [
+        "folder",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive topology allows moving between great britain; berlin; Berlin and USA; USA evidence through the folder \"World War and public-information graphics\" and the \"Trade card\" folder. This organize records by surface type and publication roles."
+    },
+    {
+      "query_id": "BQ205",
+      "intent": "archive_orientation",
+      "answer_word_count": 18,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.4211,
+      "intent_anchor_hits": [
+        "folders",
+        "topology"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive topology allows users to navigate between Eastern Europe / Romania and Latin America / Argentina evidence through the Unresolved region and Graphic design object record folders."
+    },
+    {
+      "query_id": "BQ206",
+      "intent": "archive_orientation",
+      "answer_word_count": 10,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.1176,
+      "intent_anchor_hits": [
+        "folders",
+        "topology",
+        "view"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ207",
+      "intent": "casual_archive_help",
+      "answer_word_count": 74,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "folders",
+        "view",
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: Latin America, Modern typography and layout, Publication design, Research lab method, United States, Midcentury modern graphic communication, Poster. Surface types in the packet: sheet, method. Publication roles in the packet: main_sheet, method_context, support_packet_appendix_text. Source families represented: Wikimedia Commons file source / Facundo. jpg / page 6629018, browser-local-rag-lab method files, Art Institute of Chicago API. Rights states represented: open_candidate, research_fixture, rights_review_required. Image-state codes represented: IMG03, IMG00."
+    },
+    {
+      "query_id": "BQ208",
+      "intent": "casual_archive_help",
+      "answer_word_count": 7,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this is a source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ209",
+      "intent": "casual_archive_help",
+      "answer_word_count": 14,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "view",
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a collection of visual communication records organized by design and method, with specific rights states indicating research requirements."
+    },
+    {
+      "query_id": "BQ210",
+      "intent": "casual_archive_help",
+      "answer_word_count": 8,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0.0769,
+      "intent_anchor_hits": [
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES is a source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ211",
+      "intent": "casual_archive_help",
+      "answer_word_count": 8,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "view",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive view is a collection of design and communication records organized by topic and provenance."
+    },
+    {
+      "query_id": "BQ212",
+      "intent": "casual_archive_help",
+      "answer_word_count": 7,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "research",
+        "design",
+        "communication"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, this is a source-linked research archive for graphic design and visual communication records."
+    },
+    {
+      "query_id": "BQ213",
+      "intent": "current_object_explanation",
+      "answer_word_count": 5,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary source for the French Indochina anthem."
+    },
+    {
+      "query_id": "BQ214",
+      "intent": "current_object_explanation",
+      "answer_word_count": 10,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Oud-generaal als straatmuzikant, NG-850-60. jpg | 1895 | South Asia / India"
+    },
+    {
+      "query_id": "BQ215",
+      "intent": "current_object_explanation",
+      "answer_word_count": 7,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Trade card grouped records, 1830-1922 | 1830-1922 | London"
+    },
+    {
+      "query_id": "BQ216",
+      "intent": "current_object_explanation",
+      "answer_word_count": 4,
+      "query_keyword_count": 6,
+      "jaccard_similarity": 0,
+      "intent_anchor_hits": [
+        "object"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Record 1 is the primary source for the current object."
+    },
+    {
+      "query_id": "BQ229",
+      "intent": "comparison",
+      "answer_word_count": 10,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.1333,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CRG2026R0100 is a 1941 French Indochina anthem while SURF-CGS2026R0681 is a 1837 Chilean document."
+    },
+    {
+      "query_id": "BQ230",
+      "intent": "comparison",
+      "answer_word_count": 14,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.1053,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-CRG2026R0153 is a 1895 South Asia Indian street musician, while SURF-CGS2026R0908 is a 1842 Latin American Mexico museum."
+    },
+    {
+      "query_id": "BQ231",
+      "intent": "comparison",
+      "answer_word_count": 12,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.1176,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R001-GROUP is a Trade card from 1830-1922 in London, while SURF-CGS2026R0909 is a document from 1846 in Latin America/Mexico."
+    },
+    {
+      "query_id": "BQ232",
+      "intent": "comparison",
+      "answer_word_count": 14,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.1053,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R002 (1840-1849) and SURF-CGS2026R0910 (1846) differ in region and date. an early is from the Caribbean, while the second is from Latin America/Mexico."
+    },
+    {
+      "query_id": "BQ233",
+      "intent": "comparison",
+      "answer_word_count": 6,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.3,
+      "intent_anchor_hits": [
+        "evidence",
+        "primary",
+        "secondary"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R008 is a primary source while SURF-CRG2026R0031 is secondary evidence."
+    },
+    {
+      "query_id": "BQ234",
+      "intent": "comparison",
+      "answer_word_count": 14,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.1053,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R011 is a documented exterminator product from the 1870s-1890s region, while SURF-CRG2026R0032 is a 1865 postage stamp from South Asia/India."
+    },
+    {
+      "query_id": "BQ235",
+      "intent": "comparison",
+      "answer_word_count": 10,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.1333,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R017 (between 1880 and 1882) and SURF-ER1830R004 (between 1863 and 1868) differ in region and duration."
+    },
+    {
+      "query_id": "BQ236",
+      "intent": "comparison",
+      "answer_word_count": 9,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.1429,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R018 is a Trade card from 1880, while SURF-ER1830R046 is a signature from 1893 in France."
+    },
+    {
+      "query_id": "BQ237",
+      "intent": "comparison",
+      "answer_word_count": 6,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.1818,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R019 is Unresolved region while SURF-CRG2026R0002 is Global."
+    },
+    {
+      "query_id": "BQ238",
+      "intent": "comparison",
+      "answer_word_count": 11,
+      "query_keyword_count": 7,
+      "jaccard_similarity": 0.125,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, SURF-ER1830R052 is a modern poster from the United States, while SURF-CRG2026R0003 is a stamp from the Irones by Edgar-Degas from 1834."
+    },
+    {
+      "query_id": "BQ239",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 10,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.1875,
+      "intent_anchor_hits": [
+        "route",
+        "region",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use the listed source-linked records as a cautious route through the region and period shown in the evidence tags."
+    },
+    {
+      "query_id": "BQ240",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 11,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.0588,
+      "intent_anchor_hits": [
+        "region"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the primary evidence is listed first when a primary evidence id is available. Record 1 is the most relevant source for this region."
+    },
+    {
+      "query_id": "BQ241",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 22,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.2,
+      "intent_anchor_hits": [
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the primary evidence is from El restaurador de las leyes. jpg (1840) and Facundo. jpg (1845). These records suggest a period of significant legal and commercial activity in Latin America and Argentina during the 1840s."
+    },
+    {
+      "query_id": "BQ242",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 13,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.2222,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the primary evidence is Oud-generaal als straatmuzikant, NG-850-60. jpg, dated 1895 in South Asia / India."
+    },
+    {
+      "query_id": "BQ243",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 13,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.1579,
+      "intent_anchor_hits": [
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the 1865 Queen Victoria stamps from South Asia and China are primary sources for regional period analysis."
+    },
+    {
+      "query_id": "BQ244",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 17,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.2353,
+      "intent_anchor_hits": [],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the 1865 Queen Victoria stamp is the primary evidence for South Asia/India, while the 1895 Oud-generaal record is the primary evidence for South Asia/India."
+    },
+    {
+      "query_id": "BQ245",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 26,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.1379,
+      "intent_anchor_hits": [
+        "route",
+        "region"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use Gardner's photographic advertising card; Use Getz cockroach and bed bug exterminators, sold by all druggists I sink I tan hit it. and related records as a source-backed route through Unresolved region; France around c1869; [between 1870 and 1890] and related records."
+    },
+    {
+      "query_id": "BQ246",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 19,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.1739,
+      "intent_anchor_hits": [
+        "region",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the Unresolved region period evidence is best supported by the 1830 France record for regional context and the 1870-1890 cockroach/bed bug records for specific pest control data."
+    },
+    {
+      "query_id": "BQ247",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 20,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.1739,
+      "intent_anchor_hits": [
+        "region",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, Unresolved region period evidence is best supported by the 1880 Trade card and the 1830 France inscription. This provide more recent context than the 1880s Deacon Crankett card."
+    },
+    {
+      "query_id": "BQ248",
+      "intent": "region_period_recommendation",
+      "answer_word_count": 18,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.1818,
+      "intent_anchor_hits": [
+        "region",
+        "period"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the Unresolved region period evidence is best supported by the 1880 Trade card and the 1830 France inscription, while the 1880-1890 reindeer records provide the region-specific timeframe."
+    },
+    {
+      "query_id": "BQ249",
+      "intent": "method_process_question",
+      "answer_word_count": 14,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.6154,
+      "intent_anchor_hits": [
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the browser-local RAG lab should decide whether evidence is sufficient or whether to refuse by evaluating the source's authority and relevance to the specific query."
+    },
+    {
+      "query_id": "BQ250",
+      "intent": "method_process_question",
+      "answer_word_count": 13,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.6667,
+      "intent_anchor_hits": [
+        "evidence",
+        "rights"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the browser-local RAG lab should decide whether evidence is sufficient or whether to refuse by evaluating the source's rights and context."
+    },
+    {
+      "query_id": "BQ251",
+      "intent": "method_process_question",
+      "answer_word_count": 12,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.0526,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence."
+    },
+    {
+      "query_id": "BQ252",
+      "intent": "method_process_question",
+      "answer_word_count": 13,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.6667,
+      "intent_anchor_hits": [
+        "evidence",
+        "rights"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the browser-local RAG lab should decide whether evidence is sufficient or whether to refuse by evaluating the source's rights and context."
+    },
+    {
+      "query_id": "BQ253",
+      "intent": "method_process_question",
+      "answer_word_count": 12,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.0526,
+      "intent_anchor_hits": [
+        "evidence",
+        "metadata",
+        "rights",
+        "fields"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence."
+    },
+    {
+      "query_id": "BQ254",
+      "intent": "method_process_question",
+      "answer_word_count": 15,
+      "query_keyword_count": 9,
+      "jaccard_similarity": 0.5714,
+      "intent_anchor_hits": [
+        "evidence",
+        "rights"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the browser-local RAG lab should decide whether evidence is sufficient or whether to refuse by evaluating the source's rights status and context relevance."
+    },
+    {
+      "query_id": "BQ255",
+      "intent": "more_context",
+      "answer_word_count": 9,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.1333,
+      "intent_anchor_hits": [
+        "context",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, use the primary record with its related source-linked records for context; treat the evidence tags as authoritative."
+    },
+    {
+      "query_id": "BQ256",
+      "intent": "more_context",
+      "answer_word_count": 16,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.0909,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the context for SURF-ER1830R064 includes the 1914/18 Marine instruction, the 1853 Global release gate, and the 1917/18 World War public-information graphics."
+    },
+    {
+      "query_id": "BQ257",
+      "intent": "more_context",
+      "answer_word_count": 13,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.25,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, inspect the Amputees' work for 1918 context and the 1899 Buffalo Bill's context to support the broader claim."
+    },
+    {
+      "query_id": "BQ258",
+      "intent": "more_context",
+      "answer_word_count": 17,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.2632,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, I should inspect the 1917/18 United States poster and the 1910 Global graphic design object to understand the broader context before making a broader claim."
+    },
+    {
+      "query_id": "BQ259",
+      "intent": "more_context",
+      "answer_word_count": 24,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.1481,
+      "intent_anchor_hits": [
+        "context",
+        "evidence"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, inspect the 1830s Trade card for John Williams to establish the primary context, as it provides one of the early documented evidence for the region and the specific object type. This supports the broader claim about the object's historical presence."
+    },
+    {
+      "query_id": "BQ260",
+      "intent": "more_context",
+      "answer_word_count": 21,
+      "query_keyword_count": 8,
+      "jaccard_similarity": 0.037,
+      "intent_anchor_hits": [
+        "context"
+      ],
+      "evidence_value_hit": true,
+      "too_short": false,
+      "off_topic": false,
+      "answer_body": "Based on these records, the surrounding context includes the 1842 Latin America/Argentina stamp, the 1840 World War and public-information graphics poster, and the 1840 Unresolved region Modern typography and layout."
+    }
+  ]
+}

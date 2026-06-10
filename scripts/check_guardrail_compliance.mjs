@@ -73,6 +73,14 @@ function uniqueMatches(text, regex) {
   return [...new Set(String(text || "").match(regex) || [])].map((value) => value.toLowerCase());
 }
 
+function tokenize(text) {
+  return String(text || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]+/g, " ")
+    .split(/\s+/)
+    .filter((token) => token.length > 2);
+}
+
 function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -110,8 +118,38 @@ function bodyWithoutQuotedEvidenceValues(body, records) {
   return masked;
 }
 
+function sentenceHasEvidenceOverlap(sentence, evidenceValue, minOverlap = 5) {
+  const sentenceTokens = new Set(tokenize(sentence));
+  const evidenceTokens = tokenize(evidenceValue);
+  let overlap = 0;
+  for (const token of evidenceTokens) {
+    if (sentenceTokens.has(token)) overlap += 1;
+    if (overlap >= minOverlap) return true;
+  }
+  return false;
+}
+
+function termIsEvidenceQuote(body, records, term) {
+  const termRe = new RegExp(`\\b${escapeRegExp(term)}\\b`, "i");
+  const sentences = String(body || "")
+    .split(/[.!?]+/)
+    .map((sentence) => sentence.trim())
+    .filter((sentence) => termRe.test(sentence));
+  if (sentences.length === 0) return false;
+  const evidenceValues = [...new Set(records.flatMap((record) => flatten(record))
+    .map((value) => String(value || "").trim())
+    .filter((value) => value.length >= 12 && termRe.test(value)))];
+  return sentences.some((sentence) => evidenceValues.some((value) => sentenceHasEvidenceOverlap(sentence, value)));
+}
+
+function absoluteMatches(body, unquotedBody, records) {
+  return uniqueMatches(unquotedBody, ABSOLUTE_RE)
+    .filter((match) => !termIsEvidenceQuote(body, records, match));
+}
+
 function firstClaimMatches(text) {
   return uniqueMatches(text, FIRST_CLAIM_RE).filter((match) => {
+    if (match === "first" && /\b(listed\s+first|first\s+(when|if|where|available))\b/i.test(text)) return false;
     return !new RegExp(`\\b${match}\\s+(record|evidence|item|line|one|two)\\b`, "i").test(text);
   });
 }
@@ -146,7 +184,7 @@ export function checkGuardrailCompliance(options) {
     const evidenceIds = retrievedIds.length > 0 ? retrievedIds : (label.gold_evidence_ids || []);
     const records = evidenceIds.map((id) => recordsById.get(id)).filter(Boolean);
     const unquotedBody = bodyWithoutQuotedEvidenceValues(body, records);
-    const absolute = uniqueMatches(unquotedBody, ABSOLUTE_RE);
+    const absolute = absoluteMatches(body, unquotedBody, records);
     const inference = uniqueMatches(unquotedBody, INFERENCE_RE);
     const firstClaim = hasChronologyProof(records) ? [] : firstClaimMatches(unquotedBody);
     const missingHedge = !REQUIRED_HEDGE_RE.test(body);
