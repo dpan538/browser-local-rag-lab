@@ -1,0 +1,416 @@
+{
+  "generated_at": "2026-06-09T23:08:23.860Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "answersPath": "reports/webllm_round_03_latency_pilot50_v32_guarded_prose_budgeted_generation_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 36,
+    "flagged_count": 0,
+    "flagged_ratio": 0,
+    "flagged_ratio_threshold": 0.02,
+    "answer_source": "delivered_answer_text"
+  },
+  "rows": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "sentence_count": 4,
+      "avg_sentence_words": 18.25,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the archive organizes graphic design and visual communication records through folders and topological structures. It contains surface types such as sheets and methods, publication roles including support_packet_appendix_text and method_context, and source families like Library of Congress loc.gov API and browser-local-rag-lab method files. The archive also includes rights states such as rights_review_required and research_fixture, and image-state codes like IMG04, IMG00, and IMG01."
+    },
+    {
+      "query_id": "BQ02",
+      "intent": "archive_orientation",
+      "sentence_count": 1,
+      "avg_sentence_words": 27,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the page is organized into Mexico, World War and public-information graphics, Advertisement, France, Travel and transport poster culture, and Graphic design object record."
+    },
+    {
+      "query_id": "BQ03",
+      "intent": "archive_orientation",
+      "sentence_count": 8,
+      "avg_sentence_words": 11.75,
+      "repeated_trigrams": [
+        {
+          "phrase": "in the packet",
+          "count": 2
+        }
+      ],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view is a structured collection of design and layout documents.\n\nThis is a source-linked research archive for graphic design and visual communication records.\n\nIt organizes records through folders/topology: France, Modern typography and layout, Graphic design object record, Research lab method, Unresolved region, Publication design.\n\nSurface types in the packet: sheet, method.\n\nPublication roles in the packet: main_sheet, method_context.\n\nSource families represented: Wikimedia Commons file source / Temple of Xochicalco, Exposition Universelle Paris 1867, from Illustrated London News, 01. Juni 1867.jpg / page 124497294, browser-local-rag-lab method files,"
+    },
+    {
+      "query_id": "BQ04",
+      "intent": "casual_archive_help",
+      "sentence_count": 1,
+      "avg_sentence_words": 14,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the next step is to review the unresolved region folder."
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "sentence_count": 1,
+      "avg_sentence_words": 20,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the current object is described as a specific historical entity identified by its inscription request date."
+    },
+    {
+      "query_id": "BQ06",
+      "intent": "current_object_explanation",
+      "sentence_count": 1,
+      "avg_sentence_words": 8,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, Monsieur requested the inscription."
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "sentence_count": 1,
+      "avg_sentence_words": 14,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the primary source is Monsieur's request for the inscription."
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "sentence_count": 4,
+      "avg_sentence_words": 8,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, compare the source-linked records Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg; ApollonMagazine.jpg using the exact evidence tags below."
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "sentence_count": 4,
+      "avg_sentence_words": 8,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, compare the source-linked records Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg; ApollonMagazine.jpg using the exact evidence tags below."
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "sentence_count": 4,
+      "avg_sentence_words": 8.75,
+      "repeated_trigrams": [
+        {
+          "phrase": "and related records",
+          "count": 2
+        }
+      ],
+      "flags": [],
+      "answer_body": "Based on these records, use Monsieur, vous avez réclamé votre inscription...; La typographie : poëme / par M. L. Pelletier and related records as a source-backed route through France around 1830; 1832 and related records."
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "sentence_count": 3,
+      "avg_sentence_words": 12.33,
+      "repeated_trigrams": [
+        {
+          "phrase": "and related records",
+          "count": 2
+        }
+      ],
+      "flags": [],
+      "answer_body": "Based on these records, use Diego Portales-D S No 20.JPG; El restaurador de las leyes.jpg and related records as a source-backed route through Latin America / Chile; Latin America / Argentina around 1837; 1840 and related records."
+    },
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "sentence_count": 1,
+      "avg_sentence_words": 30,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ24",
+      "intent": "method_process_question",
+      "sentence_count": 1,
+      "avg_sentence_words": 30,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence."
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "sentence_count": 4,
+      "avg_sentence_words": 18,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the period spans from the late 19th century through the mid-20th century. The primary evidence indicates the publication of the school's manifesto in 1897, while secondary records from the 1870s and 1912s suggest earlier publication dates. The object was created as a modern graphic communication for the Soviet Union in 1977. These records collectively show a continuous evolution of the object's design and content over time."
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "sentence_count": 3,
+      "avg_sentence_words": 10.67,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, use Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg with the related records in the evidence tags below for context."
+    },
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "sentence_count": 1,
+      "avg_sentence_words": 17,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view is a structured collection of visual design documents and stamps."
+    },
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "sentence_count": 7,
+      "avg_sentence_words": 14.29,
+      "repeated_trigrams": [
+        {
+          "phrase": "in the packet",
+          "count": 2
+        },
+        {
+          "phrase": "wikimedia commons file",
+          "count": 2
+        },
+        {
+          "phrase": "commons file source",
+          "count": 2
+        }
+      ],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view functions as a unified container for visual communication and design objects rather than a linear list of individual items.\n\nThis is a source-linked research archive for graphic design and visual communication records.\n\nIt organizes records through folders/topology: France, Travel and transport poster culture, Graphic design object record, Unresolved region, Modern typography and layout.\n\nSurface types in the packet: sheet.\n\nPublication roles in the packet: main_sheet.\n\nSource families represented: Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183, Wikimedia Commons file source / Putzmühle im Pöbelt"
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "sentence_count": 7,
+      "avg_sentence_words": 17.14,
+      "repeated_trigrams": [
+        {
+          "phrase": "based on these",
+          "count": 2
+        },
+        {
+          "phrase": "on these records",
+          "count": 2
+        },
+        {
+          "phrase": "these records the",
+          "count": 2
+        },
+        {
+          "phrase": "records the archive",
+          "count": 2
+        },
+        {
+          "phrase": "the archive view",
+          "count": 2
+        }
+      ],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view is a collection of visual and textual documents organized by thematic regions.\n\nThis document is a sheet of the main_sheet, which serves as the central container for the entire research collection.\n\nThe content is organized into specific folders and topological layers, including France, Midcentury modern graphic communication, Graphic design object record, Unresolved region, Modern typography and layout, and World War and public-information graphics.\n\nThe source families include Gallica, BnF APIs, and Wikimedia Commons files.\n\nThe rights state is open_candidate, indicating the document's ownership status.\n\nThe image-state code is IMG03, confirming the visual classification of the item.\n\nBased on these records, the archive view is a collection of visual and textual"
+    },
+    {
+      "query_id": "BQ033",
+      "intent": "archive_orientation",
+      "sentence_count": 1,
+      "avg_sentence_words": 17,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view functions as a unified structure of French and Global records."
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "sentence_count": 1,
+      "avg_sentence_words": 18,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view functions as a unified container for French and Global design records."
+    },
+    {
+      "query_id": "BQ035",
+      "intent": "archive_orientation",
+      "sentence_count": 1,
+      "avg_sentence_words": 15,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, France and Russia records are organized within the same visual structure."
+    },
+    {
+      "query_id": "BQ036",
+      "intent": "archive_orientation",
+      "sentence_count": 1,
+      "avg_sentence_words": 17,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view functions as a unified container for French and Global records."
+    },
+    {
+      "query_id": "BQ037",
+      "intent": "archive_orientation",
+      "sentence_count": 1,
+      "avg_sentence_words": 20,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view is a collection of visual communication documents organized by regional and thematic categories."
+    },
+    {
+      "query_id": "BQ038",
+      "intent": "archive_orientation",
+      "sentence_count": 1,
+      "avg_sentence_words": 18,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ039",
+      "intent": "archive_orientation",
+      "sentence_count": 1,
+      "avg_sentence_words": 24,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view is a unified collection of graphic design and visual communication records organized by region and object type."
+    },
+    {
+      "query_id": "BQ040",
+      "intent": "archive_orientation",
+      "sentence_count": 9,
+      "avg_sentence_words": 14.22,
+      "repeated_trigrams": [
+        {
+          "phrase": "of the source",
+          "count": 2
+        }
+      ],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view functions as a unified container for visual communication and design objects.\nIt organizes records through folders and topological structures to support the full scope of the research.\nThe specific content is organized into sections such as unresolved regions, typography, and graphic design.\nThis structure allows for the comprehensive analysis of the source material without isolating individual items.\nThe document type is a sheet, serving as the primary medium for the publication roles and source families.\nThe rights state is open_candidate, indicating the archive's permission to access the data.\nThe image-state code is IMG03, which defines the visual representation of the content.\nThis approach enables researchers to navigate the entire collection efficiently.\nThe structure supports the study of the source"
+    },
+    {
+      "query_id": "BQ041",
+      "intent": "archive_orientation",
+      "sentence_count": 10,
+      "avg_sentence_words": 12.7,
+      "repeated_trigrams": [
+        {
+          "phrase": "it organizes records",
+          "count": 2
+        },
+        {
+          "phrase": "organizes records through",
+          "count": 2
+        },
+        {
+          "phrase": "records through folders",
+          "count": 2
+        },
+        {
+          "phrase": "through folders and",
+          "count": 2
+        },
+        {
+          "phrase": "folders and topological",
+          "count": 2
+        }
+      ],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view functions as a unified container for visual design and political records.\n\nIt organizes records through folders and topological structures to ensure consistency across the collection.\n\nThe specific content is organized by surface types and publication roles within the main_sheet structure.\n\nThis approach allows for the integration of diverse sources like Wikimedia Commons files and stamps.\n\nThe system supports multiple source families including Wikimedia Commons and the Soviet Union.\n\nThe rights state is open_candidate, indicating the archive's legal status.\n\nThe image-state codes are represented as IMG03, confirming the digital nature of the records.\n\nThe document is a source-linked research archive for graphic design and visual communication.\n\nIt organizes records through folders and topological structures.\n\nThe specific content is"
+    },
+    {
+      "query_id": "BQ042",
+      "intent": "archive_orientation",
+      "sentence_count": 1,
+      "avg_sentence_words": 22,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the archive view is a collection of visual and typographic documents organized by geographic regions and publication roles."
+    },
+    {
+      "query_id": "BQ043",
+      "intent": "archive_orientation",
+      "sentence_count": 1,
+      "avg_sentence_words": 18,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ044",
+      "intent": "casual_archive_help",
+      "sentence_count": 1,
+      "avg_sentence_words": 26,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the next step is to verify the publication role and source family to ensure the document's integrity within the archive system."
+    },
+    {
+      "query_id": "BQ045",
+      "intent": "casual_archive_help",
+      "sentence_count": 1,
+      "avg_sentence_words": 30,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the next step is to verify the specific image file against the designated publication roles and source families to ensure compliance with the rights review requirements."
+    },
+    {
+      "query_id": "BQ046",
+      "intent": "casual_archive_help",
+      "sentence_count": 1,
+      "avg_sentence_words": 18,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields."
+    },
+    {
+      "query_id": "BQ047",
+      "intent": "casual_archive_help",
+      "sentence_count": 1,
+      "avg_sentence_words": 22,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the next step is to review the specific image state code to verify the object's classification status."
+    },
+    {
+      "query_id": "BQ048",
+      "intent": "casual_archive_help",
+      "sentence_count": 1,
+      "avg_sentence_words": 24,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the next step is to verify the object's publication role and source family to ensure the right is open."
+    },
+    {
+      "query_id": "BQ049",
+      "intent": "casual_archive_help",
+      "sentence_count": 1,
+      "avg_sentence_words": 17,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the object is a sheet of graphic design material from the midcentury period."
+    },
+    {
+      "query_id": "BQ050",
+      "intent": "casual_archive_help",
+      "sentence_count": 1,
+      "avg_sentence_words": 24,
+      "repeated_trigrams": [],
+      "flags": [],
+      "answer_body": "Based on these records, the next step is to verify the file's publication role and source family to ensure the document's integrity."
+    }
+  ]
+}

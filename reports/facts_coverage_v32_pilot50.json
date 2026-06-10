@@ -1,0 +1,632 @@
+{
+  "generated_at": "2026-06-09T23:08:23.745Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency_pilot50_v32_guarded_prose_budgeted_generation_answers.jsonl",
+    "baselinePath": null
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 36,
+    "avg_coverage_ratio": 0.2982,
+    "baseline_avg_coverage_ratio": null,
+    "average_drop": null,
+    "max_average_drop": 0.05,
+    "answer_source": "delivered_answer_text"
+  },
+  "rows": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "fact_count": 51,
+      "covered_fact_count": 29,
+      "coverage_ratio": 0.5686,
+      "uncovered_sample": [
+        "[Trade card for McKay Iron and Locomotive Works and an Arkansas railroad]",
+        "Thomas, Henry Atwell, 1834-1904",
+        "[between 1863 and 1868]",
+        "Unresolved region",
+        "1 print :",
+        "1 print : chromolithograph.",
+        "https://www.loc.gov/pictures/item/2010646699/",
+        "2026-05-30"
+      ]
+    },
+    {
+      "query_id": "BQ02",
+      "intent": "archive_orientation",
+      "fact_count": 39,
+      "covered_fact_count": 19,
+      "coverage_ratio": 0.4872,
+      "uncovered_sample": [
+        "SURF-CGS2026R0909",
+        "McLeod, H",
+        "1846",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ03",
+      "intent": "archive_orientation",
+      "fact_count": 50,
+      "covered_fact_count": 36,
+      "coverage_ratio": 0.72,
+      "uncovered_sample": [
+        "1842",
+        "Latin America / Mexico",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "HN009",
+        "HN010",
+        "HN011"
+      ]
+    },
+    {
+      "query_id": "BQ04",
+      "intent": "casual_archive_help",
+      "fact_count": 36,
+      "covered_fact_count": 3,
+      "coverage_ratio": 0.0833,
+      "uncovered_sample": [
+        "SURF-ER1830R015",
+        "Indian trading [6 illustrations: 1. trader's store; 2. 2 en route; 3. preparing for trade; 4. the trading post and fort; 5. return from trading; 6. dissatisfaction - (Indian beating his wife)]",
+        "Unknown",
+        "1876.",
+        "India",
+        "1 print :",
+        "1 print : wood engraving.",
+        "Library of Congress loc.gov API"
+      ]
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "fact_count": 45,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1111,
+      "uncovered_sample": [
+        "SURF-GAX1970R001",
+        "Unknown",
+        "1830",
+        "France",
+        "2 p. ; in-8; Nombre total de vues : 6",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",
+        "2026-05-31"
+      ]
+    },
+    {
+      "query_id": "BQ06",
+      "intent": "current_object_explanation",
+      "fact_count": 39,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.1282,
+      "uncovered_sample": [
+        "SURF-GAX1970R001",
+        "Unknown",
+        "1830",
+        "France",
+        "2 p. ; in-8; Nombre total de vues : 6",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",
+        "2026-05-31"
+      ]
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "fact_count": 45,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2222,
+      "uncovered_sample": [
+        "SURF-GAX1970R001",
+        "Unknown",
+        "1830",
+        "France",
+        "2 p. ; in-8; Nombre total de vues : 6",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",
+        "2026-05-31"
+      ]
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "fact_count": 34,
+      "covered_fact_count": 11,
+      "coverage_ratio": 0.3235,
+      "uncovered_sample": [
+        "SURF-COM1970R007",
+        "Russia",
+        "Wikimedia Commons",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons image with open license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "fact_count": 34,
+      "covered_fact_count": 11,
+      "coverage_ratio": 0.3235,
+      "uncovered_sample": [
+        "SURF-COM1970R007",
+        "Russia",
+        "Wikimedia Commons",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons image with open license metadata: Public domain.",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "fact_count": 32,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.2813,
+      "uncovered_sample": [
+        "SURF-GAX1970R001",
+        "Unknown",
+        "2 p. ; in-8; Nombre total de vues : 6",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "fact_count": 39,
+      "covered_fact_count": 16,
+      "coverage_ratio": 0.4103,
+      "uncovered_sample": [
+        "SURF-CGS2026R0681",
+        "Design by Patricio Aguirre Warden; scanned by Penarc",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: CC BY-SA 3.0.",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.3889,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "Browser-local RAG lab method context",
+        "browser-local-rag-lab",
+        "2026-06-07",
+        "Research method",
+        "method_context",
+        "browser-local-rag-lab method files",
+        "https://github.com/dpan538/browser-local-rag-lab"
+      ]
+    },
+    {
+      "query_id": "BQ24",
+      "intent": "method_process_question",
+      "fact_count": 18,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.3889,
+      "uncovered_sample": [
+        "LAB-METHOD-CONTEXT-V0",
+        "Browser-local RAG lab method context",
+        "browser-local-rag-lab",
+        "2026-06-07",
+        "Research method",
+        "method_context",
+        "browser-local-rag-lab method files",
+        "https://github.com/dpan538/browser-local-rag-lab"
+      ]
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "fact_count": 41,
+      "covered_fact_count": 17,
+      "coverage_ratio": 0.4146,
+      "uncovered_sample": [
+        "SURF-COM1970R007",
+        "Israel Kaplan",
+        "Russia",
+        "Wikimedia Commons",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame",
+        "sheet"
+      ]
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "fact_count": 41,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.2195,
+      "uncovered_sample": [
+        "SURF-COM1970R007",
+        "Russia",
+        "Wikimedia Commons",
+        "2026-05-31",
+        "open_candidate",
+        "open_image_frame",
+        "sheet",
+        "main_sheet"
+      ]
+    },
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "fact_count": 41,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.2195,
+      "uncovered_sample": [
+        "SURF-CRG2026R0031",
+        "Unknown artist Unknown artist",
+        "1865",
+        "South Asia / India",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "IMG03: Wikimedia Commons open-license metadata: Public domain."
+      ]
+    },
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "fact_count": 39,
+      "covered_fact_count": 26,
+      "coverage_ratio": 0.6667,
+      "uncovered_sample": [
+        "1830",
+        "Global / release gate expansion",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame",
+        "HN009",
+        "HN010",
+        "HN011"
+      ]
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "fact_count": 44,
+      "covered_fact_count": 25,
+      "coverage_ratio": 0.5682,
+      "uncovered_sample": [
+        "SURF-GAX1970R002",
+        "La typographie : poëme / par M. L. Pelletier",
+        "Pelletier, H L. Auteur du texte",
+        "1832",
+        "1 vol. (250 p.) ; in-8; Nombre total de vues : 258",
+        "2026-05-31",
+        "HN009",
+        "HN010"
+      ]
+    },
+    {
+      "query_id": "BQ033",
+      "intent": "archive_orientation",
+      "fact_count": 44,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.2045,
+      "uncovered_sample": [
+        "SURF-GA1970R001",
+        "Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe]",
+        "Unknown",
+        "1834",
+        "France",
+        "estampe ; 27 x 19 cm (f.); image/jpeg; Nombre total de vues : 1",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/btv1b8438046c"
+      ]
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "fact_count": 44,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2273,
+      "uncovered_sample": [
+        "SURF-GAX1970R003",
+        "Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1",
+        "Roret, Nicolas-Edme (1797-1860). Auteur du texte; Frey, Antoine (1780-18..). Auteur du texte",
+        "1835",
+        "France",
+        "2 vol. in-18, pl.; Nombre total de vues : 322",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k6332775h"
+      ]
+    },
+    {
+      "query_id": "BQ035",
+      "intent": "archive_orientation",
+      "fact_count": 46,
+      "covered_fact_count": 13,
+      "coverage_ratio": 0.2826,
+      "uncovered_sample": [
+        "SURF-GAX1970R004",
+        "Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie",
+        "Unknown",
+        "1838-1839",
+        "Nombre total de vues : 124",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/cb328023517",
+        "2026-05-31"
+      ]
+    },
+    {
+      "query_id": "BQ036",
+      "intent": "archive_orientation",
+      "fact_count": 46,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.1957,
+      "uncovered_sample": [
+        "SURF-GAX1970R005",
+        "Imprimerie lithographique, Autographique, E. Simon Fils, Strasbourg",
+        "Unknown",
+        "1840",
+        "France",
+        "10,5 x 14,5 cm; image/jpeg; Nombre total de vues : 1",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/btv1b10202743j"
+      ]
+    },
+    {
+      "query_id": "BQ037",
+      "intent": "archive_orientation",
+      "fact_count": 41,
+      "covered_fact_count": 5,
+      "coverage_ratio": 0.122,
+      "uncovered_sample": [
+        "SURF-CRG2026R0006",
+        "Stamp 1974 Romania MiNr3179 pm B002a.jpg",
+        "\"Posta Romana\"",
+        "1841",
+        "Eastern Europe / Romania",
+        "Wikimedia Commons file source / Stamp 1974 Romania MiNr3179 pm B002a.jpg / page 117737469",
+        "https://commons.wikimedia.org/wiki/File:Stamp_1974_Romania_MiNr3179_pm_B002a.jpg",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ038",
+      "intent": "archive_orientation",
+      "fact_count": 39,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2564,
+      "uncovered_sample": [
+        "The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg",
+        "USSR Post",
+        "1870",
+        "Global / release gate expansion",
+        "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3849_stamp_(With_Lenin_(After_Vladimir_Serov)).jpg",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ039",
+      "intent": "archive_orientation",
+      "fact_count": 41,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1707,
+      "uncovered_sample": [
+        "SURF-CRG2026R0051",
+        "The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg",
+        "USSR Post",
+        "1870",
+        "Global / release gate expansion",
+        "Wikimedia Commons file source / The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg / page 39286166",
+        "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3854_stamp_(Fedot_Sychkov_and_Painting_Sledding_from_Hills).jpg",
+        "2026-06-06"
+      ]
+    },
+    {
+      "query_id": "BQ040",
+      "intent": "archive_orientation",
+      "fact_count": 41,
+      "covered_fact_count": 24,
+      "coverage_ratio": 0.5854,
+      "uncovered_sample": [
+        "SURF-CRG2026R0052",
+        "USSR Post",
+        "1870",
+        "2026-06-06",
+        "HN009",
+        "HN010",
+        "HN011",
+        "HN014"
+      ]
+    },
+    {
+      "query_id": "BQ041",
+      "intent": "archive_orientation",
+      "fact_count": 40,
+      "covered_fact_count": 22,
+      "coverage_ratio": 0.55,
+      "uncovered_sample": [
+        "USSR Post",
+        "1877",
+        "Global / release gate expansion",
+        "2026-06-06",
+        "Unresolved region",
+        "Modern typography and layout",
+        "HN009",
+        "HN010"
+      ]
+    },
+    {
+      "query_id": "BQ042",
+      "intent": "archive_orientation",
+      "fact_count": 49,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.2041,
+      "uncovered_sample": [
+        "SURF-COM1970R007",
+        "Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg",
+        "Israel Kaplan",
+        "1897",
+        "Russia",
+        "Wikimedia Commons",
+        "https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg",
+        "2026-05-31"
+      ]
+    },
+    {
+      "query_id": "BQ043",
+      "intent": "archive_orientation",
+      "fact_count": 40,
+      "covered_fact_count": 10,
+      "coverage_ratio": 0.25,
+      "uncovered_sample": [
+        "ApollonMagazine.jpg",
+        "Nikolai Remisov",
+        "1909",
+        "Global / release gate expansion",
+        "https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    },
+    {
+      "query_id": "BQ044",
+      "intent": "casual_archive_help",
+      "fact_count": 47,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1489,
+      "uncovered_sample": [
+        "SURF-CRG2026R0001",
+        "Paganini par David d'Angers (Angers) (14911656518).jpg",
+        "Jean-Pierre Dalbéra from Paris, France",
+        "1830",
+        "Global / release gate expansion",
+        "https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg",
+        "2026-06-06",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ045",
+      "intent": "casual_archive_help",
+      "fact_count": 42,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1667,
+      "uncovered_sample": [
+        "SURF-GAX1970R002",
+        "La typographie : poëme / par M. L. Pelletier",
+        "Pelletier, H L. Auteur du texte",
+        "1832",
+        "France",
+        "1 vol. (250 p.) ; in-8; Nombre total de vues : 258",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k54640797"
+      ]
+    },
+    {
+      "query_id": "BQ046",
+      "intent": "casual_archive_help",
+      "fact_count": 41,
+      "covered_fact_count": 7,
+      "coverage_ratio": 0.1707,
+      "uncovered_sample": [
+        "Unknown",
+        "1834",
+        "France",
+        "estampe ; 27 x 19 cm (f.); image/jpeg; Nombre total de vues : 1",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/btv1b8438046c",
+        "2026-05-31",
+        "open_candidate"
+      ]
+    },
+    {
+      "query_id": "BQ047",
+      "intent": "casual_archive_help",
+      "fact_count": 42,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1429,
+      "uncovered_sample": [
+        "SURF-GAX1970R003",
+        "Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1",
+        "Roret, Nicolas-Edme (1797-1860). Auteur du texte; Frey, Antoine (1780-18..). Auteur du texte",
+        "1835",
+        "France",
+        "2 vol. in-18, pl.; Nombre total de vues : 322",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/bpt6k6332775h"
+      ]
+    },
+    {
+      "query_id": "BQ048",
+      "intent": "casual_archive_help",
+      "fact_count": 44,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.2045,
+      "uncovered_sample": [
+        "SURF-GAX1970R004",
+        "Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie",
+        "Unknown",
+        "1838-1839",
+        "France",
+        "Nombre total de vues : 124",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/cb328023517"
+      ]
+    },
+    {
+      "query_id": "BQ049",
+      "intent": "casual_archive_help",
+      "fact_count": 42,
+      "covered_fact_count": 6,
+      "coverage_ratio": 0.1429,
+      "uncovered_sample": [
+        "SURF-GAX1970R005",
+        "Imprimerie lithographique, Autographique, E. Simon Fils, Strasbourg",
+        "Unknown",
+        "1840",
+        "France",
+        "10,5 x 14,5 cm; image/jpeg; Nombre total de vues : 1",
+        "Gallica / BnF APIs",
+        "https://gallica.bnf.fr/ark:/12148/btv1b10202743j"
+      ]
+    },
+    {
+      "query_id": "BQ050",
+      "intent": "casual_archive_help",
+      "fact_count": 49,
+      "covered_fact_count": 9,
+      "coverage_ratio": 0.1837,
+      "uncovered_sample": [
+        "SURF-CRG2026R0006",
+        "Stamp 1974 Romania MiNr3179 pm B002a.jpg",
+        "\"Posta Romana\"",
+        "1841",
+        "Eastern Europe / Romania",
+        "2026-06-06",
+        "open_candidate",
+        "open_image_frame"
+      ]
+    }
+  ]
+}

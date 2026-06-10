@@ -1,0 +1,131 @@
+{
+  "generated_at": "2026-06-10T00:00:23.570Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency300_v32_guarded_prose_budgeted_generation_answers.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 191,
+    "suspicious_answer_count": 7,
+    "suspicious_answer_ratio": 0.0366,
+    "suspicious_ratio_threshold": 0.1,
+    "date_hallucination_count": 0,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": [
+    {
+      "query_id": "BQ060",
+      "intent": "current_object_explanation",
+      "date_issue_count": 0,
+      "entity_issue_count": 2,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Latin American"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Spanish Constitution."
+        }
+      ],
+      "answer_body": "Based on these records, the current object is the Latin American restoration of the Spanish Constitution."
+    },
+    {
+      "query_id": "BQ062",
+      "intent": "current_object_explanation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Latin American"
+        }
+      ],
+      "answer_body": "Based on these records, the current object is the Temple of Xochicalco, which is located in the Latin American region."
+    },
+    {
+      "query_id": "BQ109",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 2,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "One"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Latin American"
+        }
+      ],
+      "answer_body": "Based on these records, Surf-CGS2026R0031 and Surf-ER1830R015 differ in their geographic focus and historical context. One records Latin American trade practices, while the other depicts Indian trading activities. These records differ in their specific historical contexts and regional focus."
+    },
+    {
+      "query_id": "BQ113",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 2,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "Japanese"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Japanese Army's"
+        }
+      ],
+      "answer_body": "Based on these records, the primary evidence is the 1863 Japanese aerial photograph of the Japanese Army's headquarters in Tokyo, while the secondary record provides the 19th-century sculptress from France."
+    },
+    {
+      "query_id": "BQ145",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 2,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "France. While"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "Strasbourg. Given"
+        }
+      ],
+      "answer_body": "Based on these records, the primary evidence suggests a typographical study spanning 1838-1839 in France. While the 1830 record indicates a request for inscription, it lacks specific regional context. The 1840 record identifies a lithographic printing firm in Strasbourg. Given the 1838-1839 record, the most plausible research route is to investigate the typographical studies of the period in France. This route allows for the study of the 1830 inscription request and the 1840 firm's work. The 1838-1839 record suggests the 1830 request may have been made during this period. The 1840 firm"
+    },
+    {
+      "query_id": "BQ231",
+      "intent": "comparison",
+      "date_issue_count": 0,
+      "entity_issue_count": 2,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "United States"
+        },
+        {
+          "type": "possible_name_or_place",
+          "value": "British Empire. The"
+        }
+      ],
+      "answer_body": "Based on these records, SURF-ER1830R001-GROUP provides historical trade data spanning 1830 to 1922, while SURF-CGS2026R0909 offers contemporary political and diplomatic information from 1846 to the present. The primary source is the 1830-1922 trade card, which details the movement of goods between the United States and the British Empire. The secondary source, the 1846 document, describes the political alliances and diplomatic relations between the United States and Mexico. These records suggest that the 1830-1922 source is the primary source of historical trade data, while the 184"
+    },
+    {
+      "query_id": "BQ244",
+      "intent": "region_period_recommendation",
+      "date_issue_count": 0,
+      "entity_issue_count": 1,
+      "suspicious_items": [
+        {
+          "type": "possible_name_or_place",
+          "value": "South Asian"
+        }
+      ],
+      "answer_body": "Based on these records, the 1865 Queen Victoria stamp from Zanzibar provides direct evidence of South Asia/India colonial trade, while the 1895 Oud-generaal record confirms the region's musical heritage through NG-850-60. These sources collectively illustrate the historical continuity of South Asian cultural exchange without absolute assertions of permanence."
+    }
+  ]
+}

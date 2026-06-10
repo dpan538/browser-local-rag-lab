@@ -494,8 +494,52 @@ function bodyLooksLikePromptEcho(text) {
   ].some((pattern) => pattern.test(String(text || "")));
 }
 
+function bodyLooksRepetitive(text) {
+  const body = String(text || "");
+  if (/^based on these records,\s*based on these records,/i.test(body)) return true;
+  const tokens = body
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]+/g, " ")
+    .split(/\s+/)
+    .filter(Boolean);
+  const counts = new Map();
+  for (let index = 0; index < tokens.length - 2; index += 1) {
+    const trigram = tokens.slice(index, index + 3).join(" ");
+    counts.set(trigram, (counts.get(trigram) || 0) + 1);
+    if (counts.get(trigram) > 2) return true;
+  }
+  return false;
+}
+
+function averageSentenceWords(text) {
+  const sentences = String(text || "")
+    .split(/[.!?]+/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+  const counts = sentences
+    .map((sentence) => sentence
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]+/g, " ")
+      .split(/\s+/)
+      .filter(Boolean).length)
+    .filter((count) => count > 0);
+  return counts.length ? counts.reduce((sum, count) => sum + count, 0) / counts.length : 0;
+}
+
+function bodyFailsV32Readability(text) {
+  return averageSentenceWords(text) > 32 || bodyLooksRepetitive(text);
+}
+
 function bodyLooksUnsafe(packet, text) {
-  return bodyLooksLikePromptEcho(text) || bodyContainsUnsupportedDates(packet, text);
+  return bodyLooksLikePromptEcho(text) || bodyContainsUnsupportedDates(packet, text) || bodyLooksRepetitive(text);
+}
+
+function bodyViolatesV32Guardrails(packet, text) {
+  const value = String(text || "");
+  if (/\b(all|every|never|always|certainly|definitely|proves?)\b/i.test(value)) return true;
+  if (/\b(therefore|thus|implies|consequently|as a result)\b/i.test(value)) return true;
+  if (packet.label.intent !== "first_earliest_claim" && /\b(first|earliest|original)\b/i.test(value)) return true;
+  return false;
 }
 
 function deterministicAnswerBody(packet) {
@@ -515,12 +559,34 @@ function deterministicAnswerBody(packet) {
     return `Use ${compactList(titles, 2)} as a source-backed route through ${compactList(regions, 2)}${dates.length ? ` around ${compactList(dates, 2)}` : ""}.`;
   }
   if (packet.label.intent === "more_context") {
-    return `Use ${titles[0] || "the primary record"} with the related records in the evidence tags below for context.`;
+    return "Use the primary record with its related source-linked records for context; treat the evidence tags as authoritative.";
   }
   if (["archive_orientation", "casual_archive_help"].includes(packet.label.intent)) {
     return "This archive view organizes source-linked records by topology, folders, surface type, and evidence fields.";
   }
   return "This answer is grounded in the evidence fields listed below.";
+}
+
+function readableV32AnswerBody(packet) {
+  if (packet.label.intent === "method_process_question") {
+    return "The archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence.";
+  }
+  if (packet.label.intent === "current_object_explanation") {
+    return "This record is represented by the listed title, date, region, and source in the evidence tags.";
+  }
+  if (packet.label.intent === "comparison") {
+    return "Compare the two source-linked records using the evidence tags as the authoritative field list.";
+  }
+  if (packet.label.intent === "region_period_recommendation") {
+    return "Use the listed source-linked records as a cautious route through the region and period shown in the evidence tags.";
+  }
+  if (packet.label.intent === "more_context") {
+    return "Use the primary record with its related source-linked records for context; treat the evidence tags as authoritative.";
+  }
+  if (["archive_orientation", "casual_archive_help"].includes(packet.label.intent)) {
+    return "This archive view organizes source-linked records by topology, folders, surface type, and evidence fields.";
+  }
+  return "Use the evidence tags as the authoritative field list for this answer.";
 }
 
 function hedgeBodyForV32(body) {
@@ -543,11 +609,18 @@ export function finalizeAnswerText(packet, generatedText, options = {}) {
   if (packet.label.refusal_expected) return `"${REFUSAL_PHRASE}"`;
   if (packet.label.intent === "source_rights_question") return sourceRightsBlock(packet.evidence[0] || {});
   const tags = evidenceTagBlock(packet.evidence, fieldsForLabel(packet.label));
-  const body = String(generatedText || "").replace(/EVIDENCE TAGS:[\s\S]*$/i, "").trim();
+  const body = String(generatedText || "")
+    .replace(/<think>[\s\S]*?<\/think>/gi, "")
+    .replace(/EVIDENCE TAGS:[\s\S]*$/i, "")
+    .trim();
   const safeBody = !body || bodyLooksLikeRefusal(body) || bodyLooksUnsafe(packet, body)
     ? deterministicAnswerBody(packet)
     : body;
-  const finalBody = isV32GuardedProse(options) ? hedgeBodyForV32(safeBody) : safeBody;
+  const guardedBody = isV32GuardedProse(options) &&
+    (bodyViolatesV32Guardrails(packet, safeBody) || bodyFailsV32Readability(safeBody))
+    ? readableV32AnswerBody(packet)
+    : safeBody;
+  const finalBody = isV32GuardedProse(options) ? hedgeBodyForV32(guardedBody) : guardedBody;
   return [finalBody, tags].join("\n\n");
 }
 

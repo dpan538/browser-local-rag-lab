@@ -22,7 +22,19 @@ const COMMON_CAPITALIZED = new Set([
   "a", "an", "and", "answer", "archive", "based", "because", "do", "evidence", "i", "if", "in",
   "it", "keep", "no", "not", "of", "on", "or", "publication", "query", "record", "records",
   "role", "roles", "source", "start", "surface", "the", "this", "these", "those", "to", "type",
-  "types", "use", "with", "world", "you"
+  "types", "use", "user", "users", "with", "world", "you", "sources", "therefore", "thus"
+]);
+
+const ADJECTIVE_TO_REGION = new Map([
+  ["french", "france"],
+  ["russian", "russia"],
+  ["soviet", "soviet union"],
+  ["american", "united states"],
+  ["mexican", "mexico"],
+  ["chilean", "chile"],
+  ["indian", "india"],
+  ["south indian", "india"],
+  ["caribbean", "caribbean"]
 ]);
 
 function parseArgs(args) {
@@ -139,6 +151,8 @@ function hasAllowedEntity(term, allowedText) {
   const normalizedTerm = normalize(term);
   if (normalizedTerm.length < 3) return true;
   if (COMMON_CAPITALIZED.has(normalizedTerm)) return true;
+  const mapped = ADJECTIVE_TO_REGION.get(normalizedTerm);
+  if (mapped && allowedText.includes(mapped)) return true;
   const tokens = normalizedTerm.split(/\s+/).filter(Boolean);
   if (tokens.every((token) => COMMON_CAPITALIZED.has(token))) return true;
   if (tokens.filter((token) => !COMMON_CAPITALIZED.has(token)).every((token) => allowedText.includes(token))) return true;

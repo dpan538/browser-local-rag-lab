@@ -24,7 +24,7 @@ const COMMON_TERMS = new Set([
   "a", "an", "and", "answer", "archive", "based", "both", "compare", "evidence", "exact",
   "field", "fields", "listed", "record", "records", "related", "route", "source", "source-linked",
   "the", "this", "use", "using", "with", "surface", "publication", "recommendation", "reasoning",
-  "conclusion", "keep"
+  "conclusion", "keep", "sources", "these", "therefore", "users"
 ]);
 
 const ADJECTIVE_TO_REGION = new Map([

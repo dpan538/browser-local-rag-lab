@@ -73,6 +73,10 @@ function uniqueMatches(text, regex) {
   return [...new Set(String(text || "").match(regex) || [])].map((value) => value.toLowerCase());
 }
 
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function flatten(value) {
   if (value === null || value === undefined) return [];
   if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") return [String(value)];
@@ -87,6 +91,23 @@ function hasChronologyProof(records) {
       Boolean(record?.first_or_earliest_claim) ||
       flatten(record).some((value) => /\bchronology proof\b/i.test(value));
   });
+}
+
+function bodyWithoutQuotedEvidenceValues(body, records) {
+  let masked = String(body || "");
+  const values = [...new Set(records.flatMap((record) => flatten(record))
+    .filter((value) => {
+      const text = String(value || "").trim();
+      return text.length >= 4 && /\S\s+\S/.test(text);
+    }))]
+    .sort((a, b) => String(b).length - String(a).length);
+
+  for (const value of values) {
+    const text = String(value).trim();
+    if (!text) continue;
+    masked = masked.replace(new RegExp(escapeRegExp(text), "gi"), " ");
+  }
+  return masked;
 }
 
 function firstClaimMatches(text) {
@@ -124,9 +145,10 @@ export function checkGuardrailCompliance(options) {
       .filter(Boolean);
     const evidenceIds = retrievedIds.length > 0 ? retrievedIds : (label.gold_evidence_ids || []);
     const records = evidenceIds.map((id) => recordsById.get(id)).filter(Boolean);
-    const absolute = uniqueMatches(body, ABSOLUTE_RE);
-    const inference = uniqueMatches(body, INFERENCE_RE);
-    const firstClaim = hasChronologyProof(records) ? [] : firstClaimMatches(body);
+    const unquotedBody = bodyWithoutQuotedEvidenceValues(body, records);
+    const absolute = uniqueMatches(unquotedBody, ABSOLUTE_RE);
+    const inference = uniqueMatches(unquotedBody, INFERENCE_RE);
+    const firstClaim = hasChronologyProof(records) ? [] : firstClaimMatches(unquotedBody);
     const missingHedge = !REQUIRED_HEDGE_RE.test(body);
 
     if (absolute.length) absoluteViolationCount += 1;

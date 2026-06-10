@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-06-09T23:08:22.976Z",
+  "inputs": {
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency_pilot50_v32_guarded_prose_budgeted_generation_answers.jsonl",
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 36,
+    "suspicious_answer_count": 0,
+    "suspicious_answer_ratio": 0,
+    "suspicious_ratio_threshold": 0.1,
+    "date_hallucination_count": 0,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": []
+}

@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-06-09T23:08:23.484Z",
+  "inputs": {
+    "queriesPath": "fixtures/expansion/round03_300/queries.jsonl",
+    "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
+    "recordsPath": "fixtures/expansion/round03_300/records.jsonl",
+    "answersPath": "reports/webllm_round_03_latency_pilot50_v32_guarded_prose_budgeted_generation_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_answer_count": 36,
+    "prompt_leak_count": 0,
+    "prompt_leak_threshold": 0,
+    "negation_mismatch_count": 1,
+    "negation_mismatch_ratio": 0.0278,
+    "negation_mismatch_ratio_threshold": 0.03,
+    "overconfidence_answer_count": 0,
+    "overconfidence_ratio": 0,
+    "overconfidence_ratio_threshold": 0.15,
+    "unwarranted_inference_answer_count": 0,
+    "unwarranted_inference_ratio": 0,
+    "unwarranted_inference_ratio_threshold": 0.15,
+    "answer_source": "delivered_answer_text"
+  },
+  "findings": [
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "prompt_leak": false,
+      "possible_negation_misread": true,
+      "overconfidence_terms": [],
+      "unwarranted_inference_terms": [],
+      "answer_body": "Based on these records, the archive view is a structured collection of visual design documents and stamps."
+    }
+  ]
+}
