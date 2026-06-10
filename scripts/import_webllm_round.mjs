@@ -75,7 +75,7 @@ function provenance(inputPath, payload) {
     input_path: path.basename(inputPath),
     packet_variant: payload.meta?.variant_id || "unknown",
     model_id: payload.meta?.model_id || "unknown",
-    runtime: "WebLLM/MLC custom model",
+    runtime: payload.meta?.runtime || "WebLLM/MLC custom model",
     webgpu_status: payload.meta?.webgpu?.status || "unknown",
     user_agent: payload.meta?.user_agent || "unknown"
   };
@@ -173,6 +173,14 @@ function byStatus(rows) {
 }
 
 function markdownReport({ payload, results, contract, metrics, outputJsonPath, answersPath }) {
+  const runtimeName = payload.meta?.runtime || "WebLLM/MLC custom model";
+  const modelId = payload.meta?.model_id || "unknown";
+  const modelLabel = payload.meta?.model_generation_label || (
+    /qwen/i.test(modelId) ? "Qwen" : "Model"
+  );
+  const scopeLabel = runtimeName.includes("WebLLM")
+    ? "browser-exported WebLLM custom-model run"
+    : `${runtimeName} run`;
   const completed = results.filter((row) => row.generation_status === "completed");
   const deterministicRows = completed.filter(isDeterministicRow);
   const modelRows = completed.filter((row) => !isDeterministicRow(row));
@@ -197,8 +205,8 @@ Generated: ${new Date().toISOString()}
 
 ## Scope
 
-This report imports a browser-exported WebLLM custom-model run for
-\`Qwen3.5-0.8B-q4f16_1-MLC\`. This is a research-only runtime measurement path.
+This report imports a ${scopeLabel} for
+\`${modelId}\`. This is a research-only runtime measurement path.
 It does not define or modify the archive product runtime, Assistant UI,
 scraping, ingestion, or rights policy.
 
@@ -210,7 +218,8 @@ experiment outputs only and are not archive evidence.
 - Imported browser JSON: ${relative(outputJsonPath)}
 - Generated answer JSONL: ${relative(answersPath)}
 - Variant: ${payload.meta?.variant_id || "unknown"}
-- Model id: ${payload.meta?.model_id || "unknown"}
+- Runtime: ${runtimeName}
+- Model id: ${modelId}
 - WebGPU status: ${payload.meta?.webgpu?.status || "unknown"}
 
 ## Runtime Summary
@@ -219,11 +228,11 @@ experiment outputs only and are not archive evidence.
 - Completed rows: ${completed.length}
 - Error rows: ${errors.length}
 - Deterministic hybrid rows: ${deterministicRows.length}
-- Qwen model-generation rows: ${modelRows.length}
-- Qwen average TTFT: ${formatNumber(average(modelRows, "ttft_ms"))} ms
-- Qwen average total latency: ${formatNumber(average(modelRows, "total_latency_ms"))} ms
-- Qwen average tokens/s: ${formatNumber(average(modelRows, "tokens_per_second"), 2)}
-- Qwen average prompt tokens estimate: ${formatNumber(average(modelRows, "prompt_tokens_est"))}
+- ${modelLabel} model-generation rows: ${modelRows.length}
+- ${modelLabel} average TTFT: ${formatNumber(average(modelRows, "ttft_ms"))} ms
+- ${modelLabel} average total latency: ${formatNumber(average(modelRows, "total_latency_ms"))} ms
+- ${modelLabel} average tokens/s: ${formatNumber(average(modelRows, "tokens_per_second"), 2)}
+- ${modelLabel} average prompt tokens estimate: ${formatNumber(average(modelRows, "prompt_tokens_est"))}
 - Hybrid deterministic average total latency: ${formatNumber(average(deterministicRows, "total_latency_ms"), 3)} ms
 - All-row average total latency: ${formatNumber(average(completed, "total_latency_ms"))} ms
 - Metric validity issues: ${metrics.length}
