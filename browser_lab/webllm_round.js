@@ -643,6 +643,10 @@ async function streamCompletion(prompt) {
   const started = performance.now();
   let firstTokenAt = null;
   let answerText = "";
+  let chunkCount = 0;
+  let streamCutoffReason = null;
+  const firstTokenTimeoutMs = 45000;
+  const tokenStallTimeoutMs = 12000;
 
   const completion = await state.engine.chat.completions.create({
     messages,
@@ -657,9 +661,25 @@ async function streamCompletion(prompt) {
     stream: true
   });
 
-  for await (const chunk of completion) {
+  const iterator = completion[Symbol.asyncIterator]();
+  while (true) {
+    const timeoutMs = firstTokenAt === null ? firstTokenTimeoutMs : tokenStallTimeoutMs;
+    const next = await Promise.race([
+      iterator.next(),
+      new Promise((resolve) => {
+        window.setTimeout(() => resolve({ timeout: true }), timeoutMs);
+      })
+    ]);
+    if (next.timeout) {
+      streamCutoffReason = firstTokenAt === null ? "first_token_timeout" : "token_stall_timeout";
+      log(`Stream cutoff: ${streamCutoffReason} after ${Math.round(timeoutMs)} ms without a new token.`);
+      break;
+    }
+    if (next.done) break;
+    const chunk = next.value;
     const delta = chunk.choices?.[0]?.delta?.content || "";
     if (!delta) continue;
+    chunkCount += 1;
     if (firstTokenAt === null) firstTokenAt = performance.now();
     answerText += delta;
     const cleanedAnswerText = stripThinking(answerText);
@@ -683,7 +703,9 @@ async function streamCompletion(prompt) {
     ttft_ms: ttftMs,
     total_latency_ms: totalMs,
     output_tokens: outputTokens,
-    tokens_per_second: tokensPerSecond(outputTokens, totalMs, ttftMs)
+    tokens_per_second: tokensPerSecond(outputTokens, totalMs, ttftMs),
+    stream_chunk_count: chunkCount,
+    stream_cutoff_reason: streamCutoffReason
   };
 }
 
