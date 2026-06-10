@@ -1,4 +1,4 @@
-import { polishProse } from "./polish_prose.mjs";
+import { polishProse } from "./polish_prose.mjs?v=2";
 
 const REFUSAL_PHRASE = "I cannot answer this question because the evidence is insufficient.";
 
