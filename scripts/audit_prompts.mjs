@@ -58,12 +58,20 @@ function auditRows(rows) {
   });
 }
 
+function reportTitle(options) {
+  return path.basename(options.mdOutPath, path.extname(options.mdOutPath))
+    .replace(/^PROMPT_AUDIT_?/i, "Prompt Audit ")
+    .replace(/_/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function markdown(report) {
   const failures = report.rows.filter((row) => row.prompt_audit_status === "fail");
   const rows = failures.length === 0
     ? "| none | none | none |"
     : failures.map((row) => `| ${row.query_id} | ${row.prompt_mode || "unknown"} | ${(row.prompt_audit_failures || []).join(", ")} |`).join("\n");
-  return `# Prompt Audit Round 02 200
+  return `# ${report.title}
 
 Generated: ${report.generated_at}
 
@@ -83,6 +91,7 @@ ${rows}
 export function auditPrompts(options) {
   const rows = auditRows(readPromptRows(options));
   const report = {
+    title: reportTitle(options),
     generated_at: new Date().toISOString(),
     summary: {
       rows: rows.length,

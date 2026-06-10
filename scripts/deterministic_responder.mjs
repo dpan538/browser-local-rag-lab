@@ -4,6 +4,7 @@ const HYBRID_DETERMINISTIC_VARIANTS = new Set([
   "r03_v3_hybrid_deterministic_lanes",
   "r03_v31_evidence_prune_tag_injection",
   "r03_v32_guarded_prose_budgeted_generation",
+  "r03_v33_postprocessed_prose",
   "r03_v4_combined"
 ]);
 

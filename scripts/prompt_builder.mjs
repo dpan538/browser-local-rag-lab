@@ -1,3 +1,5 @@
+import { polishProse } from "./polish_prose.mjs";
+
 const REFUSAL_PHRASE = "I cannot answer this question because the evidence is insufficient.";
 
 export function mandatoryRefusalPhrase() {
@@ -91,8 +93,12 @@ function isV32GuardedProse(options = {}) {
   return options.promptVariant === "r03_v32_guarded_prose_budgeted_generation";
 }
 
+function isV33PostprocessedProse(options = {}) {
+  return options.promptVariant === "r03_v33_postprocessed_prose";
+}
+
 function isPrunedTagInjection(options = {}) {
-  return isV31EvidencePruneTagInjection(options) || isV32GuardedProse(options);
+  return isV31EvidencePruneTagInjection(options) || isV32GuardedProse(options) || isV33PostprocessedProse(options);
 }
 
 function promptFieldValue(record, field, options = {}) {
@@ -299,6 +305,7 @@ function buildOrientationPrompt(packet, options = {}) {
       "Required behavior: answer about the archive view as a whole, not about one object.",
       isV32GuardedProse(options) ? guardedLengthLine(packet.label) : "Keep the generated answer body under 45 words.",
       ...(isV32GuardedProse(options) ? guardedProseLines(packet.label) : []),
+      ...(isV33PostprocessedProse(options) ? ["Start the answer body with: Based on these records,"] : []),
       "",
       "Archive facts you may use:",
       orientationEvidenceSummary(records),
@@ -371,6 +378,7 @@ function buildAnswerablePrompt(packet, options = {}) {
       `Intent: ${packet.label.intent}`,
       isV32GuardedProse(options) ? guardedLengthLine(packet.label) : lengthControlLine(packet.label),
       ...(isV32GuardedProse(options) ? guardedProseLines(packet.label) : []),
+      ...(isV33PostprocessedProse(options) ? ["Start the answer body with: Based on these records,"] : []),
       packet.label.intent === "current_object_explanation" ? "For this intent, describe Record 1 only; related records are not the current object." : "",
       "",
       `Evidence value order: ${fields.join(" | ")}`,
@@ -606,8 +614,24 @@ export function buildPrompt(packet, options = {}) {
 }
 
 export function finalizeAnswerText(packet, generatedText, options = {}) {
-  if (packet.label.refusal_expected) return `"${REFUSAL_PHRASE}"`;
-  if (packet.label.intent === "source_rights_question") return sourceRightsBlock(packet.evidence[0] || {});
+  return finalizeAnswer(packet, generatedText, options).answer_text;
+}
+
+export function finalizeAnswer(packet, generatedText, options = {}) {
+  if (packet.label.refusal_expected) {
+    return {
+      answer_text: `"${REFUSAL_PHRASE}"`,
+      answer_postprocess: "hard_refusal_magic_phrase",
+      postprocess_actions: []
+    };
+  }
+  if (packet.label.intent === "source_rights_question") {
+    return {
+      answer_text: sourceRightsBlock(packet.evidence[0] || {}),
+      answer_postprocess: "source_rights_deterministic_fields",
+      postprocess_actions: []
+    };
+  }
   const tags = evidenceTagBlock(packet.evidence, fieldsForLabel(packet.label));
   const body = String(generatedText || "")
     .replace(/<think>[\s\S]*?<\/think>/gi, "")
@@ -620,8 +644,17 @@ export function finalizeAnswerText(packet, generatedText, options = {}) {
     (bodyViolatesV32Guardrails(packet, safeBody) || bodyFailsV32Readability(safeBody))
     ? readableV32AnswerBody(packet)
     : safeBody;
-  const finalBody = isV32GuardedProse(options) ? hedgeBodyForV32(guardedBody) : guardedBody;
-  return [finalBody, tags].join("\n\n");
+  const polished = isV33PostprocessedProse(options)
+    ? polishProse(guardedBody, { label: packet.label, evidence: packet.evidence })
+    : { text: guardedBody, actions: [] };
+  const finalBody = isV32GuardedProse(options) ? hedgeBodyForV32(guardedBody) : polished.text;
+  return {
+    answer_text: [finalBody, tags].join("\n\n"),
+    answer_postprocess: isV33PostprocessedProse(options)
+      ? "prose_polisher_contract_fields_v1"
+      : "deterministic_contract_fields_v1",
+    postprocess_actions: polished.actions
+  };
 }
 
 export function auditPromptText({ prompt, label }) {
