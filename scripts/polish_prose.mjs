@@ -67,6 +67,29 @@ function normalizeWhitespace(text) {
     .trim();
 }
 
+function wordCount(text) {
+  return (String(text || "").match(/\b[\w'-]+\b/g) || []).length;
+}
+
+function splitLongSentences(text, actions) {
+  const sentences = String(text || "").match(/[^.!?]+[.!?]?/g) || [];
+  let splitCount = 0;
+  const next = sentences.map((sentence) => {
+    if (wordCount(sentence) <= 32) return sentence;
+    let revised = sentence;
+    revised = revised.replace(/,\s+serving as\s+/i, ". It serves as ");
+    revised = revised.replace(/,\s+ensuring\s+/i, ". This helps ensure ");
+    revised = revised.replace(/,\s+with rights states and image-state codes defining\s+/i, ". Rights states and image-state codes define ");
+    revised = revised.replace(/,\s+with rights states\s+/i, ". Rights states ");
+    revised = revised.replace(/,\s+with image-state codes\s+/i, ". Image-state codes ");
+    revised = revised.replace(/,\s+which\s+/i, ". This ");
+    if (revised !== sentence) splitCount += 1;
+    return revised;
+  }).join(" ");
+  recordAction(actions, "split_long_sentence", "long sentence", "sentence split", splitCount);
+  return next;
+}
+
 function ensureHedge(text, actions) {
   const trimmed = normalizeWhitespace(text);
   if (!trimmed) {
@@ -121,6 +144,7 @@ export function polishProse(text, { label = {}, evidence = [] } = {}) {
   }
 
   polished = restoreEvidenceSpans(normalizeWhitespace(polished), spans);
+  polished = splitLongSentences(polished, actions);
   polished = ensureHedge(polished, actions);
   return { text: polished, actions };
 }
