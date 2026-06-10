@@ -604,6 +604,34 @@ function hedgeBodyForV32(body) {
   return `Based on these records, ${text.replace(/^[A-Z]/, (letter) => letter.toLowerCase())}`;
 }
 
+function bodyWordCount(text) {
+  return (String(text || "").match(/\b[\w'-]+\b/g) || []).length;
+}
+
+function splitLongBodySentences(body, actions = []) {
+  let splitCount = 0;
+  const next = (String(body || "").match(/[^.!?]+[.!?]?/g) || []).map((sentence) => {
+    if (bodyWordCount(sentence) <= 30) return sentence;
+    let revised = sentence;
+    revised = revised.replace(/,\s+serving as\s+/i, ". It serves as ");
+    revised = revised.replace(/,\s+allowing\s+/i, ". This allows ");
+    revised = revised.replace(/,\s+ensuring\s+/i, ". This helps ensure ");
+    revised = revised.replace(/filter that prioritizes\s+/i, "filter. It prioritizes ");
+    revised = revised.replace(/,\s+with ([^,.]+? records) serving as\s+/i, ". $1 serve as ");
+    revised = revised.replace(/,\s+with specific rights states and image-state codes defining\s+/i, ". Specific rights states and image-state codes define ");
+    revised = revised.replace(/,\s+with rights states and image-state codes defining\s+/i, ". Rights states and image-state codes define ");
+    revised = revised.replace(/,\s+with rights states\s+/i, ". Rights states ");
+    revised = revised.replace(/,\s+with image-state codes\s+/i, ". Image-state codes ");
+    revised = revised.replace(/,\s+which\s+/i, ". This ");
+    if (revised !== sentence) splitCount += 1;
+    return revised;
+  }).join(" ").replace(/\s+/g, " ").trim();
+  if (splitCount > 0) {
+    actions.push({ code: "split_long_sentence_finalizer", from: "long sentence", to: "sentence split", count: splitCount });
+  }
+  return next;
+}
+
 export function buildPrompt(packet, options = {}) {
   if (packet.label.refusal_expected) return buildHardRefusalPrompt(packet);
   if (packet.label.intent === "source_rights_question") return buildSourceRightsPrompt(packet);
@@ -647,7 +675,9 @@ export function finalizeAnswer(packet, generatedText, options = {}) {
   const polished = isV33PostprocessedProse(options)
     ? polishProse(guardedBody, { label: packet.label, evidence: packet.evidence })
     : { text: guardedBody, actions: [] };
-  const finalBody = isV32GuardedProse(options) ? hedgeBodyForV32(guardedBody) : polished.text;
+  const finalBody = isV32GuardedProse(options)
+    ? hedgeBodyForV32(guardedBody)
+    : (isV33PostprocessedProse(options) ? splitLongBodySentences(polished.text, polished.actions) : polished.text);
   return {
     answer_text: [finalBody, tags].join("\n\n"),
     answer_postprocess: isV33PostprocessedProse(options)
