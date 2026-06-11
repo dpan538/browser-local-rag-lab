@@ -105,6 +105,7 @@
     "paper:manifest:v33": "node scripts/build_v33_manifest.mjs",
     "paper:raw-vs-delivered:v33": "node scripts/compare_raw_delivered_v33.mjs",
     "paper:review-fixture:v33": "node scripts/build_v33_review_fixture.mjs",
+    "paper:blind-review:v33": "node scripts/build_v33_blind_review_fixtures.mjs",
     "paper:review-summary:v33": "node scripts/summarize_v33_human_review.mjs",
     "paper:anonymous-artifact": "node scripts/build_anonymous_artifact.mjs",
     "paper:reproduce": "npm run paper:raw-vs-delivered:v33 && npm run paper:review-fixture:v33 && npm run paper:review-summary:v33 && npm run v42:stats && npm run paper:manifest:v33",
