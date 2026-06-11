@@ -33,7 +33,7 @@ function evidenceText(evidenceValues) {
       const joined = list
         .filter((value) => value !== undefined && value !== null && String(value).trim())
         .join(" ; ");
-      return `${field}: ${joined || "none"}`;
+      return `${field}: ${reviewText(joined || "none")}`;
     })
     .join("\n");
 }
@@ -52,6 +52,30 @@ function buildRows(fixture) {
     reviewer_faithfulness: row.reviewer_faithfulness || "pending",
     reviewer_usability: row.reviewer_usability || "pending",
     reviewer_notes: row.reviewer_notes || ""
+  }));
+}
+
+function answerBody(text) {
+  return reviewText(String(text || "").replace(/EVIDENCE TAGS:\s*\n[\s\S]*$/i, "").trim() || String(text || ""));
+}
+
+function reviewText(text) {
+  return String(text || "")
+    .replace(/https:\/\/github\.com\/dpan538\/browser-local-rag-lab/gi, "project method files")
+    .replace(/dpan538\/browser-local-rag-lab/gi, "project method files");
+}
+
+function buildSimpleRows(fixture) {
+  return fixture.rows.map((row, index) => ({
+    Row: index + 1,
+    ID: row.review_id,
+    Question: row.query_text,
+    Evidence: evidenceText(row.evidence_values),
+    Answer: answerBody(row.delivered_answer),
+    Overall: "",
+    "Evidence support": "",
+    Usefulness: "",
+    Note: ""
   }));
 }
 
@@ -77,29 +101,59 @@ function writeCsv(rows, outputPath) {
   fs.writeFileSync(outputPath, `${lines.join("\n")}\n`);
 }
 
+function writeSimpleCsv(rows, outputPath) {
+  const headers = [
+    "Row",
+    "ID",
+    "Question",
+    "Evidence",
+    "Answer",
+    "Overall",
+    "Evidence support",
+    "Usefulness",
+    "Note"
+  ];
+  const lines = [
+    headers.join(","),
+    ...rows.map((row) => headers.map((header) => csvEscape(row[header])).join(","))
+  ];
+  fs.writeFileSync(outputPath, `${lines.join("\n")}\n`);
+}
+
 function writeGuide(outDir) {
   const guide = `# V3.3 Blind Review Table Guide
 
-Use the spreadsheet files if the JSON fixtures feel too technical:
+Recommended files for human review:
+
+- Reviewer A: \`v33_reviewer_a_simple_review.xlsx\`
+- Reviewer B: \`v33_reviewer_b_simple_review.xlsx\`
+
+These simple workbooks show only Question, Evidence, Answer, and four reviewer
+columns.
+
+CSV backups are also provided:
+
+- Reviewer A: \`v33_reviewer_a_simple_review.csv\`
+- Reviewer B: \`v33_reviewer_b_simple_review.csv\`
+
+The fuller blind-review CSV/XLSX files are kept for audit trail use:
 
 - Reviewer A: \`v33_reviewer_a_blind_review.xlsx\`
 - Reviewer B: \`v33_reviewer_b_blind_review.xlsx\`
 
-CSV backups are also provided:
-
 - Reviewer A: \`v33_reviewer_a_blind_review.csv\`
 - Reviewer B: \`v33_reviewer_b_blind_review.csv\`
 
-Open the XLSX or CSV in Excel, Numbers, Google Sheets, or LibreOffice. Review
-one row at a time. Please edit only these columns:
+Open the simple XLSX or CSV in Excel, Numbers, Google Sheets, or LibreOffice.
+Review one row at a time. Please edit only these columns:
 
-- \`reviewer_decision\`: \`accept\`, \`reject\`, or \`needs_adjudication\`
-- \`reviewer_faithfulness\`: \`faithful\`, \`minor_issue\`, or \`unfaithful\`
-- \`reviewer_usability\`: \`usable\`, \`partial\`, or \`unusable\`
-- \`reviewer_notes\`: short free-text note when useful
+- \`Overall\`: \`OK\`, \`Not sure\`, or \`Problem\`
+- \`Evidence support\`: \`Supported\`, \`Mostly\`, or \`Unsupported\`
+- \`Usefulness\`: \`Useful\`, \`Somewhat\`, or \`Not useful\`
+- \`Note\`: short free-text note when useful
 
 Do not edit query, evidence, or answer columns. If a row is difficult to judge,
-use \`needs_adjudication\` and explain why in \`reviewer_notes\`.
+use \`Not sure\` and explain why in \`Note\`.
 `;
   fs.writeFileSync(path.join(outDir, "BLIND_REVIEW_TABLE_GUIDE.md"), guide);
 }
@@ -107,6 +161,12 @@ use \`needs_adjudication\` and explain why in \`reviewer_notes\`.
 function convertOne(inputPath, outputPath) {
   const fixture = JSON.parse(fs.readFileSync(inputPath, "utf8"));
   writeCsv(buildRows(fixture), outputPath);
+  return { input: path.relative(repoRoot, inputPath), output: path.relative(repoRoot, outputPath), rows: fixture.rows.length };
+}
+
+function convertSimple(inputPath, outputPath) {
+  const fixture = JSON.parse(fs.readFileSync(inputPath, "utf8"));
+  writeSimpleCsv(buildSimpleRows(fixture), outputPath);
   return { input: path.relative(repoRoot, inputPath), output: path.relative(repoRoot, outputPath), rows: fixture.rows.length };
 }
 
@@ -121,6 +181,14 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
     convertOne(
       path.join(options.inputDir, "v33_reviewer_b_blind_fixture.json"),
       path.join(options.outDir, "v33_reviewer_b_blind_review.csv")
+    ),
+    convertSimple(
+      path.join(options.inputDir, "v33_reviewer_a_blind_fixture.json"),
+      path.join(options.outDir, "v33_reviewer_a_simple_review.csv")
+    ),
+    convertSimple(
+      path.join(options.inputDir, "v33_reviewer_b_blind_fixture.json"),
+      path.join(options.outDir, "v33_reviewer_b_simple_review.csv")
     )
   ];
   writeGuide(options.outDir);
