@@ -82,6 +82,15 @@ CLAIMS_AND_NON_CLAIMS.md
 REPRODUCIBILITY.md
 ```
 
+Journal of Documentation positioning notes are tracked separately as planning
+materials, not submission prose:
+
+```text
+essay/jod_positioning.md
+essay/jod_article_outline.md
+essay/jod_submission_readiness.md
+```
+
 ## Run Checks
 
 From the repository root:
