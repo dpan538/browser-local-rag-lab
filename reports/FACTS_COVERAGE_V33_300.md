@@ -1,6 +1,6 @@
 # Facts Coverage Ratio
 
-Generated: 2026-06-10T06:07:47.675Z
+Generated: 2026-06-11T02:47:54.746Z
 
 This report measures how many compact evidence fact values appear in the model
 answer body. It is intended for V3.1/V3.2 comparison, not as a standalone

@@ -1,0 +1,41 @@
+name: Non-WebGPU Research Checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  contract-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Audit Round 03 labels
+        run: npm run audit:labels:300
+
+      - name: Build controlled retrieval contract
+        run: npm run retrieval:contract:300
+
+      - name: Audit V3.3 prompts
+        run: npm run prompts:audit:300:v33
+
+      - name: Run contract oracle
+        run: npm run contract:oracle:300
+
+      - name: Run V3.3 quality gates
+        run: npm run quality:v33:300
+
+      - name: Build paper hardening reports
+        run: npm run paper:reproduce

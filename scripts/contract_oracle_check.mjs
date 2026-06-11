@@ -103,7 +103,7 @@ function markdown(report) {
   const coverageRows = coverageFailures.length === 0
     ? "| none | none | none |"
     : coverageFailures.slice(0, 80).map((row) => `| ${row.query_id} | ${row.intent} | ${row.missing_gold_ids.join(", ")} |`).join("\n");
-  return `# Contract Oracle Round 02 200
+  return `# Contract Oracle ${report.summary.rows} Rows
 
 Generated: ${report.generated_at}
 

@@ -1,6 +1,6 @@
 # Misreading And Overconfidence Check
 
-Generated: 2026-06-10T06:07:47.325Z
+Generated: 2026-06-11T02:47:54.334Z
 
 This check scans delivered answer prose after removing injected `EVIDENCE TAGS`.
 It catches prompt leakage, likely negation mismatches, absolute language, and

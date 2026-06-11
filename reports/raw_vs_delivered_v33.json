@@ -1,0 +1,2839 @@
+{
+  "generated_at": "2026-06-11T02:49:35.065Z",
+  "source_round_json": "reports/webllm_round_03_latency300_v33_postprocessed_prose.json",
+  "condition_id": "v3.3_contract_top3_300_delivered",
+  "summary": {
+    "rows": 300,
+    "completed_rows": 300,
+    "deterministic_rows": 109,
+    "model_generation_rows": 191,
+    "model_raw_rows_with_evidence_tags": 0,
+    "model_delivered_rows_with_evidence_tags": 191,
+    "model_rows_raw_body_differs_from_model_body": 0,
+    "model_rows_delivered_body_changed_from_model_body": 76,
+    "qwen_avg_ttft_ms": 1105.7769633437952,
+    "qwen_avg_total_latency_ms": 2490.823036618258,
+    "deterministic_avg_total_latency_ms": 0.014678911331596725,
+    "all_row_avg_total_latency_ms": 1585.8293333180745
+  },
+  "deterministic_lane_counts": {
+    "refusal": 73,
+    "source_rights": 36
+  },
+  "postprocess_action_counts": {
+    "fallback_readability_body": 12,
+    "fallback_too_short_body": 1,
+    "insert_hedge": 18,
+    "none": 146,
+    "soften_the_earliest": 2,
+    "soften_the_first": 2,
+    "split_long_sentence": 8,
+    "split_long_sentence_finalizer": 3
+  },
+  "model_rows": [
+    {
+      "query_id": "BQ01",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 18,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1323.1999998092651,
+      "total_latency_ms": 2051.8999996185303
+    },
+    {
+      "query_id": "BQ02",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 44,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1756.8999996185303,
+      "total_latency_ms": 3756.3999996185303
+    },
+    {
+      "query_id": "BQ03",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 1240.5,
+      "total_latency_ms": 1953
+    },
+    {
+      "query_id": "BQ04",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 15,
+      "delivered_body_word_count": 15,
+      "ttft_ms": 1056.7000007629395,
+      "total_latency_ms": 1660.2000007629395
+    },
+    {
+      "query_id": "BQ05",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 12,
+      "ttft_ms": 890.6999998092651,
+      "total_latency_ms": 1472
+    },
+    {
+      "query_id": "BQ06",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 12,
+      "ttft_ms": 889.8000001907349,
+      "total_latency_ms": 1477.6999998092651
+    },
+    {
+      "query_id": "BQ07",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_too_short_body",
+          "from": "too short generated body",
+          "to": "deterministic answer body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 4,
+      "delivered_body_word_count": 21,
+      "ttft_ms": 900.3000001907349,
+      "total_latency_ms": 1078.1000003814697
+    },
+    {
+      "query_id": "BQ12",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 25,
+      "delivered_body_word_count": 25,
+      "ttft_ms": 980.5,
+      "total_latency_ms": 3002.2000007629395
+    },
+    {
+      "query_id": "BQ13",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "soften_the_first",
+          "from": "the first",
+          "to": "an early",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 38,
+      "delivered_body_word_count": 40,
+      "ttft_ms": 1023.5999994277954,
+      "total_latency_ms": 2986.300000190735
+    },
+    {
+      "query_id": "BQ14",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 18,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1115.1999998092651,
+      "total_latency_ms": 2190.699999809265
+    },
+    {
+      "query_id": "BQ16",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 31,
+      "delivered_body_word_count": 32,
+      "ttft_ms": 987.5,
+      "total_latency_ms": 2440.699999809265
+    },
+    {
+      "query_id": "BQ23",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 24,
+      "delivered_body_word_count": 24,
+      "ttft_ms": 971.8000001907349,
+      "total_latency_ms": 1913.4000005722046
+    },
+    {
+      "query_id": "BQ24",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "split_long_sentence",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 52,
+      "delivered_body_word_count": 52,
+      "ttft_ms": 974.3999996185303,
+      "total_latency_ms": 3308.800000190735
+    },
+    {
+      "query_id": "BQ25",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 28,
+      "delivered_body_word_count": 28,
+      "ttft_ms": 1358.8999996185303,
+      "total_latency_ms": 3108.800000190735
+    },
+    {
+      "query_id": "BQ26",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 16,
+      "delivered_body_word_count": 16,
+      "ttft_ms": 1341.0999994277954,
+      "total_latency_ms": 2286.699999809265
+    },
+    {
+      "query_id": "BQ30",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 98,
+      "delivered_body_word_count": 100,
+      "ttft_ms": 1303,
+      "total_latency_ms": 6873.900000572205
+    },
+    {
+      "query_id": "BQ031",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "split_long_sentence_finalizer",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 39,
+      "delivered_body_word_count": 38,
+      "ttft_ms": 1303.1000003814697,
+      "total_latency_ms": 2918.8999996185303
+    },
+    {
+      "query_id": "BQ032",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 20,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 1414.1000003814697,
+      "total_latency_ms": 2169.8999996185303
+    },
+    {
+      "query_id": "BQ033",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "split_long_sentence",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 36,
+      "delivered_body_word_count": 37,
+      "ttft_ms": 1412,
+      "total_latency_ms": 2830.0999994277954
+    },
+    {
+      "query_id": "BQ034",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 35,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1357.6000003814697,
+      "total_latency_ms": 2655.699999809265
+    },
+    {
+      "query_id": "BQ035",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "split_long_sentence_finalizer",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 32,
+      "delivered_body_word_count": 34,
+      "ttft_ms": 1203.5999994277954,
+      "total_latency_ms": 2380
+    },
+    {
+      "query_id": "BQ036",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "split_long_sentence",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 34,
+      "delivered_body_word_count": 35,
+      "ttft_ms": 1226.1999998092651,
+      "total_latency_ms": 2462.199999809265
+    },
+    {
+      "query_id": "BQ037",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "split_long_sentence",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 36,
+      "delivered_body_word_count": 37,
+      "ttft_ms": 1269.4000005722046,
+      "total_latency_ms": 2691.7000007629395
+    },
+    {
+      "query_id": "BQ038",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 1311.1999998092651,
+      "total_latency_ms": 2185.800000190735
+    },
+    {
+      "query_id": "BQ039",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 1307.8999996185303,
+      "total_latency_ms": 2145
+    },
+    {
+      "query_id": "BQ040",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "split_long_sentence",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 34,
+      "delivered_body_word_count": 35,
+      "ttft_ms": 1329,
+      "total_latency_ms": 2587.699999809265
+    },
+    {
+      "query_id": "BQ041",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 37,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1407.3000001907349,
+      "total_latency_ms": 3128.2000007629395
+    },
+    {
+      "query_id": "BQ042",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 1239.5,
+      "total_latency_ms": 2047.1999998092651
+    },
+    {
+      "query_id": "BQ043",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 33,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1258.8999996185303,
+      "total_latency_ms": 2474
+    },
+    {
+      "query_id": "BQ044",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 17,
+      "delivered_body_word_count": 17,
+      "ttft_ms": 1227.1999998092651,
+      "total_latency_ms": 1925.5
+    },
+    {
+      "query_id": "BQ045",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 26,
+      "delivered_body_word_count": 26,
+      "ttft_ms": 1059.8000001907349,
+      "total_latency_ms": 2106.5
+    },
+    {
+      "query_id": "BQ046",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 69,
+      "delivered_body_word_count": 69,
+      "ttft_ms": 1053.3000001907349,
+      "total_latency_ms": 4398
+    },
+    {
+      "query_id": "BQ047",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 17,
+      "delivered_body_word_count": 17,
+      "ttft_ms": 979.8000001907349,
+      "total_latency_ms": 1595.4000005722046
+    },
+    {
+      "query_id": "BQ048",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 17,
+      "delivered_body_word_count": 17,
+      "ttft_ms": 989.5,
+      "total_latency_ms": 1642.5
+    },
+    {
+      "query_id": "BQ049",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 987.1999998092651,
+      "total_latency_ms": 1572.6000003814697
+    },
+    {
+      "query_id": "BQ050",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 16,
+      "delivered_body_word_count": 16,
+      "ttft_ms": 1104.5999994277954,
+      "total_latency_ms": 1772
+    },
+    {
+      "query_id": "BQ051",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 1144.9000005722046,
+      "total_latency_ms": 2045
+    },
+    {
+      "query_id": "BQ052",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 16,
+      "delivered_body_word_count": 16,
+      "ttft_ms": 1158.8999996185303,
+      "total_latency_ms": 1814.5999994277954
+    },
+    {
+      "query_id": "BQ053",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 17,
+      "delivered_body_word_count": 17,
+      "ttft_ms": 1201.6000003814697,
+      "total_latency_ms": 1846
+    },
+    {
+      "query_id": "BQ054",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 94,
+      "delivered_body_word_count": 95,
+      "ttft_ms": 1200.8999996185303,
+      "total_latency_ms": 6377.099999427795
+    },
+    {
+      "query_id": "BQ055",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 17,
+      "delivered_body_word_count": 17,
+      "ttft_ms": 989.6999998092651,
+      "total_latency_ms": 1665.8999996185303
+    },
+    {
+      "query_id": "BQ056",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 18,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1068,
+      "total_latency_ms": 1784.1000003814697
+    },
+    {
+      "query_id": "BQ057",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 31,
+      "delivered_body_word_count": 31,
+      "ttft_ms": 1061.5,
+      "total_latency_ms": 2221.8999996185303
+    },
+    {
+      "query_id": "BQ058",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 10,
+      "delivered_body_word_count": 10,
+      "ttft_ms": 920.1000003814697,
+      "total_latency_ms": 1329.3000001907349
+    },
+    {
+      "query_id": "BQ059",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 17,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 908.1999998092651,
+      "total_latency_ms": 1705.5999994277954
+    },
+    {
+      "query_id": "BQ060",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 16,
+      "delivered_body_word_count": 16,
+      "ttft_ms": 898.3000001907349,
+      "total_latency_ms": 1520.1999998092651
+    },
+    {
+      "query_id": "BQ061",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 10,
+      "delivered_body_word_count": 10,
+      "ttft_ms": 921.4000005722046,
+      "total_latency_ms": 1368.2000007629395
+    },
+    {
+      "query_id": "BQ062",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 29,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 977.6999998092651,
+      "total_latency_ms": 2775.8999996185303
+    },
+    {
+      "query_id": "BQ063",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 15,
+      "ttft_ms": 895.6999998092651,
+      "total_latency_ms": 1509.6999998092651
+    },
+    {
+      "query_id": "BQ064",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 11,
+      "delivered_body_word_count": 11,
+      "ttft_ms": 901.6000003814697,
+      "total_latency_ms": 1445.6999998092651
+    },
+    {
+      "query_id": "BQ065",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 1113,
+      "total_latency_ms": 1684.6999998092651
+    },
+    {
+      "query_id": "BQ066",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 1152.5,
+      "total_latency_ms": 1702.2999992370605
+    },
+    {
+      "query_id": "BQ067",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 937.2000007629395,
+      "total_latency_ms": 1501.7000007629395
+    },
+    {
+      "query_id": "BQ068",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 10,
+      "delivered_body_word_count": 10,
+      "ttft_ms": 1012.7999992370605,
+      "total_latency_ms": 1426.2999992370605
+    },
+    {
+      "query_id": "BQ069",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 961.9000005722046,
+      "total_latency_ms": 1517.9000005722046
+    },
+    {
+      "query_id": "BQ070",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 21,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 989.5,
+      "total_latency_ms": 2104
+    },
+    {
+      "query_id": "BQ071",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 13,
+      "delivered_body_word_count": 13,
+      "ttft_ms": 1057.4000005722046,
+      "total_latency_ms": 1582.6000003814697
+    },
+    {
+      "query_id": "BQ072",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 19,
+      "delivered_body_word_count": 19,
+      "ttft_ms": 1097,
+      "total_latency_ms": 2170.699999809265
+    },
+    {
+      "query_id": "BQ073",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 11,
+      "delivered_body_word_count": 11,
+      "ttft_ms": 887.1999998092651,
+      "total_latency_ms": 1367.5
+    },
+    {
+      "query_id": "BQ074",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 15,
+      "delivered_body_word_count": 16,
+      "ttft_ms": 936.9000005722046,
+      "total_latency_ms": 2089.9000005722046
+    },
+    {
+      "query_id": "BQ075",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 9,
+      "delivered_body_word_count": 9,
+      "ttft_ms": 899.6999998092651,
+      "total_latency_ms": 1314.3999996185303
+    },
+    {
+      "query_id": "BQ076",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 986,
+      "total_latency_ms": 1538.6999998092651
+    },
+    {
+      "query_id": "BQ077",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 13,
+      "delivered_body_word_count": 13,
+      "ttft_ms": 883.5,
+      "total_latency_ms": 1517.1000003814697
+    },
+    {
+      "query_id": "BQ078",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 13,
+      "delivered_body_word_count": 13,
+      "ttft_ms": 916.6999998092651,
+      "total_latency_ms": 1417.6999998092651
+    },
+    {
+      "query_id": "BQ079",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 10,
+      "delivered_body_word_count": 10,
+      "ttft_ms": 904,
+      "total_latency_ms": 1429.6000003814697
+    },
+    {
+      "query_id": "BQ080",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 10,
+      "delivered_body_word_count": 10,
+      "ttft_ms": 896.6999998092651,
+      "total_latency_ms": 1333.8000001907349
+    },
+    {
+      "query_id": "BQ081",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 21,
+      "delivered_body_word_count": 21,
+      "ttft_ms": 978.3000001907349,
+      "total_latency_ms": 1837.5
+    },
+    {
+      "query_id": "BQ082",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 10,
+      "delivered_body_word_count": 10,
+      "ttft_ms": 927.5,
+      "total_latency_ms": 1328.1999998092651
+    },
+    {
+      "query_id": "BQ102",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 974,
+      "total_latency_ms": 2708.3999996185303
+    },
+    {
+      "query_id": "BQ103",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 20,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 1176.6999998092651,
+      "total_latency_ms": 2830.6000003814697
+    },
+    {
+      "query_id": "BQ104",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 43,
+      "delivered_body_word_count": 46,
+      "ttft_ms": 1211.3999996185303,
+      "total_latency_ms": 5094.39999961853
+    },
+    {
+      "query_id": "BQ105",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 990.3000001907349,
+      "total_latency_ms": 2374.6000003814697
+    },
+    {
+      "query_id": "BQ106",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 53,
+      "delivered_body_word_count": 55,
+      "ttft_ms": 1085.6999998092651,
+      "total_latency_ms": 5028.199999809265
+    },
+    {
+      "query_id": "BQ107",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 19,
+      "delivered_body_word_count": 19,
+      "ttft_ms": 1077.6000003814697,
+      "total_latency_ms": 2882.1000003814697
+    },
+    {
+      "query_id": "BQ108",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 18,
+      "delivered_body_word_count": 19,
+      "ttft_ms": 1082,
+      "total_latency_ms": 2192.2999992370605
+    },
+    {
+      "query_id": "BQ109",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 30,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 1173.5,
+      "total_latency_ms": 3522.5
+    },
+    {
+      "query_id": "BQ110",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 19,
+      "delivered_body_word_count": 19,
+      "ttft_ms": 1539.8000001907349,
+      "total_latency_ms": 3519.1000003814697
+    },
+    {
+      "query_id": "BQ111",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 16,
+      "delivered_body_word_count": 16,
+      "ttft_ms": 1244.8000001907349,
+      "total_latency_ms": 2897.300000190735
+    },
+    {
+      "query_id": "BQ112",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 19,
+      "delivered_body_word_count": 19,
+      "ttft_ms": 1087.0999994277954,
+      "total_latency_ms": 2751.199999809265
+    },
+    {
+      "query_id": "BQ113",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 20,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 1124.1999998092651,
+      "total_latency_ms": 2858.5999994277954
+    },
+    {
+      "query_id": "BQ114",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 21,
+      "delivered_body_word_count": 21,
+      "ttft_ms": 1172.8000001907349,
+      "total_latency_ms": 3146.199999809265
+    },
+    {
+      "query_id": "BQ115",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 23,
+      "delivered_body_word_count": 23,
+      "ttft_ms": 1073.8999996185303,
+      "total_latency_ms": 2323.5
+    },
+    {
+      "query_id": "BQ116",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 20,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 1150.5,
+      "total_latency_ms": 2688.699999809265
+    },
+    {
+      "query_id": "BQ117",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 34,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1319.6000003814697,
+      "total_latency_ms": 3719.4000005722046
+    },
+    {
+      "query_id": "BQ118",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 23,
+      "delivered_body_word_count": 23,
+      "ttft_ms": 930.6000003814697,
+      "total_latency_ms": 2432.699999809265
+    },
+    {
+      "query_id": "BQ119",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 33,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1068.3999996185303,
+      "total_latency_ms": 3359.5999994277954
+    },
+    {
+      "query_id": "BQ120",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 21,
+      "delivered_body_word_count": 21,
+      "ttft_ms": 972.8000001907349,
+      "total_latency_ms": 2925.8999996185303
+    },
+    {
+      "query_id": "BQ121",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 1096.5999994277954,
+      "total_latency_ms": 2413.5999994277954
+    },
+    {
+      "query_id": "BQ122",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 946.7999992370605,
+      "total_latency_ms": 2207
+    },
+    {
+      "query_id": "BQ123",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 20,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 970.1999998092651,
+      "total_latency_ms": 2782.3999996185303
+    },
+    {
+      "query_id": "BQ124",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 17,
+      "delivered_body_word_count": 17,
+      "ttft_ms": 982.4000005722046,
+      "total_latency_ms": 2290.800000190735
+    },
+    {
+      "query_id": "BQ125",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 13,
+      "delivered_body_word_count": 13,
+      "ttft_ms": 980.8000001907349,
+      "total_latency_ms": 2139.8999996185303
+    },
+    {
+      "query_id": "BQ126",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 12,
+      "ttft_ms": 1049.2999992370605,
+      "total_latency_ms": 2207.2999992370605
+    },
+    {
+      "query_id": "BQ127",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 24,
+      "delivered_body_word_count": 24,
+      "ttft_ms": 1095.4000005722046,
+      "total_latency_ms": 3022.300000190735
+    },
+    {
+      "query_id": "BQ128",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 28,
+      "delivered_body_word_count": 29,
+      "ttft_ms": 1079.1999998092651,
+      "total_latency_ms": 2973.6000003814697
+    },
+    {
+      "query_id": "BQ129",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 53,
+      "delivered_body_word_count": 53,
+      "ttft_ms": 1255.6999998092651,
+      "total_latency_ms": 3850.5
+    },
+    {
+      "query_id": "BQ130",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 23,
+      "delivered_body_word_count": 23,
+      "ttft_ms": 1156,
+      "total_latency_ms": 2343.6000003814697
+    },
+    {
+      "query_id": "BQ131",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 83,
+      "delivered_body_word_count": 66,
+      "ttft_ms": 1185.4000005722046,
+      "total_latency_ms": 6344.400000572205
+    },
+    {
+      "query_id": "BQ132",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 25,
+      "delivered_body_word_count": 25,
+      "ttft_ms": 1077,
+      "total_latency_ms": 2341.6000003814697
+    },
+    {
+      "query_id": "BQ133",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 29,
+      "delivered_body_word_count": 29,
+      "ttft_ms": 966.6000003814697,
+      "total_latency_ms": 2551.8999996185303
+    },
+    {
+      "query_id": "BQ134",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 29,
+      "delivered_body_word_count": 29,
+      "ttft_ms": 980.1000003814697,
+      "total_latency_ms": 2470.5
+    },
+    {
+      "query_id": "BQ135",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 27,
+      "delivered_body_word_count": 27,
+      "ttft_ms": 1024,
+      "total_latency_ms": 2580.5999994277954
+    },
+    {
+      "query_id": "BQ136",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 31,
+      "delivered_body_word_count": 31,
+      "ttft_ms": 1103.8000001907349,
+      "total_latency_ms": 2698.300000190735
+    },
+    {
+      "query_id": "BQ137",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 27,
+      "delivered_body_word_count": 27,
+      "ttft_ms": 1078.5,
+      "total_latency_ms": 2414.5999994277954
+    },
+    {
+      "query_id": "BQ138",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 29,
+      "delivered_body_word_count": 29,
+      "ttft_ms": 1117.1000003814697,
+      "total_latency_ms": 3081.9000005722046
+    },
+    {
+      "query_id": "BQ139",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "split_long_sentence",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 38,
+      "delivered_body_word_count": 38,
+      "ttft_ms": 1110.8999996185303,
+      "total_latency_ms": 2951.199999809265
+    },
+    {
+      "query_id": "BQ140",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 83,
+      "delivered_body_word_count": 87,
+      "ttft_ms": 1089.1999998092651,
+      "total_latency_ms": 5367.299999237061
+    },
+    {
+      "query_id": "BQ141",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 39,
+      "delivered_body_word_count": 52,
+      "ttft_ms": 1178.7000007629395,
+      "total_latency_ms": 3370.4000005722046
+    },
+    {
+      "query_id": "BQ142",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 42,
+      "delivered_body_word_count": 42,
+      "ttft_ms": 1140.8000001907349,
+      "total_latency_ms": 3185.3999996185303
+    },
+    {
+      "query_id": "BQ143",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 15,
+      "delivered_body_word_count": 15,
+      "ttft_ms": 1154.1000003814697,
+      "total_latency_ms": 2001.1999998092651
+    },
+    {
+      "query_id": "BQ144",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 20,
+      "delivered_body_word_count": 41,
+      "ttft_ms": 1018.1999998092651,
+      "total_latency_ms": 2569.5999994277954
+    },
+    {
+      "query_id": "BQ145",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 24,
+      "delivered_body_word_count": 24,
+      "ttft_ms": 1012,
+      "total_latency_ms": 2505.5
+    },
+    {
+      "query_id": "BQ146",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "soften_the_earliest",
+          "from": "the earliest",
+          "to": "one of the early",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 24,
+      "ttft_ms": 935.5,
+      "total_latency_ms": 1923.6000003814697
+    },
+    {
+      "query_id": "BQ147",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 975,
+      "total_latency_ms": 1494.6999998092651
+    },
+    {
+      "query_id": "BQ148",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 975.3999996185303,
+      "total_latency_ms": 1557.3999996185303
+    },
+    {
+      "query_id": "BQ149",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 998.8999996185303,
+      "total_latency_ms": 1574.0999994277954
+    },
+    {
+      "query_id": "BQ150",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 986.3000001907349,
+      "total_latency_ms": 1501.2000007629395
+    },
+    {
+      "query_id": "BQ151",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 985.1999998092651,
+      "total_latency_ms": 1477.0999994277954
+    },
+    {
+      "query_id": "BQ152",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 974.1999998092651,
+      "total_latency_ms": 1450.6999998092651
+    },
+    {
+      "query_id": "BQ153",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 1003.2999992370605,
+      "total_latency_ms": 1503.0999994277954
+    },
+    {
+      "query_id": "BQ154",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 973.1999998092651,
+      "total_latency_ms": 1496.9000005722046
+    },
+    {
+      "query_id": "BQ155",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 975.1999998092651,
+      "total_latency_ms": 1507.6999998092651
+    },
+    {
+      "query_id": "BQ156",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 1000.8000001907349,
+      "total_latency_ms": 1524.8999996185303
+    },
+    {
+      "query_id": "BQ157",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 979.5999994277954,
+      "total_latency_ms": 1520.8999996185303
+    },
+    {
+      "query_id": "BQ158",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 1001.2999992370605,
+      "total_latency_ms": 1536.5
+    },
+    {
+      "query_id": "BQ159",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 984.9000005722046,
+      "total_latency_ms": 1498.5
+    },
+    {
+      "query_id": "BQ160",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 973.2000007629395,
+      "total_latency_ms": 1468.4000005722046
+    },
+    {
+      "query_id": "BQ161",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 39,
+      "delivered_body_word_count": 21,
+      "ttft_ms": 1393.8999996185303,
+      "total_latency_ms": 3694.8999996185303
+    },
+    {
+      "query_id": "BQ162",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 26,
+      "delivered_body_word_count": 27,
+      "ttft_ms": 1250.6000003814697,
+      "total_latency_ms": 2887.6000003814697
+    },
+    {
+      "query_id": "BQ163",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 32,
+      "delivered_body_word_count": 32,
+      "ttft_ms": 1223.1999998092651,
+      "total_latency_ms": 2835.5999994277954
+    },
+    {
+      "query_id": "BQ164",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 24,
+      "delivered_body_word_count": 24,
+      "ttft_ms": 1208.3000001907349,
+      "total_latency_ms": 3075.8999996185303
+    },
+    {
+      "query_id": "BQ165",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 30,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 1301.0999994277954,
+      "total_latency_ms": 3068.5
+    },
+    {
+      "query_id": "BQ166",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 26,
+      "delivered_body_word_count": 26,
+      "ttft_ms": 1338.8999996185303,
+      "total_latency_ms": 2971.699999809265
+    },
+    {
+      "query_id": "BQ167",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 49,
+      "delivered_body_word_count": 21,
+      "ttft_ms": 1396.3000001907349,
+      "total_latency_ms": 4190.300000190735
+    },
+    {
+      "query_id": "BQ168",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 19,
+      "delivered_body_word_count": 21,
+      "ttft_ms": 1257.3000001907349,
+      "total_latency_ms": 2742.9000005722046
+    },
+    {
+      "query_id": "BQ169",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 77,
+      "delivered_body_word_count": 78,
+      "ttft_ms": 1468.5,
+      "total_latency_ms": 6826.39999961853
+    },
+    {
+      "query_id": "BQ170",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 1346.9000005722046,
+      "total_latency_ms": 2601.6000003814697
+    },
+    {
+      "query_id": "BQ171",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 13,
+      "delivered_body_word_count": 13,
+      "ttft_ms": 1287.1000003814697,
+      "total_latency_ms": 1833.8000001907349
+    },
+    {
+      "query_id": "BQ172",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 25,
+      "delivered_body_word_count": 25,
+      "ttft_ms": 1317.3000001907349,
+      "total_latency_ms": 2433
+    },
+    {
+      "query_id": "BQ173",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 24,
+      "delivered_body_word_count": 24,
+      "ttft_ms": 1373.6999998092651,
+      "total_latency_ms": 2611.8999996185303
+    },
+    {
+      "query_id": "BQ174",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 12,
+      "ttft_ms": 1368.5,
+      "total_latency_ms": 2583.5
+    },
+    {
+      "query_id": "BQ175",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 1238.5,
+      "total_latency_ms": 2596.2000007629395
+    },
+    {
+      "query_id": "BQ176",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 27,
+      "delivered_body_word_count": 27,
+      "ttft_ms": 1401,
+      "total_latency_ms": 3081
+    },
+    {
+      "query_id": "BQ201",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 32,
+      "delivered_body_word_count": 32,
+      "ttft_ms": 1195.3999996185303,
+      "total_latency_ms": 2245
+    },
+    {
+      "query_id": "BQ202",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 24,
+      "delivered_body_word_count": 24,
+      "ttft_ms": 1083.3000001907349,
+      "total_latency_ms": 1855.4000005722046
+    },
+    {
+      "query_id": "BQ203",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 33,
+      "delivered_body_word_count": 33,
+      "ttft_ms": 1056.7000007629395,
+      "total_latency_ms": 2213.300000190735
+    },
+    {
+      "query_id": "BQ204",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "split_long_sentence",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 40,
+      "delivered_body_word_count": 40,
+      "ttft_ms": 1030.0999994277954,
+      "total_latency_ms": 2665.3999996185303
+    },
+    {
+      "query_id": "BQ205",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 32,
+      "delivered_body_word_count": 32,
+      "ttft_ms": 1161.9000005722046,
+      "total_latency_ms": 2326.4000005722046
+    },
+    {
+      "query_id": "BQ206",
+      "intent": "archive_orientation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 39,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1310.6999998092651,
+      "total_latency_ms": 2879.5999994277954
+    },
+    {
+      "query_id": "BQ207",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 88,
+      "delivered_body_word_count": 89,
+      "ttft_ms": 1096.3000001907349,
+      "total_latency_ms": 6099.699999809265
+    },
+    {
+      "query_id": "BQ208",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 17,
+      "delivered_body_word_count": 17,
+      "ttft_ms": 1088.2999992370605,
+      "total_latency_ms": 1764.5
+    },
+    {
+      "query_id": "BQ209",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 26,
+      "delivered_body_word_count": 26,
+      "ttft_ms": 1030.5999994277954,
+      "total_latency_ms": 2000.3999996185303
+    },
+    {
+      "query_id": "BQ210",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 18,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1028.6000003814697,
+      "total_latency_ms": 2419.5
+    },
+    {
+      "query_id": "BQ211",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 20,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 1193.9000005722046,
+      "total_latency_ms": 1972.2000007629395
+    },
+    {
+      "query_id": "BQ212",
+      "intent": "casual_archive_help",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 17,
+      "delivered_body_word_count": 17,
+      "ttft_ms": 1238.6000003814697,
+      "total_latency_ms": 1895.4000005722046
+    },
+    {
+      "query_id": "BQ213",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 15,
+      "delivered_body_word_count": 15,
+      "ttft_ms": 1140.8999996185303,
+      "total_latency_ms": 1787.5999994277954
+    },
+    {
+      "query_id": "BQ214",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 15,
+      "delivered_body_word_count": 16,
+      "ttft_ms": 940.2999992370605,
+      "total_latency_ms": 2115.7999992370605
+    },
+    {
+      "query_id": "BQ215",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 13,
+      "delivered_body_word_count": 13,
+      "ttft_ms": 972.8000001907349,
+      "total_latency_ms": 2032.6000003814697
+    },
+    {
+      "query_id": "BQ216",
+      "intent": "current_object_explanation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 963.0999994277954,
+      "total_latency_ms": 1526.1999998092651
+    },
+    {
+      "query_id": "BQ229",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 18,
+      "delivered_body_word_count": 18,
+      "ttft_ms": 1185.4000005722046,
+      "total_latency_ms": 2994
+    },
+    {
+      "query_id": "BQ230",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 1067,
+      "total_latency_ms": 2949.3999996185303
+    },
+    {
+      "query_id": "BQ231",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 23,
+      "delivered_body_word_count": 23,
+      "ttft_ms": 1276.3000001907349,
+      "total_latency_ms": 3597.5
+    },
+    {
+      "query_id": "BQ232",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "soften_the_first",
+          "from": "The first",
+          "to": "an early",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 27,
+      "delivered_body_word_count": 27,
+      "ttft_ms": 1253.1999998092651,
+      "total_latency_ms": 3607.1000003814697
+    },
+    {
+      "query_id": "BQ233",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 14,
+      "delivered_body_word_count": 14,
+      "ttft_ms": 987.8000001907349,
+      "total_latency_ms": 2282.300000190735
+    },
+    {
+      "query_id": "BQ234",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 24,
+      "delivered_body_word_count": 24,
+      "ttft_ms": 1075.7999992370605,
+      "total_latency_ms": 3385.5999994277954
+    },
+    {
+      "query_id": "BQ235",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 20,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 1056.8000001907349,
+      "total_latency_ms": 3082.800000190735
+    },
+    {
+      "query_id": "BQ236",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 20,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 925.1999998092651,
+      "total_latency_ms": 2659.6000003814697
+    },
+    {
+      "query_id": "BQ237",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 12,
+      "delivered_body_word_count": 12,
+      "ttft_ms": 1034,
+      "total_latency_ms": 2308.2999992370605
+    },
+    {
+      "query_id": "BQ238",
+      "intent": "comparison",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 25,
+      "delivered_body_word_count": 25,
+      "ttft_ms": 1013.8999996185303,
+      "total_latency_ms": 2884.199999809265
+    },
+    {
+      "query_id": "BQ239",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 37,
+      "delivered_body_word_count": 23,
+      "ttft_ms": 988.5,
+      "total_latency_ms": 2720.0999994277954
+    },
+    {
+      "query_id": "BQ240",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 27,
+      "delivered_body_word_count": 27,
+      "ttft_ms": 999,
+      "total_latency_ms": 2095
+    },
+    {
+      "query_id": "BQ241",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 37,
+      "delivered_body_word_count": 39,
+      "ttft_ms": 970.5,
+      "total_latency_ms": 2680.6000003814697
+    },
+    {
+      "query_id": "BQ242",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 19,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 1170.6999998092651,
+      "total_latency_ms": 2443.4000005722046
+    },
+    {
+      "query_id": "BQ243",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 21,
+      "delivered_body_word_count": 21,
+      "ttft_ms": 1212.9000005722046,
+      "total_latency_ms": 2052.9000005722046
+    },
+    {
+      "query_id": "BQ244",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 28,
+      "delivered_body_word_count": 28,
+      "ttft_ms": 1171.5999994277954,
+      "total_latency_ms": 2748.7999992370605
+    },
+    {
+      "query_id": "BQ245",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 23,
+      "delivered_body_word_count": 46,
+      "ttft_ms": 1056.6000003814697,
+      "total_latency_ms": 2167.6000003814697
+    },
+    {
+      "query_id": "BQ246",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 31,
+      "delivered_body_word_count": 31,
+      "ttft_ms": 1110.4000005722046,
+      "total_latency_ms": 2766.6000003814697
+    },
+    {
+      "query_id": "BQ247",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "split_long_sentence_finalizer",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 32,
+      "delivered_body_word_count": 32,
+      "ttft_ms": 1000.6000003814697,
+      "total_latency_ms": 2719.5
+    },
+    {
+      "query_id": "BQ248",
+      "intent": "region_period_recommendation",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [],
+      "raw_body_word_count": 31,
+      "delivered_body_word_count": 31,
+      "ttft_ms": 1034.0999994277954,
+      "total_latency_ms": 2837.7999992370605
+    },
+    {
+      "query_id": "BQ249",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 29,
+      "delivered_body_word_count": 29,
+      "ttft_ms": 985.5999994277954,
+      "total_latency_ms": 2124.0999994277954
+    },
+    {
+      "query_id": "BQ250",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 25,
+      "delivered_body_word_count": 25,
+      "ttft_ms": 986.2000007629395,
+      "total_latency_ms": 1975.5
+    },
+    {
+      "query_id": "BQ251",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 38,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 984.3000001907349,
+      "total_latency_ms": 2742.699999809265
+    },
+    {
+      "query_id": "BQ252",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 25,
+      "delivered_body_word_count": 25,
+      "ttft_ms": 986.8999996185303,
+      "total_latency_ms": 1993.5999994277954
+    },
+    {
+      "query_id": "BQ253",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "fallback_readability_body",
+          "from": "readability gate failed after polish",
+          "to": "readable deterministic body",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 36,
+      "delivered_body_word_count": 20,
+      "ttft_ms": 983.3000001907349,
+      "total_latency_ms": 2362.5
+    },
+    {
+      "query_id": "BQ254",
+      "intent": "method_process_question",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 27,
+      "delivered_body_word_count": 27,
+      "ttft_ms": 985.8999996185303,
+      "total_latency_ms": 2041.0999994277954
+    },
+    {
+      "query_id": "BQ255",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "insert_hedge",
+          "from": "missing hedge",
+          "to": "Based on these records,",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 27,
+      "delivered_body_word_count": 21,
+      "ttft_ms": 1296,
+      "total_latency_ms": 2865.7999992370605
+    },
+    {
+      "query_id": "BQ256",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 25,
+      "delivered_body_word_count": 25,
+      "ttft_ms": 1244.5999994277954,
+      "total_latency_ms": 3218.3999996185303
+    },
+    {
+      "query_id": "BQ257",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 22,
+      "delivered_body_word_count": 22,
+      "ttft_ms": 1239.6999998092651,
+      "total_latency_ms": 2437.5
+    },
+    {
+      "query_id": "BQ258",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 29,
+      "delivered_body_word_count": 29,
+      "ttft_ms": 1167,
+      "total_latency_ms": 2589.4000005722046
+    },
+    {
+      "query_id": "BQ259",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": true,
+      "postprocess_actions": [
+        {
+          "code": "soften_the_earliest",
+          "from": "the earliest",
+          "to": "one of the early",
+          "count": 1
+        },
+        {
+          "code": "split_long_sentence",
+          "from": "long sentence",
+          "to": "sentence split",
+          "count": 1
+        }
+      ],
+      "raw_body_word_count": 42,
+      "delivered_body_word_count": 44,
+      "ttft_ms": 1390.3000001907349,
+      "total_latency_ms": 3130.6000003814697
+    },
+    {
+      "query_id": "BQ260",
+      "intent": "more_context",
+      "raw_has_evidence_tags": false,
+      "delivered_has_evidence_tags": true,
+      "raw_body_changed_by_polisher": false,
+      "delivered_body_changed_from_model_body": false,
+      "postprocess_actions": [],
+      "raw_body_word_count": 30,
+      "delivered_body_word_count": 30,
+      "ttft_ms": 1292.6000003814697,
+      "total_latency_ms": 2969.2000007629395
+    }
+  ]
+}

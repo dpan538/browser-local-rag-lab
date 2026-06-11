@@ -268,8 +268,8 @@ ${errorRows}
 
 ## Interpretation
 
-- A paper-quality round requires all 30 seed queries to complete or an explicit
-  failure-analysis table for device/runtime failures.
+- A paper-quality round requires the declared run scope to complete or an
+  explicit failure-analysis table for device/runtime failures.
 - Contract failures block generated-answer quality claims.
 - Contract warnings can still be useful for prompt and evidence-packet tuning,
   but they should not be reported as faithful answers without review.

@@ -1,6 +1,6 @@
 # V4.2 Statistical Evidence
 
-Generated: 2026-06-11T01:56:59.526Z
+Generated: 2026-06-11T02:49:35.345Z
 
 This report provides paper-facing confidence intervals for the final V3.3
 claim. It does not modify model outputs or benchmark labels.

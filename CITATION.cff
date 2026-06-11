@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this research artifact, please cite it as below."
+title: "Browser-Local Small-Model RAG Lab"
+authors:
+  - family-names: "Giovanni"
+    given-names: "Jarl"
+repository-code: "https://github.com/dpan538/browser-local-rag-lab"
+abstract: "A contract-first research artifact for browser-local small-model RAG in rights-aware digital archive settings."
+keywords:
+  - browser-local-rag
+  - webgpu
+  - webllm
+  - small-language-models
+  - digital-archives
+license: "MIT"
+date-released: "2026-06-11"

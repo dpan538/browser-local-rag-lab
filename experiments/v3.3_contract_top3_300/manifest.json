@@ -1,0 +1,85 @@
+{
+  "condition_id": "v3.3_contract_top3_300_delivered",
+  "generated_at": "2026-06-11T02:49:35.502Z",
+  "commit_sha": "65fe67c40a70a3fa5aaf6bbd17ae394157b9e668",
+  "runtime_environment": {
+    "node_version": "v22.21.0",
+    "npm_version": "10.9.4",
+    "os_platform": "darwin",
+    "os_arch": "arm64",
+    "browser_user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Codex/26.519.41501 Chrome/148.0.7778.97 Electron/42.1.0 Safari/537.36",
+    "webgpu_status": "available",
+    "webgpu_has_navigator_gpu": true,
+    "cache_state": "warm_from_previous"
+  },
+  "experiment_scope": {
+    "research_only": true,
+    "row_count": 300,
+    "completed_rows": 300,
+    "deterministic_hybrid_rows": 109,
+    "qwen_model_generation_rows": 191,
+    "retrieval_condition": "top3_gold_contract_source_rights",
+    "prompt_variant": "r03_v33_postprocessed_prose",
+    "claim_boundary": "Controlled contract/gold-evidence generation condition; not an end-to-end product retrieval recall claim."
+  },
+  "model_runtime": {
+    "model_id": "Qwen3.5-0.8B-q4f16_1-MLC",
+    "model_url": "https://huggingface.co/mlc-ai/Qwen3.5-0.8B-q4f16_1-MLC",
+    "model_lib_url": "https://raw.githubusercontent.com/akaashrp/mlc-binaries/main/Qwen3.5-0.8B-q4f16_1-webgpu-mlc.wasm",
+    "runtime": "WebLLM/MLC custom browser runtime"
+  },
+  "summary_metrics": {
+    "qwen_avg_ttft_ms": 1105.7769633437952,
+    "qwen_avg_total_latency_ms": 2490.823036618258,
+    "qwen_avg_tokens_per_second": 19.77457958609632,
+    "all_row_avg_total_latency_ms": 1585.8293333180745,
+    "deterministic_avg_total_latency_ms": 0.014678911331596725
+  },
+  "files": [
+    {
+      "path": "fixtures/expansion/round03_300/queries.jsonl",
+      "sha256": "c606a7f463311913a7648eadd08646ffd660eb39380185f19891bac3b27116e0"
+    },
+    {
+      "path": "fixtures/expansion/round03_300/labels.jsonl",
+      "sha256": "805d2ff07a6a76a4646973ae53cb11136026df6522c29a6b87405164e36de5bc"
+    },
+    {
+      "path": "fixtures/expansion/round03_300/records.jsonl",
+      "sha256": "173626a8d8bf9069f9f56d71d61fc6689d66be1203f8228cd4fc0302e3b56fb4"
+    },
+    {
+      "path": "reports/retrieval_sufficiency_300_contract.json",
+      "sha256": "cd3fc5b6e09100f858776f8c0cf84fa7f0b4d0638ff7438ccb09bb861ebdae85"
+    },
+    {
+      "path": "reports/webllm_round_03_latency300_v33_postprocessed_prose.json",
+      "sha256": "f811440bb677838eecc4c35047cdcc48b34a5a7c8dfc3d5b38252cb40491ac08"
+    },
+    {
+      "path": "reports/webllm_round_03_latency300_v33_postprocessed_prose_answers.jsonl",
+      "sha256": "0497738d856c03ecd02efffd36da57b55cd2de188607c7aa0e4881b0abfbf8a6"
+    },
+    {
+      "path": "reports/WEBLLM_ROUND_03_LATENCY300_V33_POSTPROCESSED_PROSE.md",
+      "sha256": "25ec20248a10129206cddceb517f7f7186425781cbc4a860f8a30c7a4a2760b2"
+    },
+    {
+      "path": "reports/STATISTICAL_EVIDENCE_V42.md",
+      "sha256": "6b1a3b94fa5476580deaabdf3691bda03f92e801ef5c5591eebea6e093410758"
+    },
+    {
+      "path": "reports/V42_EVIDENCE_CLOSURE_ANALYSIS.md",
+      "sha256": "a4c5364a79fd25494e6169f981a63ab6630339ec579f07f224954e3a6b254087"
+    },
+    {
+      "path": "reports/V41_FINAL_CROSS_MODEL_RECORD.md",
+      "sha256": "0b95d1f836a174733a882275f75287f77f3f6b7c5f62e3d935d7d8b3cfacbdf4"
+    }
+  ],
+  "notes": [
+    "Delivered answers include deterministic refusal/source-rights lanes, postprocessed prose, and deterministic evidence-tag injection.",
+    "Raw model text is preserved in the round JSON for separation from delivered-answer metrics.",
+    "Model weights, browser caches, images, secrets, and raw HTML are not part of this manifest."
+  ]
+}

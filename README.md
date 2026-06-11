@@ -13,9 +13,10 @@ policy, or image handling.
 
 ## Research Question
 
-How can a browser-local `Qwen/Qwen3.5-0.8B` assistant use high-quality
-retrieval, compact evidence packets, and UI-aware answer lanes to provide
-usable, faithful, low-latency RAG over a large rights-aware archive dataset?
+How can a contract-first, rights-aware, browser-local small-model RAG system
+use evidence packets, deterministic answer lanes, and postprocessed prose to
+produce low-latency delivered answers without letting generated text overwrite
+source, rights, or refusal boundaries?
 
 ## Boundaries
 
@@ -54,7 +55,34 @@ fixtures/benchmark_queries_v0.json
 The fixture intentionally excludes image URLs for model use, raw HTML, cookies,
 sessions, browser cache paths, and model files.
 
-## Run
+## Current Final Condition
+
+The current paper-hardening condition is:
+
+```text
+v3.3_contract_top3_300_delivered
+```
+
+It uses:
+
+- retrieval condition: `top3_gold_contract_source_rights`
+- runtime: WebLLM custom browser runtime
+- model: `Qwen3.5-0.8B-q4f16_1-MLC`
+- rows: 300 total, 109 deterministic hybrid rows, 191 Qwen model-generation
+  rows
+- answer system: deterministic refusal lane, deterministic source/rights lane,
+  V3.3 postprocessed prose, and deterministic evidence-tag injection
+
+This is a controlled contract/gold-evidence generation condition. It does not
+claim end-to-end product retrieval recall. See:
+
+```text
+EXPERIMENT_STATUS.md
+CLAIMS_AND_NON_CLAIMS.md
+REPRODUCIBILITY.md
+```
+
+## Run Checks
 
 From the repository root:
 
@@ -105,7 +133,7 @@ http://127.0.0.1:4177/browser_lab/index.html
 The browser lab is a static research UI. It performs local retrieval and
 evidence-packet construction from the fixture.
 
-For the first real WebLLM/Qwen runtime round, open:
+For a browser-local WebLLM/Qwen runtime round, open:
 
 ```text
 http://127.0.0.1:4177/browser_lab/webllm_round.html
@@ -115,7 +143,7 @@ Then:
 
 1. Click `Probe WebGPU`.
 2. Click `Load WebLLM`.
-3. Run the selected query or `Run all 30`.
+3. Run the selected query or the configured query range.
 4. Click `Download results`.
 5. Import the browser-exported JSON:
 
@@ -127,6 +155,28 @@ The WebLLM page uses a research-only custom MLC/WebLLM model configuration for
 `Qwen3.5-0.8B-q4f16_1-MLC`. This is not a product runtime path. The browser may
 download and cache model artifacts locally during the run; those artifacts are
 not committed and are outside the fixture package.
+
+## Paper-Hardening Commands
+
+The current non-WebGPU paper-hardening checks are:
+
+```bash
+npm run audit:labels:300
+npm run retrieval:contract:300
+npm run prompts:audit:300:v33
+npm run contract:oracle:300
+npm run quality:v33:300
+npm run v42:stats
+npm run paper:manifest:v33
+npm run paper:raw-vs-delivered:v33
+npm run paper:review-fixture:v33
+```
+
+Or rebuild the paper-facing artifacts together:
+
+```bash
+npm run paper:reproduce
+```
 
 ## Metrics
 
@@ -147,7 +197,7 @@ The benchmark records:
 
 The next runtime run should fill the model metrics in the same JSON/CSV shape.
 
-## Gold Fixture v0
+## Gold Fixtures And Labels
 
 The first methodology artifact is a seed gold fixture:
 
@@ -158,29 +208,40 @@ fixtures/gold/labels.jsonl
 fixtures/schemas/
 ```
 
-Labels are currently marked `seed_auto_needs_human_review`. They are suitable
-for retrieval-sufficiency scaffolding and method development, but not yet for
-paper claims. The next human review pass should confirm `sufficient_context`,
-`refusal_expected`, `gold_lane`, and `gold_evidence_ids`.
+The original v0 fixture remains available as scaffolding. The paper-facing
+condition uses the Round 03 300-query expansion:
+
+```text
+fixtures/expansion/round03_300/records.jsonl
+fixtures/expansion/round03_300/queries.jsonl
+fixtures/expansion/round03_300/labels.jsonl
+```
+
+The 300-label audit is stable by rule under the current contract checks. Human
+semantic review is not complete; the V3.3 review fixture is a review input, not
+a completed human evaluation.
 
 ## Current Conclusion
 
-The first reproducible baseline supports a measurement-first paper framing:
-evidence-packet size and field retention can be tested without changing product
-Assistant code. Top-3 compressed packets with topology plus source/rights fields
-are the best first Assistant baseline. Top-8 packets belong in Research mode
-until browser tokenization, TTFT, and WebGPU stability are measured.
+The strongest current result is a delivered-answer system result: under the
+controlled `top3_gold_contract_source_rights` packet condition, V3.3 completed
+300/300 rows with zero generation-contract failures and zero warnings. The
+paired V4.2 statistical report estimates a 61.05% model-row latency reduction
+from V3.2 guarded prompts to V3.3 postprocessed prose.
 
-The next active milestone is a real browser-local WebLLM round using the
-approved top-3 compressed evidence packet. Its output must be imported through
-`scripts/import_webllm_round.mjs` and pass the generation contract before it can
-support answer-quality claims.
+This supports a contract-first architecture claim, not a raw-model or
+end-to-end retrieval claim.
 
 ## Limitations
 
-- No Qwen generation was run in the initial scaffold benchmark.
-- Prompt tokens are estimated by character count, not by the Qwen tokenizer.
-- Quality scores are packet-level proxies only; generated-answer faithfulness
-  must pass the generation contract and still requires expert reading.
-- Runtime comparison claims must wait for local browser/WebGPU measurement on
-  target hardware.
+- The final generation condition injects gold evidence IDs when needed to
+  isolate generation and source/rights preservation. It is not product
+  retrieval recall.
+- Delivered-answer metrics include deterministic lanes, evidence-tag injection,
+  and postprocessing. They must not be described as raw Qwen metrics.
+- Prompt tokens are estimated by browser-side heuristics, not by a separately
+  audited tokenizer.
+- Automated quality screens are fast gates, not a substitute for human semantic
+  review.
+- Latency measurements are tied to the recorded browser/WebGPU setup unless
+  replicated on additional hardware.

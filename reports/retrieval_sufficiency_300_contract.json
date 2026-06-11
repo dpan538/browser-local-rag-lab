@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-08T11:31:29.103Z",
+    "generated_at": "2026-06-11T02:47:41.386Z",
     "source_path": "reports/retrieval_sufficiency_300.json",
     "labels_path": "fixtures/expansion/round03_300/labels.jsonl",
     "source_variant_id": "top3_compressed_topology_source_rights",

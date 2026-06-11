@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T01:56:59.526Z",
+  "generated_at": "2026-06-11T02:49:35.345Z",
   "inputs": {
     "v32": "reports/webllm_round_03_latency300_v32_guarded_prose_budgeted_generation.json",
     "v33": "reports/webllm_round_03_latency300_v33_postprocessed_prose.json",

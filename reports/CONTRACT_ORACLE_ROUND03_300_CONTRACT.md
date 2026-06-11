@@ -1,6 +1,6 @@
-# Contract Oracle Round 02 200
+# Contract Oracle 300 Rows
 
-Generated: 2026-06-08T11:32:49.676Z
+Generated: 2026-06-11T02:47:47.932Z
 
 This pre-model gate creates deterministic answers from the retrieved evidence
 packet and sends them through the same generation contract validator. If this
