@@ -1,6 +1,6 @@
 # V3.3 Human Review Protocol
 
-Generated: 2026-06-11T02:49:35.212Z
+Generated: 2026-06-11T03:19:49.370Z
 
 This fixture supports human semantic review for
 `v3.3_contract_top3_300_delivered`. It samples final delivered answers, preserves raw

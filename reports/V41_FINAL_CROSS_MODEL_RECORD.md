@@ -5,9 +5,10 @@ Generated: 2026-06-11
 ## Purpose
 
 This record consolidates the V4.1 cross-model evidence for paper use. V4.1 is
-not a speed-optimization round. It is an architecture-validation round that
-asks whether the reliability layer remains stable when the prose model and
-runtime change.
+not a speed-optimization round. It is a model/runtime probe that asks whether
+the evidence-field contract layer remains stable when the prose model and
+runtime change. It should not be read as a broad cross-model generalization
+claim.
 
 The fixed architecture across V4.1 runs is:
 
@@ -37,7 +38,7 @@ quality-gate outcomes, and model-row total latency, not raw TTFT.
 |---|---:|---:|---:|---:|---|---:|---:|---|
 | Qwen3.5-0.8B / WebLLM V3.3 | 300 | 300/300 | 0 | 0 | Pass | ~2490 ms | ~1590 ms | Fastest complete browser-local path. |
 | SmolLM2-135M / Node Transformers.js | pilot50 | 50/50 | 0 | 0 | Failed hallucination/entity gate | 2200.3 ms | 1584.2 ms | Negative prose-capacity control. |
-| SmolLM2-360M / Node Transformers.js | 300 | 300/300 | 0 | 0 | Pass | 4161.9 ms | 2649.7 ms | Full non-Qwen-family reliability validation. |
+| SmolLM2-360M / Node Transformers.js | 300 | 300/300 | 0 | 0 | Pass | 4161.9 ms | 2649.7 ms | Full non-Qwen probe under the same field-contract layer. |
 | Llama-3.2-1B / Node Transformers.js | pilot50 | 50/50 | 0 | 0 | Pass | 9513.5 ms | 6849.7 ms | 1B non-Qwen reliability check; too slow for full-run promotion. |
 
 ## SmolLM2-135M As A Negative Control
@@ -61,9 +62,10 @@ adequate model.
 
 ## Llama-3.2-1B Pilot Interpretation
 
-The Llama-3.2-1B pilot strengthens model-family generalization. It passed
-contract and quality gates under the same V4.1 pipeline, showing that the
-architecture is not Qwen-specific and not SmolLM-specific.
+The Llama-3.2-1B pilot adds a second non-Qwen prose-model/runtime probe. It
+passed contract and quality gates under the same V4.1 pipeline, which supports
+a cautious claim that the field-contract layer is not tied to a single Qwen
+run.
 
 The latency result is the important caveat. The Llama 1B model-row average
 latency was 9513.5 ms in this Node Transformers.js path, roughly 3x slower than
@@ -72,13 +74,14 @@ comparison, not as a full-run latency candidate.
 
 ## Paper Claim Supported
 
-V4.1 supports this claim:
+V4.1 supports this cautious claim:
 
 > Replacing the prose model while keeping deterministic lanes, evidence-tag
 > injection, prose polishing, and contract validation fixed preserves zero
-> evidence-field contract failures. Prose quality and latency remain
-> model/runtime dependent, but the field reliability architecture is
-> model-agnostic.
+> evidence-field contract failures in these probes. Prose quality and latency
+> remain model/runtime dependent, and these runs should be reported as
+> supporting probes rather than a comprehensive model-family generalization
+> study.
 
 ## Files
 
@@ -89,4 +92,3 @@ V4.1 supports this claim:
 - `reports/V41_SMOLLM2_360M_PILOT50.md`
 - `reports/V41_SMOLLM2_360M_300.md`
 - `reports/V41_LLAMA32_1B_PILOT50.md`
-

@@ -1,6 +1,6 @@
 # V3.1 Answer Faithfulness Check
 
-Generated: 2026-06-11T02:47:53.845Z
+Generated: 2026-06-11T03:20:40.931Z
 
 This check reviews Qwen-generated prose after removing injected `EVIDENCE TAGS`.
 Deterministic hybrid rows and expected-refusal rows are excluded by default.

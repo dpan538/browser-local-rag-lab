@@ -1,6 +1,6 @@
 # Raw vs Delivered V3.3
 
-Generated: 2026-06-11T02:49:35.065Z
+Generated: 2026-06-11T03:19:49.237Z
 
 This report separates raw model text from delivered answer text for
 `v3.3_contract_top3_300_delivered`. It exists to prevent paper claims from

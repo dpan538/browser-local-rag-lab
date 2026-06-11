@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>V3.3 Controlled WebLLM Launcher</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+      body {
+        margin: 0;
+        background: #f7f7f4;
+        color: #20211f;
+      }
+      main {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 56px 24px;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 32px;
+        line-height: 1.15;
+      }
+      p {
+        margin: 0 0 18px;
+      }
+      .panel {
+        border: 1px solid #d5d2c8;
+        border-radius: 8px;
+        background: #ffffff;
+        padding: 20px;
+      }
+      dl {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 8px 16px;
+        margin: 0 0 20px;
+      }
+      dt {
+        font-weight: 650;
+      }
+      dd {
+        margin: 0;
+        overflow-wrap: anywhere;
+      }
+      a.button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 16px;
+        border-radius: 6px;
+        background: #1f5e55;
+        color: #fff;
+        font-weight: 650;
+        text-decoration: none;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.92em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>V3.3 Controlled WebLLM Launcher</h1>
+      <p>
+        This launcher opens the paper-facing controlled generation condition for
+        <code>v3.3_contract_top3_300_delivered</code>. It is a research-only
+        browser/WebLLM path and does not represent product retrieval recall.
+      </p>
+      <section class="panel" aria-label="V3.3 configuration">
+        <dl>
+          <dt>Rows</dt>
+          <dd>300</dd>
+          <dt>Queries</dt>
+          <dd><code>../fixtures/expansion/round03_300/queries.jsonl</code></dd>
+          <dt>Labels</dt>
+          <dd><code>../fixtures/expansion/round03_300/labels.jsonl</code></dd>
+          <dt>Records</dt>
+          <dd><code>../fixtures/expansion/round03_300/records.jsonl</code></dd>
+          <dt>Retrieval</dt>
+          <dd><code>../reports/retrieval_sufficiency_300_contract.json</code></dd>
+          <dt>Variant</dt>
+          <dd><code>top3_gold_contract_source_rights</code></dd>
+          <dt>Prompt variant</dt>
+          <dd><code>r03_v33_postprocessed_prose</code></dd>
+        </dl>
+        <a class="button" id="launch" href="#">Open V3.3 Runner</a>
+      </section>
+    </main>
+    <script>
+      const params = new URLSearchParams({
+        round: "webllm_round_03_latency300_v33_postprocessed_prose",
+        start: "1",
+        limit: "300",
+        queries: "../fixtures/expansion/round03_300/queries.jsonl",
+        labels: "../fixtures/expansion/round03_300/labels.jsonl",
+        records: "../fixtures/expansion/round03_300/records.jsonl",
+        retrieval: "../reports/retrieval_sufficiency_300_contract.json",
+        variant: "top3_gold_contract_source_rights",
+        promptVariant: "r03_v33_postprocessed_prose"
+      });
+      document.getElementById("launch").href = `./webllm_round.html?${params.toString()}`;
+    </script>
+  </body>
+</html>

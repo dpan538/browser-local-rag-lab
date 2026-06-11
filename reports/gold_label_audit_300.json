@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T02:47:34.698Z",
+  "generated_at": "2026-06-11T03:20:40.336Z",
   "inputs": {
     "queries_path": "fixtures/expansion/round03_300/queries.jsonl",
     "labels_path": "fixtures/expansion/round03_300/labels.jsonl",

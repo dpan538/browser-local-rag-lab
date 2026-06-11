@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T02:49:35.212Z",
+  "generated_at": "2026-06-11T03:19:49.370Z",
   "condition_id": "v3.3_contract_top3_300_delivered",
   "sample_size": 80,
   "sample_strategy": "flag-first deterministic stratified sample: includes automated quality flags, latency tail, low facts-coverage tail, then fills by intent",

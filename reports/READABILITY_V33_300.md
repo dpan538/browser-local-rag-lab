@@ -1,6 +1,6 @@
 # Readability And Mechanicalness Check
 
-Generated: 2026-06-11T02:47:54.890Z
+Generated: 2026-06-11T03:20:41.801Z
 
 This check screens for mechanical V3.2 failures: very short/long sentence
 patterns, repeated 3-grams, and duplicated hedge text.

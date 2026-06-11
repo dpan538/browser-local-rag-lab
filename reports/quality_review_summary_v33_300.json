@@ -1,0 +1,153 @@
+{
+  "generated_at": "2026-06-11T03:21:02.852Z",
+  "fixture": "reports/review_fixture_v33_300_stratified.json",
+  "total_rows": 80,
+  "reviewed_rows": 0,
+  "pending_rows": 80,
+  "review_complete": false,
+  "rows_with_notes": 0,
+  "decision_counts": {
+    "pending": 80
+  },
+  "faithfulness_counts": {
+    "pending": 80
+  },
+  "usability_counts": {
+    "pending": 80
+  },
+  "adjudication_counts": {
+    "unreviewed": 80
+  },
+  "by_intent": {
+    "archive_orientation": {
+      "total": 7,
+      "reviewed": 0,
+      "pending": 7,
+      "decisions": {
+        "pending": 7
+      }
+    },
+    "casual_archive_help": {
+      "total": 10,
+      "reviewed": 0,
+      "pending": 10,
+      "decisions": {
+        "pending": 10
+      }
+    },
+    "comparison": {
+      "total": 13,
+      "reviewed": 0,
+      "pending": 13,
+      "decisions": {
+        "pending": 13
+      }
+    },
+    "current_object_explanation": {
+      "total": 18,
+      "reviewed": 0,
+      "pending": 18,
+      "decisions": {
+        "pending": 18
+      }
+    },
+    "first_earliest_claim": {
+      "total": 5,
+      "reviewed": 0,
+      "pending": 5,
+      "decisions": {
+        "pending": 5
+      }
+    },
+    "method_process_question": {
+      "total": 5,
+      "reviewed": 0,
+      "pending": 5,
+      "decisions": {
+        "pending": 5
+      }
+    },
+    "more_context": {
+      "total": 7,
+      "reviewed": 0,
+      "pending": 7,
+      "decisions": {
+        "pending": 7
+      }
+    },
+    "no_evidence_refusal": {
+      "total": 4,
+      "reviewed": 0,
+      "pending": 4,
+      "decisions": {
+        "pending": 4
+      }
+    },
+    "region_period_recommendation": {
+      "total": 7,
+      "reviewed": 0,
+      "pending": 7,
+      "decisions": {
+        "pending": 7
+      }
+    },
+    "source_rights_question": {
+      "total": 4,
+      "reviewed": 0,
+      "pending": 4,
+      "decisions": {
+        "pending": 4
+      }
+    }
+  },
+  "by_automated_flag": {
+    "latency_tail": {
+      "total": 12,
+      "reviewed": 0,
+      "pending": 12,
+      "decisions": {
+        "pending": 12
+      }
+    },
+    "low_facts_coverage_tail": {
+      "total": 12,
+      "reviewed": 0,
+      "pending": 12,
+      "decisions": {
+        "pending": 12
+      }
+    },
+    "misreading_screen": {
+      "total": 1,
+      "reviewed": 0,
+      "pending": 1,
+      "decisions": {
+        "pending": 1
+      }
+    },
+    "too_short_screen": {
+      "total": 7,
+      "reviewed": 0,
+      "pending": 7,
+      "decisions": {
+        "pending": 7
+      }
+    },
+    "unsupported_entity_screen": {
+      "total": 6,
+      "reviewed": 0,
+      "pending": 6,
+      "decisions": {
+        "pending": 6
+      }
+    },
+    "unsupported_triple_screen": {
+      "total": 1,
+      "reviewed": 0,
+      "pending": 1,
+      "decisions": {
+        "pending": 1
+      }
+    }
+  }
+}

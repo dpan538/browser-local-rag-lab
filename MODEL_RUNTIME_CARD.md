@@ -5,7 +5,29 @@
 - model id: `Qwen3.5-0.8B-q4f16_1-MLC`
 - runtime: WebLLM/MLC custom browser runtime
 - browser path: `browser_lab/webllm_round.html`
+- final-condition launcher: `browser_lab/webllm_v33.html`
 - product status: research-only, not an archive product runtime path
+
+## Runtime Pinning Status
+
+The V3.3 manifest records the runtime URLs used by the browser export, but the
+current browser page still imports WebLLM and the custom model library from
+remote URLs that are not fully revision-pinned:
+
+- WebLLM import: `https://esm.run/@mlc-ai/web-llm`
+- custom model library: GitHub raw URL from `main`
+
+Before a double-anonymous submission artifact is frozen, record or pin:
+
+- the `@mlc-ai/web-llm` package version;
+- the custom model-library repository commit SHA;
+- the model repository revision;
+- model and model-library checksums where feasible;
+- model and runtime license notes.
+
+Until then, latency and runtime claims should be tied to the recorded V3.3
+browser export and manifest, not presented as a fully reproducible remote
+runtime pin.
 
 ## Final V3.3 Condition
 

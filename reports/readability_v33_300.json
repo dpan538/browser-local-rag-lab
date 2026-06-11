@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T02:47:54.890Z",
+  "generated_at": "2026-06-11T03:20:41.801Z",
   "inputs": {
     "labelsPath": "fixtures/expansion/round03_300/labels.jsonl",
     "answersPath": "reports/webllm_round_03_latency300_v33_postprocessed_prose_answers.jsonl"

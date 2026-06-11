@@ -1,9 +1,18 @@
-# V4.2 Human Review Rubric
+# V4.2 Exploratory 50-Row Human Review Rubric
 
 Generated: 2026-06-11T01:59:15.132Z
 
 This fixture supports a lightweight human review of the final V3.3 300-query
 answer set. It does not change labels, evidence, or generated answers.
+
+This 50-row fixture is retained as an exploratory scaffold. The paper-facing
+human-review artifact is the 80-row flag-first V3.3 fixture:
+
+```text
+reports/review_fixture_v33_300_stratified.json
+reports/QUALITY_REVIEW_PROTOCOL_V33.md
+reports/QUALITY_REVIEW_SUMMARY_V33_300.md
+```
 
 ## Sample
 

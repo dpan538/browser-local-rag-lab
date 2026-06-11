@@ -1,6 +1,6 @@
 # Retrieval Sufficiency Contract Variant
 
-Generated: 2026-06-11T02:47:41.386Z
+Generated: 2026-06-11T03:20:40.451Z
 
 This is a research-only controlled evidence-packet variant. It injects each
 answerable label's gold evidence IDs into the packet before adding filler

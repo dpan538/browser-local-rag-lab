@@ -85,6 +85,7 @@ claim end-to-end product retrieval recall. See:
 EXPERIMENT_STATUS.md
 CLAIMS_AND_NON_CLAIMS.md
 REPRODUCIBILITY.md
+reports/FINAL_ARTIFACT_INDEX.md
 ```
 
 Journal of Documentation positioning notes are tracked separately as planning
@@ -153,6 +154,19 @@ For a browser-local WebLLM/Qwen runtime round, open:
 http://127.0.0.1:4177/browser_lab/webllm_round.html
 ```
 
+For the current paper-facing V3.3 controlled condition, use the dedicated
+launcher:
+
+```text
+http://127.0.0.1:4177/browser_lab/webllm_v33.html
+```
+
+It opens the exact V3.3 URL:
+
+```text
+http://127.0.0.1:4177/browser_lab/webllm_round.html?round=webllm_round_03_latency300_v33_postprocessed_prose&start=1&limit=300&queries=../fixtures/expansion/round03_300/queries.jsonl&labels=../fixtures/expansion/round03_300/labels.jsonl&records=../fixtures/expansion/round03_300/records.jsonl&retrieval=../reports/retrieval_sufficiency_300_contract.json&variant=top3_gold_contract_source_rights&promptVariant=r03_v33_postprocessed_prose
+```
+
 Then:
 
 1. Click `Probe WebGPU`.
@@ -184,6 +198,7 @@ npm run v42:stats
 npm run paper:manifest:v33
 npm run paper:raw-vs-delivered:v33
 npm run paper:review-fixture:v33
+npm run paper:review-summary:v33
 ```
 
 Or rebuild the paper-facing artifacts together:
@@ -194,7 +209,7 @@ npm run paper:reproduce
 
 ## Metrics
 
-The benchmark records:
+The benchmark schema records:
 
 - query id and query type;
 - answer lane;
@@ -206,10 +221,23 @@ The benchmark records:
 - no-evidence refusal correctness;
 - exact gold evidence id coverage;
 - generation status;
-- placeholders for model load, tokenization, TTFT, total latency, output
-  tokens, tokens/s, and WebGPU device errors.
+- model load status, cache state, WebGPU status, TTFT, total latency, output
+  tokens, tokens/s, deterministic lane markers, and postprocess actions when
+  the browser/WebLLM runner exposes them.
 
-The next runtime run should fill the model metrics in the same JSON/CSV shape.
+The final V3.3 condition currently fills the paper-facing runtime metrics:
+
+- 300 total rows, 300 completed rows, 0 runtime errors;
+- 109 deterministic hybrid rows and 191 Qwen model-generation rows;
+- Qwen model-row average TTFT, average total latency, and tokens/s;
+- all-row latency with deterministic rows included separately;
+- generation-contract fail/warn counts;
+- automated quality-screen outputs.
+
+Some fields remain measurement-protocol caveats rather than independent
+instrumentation. Prompt tokens are estimated, tokenization timing is not always
+separately exposed by the browser runner, and Node Transformers.js cross-model
+TTFT values are not directly comparable to WebLLM streaming TTFT.
 
 ## Gold Fixtures And Labels
 

@@ -15,8 +15,9 @@ The following boundaries are part of the method, not after-the-fact caveats.
   latency relative to prompt-only guardrails while preserving the delivered
   evidence contract.
 - We claim measured latency on the recorded browser/WebGPU setup.
-- We claim model-family transfer as an architecture validation, shown by
-  V4.1 SmolLM2 and Llama pilot/full runs.
+- We claim that the evidence-field contract layer remained stable in additional
+  model/runtime probes from V4.1. Prose quality and latency remain
+  model/runtime dependent.
 
 ## Non-Claims
 
@@ -30,6 +31,7 @@ The following boundaries are part of the method, not after-the-fact caveats.
 - We do not claim that automated quality screens replace human semantic review.
 - We do not claim that the 15-row robustness miniset is a comprehensive
   adversarial benchmark.
+- We do not claim broad cross-model generalization from the V4.1 probes alone.
 
 ## Paper-Safe Summary
 

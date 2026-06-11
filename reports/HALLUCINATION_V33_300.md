@@ -1,6 +1,6 @@
 # Hallucination And Unsupported Fact Check
 
-Generated: 2026-06-11T02:47:54.185Z
+Generated: 2026-06-11T03:20:41.219Z
 
 This check reviews delivered answer prose after removing injected `EVIDENCE TAGS`.
 It flags unsupported years, unsupported named terms, and simple unsupported

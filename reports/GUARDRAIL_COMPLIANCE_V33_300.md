@@ -1,6 +1,6 @@
 # Guardrail Compliance Check
 
-Generated: 2026-06-11T02:47:54.578Z
+Generated: 2026-06-11T03:20:41.547Z
 
 This check verifies V3.2 guarded prose rules on delivered answer bodies by
 default. Use `--raw-model` to audit model text before browser post-processing.

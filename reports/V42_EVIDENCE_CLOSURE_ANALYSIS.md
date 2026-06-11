@@ -10,7 +10,8 @@ the V3.3/V4.1 architecture and adds:
 - statistical confidence intervals for latency and quality rates;
 - a targeted robustness miniset for unsupported chronology and contradictory
   date evidence;
-- a 50-row stratified human-review fixture and rubric.
+- an 80-row flag-first V3.3 human-review fixture and protocol, with the earlier
+  50-row V4.2 fixture retained only as an exploratory review scaffold.
 
 ## Statistical Evidence
 
@@ -80,21 +81,31 @@ surfaced rather than collapsed into a single unsupported date.
 
 ## Human Review Fixture
 
-V4.2 generated a 50-row deterministic stratified review fixture:
+The paper-facing human-review artifact is the V3.3 80-row flag-first
+stratified fixture:
 
-- 5 rows from each of 10 intents;
+- automated quality flags, latency-tail rows, and low facts-coverage rows are
+  included first;
+- remaining rows are filled by intent to preserve broad coverage;
 - original query and final generated answer;
+- raw model text is preserved where available;
 - answer body separated from injected evidence tags;
 - required fields and evidence values;
-- editable reviewer fields for decision, faithfulness, usability, and notes.
+- editable reviewer fields for decision, faithfulness, usability, notes, and
+  adjudication state.
 
 This fixture is not a completed human evaluation. It is the paper-ready review
 protocol and data artifact needed for two-reviewer semantic assessment.
 
+The older 50-row V4.2 deterministic stratified fixture is retained as an
+exploratory scaffold only. It should not be mixed with the final 80-row V3.3
+review summary in paper-facing claims.
+
 Recommended paper wording:
 
-> We supplement automated gates with a stratified 50-answer review fixture. The
-> fixture records query, intent, evidence values, final answer, and reviewer
+> We supplement automated gates with an 80-answer flag-first stratified review
+> fixture. The fixture records query, intent, evidence values, raw model text
+> where available, final delivered answer, automated quality flags, and reviewer
 > fields for faithfulness and usability. Human labels were not used to tune the
 > system after V3.3; they are intended as confirmatory semantic review.
 
@@ -116,6 +127,9 @@ V4.2 strengthens the final paper in three ways:
 - `reports/V42_ROBUSTNESS_SMOLLM2_360M.md`
 - `reports/V42_ROBUSTNESS_EVAL.md`
 - `reports/v42_robustness_eval.json`
-- `reports/V42_HUMAN_REVIEW_RUBRIC.md`
-- `reports/v42_human_review_fixture.json`
-
+- `reports/QUALITY_REVIEW_PROTOCOL_V33.md`
+- `reports/review_fixture_v33_300_stratified.json`
+- `reports/QUALITY_REVIEW_SUMMARY_V33_300.md` (generated summary; pending
+  until reviewer fields are filled)
+- `reports/V42_HUMAN_REVIEW_RUBRIC.md` (exploratory 50-row scaffold)
+- `reports/v42_human_review_fixture.json` (exploratory 50-row scaffold)
