@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this research artifact, please cite it as below."
 title: "Browser-Local Small-Model RAG Lab"
 authors:
-  - family-names: "潘"
-    given-names: "岱"
+  - family-names: "Pan"
+    given-names: "Dai"
 repository-code: "https://github.com/dpan538/browser-local-rag-lab"
 abstract: "A contract-first research artifact for browser-local small-model RAG in rights-aware digital archive settings."
 keywords:

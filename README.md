@@ -11,6 +11,11 @@ dpan538/browser-local-rag-lab
 It does not change archive Assistant runtime, UI, scraping, ingestion, rights
 policy, or image handling.
 
+## Citation Identity
+
+Use `Dai Pan` for English citation metadata (`family-names: Pan`,
+`given-names: Dai`). The author's Chinese name is 潘岱.
+
 ## Research Question
 
 How can a contract-first, rights-aware, browser-local small-model RAG system
