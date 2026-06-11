@@ -1,0 +1,634 @@
+review_id,query_id,intent,refusal_expected,query_text,required_fields,evidence_values,delivered_answer,reviewer_decision,reviewer_faithfulness,reviewer_usability,reviewer_notes
+V33-HR-001,BQ02,archive_orientation,false,How is this page organized?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Mexico"",""World War and public-information graphics"",""Advertisement""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / Mexico / World War and public-information graphics / Advertisement | sheet / main_sheet / France / Travel and transport poster culture / Graphic design object record",pending,pending,pending,
+V33-HR-002,BQ031,archive_orientation,false,How should I orient myself between Global / release gate expansion and Global / release gate expansion records in this archive?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""France"",""Travel and transport poster culture"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the archive view is a comprehensive collection of visual and design records organized by geography and typography, managed by Wikimedia Commons and the Paganini archive. Specific rights states and image-state codes define its scope.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / France / Travel and transport poster culture / Graphic design object record | sheet / main_sheet / Unresolved region / Modern typography and layout / Graphic design object record",pending,pending,pending,
+V33-HR-003,BQ04,casual_archive_help,false,I am lost. What is the simplest next step from here?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""India"",""Midcentury modern graphic communication"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the simplest next step is to access the unresolvable region folder.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / India / Midcentury modern graphic communication / Graphic design object record | sheet / main_sheet / Unresolved region / Modern typography and layout / Graphic design object record",pending,pending,pending,
+V33-HR-004,BQ046,casual_archive_help,false,I found SURF-GA1970R001; what is a simple next step?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""France"",""Midcentury modern graphic communication"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, this is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: France, Midcentury modern graphic communication, Graphic design object record, United States, Poster. Surface types in the packet: sheet. Publication roles in the packet: main_sheet, support_packet_appendix_text. Source families represented: Gallica / BnF APIs, Art Institute of Chicago API. Rights states represented: open_candidate, rights_review_required. Image-state codes represented: IMG03, IMG00.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record | sheet / support_packet_appendix_text / United States / Midcentury modern graphic communication / Poster",pending,pending,pending,
+V33-HR-005,BQ054,casual_archive_help,false,I found SURF-CRG2026R0071; what is a simple next step?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, this is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: Unresolved region, Modern typography and layout, Graphic design object record, United States, Midcentury modern graphic communication, Poster, France. Surface types in the packet: sheet. Publication roles in the packet: main_sheet, support_packet_appendix_text. Source families represented: Wikimedia Commons file source / The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU). png / page 102829467, Art Institute of Chicago API, Gallica / Bn
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / Unresolved region / Modern typography and layout / Graphic design object record | sheet / support_packet_appendix_text / United States / Midcentury modern graphic communication / Poster | sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record",pending,pending,pending,
+V33-HR-006,BQ058,current_object_explanation,false,Explain SURF-CRG2026R0274 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-CRG2026R0274
+title: Sergey Filippov PSE Russia 2012.jpg
+date_text: 1912
+region: Global / release gate expansion
+source: {""name"":""Wikimedia Commons file source / Sergey Filippov PSE Russia 2012.jpg / page 25675602"",""url"":""https://commons.wikimedia.org/wiki/File:Sergey_Filippov_PSE_Russia_2012.jpg"",""access_date"":""2026-06-06""}","Based on these records, Record 1 is the primary source.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0274 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Sergey Filippov PSE Russia 2012.jpg | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1912 | 2026-06-07 | ca. 1835
+region: Global / release gate expansion | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Wikimedia Commons file source / Sergey Filippov PSE Russia 2012.jpg / page 25675602 / https://commons.wikimedia.org/wiki/File:Sergey_Filippov_PSE_Russia_2012.jpg | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-007,BQ060,current_object_explanation,false,Explain SURF-CGS2026R0328 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-CGS2026R0328
+title: El restaurador de las leyes.jpg
+date_text: 1840
+region: Latin America / Argentina
+source: {""name"":""Wikimedia Commons file source / El restaurador de las leyes.jpg / page 10603704"",""url"":""https://commons.wikimedia.org/wiki/File:El_restaurador_de_las_leyes.jpg"",""access_date"":""2026-06-06""}","Based on these records, Record 1 describes the restoration of laws in Latin America and Argentina.
+
+EVIDENCE TAGS:
+record_id: SURF-CGS2026R0328 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: El restaurador de las leyes.jpg | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1840 | 2026-06-07 | ca. 1835
+region: Latin America / Argentina | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Wikimedia Commons file source / El restaurador de las leyes.jpg / page 10603704 / https://commons.wikimedia.org/wiki/File:El_restaurador_de_las_leyes.jpg | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-008,BQ061,current_object_explanation,false,Explain SURF-CGS2026R0030 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-CGS2026R0030
+title: Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg
+date_text: 1842
+region: Latin America / Argentina
+source: {""name"":""Wikimedia Commons file source / Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg / page 30060076"",""url"":""https://commons.wikimedia.org/wiki/File:Stamp_commemorating_the_centenary_of_the_birth_of_Jos%C3%A9_Manuel_Estrada.jpg"",""access_date"":""2026-06-06""}","Based on these records, Record 1 is the primary evidence.
+
+EVIDENCE TAGS:
+record_id: SURF-CGS2026R0030 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1842 | 2026-06-07 | ca. 1835
+region: Latin America / Argentina | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Wikimedia Commons file source / Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg / page 30060076 / https://commons.wikimedia.org/wiki/File:Stamp_commemorating_the_centenary_of_the_birth_of_Jos%C3%A9_Manuel_Estrada.jpg | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-009,BQ064,current_object_explanation,false,Explain SURF-CGS2026R0031 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-CGS2026R0031
+title: Facundo.jpg
+date_text: 1845
+region: Latin America / Argentina
+source: {""name"":""Wikimedia Commons file source / Facundo.jpg / page 6629018"",""url"":""https://commons.wikimedia.org/wiki/File:Facundo.jpg"",""access_date"":""2026-06-06""}","Based on these records, Record 1 is located in Latin America/Argentina.
+
+EVIDENCE TAGS:
+record_id: SURF-CGS2026R0031 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Facundo.jpg | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1845 | 2026-06-07 | ca. 1835
+region: Latin America / Argentina | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Wikimedia Commons file source / Facundo.jpg / page 6629018 / https://commons.wikimedia.org/wiki/File:Facundo.jpg | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-010,BQ068,current_object_explanation,false,Explain SURF-CRG2026R0027 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-CRG2026R0027
+title: HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif
+date_text: 1863
+region: East Asia / China
+source: {""name"":""Wikimedia Commons file source / HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif / page 16525059"",""url"":""https://commons.wikimedia.org/wiki/File:HQ._FEAF,_TOKYO-Col._John_K._Arnold_Jr._(right),_Montgomery,_Ala.,_is_escorted_by_Col._Herbert_R._Volin,_Tokyo_Air..._-_NARA_-_542291.tif"",""access_date"":""2026-06-06""}","Based on these records, Record 1 is the primary evidence.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0027 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1863 | 2026-06-07 | ca. 1835
+region: East Asia / China | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Wikimedia Commons file source / HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif / page 16525059 / https://commons.wikimedia.org/wiki/File:HQ._FEAF,_TOKYO-Col._John_K._Arnold_Jr._(right),_Montgomery,_Ala.,_is_escorted_by_Col._Herbert_R._Volin,_Tokyo_Air..._-_NARA_-_542291.tif | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-011,BQ071,current_object_explanation,false,Explain SURF-ER1830R015 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-ER1830R015
+title: Indian trading [6 illustrations: 1. trader's store; 2. 2 en route; 3. preparing for trade; 4. the trading post and fort; 5. return from trading; 6. dissatisfaction - (Indian beating his wife)]
+date_text: 1876.
+region: India
+source: {""name"":""Library of Congress loc.gov API"",""url"":""https://www.loc.gov/pictures/item/99614267/"",""access_date"":""2026-05-30""}","Based on these records, Record 1 describes the Indian trading post and fort.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R015 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Indian trading [6 illustrations: 1. trader's store; 2. 2 en route; 3. preparing for trade; 4. the trading post and fort; 5. return from trading; 6. dissatisfaction - (Indian beating his wife)] | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1876. | 2026-06-07 | ca. 1835
+region: India | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Library of Congress loc.gov API / https://www.loc.gov/pictures/item/99614267/ | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-012,BQ073,current_object_explanation,false,Explain SURF-ER1830R046 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-ER1830R046
+title: Aristide Bruant
+date_text: 1893
+region: France
+source: {""name"":""Art Institute of Chicago API"",""url"":""https://www.artic.edu/artworks/13598"",""access_date"":""2026-05-30""}","Based on these records, Record 1 is not the current object.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R046 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Aristide Bruant | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1893 | 2026-06-07 | ca. 1835
+region: France | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Art Institute of Chicago API / https://www.artic.edu/artworks/13598 | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-013,BQ075,current_object_explanation,false,Explain SURF-ER1830R059 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-ER1830R059
+title: Sculptress
+date_text: 1897
+region: France, 19th century
+source: {""name"":""Cleveland Museum Open Access API"",""url"":""https://clevelandart.org/art/1986.136"",""access_date"":""2026-05-30""}","Based on these records, Sculptress is the current object.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R059 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Sculptress | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1897 | 2026-06-07 | ca. 1835
+region: France, 19th century | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Cleveland Museum Open Access API / https://clevelandart.org/art/1986.136 | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-014,BQ078,current_object_explanation,false,Explain SURF-ER1830R064 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-ER1830R064
+title: Tell that to the Marines!
+date_text: 1914/18
+region: United States
+source: {""name"":""Art Institute of Chicago API"",""url"":""https://www.artic.edu/artworks/7772"",""access_date"":""2026-05-30""}","Based on these records, Record 1 is the primary source for this object.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R064 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Tell that to the Marines! | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1914/18 | 2026-06-07 | ca. 1835
+region: United States | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Art Institute of Chicago API / https://www.artic.edu/artworks/7772 | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-015,BQ079,current_object_explanation,false,Explain SURF-ER1830R065 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-ER1830R065
+title: To the Amputees—Join the Workforce
+date_text: c. 1918
+region: France
+source: {""name"":""Art Institute of Chicago API"",""url"":""https://www.artic.edu/artworks/7933"",""access_date"":""2026-05-30""}","Based on these records, Record 1 describes the Amputees' Workforce.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R065 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: To the Amputees—Join the Workforce | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: c. 1918 | 2026-06-07 | ca. 1835
+region: France | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Art Institute of Chicago API / https://www.artic.edu/artworks/7933 | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-016,BQ080,current_object_explanation,false,Explain SURF-ER1830R066 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-ER1830R066
+title: Buy a Little Present for the Kaiser
+date_text: 1917/18
+region: United States
+source: {""name"":""Art Institute of Chicago API"",""url"":""https://www.artic.edu/artworks/7962"",""access_date"":""2026-05-30""}","Based on these records, Record 1 is the current object.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R066 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Buy a Little Present for the Kaiser | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1917/18 | 2026-06-07 | ca. 1835
+region: United States | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Art Institute of Chicago API / https://www.artic.edu/artworks/7962 | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-017,BQ081,current_object_explanation,false,Explain SURF-ER1830R011 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-ER1830R011
+title: Use Getz cockroach and bed bug exterminators, sold by all druggists I sink I tan hit it.
+date_text: [between 1870 and 1890]
+region: Unresolved region
+source: {""name"":""Library of Congress loc.gov API"",""url"":""https://www.loc.gov/pictures/item/2008677258/"",""access_date"":""2026-05-30""}","Based on these records, Getz cockroach and bed bug exterminators are sold by all druggists I sink I tan hit it.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R011 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Use Getz cockroach and bed bug exterminators, sold by all druggists I sink I tan hit it. | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: [between 1870 and 1890] | 2026-06-07 | ca. 1835
+region: Unresolved region | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2008677258/ | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-018,BQ082,current_object_explanation,false,Explain SURF-ER1830R017 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-ER1830R017
+title: [Advertising card for play ""Deacon Crankett""]
+date_text: [between 1880 and 1882]
+region: Unresolved region
+source: {""name"":""Library of Congress loc.gov API"",""url"":""https://www.loc.gov/pictures/item/2014646356/"",""access_date"":""2026-05-30""}","Based on these records, Record 1 is an Unresolved region.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R017 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: [Advertising card for play ""Deacon Crankett""] | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: [between 1880 and 1882] | 2026-06-07 | ca. 1835
+region: Unresolved region | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2014646356/ | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-019,BQ104,comparison,false,Compare SURF-CGS2026R0681 and SURF-CGS2026R0910 as graphic communication evidence.,"record_id, title, source","record_id: SURF-CGS2026R0681 ; SURF-CGS2026R0910
+title: Diego Portales-D S No 20.JPG ; Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg
+source: {""name"":""Wikimedia Commons file source / Diego Portales-D S No 20.JPG / page 7016695"",""url"":""https://commons.wikimedia.org/wiki/File:Diego_Portales-D_S_No_20.JPG"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg / page 100419033"",""url"":""https://commons.wikimedia.org/wiki/File:Republic_of_Rio_Grande._And_Friend_of_the_People._(Brownsville,_Tex.),_Vol._1,_No._4,_Ed._1_Tuesday,_June_16,_1846_-_DPLA_-_9546c5d7758eb3aa72d3bb309e23827c_(page_2).jpg"",""access_date"":""2026-06-06""}","Based on these records, Diego Portales-D S No 20. JPG (1837) and Republic of Rio Grande. And Friend of the People. (Brownsville, Tex. ), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2). jpg (1846) are graphic communication evidence.
+
+EVIDENCE TAGS:
+record_id: SURF-CGS2026R0681 | SURF-CGS2026R0910
+title: Diego Portales-D S No 20.JPG | Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg
+source: Wikimedia Commons file source / Diego Portales-D S No 20.JPG / page 7016695 / https://commons.wikimedia.org/wiki/File:Diego_Portales-D_S_No_20.JPG | Wikimedia Commons file source / Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg / page 100419033 / https://commons.wikimedia.org/wiki/File:Republic_of_Rio_Grande._And_Friend_of_the_People._(Brownsville,_Tex.),_Vol._1,_No._4,_Ed._1_Tuesday,_June_16,_1846_-_DPLA_-_9546c5d7758eb3aa72d3bb309e23827c...",pending,pending,pending,
+V33-HR-020,BQ106,comparison,false,Compare SURF-CGS2026R0030 and SURF-CRG2026R0027 as graphic communication evidence.,"record_id, title, source","record_id: SURF-CGS2026R0030 ; SURF-CRG2026R0027
+title: Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg ; HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif
+source: {""name"":""Wikimedia Commons file source / Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg / page 30060076"",""url"":""https://commons.wikimedia.org/wiki/File:Stamp_commemorating_the_centenary_of_the_birth_of_Jos%C3%A9_Manuel_Estrada.jpg"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif / page 16525059"",""url"":""https://commons.wikimedia.org/wiki/File:HQ._FEAF,_TOKYO-Col._John_K._Arnold_Jr._(right),_Montgomery,_Ala.,_is_escorted_by_Col._Herbert_R._Volin,_Tokyo_Air..._-_NARA_-_542291.tif"",""access_date"":""2026-06-06""}","Based on these records, SURF-CGS2026R0030 is a 1842 stamp commemorating the centenary of José Manuel Estrada, while SURF-CRG2026R0027 is a 1863 image of HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala. , is escorted by Col. Herbert R. Volin, Tokyo Air. - NARA - 542291. tif | 1863 | East Asia / China.
+
+EVIDENCE TAGS:
+record_id: SURF-CGS2026R0030 | SURF-CRG2026R0027
+title: Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg | HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif
+source: Wikimedia Commons file source / Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg / page 30060076 / https://commons.wikimedia.org/wiki/File:Stamp_commemorating_the_centenary_of_the_birth_of_Jos%C3%A9_Manuel_Estrada.jpg | Wikimedia Commons file source / HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif / page 16525059 / https://commons.wikimedia.org/wiki/File:HQ._FEAF,_TOKYO-Col._John_K._Arnold_Jr._(right),_Montgomery,_Ala.,_is_escorted_by_Col._Herbert_R._Volin,_Tokyo_Air..._-_NARA_-_542291.tif",pending,pending,pending,
+V33-HR-021,BQ110,comparison,false,Compare SURF-CGS2026R0909 and SURF-CRG2026R0100 as graphic communication evidence.,"record_id, title, source","record_id: SURF-CGS2026R0909 ; SURF-CRG2026R0100
+title: Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 2, Ed. 1 Saturday, June 6, 1846 - DPLA - d5d3c61ba6ef077f73cf4057ea8fb601 (page 1).jpg ; HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of French Indochina WW2 Vichy France 50 LUANG-PRABANG Le Patriote Lao Hymne national Laotien Thong Dy 01 - IDEO. Hanoi Unidentified author designer No know copyright restrict.jpg
+source: {""name"":""Wikimedia Commons file source / Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 2, Ed. 1 Saturday, June 6, 1846 - DPLA - d5d3c61ba6ef077f73cf4057ea8fb601 (page 1).jpg / page 101008536"",""url"":""https://commons.wikimedia.org/wiki/File:Republic_of_Rio_Grande._And_Friend_of_the_People._(Brownsville,_Tex.),_Vol._1,_No._2,_Ed._1_Saturday,_June_6,_1846_-_DPLA_-_d5d3c61ba6ef077f73cf4057ea8fb601_(page_1).jpg"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of French Indochina WW2 Vichy France 50 LUANG-PRABANG Le Patriote Lao Hymne national Laotien Thong Dy 01 - IDEO. Hanoi..."",""url"":""https://commons.wikimedia.org/wiki/File:HYMNES_et_PAVILLONS_D%CA%BCINDOCHINE_1941_Leaders_flags_anthems_of_French_Indochina_WW2_Vichy_France_50_LUANG-PRABANG_Le_Patriote_Lao_Hymne_national_Laotien_Thong_Dy_01_-_IDEO._Hanoi_Unidentified_author_designer_No_know_copyright_restrict.jpg"",""access_date"":""2026-06-06""}","Based on these records, SURF-CGS2026R0909 is a 1846 publication from Brazil, while SURF-CRG2026R0100 is a 1885 publication from Vietnam.
+
+EVIDENCE TAGS:
+record_id: SURF-CGS2026R0909 | SURF-CRG2026R0100
+title: Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 2, Ed. 1 Saturday, June 6, 1846 - DPLA - d5d3c61ba6ef077f73cf4057ea8fb601 (page 1).jpg | HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of French Indochina WW2 Vichy France 50 LUANG-PRABANG Le Patriote Lao Hymne national Laotien Thong Dy 01 - IDEO. Hanoi Unidentified author designer No know copyright restrict.jpg
+source: Wikimedia Commons file source / Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 2, Ed. 1 Saturday, June 6, 1846 - DPLA - d5d3c61ba6ef077f73cf4057ea8fb601 (page 1).jpg / page 101008536 / https://commons.wikimedia.org/wiki/File:Republic_of_Rio_Grande._And_Friend_of_the_People._(Brownsville,_Tex.),_Vol._1,_No._2,_Ed._1_Saturday,_June_6,_1846_-_DPLA_-_d5d3c61ba6ef077f73cf4057ea8fb601... | Wikimedia Commons file source / HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of French Indochina WW2 Vichy France 50 LUANG-PRABANG Le Patriote Lao Hymne national Laotien Thong Dy 01 - IDEO. Hanoi... / https://commons.wikimedia.org/wiki/File:HYMNES_et_PAVILLONS_D%CA%BCINDOCHINE_1941_Leaders_flags_anthems_of_French_Indochina_WW2_Vichy_France_50_LUANG-PRABANG_Le_Patriote_Lao_Hymne_national_Laotien_Thong...",pending,pending,pending,
+V33-HR-022,BQ113,comparison,false,Compare SURF-CRG2026R0027 and SURF-ER1830R059 as graphic communication evidence.,"record_id, title, source","record_id: SURF-CRG2026R0027 ; SURF-ER1830R059
+title: HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif ; Sculptress
+source: {""name"":""Wikimedia Commons file source / HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif / page 16525059"",""url"":""https://commons.wikimedia.org/wiki/File:HQ._FEAF,_TOKYO-Col._John_K._Arnold_Jr._(right),_Montgomery,_Ala.,_is_escorted_by_Col._Herbert_R._Volin,_Tokyo_Air..._-_NARA_-_542291.tif"",""access_date"":""2026-06-06""} ; {""name"":""Cleveland Museum Open Access API"",""url"":""https://clevelandart.org/art/1986.136"",""access_date"":""2026-05-30""}","Based on these records, SURF-CRG2026R0027 is a Japanese military aerial reconnaissance image while SURF-ER1830R059 is a 19th-century French sculptress portrait.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0027 | SURF-ER1830R059
+title: HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif | Sculptress
+source: Wikimedia Commons file source / HQ. FEAF, TOKYO-Col. John K. Arnold Jr. (right), Montgomery, Ala., is escorted by Col. Herbert R. Volin, Tokyo Air... - NARA - 542291.tif / page 16525059 / https://commons.wikimedia.org/wiki/File:HQ._FEAF,_TOKYO-Col._John_K._Arnold_Jr._(right),_Montgomery,_Ala.,_is_escorted_by_Col._Herbert_R._Volin,_Tokyo_Air..._-_NARA_-_542291.tif | Cleveland Museum Open Access API / https://clevelandart.org/art/1986.136",pending,pending,pending,
+V33-HR-023,BQ115,comparison,false,Compare SURF-CRG2026R0032 and SURF-ER1830R052 as graphic communication evidence.,"record_id, title, source","record_id: SURF-CRG2026R0032 ; SURF-ER1830R052
+title: East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865.jpg ; The Modern Poster
+source: {""name"":""Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865.jpg / page 63346339"",""url"":""https://commons.wikimedia.org/wiki/File:East_India_postage_Queen_Victoria_stamp_used_in_Zanzibar-_Two_annas_orange,_1865.jpg"",""access_date"":""2026-06-06""} ; {""name"":""Art Institute of Chicago API"",""url"":""https://www.artic.edu/artworks/55093"",""access_date"":""2026-05-30""}","Based on these records, the 1865 Zanzibar stamp is a South Asian currency, while the 1895 US Modern Poster is a US currency.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0032 | SURF-ER1830R052
+title: East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865.jpg | The Modern Poster
+source: Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865.jpg / page 63346339 / https://commons.wikimedia.org/wiki/File:East_India_postage_Queen_Victoria_stamp_used_in_Zanzibar-_Two_annas_orange,_1865.jpg | Art Institute of Chicago API / https://www.artic.edu/artworks/55093",pending,pending,pending,
+V33-HR-024,BQ118,comparison,false,Compare SURF-ER1830R046 and SURF-ER1830R066 as graphic communication evidence.,"record_id, title, source","record_id: SURF-ER1830R046 ; SURF-ER1830R066
+title: Aristide Bruant ; Buy a Little Present for the Kaiser
+source: {""name"":""Art Institute of Chicago API"",""url"":""https://www.artic.edu/artworks/13598"",""access_date"":""2026-05-30""} ; {""name"":""Art Institute of Chicago API"",""url"":""https://www.artic.edu/artworks/7962"",""access_date"":""2026-05-30""}","Based on these records, SURF-ER1830R066 is a superior graphic communication evidence as it provides more detailed and specific visual data compared to SURF-ER1830R046.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R046 | SURF-ER1830R066
+title: Aristide Bruant | Buy a Little Present for the Kaiser
+source: Art Institute of Chicago API / https://www.artic.edu/artworks/13598 | Art Institute of Chicago API / https://www.artic.edu/artworks/7962",pending,pending,pending,
+V33-HR-025,BQ129,region_period_recommendation,false,Recommend a research route through Global / release gate expansion and nearby period evidence.,"record_id, title, date_text, region, source","record_id: SURF-CRG2026R0050 ; SURF-CRG2026R0051
+title: The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg ; The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg
+date_text: 1870
+region: Global / release gate expansion
+source: {""name"":""Wikimedia Commons file source / The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg / page 39228667"",""url"":""https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3849_stamp_(With_Lenin_(After_Vladimir_Serov)).jpg"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg / page 39286166"",""url"":""https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3854_stamp_(Fedot_Sychkov_and_Painting_Sledding_from_Hills).jpg"",""access_date"":""2026-06-06""}","Based on these records, the 1870 Global/Release gate expansion records suggest the region is a historical period of global expansion, while the 1830 France record indicates a specific local context. The 1870 records suggest the region is a historical period of global expansion, while the 1830 France record indicates a specific local context.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0050 | SURF-CRG2026R0051 | SURF-GAX1970R001
+title: The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg | The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg | Monsieur, vous avez réclamé votre inscription...
+date_text: 1870 | 1830
+region: Global / release gate expansion | France
+source: Wikimedia Commons file source / The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg / page 39228667 / https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3849_stamp_(With_Lenin_(After_Vladimir_Serov)).jpg | Wikimedia Commons file source / The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg / page 39286166 / https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3854_stamp_(Fedot_Sychkov_and_Painting_Sledding_from_Hills).jpg | Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",pending,pending,pending,
+V33-HR-026,BQ131,region_period_recommendation,false,Recommend a research route through Global / release gate expansion and nearby period evidence.,"record_id, title, date_text, region, source","record_id: SURF-CRG2026R0052 ; SURF-CRG2026R0071
+title: The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png ; The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png
+date_text: 1870 ; 1877
+region: Global / release gate expansion
+source: {""name"":""Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690"",""url"":""https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3886_sheet_with_16_labels_(Lenin,_1920_with_16_labels_%27Leader_of_the_world_proletariat%27).png"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png / page 102829467"",""url"":""https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1977_CPA_4695_stamp_(Birth_centenary_of_Felix_Dzerzhinsky,_%27Iron_Felix%27,_Bolshevik_revolutionary_and_official,_led_Cheka_and_OGPU).png"",""access_date"":""2026-06-06""}","Based on these records, use The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat'). png; The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka. and related records as a source-backed route through Global / release gate expansion; France around 1870; 1877 and related records.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0052 | SURF-CRG2026R0071 | SURF-GAX1970R001
+title: The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png | The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png | Monsieur, vous avez réclamé votre inscription...
+date_text: 1870 | 1877 | 1830
+region: Global / release gate expansion | France
+source: Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690 / https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3886_sheet_with_16_labels_(Lenin,_1920_with_16_labels_%27Leader_of_the_world_proletariat%27).png | Wikimedia Commons file source / The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png / page 102829467 / https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1977_CPA_4695_stamp_(Birth_centenary_of_Felix_Dzerzhinsky,_%27Iron_Felix%27,_Bolshevik_revolutionary_and_official,_led_Cheka_and_OGPU).png | Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",pending,pending,pending,
+V33-HR-027,BQ140,region_period_recommendation,false,Recommend a research route through Global / release gate expansion and nearby period evidence.,"record_id, title, date_text, region, source","record_id: SURF-CRG2026R0004 ; SURF-CRG2026R0005
+title: The Town Hall, Market Place, Tamworth - geograph.org.uk - 1741283.jpg ; The authentic and genuine history of the signing of the Treaty of Waitangi, New Zealand, February 5 and 6, 1840 - Cover.jpg
+date_text: 1834 ; 1840
+region: Global / release gate expansion
+source: {""name"":""Wikimedia Commons file source / The Town Hall, Market Place, Tamworth - geograph.org.uk - 1741283.jpg / page 14476689"",""url"":""https://commons.wikimedia.org/wiki/File:The_Town_Hall,_Market_Place,_Tamworth_-_geograph.org.uk_-_1741283.jpg"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / The authentic and genuine history of the signing of the Treaty of Waitangi, New Zealand, February 5 and 6, 1840 - Cover.jpg / page 152593751"",""url"":""https://commons.wikimedia.org/wiki/File:The_authentic_and_genuine_history_of_the_signing_of_the_Treaty_of_Waitangi,_New_Zealand,_February_5_and_6,_1840_-_Cover.jpg"",""access_date"":""2026-06-06""}","Based on these records, The Town Hall, Market Place, Tamworth - geograph. org. uk - 1741283. jpg | 1834 | Global / release gate expansion is the primary source for the region's history. The Treaty of Waitangi, New Zealand, February 5 and 6, 1840 - Cover. jpg | 1840 | Global / release gate expansion provides the official historical context for the signing of the agreement. Monsieur, vous avez réclamé votre inscription. | 1830 | France | France is the primary source for the region's political history.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0004 | SURF-CRG2026R0005 | SURF-GAX1970R001
+title: The Town Hall, Market Place, Tamworth - geograph.org.uk - 1741283.jpg | The authentic and genuine history of the signing of the Treaty of Waitangi, New Zealand, February 5 and 6, 1840 - Cover.jpg | Monsieur, vous avez réclamé votre inscription...
+date_text: 1834 | 1840 | 1830
+region: Global / release gate expansion | France
+source: Wikimedia Commons file source / The Town Hall, Market Place, Tamworth - geograph.org.uk - 1741283.jpg / page 14476689 / https://commons.wikimedia.org/wiki/File:The_Town_Hall,_Market_Place,_Tamworth_-_geograph.org.uk_-_1741283.jpg | Wikimedia Commons file source / The authentic and genuine history of the signing of the Treaty of Waitangi, New Zealand, February 5 and 6, 1840 - Cover.jpg / page 152593751 / https://commons.wikimedia.org/wiki/File:The_authentic_and_genuine_history_of_the_signing_of_the_Treaty_of_Waitangi,_New_Zealand,_February_5_and_6,_1840_-_Cover.jpg | Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",pending,pending,pending,
+V33-HR-028,BQ161,more_context,false,What related context should I inspect around SURF-ER1830R019?,"record_id, title, date_text, region, source, topology","record_id: SURF-ER1830R019 ; SURF-ER1830R004
+title: [Santa with toys in a sleigh, drawn by reindeer, with a church on the right and another in the distance] ; [Trade card for McKay Iron and Locomotive Works and an Arkansas railroad]
+date_text: [between 1880 and 1890] ; [between 1863 and 1868]
+region: Unresolved region
+source: {""name"":""Library of Congress loc.gov API"",""url"":""https://www.loc.gov/pictures/item/2015651615/"",""access_date"":""2026-05-30""} ; {""name"":""Library of Congress loc.gov API"",""url"":""https://www.loc.gov/pictures/item/2010646699/"",""access_date"":""2026-05-30""}
+topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Midcentury modern graphic communication"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""support_packet_appendix_text"",""folder_titles"":[""Unresolved region"",""Midcentury modern graphic communication"",""Trade card""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, use the primary record with its related source-linked records for context; treat the evidence tags as authoritative.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R019 | SURF-ER1830R004 | SURF-ER1830R017
+title: [Santa with toys in a sleigh, drawn by reindeer, with a church on the right and another in the distance] | [Trade card for McKay Iron and Locomotive Works and an Arkansas railroad] | [Advertising card for play ""Deacon Crankett""]
+date_text: [between 1880 and 1890] | [between 1863 and 1868] | [between 1880 and 1882]
+region: Unresolved region
+source: Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2015651615/ | Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2010646699/ | Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2014646356/
+topology: sheet / main_sheet / Unresolved region / Midcentury modern graphic communication / Graphic design object record | sheet / support_packet_appendix_text / Unresolved region / Midcentury modern graphic communication / Trade card | sheet / support_packet_appendix_text / Unresolved region / Midcentury modern graphic communication / Lithographic print",pending,pending,pending,
+V33-HR-029,BQ167,more_context,false,What related context should I inspect around SURF-CRG2026R0003?,"record_id, title, date_text, region, source, topology","record_id: SURF-CRG2026R0003 ; SURF-CRG2026R0001
+title: Stamp of Umm al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg ; Paganini par David d'Angers (Angers) (14911656518).jpg
+date_text: 1834 ; 1830
+region: Global / release gate expansion
+source: {""name"":""Wikimedia Commons file source / Stamp of Umm al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg / page 165867587"",""url"":""https://commons.wikimedia.org/wiki/File:Stamp_of_Umm_al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183"",""url"":""https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg"",""access_date"":""2026-06-06""}
+topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""France"",""Travel and transport poster culture"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, use the primary record with its related source-linked records for context; treat the evidence tags as authoritative.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0003 | SURF-CRG2026R0001 | SURF-CRG2026R0175
+title: Stamp of Umm al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg | Paganini par David d'Angers (Angers) (14911656518).jpg | Buffalo Bill's Wild West and congress of rough riders of the world A congress of American Indians (...). LCCN2001696164.jpg
+date_text: 1834 | 1830 | 1899
+region: Global / release gate expansion
+source: Wikimedia Commons file source / Stamp of Umm al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg / page 165867587 / https://commons.wikimedia.org/wiki/File:Stamp_of_Umm_al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | Wikimedia Commons file source / Buffalo Bill's Wild West and congress of rough riders of the world A congress of American Indians (...). LCCN2001696164.jpg / page 67035846 / https://commons.wikimedia.org/wiki/File:Buffalo_Bill%27s_Wild_West_and_congress_of_rough_riders_of_the_world_A_congress_of_American_Indians_(...)._LCCN2001696164.jpg
+topology: sheet / main_sheet / Unresolved region / Modern typography and layout / Graphic design object record | sheet / main_sheet / France / Travel and transport poster culture / Graphic design object record | sheet / main_sheet / United States / Modern typography and layout / Poster",pending,pending,pending,
+V33-HR-030,BQ169,more_context,false,What related context should I inspect around SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES?,"record_id, title, date_text, region, source, topology","record_id: SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES ; SURF-GA1970R001
+title: Arundel Society chromolithograph copy series ; Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe]
+date_text: 1864-1891 ; 1834
+region: great britain; berlin; Berlin ; France
+source: {""name"":""V&A Collections API"",""url"":""https://collections.vam.ac.uk/item/O1026162/"",""access_date"":""2026-05-30""} ; {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/btv1b8438046c"",""access_date"":""2026-05-31""}
+topology: {""surface_type"":""sheet"",""publication_role"":"""",""folder_titles"":[""Germany"",""United Kingdom"",""Midcentury modern graphic communication"",""World War and public-information graphics"",""Lithographic print""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""France"",""Midcentury modern graphic communication"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the related context to inspect around SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES includes the Arundel Society chromolithograph copy series (1864-1891), the Trade card for McKay Iron and Locomotive Works and an Arkansas railroad (between 1863 and 1868), and Théâtre dirigé par M. Dorsay ci-devant Mad. e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bello. (1834).
+
+EVIDENCE TAGS:
+record_id: SURF-COMPOUND-ARUNDEL-SOCIETY-CHROMOLITHOGRAPH-COPIES | SURF-GA1970R001 | SURF-ER1830R004
+title: Arundel Society chromolithograph copy series | Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe] | [Trade card for McKay Iron and Locomotive Works and an Arkansas railroad]
+date_text: 1864-1891 | 1834 | [between 1863 and 1868]
+region: great britain; berlin; Berlin | France | Unresolved region
+source: V&A Collections API / https://collections.vam.ac.uk/item/O1026162/ | Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/btv1b8438046c | Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2010646699/
+topology: sheet / Germany / United Kingdom / Midcentury modern graphic communication / World War and public-information graphics / Lithographic print | sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record | sheet / support_packet_appendix_text / Unresolved region / Midcentury modern graphic communication / Trade card",pending,pending,pending,
+V33-HR-031,BQ207,casual_archive_help,false,I found SURF-CGS2026R0031; what is a simple archive help next step?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Latin America"",""Modern typography and layout"",""Publication design""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the archive view is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: Latin America, Modern typography and layout, Publication design, Research lab method, United States, Midcentury modern graphic communication, Poster. Surface types in the packet: sheet, method. Publication roles in the packet: main_sheet, method_context, support_packet_appendix_text. Source families represented: Wikimedia Commons file source / Facundo. jpg / page 6629018, browser-local-rag-lab method files, Art Institute of Chicago API. Rights states represented: open_candidate, research_fixture, rights_review_required. Image-state codes represented: IMG03, IMG00.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / Latin America / Modern typography and layout / Publication design | sheet / support_packet_appendix_text / United States / Midcentury modern graphic communication / Poster | method / method_context / Research lab method",pending,pending,pending,
+V33-HR-032,BQ230,comparison,false,Compare SURF-CRG2026R0153 and SURF-CGS2026R0908 as source-grounded graphic communication evidence.,"record_id, title, source","record_id: SURF-CRG2026R0153 ; SURF-CGS2026R0908
+title: Oud-generaal als straatmuzikant, NG-850-60.jpg ; Temple of Xochicalco, Exposition Universelle Paris 1867, from Illustrated London News, 01. Juni 1867.jpg
+source: {""name"":""Wikimedia Commons file source / Oud-generaal als straatmuzikant, NG-850-60.jpg / page 83869797"",""url"":""https://commons.wikimedia.org/wiki/File:Oud-generaal_als_straatmuzikant,_NG-850-60.jpg"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / Temple of Xochicalco, Exposition Universelle Paris 1867, from Illustrated London News, 01. Juni 1867.jpg / page 124497294"",""url"":""https://commons.wikimedia.org/wiki/File:Temple_of_Xochicalco,_Exposition_Universelle_Paris_1867,_from_Illustrated_London_News,_01._Juni_1867.jpg"",""access_date"":""2026-06-06""}","Based on these records, SURF-CRG2026R0153 is a 1895 South Asia Indian street musician, while SURF-CGS2026R0908 is a 1842 Latin American Mexico museum.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0153 | SURF-CGS2026R0908
+title: Oud-generaal als straatmuzikant, NG-850-60.jpg | Temple of Xochicalco, Exposition Universelle Paris 1867, from Illustrated London News, 01. Juni 1867.jpg
+source: Wikimedia Commons file source / Oud-generaal als straatmuzikant, NG-850-60.jpg / page 83869797 / https://commons.wikimedia.org/wiki/File:Oud-generaal_als_straatmuzikant,_NG-850-60.jpg | Wikimedia Commons file source / Temple of Xochicalco, Exposition Universelle Paris 1867, from Illustrated London News, 01. Juni 1867.jpg / page 124497294 / https://commons.wikimedia.org/wiki/File:Temple_of_Xochicalco,_Exposition_Universelle_Paris_1867,_from_Illustrated_London_News,_01._Juni_1867.jpg",pending,pending,pending,
+V33-HR-033,BQ232,comparison,false,Compare SURF-ER1830R002 and SURF-CGS2026R0910 as source-grounded graphic communication evidence.,"record_id, title, source","record_id: SURF-ER1830R002 ; SURF-CGS2026R0910
+title: Trade card for C. & J. Lintelo Brothers, Gold and Silversmiths ; Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg
+source: {""name"":""V&A Collections API"",""url"":""https://collections.vam.ac.uk/item/O89238/"",""access_date"":""2026-05-30""} ; {""name"":""Wikimedia Commons file source / Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg / page 100419033"",""url"":""https://commons.wikimedia.org/wiki/File:Republic_of_Rio_Grande._And_Friend_of_the_People._(Brownsville,_Tex.),_Vol._1,_No._4,_Ed._1_Tuesday,_June_16,_1846_-_DPLA_-_9546c5d7758eb3aa72d3bb309e23827c_(page_2).jpg"",""access_date"":""2026-06-06""}","Based on these records, SURF-ER1830R002 (1840-1849) and SURF-CGS2026R0910 (1846) differ in region and date. an early is from the Caribbean, while the second is from Latin America/Mexico.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R002 | SURF-CGS2026R0910
+title: Trade card for C. & J. Lintelo Brothers, Gold and Silversmiths | Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg
+source: V&A Collections API / https://collections.vam.ac.uk/item/O89238/ | Wikimedia Commons file source / Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg / page 100419033 / https://commons.wikimedia.org/wiki/File:Republic_of_Rio_Grande._And_Friend_of_the_People._(Brownsville,_Tex.),_Vol._1,_No._4,_Ed._1_Tuesday,_June_16,_1846_-_DPLA_-_9546c5d7758eb3aa72d3bb309e23827c...",pending,pending,pending,
+V33-HR-034,BQ30,casual_archive_help,false,Can you help me use this archive without making unsupported claims?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""India"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the archive is a source-linked research archive for graphic design and visual communication records. It organizes records through folders/topology: India, Modern typography and layout, Graphic design object record, Unresolved region, Midcentury modern graphic communication, Lithographic print. Surface types in the packet: sheet. Publication roles in the packet: main_sheet. Source families represented: Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865. jpg / page 63346338, Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar- Two annas orange, 1865. jpg / page 6334633
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / India / Modern typography and layout / Graphic design object record | sheet / main_sheet / Unresolved region / Midcentury modern graphic communication / Lithographic print",pending,pending,pending,
+V33-HR-035,BQ01,archive_orientation,false,What is this archive for?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""support_packet_appendix_text"",""folder_titles"":[""Unresolved region"",""Midcentury modern graphic communication"",""Trade card""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""India"",""Midcentury modern graphic communication"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, this archive is a source-linked research archive for graphic design and visual communication records.
+
+EVIDENCE TAGS:
+topology: sheet / support_packet_appendix_text / Unresolved region / Midcentury modern graphic communication / Trade card | sheet / main_sheet / India / Midcentury modern graphic communication / Graphic design object record | method / method_context / Research lab method",pending,pending,pending,
+V33-HR-036,BQ053,casual_archive_help,false,I found SURF-CRG2026R0052; what is a simple next step?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, this is a source-linked research archive for graphic design and visual communication records.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / Unresolved region / Modern typography and layout / Graphic design object record | sheet / support_packet_appendix_text / United States / Midcentury modern graphic communication / Poster | sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record",pending,pending,pending,
+V33-HR-037,BQ13,comparison,false,"How do Advertisement of Israel Kaplan's progressive Jewish school ""LeTorah VaDa'at"" in Minsk c. 1897.jpg and ApollonMagazine.jpg differ in source support?","record_id, title, source","record_id: SURF-COM1970R007 ; SURF-CRG2026R0235
+title: Advertisement of Israel Kaplan's progressive Jewish school ""LeTorah VaDa'at"" in Minsk c. 1897.jpg ; ApollonMagazine.jpg
+source: {""name"":""Wikimedia Commons"",""url"":""https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg"",""access_date"":""2026-05-31""} ; {""name"":""Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526"",""url"":""https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg"",""access_date"":""2026-06-06""}","Based on these records, Advertisement of Israel Kaplan's progressive Jewish school ""LeTorah VaDa'at"" in Minsk c. 1897. jpg and ApollonMagazine. jpg differ in source support by being a primary source for an early and a secondary source for the second.
+
+EVIDENCE TAGS:
+record_id: SURF-COM1970R007 | SURF-CRG2026R0235
+title: Advertisement of Israel Kaplan's progressive Jewish school ""LeTorah VaDa'at"" in Minsk c. 1897.jpg | ApollonMagazine.jpg
+source: Wikimedia Commons / https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg | Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526 / https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg",pending,pending,pending,
+V33-HR-038,BQ05,current_object_explanation,false,What is happening on SURF-GAX1970R001?,"record_id, title, date_text, region, source","record_id: SURF-GAX1970R001
+title: Monsieur, vous avez réclamé votre inscription...
+date_text: 1830
+region: France
+source: {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/bpt6k5456008h"",""access_date"":""2026-05-31""}","Based on these records, Monsieur requested his inscription in 1830 in France.
+
+EVIDENCE TAGS:
+record_id: SURF-GAX1970R001 | SURF-CRG2026R0001 | SURF-ER1830R001-GROUP
+title: Monsieur, vous avez réclamé votre inscription... | Paganini par David d'Angers (Angers) (14911656518).jpg | Trade card grouped records, 1830-1922
+date_text: 1830 | 1830-1922
+region: France | Global / release gate expansion | London
+source: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg | V&A Collections API / https://collections.vam.ac.uk/item/O693551/",pending,pending,pending,
+V33-HR-039,BQ11,first_earliest_claim,true,Can I say this designer was the first to make this style?,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-040,BQ249,method_process_question,false,How should the browser-local RAG lab decide whether evidence is sufficient or whether to refuse?,method_context,"method_context: {""evidence_definition"":""Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence."",""answer_lane_policy"":""Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation."",""non_evidence_rule"":""AI output is experimental text and cannot become archive evidence."",""refusal_rule"":""Refuse or request narrower context when required fields or claim support are absent.""}","Based on these records, the browser-local RAG lab should decide whether evidence is sufficient or whether to refuse by evaluating the source's authority and relevance to the specific query.
+
+EVIDENCE TAGS:
+method_context: Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence. Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation. AI output is experimental text and cannot become archive evidence. Refuse or request narrower context when required fields or claim support are absent.",pending,pending,pending,
+V33-HR-041,BQ259,more_context,false,What related context should I inspect around SURF-SI1970R001 before making a broader claim?,"record_id, title, date_text, region, source, topology","record_id: SURF-SI1970R001 ; SURF-ER1830R015
+title: Trade Card of John Williams, Clothier ; Indian trading [6 illustrations: 1. trader's store; 2. 2 en route; 3. preparing for trade; 4. the trading post and fort; 5. return from trading; 6. dissatisfaction - (Indian beating his wife)]
+date_text: ca. 1830; 1820s; 1830s ; 1876.
+region: USA; USA ; India
+source: {""name"":""Smithsonian Open Access"",""url"":""https://collection.cooperhewitt.org/view/objects/asitem/id/79923"",""access_date"":""2026-05-31""} ; {""name"":""Library of Congress loc.gov API"",""url"":""https://www.loc.gov/pictures/item/99614267/"",""access_date"":""2026-05-30""}
+topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""World War and public-information graphics"",""Trade card""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""India"",""Midcentury modern graphic communication"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, inspect the 1830s Trade card for John Williams to establish the primary context, as it provides one of the early documented evidence for the region and the specific object type. This supports the broader claim about the object's historical presence.
+
+EVIDENCE TAGS:
+record_id: SURF-SI1970R001 | SURF-ER1830R015 | SURF-CGS2026R0328
+title: Trade Card of John Williams, Clothier | Indian trading [6 illustrations: 1. trader's store; 2. 2 en route; 3. preparing for trade; 4. the trading post and fort; 5. return from trading; 6. dissatisfaction - (Indian beating his wife)] | El restaurador de las leyes.jpg
+date_text: ca. 1830; 1820s; 1830s | 1876. | 1840
+region: USA; USA | India | Latin America / Argentina
+source: Smithsonian Open Access / https://collection.cooperhewitt.org/view/objects/asitem/id/79923 | Library of Congress loc.gov API / https://www.loc.gov/pictures/item/99614267/ | Wikimedia Commons file source / El restaurador de las leyes.jpg / page 10603704 / https://commons.wikimedia.org/wiki/File:El_restaurador_de_las_leyes.jpg
+topology: sheet / main_sheet / Unresolved region / World War and public-information graphics / Trade card | sheet / main_sheet / India / Midcentury modern graphic communication / Graphic design object record | sheet / main_sheet / Latin America / World War and public-information graphics / Poster",pending,pending,pending,
+V33-HR-042,BQ300,no_evidence_refusal,true,Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-20?,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-043,BQ17,region_period_recommendation,true,Recommend an Asia route for twentieth-century design.,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-044,BQ08,source_rights_question,false,What rights information is attached to SURF-GAX1970R001?,"record_id, title, source, rights, image_state, reuse_permission, public_domain_status","record_id: SURF-GAX1970R001
+title: Monsieur, vous avez réclamé votre inscription...
+source: {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/bpt6k5456008h"",""access_date"":""2026-05-31""}
+rights: {""state"":""open_candidate"",""display_policy"":""open_image_frame"",""label"":""IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.""}
+image_state: {""code"":""IMG03"",""display_mode"":""open_image_frame"",""has_image_frame"":true,""model_image_eligible"":true}
+reuse_permission: none
+public_domain_status: none","record_id: SURF-GAX1970R001
+title: Monsieur, vous avez réclamé votre inscription...
+source: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h
+RIGHTS: IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.
+image_state: IMG03 / open_image_frame
+REUSE: source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required
+PUBLIC_DOMAIN: source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined
+CAVEAT: Verify the source page before reuse; this experiment does not grant rights.",pending,pending,pending,
+V33-HR-045,BQ03,archive_orientation,false,Where should I start if I am new to this archive?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""France"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Modern typography and layout"",""Publication design""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the archive view is a structured collection of design and layout records organized by themes and publication roles.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / France / Modern typography and layout / Graphic design object record | sheet / main_sheet / Unresolved region / Modern typography and layout / Publication design | method / method_context / Research lab method",pending,pending,pending,
+V33-HR-046,BQ052,casual_archive_help,false,I found SURF-CRG2026R0051; what is a simple next step?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the next step is to verify the image's provenance and copyright status.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / Unresolved region / Modern typography and layout / Graphic design object record | sheet / support_packet_appendix_text / United States / Midcentury modern graphic communication / Poster | sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record",pending,pending,pending,
+V33-HR-047,BQ12,comparison,false,Compare SURF-COM1970R007 with SURF-CRG2026R0235.,"record_id, title, source","record_id: SURF-COM1970R007 ; SURF-CRG2026R0235
+title: Advertisement of Israel Kaplan's progressive Jewish school ""LeTorah VaDa'at"" in Minsk c. 1897.jpg ; ApollonMagazine.jpg
+source: {""name"":""Wikimedia Commons"",""url"":""https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg"",""access_date"":""2026-05-31""} ; {""name"":""Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526"",""url"":""https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg"",""access_date"":""2026-06-06""}","Based on these records, SURF-COM1970R007 is a 1897 image of Israel Kaplan's school in Minsk, Russia, while SURF-CRG2026R0235 is a 1909 Global release gate expansion.
+
+EVIDENCE TAGS:
+record_id: SURF-COM1970R007 | SURF-CRG2026R0235
+title: Advertisement of Israel Kaplan's progressive Jewish school ""LeTorah VaDa'at"" in Minsk c. 1897.jpg | ApollonMagazine.jpg
+source: Wikimedia Commons / https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg | Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526 / https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg",pending,pending,pending,
+V33-HR-048,BQ06,current_object_explanation,false,"Explain Monsieur, vous avez réclamé votre inscription... using only cited archive evidence.","record_id, title, date_text, region, source","record_id: SURF-GAX1970R001
+title: Monsieur, vous avez réclamé votre inscription...
+date_text: 1830
+region: France
+source: {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/bpt6k5456008h"",""access_date"":""2026-05-31""}","Based on these records, Monsieur requested his inscription in 1830 in France.
+
+EVIDENCE TAGS:
+record_id: SURF-GAX1970R001 | LAB-METHOD-CONTEXT-V0
+title: Monsieur, vous avez réclamé votre inscription... | Browser-local RAG lab method context
+date_text: 1830 | 2026-06-07
+region: France | Research method
+source: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab",pending,pending,pending,
+V33-HR-049,BQ10,first_earliest_claim,true,What is the earliest item here related to posters?,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-050,BQ254,method_process_question,false,How should the browser-local RAG lab decide whether evidence is sufficient or whether to refuse?,method_context,"method_context: {""evidence_definition"":""Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence."",""answer_lane_policy"":""Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation."",""non_evidence_rule"":""AI output is experimental text and cannot become archive evidence."",""refusal_rule"":""Refuse or request narrower context when required fields or claim support are absent.""}","Based on these records, the browser-local RAG lab should decide whether evidence is sufficient or whether to refuse by evaluating the source's rights status and context relevance.
+
+EVIDENCE TAGS:
+method_context: Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence. Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation. AI output is experimental text and cannot become archive evidence. Refuse or request narrower context when required fields or claim support are absent.",pending,pending,pending,
+V33-HR-051,BQ258,more_context,false,What related context should I inspect around SURF-ER1830R066 before making a broader claim?,"record_id, title, date_text, region, source, topology","record_id: SURF-ER1830R066 ; SURF-CRG2026R0246
+title: Buy a Little Present for the Kaiser ; PlumEdwardVII.jpg
+date_text: 1917/18 ; 1910
+region: United States ; Global / release gate expansion
+source: {""name"":""Art Institute of Chicago API"",""url"":""https://www.artic.edu/artworks/7962"",""access_date"":""2026-05-30""} ; {""name"":""Wikimedia Commons file source / PlumEdwardVII.jpg / page 7544844"",""url"":""https://commons.wikimedia.org/wiki/File:PlumEdwardVII.jpg"",""access_date"":""2026-06-06""}
+topology: {""surface_type"":""sheet"",""publication_role"":""support_packet_appendix_text"",""folder_titles"":[""United States"",""World War and public-information graphics"",""Poster""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Russia"",""World War and public-information graphics"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, I should inspect the 1917/18 United States poster and the 1910 Global graphic design object to understand the broader context before making a broader claim.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R066 | SURF-CRG2026R0246 | SURF-ER1830R064
+title: Buy a Little Present for the Kaiser | PlumEdwardVII.jpg | Tell that to the Marines!
+date_text: 1917/18 | 1910 | 1914/18
+region: United States | Global / release gate expansion
+source: Art Institute of Chicago API / https://www.artic.edu/artworks/7962 | Wikimedia Commons file source / PlumEdwardVII.jpg / page 7544844 / https://commons.wikimedia.org/wiki/File:PlumEdwardVII.jpg | Art Institute of Chicago API / https://www.artic.edu/artworks/7772
+topology: sheet / support_packet_appendix_text / United States / World War and public-information graphics / Poster | sheet / main_sheet / Russia / World War and public-information graphics / Graphic design object record | sheet / support_packet_appendix_text / United States / Midcentury modern graphic communication / Poster",pending,pending,pending,
+V33-HR-052,BQ286,no_evidence_refusal,true,Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-6?,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-053,BQ16,region_period_recommendation,false,Recommend a Latin America route for modern graphic design.,"record_id, title, date_text, region, source","record_id: SURF-CGS2026R0681 ; SURF-CGS2026R0328 ; SURF-CGS2026R0030
+title: Diego Portales-D S No 20.JPG ; El restaurador de las leyes.jpg ; Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg
+date_text: 1837 ; 1840 ; 1842
+region: Latin America / Chile ; Latin America / Argentina
+source: {""name"":""Wikimedia Commons file source / Diego Portales-D S No 20.JPG / page 7016695"",""url"":""https://commons.wikimedia.org/wiki/File:Diego_Portales-D_S_No_20.JPG"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / El restaurador de las leyes.jpg / page 10603704"",""url"":""https://commons.wikimedia.org/wiki/File:El_restaurador_de_las_leyes.jpg"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg / page 30060076"",""url"":""https://commons.wikimedia.org/wiki/File:Stamp_commemorating_the_centenary_of_the_birth_of_Jos%C3%A9_Manuel_Estrada.jpg"",""access_date"":""2026-06-06""}","Based on these records, modern graphic design in Latin America often utilizes the 1837 Diego Portales-D S No 20. JPG image as a foundational visual element, reflecting the region's historical cultural context.
+
+EVIDENCE TAGS:
+record_id: SURF-CGS2026R0681 | SURF-CGS2026R0328 | SURF-CGS2026R0030
+title: Diego Portales-D S No 20.JPG | El restaurador de las leyes.jpg | Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg
+date_text: 1837 | 1840 | 1842
+region: Latin America / Chile | Latin America / Argentina
+source: Wikimedia Commons file source / Diego Portales-D S No 20.JPG / page 7016695 / https://commons.wikimedia.org/wiki/File:Diego_Portales-D_S_No_20.JPG | Wikimedia Commons file source / El restaurador de las leyes.jpg / page 10603704 / https://commons.wikimedia.org/wiki/File:El_restaurador_de_las_leyes.jpg | Wikimedia Commons file source / Stamp commemorating the centenary of the birth of José Manuel Estrada.jpg / page 30060076 / https://commons.wikimedia.org/wiki/File:Stamp_commemorating_the_centenary_of_the_birth_of_Jos%C3%A9_Manuel_Estrada.jpg",pending,pending,pending,
+V33-HR-054,BQ228,source_rights_question,false,"What source, rights, reuse, and public domain status information is attached to SURF-CGS2026R0031?","record_id, title, source, rights, image_state, reuse_permission, public_domain_status","record_id: SURF-CGS2026R0031
+title: Facundo.jpg
+source: {""name"":""Wikimedia Commons file source / Facundo.jpg / page 6629018"",""url"":""https://commons.wikimedia.org/wiki/File:Facundo.jpg"",""access_date"":""2026-06-06""}
+rights: {""state"":""open_candidate"",""display_policy"":""open_image_frame"",""label"":""IMG03: Wikimedia Commons open-license metadata: Public domain.""}
+image_state: {""code"":""IMG03"",""display_mode"":""open_image_frame"",""has_image_frame"":true,""model_image_eligible"":true}
+reuse_permission: none
+public_domain_status: none","record_id: SURF-CGS2026R0031
+title: Facundo.jpg
+source: Wikimedia Commons file source / Facundo.jpg / page 6629018 / https://commons.wikimedia.org/wiki/File:Facundo.jpg
+RIGHTS: IMG03: Wikimedia Commons open-license metadata: Public domain.
+image_state: IMG03 / open_image_frame
+REUSE: source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required
+PUBLIC_DOMAIN: source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined
+CAVEAT: Verify the source page before reuse; this experiment does not grant rights.",pending,pending,pending,
+V33-HR-055,BQ206,archive_orientation,false,How should I use the archive topology to move between East Asia / China and Latin America / Argentina evidence?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""United States"",""World War and public-information graphics"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Latin America"",""World War and public-information graphics"",""Poster""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, this archive view organizes source-linked records by topology, folders, surface type, and evidence fields.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / United States / World War and public-information graphics / Graphic design object record | sheet / main_sheet / Latin America / World War and public-information graphics / Poster | sheet / main_sheet / India / Modern typography and layout / Graphic design object record",pending,pending,pending,
+V33-HR-056,BQ051,casual_archive_help,false,I found SURF-CRG2026R0050; what is a simple next step?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the next step is to verify the source-family link and check the rights_review_required status for the specific image.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / Unresolved region / Modern typography and layout / Graphic design object record | sheet / support_packet_appendix_text / United States / Midcentury modern graphic communication / Poster | sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record",pending,pending,pending,
+V33-HR-057,BQ229,comparison,false,Compare SURF-CRG2026R0100 and SURF-CGS2026R0681 as source-grounded graphic communication evidence.,"record_id, title, source","record_id: SURF-CRG2026R0100 ; SURF-CGS2026R0681
+title: HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of French Indochina WW2 Vichy France 50 LUANG-PRABANG Le Patriote Lao Hymne national Laotien Thong Dy 01 - IDEO. Hanoi Unidentified author designer No know copyright restrict.jpg ; Diego Portales-D S No 20.JPG
+source: {""name"":""Wikimedia Commons file source / HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of French Indochina WW2 Vichy France 50 LUANG-PRABANG Le Patriote Lao Hymne national Laotien Thong Dy 01 - IDEO. Hanoi..."",""url"":""https://commons.wikimedia.org/wiki/File:HYMNES_et_PAVILLONS_D%CA%BCINDOCHINE_1941_Leaders_flags_anthems_of_French_Indochina_WW2_Vichy_France_50_LUANG-PRABANG_Le_Patriote_Lao_Hymne_national_Laotien_Thong_Dy_01_-_IDEO._Hanoi_Unidentified_author_designer_No_know_copyright_restrict.jpg"",""access_date"":""2026-06-06""} ; {""name"":""Wikimedia Commons file source / Diego Portales-D S No 20.JPG / page 7016695"",""url"":""https://commons.wikimedia.org/wiki/File:Diego_Portales-D_S_No_20.JPG"",""access_date"":""2026-06-06""}","Based on these records, SURF-CRG2026R0100 is a 1941 French Indochina anthem while SURF-CGS2026R0681 is a 1837 Chilean document.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0100 | SURF-CGS2026R0681
+title: HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of French Indochina WW2 Vichy France 50 LUANG-PRABANG Le Patriote Lao Hymne national Laotien Thong Dy 01 - IDEO. Hanoi Unidentified author designer No know copyright restrict.jpg | Diego Portales-D S No 20.JPG
+source: Wikimedia Commons file source / HYMNES et PAVILLONS DʼINDOCHINE 1941 Leaders flags anthems of French Indochina WW2 Vichy France 50 LUANG-PRABANG Le Patriote Lao Hymne national Laotien Thong Dy 01 - IDEO. Hanoi... / https://commons.wikimedia.org/wiki/File:HYMNES_et_PAVILLONS_D%CA%BCINDOCHINE_1941_Leaders_flags_anthems_of_French_Indochina_WW2_Vichy_France_50_LUANG-PRABANG_Le_Patriote_Lao_Hymne_national_Laotien_Thong... | Wikimedia Commons file source / Diego Portales-D S No 20.JPG / page 7016695 / https://commons.wikimedia.org/wiki/File:Diego_Portales-D_S_No_20.JPG",pending,pending,pending,
+V33-HR-058,BQ07,current_object_explanation,false,What sources are linked to SURF-GAX1970R001?,"record_id, title, date_text, region, source","record_id: SURF-GAX1970R001
+title: Monsieur, vous avez réclamé votre inscription...
+date_text: 1830
+region: France
+source: {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/bpt6k5456008h"",""access_date"":""2026-05-31""}","Based on these records, this record is represented by Monsieur, vous avez réclamé votre inscription. , dated 1830, with region France.
+
+EVIDENCE TAGS:
+record_id: SURF-GAX1970R001 | SURF-CHW2026R001 | SURF-CRG2026R0001
+title: Monsieur, vous avez réclamé votre inscription... | Die Thierwelt (The Animal Kinggom) | Paganini par David d'Angers (Angers) (14911656518).jpg
+date_text: 1830 | ca. 1835
+region: France | Austria Vienna Europe / Austria / Vienna / Europe | Global / release gate expansion
+source: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/ | Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183 / https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg",pending,pending,pending,
+V33-HR-059,BQ277,first_earliest_claim,true,Which item is the first or earliest example for unsupported chronology claim ROUND3-17?,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-060,BQ160,method_process_question,false,How should the browser-local RAG lab decide whether to answer or refuse?,method_context,"method_context: {""evidence_definition"":""Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence."",""answer_lane_policy"":""Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation."",""non_evidence_rule"":""AI output is experimental text and cannot become archive evidence."",""refusal_rule"":""Refuse or request narrower context when required fields or claim support are absent.""}","Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence.
+
+EVIDENCE TAGS:
+method_context: Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence. Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation. AI output is experimental text and cannot become archive evidence. Refuse or request narrower context when required fields or claim support are absent.",pending,pending,pending,
+V33-HR-061,BQ170,more_context,false,What related context should I inspect around SURF-ER1830R008?,"record_id, title, date_text, region, source, topology","record_id: SURF-ER1830R008 ; SURF-GAX1970R003
+title: Gardner's photographic advertising card ; Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1
+date_text: c1869 ; 1835
+region: Unresolved region ; France
+source: {""name"":""Library of Congress loc.gov API"",""url"":""https://www.loc.gov/pictures/item/2007675841/"",""access_date"":""2026-05-30""} ; {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/bpt6k6332775h"",""access_date"":""2026-05-31""}
+topology: {""surface_type"":""sheet"",""publication_role"":""support_packet_appendix_text"",""folder_titles"":[""Unresolved region"",""Midcentury modern graphic communication"",""Advertisement""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""France"",""Midcentury modern graphic communication"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, I should inspect the Unresolved region and Midcentury modern graphic communication sections to find the specific SURF-ER1830R008 entry.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R008 | SURF-GAX1970R003 | SURF-ER1830R011
+title: Gardner's photographic advertising card | Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1 | Use Getz cockroach and bed bug exterminators, sold by all druggists I sink I tan hit it.
+date_text: c1869 | 1835 | [between 1870 and 1890]
+region: Unresolved region | France
+source: Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2007675841/ | Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k6332775h | Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2008677258/
+topology: sheet / support_packet_appendix_text / Unresolved region / Midcentury modern graphic communication / Advertisement | sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record | sheet / main_sheet / Unresolved region / Midcentury modern graphic communication / Lithographic print",pending,pending,pending,
+V33-HR-062,BQ287,no_evidence_refusal,true,Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-7?,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-063,BQ15,region_period_recommendation,true,Recommend a Russia or Soviet route for the twentieth century.,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-064,BQ19,source_rights_question,false,Can this image be reused?,"record_id, title, source, rights, image_state, reuse_permission, public_domain_status","record_id: SURF-GAX1970R001
+title: Monsieur, vous avez réclamé votre inscription...
+source: {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/bpt6k5456008h"",""access_date"":""2026-05-31""}
+rights: {""state"":""open_candidate"",""display_policy"":""open_image_frame"",""label"":""IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.""}
+image_state: {""code"":""IMG03"",""display_mode"":""open_image_frame"",""has_image_frame"":true,""model_image_eligible"":true}
+reuse_permission: none
+public_domain_status: none","record_id: SURF-GAX1970R001
+title: Monsieur, vous avez réclamé votre inscription...
+source: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h
+RIGHTS: IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.
+image_state: IMG03 / open_image_frame
+REUSE: source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required
+PUBLIC_DOMAIN: source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined
+CAVEAT: Verify the source page before reuse; this experiment does not grant rights.",pending,pending,pending,
+V33-HR-065,BQ204,archive_orientation,false,How should I use the archive topology to move between great britain; berlin; Berlin and USA; USA evidence?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":"""",""folder_titles"":[""Germany"",""United Kingdom"",""Midcentury modern graphic communication"",""World War and public-information graphics"",""Lithographic print""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""World War and public-information graphics"",""Trade card""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the archive topology allows moving between great britain; berlin; Berlin and USA; USA evidence through the folder ""World War and public-information graphics"" and the ""Trade card"" folder. This organize records by surface type and publication roles.
+
+EVIDENCE TAGS:
+topology: sheet / Germany / United Kingdom / Midcentury modern graphic communication / World War and public-information graphics / Lithographic print | sheet / main_sheet / Unresolved region / World War and public-information graphics / Trade card | method / method_context / Research lab method",pending,pending,pending,
+V33-HR-066,BQ050,casual_archive_help,false,I found SURF-CRG2026R0006; what is a simple next step?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the next step is to verify the image's provenance and copyright status.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / Unresolved region / Modern typography and layout / Graphic design object record | sheet / support_packet_appendix_text / United States / Midcentury modern graphic communication / Poster | sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record",pending,pending,pending,
+V33-HR-067,BQ238,comparison,false,Compare SURF-ER1830R052 and SURF-CRG2026R0003 as source-grounded graphic communication evidence.,"record_id, title, source","record_id: SURF-ER1830R052 ; SURF-CRG2026R0003
+title: The Modern Poster ; Stamp of Umm al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg
+source: {""name"":""Art Institute of Chicago API"",""url"":""https://www.artic.edu/artworks/55093"",""access_date"":""2026-05-30""} ; {""name"":""Wikimedia Commons file source / Stamp of Umm al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg / page 165867587"",""url"":""https://commons.wikimedia.org/wiki/File:Stamp_of_Umm_al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg"",""access_date"":""2026-06-06""}","Based on these records, SURF-ER1830R052 is a modern poster from the United States, while SURF-CRG2026R0003 is a stamp from the Irones by Edgar-Degas from 1834.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R052 | SURF-CRG2026R0003
+title: The Modern Poster | Stamp of Umm al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg
+source: Art Institute of Chicago API / https://www.artic.edu/artworks/55093 | Wikimedia Commons file source / Stamp of Umm al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg / page 165867587 / https://commons.wikimedia.org/wiki/File:Stamp_of_Umm_al-Quwain-1967-The-Irones--by-Edgar-Degas-1834-multi-1riyal-perfin.jpg",pending,pending,pending,
+V33-HR-068,BQ066,current_object_explanation,false,Explain SURF-CGS2026R0910 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-CGS2026R0910
+title: Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg
+date_text: 1846
+region: Latin America / Mexico
+source: {""name"":""Wikimedia Commons file source / Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg / page 100419033"",""url"":""https://commons.wikimedia.org/wiki/File:Republic_of_Rio_Grande._And_Friend_of_the_People._(Brownsville,_Tex.),_Vol._1,_No._4,_Ed._1_Tuesday,_June_16,_1846_-_DPLA_-_9546c5d7758eb3aa72d3bb309e23827c_(page_2).jpg"",""access_date"":""2026-06-06""}","Based on these records, Record 1 is the primary source for the current object.
+
+EVIDENCE TAGS:
+record_id: SURF-CGS2026R0910 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1846 | 2026-06-07 | ca. 1835
+region: Latin America / Mexico | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Wikimedia Commons file source / Republic of Rio Grande. And Friend of the People. (Brownsville, Tex.), Vol. 1, No. 4, Ed. 1 Tuesday, June 16, 1846 - DPLA - 9546c5d7758eb3aa72d3bb309e23827c (page 2).jpg / page 100419033 / https://commons.wikimedia.org/wiki/File:Republic_of_Rio_Grande._And_Friend_of_the_People._(Brownsville,_Tex.),_Vol._1,_No._4,_Ed._1_Tuesday,_June_16,_1846_-_DPLA_-_9546c5d7758eb3aa72d3bb309e23827c... | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-069,BQ276,first_earliest_claim,true,Which item is the first or earliest example for unsupported chronology claim ROUND3-16?,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-070,BQ156,method_process_question,false,How should the browser-local RAG lab decide whether to answer or refuse?,method_context,"method_context: {""evidence_definition"":""Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence."",""answer_lane_policy"":""Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation."",""non_evidence_rule"":""AI output is experimental text and cannot become archive evidence."",""refusal_rule"":""Refuse or request narrower context when required fields or claim support are absent.""}","Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence; generated AI text remains experimental and cannot become archive evidence.
+
+EVIDENCE TAGS:
+method_context: Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence. Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation. AI output is experimental text and cannot become archive evidence. Refuse or request narrower context when required fields or claim support are absent.",pending,pending,pending,
+V33-HR-071,BQ171,more_context,false,What related context should I inspect around SURF-ER1830R018?,"record_id, title, date_text, region, source, topology","record_id: SURF-ER1830R018 ; SURF-GAX1970R004
+title: [Pearsall Photography Studio trade card] ; Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie
+date_text: 1880. ; 1838-1839
+region: Unresolved region ; France
+source: {""name"":""Library of Congress loc.gov API"",""url"":""https://www.loc.gov/pictures/item/2010635174/"",""access_date"":""2026-05-30""} ; {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/cb328023517"",""access_date"":""2026-05-31""}
+topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Midcentury modern graphic communication"",""Trade card""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""France"",""Midcentury modern graphic communication"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, I should inspect the Trade card and Lithographic print.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R018 | SURF-GAX1970R004 | SURF-ER1830R017
+title: [Pearsall Photography Studio trade card] | Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie | [Advertising card for play ""Deacon Crankett""]
+date_text: 1880. | 1838-1839 | [between 1880 and 1882]
+region: Unresolved region | France
+source: Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2010635174/ | Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/cb328023517 | Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2014646356/
+topology: sheet / main_sheet / Unresolved region / Midcentury modern graphic communication / Trade card | sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record | sheet / support_packet_appendix_text / Unresolved region / Midcentury modern graphic communication / Lithographic print",pending,pending,pending,
+V33-HR-072,BQ284,no_evidence_refusal,true,Can you confirm the rights or influence claim for fictional archive object ROUND3-ABSENT-4?,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-073,BQ14,region_period_recommendation,false,Recommend a France route for the nineteenth century.,"record_id, title, date_text, region, source","record_id: SURF-GAX1970R001 ; SURF-GAX1970R002 ; SURF-GA1970R001
+title: Monsieur, vous avez réclamé votre inscription... ; La typographie : poëme / par M. L. Pelletier ; Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe]
+date_text: 1830 ; 1832 ; 1834
+region: France
+source: {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/bpt6k5456008h"",""access_date"":""2026-05-31""} ; {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/bpt6k54640797"",""access_date"":""2026-05-31""} ; {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/btv1b8438046c"",""access_date"":""2026-05-31""}","Based on these records, the recommended route is the 1832 period of the *Poëme* by M. L. Pelletier.
+
+EVIDENCE TAGS:
+record_id: SURF-GAX1970R001 | SURF-GAX1970R002 | SURF-GA1970R001
+title: Monsieur, vous avez réclamé votre inscription... | La typographie : poëme / par M. L. Pelletier | Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe]
+date_text: 1830 | 1832 | 1834
+region: France
+source: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k5456008h | Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k54640797 | Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/btv1b8438046c",pending,pending,pending,
+V33-HR-074,BQ220,source_rights_question,false,"What source, rights, reuse, and public domain status information is attached to SURF-GAX1970R003?","record_id, title, source, rights, image_state, reuse_permission, public_domain_status","record_id: SURF-GAX1970R003
+title: Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1
+source: {""name"":""Gallica / BnF APIs"",""url"":""https://gallica.bnf.fr/ark:/12148/bpt6k6332775h"",""access_date"":""2026-05-31""}
+rights: {""state"":""open_candidate"",""display_policy"":""open_image_frame"",""label"":""IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.""}
+image_state: {""code"":""IMG03"",""display_mode"":""open_image_frame"",""has_image_frame"":true,""model_image_eligible"":true}
+reuse_permission: none
+public_domain_status: none","record_id: SURF-GAX1970R003
+title: Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1
+source: Gallica / BnF APIs / https://gallica.bnf.fr/ark:/12148/bpt6k6332775h
+RIGHTS: IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF.
+image_state: IMG03 / open_image_frame
+REUSE: source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required
+PUBLIC_DOMAIN: source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined
+CAVEAT: Verify the source page before reuse; this experiment does not grant rights.",pending,pending,pending,
+V33-HR-075,BQ205,archive_orientation,false,How should I use the archive topology to move between Eastern Europe / Romania and Latin America / Argentina evidence?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Unresolved region"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]} ; {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Latin America"",""Modern typography and layout"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the archive topology allows users to navigate between Eastern Europe / Romania and Latin America / Argentina evidence through the Unresolved region and Graphic design object record folders.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / Unresolved region / Modern typography and layout / Graphic design object record | sheet / main_sheet / Latin America / Modern typography and layout / Graphic design object record | sheet / main_sheet / Unresolved region / Midcentury modern graphic communication / Lithographic print",pending,pending,pending,
+V33-HR-076,BQ057,casual_archive_help,false,I found SURF-CRG2026R0246; what is a simple next step?,topology,"topology: {""surface_type"":""sheet"",""publication_role"":""main_sheet"",""folder_titles"":[""Russia"",""World War and public-information graphics"",""Graphic design object record""],""historical_node_ids"":[""HN009"",""HN010"",""HN011"",""HN014""],""movement_ids"":[]}","Based on these records, the next step is to verify the image's publication role and source family to ensure it is correctly categorized within the graphic design and visual communication records.
+
+EVIDENCE TAGS:
+topology: sheet / main_sheet / Russia / World War and public-information graphics / Graphic design object record | sheet / support_packet_appendix_text / United States / Midcentury modern graphic communication / Poster | sheet / main_sheet / France / Midcentury modern graphic communication / Graphic design object record",pending,pending,pending,
+V33-HR-077,BQ233,comparison,false,Compare SURF-ER1830R008 and SURF-CRG2026R0031 as source-grounded graphic communication evidence.,"record_id, title, source","record_id: SURF-ER1830R008 ; SURF-CRG2026R0031
+title: Gardner's photographic advertising card ; East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865.jpg
+source: {""name"":""Library of Congress loc.gov API"",""url"":""https://www.loc.gov/pictures/item/2007675841/"",""access_date"":""2026-05-30""} ; {""name"":""Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865.jpg / page 63346338"",""url"":""https://commons.wikimedia.org/wiki/File:East_India_postage_Queen_Victoria_stamp_used_in_Zanzibar_-_One_anna_brown,_1865.jpg"",""access_date"":""2026-06-06""}","Based on these records, SURF-ER1830R008 is a primary source while SURF-CRG2026R0031 is secondary evidence.
+
+EVIDENCE TAGS:
+record_id: SURF-ER1830R008 | SURF-CRG2026R0031
+title: Gardner's photographic advertising card | East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865.jpg
+source: Library of Congress loc.gov API / https://www.loc.gov/pictures/item/2007675841/ | Wikimedia Commons file source / East India postage Queen Victoria stamp used in Zanzibar - One anna brown, 1865.jpg / page 63346338 / https://commons.wikimedia.org/wiki/File:East_India_postage_Queen_Victoria_stamp_used_in_Zanzibar_-_One_anna_brown,_1865.jpg",pending,pending,pending,
+V33-HR-078,BQ067,current_object_explanation,false,Explain SURF-CRG2026R0020 using only source-linked evidence.,"record_id, title, date_text, region, source","record_id: SURF-CRG2026R0020
+title: Stamp 1968 UAE-RK MiNr0243A pm B002.jpg
+date_text: 1853
+region: Global / release gate expansion
+source: {""name"":""Wikimedia Commons file source / Stamp 1968 UAE-RK MiNr0243A pm B002.jpg / page 118013751"",""url"":""https://commons.wikimedia.org/wiki/File:Stamp_1968_UAE-RK_MiNr0243A_pm_B002.jpg"",""access_date"":""2026-06-06""}","Based on these records, Record 1 is the primary source for the current object.
+
+EVIDENCE TAGS:
+record_id: SURF-CRG2026R0020 | LAB-METHOD-CONTEXT-V0 | SURF-CHW2026R001
+title: Stamp 1968 UAE-RK MiNr0243A pm B002.jpg | Browser-local RAG lab method context | Die Thierwelt (The Animal Kinggom)
+date_text: 1853 | 2026-06-07 | ca. 1835
+region: Global / release gate expansion | Research method | Austria Vienna Europe / Austria / Vienna / Europe
+source: Wikimedia Commons file source / Stamp 1968 UAE-RK MiNr0243A pm B002.jpg / page 118013751 / https://commons.wikimedia.org/wiki/File:Stamp_1968_UAE-RK_MiNr0243A_pm_B002.jpg | browser-local-rag-lab method files / https://github.com/dpan538/browser-local-rag-lab | Cooper Hewitt Collection GraphQL API / https://collection.cooperhewitt.org/objects/18437221/",pending,pending,pending,
+V33-HR-079,BQ09,first_earliest_claim,true,Is this the first example of modern poster design in the archive?,,,I cannot answer this question because the evidence is insufficient.,pending,pending,pending,
+V33-HR-080,BQ251,method_process_question,false,How should the browser-local RAG lab decide whether evidence is sufficient or whether to refuse?,method_context,"method_context: {""evidence_definition"":""Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence."",""answer_lane_policy"":""Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation."",""non_evidence_rule"":""AI output is experimental text and cannot become archive evidence."",""refusal_rule"":""Refuse or request narrower context when required fields or claim support are absent.""}","Based on these records, the archive treats source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence.
+
+EVIDENCE TAGS:
+method_context: Use source-linked metadata, compact text, source, rights, image-state, and topology fields as retrieval evidence. Choose help, fast_answer, source_rights, research_answer, or refusal_more_context before generation. AI output is experimental text and cannot become archive evidence. Refuse or request narrower context when required fields or claim support are absent.",pending,pending,pending,
