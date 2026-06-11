@@ -14,6 +14,8 @@ The final system works, but the more important paper argument is that each layer
 | Post-generation prose polisher | Overconfidence and unsupported first/earliest language leak into delivered prose | V3.1 safe-body 300: 3/191 overconfidence answers. | V3.3 latency300: 0 overconfidence, 0 unwarranted inference; guardrail compliance passed. |
 | Prompt-heavy guardrails instead of postprocessing | Prompt-only guardrails preserve quality but inflate latency | V3.2 guarded prose: Qwen average total latency 8499 ms, P95 15307 ms, slow rows over 10 seconds = 63. | V3.3 postprocessed prose: Qwen average total latency 2491 ms, P95 4190 ms, slow rows over 10 seconds = 0; quality gates still pass. |
 | Evidence pruning / compact value-only packets | Larger prompts increase TTFT and long-tail latency | Earlier less-pruned variants showed higher generation cost; V3.1 safe-body Qwen average total latency was about 3100 ms and P95 about 7916-8023 ms depending on report path. | V3.3 Qwen average TTFT 1106 ms and Qwen P95 total latency 4190 ms. |
+| Sufficient prose model capacity | Field contract survives, but delivered prose leaks prompts or artifacts | V4.1 SmolLM2-135M pilot50: contract fail/warn = 0/0, but hallucination/entity gate failed due to `Question`, `Intent`, `Output`, `DOCTYPE`, and `DTD XHTML` artifacts. | V4.1 SmolLM2-360M: 300/300 completed, contract fail/warn = 0/0, all quality gates passed. |
+| Robustness to unsupported chronology and contradictory metadata | Unsupported first/earliest requests induce priority claims, or conflicting dates collapse to one asserted date | V4.2 robustness probes are designed to trigger this boundary case. | V4.2 miniset: 10/10 unsupported chronology rows refused; 5/5 contradictory-date rows exposed both dates; robustness-specific failed rows = 0. |
 
 ## Interpretation
 
@@ -24,10 +26,14 @@ The ablation pattern shows that the final pipeline is not over-engineered orname
 - Field visibility warnings are prevented by evidence tag injection.
 - Overconfidence is prevented by the post-generation prose polisher.
 - Long-tail latency is reduced by compact packets and by avoiding prompt-heavy guardrails.
+- Weak prose models cannot corrupt deterministic evidence tags, but they can
+  still produce poor answer bodies. This is why field-contract reliability and
+  prose quality are reported separately.
+- Unsupported chronology and contradictory metadata are not left to free-form
+  model judgment; V4.2 verifies those edge cases with targeted probes.
 
 This is stronger than a final-score report because it shows how the system fails when a layer is removed. That evidence is what makes the architecture defensible to reviewers.
 
 ## Figure To Use With This Section
 
 Use `essay/failure_mode_layer_matrix.png` as the visual companion. It maps each layer to the metric that collapses when that layer is absent.
-

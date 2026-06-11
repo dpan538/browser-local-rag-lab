@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-06-11T01:56:59.526Z",
+  "inputs": {
+    "v32": "reports/webllm_round_03_latency300_v32_guarded_prose_budgeted_generation.json",
+    "v33": "reports/webllm_round_03_latency300_v33_postprocessed_prose.json",
+    "hallucination": "reports/hallucination_v33_300.json",
+    "misreading": "reports/misreading_v33_300.json",
+    "guardrail": "reports/guardrail_compliance_v33_300.json",
+    "usability": "reports/quality_usability_v33_300.json"
+  },
+  "paired_latency": {
+    "paired_rows": 191,
+    "v32_mean_ms": 8498.95445028275,
+    "v33_mean_ms": 2490.823036618258,
+    "mean_reduction_ms": 6008.131413664493,
+    "mean_relative_reduction": 0.6104650367470349,
+    "v32_p95_ms": 15250.599999904633,
+    "v33_p95_ms": 4020.4000000953674,
+    "bootstrap_iterations": 5000,
+    "mean_reduction_ms_ci95": [
+      5403.804476464106,
+      6602.60094249598
+    ],
+    "mean_relative_reduction_ci95": [
+      0.5707183071885945,
+      0.6456142138367224
+    ]
+  },
+  "quality_intervals": [
+    {
+      "metric": "contract_failure",
+      "count": 0,
+      "total": 300,
+      "rate": 0,
+      "wilson_ci95": [
+        0,
+        0.012643429997735661
+      ]
+    },
+    {
+      "metric": "contract_warning",
+      "count": 0,
+      "total": 300,
+      "rate": 0,
+      "wilson_ci95": [
+        0,
+        0.012643429997735661
+      ]
+    },
+    {
+      "metric": "unsupported_date",
+      "count": 0,
+      "total": 191,
+      "rate": 0,
+      "wilson_ci95": [
+        0,
+        0.019716528708448297
+      ]
+    },
+    {
+      "metric": "unsupported_triple_answer",
+      "count": 1,
+      "total": 191,
+      "rate": 0.005235602094240838,
+      "wilson_ci95": [
+        0.0009247871697700711,
+        0.02905648992916568
+      ]
+    },
+    {
+      "metric": "unsupported_entity_answer",
+      "count": 6,
+      "total": 191,
+      "rate": 0.031413612565445025,
+      "wilson_ci95": [
+        0.014474884658743605,
+        0.0668301343926294
+      ]
+    },
+    {
+      "metric": "prompt_leak",
+      "count": 0,
+      "total": 191,
+      "rate": 0,
+      "wilson_ci95": [
+        0,
+        0.019716528708448297
+      ]
+    },
+    {
+      "metric": "overconfidence_answer",
+      "count": 0,
+      "total": 191,
+      "rate": 0,
+      "wilson_ci95": [
+        0,
+        0.019716528708448297
+      ]
+    },
+    {
+      "metric": "unwarranted_inference_answer",
+      "count": 0,
+      "total": 191,
+      "rate": 0,
+      "wilson_ci95": [
+        0,
+        0.019716528708448297
+      ]
+    },
+    {
+      "metric": "absolute_guardrail_violation",
+      "count": 0,
+      "total": 191,
+      "rate": 0,
+      "wilson_ci95": [
+        0,
+        0.019716528708448297
+      ]
+    },
+    {
+      "metric": "first_claim_violation",
+      "count": 0,
+      "total": 191,
+      "rate": 0,
+      "wilson_ci95": [
+        0,
+        0.019716528708448297
+      ]
+    },
+    {
+      "metric": "too_short_answer",
+      "count": 7,
+      "total": 191,
+      "rate": 0.03664921465968586,
+      "wilson_ci95": [
+        0.017864045764811088,
+        0.07370572167704938
+      ]
+    },
+    {
+      "metric": "off_topic_answer",
+      "count": 0,
+      "total": 191,
+      "rate": 0,
+      "wilson_ci95": [
+        0,
+        0.019716528708448297
+      ]
+    }
+  ]
+}

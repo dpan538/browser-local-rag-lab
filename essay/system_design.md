@@ -63,3 +63,22 @@ The system deliberately assigns each task to the cheapest reliable component:
 
 This decoupling is the main architectural contribution: reliability is not delegated entirely to the small language model, and latency is not sacrificed to make the model perform deterministic bookkeeping.
 
+## Measurement Protocol
+
+Latency is reported by lane and by runtime.
+
+- `hybrid_system_latency` covers deterministic refusal and source/rights rows.
+  These rows are system-generated and should not be counted as model-generation
+  speed.
+- `qwen_generation_latency` covers browser WebLLM/Qwen rows. For these rows,
+  TTFT is measured from request start to the first streamed token observed by
+  the browser runner.
+- `external_model_generation_latency` covers Node Transformers.js cross-model
+  runs. The current Node runner does not expose true streaming TTFT, so
+  `ttft_ms` is conservatively recorded as equal to total generation latency.
+
+Because of that instrumentation difference, Qwen/WebLLM TTFT is not directly
+comparable to SmolLM or Llama TTFT-like values. Cross-model experiments are
+used to validate contract and quality-gate portability. Speed comparisons
+should use model-row total latency and should keep the runtime caveat visible.
+

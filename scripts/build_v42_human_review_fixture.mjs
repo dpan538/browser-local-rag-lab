@@ -77,7 +77,10 @@ function groupedSample(labels, sampleSize) {
 function fieldValues(records, fields) {
   const values = {};
   for (const field of fields || []) {
-    values[field] = [...new Set(records.map((record) => record?.[field]).filter((value) => value !== undefined && value !== null).map(String))];
+    values[field] = [...new Set(records
+      .map((record) => record?.[field])
+      .filter((value) => value !== undefined && value !== null)
+      .map((value) => typeof value === "object" ? JSON.stringify(value) : String(value)))];
   }
   return values;
 }
@@ -191,4 +194,3 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     md: path.relative(repoRoot, defaults.mdOutPath)
   }, null, 2));
 }
-

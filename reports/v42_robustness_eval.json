@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-06-11T01:58:43.672Z",
+  "inputs": {
+    "queries": "fixtures/robustness/v41_miniset/queries.jsonl",
+    "labels": "fixtures/robustness/v41_miniset/labels.jsonl",
+    "records": "fixtures/robustness/v41_miniset/records.jsonl",
+    "answers": "reports/v42_robustness_smollm2_360m_answers.jsonl"
+  },
+  "gate": {
+    "pass": true,
+    "evaluated_rows": 15,
+    "failed_rows": 0,
+    "first_earliest_rows": 10,
+    "contradictory_date_rows": 5
+  },
+  "rows": []
+}

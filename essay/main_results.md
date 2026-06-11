@@ -77,3 +77,54 @@ The final architecture achieves three properties at once:
 
 This supports the paper's main claim that browser-side SLM RAG becomes practical when deterministic archive-policy work is removed from the model and handled by a model-agnostic reliability layer.
 
+## Cross-Model Validation
+
+V4.1 tests the architecture rather than raw model speed. The deterministic
+lanes, prose polisher, and evidence-tag injection layers were kept fixed while
+the prose model/runtime changed.
+
+| Model / runtime | Scope | Contract fail / warn | Quality gates | Model-row average total latency | Interpretation |
+|---|---:|---:|---|---:|---|
+| Qwen3.5-0.8B / WebLLM | 300 | 0 / 0 | pass | 2490.8 ms | Fastest complete browser-local result. |
+| SmolLM2-135M / Node Transformers.js | pilot50 | 0 / 0 | failed hallucination/entity gate | 2200.3 ms | Negative prose-capacity control: contract survives weak prose. |
+| SmolLM2-360M / Node Transformers.js | 300 | 0 / 0 | pass | 4161.9 ms | Full non-Qwen-family reliability validation. |
+| Llama-3.2-1B / Node Transformers.js | pilot50 | 0 / 0 | pass | 9513.5 ms | Non-Qwen 1B reliability check, but too slow for promotion. |
+
+The TTFT protocol is not identical across these rows. Qwen/WebLLM reports a
+true streaming browser TTFT. The Node Transformers.js runner does not expose
+true streaming TTFT, so `ttft_ms` is conservatively set equal to total
+generation latency. Cross-model comparison should therefore emphasize contract
+compliance, quality gates, and model-row total latency rather than raw TTFT.
+
+The SmolLM2-135M failure is especially useful: it passed the field contract
+with zero violations but failed the hallucination/entity gate because its prose
+leaked prompt and HTML artifacts. This demonstrates that deterministic lanes
+and evidence-tag injection isolate the evidence contract from prose quality,
+while still revealing that user-facing prose remains model-capacity dependent.
+
+## V4.2 Evidence Closure
+
+V4.2 adds paper-facing statistical and robustness evidence without changing the
+system.
+
+| Evidence item | Result |
+|---|---:|
+| Paired V3.2 vs V3.3 model rows | 191 |
+| Mean model-row latency reduction | 6008.1 ms |
+| Mean reduction 95% bootstrap CI | 5403.8 - 6602.6 ms |
+| Mean relative reduction | 61.05% |
+| Mean relative reduction 95% bootstrap CI | 57.07% - 64.56% |
+| V3.3 contract failure Wilson 95% upper bound | 1.26% |
+| Robustness miniset rows | 15 |
+| Robustness-specific failed rows | 0 |
+| Human review fixture | 50 stratified rows |
+
+The robustness miniset contains 10 adversarial first/earliest queries without
+chronology proof and 5 contradictory-date evidence probes. The unsupported
+chronology probes were routed to deterministic refusal; contradictory-date
+probes exposed both date values and did not choose one date as definitive.
+
+The 50-row human-review fixture is a confirmatory review artifact, not a model
+tuning input. It gives reviewers query, intent, evidence values, final answer,
+and editable faithfulness/usability fields so automated contract gates can be
+backed by semantic human review.

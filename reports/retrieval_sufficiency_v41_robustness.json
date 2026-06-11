@@ -1,8 +1,8 @@
 {
   "_provenance": {
     "step": "build_v41_robustness_miniset",
-    "timestamp": "2026-06-10T06:47:22.968Z",
-    "commit": "f7b46630e86e287b1c841efaa84fe89efd05e261"
+    "timestamp": "2026-06-11T01:56:59.524Z",
+    "commit": "5e9a4db4165b9f25144bd8f891c852b202f09082"
   },
   "summary": {
     "rows": 15,

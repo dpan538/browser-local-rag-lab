@@ -1,0 +1,1865 @@
+{
+  "_provenance": {
+    "step": "export_v41_universal_packets",
+    "timestamp": "2026-06-11T01:57:08.843Z",
+    "commit": "5e9a4db4165b9f25144bd8f891c852b202f09082",
+    "inputs": {
+      "queries": "fixtures/robustness/v41_miniset/queries.jsonl",
+      "labels": "fixtures/robustness/v41_miniset/labels.jsonl",
+      "records": "fixtures/robustness/v41_miniset/records.jsonl",
+      "retrieval": "reports/retrieval_sufficiency_v41_robustness.json"
+    },
+    "packet_variant": "top3_gold_contract_source_rights",
+    "prompt_variant": "r03_v33_postprocessed_prose",
+    "start": 1,
+    "limit": null
+  },
+  "summary": {
+    "rows": 15,
+    "deterministic_rows": 10,
+    "model_generation_rows": 5,
+    "purpose": "Model-agnostic V4.1 input packets for cross-runtime validation."
+  },
+  "rows": [
+    {
+      "query_id": "RB-FIRST-01",
+      "query_text": "Is Monsieur, vous avez réclamé votre inscription... the first or earliest example in this archive?",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "deterministic_lane": "refusal",
+      "deterministic_answer_text": "I cannot answer this question because the evidence is insufficient.",
+      "model_prompt": null,
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "SURF-GAX1970R001"
+      ],
+      "required_fields": [],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights",
+        "first_or_earliest_claim"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": "I cannot answer this question because the evidence is insufficient.",
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": []
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "SURF-GAX1970R001",
+          "object_id": "GAX1970R001",
+          "title": "Monsieur, vous avez réclamé votre inscription...",
+          "creator": "Unknown",
+          "date_text": "1830",
+          "date_start": 1830,
+          "date_end": 1830,
+          "region": "France",
+          "object_type": "Gallica visual/document record",
+          "medium": "2 p. ; in-8; Nombre total de vues : 6",
+          "source": {
+            "name": "Gallica / BnF APIs",
+            "url": "https://gallica.bnf.fr/ark:/12148/bpt6k5456008h",
+            "access_date": "2026-05-31"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "France",
+              "Midcentury modern graphic communication",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "The archive keeps Monsieur, vous avez réclamé votre inscription... as a traceable Gallica visual/document record connected back to Gallica / BnF APIs. The item metadata gives date evidence: 1830; place evidence: France; form/medium: Gallica visual/document record. The source-side description adds this evidence: Appartient à l’ensemble documentaire : Centre1; Avec mode texte; 2 p.; in-8; Nombre total de vues : 6 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb36317544m; (Orléans). The project keeps this as an index-and-return surface: the page gives enough context to read the record while the source link remains the evidentiary home. Appartient à l’ensemble documentaire : Centre1; Avec mode texte; 2 p Appartient à l’ensemble documentaire : Centre1; Avec mode texte; 2 p.; in-8; Nombre total de vues : 6 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb36317544m; (Orléans) France (1824-1830, Charles X) Within the pre-1914 record set, this item belongs to the expansion of lithographic, typographic, periodical, advertising, and administrative print cultures that made modern graphic design legible before the profession was fully named. The record is read as graphic communication evidence: a designed surface whose metadata, source link, image state, and classification help connect it to broader design-history structure Folder membership is a filter assignment, not a claim of ownership or a closed historical interpretation. It is derived from source title, object type, medium, date, place, subjects, source institution, and review notes.",
+            "compact": "Appartient à l’ensemble documentaire : Centre1; Avec mode texte; 2 p.; in-8; Nombre total de vues : 6 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb36317544m; (Orléans)",
+            "raw_note_hash": "1ecb2b35cab9ab9f",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-FIRST-02",
+      "query_text": "Is Paganini par David d'Angers (Angers) (14911656518).jpg the first or earliest example in this archive?",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "deterministic_lane": "refusal",
+      "deterministic_answer_text": "I cannot answer this question because the evidence is insufficient.",
+      "model_prompt": null,
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "SURF-CRG2026R0001"
+      ],
+      "required_fields": [],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights",
+        "first_or_earliest_claim"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": "I cannot answer this question because the evidence is insufficient.",
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": []
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "SURF-CRG2026R0001",
+          "object_id": "CRG2026R0001",
+          "title": "Paganini par David d'Angers (Angers) (14911656518).jpg",
+          "creator": "Jean-Pierre Dalbéra from Paris, France",
+          "date_text": "1830",
+          "date_start": 1830,
+          "date_end": 1830,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; brochure",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / Paganini par David d'Angers (Angers) (14911656518).jpg / page 37213183",
+            "url": "https://commons.wikimedia.org/wiki/File:Paganini_par_David_d%27Angers_(Angers)_(14911656518).jpg",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: CC BY 2.0."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "not_determined_from_fixture",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "France",
+              "Travel and transport poster culture",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Paganini par David d'Angers (Angers) (14911656518).jpg is an open-license Commons image record linked to Global / release gate expansion. Paganini, violoniste et compositeur (1784-1840) Oeuvre de David d'Angers (1788-1856) 1830-1833 premier buste en bronze à cire perdue oeuvre exposée sur la mezzanine de la galerie David d'Angers (Angers) Ce buste est considéré comme le premier exemple de la sculpture romantique (brochure du musée) La galerie David d'Angers a été installée en 1984 dans l'ancienne abbatiale Toussaint, datant du XIIe siècle, aménagée et recouverte d'une verrière par l'architecte Pierre Prunet pour accueillir les oeuvres. C'est Viviane Huchard (1946-2005), conservateur général, directrice des musé Paganini, violoniste et compositeur (1784-1840) Oeuvre de David d'Angers (1788-1856) 1830-1833 premier buste en bronze à cire perdue oeuvre exposée sur la mezzanine de la galerie David d'Angers (Angers) Ce buste est considéré comme le premier exemple de la sculpture romantique (brochure du musée) La galerie David d'Angers a été installée en 1984 dans l'ancie Paganini par David d'Angers (Angers) (14911656518); 2014-08-28 10:15; 2014-12-10 14:54:26; Paganini par David d'Angers (Angers); Category:Busts by Pierre Jean David Category:CC-BY-2.0 Category:Files with coordinates missing SDC location of creation Category:Flickr images reviewed by FlickreviewR Category:Images with op Global; release gate expansion; brochure; Category:Busts by Pierre Jean David Category:CC-BY-2.0 Category:Files with coordinates missing SDC location of creation Category:Flickr images reviewed by FlickreviewR Category:I This open-image record strengthens undercovered Global / release gate expansion visual evidence while preserving the Commons source page and any credited source/author. Within the pre-1914 record set, this item belongs to the expansion of lithographic, typographic, periodical, advertising, and administrative print cultures that made modern graphic design legible before the profession was fully named. The record is re Selected by Commons search, open-license extmetadata, visual-communication term match, duplicate exclusion, and source-derived text availability. Folder membership is a filter assignment, not a claim of ownership or a closed historical interpretation. It is derived from source title, object type, medium, date, place, subjects, source institution, and review  Commons metadata can be user-maintained; verify object date, original creator, and source credit before final scholarly use.",
+            "compact": "Paganini, violoniste et compositeur (1784-1840) Oeuvre de David d'Angers (1788-1856) 1830-1833 premier buste en bronze à cire perdue oeuvre exposée sur la mezzanine de la galerie David d'Angers (Angers) Ce buste est considéré comme le premier exemple de la sculpture romantique (brochure du musée) La galerie David d'Angers a été installée en 1984 dans l'ancie Paganini par David d'Angers (Angers) (14911656518); 2014-08-28 10:15; 2014-12-10 14:54:26; Paganini par David d'Angers (Angers); Category:Busts by Pierre Jean David Category:CC-BY-2.0 Category:Files with coordinates missing SDC location of creation Category:Flickr images reviewed by FlickreviewR Category:Images with op Commons metadata can be user-maintained; verify object date, original creator, and source credit before final scholarly use.",
+            "raw_note_hash": "9851f17233817323",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-FIRST-03",
+      "query_text": "Is La typographie : poëme / par M. L. Pelletier the first or earliest example in this archive?",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "deterministic_lane": "refusal",
+      "deterministic_answer_text": "I cannot answer this question because the evidence is insufficient.",
+      "model_prompt": null,
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "SURF-GAX1970R002"
+      ],
+      "required_fields": [],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights",
+        "first_or_earliest_claim"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": "I cannot answer this question because the evidence is insufficient.",
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": []
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "SURF-GAX1970R002",
+          "object_id": "GAX1970R002",
+          "title": "La typographie : poëme / par M. L. Pelletier",
+          "creator": "Pelletier, H L. Auteur du texte",
+          "date_text": "1832",
+          "date_start": 1832,
+          "date_end": 1832,
+          "region": "France",
+          "object_type": "Gallica visual/document record",
+          "medium": "1 vol. (250 p.) ; in-8; Nombre total de vues : 258",
+          "source": {
+            "name": "Gallica / BnF APIs",
+            "url": "https://gallica.bnf.fr/ark:/12148/bpt6k54640797",
+            "access_date": "2026-05-31"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "France",
+              "Midcentury modern graphic communication",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "La typographie : poëme / par M. L. Pelletier is presented as a source-linked Gallica visual/document record; the holding evidence remains with Gallica / BnF APIs. The item metadata gives date evidence: 1832; creator/attribution: Pelletier, H L. Auteur du texte; place evidence: France; form/medium: Gallica visual/document record. The source-side description adds this evidence: Contient une table des matières; Avec mode texte; 1 vol. (250 p.); in-8; Nombre total de vues : 258 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb310757065; A. Cherbuliez (Genève). The project keeps this as an index-and-return surface: the page gives enough context to read the record while the source link remains the evidentia Contient une table des matières; Avec mode texte; 1 vol. (250 p.); in-8; Nombre total de vues : 258 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb310757065; A. Cherbuliez (Genève) Within the pre-1914 record set, this item belongs to the expansion of lithographic, typographic, periodical, advertising, and administrative print cultures that made modern graphic design legible before the profession was fully named. As a typography record, it is read through letterform, setting technology, specimen logic, typographic hierarchy, and distribution. Gallica / BnF records are treated as bibliographic an Folder membership is a filter assignment, not a claim of ownership or a closed historical interpretation. It is derived from source title, object type, medium, date, place, subjects, source institution, and review notes.",
+            "compact": "Contient une table des matières; Avec mode texte; 1 vol. (250 p.); in-8; Nombre total de vues : 258 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb310757065; A. Cherbuliez (Genève)",
+            "raw_note_hash": "1851aa07cb836b5a",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-FIRST-04",
+      "query_text": "Is Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe] the first or earliest example in this archive?",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "deterministic_lane": "refusal",
+      "deterministic_answer_text": "I cannot answer this question because the evidence is insufficient.",
+      "model_prompt": null,
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "SURF-GA1970R001"
+      ],
+      "required_fields": [],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights",
+        "first_or_earliest_claim"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": "I cannot answer this question because the evidence is insufficient.",
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": []
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "SURF-GA1970R001",
+          "object_id": "GA1970R001",
+          "title": "Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de M. Dupuis : [estampe]",
+          "creator": "Unknown",
+          "date_text": "1834",
+          "date_start": 1834,
+          "date_end": 1834,
+          "region": "France",
+          "object_type": "Gallica visual/document record",
+          "medium": "estampe ; 27 x 19 cm (f.); image/jpeg; Nombre total de vues : 1",
+          "source": {
+            "name": "Gallica / BnF APIs",
+            "url": "https://gallica.bnf.fr/ark:/12148/btv1b8438046c",
+            "access_date": "2026-05-31"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "France",
+              "Midcentury modern graphic communication",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "This leaf records Théâtre dirigé par M. Dorsay ci-devant Mad.e Saqui Boulevard du Temple en face le jardin turc tous les jours, excepté le Dimanche, Jane Gray Drame historique en 3 actes et 5 tableaux de M. Leblanc, musique de M. Bellon, décors de M. Rascalon mise en scène de… as a Gallica visual/document record sourced from Gallica / BnF APIs. The item metadata gives date evidence: 1834; place evidence: France; form/medium: Gallica visual/document record. The source-side description adds this evidence: Affiche; estampe; 27 x 19 cm (f.); image/jpeg; Nombre total de vues : 1 Jane Gray : drame historique en 3 actes et 5 tableaux / de M. Leblanc. - Paris : Théâtre du Temple, 04-09-1834; Notice du catalogue : http: Affiche; estampe; 27 x 19 cm (f.); image/jpeg; Nombre total de vues : 1 Jane Gray : drame historique en 3 actes et 5 tableaux / de M. Leblanc. - Paris : Théâtre du Temple, 04-09-1834; Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb421114203 Scènes théâtrales -- 1800-1869 Within the pre-1914 record set, this item belongs to the expansion of lithographic, typographic, periodical, advertising, and administrative print cultures that made modern graphic design legible before the profession was fully named. The record is read as graphic communication evidence: a designed surface whose metadata, source link, image state, and classification help connect it to broader design-history structure Folder membership is a filter assignment, not a claim of ownership or a closed historical interpretation. It is derived from source title, object type, medium, date, place, subjects, source institution, and review notes.",
+            "compact": "Affiche; estampe; 27 x 19 cm (f.); image/jpeg; Nombre total de vues : 1 Jane Gray : drame historique en 3 actes et 5 tableaux / de M. Leblanc. - Paris : Théâtre du Temple, 04-09-1834; Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb421114203",
+            "raw_note_hash": "4fe619d8f612d982",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-FIRST-05",
+      "query_text": "Is Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1 the first or earliest example in this archive?",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "deterministic_lane": "refusal",
+      "deterministic_answer_text": "I cannot answer this question because the evidence is insufficient.",
+      "model_prompt": null,
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "SURF-GAX1970R003"
+      ],
+      "required_fields": [],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights",
+        "first_or_earliest_claim"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": "I cannot answer this question because the evidence is insufficient.",
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": []
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "SURF-GAX1970R003",
+          "object_id": "GAX1970R003",
+          "title": "Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1",
+          "creator": "Roret, Nicolas-Edme (1797-1860). Auteur du texte; Frey, Antoine (1780-18..). Auteur du texte",
+          "date_text": "1835",
+          "date_start": 1835,
+          "date_end": 1835,
+          "region": "France",
+          "object_type": "Gallica visual/document record",
+          "medium": "2 vol. in-18, pl.; Nombre total de vues : 322",
+          "source": {
+            "name": "Gallica / BnF APIs",
+            "url": "https://gallica.bnf.fr/ark:/12148/bpt6k6332775h",
+            "access_date": "2026-05-31"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "France",
+              "Midcentury modern graphic communication",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "This leaf records Manuel nouveau de typographie, imprimerie,... par A. Frey. Partie 1 as a Gallica visual/document record sourced from Gallica / BnF APIs. The item metadata gives date evidence: 1835; creator/attribution: Roret, Nicolas-Edme (1797-1860). Auteur du texte; Frey, Antoine (1780-18..). Auteur du texte; place evidence: France; form/medium: Gallica visual/document record. The source-side description adds this evidence: Collection : [Manuels Roret]; Avec mode texte; 2 vol. in-18, pl.; Nombre total de vues : 322 Notice d'ensemble : http://catalogue.bnf.fr/ark:/12148/cb31244519f; Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb31244519f. The project keeps this as an index-and-return surface: th Collection : [Manuels Roret]; Avec mode texte; 2 vol. in-18, pl.; Nombre total de vues : 322 Notice d'ensemble : http://catalogue.bnf.fr/ark:/12148/cb31244519f; Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb31244519f Within the pre-1914 record set, this item belongs to the expansion of lithographic, typographic, periodical, advertising, and administrative print cultures that made modern graphic design legible before the profession was fully named. As a typography record, it is read through letterform, setting technology, specimen logic, typographic hierarchy, and distribution. Gallica / BnF records are treated as bibliographic an Folder membership is a filter assignment, not a claim of ownership or a closed historical interpretation. It is derived from source title, object type, medium, date, place, subjects, source institution, and review notes.",
+            "compact": "Collection : [Manuels Roret]; Avec mode texte; 2 vol. in-18, pl.; Nombre total de vues : 322 Notice d'ensemble : http://catalogue.bnf.fr/ark:/12148/cb31244519f; Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb31244519f",
+            "raw_note_hash": "55cae550b8dcf93d",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-FIRST-06",
+      "query_text": "Is Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie the first or earliest example in this archive?",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "deterministic_lane": "refusal",
+      "deterministic_answer_text": "I cannot answer this question because the evidence is insufficient.",
+      "model_prompt": null,
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "SURF-GAX1970R004"
+      ],
+      "required_fields": [],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights",
+        "first_or_earliest_claim"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": "I cannot answer this question because the evidence is insufficient.",
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": []
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "SURF-GAX1970R004",
+          "object_id": "GAX1970R004",
+          "title": "Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie",
+          "creator": "Unknown",
+          "date_text": "1838-1839",
+          "date_start": 1838,
+          "date_end": 1839,
+          "region": "France",
+          "object_type": "Gallica visual/document record",
+          "medium": "Nombre total de vues : 124",
+          "source": {
+            "name": "Gallica / BnF APIs",
+            "url": "https://gallica.bnf.fr/ark:/12148/cb328023517",
+            "access_date": "2026-05-31"
+          },
+          "rights": {
+            "state": "source_viewer_candidate",
+            "display_policy": "source_viewer_frame",
+            "label": "IMG02: Gallica exposes an IIIF source-hosted image, but the SRU rights value is not an explicit public-domain signal."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG02",
+            "display_mode": "source_viewer_frame",
+            "has_image_frame": true,
+            "model_image_eligible": false
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "France",
+              "Midcentury modern graphic communication",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie is filed here as a Gallica visual/document record from Gallica / BnF APIs. The item metadata gives date evidence: 1838-1839; place evidence: France; form/medium: Gallica visual/document record. The source-side description adds this evidence: Variante(s) de titre : Journal spécial de la typographie; Variante(s) de titre : Journal spécial de l'imprimerie, de la librairie, de la papeterie et de la fonderie en caractères; Périodicité : Bi-mensuel; Avec mode texte; Nombre total de vues : 124 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb328023517; A pour reproduction : Journal spécial de la typographie, imprimerie,  Variante(s) de titre : Journal spécial de la typographie; Variante(s) de titre : Journal spécial de l'imprimerie, de la librairie, de la papeterie et de la fonderie en caractères; Périodicité : Bi-mensuel; Avec mode texte; Nombre total de vues : 124 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb328023517; A pour reproduction : Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie (Reproduction numérique) = ISSN 2400-457X (https://gallica.bnf.fr/ark:/12148/cb328023517/date); [s.n.] (Paris) Within the pre-1914 record set, this item belongs to the expansion of lithographic, typographic, periodical, advertising, and administrative print cultures that made modern graphic design legible before the profession was fully named. As a periodical or serial record, it is read through issue structure, editorial rhythm, advertising space, typographic hierarchy, and recurring publication format. Gallica / BnF records Folder membership is a filter assignment, not a claim of ownership or a closed historical interpretation. It is derived from source title, object type, medium, date, place, subjects, source institution, and review notes.",
+            "compact": "Variante(s) de titre : Journal spécial de la typographie; Variante(s) de titre : Journal spécial de l'imprimerie, de la librairie, de la papeterie et de la fonderie en caractères; Périodicité : Bi-mensuel; Avec mode texte; Nombre total de vues : 124 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb328023517; A pour reproduction : Journal spécial de la typographie, imprimerie, gravure, fonderie, papeterie et librairie (Reproduction numérique) = ISSN 2400-457X (https://gallica.bnf.fr/ark:/12148/cb328023517/date); [s.n.] (Paris)",
+            "raw_note_hash": "1e2dff108d5d883c",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-FIRST-07",
+      "query_text": "Is Imprimerie lithographique, Autographique, E. Simon Fils, Strasbourg the first or earliest example in this archive?",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "deterministic_lane": "refusal",
+      "deterministic_answer_text": "I cannot answer this question because the evidence is insufficient.",
+      "model_prompt": null,
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "SURF-GAX1970R005"
+      ],
+      "required_fields": [],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights",
+        "first_or_earliest_claim"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": "I cannot answer this question because the evidence is insufficient.",
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": []
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "SURF-GAX1970R005",
+          "object_id": "GAX1970R005",
+          "title": "Imprimerie lithographique, Autographique, E. Simon Fils, Strasbourg",
+          "creator": "Unknown",
+          "date_text": "1840",
+          "date_start": 1840,
+          "date_end": 1840,
+          "region": "France",
+          "object_type": "Gallica visual/document record",
+          "medium": "10,5 x 14,5 cm; image/jpeg; Nombre total de vues : 1",
+          "source": {
+            "name": "Gallica / BnF APIs",
+            "url": "https://gallica.bnf.fr/ark:/12148/btv1b10202743j",
+            "access_date": "2026-05-31"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Gallica SRU metadata reports public-domain rights; IIIF image is source-hosted by BnF."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "France",
+              "Midcentury modern graphic communication",
+              "Lithographic print"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "The archive keeps Imprimerie lithographique, Autographique, E. Simon Fils, Strasbourg as a traceable Gallica visual/document record connected back to Gallica / BnF APIs. The item metadata gives date evidence: 1840; place evidence: France; form/medium: Gallica visual/document record. The source-side description adds this evidence: Appartient à l’ensemble documentaire : BNUStr003; Appartient à l’ensemble documentaire : BNUStras1; Appartient à l’ensemble documentaire : BNUStr000; 10,5 x 14,5 cm; image/jpeg; Nombre total de vues : 1 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb41925438k; Simon E (Strasbourg) Strasbourg; STRASBOURG, Imprimerie. The project keeps this as an index-and-return surface: the Appartient à l’ensemble documentaire : BNUStr003; Appartient à l’ensemble documentaire : BNUStras1; Appartient à l’ensemble documentaire : BNUStr000; 10,5 x 14,5 cm; image/jpeg; Nombre total de vues : 1 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb41925438k; Simon E (Strasbourg) Strasbourg; STRASBOURG, Imprimerie Within the pre-1914 record set, this item belongs to the expansion of lithographic, typographic, periodical, advertising, and administrative print cultures that made modern graphic design legible before the profession was fully named. The record is read as graphic communication evidence: a designed surface whose metadata, source link, image state, and classification help connect it to broader design-history structure Folder membership is a filter assignment, not a claim of ownership or a closed historical interpretation. It is derived from source title, object type, medium, date, place, subjects, source institution, and review notes.",
+            "compact": "Appartient à l’ensemble documentaire : BNUStr003; Appartient à l’ensemble documentaire : BNUStras1; Appartient à l’ensemble documentaire : BNUStr000; 10,5 x 14,5 cm; image/jpeg; Nombre total de vues : 1 Notice du catalogue : http://catalogue.bnf.fr/ark:/12148/cb41925438k; Simon E (Strasbourg)",
+            "raw_note_hash": "702b2a9a7f0d5ca8",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-FIRST-08",
+      "query_text": "Is Stamp 1974 Romania MiNr3179 pm B002a.jpg the first or earliest example in this archive?",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "deterministic_lane": "refusal",
+      "deterministic_answer_text": "I cannot answer this question because the evidence is insufficient.",
+      "model_prompt": null,
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "SURF-CRG2026R0006"
+      ],
+      "required_fields": [],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights",
+        "first_or_earliest_claim"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": "I cannot answer this question because the evidence is insufficient.",
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": []
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "SURF-CRG2026R0006",
+          "object_id": "CRG2026R0006",
+          "title": "Stamp 1974 Romania MiNr3179 pm B002a.jpg",
+          "creator": "\"Posta Romana\"",
+          "date_text": "1841",
+          "date_start": 1841,
+          "date_end": 1841,
+          "region": "Eastern Europe / Romania",
+          "object_type": "release-gate open image record; stamp",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / Stamp 1974 Romania MiNr3179 pm B002a.jpg / page 117737469",
+            "url": "https://commons.wikimedia.org/wiki/File:Stamp_1974_Romania_MiNr3179_pm_B002a.jpg",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Unresolved region",
+              "Modern typography and layout",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Stamp 1974 Romania MiNr3179 pm B002a.jpg is an open-license Commons image record linked to Eastern Europe / Romania. Stamp of Romania; 1974; commemorative stamp of the issue \"Impressionist Paintings\"; As stamp motive is showing the painting \"Landscape with house\" (Italian title: \"Paessaggio con casa\"; German title: \"Landschaft mit Haus\") by the French impressionist painter, actor and regisseur Pierre-Auguste Renoir (1841-1919). He painted his artwork in 1903 in the style of the impressionism. Depicted is a house with garden in Cagnes-sur-Mer (Département \"Alpes-Maritimes\") in South-East France at the Mediterranean coast.;This painting is contemporary located in the \"National Museum of Arts of Romania\" in Buchar Stamp of Romania; 1974; commemorative stamp of the issue \"Impressionist Paintings\"; As stamp motive is showing the painting \"Landscape with house\" (Italian title: \"Paessaggio con casa\"; German title: \"Landschaft mit Haus\") by the French impressionist painter, actor and regisseur Pierre-Auguste Renoir (1841-1919). He painted his artwork in 1903 in the style o Stamp 1974 Romania MiNr3179 pm B002a; 1974-03-15; 2022-05-06 15:07:04; scan of original Eastern Europe; Romania; stamp; This open-image record strengthens undercovered Eastern Europe / Romania visual evidence while preserving the Commons source page and any credited source/author. Within the pre-1914 record set, this item belongs to the expansion of lithographic, typographic, periodical, advertising, and administrative print cultures that made modern graphic design legible before the profession was fully named. The record is read as g Selected by Commons search, open-license extmetadata, visual-communication term match, duplicate exclusion, and source-derived text availability. Folder membership is a filter assignment, not a claim of ownership or a closed historical interpretation. It is derived from source title, object type, medium, date, place, subjects, source institution, and review  Commons metadata can be user-maintained; verify object date, original creator, and source credit before final scholarly use.",
+            "compact": "Stamp of Romania; 1974; commemorative stamp of the issue \"Impressionist Paintings\"; As stamp motive is showing the painting \"Landscape with house\" (Italian title: \"Paessaggio con casa\"; German title: \"Landschaft mit Haus\") by the French impressionist painter, actor and regisseur Pierre-Auguste Renoir (1841-1919). He painted his artwork in 1903 in the style o Stamp 1974 Romania MiNr3179 pm B002a; 1974-03-15; 2022-05-06 15:07:04; scan of original Commons metadata can be user-maintained; verify object date, original creator, and source credit before final scholarly use.",
+            "raw_note_hash": "371aa76a3019ddd3",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-FIRST-09",
+      "query_text": "Is The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg the first or earliest example in this archive?",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "deterministic_lane": "refusal",
+      "deterministic_answer_text": "I cannot answer this question because the evidence is insufficient.",
+      "model_prompt": null,
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "SURF-CRG2026R0050"
+      ],
+      "required_fields": [],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights",
+        "first_or_earliest_claim"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": "I cannot answer this question because the evidence is insufficient.",
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": []
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "SURF-CRG2026R0050",
+          "object_id": "CRG2026R0050",
+          "title": "The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg",
+          "creator": "USSR Post",
+          "date_text": "1870",
+          "date_start": 1870,
+          "date_end": 1870,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; stamp",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg / page 39228667",
+            "url": "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3849_stamp_(With_Lenin_(After_Vladimir_Serov)).jpg",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Unresolved region",
+              "Modern typography and layout",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg is an open-license Commons image record linked to Global / release gate expansion. USSR stamp: With Lenin (After Vladimir Serov). Series: Centenary of Birth of Vladimir Lenin (1870-1924). Lenin on Paintings The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg is presented as a source-linked release-gate open image record; stamp; source-hosted open image; graphic design / visual communication candidate; the holding evidence remains with Wikimedia Commons file source / The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)).jpg / page…. The item metadata gives date evidence: 1870; creator/attribut USSR stamp: With Lenin (After Vladimir Serov). Series: Centenary of Birth of Vladimir Lenin (1870-1924). Lenin on Paintings The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)); 1970-01-01; 2015-03-26 21:19:40; Scanned 600 dpi by User Matsievsky from personal collection; Category:1970 all stamps of the Soviet Union Category:Centenary of birth of Vladimir Lenin (1870-1924). Lenin on paintings Soviet Union stamp series, 19 Global; release gate expansion; stamp; Category:1970 all stamps of the Soviet Union Category:Centenary of birth of Vladimir Lenin (1870-1924). Lenin on paintings Soviet Union stamp series, 1970 Category:PD-RU-exempt (sta This open-image record strengthens undercovered Global / release gate expansion visual evidence while preserving the Commons source page and any credited source/author. Within the pre-1914 record set, this item belongs to the expansion of lithographic, typographic, periodical, advertising, and administrative print cultures that made modern graphic design legible before the profession was fully named. The record is re Selected by Commons search, open-license extmetadata, visual-communication term match, duplicate exclusion, and source-derived text availability. Folder membership is a filter assignment, not a claim of ownership or a closed historical interpretation. It is derived from source title, object type, medium, date, place, subjects, source institution, and review  Commons metadata can be user-maintained; verify object date, original creator, and source credit before final scholarly use.",
+            "compact": "USSR stamp: With Lenin (After Vladimir Serov). Series: Centenary of Birth of Vladimir Lenin (1870-1924). Lenin on Paintings The Soviet Union 1970 CPA 3849 stamp (With Lenin (After Vladimir Serov)); 1970-01-01; 2015-03-26 21:19:40; Scanned 600 dpi by User Matsievsky from personal collection; Category:1970 all stamps of the Soviet Union Category:Centenary of birth of Vladimir Lenin (1870-1924). Lenin on paintings Soviet Union stamp series, 19 Commons metadata can be user-maintained; verify object date, original creator, and source credit before final scholarly use.",
+            "raw_note_hash": "e209a004570acc78",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-FIRST-10",
+      "query_text": "Is The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg the first or earliest example in this archive?",
+      "intent": "first_earliest_claim",
+      "lane": "refusal_more_context",
+      "refusal_expected": true,
+      "deterministic_lane": "refusal",
+      "deterministic_answer_text": "I cannot answer this question because the evidence is insufficient.",
+      "model_prompt": null,
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "SURF-CRG2026R0051"
+      ],
+      "required_fields": [],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights",
+        "first_or_earliest_claim"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": "I cannot answer this question because the evidence is insufficient.",
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": []
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "SURF-CRG2026R0051",
+          "object_id": "CRG2026R0051",
+          "title": "The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg",
+          "creator": "USSR Post",
+          "date_text": "1870",
+          "date_start": 1870,
+          "date_end": 1870,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; stamp",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg / page 39286166",
+            "url": "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3854_stamp_(Fedot_Sychkov_and_Painting_Sledding_from_Hills).jpg",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Unresolved region",
+              "Modern typography and layout",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg is an open-license Commons image record linked to Global / release gate expansion. USSR stamp: Fedot Sychkov and Painting \"Sledding from Hills\" . Series: Birth Centenary of Fedot Sychkov (1870-1958), People's Artist of the Mordovian ASSR This leaf records The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills).jpg as a release-gate open image record; stamp; source-hosted open image; graphic design / visual communication candidate sourced from Wikimedia Commons file source / The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from…. The item metadata gives date evidence: 1 USSR stamp: Fedot Sychkov and Painting \"Sledding from Hills\" . Series: Birth Centenary of Fedot Sychkov (1870-1958), People's Artist of the Mordovian ASSR The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills); 1970-01-27; 2015-03-29 20:11:08; Scanned 600 dpi by User Matsievsky from personal collection; Category:1970 all stamps of the Soviet Union Category:Fedot Sychkov Category:Mordovia on stamps Category:PD-RU-exempt (stamps) Global; release gate expansion; stamp; Category:1970 all stamps of the Soviet Union Category:Fedot Sychkov Category:Mordovia on stamps Category:PD-RU-exempt (stamps) This open-image record strengthens undercovered Global / release gate expansion visual evidence while preserving the Commons source page and any credited source/author. Within the pre-1914 record set, this item belongs to the expansion of lithographic, typographic, periodical, advertising, and administrative print cultures that made modern graphic design legible before the profession was fully named. The record is re Selected by Commons search, open-license extmetadata, visual-communication term match, duplicate exclusion, and source-derived text availability. Folder membership is a filter assignment, not a claim of ownership or a closed historical interpretation. It is derived from source title, object type, medium, date, place, subjects, source institution, and review  Commons metadata can be user-maintained; verify object date, original creator, and source credit before final scholarly use.",
+            "compact": "USSR stamp: Fedot Sychkov and Painting \"Sledding from Hills\" . Series: Birth Centenary of Fedot Sychkov (1870-1958), People's Artist of the Mordovian ASSR The Soviet Union 1970 CPA 3854 stamp (Fedot Sychkov and Painting Sledding from Hills); 1970-01-27; 2015-03-29 20:11:08; Scanned 600 dpi by User Matsievsky from personal collection; Category:1970 all stamps of the Soviet Union Category:Fedot Sychkov Category:Mordovia on stamps Category:PD-RU-exempt (stamps) Commons metadata can be user-maintained; verify object date, original creator, and source credit before final scholarly use.",
+            "raw_note_hash": "4cf05d612c68cb21",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-CONFLICT-01",
+      "query_text": "The two records disagree on date. Summarize the evidence without choosing one date as definitive.",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "deterministic_lane": null,
+      "deterministic_answer_text": null,
+      "model_prompt": "You are a cautious archive assistant in a browser-local research experiment.\nGenerated text is not archive evidence.\nDo not output hidden reasoning, chain-of-thought, or <think> tags.\nUse only the evidence values below. If the values cannot support the query, keep the answer narrow.\nDo not infer dates from record IDs, object IDs, source page numbers, or URL numbers. Use date_text values only for dates.\nQuestion: The two records disagree on date. Summarize the evidence without choosing one date as definitive.\nIntent: comparison\nKeep the generated answer body under 95 words.\nStart the answer body with: Based on these records,\n\n\nEvidence value order: title | date_text | region\nPrimary record is listed first when a primary evidence id is available.\nRecord 1: The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png [conflict date A] | 1830 | Global / release gate expansion\nRecord 2: The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png [conflict date B] | 1890 | Global / release gate expansion\n\nOUTPUT FORMAT:\nWrite only the concise natural-language answer body.\nDo not write the official evidence tag block, field labels, or key-value blocks; the browser lab appends exact tags after generation.\nDo not restate long source URLs unless they are necessary for the prose.",
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "RB-CONFLICT-01-A",
+        "RB-CONFLICT-01-B"
+      ],
+      "required_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:\nrecord_id: RB-CONFLICT-01-A | RB-CONFLICT-01-B\ntitle: The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png [conflict date A] | The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png [conflict date B]\ndate_text: 1830 | 1890\nsource: Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690 / https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3886_sheet_with_16_labels_(Lenin,_1920_with_16_labels_%27Leader_of_the_world_proletariat%27).png",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": null,
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": [
+            {
+              "field": "record_id",
+              "value": "RB-CONFLICT-01-A"
+            },
+            {
+              "field": "title",
+              "value": "The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png [conflict date A]"
+            },
+            {
+              "field": "date_text",
+              "value": "1830"
+            },
+            {
+              "field": "source",
+              "value": "Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690 / https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3886_sheet_with_16_labels_(Lenin,_1920_with_16_labels_%27Leader_of_the_world_proletariat%27).png"
+            }
+          ]
+        },
+        {
+          "record_index": 2,
+          "values_in_required_field_order": [
+            {
+              "field": "record_id",
+              "value": "RB-CONFLICT-01-B"
+            },
+            {
+              "field": "title",
+              "value": "The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png [conflict date B]"
+            },
+            {
+              "field": "date_text",
+              "value": "1890"
+            },
+            {
+              "field": "source",
+              "value": "Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690 / https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3886_sheet_with_16_labels_(Lenin,_1920_with_16_labels_%27Leader_of_the_world_proletariat%27).png"
+            }
+          ]
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "RB-CONFLICT-01-A",
+          "object_id": "CRG2026R0052",
+          "title": "The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png [conflict date A]",
+          "creator": "USSR Post",
+          "date_text": "1830",
+          "date_start": 1830,
+          "date_end": 1830,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; stamp",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690",
+            "url": "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3886_sheet_with_16_labels_(Lenin,_1920_with_16_labels_%27Leader_of_the_world_proletariat%27).png",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Unresolved region",
+              "Modern typography and layout",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Robustness fixture: contradictory date variant A.",
+            "compact": "Robustness fixture: contradictory date variant A.",
+            "raw_note_hash": "85ab25637c446781",
+            "packet_version": "packet.v0"
+          }
+        },
+        {
+          "record_id": "RB-CONFLICT-01-B",
+          "object_id": "CRG2026R0052",
+          "title": "The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png [conflict date B]",
+          "creator": "USSR Post",
+          "date_text": "1890",
+          "date_start": 1890,
+          "date_end": 1890,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; stamp",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / The Soviet Union 1970 CPA 3886 sheet with 16 labels (Lenin, 1920 with 16 labels 'Leader of the world proletariat').png / page 39554690",
+            "url": "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1970_CPA_3886_sheet_with_16_labels_(Lenin,_1920_with_16_labels_%27Leader_of_the_world_proletariat%27).png",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Unresolved region",
+              "Modern typography and layout",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Robustness fixture: contradictory date variant B.",
+            "compact": "Robustness fixture: contradictory date variant B.",
+            "raw_note_hash": "85ab25637c446781",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-CONFLICT-02",
+      "query_text": "The two records disagree on date. Summarize the evidence without choosing one date as definitive.",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "deterministic_lane": null,
+      "deterministic_answer_text": null,
+      "model_prompt": "You are a cautious archive assistant in a browser-local research experiment.\nGenerated text is not archive evidence.\nDo not output hidden reasoning, chain-of-thought, or <think> tags.\nUse only the evidence values below. If the values cannot support the query, keep the answer narrow.\nDo not infer dates from record IDs, object IDs, source page numbers, or URL numbers. Use date_text values only for dates.\nQuestion: The two records disagree on date. Summarize the evidence without choosing one date as definitive.\nIntent: comparison\nKeep the generated answer body under 95 words.\nStart the answer body with: Based on these records,\n\n\nEvidence value order: title | date_text | region\nPrimary record is listed first when a primary evidence id is available.\nRecord 1: The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png [conflict date A] | 1830 | Global / release gate expansion\nRecord 2: The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png [conflict date B] | 1890 | Global / release gate expansion\n\nOUTPUT FORMAT:\nWrite only the concise natural-language answer body.\nDo not write the official evidence tag block, field labels, or key-value blocks; the browser lab appends exact tags after generation.\nDo not restate long source URLs unless they are necessary for the prose.",
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "RB-CONFLICT-02-A",
+        "RB-CONFLICT-02-B"
+      ],
+      "required_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:\nrecord_id: RB-CONFLICT-02-A | RB-CONFLICT-02-B\ntitle: The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png [conflict date A] | The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png [conflict date B]\ndate_text: 1830 | 1890\nsource: Wikimedia Commons file source / The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png / page 102829467 / https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1977_CPA_4695_stamp_(Birth_centenary_of_Felix_Dzerzhinsky,_%27Iron_Felix%27,_Bolshevik_revolutionary_and_official,_led_Cheka_and_OGPU).png",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": null,
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": [
+            {
+              "field": "record_id",
+              "value": "RB-CONFLICT-02-A"
+            },
+            {
+              "field": "title",
+              "value": "The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png [conflict date A]"
+            },
+            {
+              "field": "date_text",
+              "value": "1830"
+            },
+            {
+              "field": "source",
+              "value": "Wikimedia Commons file source / The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png / page 102829467 / https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1977_CPA_4695_stamp_(Birth_centenary_of_Felix_Dzerzhinsky,_%27Iron_Felix%27,_Bolshevik_revolutionary_and_official,_led_Cheka_and_OGPU).png"
+            }
+          ]
+        },
+        {
+          "record_index": 2,
+          "values_in_required_field_order": [
+            {
+              "field": "record_id",
+              "value": "RB-CONFLICT-02-B"
+            },
+            {
+              "field": "title",
+              "value": "The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png [conflict date B]"
+            },
+            {
+              "field": "date_text",
+              "value": "1890"
+            },
+            {
+              "field": "source",
+              "value": "Wikimedia Commons file source / The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png / page 102829467 / https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1977_CPA_4695_stamp_(Birth_centenary_of_Felix_Dzerzhinsky,_%27Iron_Felix%27,_Bolshevik_revolutionary_and_official,_led_Cheka_and_OGPU).png"
+            }
+          ]
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "RB-CONFLICT-02-A",
+          "object_id": "CRG2026R0071",
+          "title": "The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png [conflict date A]",
+          "creator": "USSR Post",
+          "date_text": "1830",
+          "date_start": 1830,
+          "date_end": 1830,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; stamp",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png / page 102829467",
+            "url": "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1977_CPA_4695_stamp_(Birth_centenary_of_Felix_Dzerzhinsky,_%27Iron_Felix%27,_Bolshevik_revolutionary_and_official,_led_Cheka_and_OGPU).png",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Unresolved region",
+              "Modern typography and layout",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Robustness fixture: contradictory date variant A.",
+            "compact": "Robustness fixture: contradictory date variant A.",
+            "raw_note_hash": "5a8942ee64a3662a",
+            "packet_version": "packet.v0"
+          }
+        },
+        {
+          "record_id": "RB-CONFLICT-02-B",
+          "object_id": "CRG2026R0071",
+          "title": "The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png [conflict date B]",
+          "creator": "USSR Post",
+          "date_text": "1890",
+          "date_start": 1890,
+          "date_end": 1890,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; stamp",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / The Soviet Union 1977 CPA 4695 stamp (Birth centenary of Felix Dzerzhinsky, 'Iron Felix', Bolshevik revolutionary and official, led Cheka and OGPU).png / page 102829467",
+            "url": "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1977_CPA_4695_stamp_(Birth_centenary_of_Felix_Dzerzhinsky,_%27Iron_Felix%27,_Bolshevik_revolutionary_and_official,_led_Cheka_and_OGPU).png",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Unresolved region",
+              "Modern typography and layout",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Robustness fixture: contradictory date variant B.",
+            "compact": "Robustness fixture: contradictory date variant B.",
+            "raw_note_hash": "5a8942ee64a3662a",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-CONFLICT-03",
+      "query_text": "The two records disagree on date. Summarize the evidence without choosing one date as definitive.",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "deterministic_lane": null,
+      "deterministic_answer_text": null,
+      "model_prompt": "You are a cautious archive assistant in a browser-local research experiment.\nGenerated text is not archive evidence.\nDo not output hidden reasoning, chain-of-thought, or <think> tags.\nUse only the evidence values below. If the values cannot support the query, keep the answer narrow.\nDo not infer dates from record IDs, object IDs, source page numbers, or URL numbers. Use date_text values only for dates.\nQuestion: The two records disagree on date. Summarize the evidence without choosing one date as definitive.\nIntent: comparison\nKeep the generated answer body under 95 words.\nStart the answer body with: Based on these records,\n\n\nEvidence value order: title | date_text | region\nPrimary record is listed first when a primary evidence id is available.\nRecord 1: Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg [conflict date A] | 1830 | Russia\nRecord 2: Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg [conflict date B] | 1890 | Russia\n\nOUTPUT FORMAT:\nWrite only the concise natural-language answer body.\nDo not write the official evidence tag block, field labels, or key-value blocks; the browser lab appends exact tags after generation.\nDo not restate long source URLs unless they are necessary for the prose.",
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "RB-CONFLICT-03-A",
+        "RB-CONFLICT-03-B"
+      ],
+      "required_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:\nrecord_id: RB-CONFLICT-03-A | RB-CONFLICT-03-B\ntitle: Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg [conflict date A] | Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg [conflict date B]\ndate_text: 1830 | 1890\nsource: Wikimedia Commons / https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": null,
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": [
+            {
+              "field": "record_id",
+              "value": "RB-CONFLICT-03-A"
+            },
+            {
+              "field": "title",
+              "value": "Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg [conflict date A]"
+            },
+            {
+              "field": "date_text",
+              "value": "1830"
+            },
+            {
+              "field": "source",
+              "value": "Wikimedia Commons / https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg"
+            }
+          ]
+        },
+        {
+          "record_index": 2,
+          "values_in_required_field_order": [
+            {
+              "field": "record_id",
+              "value": "RB-CONFLICT-03-B"
+            },
+            {
+              "field": "title",
+              "value": "Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg [conflict date B]"
+            },
+            {
+              "field": "date_text",
+              "value": "1890"
+            },
+            {
+              "field": "source",
+              "value": "Wikimedia Commons / https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg"
+            }
+          ]
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "RB-CONFLICT-03-A",
+          "object_id": "COM1970R007",
+          "title": "Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg [conflict date A]",
+          "creator": "Israel Kaplan",
+          "date_text": "1830",
+          "date_start": 1830,
+          "date_end": 1830,
+          "region": "Russia",
+          "object_type": "Open image record; poster/print candidate",
+          "medium": "poster / print / graphic record",
+          "source": {
+            "name": "Wikimedia Commons",
+            "url": "https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg",
+            "access_date": "2026-05-31"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons image with open license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Russia",
+              "Midcentury modern graphic communication",
+              "Poster"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Robustness fixture: contradictory date variant A.",
+            "compact": "Robustness fixture: contradictory date variant A.",
+            "raw_note_hash": "bd78b13051219d91",
+            "packet_version": "packet.v0"
+          }
+        },
+        {
+          "record_id": "RB-CONFLICT-03-B",
+          "object_id": "COM1970R007",
+          "title": "Advertisement of Israel Kaplan's progressive Jewish school \"LeTorah VaDa'at\" in Minsk c. 1897.jpg [conflict date B]",
+          "creator": "Israel Kaplan",
+          "date_text": "1890",
+          "date_start": 1890,
+          "date_end": 1890,
+          "region": "Russia",
+          "object_type": "Open image record; poster/print candidate",
+          "medium": "poster / print / graphic record",
+          "source": {
+            "name": "Wikimedia Commons",
+            "url": "https://commons.wikimedia.org/wiki/File:Advertisement_of_Israel_Kaplan%27s_progressive_Jewish_school_%22LeTorah_VaDa%27at%22_in_Minsk_c._1897.jpg",
+            "access_date": "2026-05-31"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons image with open license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Russia",
+              "Midcentury modern graphic communication",
+              "Poster"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Robustness fixture: contradictory date variant B.",
+            "compact": "Robustness fixture: contradictory date variant B.",
+            "raw_note_hash": "bd78b13051219d91",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-CONFLICT-04",
+      "query_text": "The two records disagree on date. Summarize the evidence without choosing one date as definitive.",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "deterministic_lane": null,
+      "deterministic_answer_text": null,
+      "model_prompt": "You are a cautious archive assistant in a browser-local research experiment.\nGenerated text is not archive evidence.\nDo not output hidden reasoning, chain-of-thought, or <think> tags.\nUse only the evidence values below. If the values cannot support the query, keep the answer narrow.\nDo not infer dates from record IDs, object IDs, source page numbers, or URL numbers. Use date_text values only for dates.\nQuestion: The two records disagree on date. Summarize the evidence without choosing one date as definitive.\nIntent: comparison\nKeep the generated answer body under 95 words.\nStart the answer body with: Based on these records,\n\n\nEvidence value order: title | date_text | region\nPrimary record is listed first when a primary evidence id is available.\nRecord 1: ApollonMagazine.jpg [conflict date A] | 1830 | Global / release gate expansion\nRecord 2: ApollonMagazine.jpg [conflict date B] | 1890 | Global / release gate expansion\n\nOUTPUT FORMAT:\nWrite only the concise natural-language answer body.\nDo not write the official evidence tag block, field labels, or key-value blocks; the browser lab appends exact tags after generation.\nDo not restate long source URLs unless they are necessary for the prose.",
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "RB-CONFLICT-04-A",
+        "RB-CONFLICT-04-B"
+      ],
+      "required_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:\nrecord_id: RB-CONFLICT-04-A | RB-CONFLICT-04-B\ntitle: ApollonMagazine.jpg [conflict date A] | ApollonMagazine.jpg [conflict date B]\ndate_text: 1830 | 1890\nsource: Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526 / https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": null,
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": [
+            {
+              "field": "record_id",
+              "value": "RB-CONFLICT-04-A"
+            },
+            {
+              "field": "title",
+              "value": "ApollonMagazine.jpg [conflict date A]"
+            },
+            {
+              "field": "date_text",
+              "value": "1830"
+            },
+            {
+              "field": "source",
+              "value": "Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526 / https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg"
+            }
+          ]
+        },
+        {
+          "record_index": 2,
+          "values_in_required_field_order": [
+            {
+              "field": "record_id",
+              "value": "RB-CONFLICT-04-B"
+            },
+            {
+              "field": "title",
+              "value": "ApollonMagazine.jpg [conflict date B]"
+            },
+            {
+              "field": "date_text",
+              "value": "1890"
+            },
+            {
+              "field": "source",
+              "value": "Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526 / https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg"
+            }
+          ]
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "RB-CONFLICT-04-A",
+          "object_id": "CRG2026R0235",
+          "title": "ApollonMagazine.jpg [conflict date A]",
+          "creator": "Nikolai Remisov",
+          "date_text": "1830",
+          "date_start": 1830,
+          "date_end": 1830,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; advertising poster",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526",
+            "url": "https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Unresolved region",
+              "Modern typography and layout",
+              "Poster"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Robustness fixture: contradictory date variant A.",
+            "compact": "Robustness fixture: contradictory date variant A.",
+            "raw_note_hash": "4a61e0a7f0bf2508",
+            "packet_version": "packet.v0"
+          }
+        },
+        {
+          "record_id": "RB-CONFLICT-04-B",
+          "object_id": "CRG2026R0235",
+          "title": "ApollonMagazine.jpg [conflict date B]",
+          "creator": "Nikolai Remisov",
+          "date_text": "1890",
+          "date_start": 1890,
+          "date_end": 1890,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; advertising poster",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / ApollonMagazine.jpg / page 4027526",
+            "url": "https://commons.wikimedia.org/wiki/File:ApollonMagazine.jpg",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Unresolved region",
+              "Modern typography and layout",
+              "Poster"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Robustness fixture: contradictory date variant B.",
+            "compact": "Robustness fixture: contradictory date variant B.",
+            "raw_note_hash": "4a61e0a7f0bf2508",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "RB-CONFLICT-05",
+      "query_text": "The two records disagree on date. Summarize the evidence without choosing one date as definitive.",
+      "intent": "comparison",
+      "lane": "research_answer",
+      "refusal_expected": false,
+      "deterministic_lane": null,
+      "deterministic_answer_text": null,
+      "model_prompt": "You are a cautious archive assistant in a browser-local research experiment.\nGenerated text is not archive evidence.\nDo not output hidden reasoning, chain-of-thought, or <think> tags.\nUse only the evidence values below. If the values cannot support the query, keep the answer narrow.\nDo not infer dates from record IDs, object IDs, source page numbers, or URL numbers. Use date_text values only for dates.\nQuestion: The two records disagree on date. Summarize the evidence without choosing one date as definitive.\nIntent: comparison\nKeep the generated answer body under 95 words.\nStart the answer body with: Based on these records,\n\n\nEvidence value order: title | date_text | region\nPrimary record is listed first when a primary evidence id is available.\nRecord 1: PlumEdwardVII.jpg [conflict date A] | 1830 | Global / release gate expansion\nRecord 2: PlumEdwardVII.jpg [conflict date B] | 1890 | Global / release gate expansion\n\nOUTPUT FORMAT:\nWrite only the concise natural-language answer body.\nDo not write the official evidence tag block, field labels, or key-value blocks; the browser lab appends exact tags after generation.\nDo not restate long source URLs unless they are necessary for the prose.",
+      "prompt_variant": "r03_v33_postprocessed_prose",
+      "packet_variant": "top3_gold_contract_source_rights",
+      "retrieved_ids": [
+        "RB-CONFLICT-05-A",
+        "RB-CONFLICT-05-B"
+      ],
+      "required_fields": [
+        "record_id",
+        "title",
+        "date_text",
+        "source"
+      ],
+      "must_not_invent_fields": [
+        "title",
+        "creator",
+        "date",
+        "source",
+        "rights"
+      ],
+      "expected_evidence_tags": "EVIDENCE TAGS:\nrecord_id: RB-CONFLICT-05-A | RB-CONFLICT-05-B\ntitle: PlumEdwardVII.jpg [conflict date A] | PlumEdwardVII.jpg [conflict date B]\ndate_text: 1830 | 1890\nsource: Wikimedia Commons file source / PlumEdwardVII.jpg / page 7544844 / https://commons.wikimedia.org/wiki/File:PlumEdwardVII.jpg",
+      "expected_source_rights_answer": null,
+      "expected_refusal_answer": null,
+      "evidence_summary": [
+        {
+          "record_index": 1,
+          "values_in_required_field_order": [
+            {
+              "field": "record_id",
+              "value": "RB-CONFLICT-05-A"
+            },
+            {
+              "field": "title",
+              "value": "PlumEdwardVII.jpg [conflict date A]"
+            },
+            {
+              "field": "date_text",
+              "value": "1830"
+            },
+            {
+              "field": "source",
+              "value": "Wikimedia Commons file source / PlumEdwardVII.jpg / page 7544844 / https://commons.wikimedia.org/wiki/File:PlumEdwardVII.jpg"
+            }
+          ]
+        },
+        {
+          "record_index": 2,
+          "values_in_required_field_order": [
+            {
+              "field": "record_id",
+              "value": "RB-CONFLICT-05-B"
+            },
+            {
+              "field": "title",
+              "value": "PlumEdwardVII.jpg [conflict date B]"
+            },
+            {
+              "field": "date_text",
+              "value": "1890"
+            },
+            {
+              "field": "source",
+              "value": "Wikimedia Commons file source / PlumEdwardVII.jpg / page 7544844 / https://commons.wikimedia.org/wiki/File:PlumEdwardVII.jpg"
+            }
+          ]
+        }
+      ],
+      "evidence_records": [
+        {
+          "record_id": "RB-CONFLICT-05-A",
+          "object_id": "CRG2026R0246",
+          "title": "PlumEdwardVII.jpg [conflict date A]",
+          "creator": "General Post Office ; scanned by User:Nickpo. The original uploader was Nickpo at Russian Wikipedia .",
+          "date_text": "1830",
+          "date_start": 1830,
+          "date_end": 1830,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; stamp",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / PlumEdwardVII.jpg / page 7544844",
+            "url": "https://commons.wikimedia.org/wiki/File:PlumEdwardVII.jpg",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Russia",
+              "World War and public-information graphics",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Robustness fixture: contradictory date variant A.",
+            "compact": "Robustness fixture: contradictory date variant A.",
+            "raw_note_hash": "1d047626f76b4cfa",
+            "packet_version": "packet.v0"
+          }
+        },
+        {
+          "record_id": "RB-CONFLICT-05-B",
+          "object_id": "CRG2026R0246",
+          "title": "PlumEdwardVII.jpg [conflict date B]",
+          "creator": "General Post Office ; scanned by User:Nickpo. The original uploader was Nickpo at Russian Wikipedia .",
+          "date_text": "1890",
+          "date_start": 1890,
+          "date_end": 1890,
+          "region": "Global / release gate expansion",
+          "object_type": "release-gate open image record; stamp",
+          "medium": "source-hosted open image; graphic design / visual communication candidate",
+          "source": {
+            "name": "Wikimedia Commons file source / PlumEdwardVII.jpg / page 7544844",
+            "url": "https://commons.wikimedia.org/wiki/File:PlumEdwardVII.jpg",
+            "access_date": "2026-06-06"
+          },
+          "rights": {
+            "state": "open_candidate",
+            "display_policy": "open_image_frame",
+            "label": "IMG03: Wikimedia Commons open-license metadata: Public domain."
+          },
+          "rights_interpretation": {
+            "reuse_permission": "source_metadata_supports_open_or_public_domain_candidate_with_source_verification_required",
+            "public_domain_status": "source_metadata_mentions_public_domain_but_global_public_domain_status_not_determined",
+            "interpretation_basis": "derived_from_source_rights_label_and_image_state; source page remains authority"
+          },
+          "image_state": {
+            "code": "IMG03",
+            "display_mode": "open_image_frame",
+            "has_image_frame": true,
+            "model_image_eligible": true
+          },
+          "topology": {
+            "surface_type": "sheet",
+            "publication_role": "main_sheet",
+            "folder_titles": [
+              "Russia",
+              "World War and public-information graphics",
+              "Graphic design object record"
+            ],
+            "historical_node_ids": [
+              "HN009",
+              "HN010",
+              "HN011",
+              "HN014"
+            ],
+            "movement_ids": []
+          },
+          "notes": {
+            "raw": "Robustness fixture: contradictory date variant B.",
+            "compact": "Robustness fixture: contradictory date variant B.",
+            "raw_note_hash": "1d047626f76b4cfa",
+            "packet_version": "packet.v0"
+          }
+        }
+      ]
+    }
+  ]
+}
